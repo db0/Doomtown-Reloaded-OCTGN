@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="b440d120-025a-4fbe-9f8d-3873acacb37b">
+  <section name="Outfit" shared="False">
+    <card qty="1" id="f7b4b246-da6f-44e4-9eee-46bb8bfb931a">The Sloane Gang</card>
+  </section>
+  <section name="Starting Cards" shared="False">
+    <card qty="1" id="8ed33c69-c79e-4ced-a180-3fe57bf0d25d">Lawrence Blackwood</card>
+    <card qty="1" id="3bd5addb-ac4e-45aa-9971-bd445222344e">Marion Seville</card>
+    <card qty="1" id="28b5d3c7-bb58-4b63-aae5-659e86fee876">Silas Aims</card>
+    <card qty="1" id="d677fa1e-61f3-422a-9b95-745692c7b800">Ramiro Mendoza</card>
+  </section>
+  <section name="Deck" shared="False">
+    <card qty="1" id="dfd2d635-4b88-4cea-9939-14deec3896cf">Allie Hensman</card>
+    <card qty="1" id="d9d621f3-1905-4a99-8f5a-f1feb9639a64">Pancho Castillo</card>
+    <card qty="1" id="fa1e44a1-2064-4d70-8286-854d80b50da2">Fred Aims</card>
+    <card qty="2" id="e686782d-1d7c-464d-82ed-910fcaa2945d">Sanford Taylor</card>
+    <card qty="1" id="8209b72a-15c4-440b-9ad7-8614a9d2f452">Sloane</card>
+    <card qty="1" id="5d610a44-7f13-4333-a941-ee5e1fa2fb37">Clementine Lepp</card>
+    <card qty="1" id="f95140da-3b72-4210-95fb-bfe7efe2cca4">Jonah Essex</card>
+    <card qty="2" id="c3638e9f-f664-43a6-abe0-645aab082455">Barton Everest</card>
+    <card qty="2" id="9a18cd02-63dd-4381-ba9f-49d80fac935a">Bad Company</card>
+    <card qty="1" id="5c5b6579-a2de-419d-b531-6d08c1eba77d">Hiding in the Shadows</card>
+    <card qty="2" id="b61dc1ab-393c-4827-a6ec-4f9ffb870491">Extortion</card>
+    <card qty="2" id="7779228b-f33c-4c36-ae90-17fdf54cd142">This Is A Holdup!</card>
+    <card qty="1" id="cc2092bd-b575-4a26-8e96-aa13f8736d75">Ambush</card>
+    <card qty="2" id="b3140484-bfe8-4eb4-963f-27e8d9334b8a">War Paint</card>
+    <card qty="2" id="1950bc30-abf5-4ed4-b20a-e56bb4032de0">One Good Turn</card>
+    <card qty="1" id="0c41f0c4-2491-4723-8cf9-d8ab3e071e05">Coachwhip!</card>
+    <card qty="2" id="e11367a5-6fad-40a4-b22a-a2571eb7c330">Kidnapping</card>
+    <card qty="2" id="1f230385-e07c-43e2-a205-79547ce18380">Unprepared</card>
+    <card qty="1" id="1536769f-42f4-4840-9360-96d2e7e3f366">Pistol Whip</card>
+    <card qty="2" id="8649f082-f7cd-414d-b360-9b1b72f6172b">The Stakes Just Rose</card>
+    <card qty="2" id="9aa68e21-1eee-4d44-993e-dd8cf60ed613">Mustang</card>
+    <card qty="2" id="c8453a00-e4f9-4dbe-922c-3daf79586cef">Pearl-Handled Revolver</card>
+    <card qty="2" id="80d43d02-7885-4e2e-98e5-62ba2b189155">Whiskey Flask</card>
+    <card qty="1" id="677bbf45-1f98-49aa-b8cc-b63b8f3d5146">Legendary Holster</card>
+    <card qty="2" id="ac681d62-c7df-469f-8ac6-80816c781136">Shotgun</card>
+    <card qty="1" id="232f0a41-2ef5-47a0-9c32-6ccb8eb3c84e">B &amp; B Attorneys</card>
+    <card qty="2" id="9fe6ced8-a97c-49e8-8806-0ba465f535f6">Dead Dog Tavent</card>
+    <card qty="2" id="57528427-b65a-4056-9fea-082bba8ef4a9">Charlie's Place</card>
+    <card qty="1" id="b999405d-e2ca-4703-beda-67f9697fc977">Yan Li's Tailoring</card>
+    <card qty="1" id="b4442f8d-71d0-4d12-9000-4df27ea78643">Killer Bunnies Casino</card>
+    <card qty="2" id="ed26a010-8947-456f-b8f7-2741e083b54a">Pearly's Pub</card>
+  </section>
+  <section name="Common" shared="True" />
+  <notes><![CDATA[This deck plays by boosting one of your dude's bullets a lot with noon thangs,
+Then it either catches and calls-out someone, or does a noon job for it.
+Once in the shootout, your high bullets enable your shotguns and legendary holsters to clear the opposition before hand resolution.
+
+Your shootout values are 4 and 5 with backup being 3.]]></notes>
+</deck>

@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8" ?>
+   <templates>
+      <blocks>
+   <!-- Default Block-->
+         <block type="text" id="default_name">
+            <location x="85" y="100" />
+            <text color="#000000" size="55" />
+            <border color="#440044" size="1" />
+         </block>
+         <block type="overlay" id="dummy" src="Proxy/Icons/Conditional_Dummy.png">         
+           <location x="1" y="1" />
+         </block>  
+         <block type="text" id="dummy_text">
+            <location x="1" y="1" />
+            <text color="#000000" size="1" />
+         </block>
+   <!-- Common Text Blocks -->
+         <block type="text" id="rank">
+           <location x="20" y="10" />
+           <text color="#000000" size="85"  font="Fonts/playbill-doomtown.ttf" />
+         </block>
+         <block type="text" id="suit">
+           <location x="20" y="100" />
+           <text color="#000000" size="65"  font="Fonts/playbill-doomtown.ttf" />
+         </block>
+         <block type="text" id="cost">
+           <location x="25" y="770" />
+           <text color="#000000" size="85" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="95" width="100" align="center" />
+         </block>
+         <block type="text" id="production_upkeep">
+           <location x="520" y="765" />
+           <text color="#FFFFFF" size="95" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="95" width="100" align="center" />
+         </block>
+         <block type="text" id="bullet">
+           <location x="35" y="230" />
+           <text color="#000000" size="75" font="Fonts/playbill-doomtown.ttf" />
+         </block>
+         <block type="text" id="influence">
+           <location x="10" y="352" />
+           <text color="#000000" size="75" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="75" width="100" align="center" />
+         </block>
+         <block type="text" id="control">
+           <location x="10" y="352" />
+           <text color="#000000" size="75" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="75" width="100" align="center" />
+         </block>
+   <!-- Card Suit Blocks -->
+         <block type="overlay" id="clubs" src="Proxy/Values/clubs.png">         
+           <location x="16" y="105" />
+         </block>  
+         <block type="overlay" id="spades" src="Proxy/Values/spades.png">         
+           <location x="16" y="105" />
+         </block>  
+         <block type="overlay" id="hearts" src="Proxy/Values/hearts.png">         
+           <location x="16" y="105" />
+         </block>  
+         <block type="overlay" id="diamonds" src="Proxy/Values/diamonds.png">         
+           <location x="16" y="105" />
+         </block>  
+   <!-- Card Rank Blocks -->
+         <block type="overlay" id="b_a" src="Proxy/Values/b_a.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_2" src="Proxy/Values/b_2.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_3" src="Proxy/Values/b_3.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_4" src="Proxy/Values/b_4.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_5" src="Proxy/Values/b_5.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_6" src="Proxy/Values/b_6.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_7" src="Proxy/Values/b_7.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_8" src="Proxy/Values/b_8.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_9" src="Proxy/Values/b_9.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_10" src="Proxy/Values/b_10.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_j" src="Proxy/Values/b_j.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_q" src="Proxy/Values/b_q.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="b_k" src="Proxy/Values/b_k.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_a" src="Proxy/Values/r_a.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_2" src="Proxy/Values/r_2.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_3" src="Proxy/Values/r_3.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_4" src="Proxy/Values/r_4.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_5" src="Proxy/Values/r_5.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_6" src="Proxy/Values/r_6.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_7" src="Proxy/Values/r_7.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_8" src="Proxy/Values/r_8.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_9" src="Proxy/Values/r_9.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_10" src="Proxy/Values/r_10.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_j" src="Proxy/Values/r_j.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_q" src="Proxy/Values/r_q.png">         
+           <location x="20" y="18" />
+         </block>  
+         <block type="overlay" id="r_k" src="Proxy/Values/r_k.png">         
+           <location x="20" y="18" />
+         </block>  
+   <!-- Joker Blocks -->
+         <block type="overlay" id="joker_top_left" src="Proxy/Values/joker_value_left.jpg">         
+           <location x="10" y="10" />
+         </block>  
+         <block type="overlay" id="joker_top_right" src="Proxy/Values/joker_value_right.jpg">         
+           <location x="570" y="10" />
+         </block>  
+         <block type="overlay" id="joker_bot_left" src="Proxy/Values/joker_value_left.jpg">         
+           <location x="10" y="830" />
+         </block>  
+         <block type="overlay" id="joker_bot_right" src="Proxy/Values/joker_value_right.jpg">         
+           <location x="570" y="830" />
+         </block>  
+         <block type="text" id="joker_name">
+           <location x="50" y="70" />
+           <text color="#000000" size="125" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="125" width="570" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="joker_text">
+           <location x="50" y="300" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="530" width="575" shrinktofit="True"/>
+         </block>
+   <!-- Icon Blocks -->
+         <block type="overlay" id="icon_bullet_stud" src="Proxy/Icons/bullet_stud.png">         
+           <location x="30" y="180" />
+         </block>     
+         <block type="overlay" id="icon_bullet_draw" src="Proxy/Icons/bullet_draw.png">         
+           <location x="30" y="180" />
+         </block>     
+         <block type="overlay" id="icon_influence" src="Proxy/Icons/pc_influence.png">         
+           <location x="15" y="350" />
+         </block>     
+         <block type="overlay" id="icon_control" src="Proxy/Icons/pc_control.png">         
+           <location x="15" y="350" />
+         </block>     
+         <block type="overlay" id="icon_cost" src="Proxy/Icons/cost.png">         
+           <location x="23" y="770" />
+         </block>     
+         <block type="overlay" id="icon_production_upkeep" src="Proxy/Icons/production_upkeep.png">         
+           <location x="520" y="770" />
+         </block>     
+   <!-- Outfit Icon Blocks -->
+         <block type="overlay" id="outfit_icon_blackjacks" src="Proxy/Icons/fs_blackjacks.png">         
+           <location x="15" y="450" />
+         </block>  
+         <block type="overlay" id="outfit_icon_progress" src="Proxy/Icons/fs_the_circle.png">         
+           <location x="15" y="450" />
+         </block>  
+         <block type="overlay" id="outfit_icon_law_dogs" src="Proxy/Icons/fs_law_dogs.png">         
+           <location x="15" y="450" />
+         </block>  
+         <block type="overlay" id="outfit_icon_wretched" src="Proxy/Icons/fs_the_wretched.png">         
+           <location x="15" y="450" />
+         </block>     
+   <!-- Dude Blocks -->
+         <block type="overlay" id="dude_blackjacks" src="Proxy/Dudes/blackjacks.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="dude_progress" src="Proxy/Dudes/progress.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="dude_drifter" src="Proxy/Dudes/drifter.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="dude_law_dogs" src="Proxy/Dudes/law_dogs.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="dude_wretched" src="Proxy/Dudes/the_wretched.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="text" id="dude_name">
+           <location x="160" y="40" />
+           <text color="#000000" size="125" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="125" width="400" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="dude_text">
+           <location x="55" y="560" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="235" width="545" shrinktofit="True"/>
+         </block>
+         <block type="text" id="keywords">
+           <location x="160" y="780" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <border color="#000000" size="1" />
+           <wordwrap height="70" width="400" shrinktofit="True"/>
+         </block>
+   <!-- Outfit Blocks -->
+         <block type="overlay" id="outfit_blackjacks" src="Proxy/Outfits/blackjacks.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="outfit_progress" src="Proxy/Outfits/progress.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="outfit_law_dogs" src="Proxy/Outfits/law_dogs.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="outfit_wretched" src="Proxy/Outfits/the_wretched.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="home_outfit_icon_blackjacks" src="Proxy/Icons/fs_blackjacks.png">         
+           <location x="520" y="110" />
+         </block>  
+         <block type="overlay" id="home_outfit_icon_progress" src="Proxy/Icons/fs_the_circle.png">         
+           <location x="520" y="110" />
+         </block>  
+         <block type="overlay" id="home_outfit_icon_law_dogs" src="Proxy/Icons/fs_law_dogs.png">         
+           <location x="520" y="110" />
+         </block>  
+         <block type="overlay" id="home_outfit_icon_wretched" src="Proxy/Icons/fs_the_wretched.png">         
+           <location x="520" y="110" />
+         </block>  
+         <block type="text" id="starting_rock">
+           <location x="538" y="692" />
+           <text color="#000000" size="65" font="Fonts/playbill-doomtown.ttf" />
+         </block>
+         <block type="text" id="outfit_name">
+           <location x="20" y="30" />
+           <text color="#FFFFFF" size="125" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="125" width="430" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="outfit_text">
+           <location x="60" y="575" rotate="356" />
+           <text color="#000000" size= "31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="290" width="470" shrinktofit="True"/>
+         </block>
+   <!-- Spell Block-->
+         <block type="text" id="spell_name">
+           <location x="160" y="20" />
+           <text color="#000000" size="125" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="125" width="430" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="spell_text">
+           <location x="70" y="590" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="200" width="525" shrinktofit="True"/>
+         </block>
+   <!-- Action Block-->
+         <block type="text" id="action_name">
+           <location x="160" y="40" />
+           <text color="#000000" size="125" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="125" width="430" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="action_text">
+           <location x="60" y="560" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="240" width="545" shrinktofit="True"/>
+         </block>
+   <!-- Deed Block-->
+         <block type="text" id="deed_name">
+           <location x="160" y="70" />
+           <text color="#000000" size="90" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="100" width="430" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="deed_text">
+           <location x="60" y="560" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="230" width="545" shrinktofit="True"/>
+         </block>
+   <!-- Event Block-->
+         <block type="text" id="event_name">
+           <location x="160" y="60" />
+           <text color="#000000" size="90" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="100" width="430" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="event_text">
+           <location x="60" y="560" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="310" width="545" shrinktofit="True"/>
+         </block>
+      </blocks>
+<!-- TEMPLATES -->
+      <template src="Proxy/Missing_Proxies_Template.png" default="True">
+         <matches>
+            <match name="Name" value="Whatever" />
+         </matches>
+         <textblocks>
+            <link block="default_name" separator=" ">
+               <property name="Name"  />
+            </link>
+         </textblocks>
+      </template>
+   <!-- Outfit Template -->
+      <template src="Proxy/blank_background.jpg">
+         <matches>
+            <match name="Type" value="Outfit" />
+         </matches>
+         <overlayblocks>
+            <conditional>
+               <switch property="Outfit">
+                  <case value="The Sloane Gang">
+                     <link block="outfit_blackjacks" />
+                     <link block="home_outfit_icon_blackjacks" />
+                  </case>
+                  <case value="Morgan Cattle Co.">
+                     <link block="outfit_progress" />
+                     <link block="home_outfit_icon_progress" />
+                  </case>
+                  <case value="Law Dogs">
+                     <link block="outfit_law_dogs" />
+                     <link block="home_outfit_icon_law_dogs" />
+                  </case>
+                  <case value="The Fourth Ring">
+                     <link block="outfit_wretched" />
+                     <link block="home_outfit_icon_wretched" />
+                  </case>
+               </switch>
+            </conditional>
+         </overlayblocks>
+         <textblocks>
+            <link block="outfit_name" separator=" ">
+               <property name="Name"  />
+            </link>
+            <link block="starting_rock" separator=" ">
+               <property name="Cost"  />
+            </link>
+            <link block="outfit_text" separator=" ">
+               <property name="Text"  />
+            </link>
+            <link block="production_upkeep">
+               <property name="Production" format="+{}" />
+            </link>
+         </textblocks>
+      </template>   
+   <!-- Dude Template -->
+      <template src="Proxy/blank_background.jpg">
+         <matches>
+            <match name="Type" value="Dude" />
+         </matches>
+         <overlayblocks>
+            <conditional>
+               <switch property="Outfit">
+                  <case value="The Sloane Gang">
+                     <link block="dude_blackjacks" />
+                     <link block="outfit_icon_blackjacks" />
+                  </case>
+                  <case value="Morgan Cattle Co.">
+                     <link block="dude_progress" />
+                     <link block="outfit_icon_progress" />
+                  </case>
+                  <case value="Law Dogs">
+                     <link block="dude_law_dogs" />
+                     <link block="outfit_icon_law_dogs" />
+                  </case>
+                  <case value="The Fourth Ring">
+                     <link block="dude_wretched" />
+                     <link block="outfit_icon_wretched" />
+                  </case>
+                  <default>
+                     <link block="dude_drifter" />
+                  </default>
+               </switch>
+            </conditional>
+            <conditional>
+               <switch property="Rank">
+                  <case value="K">
+                     <link block="b_k" />
+                  </case>
+                  <case value="Q">
+                     <link block="b_q" />
+                  </case>
+                  <case value="J">
+                     <link block="b_j" />
+                  </case>
+                  <case value="10">
+                     <link block="b_10" />
+                  </case>
+                  <case value="9">
+                     <link block="b_9" />
+                  </case>
+                  <case value="8">
+                     <link block="b_8" />
+                  </case>
+                  <case value="7">
+                     <link block="b_7" />
+                  </case>
+                  <case value="6">
+                     <link block="b_6" />
+                  </case>
+                  <case value="5">
+                     <link block="b_5" />
+                  </case>
+                  <case value="4">
+                     <link block="b_4" />
+                  </case>
+                  <case value="3">
+                     <link block="b_3" />
+                  </case>
+                  <case value="2">
+                     <link block="b_2" />
+                  </case>
+                  <case value="A">
+                     <link block="b_a" />
+                  </case>
+               </switch>
+            </conditional>
+            <conditional>
+               <if property="Draw Type" value="Stud">
+                  <link block="icon_bullet_stud" />
+               </if>
+               <else>
+                  <link block="icon_bullet_draw" />
+               </else>               
+            </conditional>
+            <link block="spades" />
+            <link block="icon_influence" />
+            <link block="icon_cost" />
+            <link block="icon_production_upkeep" />
+         </overlayblocks>
+         <textblocks>
+            <conditional>
+               <if property="Production" value="1">
+                  <link block="production_upkeep">
+                     <property name="Production" format="+{}" />
+                  </link>
+               </if>
+               <!-- <elseif property="Production" value="+*">
+                  <link block="production_upkeep">
+                     <property name="Production" format="{}" />
+                  </link>
+               </elseif> #For some reason elseif messes up the else later on. Disabling for now --> 
+               <else>
+                  <link block="production_upkeep">
+                     <property name="Upkeep" />
+                  </link>
+               </else>
+            </conditional>
+            <link block="dude_name" separator=" ">
+               <property name="Name"  />
+            </link>
+            <link block="dude_text" separator=" ">
+               <property name="Text"  />
+            </link>
+            <link block="cost" separator=" ">
+               <property name="Cost"  />
+            </link>
+            <link block="bullet" separator=" ">
+               <property name="Bullets"  />
+            </link>
+            <link block="influence" separator=" ">
+               <property name="Influence"  />
+            </link>
+            <link block="keywords" separator=" ">
+               <property name="Keywords" format=" " />
+            </link>
+         </textblocks>
+      </template>   
+   <!-- Action Template -->
+      <template src="Proxy/action.jpg">
+         <matches>
+            <match name="Type" value="Action" />
+         </matches>
+         <overlayblocks>
+            <conditional>
+               <switch property="Rank">
+                  <case value="K">
+                     <link block="b_k" />
+                  </case>
+                  <case value="Q">
+                     <link block="b_q" />
+                  </case>
+                  <case value="J">
+                     <link block="b_j" />
+                  </case>
+                  <case value="10">
+                     <link block="b_10" />
+                  </case>
+                  <case value="9">
+                     <link block="b_9" />
+                  </case>
+                  <case value="8">
+                     <link block="b_8" />
+                  </case>
+                  <case value="7">
+                     <link block="b_7" />
+                  </case>
+                  <case value="6">
+                     <link block="b_6" />
+                  </case>
+                  <case value="5">
+                     <link block="b_5" />
+                  </case>
+                  <case value="4">
+                     <link block="b_4" />
+                  </case>
+                  <case value="3">
+                     <link block="b_3" />
+                  </case>
+                  <case value="2">
+                     <link block="b_2" />
+                  </case>
+                  <case value="A">
+                     <link block="b_a" />
+                  </case>
+               </switch>
+            </conditional>
+            <link block="clubs" />
+         </overlayblocks>
+         <textblocks>
+            <link block="action_name" separator=" ">
+               <property name="Name"  />
+            </link>
+            <link block="cost" separator=" ">
+               <property name="Cost"  />
+            </link>
+            <link block="action_text" separator=" ">
+               <property name="Text"  />
+            </link>
+            <link block="keywords" separator=" ">
+               <property name="Keywords" format=" " />
+            </link>
+         </textblocks>
+      </template>   
+   <!-- Deed Template -->
+      <template src="Proxy/deed.jpg">
+         <matches>
+            <match name="Type" value="Deed" />
+         </matches>
+         <overlayblocks>
+            <conditional>
+               <switch property="Rank">
+                  <case value="K">
+                     <link block="r_k" />
+                  </case>
+                  <case value="Q">
+                     <link block="r_q" />
+                  </case>
+                  <case value="J">
+                     <link block="r_j" />
+                  </case>
+                  <case value="10">
+                     <link block="r_10" />
+                  </case>
+                  <case value="9">
+                     <link block="r_9" />
+                  </case>
+                  <case value="8">
+                     <link block="r_8" />
+                  </case>
+                  <case value="7">
+                     <link block="r_7" />
+                  </case>
+                  <case value="6">
+                     <link block="r_6" />
+                  </case>
+                  <case value="5">
+                     <link block="r_5" />
+                  </case>
+                  <case value="4">
+                     <link block="r_4" />
+                  </case>
+                  <case value="3">
+                     <link block="r_3" />
+                  </case>
+                  <case value="2">
+                     <link block="r_2" />
+                  </case>
+                  <case value="A">
+                     <link block="r_a" />
+                  </case>
+               </switch>
+            </conditional>
+            <conditional>
+               <if property="Control" value="0">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="icon_control" />
+               </else>               
+            </conditional>
+            <conditional>
+               <if property="Influence" value="">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="icon_influence" />
+               </else>               
+            </conditional>
+            <link block="diamonds" />
+         </overlayblocks>
+         <textblocks>
+            <conditional>
+               <if property="Production" value="0">
+                  <link block="production_upkeep">
+                     <property name="Upkeep"  />
+                  </link>
+               </if>
+               <else>
+                  <link block="production_upkeep">
+                     <property name="Production" format="+{}" />
+                  </link>
+               </else>
+            </conditional>
+            <conditional>
+               <if property="Control" value="0">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="control">
+                     <property name="Control"  />
+                  </link>
+               </else>               
+            </conditional>
+            <conditional>
+               <if property="Influence" value="">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="influence">
+                     <property name="Influence"  />
+                  </link>
+               </else>               
+            </conditional>
+            <link block="deed_name">
+               <property name="Name"  />
+            </link>
+            <link block="cost">
+               <property name="Cost"  />
+            </link>
+            <link block="deed_text">
+               <property name="Text"  />
+            </link>
+            <link block="keywords" separator=" ">
+               <property name="Keywords" format=" " />
+            </link>
+         </textblocks>
+      </template>   
+   <!-- Goods Template -->
+      <template src="Proxy/goods.jpg">
+         <matches>
+            <match name="Type" value="Goods" />
+         </matches>
+         <overlayblocks>
+            <conditional>
+               <switch property="Rank">
+                  <case value="K">
+                     <link block="r_k" />
+                  </case>
+                  <case value="Q">
+                     <link block="r_q" />
+                  </case>
+                  <case value="J">
+                     <link block="r_j" />
+                  </case>
+                  <case value="10">
+                     <link block="r_10" />
+                  </case>
+                  <case value="9">
+                     <link block="r_9" />
+                  </case>
+                  <case value="8">
+                     <link block="r_8" />
+                  </case>
+                  <case value="7">
+                     <link block="r_7" />
+                  </case>
+                  <case value="6">
+                     <link block="r_6" />
+                  </case>
+                  <case value="5">
+                     <link block="r_5" />
+                  </case>
+                  <case value="4">
+                     <link block="r_4" />
+                  </case>
+                  <case value="3">
+                     <link block="r_3" />
+                  </case>
+                  <case value="2">
+                     <link block="r_2" />
+                  </case>
+                  <case value="A">
+                     <link block="r_a" />
+                  </case>
+               </switch>
+            </conditional>
+            <link block="hearts" />
+            <conditional>
+               <if property="Bullet Bonus" value="">
+                  <link block="dummy" />
+               </if>
+               <elseif property="Draw Type" value="Stud">
+                  <link block="icon_bullet_stud" />
+               </elseif>
+               <elseif property="Draw Type" value="Draw">
+                  <link block="icon_bullet_draw" />
+               </elseif>
+               <elseif property="Draw Type" value="">
+                  <link block="icon_bullet_draw" />
+               </elseif>
+            </conditional>
+            <conditional>
+               <if property="Control" value="">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="icon_control" />
+               </else>               
+            </conditional>
+            <conditional>
+               <if property="Influence" value="">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="icon_influence" />
+               </else>               
+            </conditional>
+         </overlayblocks>
+         <textblocks>
+            <conditional>
+               <if property="Bullet Bonus" value="">
+                  <link block="dummy_text" separator=" ">
+                     <property name="Dummy"  />
+                  </link>
+               </if>
+               <else>
+                  <link block="bullet">
+                     <property name="Bullet Bonus" format="{}" />
+                  </link>
+               </else>
+            </conditional>
+            <conditional>
+               <if property="Control" value="">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="control">
+                     <property name="Control" format="+{}" />
+                  </link>
+               </else>               
+            </conditional>
+            <conditional>
+               <if property="Influence" value="">
+                  <link block="dummy" />
+               </if>
+               <else>
+                  <link block="influence">
+                     <property name="Influence" format="+{}" />
+                  </link>
+               </else>               
+            </conditional>
+            <link block="action_name">
+               <property name="Name"  />
+            </link>
+            <link block="cost">
+               <property name="Cost"  />
+            </link>
+            <link block="spell_text">
+               <property name="Text"  />
+            </link>
+            <link block="keywords" separator=" ">
+               <property name="Keywords" format=" " />
+            </link>
+         </textblocks>
+      </template>   
+   <!-- Spell Template -->
+      <template src="Proxy/spell.jpg">
+         <matches>
+            <match name="Type" value="Spell" />
+         </matches>
+         <overlayblocks>
+            <conditional>
+               <switch property="Rank">
+                  <case value="K">
+                     <link block="r_k" />
+                  </case>
+                  <case value="Q">
+                     <link block="r_q" />
+                  </case>
+                  <case value="J">
+                     <link block="r_j" />
+                  </case>
+                  <case value="10">
+                     <link block="r_10" />
+                  </case>
+                  <case value="9">
+                     <link block="r_9" />
+                  </case>
+                  <case value="8">
+                     <link block="r_8" />
+                  </case>
+                  <case value="7">
+                     <link block="r_7" />
+                  </case>
+                  <case value="6">
+                     <link block="r_6" />
+                  </case>
+                  <case value="5">
+                     <link block="r_5" />
+                  </case>
+                  <case value="4">
+                     <link block="r_4" />
+                  </case>
+                  <case value="3">
+                     <link block="r_3" />
+                  </case>
+                  <case value="2">
+                     <link block="r_2" />
+                  </case>
+                  <case value="A">
+                     <link block="r_a" />
+                  </case>
+               </switch>
+            </conditional>
+            <link block="hearts" />
+         </overlayblocks>
+         <textblocks>
+            <link block="spell_name">
+               <property name="Name"  />
+            </link>
+            <link block="cost">
+               <property name="Cost"  />
+            </link>
+            <link block="spell_text">
+               <property name="Text"  />
+            </link>
+            <link block="keywords" separator=" ">
+               <property name="Keywords" format=" " />
+            </link>
+         </textblocks>
+      </template>   
+   <!-- Joker Template -->
+      <template src="Proxy/joker.jpg">
+         <matches>
+            <match name="Type" value="Joker" />
+         </matches>
+         <overlayblocks>
+            <link block="joker_top_left" />
+            <link block="joker_top_right" />
+            <link block="joker_bot_left" />
+            <link block="joker_bot_right" />
+         </overlayblocks>
+         <textblocks>
+            <link block="joker_name" separator=" ">
+               <property name="Name"  />
+            </link>
+            <link block="joker_text" separator=" ">
+               <property name="Text"  />
+            </link>
+         </textblocks>
+      </template>
+   </templates>

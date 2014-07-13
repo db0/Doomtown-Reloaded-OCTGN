@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="b440d120-025a-4fbe-9f8d-3873acacb37b">
+  <section name="Outfit" shared="False">
+    <card qty="1" id="4137ced8-eb93-4ca6-9253-240b46b15886">The Fourth Ring</card>
+  </section>
+  <section name="Starting Cards" shared="False">
+    <card qty="1" id="d9a3a80d-deef-47a7-9a5a-e1c7e0109697">Steele Archer</card>
+    <card qty="1" id="d677fa1e-61f3-422a-9b95-745692c7b800">Ramiro Mendoza</card>
+    <card qty="1" id="1aa58444-fccc-4121-ac6c-482fd48e4b8e">Arnold McCadish</card>
+    <card qty="1" id="03341e26-42b4-4545-897e-8626de5e3dd7">Travis Moone</card>
+  </section>
+  <section name="Deck" shared="False">
+    <card qty="2" id="abb271cf-7cbb-4a15-bd45-0458366c6f65">Bobo</card>
+    <card qty="1" id="2419a7fc-569e-43bc-b5b7-360d41133e0c">Jia Mein</card>
+    <card qty="1" id="b072a22f-6c55-441f-8cce-4351038ed15c">Ivor Howley</card>
+    <card qty="1" id="03c50bb2-d027-4d02-b8b6-4bc542dceddb">Kevin Wainwright</card>
+    <card qty="2" id="e6db104b-d882-41c5-9285-84ed77a74eac">Tyxarglenak</card>
+    <card qty="1" id="91863a08-01d9-4b7e-9eff-0bb62826f433">The Ghostly Gun</card>
+    <card qty="1" id="6d31cb7e-a409-4256-8bba-26778de6c5f4">Micah Ryse</card>
+    <card qty="1" id="2871b5b3-fd14-40d1-90e5-f7ea4dae30ba">Avie Cline</card>
+    <card qty="1" id="f149dcc9-44a4-4399-8786-62d2496559e4">Eve Henry</card>
+    <card qty="1" id="077d03fd-1509-43a2-8844-c2bd8d62b837">Clint Ramsey</card>
+    <card qty="1" id="335662d9-0d7c-430e-a556-11693385f5aa">Steven Wiles</card>
+    <card qty="1" id="18866ac8-9a24-45d7-8f67-df20afdc2dbb">Mongwau the Mighty</card>
+    <card qty="2" id="452fd385-a516-45d9-8408-8628f4788fa5">Takin' Ya With Me</card>
+    <card qty="2" id="37d550e3-6bb5-4744-a544-fcbba0153780">Clear Out!</card>
+    <card qty="2" id="9ef9abea-373c-4265-b7fc-3d8391095f64">Recruitment Drive</card>
+    <card qty="2" id="6656eabf-4a69-4854-950d-f30d7771c4ae">A Coach Comes to Town</card>
+    <card qty="2" id="7a949a25-df55-47e3-9d6e-674b51cc0f0f">Hex Slingin'</card>
+    <card qty="2" id="72853004-7ce4-4d66-a486-fc28bb87a048">Magical Distraction</card>
+    <card qty="2" id="0eeba3c3-792a-4d39-879a-aab77b0f3981">Jackson's Strike</card>
+    <card qty="1" id="6560b478-c5fe-4717-a2d1-40ef7c6effa6">Carter's Bounties</card>
+    <card qty="2" id="84e33474-5247-4969-b7d1-e335b720a566">The Pharmacy</card>
+    <card qty="1" id="45438749-ab3b-4f88-adb3-8c3cc65cfd54">General Store</card>
+    <card qty="2" id="a8843dcd-cd66-4f38-b6a9-12fbf5fd8bba">Undertaker</card>
+    <card qty="1" id="d340ff50-aec3-4800-a993-c76c954c34a9">The Union Casino</card>
+    <card qty="1" id="75e35d17-de1e-457f-88e0-42e2bc9301bc">The Morgan Research Institute</card>
+    <card qty="2" id="597ff0fc-a578-4215-9c6d-c5452d387870">Blood Curse</card>
+    <card qty="2" id="bf1c8173-843a-4a20-be3b-f4ae650cfdd2">Soul Blast</card>
+    <card qty="2" id="f9714fff-14d9-433c-b2cc-05068006c388">Shadow Walk</card>
+    <card qty="1" id="cf239340-c794-4a91-a241-e3cbafec2f6e">Ace in the Hole</card>
+    <card qty="1" id="0ab4453e-e9bd-4899-96e1-1eb6757ecd94">Raising Hell</card>
+    <card qty="2" id="efaf839b-f06f-4aff-982b-a99ae00f340c">Buffalo Rifle</card>
+    <card qty="2" id="0482af4d-f834-4f73-88fc-9f57e44c465a">Doyle's Hoyle</card>
+    <card qty="1" id="1b4e7dec-5ff8-4407-9932-30ffd30c91fe">Joker</card>
+  </section>
+  <section name="Common" shared="True" />
+  <notes><![CDATA[This deck has a lot of tricks up its sleeves, primarily coming from all your hexes which allow you to respond to any situation
+However one of its great strengths is its shootout consistency for full-houses and four-of-a-kind. 
+Do not be afraid to let some lead fly, even with low-bullet dudes. Even if you lose by little, Arnold can save you.
+
+Your shootout Values are Jacks and Queens.
+]]></notes>
+</deck>

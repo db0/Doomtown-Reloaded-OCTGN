@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="b440d120-025a-4fbe-9f8d-3873acacb37b">
+  <section name="Outfit" shared="False">
+    <card qty="1" id="4f21000a-fb64-4e4b-8e8a-1c5d588dc577">Morgan Cattle Co.</card>
+  </section>
+  <section name="Starting Cards" shared="False">
+    <card qty="1" id="feb37a5b-a95c-4c03-92e0-acd27d7a3ef3">James Ghetty</card>
+    <card qty="1" id="03341e26-42b4-4545-897e-8626de5e3dd7">Travis Moone</card>
+    <card qty="1" id="8e50a03b-b42c-4207-9d0d-7a144ad31e3b">Elander Boldman</card>
+  </section>
+  <section name="Deck" shared="False">
+    <card qty="1" id="c263b2ff-3d4b-4beb-aa3b-d4e1f72e56ff">Lane Healey</card>
+    <card qty="1" id="f8437fa5-c088-41b2-b6c9-2060f69ec7be">Prof. Eustace True</card>
+    <card qty="2" id="0c0087d0-6356-44a4-8237-15f86573716a">Jon Longstride</card>
+    <card qty="1" id="c57efc28-77d3-492b-81ad-f3c5ce130041">Jarrett Blake</card>
+    <card qty="1" id="f64c8b68-0d63-4f5d-a898-f38576024f75">Harold Aimslee</card>
+    <card qty="1" id="cb15bd27-76a2-48db-b324-99589b14982b">Remy LaPointe</card>
+    <card qty="1" id="4ad6e3d4-3c6c-43a4-a612-293586609150">Max Baine</card>
+    <card qty="1" id="d9586ca6-50bc-446e-aa3b-fc84b0545dcd">Irving Patterson</card>
+    <card qty="1" id="335662d9-0d7c-430e-a556-11693385f5aa">Steven Wiles</card>
+    <card qty="1" id="f149dcc9-44a4-4399-8786-62d2496559e4">Eve Henry</card>
+    <card qty="1" id="36c91361-cab3-4988-bed2-2c3401746695">Dr. Dawn Edwards</card>
+    <card qty="1" id="ecfa0567-5576-427f-a829-a049e817f4b0">Androcles Brocklehurst</card>
+    <card qty="2" id="c20de5e3-daea-4dce-a8ce-eaa5349c8187">Flame-Thrower</card>
+    <card qty="2" id="40302c3e-668e-474f-a2ae-7ab1bbdf9d63">Rock-Powered Force Field</card>
+    <card qty="2" id="239ef52d-12a1-47b6-8838-28a8c021a251">Auto-Revolver</card>
+    <card qty="2" id="aa1dec3f-9913-4bf1-bbcd-5d29457f6a80">Mechanical Horse</card>
+    <card qty="2" id="9e712f98-1a8b-4137-997e-e61e6549102c">Pinto</card>
+    <card qty="2" id="ff6f51e6-ab2f-4fb9-8670-1715b278cc8c">Roan</card>
+    <card qty="1" id="20376d1c-4d9a-42ce-8b34-a95a175f1623">Auto-Cattle Feeder</card>
+    <card qty="2" id="2ad321e1-eaa0-4984-bdd0-a8d088045588">Blake Ranch</card>
+    <card qty="2" id="2cd7a17c-ce6a-4ffd-92b0-06fe310c7d6c">Cattle Market</card>
+    <card qty="2" id="ec741b63-8ac4-4b5a-9767-9854e05b91c3">Circle M Ranch</card>
+    <card qty="1" id="69ccb375-f660-4d91-a405-2103b578f100">Pat's Perch</card>
+    <card qty="1" id="75e35d17-de1e-457f-88e0-42e2bc9301bc">The Morgan Research Institute</card>
+    <card qty="1" id="fa907076-61c7-4f1f-b9a4-87a1df59bfae">Railroad Yard</card>
+    <card qty="1" id="45438749-ab3b-4f88-adb3-8c3cc65cfd54">General Store</card>
+    <card qty="1" id="08d1664d-5d98-4093-88c3-e93b0c6cc84f">Telegraph Office</card>
+    <card qty="1" id="d340ff50-aec3-4800-a993-c76c954c34a9">The Union Casino</card>
+    <card qty="1" id="6560b478-c5fe-4717-a2d1-40ef7c6effa6">Carter's Bounties</card>
+    <card qty="2" id="0672772c-7380-4b36-be78-1c7b23b3d950">Reserves</card>
+    <card qty="2" id="3a1296d2-79f5-4a8a-9ea3-cabc4564e9eb">Run 'Em Down!</card>
+    <card qty="2" id="b5fbbe61-aba3-4de7-b501-4feb1f9cf203">Pinned Down</card>
+    <card qty="2" id="d7e770dd-793f-4a53-a404-e3873a762ad1">Rumors</card>
+    <card qty="2" id="3029937b-17cc-4c87-a109-9888747f3134">Cheatin' Varmint</card>
+    <card qty="1" id="1b4e7dec-5ff8-4407-9932-30ffd30c91fe">Joker</card>
+  </section>
+  <section name="Common" shared="True" />
+  <notes><![CDATA[This is a deck based around Horses, Movement and Gadgets.
+Equip dudes while avoiding confontation in the early game, or avoiding disaster through the early GR you get from James Ghetty
+Once you have a few well equipped dudes (don't put all your eggs in one basket), make a bid for the control of town by dominating all shootouts in one turn.
+
+Your shootout values are 7s and 8s]]></notes>
+</deck>

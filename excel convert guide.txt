@@ -1,0 +1,29 @@
+==== ODS 2 XML Convert Procedure ====
+
+=== In Excel ===
+
+In the Text Column replace (regex): \n with &#xD;&#xA;
+
+
+=== In notepad++ (before putting in set.xml) ===
+Replace: & (whole word only) with &amp;
+Replace: " with &quot;
+Replace: ~ with "
+
+
+=== In set.xml ===
+
+<card id=
+    <card id=
+
+
+><property name="Rank"
+>\r\n         <property name="Rank"
+
+
+/><property name=
+/>\r\n         <property name=
+
+
+/></card>
+/>\r\n      </card>
