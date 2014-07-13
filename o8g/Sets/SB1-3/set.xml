@@ -343,8 +343,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Discard this card. Target a wanted dude in play. Set the dude's bounty to zero. &#xD;&#xA;Noon, 1GR: Ace this card. Choose a traget dude, who gains 2 bounty tokens." />
-         <property name="Instructions" value="" />
+         <property name="Text" value="Noon: Reduce a wanted dude's bounty to 0. Discard this card.&#xD;&#xA;Noon, Pay 1 Ghost Rock: Raise the bounty on a dude by 2. Ace this card." />
+         <property name="Instructions" value="Noon: Reduce a wanted dude's bounty to 0. Discard this card.||Noon, Pay 1 Ghost Rock: Raise the bounty on a dude by 2. Ace this card." />
       </card>
       <card id="18e06cc3-eb57-451a-ba28-18665727999d" name="Paralysis Mark">
          <property name="Rank" value="8" />

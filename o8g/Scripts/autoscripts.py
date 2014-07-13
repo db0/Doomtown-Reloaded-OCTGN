@@ -1038,6 +1038,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
       if (action.group(1) == 'Play' or  action.group(1) == 'Return') and targetCard.group == table and targetCard.isFaceUp: 
          targetCardlist += '{},'.format(targetCard.name) 
       else: targetCardlist += '{},'.format(targetCard)
+      if action.group(2) != 'Multi': break # If we're not doing a multi-targeting, we only mention the first target card's name.
    rnd(1,10) # Dela yto be able to grab the names
    debugNotify("Preparing targetCardlist",2)      
    targetCardlist = targetCardlist.strip(',') # Re remove the trailing comma
@@ -1065,7 +1066,17 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             whisper(":::ERROR::: {} is already in this shootout!".format(targetCard))
             return 'ABORT'
          elif action.group(1) == 'Unparticipate': leavePosse(targetCard)
-         elif action.group(1) == 'Callout' and callout(card, silent = True, targetDudes = targetCards): pass
+         elif action.group(1) == 'Callout':
+            leaderTarget = re.search(r"-leaderTarget\{(.+)\}", Autoscript)
+            if leaderTarget:
+               possibleTargets = findTarget("DemiAutoTargeted-at{}_and_not{}-choose1".format(leaderTarget.group(1),targetCard.name), card = targetCard,choiceTitle = "Choose which of your dudes performs the call out")
+               if not len(possibleTargets): 
+                  notify(":::ERROR::: No valid Target to move to found. Aborting!")
+                  return 'ABORT'
+               else: 
+                  callout(possibleTargets[0], silent = True, targetDudes = [targetCard])
+                  extraTXT = " with {}".format(possibleTargets[0])
+            else: callout(card, silent = True, targetDudes = [targetCard])
          elif action.group(1) == 'Return': 
             returnToHand(targetCard, silent = True)
             extraTXT = " to their owner's hand"
@@ -1084,7 +1095,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             if not moveTarget: 
                notify(":::ERROR::: No valid moveTarget. Aborting!")
                return 'ABORT'
-            possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard)
+            possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to")
             if not len(possibleTargets): 
                notify(":::ERROR::: No valid Target to move to found. Aborting!")
                return 'ABORT'
@@ -1482,7 +1493,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
    if not chkPlayer(Autoscript, card.controller, False, True, playerChk): 
       debugNotify("!!! Failing because not the right controller", 2)
       validCard = False
-   markerName = re.search(r'-hasMarker{([\w :]+)}',Autoscript) # Checking if we need specific markers on the card.
+   markerName = re.search(r'-hasMarker{([\w +:]+)}',Autoscript) # Checking if we need specific markers on the card.
    if markerName: #If we're looking for markers, then we go through each targeted card and check if it has any relevant markers
       debugNotify("Checking marker restrictions")# Debug
       debugNotify("Marker Name: {}".format(markerName.group(1)))# Debug
@@ -1491,7 +1502,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
       if not marker: 
          debugNotify("!!! Failing because it's missing marker", 2)
          validCard = False
-   markerNeg = re.search(r'-hasntMarker{([\w ]+)}',Autoscript) # Checking if we need to not have specific markers on the card.
+   markerNeg = re.search(r'-hasntMarker{([\w +:]+)}',Autoscript) # Checking if we need to not have specific markers on the card.
    if markerNeg: #If we're looking for markers, then we go through each targeted card and check if it has any relevant markers
       debugNotify("Checking negative marker restrictions")# Debug
       debugNotify("Marker Name: {}".format(markerNeg.group(1)))# Debug

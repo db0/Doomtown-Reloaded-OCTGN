@@ -1253,7 +1253,7 @@ Hunter Protections
 -----
 
 +++++
-
+GR0B1R0:BootTarget-Targeted-atDude-isUnbooted-hasntMarker{PermControl}-isCost$$Put2Bounty-Targeted-atDude-hasntMarker{PermControl}$$Put1PermControl-Targeted-atDude-hasntMarker{PermControl}
 .....
 Telepathy Helmet
 -----
@@ -1269,7 +1269,7 @@ d6c082a2-8e92-404b-b427-a1f7a7cab4aa
 -----
 
 +++++
-
+GR1G1R0:BootHost$$SimplyAnnounce{use the Plasma Drill}
 .....
 Puppet
 -----
@@ -1285,7 +1285,7 @@ The Evidence
 -----
 
 +++++
-
+GR0B0R0:Remove999Bounty-Targeted-atDude-hasMarker{Bounty}$$DiscardMyself||GR1B0R0:Put2Bounty-Targeted-atDude$$AceMyself
 .....
 Paralysis Mark
 -----
@@ -1299,7 +1299,7 @@ Paralysis Mark
 -----
 48c8526d-6dee-4ee8-9636-01d3891db8f8
 -----
-
+onPlay:CalloutTarget-Targeted-atDude-targetOpponents-leaderTarget{Dude}
 +++++
 
 .....
