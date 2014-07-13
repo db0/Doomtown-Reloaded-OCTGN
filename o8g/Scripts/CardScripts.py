@@ -1517,7 +1517,7 @@ Angela Payne
 -----
 
 +++++
-
+GR0B1R0:Gain2Ghost Rock
 .....
 Genesee "Gina" Tailfeathers
 -----
@@ -1525,7 +1525,7 @@ Genesee "Gina" Tailfeathers
 -----
 
 +++++
-
+GR0B0R1:DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Draw2Cards
 .....
 Richard Slavin
 -----
@@ -1533,7 +1533,7 @@ Richard Slavin
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Smiling Tom
 -----
@@ -1549,7 +1549,7 @@ f1012bb4-2429-4ec3-9b89-6ebcb3f94184
 -----
 
 +++++
-
+GR0B0R1:Draw1Card$$DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost
 .....
 Drew Beauman
 -----
@@ -1557,7 +1557,7 @@ Drew Beauman
 -----
 
 +++++
-
+GR0B0R1:PlayTarget-DemiAutoTargeted-fromHand-atGadget-choose1-payCost-isCost
 .....
 Allie Hensman
 -----
@@ -1565,7 +1565,7 @@ Allie Hensman
 -----
 
 +++++
-
+GR0B0R0:StartJob-DemiAutoTargeted-atDude-bootLeader-choose1-targetOpponents
 .....
 Milt Clemons
 -----
@@ -1589,7 +1589,7 @@ Dr. Arden Gillman
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Teleportation Device
 -----
@@ -1597,7 +1597,7 @@ Teleportation Device
 -----
 
 +++++
-
+GR1B1R0:Pull1Card
 .....
 Faithful Hound
 -----
@@ -1605,7 +1605,7 @@ bf48f3c1-bd08-4542-a8c6-6af0a8e7cfa4
 -----
 
 +++++
-
+GR1B1R0:Pull1Card
 .....
 Mayfair Family Deck
 -----
