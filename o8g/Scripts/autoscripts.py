@@ -1351,9 +1351,14 @@ def findTarget(Autoscript, fromHand = False, card = None): # Function for findin
          debugNotify("Checking for SingleChoice")# Debug
          if choiceType.group(1) == '1':
             if len(foundTargets) == 1: choice = 0 # If we only have one valid target, autoselect it.
+            #if len(foundTargets) == 1: foundTargets = foundTargets[0] # If we only have one valid target, autoselect it. # for askCard implementation
             else: choice = SingleChoice(choiceTitle, targetChoices, type = 'button', default = 0)
             if choice == None: del foundTargets[:]
             else: foundTargets = [foundTargets.pop(choice)] # if we select the target we want, we make our list only hold that target
+            #else:                                                               # for askCard implementation
+               #choice = askCard(foundTargets)                                   # for askCard implementation
+               #if choice: foundTargets = [askCard(foundTargets)]                # for askCard implementation
+               #else: del foundTargets[:]                                        # for askCard implementation
    if debugVerbosity >= 3: # Debug
       tlist = [] 
       for foundTarget in foundTargets: tlist.append(foundTarget.name) # Debug
