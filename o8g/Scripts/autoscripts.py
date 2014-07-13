@@ -168,12 +168,13 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
          if actionCostRegex.group(3) == '1' or not card.markers[mdict['UsedAbility']] or (card.markers[mdict['UsedAbility']] and confirm("You've already used {}'s Ability Bypass Restriction?".format(card.name))):
             if payCost(actionCostRegex.group(1), silent) != 'ABORT': 
                if executeAutoscripts(card,selectedAutoscript,action = 'USE') != 'ABORT':
-                  if actionCostRegex.group(2) == '1':
-                     if card.orientation == Rot0: boot(card, silent = True) # If the B cost is 1, card is supposed to boot.
-                     else: notify(":::WARN::: {} bypassed requirement to boot {} to use its ability".format(me,card))
-                  if actionCostRegex.group(3) == '0':
-                     if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 # If a card is repeat, we don't put a marker
-                     else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
+                  if card.group == table: # If the card is still on the table, then we take care of the other costs
+                     if actionCostRegex.group(2) == '1':
+                        if card.orientation == Rot0: boot(card, silent = True) # If the B cost is 1, card is supposed to boot.
+                        else: notify(":::WARN::: {} bypassed requirement to boot {} to use its ability".format(me,card))
+                     if actionCostRegex.group(3) == '0':
+                        if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 # If a card is repeat, we don't put a marker
+                        else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
                else:
                   if num(actionCostRegex.group(1)): 
                      #whisper(":::INFO::: Ability aborted. Returning ghost rock cost")

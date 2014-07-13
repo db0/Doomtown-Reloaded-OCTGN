@@ -1001,16 +1001,18 @@ def playcard(card,retainPos = False,costReduction = 0):
    if costReduction > num(card.Cost): costReduction = num(card.Cost)
    if card.Type == "Dude":
       chkHighNoon()
-      if not retainPos: 
-         if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
-         placeCard(card,'HireDude')
-      notify("{} has hired {}.".format(me, card)) # Inform of the new hire      
+      if chkGadgetCraft(card):
+         if not retainPos: 
+            if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
+            placeCard(card,'HireDude')
+         notify("{} has hired {}.".format(me, card)) # Inform of the new hire      
    elif card.Type == "Deed" :
       chkHighNoon()
-      if not retainPos: 
-         if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
-         placeCard(card,'BuyDeed')
-      notify("{} has acquired the deed to {}.".format(me, card))
+      if chkGadgetCraft(card):
+         if not retainPos: 
+            if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
+            placeCard(card,'BuyDeed')
+         notify("{} has acquired the deed to {}.".format(me, card))
    elif card.Type == "Goods" or card.Type == "Spell": # If we're bringing in any goods, just remind the player to pull for gadgets.
       chkHighNoon()
       hostCard = findHost(card)

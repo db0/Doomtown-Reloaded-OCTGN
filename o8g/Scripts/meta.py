@@ -230,6 +230,26 @@ def participateDude(card): # Marks a card as participating in a shootout.
                break
    return cardParticipated
    
+def chkGadgetCraft(card):
+   success = True
+   if re.search('Gadget', card.Keywords):
+      if confirm("You are trying to create a gadget {}. Would you like to do a gadget skill check at this point?".format(card.Type)):
+         myDudes = [dude for dude in table if dude.controller == me and dude.orientation == Rot0 and re.search(r'Mad Scientist',dude.Keywords)]
+         if not len(myDudes):
+            if confirm("You do not seem to have an available mad scientist to build this gadget. Abort the build?"):
+               success = False
+               return
+            else:
+               myDudes = [dude for dude in table if dude.controller == me and re.search(r'Mad Scientist',dude.Keywords)]
+         choice = SingleChoice('Choose one of your available Mad Scientists to build this gadget dude', makeChoiceListfromCardList(myDudes))
+         if choice != None: 
+            gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
+            myDudes[choice].orientation = Rot90
+            notify("{} attempted to manufacture a {} and pulled a {} {}".format(myDudes[choice],card,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+         else: notify("{} has built a {} without a gadget skill check.".format(me, card))
+      else: notify("{} has built a {} without a gadget skill check.".format(me, card))
+   return success
+   
 #---------------------------------------------------------------------------
 # Counter Manipulation
 #---------------------------------------------------------------------------

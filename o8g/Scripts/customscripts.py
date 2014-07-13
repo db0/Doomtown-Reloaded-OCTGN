@@ -194,6 +194,35 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          sweatedTXT = ' {} is booted.'.format(opDude[0])
       else: sweatedTXT = ''
       notify(":> {} boots to reduce {}'s bullets by {}.{}".format(myDude[0],opDude[0],bulletReduction,sweatedTXT))
+   elif card.name == "The R&D Ranch" and action == 'USE':
+      rank,suit = pull(silent = True)
+      if suit == 'Clubs':
+         notify(":> {} tries to use {} and pulled a {} of {}. It all goes horribly wrong! They have to discard the deed and all cards at that location".format(me,card,rank,suit))
+         if confirm("You pulled a club! Proceed to discard {}?".format(card.name)): discard(card)
+      else:
+         me.GhostRock += 2
+         notify(":> {} succesfully used {} by pulling a {} of {} and produced some very tasty meat indeed. They gain 2 ghost rock.".format(me,card,rank,suit))      
+   elif card.name == "Gang Yi" and action == 'USE':
+      if getGlobalVariable('Shootout') != 'True': 
+         whisper(":::ERROR::: {} can only use his shootout ability during shootouts".format(card))
+         return 'ABORT'
+      foundDude = False
+      for c in table:
+         if c.targetedBy and c.targetedBy == me and c.Type == 'Dude' and c.controller == me and (c.highlight == AttackColor or c.highlight == DefendColor): # If we've targeted a dude in a shootout
+            x,y = c.position
+            Jx,Jy = card.position
+            c.moveToTable(Jx,Jy)
+            card.moveToTable(x,y)
+            orgAttachments(card)
+            orgAttachments(c)
+            participateDude(card)
+            leavePosse(c)
+            foundDude = True
+            notify("{} switches places with {}".format(card,c))
+            break
+      if not foundDude: 
+         whisper(":::ERROR::: No dude targeted. Aborting!")
+         return 'ABORT'         
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -226,6 +255,7 @@ def markerEffects(Time = 'Start'):
          if (Time == 'ShootoutEnd'
                and (re.search(r'Sun In Yer Eyes',marker[0])
                  or re.search(r'Unprepared',marker[0])
+                 or re.search(r'Holy Wheel Gun Mark',marker[0])
                  or re.search(r'Shootout',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))

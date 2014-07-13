@@ -463,7 +463,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Public-Government" />
          <property name="Text" value="Controller Noon: Boot this deed to raise or lower the influence of a dude at this or an adjacent location by 1 until after Sundown." />
-         <property name="Instructions" value="" />
+         <property name="Instructions" value="Controller Noon: Boot this deed to raise the influence of a dude at this or an adjacent location by 1||Controller Noon: Boot this deed to lower the influence of a dude at this or an adjacent location by 1" />
       </card>
       <card id="36c80330-39fc-4fdc-8736-4c8d47758063" name="Jake Smiley">
          <property name="Rank" value="A" />

@@ -1325,7 +1325,7 @@ ce8a1161-2c83-4a6f-a0de-7a6c19b47a6e
 -----
 
 +++++
-
+GR0B1R0:CustomScript
 .....
 Baird's Build and Loan
 -----
@@ -1333,7 +1333,7 @@ Baird's Build and Loan
 -----
 
 +++++
-
+GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atDeed-choose1-payCost-reduc2
 .....
 The Mayor's Office
 -----
@@ -1341,7 +1341,7 @@ The Mayor's Office
 -----
 
 +++++
-
+GR0B1R0:Put1InfluencePlus-Targeted-atDude||GR0B1R0:Put1InfluenceMinus-Targeted-atDude
 .....
 Jake Smiley
 -----
@@ -1373,7 +1373,7 @@ Leonardo "Leon" Cavallo
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Mortimer Parsons
 -----
@@ -1389,7 +1389,7 @@ Gang Yi
 -----
 
 +++++
-
+GR0B0R0:CustomScript
 .....
 Angelica Espinosa
 -----
@@ -1397,7 +1397,7 @@ Angelica Espinosa
 -----
 
 +++++
-
+GR0B0R0:ParticipateMyself
 .....
 Jose Morales
 -----
@@ -1413,7 +1413,7 @@ Kyle Wagner
 -----
 
 +++++
-
+GR0B1R0:UnbootTarget-Targeted-atRanch-targetMine$$Remove1Used Abilityt-Targeted-atRanch-targetMine-isSilent
 .....
 Tallulah "Lula" Morgan
 -----
@@ -1421,7 +1421,7 @@ Tallulah "Lula" Morgan
 -----
 
 +++++
-
+GR1B1R0:Gain1Ghost Rock-perTargetProperty{Production}-Targeted-atDeed-targetMine
 .....
 Ballot Counter
 -----
@@ -1429,7 +1429,7 @@ ffed2e8d-67cf-42ab-8a34-110110b59c72
 -----
 
 +++++
-
+GR1B0R1:Put1InfluencePlus
 .....
 Holy Wheel Gun
 -----
@@ -1437,7 +1437,7 @@ dba818f0-4802-474c-91c8-07536e32fb3d
 -----
 
 +++++
-
+GR0B1R0:Put1BulletShootoutMinus-Targeted-atDude-isParticipating$$Put1Holy Wheel Gun Mark-Targeted-atAbomination-isParticipating-noTargetingError
 .....
 Stone Idol
 -----
@@ -1445,7 +1445,7 @@ f94631b0-20f6-492b-b732-e36b816e523f
 -----
 
 +++++
-
+GR0B1R0:Put3ValueMinus-Targeted-atDude
 .....
 Corporeal Twist
 -----
@@ -1469,13 +1469,13 @@ cd378a50-f1c7-4a1f-a99d-80436806feea
 -----
 
 +++++
-
+onPlay:BootTarget-DemiAutoTargeted-atHorse-isUnbooted-targetMine-choose1-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
 .....
 Tail Between Yer Legs
 -----
 ff26cca7-830f-440a-90cd-08e32c629d7e
 -----
-
+onPlay:Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1
 +++++
 
 .....
@@ -1483,7 +1483,7 @@ Election Day Slaughter
 -----
 25787651-53b5-456e-bb42-8f38fd7b3caf
 -----
-
+onPlay:StartJob-AutoTargeted-atTown Square
 +++++
 
 .....
@@ -1501,7 +1501,7 @@ cdc1e1d2-d985-400f-ab3c-f91744619eed
 -----
 
 +++++
-
+GR0B1R0:MoveTarget-DemiAutoTargeted-atDude-targetMine-moveToDeed_or_Town Square_or_Outfit
 .....
 QUATERMAN
 -----
