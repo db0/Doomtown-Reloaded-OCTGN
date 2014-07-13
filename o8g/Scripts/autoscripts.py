@@ -1236,7 +1236,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
 # Helper Functions
 #------------------------------------------------------------------------------
        
-def findTarget(Autoscript, fromHand = False, card = None): # Function for finding the target of an autoscript
+def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None): # Function for finding the target of an autoscript
    debugNotify(">>> findTarget(){}".format(extraASDebug(Autoscript))) #Debug
    debugNotify("fromHand = {}. card = {}".format(fromHand,card)) #Debug
    if fromHand == True or re.search(r'-fromHand',Autoscript): group = me.hand
@@ -1346,8 +1346,9 @@ def findTarget(Autoscript, fromHand = False, card = None): # Function for findin
          debugNotify("Going for a choice menu")# Debug
          choiceType = re.search(r'-choose([0-9]+)',Autoscript)
          targetChoices = makeChoiceListfromCardList(foundTargets)
-         if not card: choiceTitle = "Choose one of the valid targets for this effect"
-         else: choiceTitle = "Choose one of the valid targets for {}'s ability".format(card.name)
+         if not choiceTitle:
+            if not card: choiceTitle = "Choose one of the valid targets for this effect"
+            else: choiceTitle = "Choose one of the valid targets for {}'s ability".format(card.name)
          debugNotify("Checking for SingleChoice")# Debug
          if choiceType.group(1) == '1':
             if len(foundTargets) == 1: choice = 0 # If we only have one valid target, autoselect it.

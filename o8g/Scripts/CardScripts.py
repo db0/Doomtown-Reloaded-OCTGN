@@ -1127,6 +1127,510 @@ b999405d-e2ca-4703-beda-67f9697fc977
 +++++
 GR0B1R0:Put1InfluencePlus-Targeted-atDude
 .....
+Wilber Crowley
+-----
+c765b5ba-c7b1-491c-b504-fcce730bb8a0
+-----
+
++++++
+
+.....
+Roderick Byre
+-----
+0203a928-b0b6-4a95-8e71-d82b02a48e9a
+-----
+
++++++
+
+.....
+Dulf Zug
+-----
+77653869-e142-4428-8595-c74886e8c8c8
+-----
+
++++++
+
+.....
+Slade Lighboy
+-----
+d9aefb8f-ea66-4782-8fee-1e5c88c257af
+-----
+
++++++
+GR0B0R0:AceTarget-DemiAutoTargeted-atSpell-onAttachment-isBooted-choose1-isCost$$Pull1Card
+.....
+Rafi Hamid
+-----
+dec376dc-2dcd-4cb8-b1ae-9c4dc7c7dd7e
+-----
+
++++++
+GR0B0R0:MoveTarget-Targeted-atDeputy-moveToGovernment$$ParticipateTarget-Targeted-atDeputy
+.....
+Wylie Jenks
+-----
+cbb6be72-e387-4742-99cb-b5681e88de82
+-----
+
++++++
+
+.....
+Ulysses Marks
+-----
+15fda041-c825-4278-a5de-15bc00cab80d
+-----
+
++++++
+GR0B0R0:MoveTarget-Targeted-atDude-moveToTown Square$$BootTarget-Targeted-atDude
+.....
+Alice Stowe
+-----
+55257be5-9428-4699-8df6-9b397f9fe258
+-----
+
++++++
+
+.....
+Dr. Emanuel Ashbel
+-----
+17760a8d-adc3-40cc-9c85-578b7f2b30c5
+-----
+
++++++
+GR0B0R0:Pull1Cards
+.....
+Lillian Morgan
+-----
+32f4797f-7584-453c-b6a3-9cf3656dcc96
+-----
+onParticipation:Put3Ghost Rock||onUnparticipation:Remove999Ghost Rock-isSilent
++++++
+GR0B0R1:Remove1Ghost Rock-isCost-isSilent$$Gain1Ghost Rock
+.....
+Back Ways
+-----
+ef91b1f5-46b8-4246-8e58-401a39ebbf6f
+-----
+onPlay:MoveTarget-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit
++++++
+
+.....
+Hired Help
+-----
+1b68d5c9-e336-4822-aeb9-5ca0cace82a8
+-----
+onPlay:Spawn1Gunslinger-modAction:ParticipateMyself
++++++
+
+.....
+Too Much Attention
+-----
+519a9e2e-56e9-42a2-8cda-64d1a7cd934f
+-----
+onPlay:BootTarget-Targeted
++++++
+
+.....
+Make 'em Sweat
+-----
+7bb386d8-73a0-4d31-bbd1-5204fcde0302
+-----
+onPlay:CustomScript
++++++
+
+.....
+Hustings
+-----
+3045a35c-8567-40bc-9a59-2fabacd8b3e4
+-----
+
++++++
+
+.....
+Hunter Protections
+-----
+1f6dc79e-65ad-4727-bf8e-1c42eee98fe1
+-----
+
++++++
+
+.....
+Telepathy Helmet
+-----
+b65c9b55-7a81-4052-87dd-70eb515b8b2f
+-----
+
++++++
+
+.....
+Plasma Drill
+-----
+d6c082a2-8e92-404b-b427-a1f7a7cab4aa
+-----
+
++++++
+
+.....
+Puppet
+-----
+146c6a48-ffb5-4201-b07e-74e5560da771
+-----
+
++++++
+
+.....
+The Evidence
+-----
+9687ab08-0ae9-4a15-8304-6e9797edc87e
+-----
+
++++++
+
+.....
+Paralysis Mark
+-----
+18e06cc3-eb57-451a-ba28-18665727999d
+-----
+
++++++
+
+.....
+..It's who you know
+-----
+48c8526d-6dee-4ee8-9636-01d3891db8f8
+-----
+
++++++
+
+.....
+Horse Wranglin'
+-----
+f51e5631-7582-492f-8351-e1e808d39d19
+-----
+
++++++
+
+.....
+It's Not What You Know...
+-----
+a23d36e0-8231-49e7-bbc4-4e56c179b045
+-----
+
++++++
+
+.....
+The R&amp;D Ranch
+-----
+ce8a1161-2c83-4a6f-a0de-7a6c19b47a6e
+-----
+
++++++
+
+.....
+Baird's Build and Loan
+-----
+949e9f9d-bc65-4486-b115-a1d364aaae0d
+-----
+
++++++
+
+.....
+The Mayor's Office
+-----
+90568a28-333b-4836-b55c-8ebbef266ad1
+-----
+
++++++
+
+.....
+Jake Smiley
+-----
+36c80330-39fc-4fdc-8736-4c8d47758063
+-----
+
++++++
+
+.....
+Mario Crane
+-----
+6203abc7-7882-4718-a361-33cf1cf90df0
+-----
+
++++++
+
+.....
+The Brute
+-----
+13cdc52f-986e-4f3b-b053-c3261267790d
+-----
+
++++++
+
+.....
+Leonardo "Leon" Cavallo
+-----
+90b3fbde-2834-4c49-9577-1d8723feadd4
+-----
+
++++++
+
+.....
+Mortimer Parsons
+-----
+e0434a23-02b1-406b-a683-0b230b73111d
+-----
+
++++++
+
+.....
+Gang Yi
+-----
+631a3c9a-b970-47f5-a196-c078ad913d56
+-----
+
++++++
+
+.....
+Angelica Espinosa
+-----
+08fbd7c6-0413-4b5b-872e-a9ba16e3276d
+-----
+
++++++
+
+.....
+Jose Morales
+-----
+1e61fcd0-65fa-414f-8838-d76f1394b041
+-----
+
++++++
+
+.....
+Kyle Wagner
+-----
+826655e8-00b7-43ae-a3fb-4cea781176ad
+-----
+
++++++
+
+.....
+Tallulah "Lula" Morgan
+-----
+434353cb-3040-4709-a7d5-e4f36006128b
+-----
+
++++++
+
+.....
+Ballot Counter
+-----
+ffed2e8d-67cf-42ab-8a34-110110b59c72
+-----
+
++++++
+
+.....
+Holy Wheel Gun
+-----
+dba818f0-4802-474c-91c8-07536e32fb3d
+-----
+
++++++
+
+.....
+Stone Idol
+-----
+f94631b0-20f6-492b-b732-e36b816e523f
+-----
+
++++++
+
+.....
+Corporeal Twist
+-----
+8272e52f-aa01-403e-9ea4-0408bdcf3fdc
+-----
+
++++++
+
+.....
+Forget
+-----
+0857fa1d-c061-4606-bb55-4736edcfd2e9
+-----
+
++++++
+
+.....
+Ridden Down
+-----
+cd378a50-f1c7-4a1f-a99d-80436806feea
+-----
+
++++++
+
+.....
+Tail Between Yer Legs
+-----
+ff26cca7-830f-440a-90cd-08e32c629d7e
+-----
+
++++++
+
+.....
+Election Day Slaughter
+-----
+25787651-53b5-456e-bb42-8f38fd7b3caf
+-----
+
++++++
+
+.....
+Town Council
+-----
+aa9e21f5-9a84-479b-90f8-497b6084467b
+-----
+
++++++
+
+.....
+Surveyor's Office
+-----
+cdc1e1d2-d985-400f-ab3c-f91744619eed
+-----
+
++++++
+
+.....
+QUATERMAN
+-----
+144991c0-f3f4-4914-a075-ab2093991411
+-----
+
++++++
+
+.....
+Angela Payne
+-----
+6b01cb98-4ae3-4b6e-b7d1-29fe035c9e2d
+-----
+
++++++
+
+.....
+Genesee "Gina" Tailfeathers
+-----
+437cd8a9-fe8a-497f-9625-9054511f91ea
+-----
+
++++++
+
+.....
+Richard Slavin
+-----
+68b6d3d2-207c-47ed-9311-0949f86308b9
+-----
+
++++++
+
+.....
+Smiling Tom
+-----
+d90e5abe-ed12-4dad-9007-16aa47afa2cc
+-----
+
++++++
+
+.....
+Philip Swinford
+-----
+f1012bb4-2429-4ec3-9b89-6ebcb3f94184
+-----
+
++++++
+
+.....
+Drew Beauman
+-----
+19fc7ff8-d4da-492f-8a41-7a838490c9e4
+-----
+
++++++
+
+.....
+Allie Hensman
+-----
+28c37361-c5ac-4561-b1bc-5f41113e0625
+-----
+
++++++
+
+.....
+Milt Clemons
+-----
+cd99ead2-3b50-4989-8331-59f76b5edb0b
+-----
+
++++++
+
+.....
+Arvid Mardh
+-----
+33b97a88-5b7f-4073-8e30-5c66da9060c5
+-----
+
++++++
+
+.....
+Dr. Arden Gillman
+-----
+95b9d8df-a95d-4b5e-aeed-98f8e99ca5a5
+-----
+
++++++
+
+.....
+Teleportation Device
+-----
+28d66d3e-bc96-4c2c-9ebb-38dfabceb440
+-----
+
++++++
+
+.....
+Faithful Hound
+-----
+bf48f3c1-bd08-4542-a8c6-6af0a8e7cfa4
+-----
+
++++++
+
+.....
+Mayfair Family Deck
+-----
+68310bec-735a-46bc-be6c-949e26bc5758
+-----
+
++++++
+
+.....
+Fetch
+-----
+f138c8f1-00cc-4ca4-b145-e9c5105dc76a
+-----
+
++++++
+
+.....
+Summoning
+-----
+791de7a5-3292-43cd-b907-40f737dc8600
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''

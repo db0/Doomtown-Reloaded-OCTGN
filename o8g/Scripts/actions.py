@@ -220,7 +220,9 @@ def clearShootout(remoted = False):
       setGlobalVariable('Job Active','False')
    for card in table:
       if card.controller == me:
-         if card.highlight == DefendColor or card.highlight == AttackColor or card.highlight == InitiateColor: card.highlight = None
+         if card.highlight == DefendColor or card.highlight == AttackColor or card.highlight == InitiateColor: 
+            card.highlight = None
+            executePlayScripts(card, 'UNPARTICIPATE')
          card.markers[mdict['BulletShootoutPlus']] = 0 
          card.markers[mdict['BulletShootoutMinus']] = 0 
          if card.model == '94fe7823-077c-4abd-9278-6e64bda6dc64': delCard(card) # If it's a gunslinger token, we remove it from the game.
