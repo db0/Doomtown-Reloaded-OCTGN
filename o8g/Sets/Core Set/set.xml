@@ -193,7 +193,7 @@
          <property name="Text" value="After this is invented, attach it to a Ranch that you control.#xD;&#xA;Controller Noon, Boot: Gain 1 ghost rock." />
          <property name="Instructions" value="" />
       </card>
-      <card id="239ef52d-12a1-47b6-8838-28a8c021a251" name="Automatic Mini-Revolver">
+      <card id="239ef52d-12a1-47b6-8838-28a8c021a251" name="Auto-Revolver">
          <property name="Rank" value="7" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -584,7 +584,7 @@
          <property name="Text" value="Noon: Clyde calls out a dude at his location. A wanted dude cannot refuse the call out." />
          <property name="Instructions" value="" />
       </card>
-      <card id="0c41f0c4-2491-4723-8cf9-d8ab3e071e05" name="Coachwhip">
+      <card id="0c41f0c4-2491-4723-8cf9-d8ab3e071e05" name="Coachwhip!">
          <property name="Rank" value="4" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -1706,7 +1706,7 @@
          <property name="Text" value="Prescott’s bullets and influence are equal to the number of Law Dogs at his location (including himself)." />
          <property name="Instructions" value="" />
       </card>
-      <card id="f8437fa5-c088-41b2-b6c9-2060f69ec7be" name="Prof Eustace True">
+      <card id="f8437fa5-c088-41b2-b6c9-2060f69ec7be" name="Prof. Eustace True">
          <property name="Rank" value="4" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -1910,7 +1910,7 @@
          <property name="Text" value="Noon Hex 7, Boot: Move this Huckster to any location.#xD;&#xA;Shootout Hex 7, Boot: Move this Huckster to join your posse. You may make another Shootout play." />
          <property name="Instructions" value="" />
       </card>
-      <card id="2af1e511-ca73-4f12-a1ae-9a7a340738da" name="Sherriff Dave Montreal">
+      <card id="2af1e511-ca73-4f12-a1ae-9a7a340738da" name="Sheriff Dave Montreal">
          <property name="Rank" value="K" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -2063,7 +2063,7 @@
          <property name="Text" value="Shootout: Choose a dude in this shootout. That dude gets –2 bullets (minimum 0) and becomes a draw." />
          <property name="Instructions" value="" />
       </card>
-      <card id="452fd385-a516-45d9-8408-8628f4788fa5" name="Takin' Yer With Me">
+      <card id="452fd385-a516-45d9-8408-8628f4788fa5" name="Takin' Ya With Me">
          <property name="Rank" value="Q" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -2131,7 +2131,7 @@
          <property name="Text" value="Resolution: Put The Ghostly Gun into your draw hand; he becomes the suit and value of your choice. Discard a card from your draw hand." />
          <property name="Instructions" value="" />
       </card>
-      <card id="75e35d17-de1e-457f-88e0-42e2bc9301bc" name="The Morgan Research Institute">
+      <card id="75e35d17-de1e-457f-88e0-42e2bc9301bc" name="Morgan Research Institute">
          <property name="Rank" value="9" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />

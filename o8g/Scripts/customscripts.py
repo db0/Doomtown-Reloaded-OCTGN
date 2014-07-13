@@ -54,7 +54,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       drawhandMany(me.Deck, 5, True,scripted = True)
       resultTXT = revealHand(me.piles['Draw Hand'], type = 'shootout', event = None, silent = True)
       notify("{}'s new hand rank is {}".format(targetPL,resultTXT))
-   elif card.name == "Coachwhip" and action == 'PLAY':
+   elif card.name == "Coachwhip!" and action == 'PLAY':
       debugNotify("Coachwhip Script")
       targetDude = [c for c in table if c.targetedBy and c.targetedBy == me and c.controller != me and c.Type == 'Dude']
       if not len(targetDude): notify(":> No target selected. Cheating player has to select one of their dudes to boot or ace")
