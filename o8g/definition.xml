@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-      name="DT-Test" 
+      name="DT Test" 
       id="7fd3eeac-4916-4644-bd7d-e1f5ff6faaa5" 
       octgnVersion="3.1.0.0"
-      version="0.5.0.2" 
+      version="0.5.1.0" 
       markersize="16"
       tags="western deadlands poker maneuvering multiplayer"
-      description="A western themed card game, marying poker mechanics, town building, and chess-like maneuvering.
-      &#xD;&#xD;&#xD;Doomtown has players taking the part of gangs, called 'outfits,' trying to gain control of the California boomtown known as Gomorra, in the same Weird West setting as the popular Deadlands RPG.
-      &#xD;&#xD;This game works very well for more than 2 players.
-      &#xd;&#xd;Automation rank: A
-      &#xd;(This game definition contains significant automation of cards and common actions to reduce tediousness amd speed up play.)"
+      description="Le Test"
       setsurl="http://octgn.gamersjudgement.com/wordpress/doomtown/sets/"
       gameurl="http://octgn.gamersjudgement.com/wordpress/doomtown"
       authors="Db0"
