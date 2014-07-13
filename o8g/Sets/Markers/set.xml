@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <set name="Markers &amp; Tokens" id="49f27cd8-8398-4165-b7e7-f93497f0c54b" 
-     gameId="b440d120-025a-4fbe-9f8d-3873acacb37b" version="3.0.4" gameVersion="3.0.4"
+     gameId="7fd3eeac-4916-4644-bd7d-e1f5ff6faaa5" version="3.0.4" gameVersion="3.0.4"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="CardSet.xsd">
   <markers>
     <marker name="Bounty"                             id="0a5fabc8-fe56-481a-b45a-a9ad6917d0d9"/>

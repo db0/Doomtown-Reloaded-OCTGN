@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <game xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
       xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
-      name="Doomtown-Reloaded" 
-      id="b440d120-025a-4fbe-9f8d-3873acacb37b" 
+      name="DT-Test" 
+      id="7fd3eeac-4916-4644-bd7d-e1f5ff6faaa5" 
       octgnVersion="3.1.0.0"
-      version="1.0.0.2" 
+      version="0.5.0.2" 
       markersize="16"
       tags="western deadlands poker maneuvering multiplayer"
       description="A western themed card game, marying poker mechanics, town building, and chess-like maneuvering.
