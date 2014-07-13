@@ -363,7 +363,7 @@ def upkeep(group, x = 0, y = 0): # Automatically receive production and pay upke
                              # I could have made their bank account negative and let them modify it manually, but I think this way is better.
          notify("{} has {}GR in their bank but needs to pay {}GR for upkeep ({}). No GR has been taken but please discard enough cards with upkeep and reduce your remaining Ghost Rock manually.".format(me, me.GhostRock, upk, concat_upk))
       else: # If we can pay the upkeep, do so.
-         notify("{} has paid {} upkeed in total this turn. {}".format(me, upk, concat_upk)) #Inform the players how much they paid and for what.
+         notify("{} has paid {} upkeep in total this turn. {}".format(me, upk, concat_upk)) #Inform the players how much they paid and for what.
          me.GhostRock -= upk # Finally take the money out of their bank
          
 def HNActivate(card, x = 0, y = 0): # A function to add or remove High Noon (HN) markers. 
@@ -427,8 +427,15 @@ def HandRankGuide(group, x = 0, y = 0): # Put the Hand Rank guide onto the table
    HRG = table.create("851b726b-3b0c-43df-bbd7-710b5a0ffbf6", x, y, 1)   
     
 def inspectCard(card, x = 0, y = 0): # This function shows the player the card text, to allow for easy reading until High Quality scans are procured.
-   confirm("{}".format(card.Text))
-
+   if card.Text == '': information("{} has no text".format(card.name))
+   else: information("{}".format(card.Text))
+   
+def inspectTarget(table, x = 0, y = 0): # This function shows the player the card text, to allow for easy reading until High Quality scans are procured.
+   for c in table:
+      if c.targetedBy and c.targetedBy == me: 
+         if c.Text == '': information("{} has no text".format(c.name))
+         else: information("{}".format(c.Text))
+   
 def reCalculate(group = table, x = 0, y = 0, notification = 'loud'): 
 # This function will calculate the amount of influence and Control you have on the table and update your counters. 
    mute()

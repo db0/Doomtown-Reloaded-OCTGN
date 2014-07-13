@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.0.1.x
+
+* Added inspect function (Ctrl+I)
+
 ### 1.0.0.x
 
 Doomtown:Reloaded is now available on OCTGN!
