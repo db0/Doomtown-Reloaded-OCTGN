@@ -377,7 +377,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: One of your dudes calls out an opposing dude at their location. All dudes in both posses use their influence rather than their normal bullet rating for the shootout." />
+         <property name="Text" value="Noon: One of your dudes calls out an opposing dude at their location. All dudes in both posses use their influence rather than their normal bullet rating for the shootout. Your dude becomes a stud for this shootout." />
          <property name="Instructions" value="" />
       </card>
       <card id="f51e5631-7582-492f-8351-e1e808d39d19" name="Horse Wranglin'">
@@ -394,8 +394,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Search your deck and discard pile for a Horse and attach it to one of your unbooted dudes, paying all costs." />
-         <property name="Instructions" value="" />
+         <property name="Text" value="Noon: Search your deck and/or discard pile for a Horse. You may attach it to one of your unbooted dudes (paying all costs)." />
+         <property name="Instructions" value="onPlay[Search your deck|-|Search your discard pile]" />
       </card>
       <card id="a23d36e0-8231-49e7-bbc4-4e56c179b045" name="It's Not What You Know...">
          <property name="Rank" value="Q" />
@@ -412,7 +412,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
          <property name="Text" value="Resolution: Reduce any player's hand rank by 1.&#xD;&#xA;If targeting an opponent who revealed an illegal play hand, you may instead reduce the hand rank by 4 and this card is a Cheatin'! card." />
-         <property name="Instructions" value="" />
+         <property name="Instructions" value="onPlay[Resolution: Lower a player’s draw hand by 1 rank.|-|Cheatin’ Resolution: Lower a player’s draw hand by 4 ranks.]" />
       </card>
       <card id="ce8a1161-2c83-4a6f-a0de-7a6c19b47a6e" name="The R&amp;D Ranch">
          <property name="Rank" value="6" />

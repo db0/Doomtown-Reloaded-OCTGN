@@ -1227,7 +1227,16 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       debugNotify("chosenCList: {}".format(chosenCList))
       if not abortedRetrieve:   
          for c in chosenCList:
-            if destination == table: placeCard(c)
+            if destination == table: 
+               if re.search(r'-payCost',Autoscript): # This modulator means the script is going to pay for the card normally
+                  preReducRegex = re.search(r'-reduc([0-9])',Autoscript) # this one means its going to reduce the cost a bit.
+                  if preReducRegex: preReduc = num(preReducRegex.group(1))
+                  else: preReduc = 0
+                  playcard(c,costReduction = preReduc)
+               else:
+                  placeCard(c)
+                  executePlayScripts(c, 'PLAY') # We execute the play scripts here only if the card is 0 cost.
+                  autoscriptOtherPlayers('CardPlayed',c)            
             else: c.moveTo(destination)
       source.removeViewer(me)
       if abortedRetrieve: #If the player canceled a retrieve effect from R&D / Stack, we make sure to shuffle their pile as well.

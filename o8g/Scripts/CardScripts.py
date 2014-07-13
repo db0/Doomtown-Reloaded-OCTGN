@@ -237,7 +237,7 @@ Cheatin' Varmint
 -----
 
 +++++
-
+onPlay:Pay5Ghost Rock-isCost$$SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}||SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}
 .....
 Circle M Ranch
 -----
@@ -1307,7 +1307,7 @@ Horse Wranglin'
 -----
 f51e5631-7582-492f-8351-e1e808d39d19
 -----
-
+onPlay:Retrieve1Cards-grabHorse-toTable-payCost||onPlay:Retrieve1Cards-grabHorse-toTable-payCost-fromDiscard
 +++++
 
 .....
@@ -1317,7 +1317,7 @@ a23d36e0-8231-49e7-bbc4-4e56c179b045
 -----
 
 +++++
-
+onPlay:SimplyAnnounce{Reduce a player's draw rank by 1 hand rank}||SimplyAnnounce{Reduce a player's draw rank by 4 hand ranks}
 .....
 The R&amp;D Ranch
 -----

@@ -461,21 +461,21 @@ def findHost(card):
    hostCards = eval(getGlobalVariable('Host Cards'))
    if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('Targeted-atDeed-isUnbooted-targetMine') # First we try to do a limited search, in case they forgot too many cards targeted
    elif card.type == 'Spell':
-      if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Huckster-isUnbooted-targetMine') 
-      elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Blessed-isUnbooted-targetMine') 
-      elif re.search(r'Shaman',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Shaman-isUnbooted-targetMine') 
-      else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine') 
-   else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine') 
+      if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Huckster-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
+      elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Blessed-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to get this inspired with this Miracle") 
+      elif re.search(r'Shaman',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Shaman-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to communicate with this Spirit") 
+      else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Spell") 
+   else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to receive these goods") 
    if len(potentialHosts) == 0: # If they haven't targeted a normally valid card, we try to discover one they've just targeted anyway
-      potentialHosts = findTarget('Targeted-atDeed_or_Dude') # If they manually targeted a card, we let them go through with it, in case they know something we don't
+      potentialHosts = findTarget('Targeted-atDeed_or_Dude',choiceTitle = "Choose one of your dudes to attach this {}".format(card.Type)) # If they manually targeted a card, we let them go through with it, in case they know something we don't
    if len(potentialHosts) == 0: # If they haven't targeted a card, we try to discover one
       if type == 'Improvement': potentialHosts = findTarget('DemiAutoTargeted-atDeed-isUnbooted-choose1') 
       elif card.type == 'Spell':
-         if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Huckster-isUnbooted-choose1-targetMine') 
-         elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Blessed-isUnbooted-choose1-targetMine') 
-         elif re.search(r'Shaman',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Shaman-isUnbooted-choose1-targetMine') 
-         else: potentialHosts = findTarget('DemiAutoTargeted-atDude-isUnbooted-choose1-targetMine') 
-      else: potentialHosts = findTarget('DemiAutoTargeted-atDude-isUnbooted-choose1') 
+         if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Huckster-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
+         elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Blessed-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to get inspired with this Miracle") 
+         elif re.search(r'Shaman',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Shaman-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to communicate with this Spirit") 
+         else: potentialHosts = findTarget('DemiAutoTargeted-atDude-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to learn this Spell") 
+      else: potentialHosts = findTarget('DemiAutoTargeted-atDude-isUnbooted-choose1',choiceTitle = "Choose one of your dudes to receive these goods") 
    debugNotify("Finished gatherting potential hosts",2)
    if len(potentialHosts) == 0: # If they still didn't select a target, we abort.
       delayed_whisper(":::ERROR::: Please Target a valid dude for these goods")

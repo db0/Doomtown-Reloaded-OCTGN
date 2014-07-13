@@ -514,7 +514,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
          <property name="Text" value="Resolution: Pay 5 ghost rock to lower a player’s draw hand by 2 ranks.#xD;&#xA;Cheatin’ Resolution: Lower a player’s draw hand by 2 ranks." />
-         <property name="Instructions" value="" />
+         <property name="Instructions" value="onPlay[Resolution: Pay 5 ghost rock to lower a player’s draw hand by 2 ranks.|-|Cheatin’ Resolution: Lower a player’s draw hand by 2 ranks.]" />
       </card>
       <card id="ec741b63-8ac4-4b5a-9767-9854e05b91c3" name="Circle M Ranch">
          <property name="Rank" value="8" />
