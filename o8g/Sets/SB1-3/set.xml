@@ -71,7 +71,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Huckster 2" />
-         <property name="Text" value="React: After this dude fails a spell pull, pull again and use that value instead. The spell is aced after determining success (if it is still in play)." />
+         <property name="Text" value="React: After Slade fails a Hex pull, pull again and use that value instead. Ace the Hex after determining success (if any)." />
          <property name="Instructions" value="" />
       </card>
       <card id="dec376dc-2dcd-4cb8-b1ae-9c4dc7c7dd7e" name="Rafi Hamid">
@@ -88,7 +88,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Deputy" />
-         <property name="Text" value="Shootout: Move any number of your Deputies into your posse at a Government deed." />
+         <property name="Text" value="Shootout: One or more of your Deputies in any location(s) joins your posse at a Government deed (moving if necessary)" />
          <property name="Instructions" value="" />
       </card>
       <card id="cbb6be72-e387-4742-99cb-b5681e88de82" name="Wylie Jenks">
@@ -105,7 +105,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Deputy" />
-         <property name="Text" value="This dude has +1 bullet for each dude in the opposing posse with a bounty." />
+         <property name="Text" value="Wylie has +1 bullet for each wanted dude in the opposing posse." />
          <property name="Instructions" value="" />
       </card>
       <card id="15fda041-c825-4278-a5de-15bc00cab80d" name="Ulysses Marks">
@@ -122,7 +122,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="While this dude is at a Saloon, it is worth 1 additional Control Point.  &#xD;&#xA;Noon: If this dude is at a Saloon, target another dude at the same location. Move the target to the Town Square, booted." />
+         <property name="Text" value="While Ulysses is at a Saloon, the Saloon gets 1 additional control point.&#xD;&#xA;Noon: If Yluses is at a Saloon, move another dude at the same location to the Town Square, booted." />
          <property name="Instructions" value="" />
       </card>
       <card id="55257be5-9428-4699-8df6-9b397f9fe258" name="Alice Stowe">
@@ -139,7 +139,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="If another player calls out one of your dudes with a bounty, you may move this dude to that location." />
+         <property name="Text" value="If one of your wanted dudes accepts a call-out, Alice may join the posse from any location (without booting, and even while booted)" />
          <property name="Instructions" value="" />
       </card>
       <card id="17760a8d-adc3-40cc-9c85-578b7f2b30c5" name="Dr. Emanuel Ashbel">
@@ -156,7 +156,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
-         <property name="Text" value="React, Pull: When a dude is aced, if the pull is higher than the dude’s value, discard them instead." />
+         <property name="Text" value="React: When a dude is aced, pull. if the pull is higher than the dude’s value, discard them instead." />
          <property name="Instructions" value="" />
       </card>
       <card id="32f4797f-7584-453c-b6a3-9cf3656dcc96" name="Lillian Morgan">
@@ -173,7 +173,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Huckster 2" />
-         <property name="Text" value="When this dude enters a posse put 3GR on her. You can use these GR during this shootout only. Discard any leftover GR after the shootout ends.&#xD;&#xA;Shootout: Target any number of your dudes and pay 1 GR for each. Move each target into this posse." />
+         <property name="Text" value="When this dude enters a posse place 3 ghost rock on her. The ghost rock may be used to pay for Shootout abilities (it is not a bounty). Discard her unused ghost rock after the shootout.&#xD;&#xA;Shootout, Pay X Ghost Rock: X of your dudes in any location(s) join Lillian's posse (moving if necessary)." />
          <property name="Instructions" value="" />
       </card>
       <card id="ef91b1f5-46b8-4246-8e58-401a39ebbf6f" name="Back Ways">
@@ -190,7 +190,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Move your wanted dude to another location." />
+         <property name="Text" value="Noon: Move your wanted dude to another location (without booting)." />
          <property name="Instructions" value="" />
       </card>
       <card id="1b68d5c9-e336-4822-aeb9-5ca0cace82a8" name="Hired Help">
@@ -207,7 +207,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout: A gunslinger token dude joins your posse.  The dude is an Ace value, 2 stud, 0 Influence token dude." />
+         <property name="Text" value="Shootout: A 2-stud Gunslinger token enters play and joins your posse." />
          <property name="Instructions" value="" />
       </card>
       <card id="519a9e2e-56e9-42a2-8cda-64d1a7cd934f" name="Too Much Attention">
@@ -224,7 +224,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Boot a card worth one or more Control Points or Bounty counters." />
+         <property name="Text" value="Noon: Boot a wanted dude.&#xD;&#xA;Noon:Boot a card worth one of more control points." />
          <property name="Instructions" value="" />
       </card>
       <card id="7bb386d8-73a0-4d31-bbd1-5204fcde0302" name="Make 'em Sweat">
@@ -241,7 +241,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout: Boot your dude to reduce another dude's bullet rating by your dude's bullet rating. If their bullet rating is now 0 boot them." />
+         <property name="Text" value="Shootout: Boot your dude to reduce another dude's bullet rating by your dude's bullet rating. If their bullet rating is 0 (or less) boot them." />
          <property name="Instructions" value="" />
       </card>
       <card id="3045a35c-8567-40bc-9a59-2fabacd8b3e4" name="Hustings">
@@ -258,7 +258,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Public-Government" />
-         <property name="Text" value="All dudes other than the controller's have -1 influence while unbooted at home." />
+         <property name="Text" value="All dudes not controlled by this deed's controller have -1 influence while unbooted at home." />
          <property name="Instructions" value="" />
       </card>
       <card id="1f6dc79e-65ad-4727-bf8e-1c42eee98fe1" name="Hunter Protections">
@@ -275,7 +275,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
-         <property name="Text" value="Controller Noon, Boot: Boot your dude at this location. Give them 1 Control Point if they do not already have one.  Raise the bounty on that dude by 2." />
+         <property name="Text" value="Controller Noon, Boot: Boot your dude without a control point dude at this location. Raise their bounty by 2. They permanently gain 1 control point." />
          <property name="Instructions" value="" />
       </card>
       <card id="b65c9b55-7a81-4052-87dd-70eb515b8b2f" name="Telepathy Helmet">
