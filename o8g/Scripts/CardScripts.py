@@ -1269,7 +1269,7 @@ d6c082a2-8e92-404b-b427-a1f7a7cab4aa
 -----
 
 +++++
-GR1G1R0:BootHost$$SimplyAnnounce{use the Plasma Drill}
+GR1B1R0:BootHost-isCost$$UseCustomAbility
 .....
 Puppet
 -----

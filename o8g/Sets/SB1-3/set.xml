@@ -292,7 +292,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget-Difficulty 4" />
-         <property name="Text" value="If you are the Winner, this dude cannot be affected by opponent’s shootout abilities.&#xD;&#xA;Repeat Noon, 1GR: Look at another player’s hand." />
+         <property name="Text" value="If you are the Winner, this dude cannot be affected by opponent’s shootout abilities.&#xD;&#xA;Repeat Noon, 1GR: Look at a player’s hand." />
          <property name="Instructions" value="" />
       </card>
       <card id="d6c082a2-8e92-404b-b427-a1f7a7cab4aa" name="Plasma Drill">
@@ -309,7 +309,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget-Difficulty 8" />
-         <property name="Text" value="Noon, 1GR, Boot this dude: Target a deed at an adjacent location. Its owner must pay GR equal to its production or discard it. (If it is discarded, any dudes there go home booted.)" />
+         <property name="Text" value="Noon, Pay 1 Ghost Rock, Boot: Boot this dude and choose a deed at an adjacent location to have its owner pay GR equal to its production. If they cannot or do not, discard the deed." />
          <property name="Instructions" value="" />
       </card>
       <card id="146c6a48-ffb5-4201-b07e-74e5560da771" name="Puppet">

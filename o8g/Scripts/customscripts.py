@@ -23,9 +23,15 @@
 
 def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notification = None, n = 0):
    mute()
+   announceString = ''
    debugNotify(">>> UseCustomAbility() with Autoscript: {}".format(Autoscript)) #Debug
-   if card.name == "Mara Jade": 
-      remoteCall(card.controller,'MaraJade',[card])
+### SB1-3 ###
+   if card.name == "Plasma Drill":
+      targetDeed = findTarget('Targeted-atDeed',card = card)
+      if len(targetDeed) == 0: return 'ABORT'
+      production = compileCardStat(targetDeed[0], stat = 'Production')
+      if not production: notify(":> {} uses the plasma drill on, but it has no production, so that was fairly useless, wasn't it?".format(me))
+      else: remoteCall(targetDeed[0].owner,'PlasmaDrill',[targetDeed[0]])      
       announceString = ''
    else: announceString = announceText 
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
@@ -300,3 +306,16 @@ def UnionCasino(card,mainBet,targetDude, function = 'others bet'):
             notify(":> {} outbid all other players by {} and thus {} gains a permanent control point".format(me,mainBet - highBet,targetDude))
          else: notify(":> {} checked the bet by raising {} to {}'s {}".format(me,highBet,card.controller,mainBet))
             
+def PlasmaDrill(card):
+   mute()
+   production = compileCardStat(card, stat = 'Production')
+   if production > me.GhostRock: extraTXT = "\n\nAttention! You do not seem to have enough Ghost Rock to save this deed from the Plasma Drill. Pay anyway?\
+                                          \n(Saying yes will bring your ghost rock bank to the negative)"                                          
+   else: extraTXT = ''
+   if confirm("Do you want to pay {} to save {} from the Plasma Drill?{}".format(production,card.name,extraTXT)) and payCost(production) != 'ABORT': 
+      notify(":> {} pays {} to repair {} from the damage inflicted by the Plasma Drill".format(me,production,card))
+   else:
+      discard(card,silent = True)
+      notify(":> {} is damaged beyond repair by the plasma drill and is discarded".format(card))
+                               
+                               

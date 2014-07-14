@@ -270,13 +270,14 @@ def modVP(count = 1, notification = silent): # Same as above but for Control Poi
    me.VictoryPoints += count
    if notification == 'loud' and count > 0: notify("{}'s victory points have increased by {}. New total is {}".format(me, count, me.VictoryPoints))         
 
-def payCost(count = 1, notification = silent): # Same as above for Ghost Rock. However we also check if the cost can actually be paid.
+def payCost(count = 1, notification = silent, MSG = None): # Same as above for Ghost Rock. However we also check if the cost can actually be paid.
    count = num(count)
+   if not MSG: MSG = "You do not seem to have enough Ghost Rock in your bank to play this card. Are you sure you want to proceed? \
+                    \n(If you do, your GR will go to the negative. You will need to increase it manually as required.)"
    if count == 0 : return # If the card has 0 cost, there's nothing to do.
    if me.GhostRock < count: # If we don't have enough Ghost Rock in the bank, we assume card effects or mistake and notify the player that they need to do things manually.
       if notification == loud: 
-         if not confirm("You do not seem to have enough Ghost Rock in your bank to play this card. Are you sure you want to proceed? \
-         \n(If you do, your GR will go to the negative. You will need to increase it manually as required.)"): return 'ABORT'
+         if not confirm(MSG): return 'ABORT'
          notify("{} was supposed to pay {} Ghost Rock but only has {} in their bank. They'll need to reduce the cost by {} with card effects.".format(me, count, me.GhostRock, count - me.GhostRock))   
          me.GhostRock -= num(count)
       else: me.GhostRock -= num(count) 
@@ -586,7 +587,7 @@ def fetchCardScripts(group = table, x=0, y=0, silent = False): # Creates 2 dicti
    ### Note to self. Switching on Debug Verbosity here tends to crash the game.probably because of bug #596
    global CardsAA, CardsAS # Global dictionaries holding Card AutoActions and Card autoScripts for all cards.
    if not silent: whisper("+++ Fetching fresh scripts. Please Wait...")
-   if len(getPlayers()) > 0 and debugVerbosity < 0: # Skipping this always for now.
+   if len(getPlayers()) > 5 and debugVerbosity < 0: # Skipping this always for now.
       try: (ScriptsDownload, code) = webRead('https://raw.github.com/db0/Doomtown-Reloaded-OCTGN/master/o8g/Scripts/CardScripts.py',5000)
       except: 
          if debugVerbosity >= 0: notify("Timeout Error when trying to download scripts")
