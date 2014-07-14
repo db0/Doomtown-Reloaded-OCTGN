@@ -168,12 +168,13 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
          if actionCostRegex.group(3) == '1' or not card.markers[mdict['UsedAbility']] or (card.markers[mdict['UsedAbility']] and confirm("You've already used {}'s Ability Bypass Restriction?".format(card.name))):
             if payCost(actionCostRegex.group(1), silent) != 'ABORT': 
                if executeAutoscripts(card,selectedAutoscript,action = 'USE') != 'ABORT':
-                  if actionCostRegex.group(2) == '1':
-                     if card.orientation == Rot0: boot(card, silent = True) # If the B cost is 1, card is supposed to boot.
-                     else: notify(":::WARN::: {} bypassed requirement to boot {} to use its ability".format(me,card))
-                  if actionCostRegex.group(3) == '0':
-                     if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 # If a card is repeat, we don't put a marker
-                     else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
+                  if card.group == table: # If the card is still on the table, then we take care of the other costs
+                     if actionCostRegex.group(2) == '1':
+                        if card.orientation == Rot0: boot(card, silent = True) # If the B cost is 1, card is supposed to boot.
+                        else: notify(":::WARN::: {} bypassed requirement to boot {} to use its ability".format(me,card))
+                     if actionCostRegex.group(3) == '0':
+                        if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 # If a card is repeat, we don't put a marker
+                        else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
                else:
                   if num(actionCostRegex.group(1)): 
                      #whisper(":::INFO::: Ability aborted. Returning ghost rock cost")
@@ -1038,6 +1039,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
       if (action.group(1) == 'Play' or  action.group(1) == 'Return') and targetCard.group == table and targetCard.isFaceUp: 
          targetCardlist += '{},'.format(targetCard.name) 
       else: targetCardlist += '{},'.format(targetCard)
+      if action.group(2) != 'Multi': break # If we're not doing a multi-targeting, we only mention the first target card's name.
    rnd(1,10) # Dela yto be able to grab the names
    debugNotify("Preparing targetCardlist",2)      
    targetCardlist = targetCardlist.strip(',') # Re remove the trailing comma
@@ -1065,7 +1067,17 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             whisper(":::ERROR::: {} is already in this shootout!".format(targetCard))
             return 'ABORT'
          elif action.group(1) == 'Unparticipate': leavePosse(targetCard)
-         elif action.group(1) == 'Callout' and callout(card, silent = True, targetDudes = targetCards): pass
+         elif action.group(1) == 'Callout':
+            leaderTarget = re.search(r"-leaderTarget\{(.+)\}", Autoscript)
+            if leaderTarget:
+               possibleTargets = findTarget("DemiAutoTargeted-at{}_and_not{}-choose1".format(leaderTarget.group(1),targetCard.name), card = targetCard,choiceTitle = "Choose which of your dudes performs the call out")
+               if not len(possibleTargets): 
+                  notify(":::ERROR::: No valid Target to move to found. Aborting!")
+                  return 'ABORT'
+               else: 
+                  callout(possibleTargets[0], silent = True, targetDudes = [targetCard])
+                  extraTXT = " with {}".format(possibleTargets[0])
+            else: callout(card, silent = True, targetDudes = [targetCard])
          elif action.group(1) == 'Return': 
             returnToHand(targetCard, silent = True)
             extraTXT = " to their owner's hand"
@@ -1084,7 +1096,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             if not moveTarget: 
                notify(":::ERROR::: No valid moveTarget. Aborting!")
                return 'ABORT'
-            possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard)
+            possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to")
             if not len(possibleTargets): 
                notify(":::ERROR::: No valid Target to move to found. Aborting!")
                return 'ABORT'
@@ -1216,7 +1228,16 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       debugNotify("chosenCList: {}".format(chosenCList))
       if not abortedRetrieve:   
          for c in chosenCList:
-            if destination == table: placeCard(c)
+            if destination == table: 
+               if re.search(r'-payCost',Autoscript): # This modulator means the script is going to pay for the card normally
+                  preReducRegex = re.search(r'-reduc([0-9])',Autoscript) # this one means its going to reduce the cost a bit.
+                  if preReducRegex: preReduc = num(preReducRegex.group(1))
+                  else: preReduc = 0
+                  playcard(c,costReduction = preReduc)
+               else:
+                  placeCard(c)
+                  executePlayScripts(c, 'PLAY') # We execute the play scripts here only if the card is 0 cost.
+                  autoscriptOtherPlayers('CardPlayed',c)            
             else: c.moveTo(destination)
       source.removeViewer(me)
       if abortedRetrieve: #If the player canceled a retrieve effect from R&D / Stack, we make sure to shuffle their pile as well.
@@ -1236,7 +1257,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
 # Helper Functions
 #------------------------------------------------------------------------------
        
-def findTarget(Autoscript, fromHand = False, card = None): # Function for finding the target of an autoscript
+def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None): # Function for finding the target of an autoscript
    debugNotify(">>> findTarget(){}".format(extraASDebug(Autoscript))) #Debug
    debugNotify("fromHand = {}. card = {}".format(fromHand,card)) #Debug
    if fromHand == True or re.search(r'-fromHand',Autoscript): group = me.hand
@@ -1346,14 +1367,20 @@ def findTarget(Autoscript, fromHand = False, card = None): # Function for findin
          debugNotify("Going for a choice menu")# Debug
          choiceType = re.search(r'-choose([0-9]+)',Autoscript)
          targetChoices = makeChoiceListfromCardList(foundTargets)
-         if not card: choiceTitle = "Choose one of the valid targets for this effect"
-         else: choiceTitle = "Choose one of the valid targets for {}'s ability".format(card.name)
+         if not choiceTitle:
+            if not card: choiceTitle = "Choose one of the valid targets for this effect"
+            else: choiceTitle = "Choose one of the valid targets for {}'s ability".format(card.name)
          debugNotify("Checking for SingleChoice")# Debug
          if choiceType.group(1) == '1':
             if len(foundTargets) == 1: choice = 0 # If we only have one valid target, autoselect it.
+            #if len(foundTargets) == 1: foundTargets = foundTargets[0] # If we only have one valid target, autoselect it. # for askCard implementation
             else: choice = SingleChoice(choiceTitle, targetChoices, type = 'button', default = 0)
             if choice == None: del foundTargets[:]
             else: foundTargets = [foundTargets.pop(choice)] # if we select the target we want, we make our list only hold that target
+            #else:                                                               # for askCard implementation
+               #choice = askCard(foundTargets)                                   # for askCard implementation
+               #if choice: foundTargets = [askCard(foundTargets)]                # for askCard implementation
+               #else: del foundTargets[:]                                        # for askCard implementation
    if debugVerbosity >= 3: # Debug
       tlist = [] 
       for foundTarget in foundTargets: tlist.append(foundTarget.name) # Debug
@@ -1476,7 +1503,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
    if not chkPlayer(Autoscript, card.controller, False, True, playerChk): 
       debugNotify("!!! Failing because not the right controller", 2)
       validCard = False
-   markerName = re.search(r'-hasMarker{([\w :]+)}',Autoscript) # Checking if we need specific markers on the card.
+   markerName = re.search(r'-hasMarker{([\w +:]+)}',Autoscript) # Checking if we need specific markers on the card.
    if markerName: #If we're looking for markers, then we go through each targeted card and check if it has any relevant markers
       debugNotify("Checking marker restrictions")# Debug
       debugNotify("Marker Name: {}".format(markerName.group(1)))# Debug
@@ -1485,7 +1512,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
       if not marker: 
          debugNotify("!!! Failing because it's missing marker", 2)
          validCard = False
-   markerNeg = re.search(r'-hasntMarker{([\w ]+)}',Autoscript) # Checking if we need to not have specific markers on the card.
+   markerNeg = re.search(r'-hasntMarker{([\w +:]+)}',Autoscript) # Checking if we need to not have specific markers on the card.
    if markerNeg: #If we're looking for markers, then we go through each targeted card and check if it has any relevant markers
       debugNotify("Checking negative marker restrictions")# Debug
       debugNotify("Marker Name: {}".format(markerNeg.group(1)))# Debug

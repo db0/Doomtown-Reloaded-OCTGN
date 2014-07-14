@@ -521,8 +521,8 @@ def findMarker(card, markerDesc): # Goes through the markers on the card and loo
    foundKey = None
    if markerDesc in mdict: markerDesc = mdict[markerDesc][0] # If the marker description is the code of a known marker, then we need to grab the actual name of that.
    for key in card.markers:
-      if debugVerbosity >= 3: notify("### Key: {}\nmarkerDesc: {}".format(key[0],markerDesc)) # Debug
-      if re.search(r'{}'.format(markerDesc),key[0]) or markerDesc == key[0]:
+      debugNotify("### Key: {}\nmarkerDesc: {}".format(key[0],markerDesc)) # Debug
+      if re.search(r'{}'.format(markerDesc.replace('+','\+')),key[0]) or markerDesc == key[0]: # We need to replace any '+' in the marker names to escaped \+ otherwise the regex statement gets confused
          foundKey = key
          if debugVerbosity >= 2: notify("### Found {} on {}".format(key[0],card))
          break
