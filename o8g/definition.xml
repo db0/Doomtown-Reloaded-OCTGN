@@ -11,7 +11,7 @@
       setsurl="http://octgn.gamersjudgement.com/wordpress/doomtown/sets/"
       gameurl="http://octgn.gamersjudgement.com/wordpress/doomtown"
       authors="Db0"
-      iconurl="https://raw.github.com/db0/Doomtown-Reloaded-OCTGN/master/DTR_logo.jpg"
+      iconurl="https://raw.github.com/db0/Doomtown-Reloaded-OCTGN/master/dummy.jpg"
       usetwosidedtable="False">
 	<scripts>
       <script src="Scripts/constants.py" />
