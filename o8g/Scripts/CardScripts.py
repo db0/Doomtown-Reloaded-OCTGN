@@ -37,7 +37,7 @@ cf239340-c794-4a91-a241-e3cbafec2f6e
 -----
 
 +++++
-GR0B1R0:Pull1Card
+GR0B1R0:BootHost-isCost$$Pull1Card
 .....
 Allie Hensman
 -----
