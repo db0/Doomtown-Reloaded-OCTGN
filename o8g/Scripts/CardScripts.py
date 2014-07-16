@@ -37,7 +37,7 @@ cf239340-c794-4a91-a241-e3cbafec2f6e
 -----
 
 +++++
-GR0B1R0:BootHost-isCost$$Pull1Card-testHex6-spellEffects<AceTarget-DemiAutoTargeted-isDrawHand-choose1++SendToDrawTarget-DemiAutoTargeted-fromHand-choose1,None>
+GR0B1R0:BootHost-isCost$$Pull1Card-testHex6-spellEffects<AceTarget-DemiAutoTargeted-isDrawHand-choose1-isCost++SendToDrawTarget-DemiAutoTargeted-fromHand-choose1,None>
 .....
 Allie Hensman
 -----
@@ -157,7 +157,7 @@ Blood Curse
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHex9-spellEffects<Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>
+GR0B1R0:Pull1Card-testHex9-spellEffects<Put2BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents,None>-onlyInShootouts||GR0B1R0:Pull1Card-testHex9-spellEffects<Put1BulletNoonMinus-Targeted-atDude-targetOpponents++Put1InfluenceMinus-Targeted-atDude-targetOpponents,None>-onlyInNoon
 .....
 Bluetick
 -----
@@ -813,7 +813,7 @@ Raising Hell
 -----
 
 +++++
-GR0B1R0:Pull1Card
+GR0B1R0:Pull1Card-testHex8-spellEffects<AceTarget-DemiAutoTargeted-fromHand++Retrieve1Card-fromBootHill-toTable-grabAbomination-payCost,None>-onlyInShootouts
 .....
 Ramiro Mendoza
 -----
@@ -885,7 +885,7 @@ f9714fff-14d9-433c-b2cc-05068006c388
 -----
 
 +++++
-GR0B1R0:Pull1Card
+GR0B1R0:Pull1Card-testHex7-spellEffects<MoveHost-moveToDude_or_Deed_or_Town Square_or_Outfit++ParticipateHost,None>-onlyInShootouts||GR0B1R0:Pull1Card-testHex7-spellEffects<MoveHost-moveToDeed_or_Town Square_or_Outfit,None>-onlyInNoon
 .....
 Sherriff Dave Montreal
 -----
@@ -925,7 +925,7 @@ bf1c8173-843a-4a20-be3b-f4ae650cfdd2
 -----
 
 +++++
-GR0B1R0:Pull1Card
+GR0B1R0:Pull1Card-testHexX-difficultyGrit-spellEffects<SendHomeBootedTarget-DemiAutoTargeted-isParticipating-choose1,SendHomeBootedHost>
 .....
 Stagecoach Office
 -----

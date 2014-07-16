@@ -126,6 +126,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       x,y = targetDeed[0].position
       boot(targetDude[0],forced = 'boot')
       targetDude[0].moveToTable(x + cardDistance(), y)
+      orgAttachments(targetDude[0])
       notify("{} uses {} and boots {} to build {}, reducing its cost by {}.".format(me,card,targetDude[0],targetDeed[0],reduction))      
    elif card.name == "The Union Casino" and action == 'USE':
       targetDude = findTarget('Targeted-atDude-isUnbooted')

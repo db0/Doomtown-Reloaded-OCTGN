@@ -138,9 +138,7 @@ def compileCardStat(card, stat = 'Influence'):
    elif stat == 'Control':
       count = num(card.properties[stat])
       count += card.markers[mdict['PermControl']] + card.markers[mdict['ControlPlus']] - card.markers[mdict['ControlMinus']]
-   elif stat == 'Value':
-      count = calcValue(card.properties[stat],'numeral')
-      count += card.markers[mdict['ValuePlus']] - card.markers[mdict['ValueMinus']]
+   elif stat == 'Value': count = calcValue(card,'numeral')
    elif stat == 'Production':
       count = num(card.properties[stat])
       count += card.markers[mdict['ProdPlus']] - card.markers[mdict['ProdMinus']]
@@ -170,20 +168,6 @@ def fetchDrawType(card): # We go through effects which change their draw value i
    return drawType
    
 def calcValue(card, type = 'poker'):
-   numvalue = numrank(card.Rank) + card.markers[mdict['ValuePlus']] - card.markers[mdict['ValueMinus']]
-   if type == 'raw': return numvalue
-   if numvalue > 12 and type == 'numeral': return 13
-   if numvalue > 12: return 'K'
-   if numvalue == 12 and type == 'numeral': return 12
-   if numvalue == 12: return 'Q'
-   if numvalue == 11 and type == 'numeral': return 11
-   if numvalue == 11: return 'J'
-   if numvalue == 1 and type == 'numeral': return 1
-   if numvalue == 1: return 'A'
-   if numvalue < 1: return 0
-   return numvalue
-
-def calcRank(rank):
    numvalue = numrank(card.Rank) + card.markers[mdict['ValuePlus']] - card.markers[mdict['ValueMinus']]
    if type == 'raw': return numvalue
    if numvalue > 12 and type == 'numeral': return 13

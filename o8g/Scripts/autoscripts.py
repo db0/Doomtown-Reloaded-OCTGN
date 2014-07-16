@@ -141,6 +141,8 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
    AutoScriptSnapshot = list(Autoscripts)
    for autoS in AutoScriptSnapshot: # Checking and removing any clickscripts which were put here in error.
       if not chkDummy(autoS, card): Autoscripts.remove(autoS)
+      if re.search(r'-onlyInShootouts',autoS) and getGlobalVariable('Shootout') != 'True': Autoscripts.remove(autoS)
+      if re.search(r'-onlyInNoon',autoS) and getGlobalVariable('Shootout') == 'True': Autoscripts.remove(autoS)      
    debugNotify("Removed bad options")
    if len(Autoscripts) == 0:
       whisper("This card has no automated abilities. Aborting")
@@ -574,17 +576,17 @@ def TokensX(Autoscript, announceText, card, targetCards = None, notification = N
             modtokens = -count * multiplier
          debugNotify("About to check if it's a basic token to remove")
          if token == mdict['BulletShootoutPlus']: plusBulletShootout(targetCard,count = modtokens) # We use the existing functions, because they also remove conflicting markers
-         elif token == mdict['BulletShootoutMinus']: minusBulletShootout(targetCard,count = modtokens)
-         elif token == mdict['BulletNoonPlus']: plusBulletNoon(targetCard,count = modtokens)
-         elif token == mdict['BulletNoonMinus']: minusBulletNoon(targetCard,count = modtokens)
-         elif token == mdict['InfluencePlus']: plusInfluence(targetCard,count = modtokens)
-         elif token == mdict['InfluenceMinus']: minusInfluence(targetCard,count = modtokens)
-         elif token == mdict['ControlPlus']: plusControl(targetCard,count = modtokens)
-         elif token == mdict['ControlMinus']: minusControl(targetCard,count = modtokens)
-         elif token == mdict['ValuePlus']: plusValue(targetCard,valuemod = modtokens)
-         elif token == mdict['ValueMinus']: minusValue(targetCard,valuemod = modtokens)
-         elif token == mdict['ProdPlus']: modProd(targetCard,count = modtokens)
-         elif token == mdict['ProdMinus']: modProd(targetCard,count = -modtokens)
+         elif token == mdict['BulletShootoutMinus']: minusBulletShootout(targetCard,silent = True, count = modtokens)
+         elif token == mdict['BulletNoonPlus']: plusBulletNoon(targetCard,silent = True,count = modtokens)
+         elif token == mdict['BulletNoonMinus']: minusBulletNoon(targetCard,silent = True,count = modtokens)
+         elif token == mdict['InfluencePlus']: plusInfluence(targetCard,silent = True,count = modtokens)
+         elif token == mdict['InfluenceMinus']: minusInfluence(targetCard,silent = True,count = modtokens)
+         elif token == mdict['ControlPlus']: plusControl(targetCard,silent = True,count = modtokens)
+         elif token == mdict['ControlMinus']: minusControl(targetCard,silent = True,count = modtokens)
+         elif token == mdict['ValuePlus']: plusValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ValueMinus']: minusValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ProdPlus']: modProd(targetCard,silent = True,count = modtokens)
+         elif token == mdict['ProdMinus']: modProd(targetCard,silent = True,count = -modtokens)
          else: targetCard.markers[token] += modtokens # Finally we apply the marker modification
    if abs(num(action.group(2))) == abs(999): total = 'all'
    else: total = abs(modtokens)
@@ -850,9 +852,18 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
             elif iter == num(action.group(1)) - 1: announceString += " and a {} {}".format(fullrank(rank), fullsuit(suit))
             else: announceString += ", a {} {}".format(fullrank(rank), fullsuit(suit))
          else: remoteCall(targetPL,'pull',[])
-   spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit)([0-9]+|X)', Autoscript)
+   spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit)([0-9]+|X)', Autoscript)      
    spellResolved = None
    if spellDifficulty and rank and suit: # We only check for spell effects if we got a rank and suit result.
+      if spellDifficulty.group(2) == 'X':
+         if not len(targetCards): 
+            whisper(":::ERROR::: No target to get variable difficulty found. Aborting!")
+            return 'ABORT'
+         difficultyTarget = re.search(r'difficulty(Grit|Value)',Autoscript)
+         if difficultyTarget.group(1) == 'Grit':  # Git is the dude's current value + bullets + influence
+            difficulty = compileCardStat(targetCards[0], 'Influence') + compileCardStat(targetCards[0], 'Bullets') + compileCardStat(targetCards[0], 'Value')
+         else: difficulty = compileCardStat(targetCards[0], 'Value') # If it's not grit, the only other option (for now) is value
+      else: difficulty = num(spellDifficulty.group(2))  # If it's not a variable difficulty, then we just set the numeric value for it
       skilledDude = fetchHost(card)
       skills = fetchSkills(skilledDude)
       neededSkill = None
@@ -862,7 +873,8 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
              or skill[0] == 'Blessed' and spellDifficulty.group(1) == 'Miracle'
              or skill[0] == 'Spirit' and spellDifficulty.group(1) == 'Shaman'):
             neededSkill = skill
-      if neededSkill[1] + numrank(rank, True) >= num(spellDifficulty.group(2)): spellResolved = '. {} succeeds the {} skill test by {}'.format(skilledDude,neededSkill[0],neededSkill[1] + numrank(rank, True) - num(spellDifficulty.group(2))) # If the spell is succesful, we want to mention it, before we mention its results
+      numericRank = numrank(rank, True) # Setting it in advance so that it does't ask the value of a joker twice
+      if neededSkill[1] + numericRank >= difficulty: spellResolved = '. {} succeeds the {} skill test by {}'.format(skilledDude,neededSkill[0],neededSkill[1] + numericRank - difficulty) # If the spell is succesful, we want to mention it, before we mention its results
       elif spellEffects.group(2) != '': spellResolved = '. {} fails the {} skill test'.format(skilledDude,neededSkill[0])
       if not neededSkill: whisper(":::ERROR::: Oops, something went wrong. Can't find the required skill on this dude. Aborting!")
    debugNotify("About to announce.")
@@ -1190,6 +1202,9 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       if re.search(r'-fromDiscard', Autoscript):
          source = targetPL.piles['Discard Pile']
          sourcePath =  "from their Discard Pile"
+      elif re.search(r'-fromBootHill', Autoscript):
+         source = targetPL.piles['Boot Hill']
+         sourcePath =  "from their Boot Hill"
       else: 
          source = targetPL.piles['Deck']
          sourcePath =  "from their Deck"
@@ -1206,8 +1221,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       debugNotify("Fething Script Variables")
       count = num(action.group(1))
       multiplier = per(Autoscript, card, n, targetCards, notification)
-      if source != targetPL.piles['Discard Pile']: # The discard pile is anyway visible.
-         debugNotify("Moving to Scripting Pile")
+      if source == targetPL.piles['Deck']: # The discard pile is anyway visible.
          source.addViewer(me)
          rnd(1,10) # We give a delay to allow OCTGN to read the card properties before we proceed with checking them
       restrictions = prepareRestrictions(Autoscript, seek = 'retrieve')
