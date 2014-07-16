@@ -37,7 +37,7 @@ cf239340-c794-4a91-a241-e3cbafec2f6e
 -----
 
 +++++
-GR0B1R0:BootHost-isCost$$Pull1Card
+GR0B1R0:BootHost-isCost$$Pull1Card-testHex6-spellEffects<AceTarget-DemiAutoTargeted-isDrawHand-choose1++SendToDrawTarget-DemiAutoTargeted-fromHand-choose1,None>
 .....
 Allie Hensman
 -----
@@ -157,7 +157,7 @@ Blood Curse
 -----
 
 +++++
-GR0B1R0:Pull1Card
+GR0B1R0:Pull1Card-testHex9-spellEffects<Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>
 .....
 Bluetick
 -----

@@ -65,25 +65,25 @@ mdict = { # A dictionary which holds all the hard coded markers (in the markers 
 
 regexHooks = dict( # A dictionary which holds the regex that then trigger each core command. 
                    # This is so that I can modify these "hooks" only in one place as I add core commands and modulators.
-                  GainX =              re.compile(r'\b(Gain|Lose|SetTo)([0-9]+)'),
-                  CreateDummy =        re.compile(r'\bCreateDummy'),
-                  ReshuffleX =         re.compile(r'\bReshuffle([A-Za-z& ]+)'),
-                  RollX =              re.compile(r'\bRoll([0-9]+)'),
-                  RequestInt =         re.compile(r'\bRequestInt'),
-                  DiscardX =           re.compile(r'\bDiscard[0-9]+'),
-                  TokensX =            re.compile(r'\b(Put|Remove|Refill|Use|Deal|Transfer)([0-9]+)'),
-                  DrawX =              re.compile(r'\bDraw([0-9]+)'),
-                  RetrieveX =          re.compile(r'\bRetrieve([0-9]+)'),
-                  ShuffleX =           re.compile(r'\bShuffle([A-Za-z& ]+)'),
-                  ModifyStatus =       re.compile(r'(?<!modAction):(Boot|Unboot|SendHomeBooted|Discard|Ace|Return|Play|SendToBottom|Takeover|Participate|Unparticipate|Callout|Move)(Target|Host|Multi|Myself)'),
-                  SimplyAnnounce =     re.compile(r'\bSimplyAnnounce'),
-                  GameX =              re.compile(r'\b(Lose|Win)Game'),
-                  ChooseKeyword =      re.compile(r'\bChooseKeyword'),
-                  StartJob =           re.compile(r'\bStartJob'),
-                  PullX =              re.compile(r'\bPull'),
-                  SpawnX =             re.compile(r'\bSpawn'),
-                  CustomScript =       re.compile(r'\bCustomScript'),
-                  UseCustomAbility =   re.compile(r'\bUseCustomAbility'))
+                  GainX =              re.compile(r'(?<![<,+-])(Gain|Lose|SetTo)([0-9]+)'),
+                  CreateDummy =        re.compile(r'(?<![<,+-])CreateDummy'),
+                  ReshuffleX =         re.compile(r'(?<![<,+-])Reshuffle([A-Za-z& ]+)'),
+                  RollX =              re.compile(r'(?<![<,+-])Roll([0-9]+)'),
+                  RequestInt =         re.compile(r'(?<![<,+-])RequestInt'),
+                  DiscardX =           re.compile(r'(?<![<,+-])Discard[0-9]+'),
+                  TokensX =            re.compile(r'(?<![<,+-])(Put|Remove|Refill|Use|Deal|Transfer)([0-9]+)'),
+                  DrawX =              re.compile(r'(?<![<,+-])Draw([0-9]+)'),
+                  RetrieveX =          re.compile(r'(?<![<,+-])Retrieve([0-9]+)'),
+                  ShuffleX =           re.compile(r'(?<![<,+-])Shuffle([A-Za-z& ]+)'),
+                  ModifyStatus =       re.compile(r'(?<!modAction)(?<![<,+-]):(Boot|Unboot|SendHomeBooted|Discard|Ace|Return|Play|SendToBottom|SendToDraw|Takeover|Participate|Unparticipate|Callout|Move)(Target|Host|Multi|Myself)'),
+                  SimplyAnnounce =     re.compile(r'(?<![<,+-])SimplyAnnounce'),
+                  GameX =              re.compile(r'(?<![<,+-])(Lose|Win)Game'),
+                  ChooseKeyword =      re.compile(r'(?<![<,+-])ChooseKeyword'),
+                  StartJob =           re.compile(r'(?<![<,+-])StartJob'),
+                  PullX =              re.compile(r'(?<![<,+-])Pull'),
+                  SpawnX =             re.compile(r'(?<![<,+-])Spawn'),
+                  CustomScript =       re.compile(r'(?<![<,+-])CustomScript'),
+                  UseCustomAbility =   re.compile(r'(?<![<,+-])UseCustomAbility'))
 
 
 ### Misc ###

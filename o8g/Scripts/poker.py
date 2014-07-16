@@ -54,8 +54,12 @@ def PokerHand(rank,suit,type = shootout, result = 'normal'): # Evaluates 5 cards
       if result == 'comparison': return 1
       else: return '1: High Card'
 
-def numrank(rank): # Convert card ranks into pure integers for comparison
-   if rank == 'Joker': return 20
+def numrank(rank, ask = False): # Convert card ranks into pure integers for comparison
+   if rank == '*': 
+      if ask: 
+         joker = None
+         while joker == None or 13 < joker < 1: askInteger("Please type a rank for the Joker (1-13)", 13)
+      else: return 13
    elif rank == 'A': return 1
    elif rank == 'J': return 11
    elif rank == 'Q': return 12

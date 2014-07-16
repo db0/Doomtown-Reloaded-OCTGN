@@ -836,6 +836,8 @@ def StartJob(Autoscript, announceText, card, targetCards = None, notification = 
 
 def PullX(Autoscript, announceText, card, targetCards = None, notification = None, n = 0): # Core Command for drawing X Cards from the house deck to your hand.
    debugNotify(">>> DrawX(){}".format(extraASDebug(Autoscript))) #Debug
+   rank = None
+   suit = None
    if targetCards is None: targetCards = []
    action = re.search(r'\bPull([0-9]+)Card', Autoscript)
    targetPLs = ofwhom(Autoscript, card.controller)
@@ -848,8 +850,26 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
             elif iter == num(action.group(1)) - 1: announceString += " and a {} {}".format(fullrank(rank), fullsuit(suit))
             else: announceString += ", a {} {}".format(fullrank(rank), fullsuit(suit))
          else: remoteCall(targetPL,'pull',[])
+   spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit)([0-9]+|X)', Autoscript)
+   spellResolved = None
+   if spellDifficulty and rank and suit: # We only check for spell effects if we got a rank and suit result.
+      skilledDude = fetchHost(card)
+      skills = fetchSkills(skilledDude)
+      neededSkill = None
+      spellEffects = re.search(r'-spellEffects<(.*?),(.*?)>', Autoscript)
+      for skill in skills:
+         if (skill[0] == 'Huckster' and spellDifficulty.group(1) == 'Hex'
+             or skill[0] == 'Blessed' and spellDifficulty.group(1) == 'Miracle'
+             or skill[0] == 'Spirit' and spellDifficulty.group(1) == 'Shaman'):
+            neededSkill = skill
+      if neededSkill[1] + numrank(rank, True) >= num(spellDifficulty.group(2)): spellResolved = '. {} succeeds the {} skill test by {}'.format(skilledDude,neededSkill[0],neededSkill[1] + numrank(rank, True) - num(spellDifficulty.group(2))) # If the spell is succesful, we want to mention it, before we mention its results
+      elif spellEffects.group(2) != '': spellResolved = '. {} fails the {} skill test'.format(skilledDude,neededSkill[0])
+      if not neededSkill: whisper(":::ERROR::: Oops, something went wrong. Can't find the required skill on this dude. Aborting!")
    debugNotify("About to announce.")
-   if notification and announceString != "{} pull".format(announceText): notify(':> {}.'.format(announceString))
+   if notification and announceString != "{} pull".format(announceText): notify(':> {}{}.'.format(announceString,spellResolved))
+   if spellResolved: # We only check for spell effects if we got a rank and suit result.
+      if re.search(r'succeeds',spellResolved): executeAutoscripts(card,spellEffects.group(1).replace('++','$$'),action = 'USE') # If the spell is succesful, execute it's effects
+      else: executeAutoscripts(card,spellEffects.group(2).replace('++','$$'),action = 'USE') # If it isn't successful and it has a failing condition, activate it now.
    debugNotify("<<< DrawX()")
    return announceString
 
@@ -1020,7 +1040,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
    if targetCards is None: targetCards = []
    targetCardlist = '' # A text field holding which cards are going to get tokens.
    extraTXT = ''
-   action = re.search(r'\b(Boot|Unboot|SendHomeBooted|Discard|Ace|Return|Play|SendToBottom|Takeover|Participate|Unparticipate|Callout|Move)(Target|Host|Multi|Myself)[-to]*([A-Z][A-Za-z&_ ]+)?', Autoscript)
+   action = re.search(r'\b(Boot|Unboot|SendHomeBooted|Discard|Ace|Return|Play|SendToBottom|SendToDraw|Takeover|Participate|Unparticipate|Callout|Move)(Target|Host|Multi|Myself)[-to]*([A-Z][A-Za-z&_ ]+)?', Autoscript)
    if action.group(2) == 'Myself': 
       del targetCards[:] # Empty the list, just in case.
       targetCards.append(card)
@@ -1063,6 +1083,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
          elif action.group(1) == 'Unboot': boot(targetCard, silent = True, forced = 'unboot') 
          elif action.group(1) == 'Discard': discardTarget(targetCards = [targetCard], silent = True)        
          elif action.group(1) == 'Ace': aceTarget(targetCards = [targetCard], silent = True)
+         elif action.group(1) == 'SendToDraw': sendToDrawHand(targetCard)
          elif action.group(1) == 'Participate':
             if not participateDude(targetCard): 
                whisper(":::ERROR::: {} is already in this shootout!".format(targetCard))
@@ -1500,6 +1521,12 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
       validCard = False
    if re.search(r'isNotParticipating',Autoscript) and (card.highlight == AttackColor or card.highlight == DefendColor or card.highlight == InitiateColor): 
       debugNotify("!!! Failing because unit is participating", 2)
+      validCard = False
+   if re.search(r'isDrawHand',Autoscript) and card.highlight != DrawHandColor: 
+      debugNotify("!!! Failing because card is not in the draw hand", 2)
+      validCard = False
+   if re.search(r'isNotDrawHand',Autoscript) and card.highlight == DrawHandColor: 
+      debugNotify("!!! Failing because card is in the draw hand", 2)
       validCard = False
    if not chkPlayer(Autoscript, card.controller, False, True, playerChk): 
       debugNotify("!!! Failing because not the right controller", 2)
