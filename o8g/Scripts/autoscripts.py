@@ -163,7 +163,6 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
    # GR is Ghost Rock cost to use the ability
    # B is boot cost
    # R is repeat switch. 0 means no repeat (i.e. only once per turn), 1 means it's a repeat ability (or just a card trait which can be used as many times as its trigger hits)
-   confirm(selectedAutoscript)
    if actionCostRegex:
       if (actionCostRegex.group(2) == '1' and card.orientation == Rot0) or actionCostRegex.group(2) == '0' or (actionCostRegex.group(2) == '1' and card.orientation == Rot90 and confirm("Card requires to be booted to use its ability. Bypass?")): # First we check if the card is booted and it needs to boot.
          if actionCostRegex.group(3) == '1' or not card.markers[mdict['UsedAbility']] or (card.markers[mdict['UsedAbility']] and confirm("You've already used {}'s Ability Bypass Restriction?".format(card.name))):
