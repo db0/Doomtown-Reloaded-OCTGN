@@ -37,7 +37,7 @@ cf239340-c794-4a91-a241-e3cbafec2f6e
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Allie Hensman
 -----
@@ -813,7 +813,7 @@ Raising Hell
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Ramiro Mendoza
 -----
@@ -885,7 +885,7 @@ f9714fff-14d9-433c-b2cc-05068006c388
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Sherriff Dave Montreal
 -----
@@ -925,7 +925,7 @@ bf1c8173-843a-4a20-be3b-f4ae650cfdd2
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Stagecoach Office
 -----
