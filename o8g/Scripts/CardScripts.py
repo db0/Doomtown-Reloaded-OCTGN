@@ -813,7 +813,7 @@ Raising Hell
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHex8-spellEffects<AceTarget-DemiAutoTargeted-fromHand++Retrieve1Card-fromBootHill-toTable-grabAbomination-payCost,None>-onlyInShootouts
+GR0B1R0:Pull1Card
 .....
 Ramiro Mendoza
 -----
