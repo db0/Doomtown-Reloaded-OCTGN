@@ -357,7 +357,7 @@ c20de5e3-daea-4dce-a8ce-eaa5349c8187
 -----
 
 +++++
-GR0B1R0:RequestInt{Boost your Flamethrower by how much?}-Min1-Max3$$Put1BulletShootoutPlus-perX
+GR0B1R0:RequestInt{Boost your Flamethrower by how much?}-Min1-Max3$$Lose1Ghost Rock-perX-isCost$$Put1BulletShootoutPlus-perX
 .....
 Force Field
 -----
@@ -1019,7 +1019,7 @@ The Stakes Just Rose
 -----
 8649f082-f7cd-414d-b360-9b1b72f6172b
 -----
-onPlay:Remove999Shootout:Draw-Targeted-atDude-targetMine-isSilent$$Put1Shootout:Stud-Targeted-atDude-targetMine$$ParticipateTarget-Targeted-atDude-targetMine
+onPlay:ParticipateTarget-Targeted-atDude-targetMine$$Remove999Shootout:Draw-Targeted-atDude-targetMine-isSilent$$Put1Shootout:Stud-Targeted-atDude-targetMine
 +++++
 
 .....

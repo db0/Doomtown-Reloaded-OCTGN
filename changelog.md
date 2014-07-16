@@ -1,6 +1,12 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.1.0.x
+
+* Added deck checking at the start. Game will also announce your home when the game starts.
+* Fixed participation scripts
+* Fixed Sloane's Ability
+
 ### 1.0.1.x
 
 * Added inspect function (Ctrl+I)

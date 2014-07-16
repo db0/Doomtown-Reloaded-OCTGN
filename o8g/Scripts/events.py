@@ -10,6 +10,46 @@ def chkTwoSided():
 
 def checkDeck(player,groups):
    mute()
+   foundOutfit = False
+   if player == me:
+      #confirm(str([group.name for group in groups]))
+      for group in groups:
+         if group == me.hand:
+            for card in group:
+               if card.Type == 'Outfit': 
+                  notify("{} is playing {}".format(player,card.name))
+                  foundOutfit = True
+            if not foundOutfit: information(":::ERROR::: No outfit card found! Please put an outfit card in your deck before you try to use it in a game!")
+         else:
+            group.setVisibility('me')
+            counts = collections.defaultdict(int)
+            ok = True
+            for card in group:
+               if card.Type == 'Joker': 
+                  counts['Jokers'] += 1
+                  if counts['Jokers'] > 2:
+                     ok = False
+                     notify(":::ERROR::: More than 2 Jokers found in{}'s deck!".format(player))
+               if card.name == 'Gunslinger':
+                  ok = False
+                  notify(":::ERROR::: Gunslinger token found in {}'s deck!".format(player))
+               counts[card.name] += 1
+               if counts[card.name] > 4: 
+                  ok = False
+                  notify(":::ERROR::: More than 4 cards of the same name ({}) found in {}'s deck!".format(card.name,player))
+               counts[card.Rank + card.Suit] += 1
+               if counts[card.Rank + card.Suit] > 4: 
+                  ok = False
+                  notify(":::ERROR::: More than 4 cards of the same suit and rank ({} of {}) found in {}'s deck!".format(card.Rank,card.Suit,player))
+            deckLen = len(group) + len([c for c in me.hand if c.Type != 'Outfit']) - counts['Jokers']
+            if deckLen != 52:
+               ok = False
+               notify(":::ERROR::: {}'s deck is not exactly 52 play cards ({})!".format(player,deckLen))
+            group.setVisibility('None')
+            if ok: notify("-> Deck of {} is OK!".format(player))
+            else: 
+               notify("-> Deck of {} is _NOT_ OK!".format(player))
+               information("We have found illegal cards in your deck. Please load a legal deck!")
    # WiP Checking deck legality. 
    
 def chooseSide(silent = False): # Called from many functions to check if the player has chosen a side for this game.

@@ -1063,9 +1063,10 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
          elif action.group(1) == 'Unboot': boot(targetCard, silent = True, forced = 'unboot') 
          elif action.group(1) == 'Discard': discardTarget(targetCards = [targetCard], silent = True)        
          elif action.group(1) == 'Ace': aceTarget(targetCards = [targetCard], silent = True)
-         elif action.group(1) == 'Participate' and not participateDude(targetCard): 
-            whisper(":::ERROR::: {} is already in this shootout!".format(targetCard))
-            return 'ABORT'
+         elif action.group(1) == 'Participate':
+            if not participateDude(targetCard): 
+               whisper(":::ERROR::: {} is already in this shootout!".format(targetCard))
+               return 'ABORT'
          elif action.group(1) == 'Unparticipate': leavePosse(targetCard)
          elif action.group(1) == 'Callout':
             leaderTarget = re.search(r"-leaderTarget\{(.+)\}", Autoscript)
