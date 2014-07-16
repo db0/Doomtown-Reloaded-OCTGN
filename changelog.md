@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.1.1.x
+
+* Scripted all core spells except Raising Hell
+
 ### 1.1.0.x
 
 * Added deck checking at the start. Game will also announce your home when the game starts.
