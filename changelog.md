@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.1.2.x
+
+* Scripted Raising Hell
+
 ### 1.1.1.x
 
 * Scripted all core spells except Raising Hell

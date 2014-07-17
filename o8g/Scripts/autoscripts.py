@@ -145,7 +145,7 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
       if re.search(r'-onlyInNoon',autoS) and getGlobalVariable('Shootout') == 'True': Autoscripts.remove(autoS)      
    debugNotify("Removed bad options")
    if len(Autoscripts) == 0:
-      whisper("This card has no automated abilities. Aborting")
+      whisper("This card has no automated abilities for this phase. Aborting")
       return 
    debugNotify("+++ All checks done!. Starting Choice Parse...",4)
    ### Checking if card has multiple autoscript options and providing choice to player.
@@ -853,7 +853,7 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
             else: announceString += ", a {} {}".format(fullrank(rank), fullsuit(suit))
          else: remoteCall(targetPL,'pull',[])
    spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit)([0-9]+|X)', Autoscript)      
-   spellResolved = None
+   spellResolved = ''
    if spellDifficulty and rank and suit: # We only check for spell effects if we got a rank and suit result.
       if spellDifficulty.group(2) == 'X':
          if not len(targetCards): 
@@ -880,8 +880,8 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
    debugNotify("About to announce.")
    if notification and announceString != "{} pull".format(announceText): notify(':> {}{}.'.format(announceString,spellResolved))
    if spellResolved: # We only check for spell effects if we got a rank and suit result.
-      if re.search(r'succeeds',spellResolved): executeAutoscripts(card,spellEffects.group(1).replace('++','$$'),action = 'USE') # If the spell is succesful, execute it's effects
-      else: executeAutoscripts(card,spellEffects.group(2).replace('++','$$'),action = 'USE') # If it isn't successful and it has a failing condition, activate it now.
+      if re.search(r'succeeds',spellResolved): executeAutoscripts(card,spellEffects.group(1).replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
+      else: executeAutoscripts(card,spellEffects.group(2).replace('++','$$'),action = 'USE',targetCards = targetCards) # If it isn't successful and it has a failing condition, activate it now.
    debugNotify("<<< DrawX()")
    return announceString
 

@@ -157,7 +157,7 @@ Blood Curse
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHex9-spellEffects<Put2BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents,None>-onlyInShootouts||GR0B1R0:Pull1Card-testHex9-spellEffects<Put1BulletNoonMinus-Targeted-atDude-targetOpponents++Put1InfluenceMinus-Targeted-atDude-targetOpponents,None>-onlyInNoon
+GR0B1R0:Pull1Card-testHex9-spellEffects<Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>-onlyInShootouts||GR0B1R0:Pull1Card-testHex9-spellEffects<Put1BulletNoonMinus-Targeted-atDude-targetOpponents++Put1InfluenceMinus-Targeted-atDude-targetOpponents,None>-onlyInNoon
 .....
 Bluetick
 -----
@@ -813,7 +813,7 @@ Raising Hell
 -----
 
 +++++
-GR0B1R0:Pull1Card
+GR0B1R0:Pull1Card-testHex8-spellEffects<AceTarget-DemiAutoTargeted-fromHand-choose1++Retrieve1Card-fromBootHill-toTable-grabAbomination-payCost++AceMyself,None>-onlyInShootouts
 .....
 Ramiro Mendoza
 -----

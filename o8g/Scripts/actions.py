@@ -953,6 +953,7 @@ def playcard(card,retainPos = False,costReduction = 0):
    #for player in players:
    acedcards = (acedcard for acedcard in me.piles['Boot Hill'] # Go through the player's Boot Hill looking for matches 
                   if acedcard.name == card.name
+                  and acedcard != card
                   and (acedcard.Type == 'Dude' 
                         or acedcard.Type == 'Deed' 
                         or (re.search('Unique.', acedcard.Text) 
