@@ -132,6 +132,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       x,y = targetDeed[0].position
       boot(targetDude[0],forced = 'boot')
       targetDude[0].moveToTable(x + cardDistance(), y)
+      orgAttachments(targetDude[0])
       notify("{} uses {} and boots {} to build {}, reducing its cost by {}.".format(me,card,targetDude[0],targetDeed[0],reduction))      
    elif card.name == "The Union Casino" and action == 'USE':
       targetDude = findTarget('Targeted-atDude-isUnbooted')
@@ -245,7 +246,7 @@ def markerEffects(Time = 'Start'):
                  or re.search(r'Rumors',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))
-         if Time == 'Sundown' and re.search(r'Come Git Some',marker[0]): # This is the Sloane outfit ability
+         if Time == 'Sundown' and re.search(r'Come Git Some',marker[0]) and card.controller == me and card.owner == me: # This is the Sloane outfit ability
             if card.markers[mdict['PermControl']]: 
                choice = SingleChoice("Do you want to take one Ghost Rock per player?", ['No, {} is not in the Town Square anymore.'.format(card.name),'Yes! Take 1 GR per player.'])
             else: choice = SingleChoice("Do you want to take one Ghost Rock per player, or put a permanent control point on this dude?'.", ['None of the above. {} is not in the Town Square anymore.'.format(card.name),'Take 1 GR per player.','Put 1 permanent CP on {}.'.format(card.name)])

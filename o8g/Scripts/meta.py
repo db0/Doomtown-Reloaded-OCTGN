@@ -138,9 +138,7 @@ def compileCardStat(card, stat = 'Influence'):
    elif stat == 'Control':
       count = num(card.properties[stat])
       count += card.markers[mdict['PermControl']] + card.markers[mdict['ControlPlus']] - card.markers[mdict['ControlMinus']]
-   elif stat == 'Value':
-      count = calcValue(card.properties[stat],'numeral')
-      count += card.markers[mdict['ValuePlus']] - card.markers[mdict['ValueMinus']]
+   elif stat == 'Value': count = calcValue(card,'numeral')
    elif stat == 'Production':
       count = num(card.properties[stat])
       count += card.markers[mdict['ProdPlus']] - card.markers[mdict['ProdMinus']]
@@ -250,6 +248,32 @@ def chkGadgetCraft(card):
       else: notify("{} has built a {} without a gadget skill check.".format(me, card))
    return success
    
+def fetchSkills(card):
+   #confirm("fetching skills for {}".format(card.name))
+   skillList = []
+   if card.Type == 'Dude': # only dudes have skills (for now at least)
+      cardSubtypes = card.keywords.split('-') # And each individual Keyword. Keywords are separated by " - "
+      for cardSubtype in cardSubtypes:
+         strippedCS = cardSubtype.strip() # Remove any leading/trailing spaces between traits. We need to use a new variable, because we can't modify the loop iterator.
+         #confirm("Checking {}".format(strippedCS))
+         if strippedCS:
+            skillRegex = re.search(r'(Huckster|Blessed|Shaman|Mad Scientist) ([0-9])',strippedCS)
+            if skillRegex: skillList.append((skillRegex.group(1),num(skillRegex.group(2)))) # If we discover a skill, we add it in a tuple with the skill first, then its numerical value second.
+   return skillList
+      
+def sendToDrawHand(card):
+   myDrawHand = [c for c in table if c.highlight == DrawHandColor and c.controller == me]
+   maX = None
+   y = 0
+   for c in myDrawHand: # We're trying to figure out which is the last card in our current draw hand, to play the newly converted drawhand card in there.
+      x,y = c.position
+      if maX == None: maX = x
+      elif x > maX: maX = x
+   if maX == None: card.moveToTable(homeDistance(card) - cardDistance(card) * 3 * (cwidth(card) / 4), cheight(card) * 2) 
+   else: card.moveToTable(maX + (cwidth(card) / 4), y)
+   card.highlight = DrawHandColor
+   clearAttachLinks(card) # When a card becomes a draw hand card, we discard all its attachments, if it had any.
+
 #---------------------------------------------------------------------------
 # Counter Manipulation
 #---------------------------------------------------------------------------
