@@ -394,7 +394,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="Confederate-Blessed 2" />
-         <property name="Text" value="Confederate-Blessed 2" />
+         <property name="Text" value="Noon: Boot an attached spell to look at the top card of your deck." />
          <property name="Instructions" value="" />
       </card>
       <card id="35a3cffb-6a57-4a90-ab93-63f519910c99" name="Nicodemus Whateley">
