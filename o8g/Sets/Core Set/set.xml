@@ -2146,7 +2146,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
          <property name="Text" value="Controller Noon, Boot: Raise or lower the skill rating of a dude at this location by 2 (the skills are Huckster, Blessed, Shaman, and Mad Scientist)." />
-         <property name="Instructions" value="Raise the skill rating of a dude at this location by 2|Lower the skill rating of a dude at this location by 2" />
+         <property name="Instructions" value="Raise the skill rating of a dude at this location by 2||Lower the skill rating of a dude at this location by 2" />
       </card>
       <card id="84e33474-5247-4969-b7d1-e335b720a566" name="The Pharmacy">
          <property name="Rank" value="Q" />

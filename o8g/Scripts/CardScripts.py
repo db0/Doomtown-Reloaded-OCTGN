@@ -997,7 +997,7 @@ The Morgan Research Institute
 -----
 
 +++++
-GR0B1R0:Put2Skill Bonus-Targeted-atDude||GR0B1R0:Put2Skill Penalty-Targeted-atDude
+GR0B1R0:Put2High Noon:Skill Bonus-Targeted-atDude||GR0B1R0:Put2High Noon:Skill Penalty-Targeted-atDude
 .....
 The Pharmacy
 -----

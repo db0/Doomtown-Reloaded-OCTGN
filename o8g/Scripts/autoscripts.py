@@ -873,8 +873,14 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
              or skill[0] == 'Blessed' and spellDifficulty.group(1) == 'Miracle'
              or skill[0] == 'Spirit' and spellDifficulty.group(1) == 'Shaman'):
             neededSkill = skill
+      skillLevel = neededSkill[1]
+      for key in skilledDude.markers: # If the card has received a bonus or penalty to its skill, we add it to the calculation
+         if re.search(r'Skill Bonus',key[0]):
+            skillLevel += skilledDude.markers[key]
+         if re.search(r'Skill Penalty',key[0]):
+            skillLevel -= skilledDude.markers[key]
       numericRank = numrank(rank, True) # Setting it in advance so that it does't ask the value of a joker twice
-      if neededSkill[1] + numericRank >= difficulty: spellResolved = '. {} succeeds the {} skill test by {}'.format(skilledDude,neededSkill[0],neededSkill[1] + numericRank - difficulty) # If the spell is succesful, we want to mention it, before we mention its results
+      if skillLevel + numericRank >= difficulty: spellResolved = '. {} succeeds the {} skill test by {}'.format(skilledDude,neededSkill[0],skillLevel + numericRank - difficulty) # If the spell is succesful, we want to mention it, before we mention its results
       elif spellEffects.group(2) != '': spellResolved = '. {} fails the {} skill test'.format(skilledDude,neededSkill[0])
       if not neededSkill: whisper(":::ERROR::: Oops, something went wrong. Can't find the required skill on this dude. Aborting!")
    debugNotify("About to announce.")
