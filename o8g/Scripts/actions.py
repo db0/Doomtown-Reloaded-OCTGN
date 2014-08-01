@@ -150,7 +150,9 @@ def defaultAction(card, x = 0, y = 0):
       defend(card)
    elif card.Type == 'Spell' and card.orientation != Rot90 and confirm("Are you trying to cast this spell?"):
       if CardsAA.get(card.model,None): useAbility(card)
-      else: pull()
+      else: 
+         pull()
+         boot(card)
    else: boot(card)
    debugNotify("<<< defaultAction()") #Debug
 
