@@ -1,6 +1,12 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.1.3.x
+
+* Spell checks will now take into account Skill Bonus (e.g. Morgan Research Inst.)
+* Morgan Research Inst. will properly clear at Sundown.
+* Fixed Morgan Research Inst. choice menu
+
 ### 1.1.2.x
 
 * Scripted Raising Hell

@@ -611,7 +611,7 @@ def fetchCardScripts(group = table, x=0, y=0, silent = False): # Creates 2 dicti
    ### Note to self. Switching on Debug Verbosity here tends to crash the game.probably because of bug #596
    global CardsAA, CardsAS # Global dictionaries holding Card AutoActions and Card autoScripts for all cards.
    if not silent: whisper("+++ Fetching fresh scripts. Please Wait...")
-   if len(getPlayers()) > 5 and debugVerbosity < 0: # Skipping this always for now.
+   if len(getPlayers()) > 1 and debugVerbosity < 0: # Skipping this always for now.
       try: (ScriptsDownload, code) = webRead('https://raw.github.com/db0/Doomtown-Reloaded-OCTGN/master/o8g/Scripts/CardScripts.py',5000)
       except: 
          if debugVerbosity >= 0: notify("Timeout Error when trying to download scripts")
