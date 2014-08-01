@@ -148,8 +148,9 @@ def defaultAction(card, x = 0, y = 0):
       callout(card)
    elif Mark != 'None' and Card(num(Mark)) == card: # if there is a callout in progress and we just double clicked the callout's target, we assume they want to accept it.
       defend(card)
-   elif card.Type == 'Spell' and card.orientation != Rot90 and confirm("Are you trying to cast this spell?"): 
-      useAbility(card)
+   elif card.Type == 'Spell' and card.orientation != Rot90 and confirm("Are you trying to cast this spell?"):
+      if CardsAA.get(card.model,None): useAbility(card)
+      else: pull()
    else: boot(card)
    debugNotify("<<< defaultAction()") #Debug
 
