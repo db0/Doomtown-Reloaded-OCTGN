@@ -716,7 +716,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="" />
+         <property name="Keywords" value="Hex" />
          <property name="Text" value="Noon Hex 5: Choose an ability printed on a Dude at this or an adjacent location. The Dude cannot use the ability until after Sundown." />
          <property name="Instructions" value="" />
       </card>
