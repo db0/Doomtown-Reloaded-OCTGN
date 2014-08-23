@@ -40,6 +40,23 @@
          <property name="Text" value="Noon Job: Mark the town square. If successful, gain 4 ghost rock. If not, each player with a dude in the opposing posse gains 4 ghost rock." />
          <property name="Instructions" value="" />
       </card>
+      <card id="19d8b876-0ed9-42fc-90b9-4840e0d46521" name="A Secret Tunnel">
+         <property name="Rank" value="K" />
+         <property name="Suit" value="Clubs" />
+         <property name="Type" value="Action" />
+         <property name="Cost" value="1" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="" />
+         <property name="Keywords" value="" />
+         <property name="Text" value="Noon: Move your dude from one in-town deed you own to another in-town deed you own (without booting). Make another Noon play." />
+         <property name="Instructions" value="" />
+      </card>
       <card id="44946fbc-1bc0-4a1a-9a55-6138b795bfc8" name="Abram Grothe ">
          <property name="Rank" value="J" />
          <property name="Suit" value="Spades" />
@@ -497,7 +514,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
          <property name="Text" value="Resolution: Pay 5 ghost rock to lower a player’s draw hand by 2 ranks.#xD;&#xA;Cheatin’ Resolution: Lower a player’s draw hand by 2 ranks." />
-         <property name="Instructions" value="" />
+         <property name="Instructions" value="onPlay[Resolution: Pay 5 ghost rock to lower a player’s draw hand by 2 ranks.|-|Cheatin’ Resolution: Lower a player’s draw hand by 2 ranks.]" />
       </card>
       <card id="ec741b63-8ac4-4b5a-9767-9854e05b91c3" name="Circle M Ranch">
          <property name="Rank" value="8" />
@@ -1723,6 +1740,23 @@
          <property name="Text" value="Noon: Discard a Gadget from Eustace to move him to another location (without booting)." />
          <property name="Instructions" value="" />
       </card>
+      <card id="6409f8c3-8fcc-4b31-96e6-96318f629230" name="Quickdraw Handgun">
+         <property name="Rank" value="8" />
+         <property name="Suit" value="Hearts" />
+         <property name="Type" value="Goods" />
+         <property name="Cost" value="2" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="1" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="" />
+         <property name="Keywords" value="Weapon" />
+         <property name="Text" value="Cheatin’ Resolution, Boot: If you have a legal draw hand, exchange draw hands with the cheatin’ player.#xD;&#xA;Cheatin’ cards cannot be played on you for this round of the shootout." />
+         <property name="Instructions" value="" />
+      </card>
       <card id="fa907076-61c7-4f1f-b9a4-87a1df59bfae" name="Railroad Station">
          <property name="Rank" value="K" />
          <property name="Suit" value="Diamonds" />
@@ -2248,6 +2282,23 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
          <property name="Text" value="Noon: Boot your dude at a deed you don’t own to take ghost rock from the owner up to the production of that#xD;&#xA;deed. Raise the bounty on your dude by the amount of ghost rock taken." />
+         <property name="Instructions" value="" />
+      </card>
+      <card id="89686c7d-7845-48ef-bf10-2bf38563522f" name="Tin Star">
+         <property name="Rank" value="9" />
+         <property name="Suit" value="Hearts" />
+         <property name="Type" value="Goods" />
+         <property name="Cost" value="1" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="" />
+         <property name="Keywords" value="" />
+         <property name="Text" value="Wanted dudes cannot refuse a call-out from this dude." />
          <property name="Instructions" value="" />
       </card>
       <card id="2e81c214-539a-4b49-b2d0-69258204b240" name="Tommy Harden">
