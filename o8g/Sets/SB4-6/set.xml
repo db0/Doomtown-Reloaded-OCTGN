@@ -211,7 +211,7 @@
          <property name="Instructions" value="" />
       </card>
       <card id="29add78a-5369-43d9-80d9-4006f6757a6e" name="[Cheapskate's Casino]">
-         <property name="Rank" value="5" />
+         <property name="Rank" value="6" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
          <property name="Cost" value="2" />
@@ -245,7 +245,7 @@
          <property name="Instructions" value="" />
       </card>
       <card id="5529098d-fd5f-41c1-9121-58a4c2b41c89" name="Lula's Exploit">
-         <property name="Rank" value="9" />
+         <property name="Rank" value="8" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
          <property name="Cost" value="3" />
