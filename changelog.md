@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.1.4.x
+
+* Added last 3 cards
+
 ### 1.1.3.x
 
 * Spell checks will now take into account Skill Bonus (e.g. Morgan Research Inst.)
