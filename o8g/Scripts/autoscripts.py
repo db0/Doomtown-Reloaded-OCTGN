@@ -211,7 +211,6 @@ def autoscriptOtherPlayers(lookup, origin_card = OutfitCard, count = 1, origin_p
                                                                             # So if our instance's trigger is currently "UnitCardCapturedFromTable" then the trigger word "CardCaptured" is contained within and will match.
             debugNotify("Couldn't lookup the trigger: {} in autoscript. Ignoring".format(lookup),2)
             continue # Search if in the script of the card, the string that was sent to us exists. The sent string is decided by the function calling us, so for example the ProdX() function knows it only needs to send the 'GeneratedSpice' string.
-         elif not chkLookupRestrictions(card,lookup,origin_card): continue
          if re.search(r'-byOpposingOriginController', autoS) and chkPlayer('byOpponent', origin_card.controller,False, player = card.controller) == 0: continue
          # If we have the -byOpposingOriginController modulator, our scripts need to compare the controller of the card that triggered the script with the controller of the card that has the script.
          # See for example Renegade Squadron Mobilization, where we need to check that the controller of the card leaving play is the opponent of the player that controls Renegade Squadron Mobilization
@@ -234,7 +233,6 @@ def autoscriptOtherPlayers(lookup, origin_card = OutfitCard, count = 1, origin_p
                debugNotify("!!! Failing because Edge Difference ({}) not equal to {}".format(count,edgeDiffRegex.group(2)),2)
                continue
          if not chkDummy(autoS, card): continue
-         if not chkParticipants(autoS, card): continue
          if not checkCardRestrictions(gatherCardProperties(origin_card), prepareRestrictions(autoS,'type')): continue #If we have the '-type' modulator in the script, then need ot check what type of property it's looking for
          else: debugNotify("Not Looking for specific type or type specified found.")
          if not checkOriginatorRestrictions(autoS,card): continue
@@ -852,7 +850,7 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
             elif iter == num(action.group(1)) - 1: announceString += " and a {} {}".format(fullrank(rank), fullsuit(suit))
             else: announceString += ", a {} {}".format(fullrank(rank), fullsuit(suit))
          else: remoteCall(targetPL,'pull',[])
-   spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit)([0-9]+|X)', Autoscript)      
+   spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit|Mad Science)([0-9]+|X)', Autoscript)      
    spellResolved = ''
    if spellDifficulty and rank and suit: # We only check for spell effects if we got a rank and suit result.
       if spellDifficulty.group(2) == 'X':
@@ -871,8 +869,15 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
       for skill in skills:
          if (skill[0] == 'Huckster' and spellDifficulty.group(1) == 'Hex'
              or skill[0] == 'Blessed' and spellDifficulty.group(1) == 'Miracle'
-             or skill[0] == 'Spirit' and spellDifficulty.group(1) == 'Shaman'):
+             or skill[0] == 'Mad Science' and spellDifficulty.group(1) == 'Mad Scientist'
+             or skill[0] == 'Shaman' and spellDifficulty.group(1) == 'Spirit'):
             neededSkill = skill
+      if not neededSkill: # If we didn't find a relevant skill on the dude, then we assume they have the required skill at 0, or they wouldn't have been used.
+         if spellDifficulty.group(1) == 'Hex': neededSkill = ('Huckster',0)
+         elif spellDifficulty.group(1) == 'Miracle': neededSkill = ('Blessed',0)
+         elif spellDifficulty.group(1) == 'Spirit': neededSkill = ('Shaman',0)
+         else: neededSkill = ('Mad Scientist',0)
+         notify(":::Warning::: Necessary skill not found on {}. Assuming they have {} 0 from card effects".format(skilledDude,neededSkill[0]))
       skillLevel = neededSkill[1]
       for key in skilledDude.markers: # If the card has received a bonus or penalty to its skill, we add it to the calculation
          if re.search(r'Skill Bonus',key[0]):

@@ -1057,6 +1057,7 @@ def playcard(card,retainPos = False,costReduction = 0):
          if playeraxis == Xaxis: card.moveToTable(cardDistance(),0) # For anything else, just say they play it.
          else: card.moveToTable(0,cardDistance())
       notify("{} plays {} from their hand.".format(me, card))
+   autoscriptOtherPlayers('CardPlayed',card)
    if num(card.Control) + card.markers[mdict['ControlPlus']] - card.markers[mdict['ControlMinus']] > 0:
       # Increase control, if the new card provides is any.
       modControl(num(card.Control) + card.markers[mdict['ControlPlus']] - card.markers[mdict['ControlMinus']], loud) 

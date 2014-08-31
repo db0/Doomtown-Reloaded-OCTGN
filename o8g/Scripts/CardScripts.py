@@ -1667,7 +1667,7 @@ onPlay:CustomScript
 -----
 e12da368-0c9a-435b-91e7-e08378a6363c
 -----
-
+onPlay:Put1Prayer-Targeted-atDude-targetMine$$CreateDummy$$SimplyAnnounce{allow the dude to use shoppin' for Miracles as a Shootout play, and at any location}||atPhaseSundown:Remove999Prayer-AutoTargeted-atDude-hasMarker{Prayer}$$DiscardMyself-onlyforDummy
 +++++
 
 .....
@@ -1675,7 +1675,7 @@ e12da368-0c9a-435b-91e7-e08378a6363c
 -----
 c27e60e9-8450-4e6e-9c2e-73d19caec7c1
 -----
-
+onPlay:StartJob-AutoTargeted-atTown Square
 +++++
 
 .....
@@ -1683,7 +1683,7 @@ c27e60e9-8450-4e6e-9c2e-73d19caec7c1
 -----
 1b2b9609-05a4-4aed-ab98-06ddf6dbe400
 -----
-
+whileInPlay:Gain1Ghost Rock-foreachCardPlayed-typeGoods_and_notGadget-forOpponent
 +++++
 
 .....
