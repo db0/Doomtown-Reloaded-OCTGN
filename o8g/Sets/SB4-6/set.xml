@@ -224,7 +224,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Public-Casino" />
-         <property name="Text" value="React, Boot: After you resolve a resolution ability on an action card. You may take it back into your hand after the resolution phase. If that was a cheatin' resolution, gain 1 Ghost Rock." />
+         <property name="Text" value="Each time a cheatin' resolution ability is used, the controller gains 1 Ghost Rock." />
          <property name="Instructions" value="" />
       </card>
       <card id="5af04c4c-8282-4abf-9e55-a13ace8a998b" name="[Mutant Cattle Breeder]">
@@ -724,7 +724,7 @@
          <property name="Rank" value="Q" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="2" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="1" />
          <property name="Production" value="" />
          <property name="Bullets" value="1" />
@@ -741,7 +741,7 @@
          <property name="Rank" value="K" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="5" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
          <property name="Bullets" value="2" />
@@ -751,20 +751,20 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon, Boot: This dude gains +1 bullets, is a stud and cards cannot send her home booted from shootouts." />
+         <property name="Text" value="This dude becomes a Stud when she joins the Mark's posse." />
          <property name="Instructions" value="" />
       </card>
       <card id="8628bdf2-3900-4e36-941e-043560d81757" name="[Claim Jumpin' King]">
          <property name="Rank" value="K" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
-         <property name="Upkeep" value="0" />
+         <property name="Cost" value="3" />
+         <property name="Upkeep" value="1" />
          <property name="Production" value="" />
-         <property name="Bullets" value="0" />
+         <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
-         <property name="Influence" value="1" />
+         <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="" />
@@ -775,7 +775,7 @@
          <property name="Rank" value="J" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="2" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="1" />
          <property name="Production" value="" />
          <property name="Bullets" value="1" />
@@ -785,7 +785,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Melee weapons attached to this dude always provide their bullet bonuses, regardless of other card effects.&#xD;&#xA;This dude's bullets cannot be reduced while she has a Melee weapon attached." />
+         <property name="Text" value="Shootout: Boot a melee weapon attached to [this dude) to make him a Stud and gain +2 Bullets (to a maximum of 4)." />
          <property name="Instructions" value="" />
       </card>
       <card id="e341450b-9b41-4ae1-a1aa-fa50ac743f90" name="[District Attorney]">
@@ -846,14 +846,14 @@
          <property name="Cost" value="3" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
-         <property name="Bullets" value="1" />
+         <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
-         <property name="Keywords" value="Grifter-Deputy-Blessed 1" />
-         <property name="Text" value="Noon, Pay 1 GR: Increase the bounty of an oppossing dude at a location you own or control, by one." />
+         <property name="Keywords" value="Grifter-Deputy-Blessed 0" />
+         <property name="Text" value="React, Boot: At the start of the game, discard a card, draw a card and add one bounty to another player's dude." />
          <property name="Instructions" value="" />
       </card>
       <card id="799ea10c-9dc3-414e-bd72-c1d9fa662926" name="[Councilman Stewart]">
@@ -887,7 +887,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Company" />
          <property name="Keywords" value="Mad Scientist 0-Grifter" />
-         <property name="Text" value="React, boot: At the start of the game, reveal your play hand to all players. If there is no ranch in it, you must discard your hand and draw 5 new cards. Repeat this process until you reveal a ranch in your hand or you reshuffle your deck." />
+         <property name="Text" value="React: At the start of the game, reveal your play hand. If there are no deeds in your play hand, discard the top 10 cards from you deck. You may choose a Ranch or Improvement from your discard pile and put it in your hand. " />
          <property name="Instructions" value="" />
       </card>
       <card id="65b724a9-49e4-4c1c-9db8-e3f3081fa3fe" name="[Abner &quot;Bunny&quot; Williams-MCC Enforcer]">
@@ -955,7 +955,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Company" />
          <property name="Keywords" value="" />
-         <property name="Text" value="React: When one of you dudes is being aced or discarded or sent home booted as a shootout play, send him home booted instead. JW joins your posse (moving if necessary)." />
+         <property name="Text" value="React: When one of you dudes is being aced, discarded or sent home booted as a shootout play, send him home booted instead. This Dude joins your posse (moving if necessary)." />
          <property name="Instructions" value="" />
       </card>
       <card id="7d58d611-07a2-41e6-ad4d-fc51cc794847" name="Romanian Twins">
@@ -971,7 +971,7 @@
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
-         <property name="Keywords" value="Huckster 1" />
+         <property name="Keywords" value="Huckster 0" />
          <property name="Text" value="This dude has +1 Influence if they have 2 spells attached&#xD;&#xA;Shootout: If this has a mystical goods attached, they become a stud." />
          <property name="Instructions" value="" />
       </card>
@@ -1064,17 +1064,17 @@
          <property name="Rank" value="2" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
-         <property name="Bullets" value="0" />
+         <property name="Bullets" value="1" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="Huckster 1" />
-         <property name="Text" value="Noon: Call-out a dude with higher bullet rating than this dude's. This call out cannot be refused." />
+         <property name="Text" value="Noon: Boot a spell on this dude to call-out a dude with higher bullet rating than this dude's. This call out cannot be refused." />
          <property name="Instructions" value="" />
       </card>
       <card id="56fd7d6b-d14a-4b9d-a29c-40102bf4377b" name="[Sloane Fixer]">
