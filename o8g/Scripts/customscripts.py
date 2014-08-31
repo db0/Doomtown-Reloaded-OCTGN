@@ -58,7 +58,9 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          targetPL = drawHandPlayers[choice]
       remoteCall(targetPL,'clearDrawHandonTable',[])
       drawhandMany(me.Deck, 5, True,scripted = True)
-      resultTXT = revealHand(me.piles['Draw Hand'], type = 'shootout', event = None, silent = True)
+      if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
+      else: Drawtype = 'lowball'
+      resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
       notify("{}'s new hand rank is {}".format(targetPL,resultTXT))
    elif card.name == "Coachwhip!" and action == 'PLAY':
       debugNotify("Coachwhip Script")
@@ -230,6 +232,12 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       if not foundDude: 
          whisper(":::ERROR::: No dude targeted. Aborting!")
          return 'ABORT'         
+### PB 1 ###		 
+   if card.name == "[Leavin' a Scar]" and action == 'PLAY':
+      targetCards = findTarget('DemiAutoTargeted-isDrawHand-targetOpponents-choose2',card = card, choiceTitle = "Choose which of your opponent's cards to discard")
+      if not len(targetCards): return 'ABORT'
+      if confirm("If your own draw hand illegal?"): remoteCall(targetCards[0].controller,'TWHITM',[targetCards,True])
+      else: remoteCall(targetCards[0].controller,'TWHITM',[targetCards,False])
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -320,3 +328,22 @@ def PlasmaDrill(card):
       notify(":> {} is damaged beyond repair by the plasma drill and is discarded".format(card))
                                
                                
+def TWHITM(targetCards, discardCard = True): # This Will Hurt in the Morning
+   mute()
+   for card in targetCards:
+      if discardCard: discard(card)
+      else:
+         if me.GhostRock >= 1 and confirm("Pay 1 Ghost Rock to prevent {} from being aced?".format(card.name)):
+            me.GhostRock -= 1
+            discard(card)
+            notify("{} pays 1 ghost rock to avoid acing {}".format(me,card)) 
+         else: 
+            ace(card)
+   for c in table:
+      if c.highlight == DrawHandColor: c.moveTo(me.piles['Draw Hand']) # We move the remaining card back to the draw hand to be able to calculate value again
+   drawhandMany(me.Deck, 2, True,scripted = True)
+   if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
+   else: Drawtype = 'lowball'
+   resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
+   notify("{}'s new hand rank is {}".format(me,resultTXT))
+         

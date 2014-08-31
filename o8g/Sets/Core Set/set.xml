@@ -1825,7 +1825,7 @@
          <property name="Text" value="Noon Job: Mark the town square (any player may oppose the job). If successful, put a dude or deed into play from your discard pile, reducing its cost by 5 ghost rock." />
          <property name="Instructions" value="" />
       </card>
-      <card id="cb15bd27-76a2-48db-b324-99589b14982b" name="Rémy Lapointe">
+      <card id="cb15bd27-76a2-48db-b324-99589b14982b" name="Remy Lapointe">
          <property name="Rank" value="J" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />

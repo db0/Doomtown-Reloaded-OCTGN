@@ -475,7 +475,7 @@ def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = Fals
       else: traded = ''
       debugNotify("Finished Adding Markers. Adding stats...", 4)# Debug               
       stats = ''
-      stats += "Cost: {}. ".format(T.Cost)
+      stats += "Value: {} of {}.\nCost: {}".format(fullrank(calcValue(T)),fullsuit(T.Suit),T.Cost)
       if T.Influence != '': stats += "\nInfluence: {}. ".format(T.Influence)
       if T.Control != '': stats += "\nControl: {}. ".format(T.Control)
       if T.Type == 'Dude': stats += "\nBullets: {} {}. ".format(T.Bullets, T.properties['Draw Type'])
@@ -611,7 +611,7 @@ def fetchCardScripts(group = table, x=0, y=0, silent = False): # Creates 2 dicti
    ### Note to self. Switching on Debug Verbosity here tends to crash the game.probably because of bug #596
    global CardsAA, CardsAS # Global dictionaries holding Card AutoActions and Card autoScripts for all cards.
    if not silent: whisper("+++ Fetching fresh scripts. Please Wait...")
-   if len(getPlayers()) > 1 and debugVerbosity < 0: # Skipping this always for now.
+   if len(getPlayers()) > 5 and debugVerbosity < 0: # PT Always goes local
       try: (ScriptsDownload, code) = webRead('https://raw.github.com/db0/Doomtown-Reloaded-OCTGN/master/o8g/Scripts/CardScripts.py',5000)
       except: 
          if debugVerbosity >= 0: notify("Timeout Error when trying to download scripts")
