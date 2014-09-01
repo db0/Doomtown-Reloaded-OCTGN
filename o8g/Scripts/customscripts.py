@@ -32,7 +32,39 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       production = compileCardStat(targetDeed[0], stat = 'Production')
       if not production: notify(":> {} uses the plasma drill on, but it has no production, so that was fairly useless, wasn't it?".format(me))
       else: remoteCall(targetDeed[0].owner,'PlasmaDrill',[targetDeed[0]])      
-      announceString = ''
+### PB1 ###      
+   elif card.name == "[Mirror, Mirror]":
+      #targetCards = findTarget('DemiAutoTargeted-atDude-isParticipating-choose1',card = card, choiceTitle = "Choose which dude to mirror.")
+      #if not len(targetCards): return 'ABORT'
+      huckster = fetchHost(card)
+      target = targetCards[0]         
+      hucksterBullets = compileCardStat(huckster, stat = 'Bullets')
+      targetBullets = compileCardStat(target, stat = 'Bullets')
+      if re.search(r'-isFirstCustom',Autoscript):
+         if hucksterBullets < targetBullets: plusBulletShootout(huckster, count = targetBullets - hucksterBullets, silent = True)
+         elif hucksterBullets > targetBullets: minusBulletShootout(huckster, count = hucksterBullets - targetBullets, silent = True)
+         if fetchDrawType(target) == 'Draw' and fetchDrawType(huckster) == 'Stud': 
+            TokensX('Remove999Shootout:Stud', '', huckster)
+            if huckster.properties['Draw Type'] == 'Stud': TokensX('Put1Shootout:Draw', '', huckster)  
+         elif fetchDrawType(target) == 'Stud' and fetchDrawType(huckster) == 'Draw': 
+            TokensX('Remove999Shootout:Draw', '', huckster)  
+            if huckster.properties['Draw Type'] == 'Draw': TokensX('Put1Shootout:Stud', '', huckster)
+         notify("{} sets {}'s bullets to {} {}".format(me,huckster,targetBullets, fetchDrawType(target)))
+      else:
+         if targetBullets < hucksterBullets: plusBulletShootout(target, count = hucksterBullets - targetBullets, silent = True)
+         elif targetBullets > hucksterBullets: minusBulletShootout(target, count = targetBullets - hucksterBullets, silent = True)
+         if fetchDrawType(huckster) == 'Draw' and fetchDrawType(target) == 'Stud': 
+            TokensX('Remove999Shootout:Stud', '', target)  
+            if target.properties['Draw Type'] == 'Stud': TokensX('Put1Shootout:Draw', '', target)  
+         elif fetchDrawType(huckster) == 'Stud' and fetchDrawType(target) == 'Draw': 
+            TokensX('Remove999Shootout:Draw', '', target)  
+            if target.properties['Draw Type'] == 'Draw': TokensX('Put1Shootout:Stud', '', target)  
+         notify("{} sets {}'s bullets to {} {}".format(me,target,hucksterBullets, fetchDrawType(huckster)))
+   elif card.name == '["Kilmarnock" Columbine]':
+      me.piles['Deck'].addViewer(me)
+      whisper("The top card of your deck is {} ({} of {})".format(me.piles['Deck'].top(),fullrank(me.piles['Deck'].top().Rank),fullsuit(me.piles['Deck'].top().Suit)))
+      rnd(1,10)
+      me.piles['Deck'].removeViewer(me)
    else: announceString = announceText 
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
@@ -239,7 +271,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       if confirm("If your own draw hand illegal?"): remoteCall(targetCards[0].controller,'TWHITM',[targetCards,True])
       else: remoteCall(targetCards[0].controller,'TWHITM',[targetCards,False])
    elif card.name == "[Immigration and Tax Office]" and action == 'USE':
-      targetCards = findTarget('Targeted-atDude-choose1',card = card, choiceTitle = "Choose which of your opponent's dudes has to pay their taxes")
+      targetCards = findTarget('Targeted-atDude',card = card, choiceTitle = "Choose which of your opponent's dudes has to pay their taxes")
       if not len(targetCards): return 'ABORT'
       else: remoteCall(targetCards[0].controller,'TaxOffice',[targetCards[0]])
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
@@ -253,7 +285,7 @@ def markerEffects(Time = 'Start'):
       for marker in card.markers:
          if (Time == 'Sundown'
                and (re.search(r'Bad Company',marker[0])
-                 or re.search(r'High Noon',marker[0])
+                 or re.search(r'High Noon:',marker[0])
                  or re.search(r'Hiding in the Shadows',marker[0])
                  or re.search(r'Rumors',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
@@ -274,8 +306,7 @@ def markerEffects(Time = 'Start'):
          if (Time == 'ShootoutEnd'
                and (re.search(r'Sun In Yer Eyes',marker[0])
                  or re.search(r'Unprepared',marker[0])
-                 or re.search(r'Holy Wheel Gun Mark',marker[0])
-                 or re.search(r'Shootout',marker[0]))):
+                 or re.search(r'Shootout:',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))
          if Time == 'High Noon' and re.search(r'Taxed',marker[0]) and card.controller == me: # Immigration and Tax Office removal effects     

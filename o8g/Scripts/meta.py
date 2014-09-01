@@ -168,7 +168,7 @@ def fetchDrawType(card): # We go through effects which change their draw value i
    return drawType
    
 def calcValue(card, type = 'poker'):
-   numvalue = numrank(card.Rank) + card.markers[mdict['ValuePlus']] - card.markers[mdict['ValueMinus']]
+   numvalue = numrank(card.Rank) + card.markers[mdict['ValueNoonPlus']] - card.markers[mdict['ValueNoonMinus']] + card.markers[mdict['ValueShootoutPlus']] - card.markers[mdict['ValueShootoutMinus']]
    if type == 'raw': return numvalue
    if numvalue > 12 and type == 'numeral': return 13
    if numvalue > 12: return 'K'
@@ -461,8 +461,8 @@ def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = Fals
       if T.markers[mdict['ControlMinus']] and T.markers[mdict['ControlMinus']] >= 1: markers += " -{} Control,".format(T.markers[mdict['ControlMinus']])
       if T.markers[mdict['ProdPlus']] and T.markers[mdict['ProdPlus']] >= 1: markers += " +{} Production,".format(T.markers[mdict['ProdPlus']])
       if T.markers[mdict['ProdMinus']] and T.markers[mdict['ProdMinus']] >= 1: markers += " +{} Upkeep,".format(T.markers[mdict['ProdMinus']])
-      if T.markers[mdict['ValuePlus']] and T.markers[mdict['ValuePlus']] >= 1: markers += " +{} Value,".format(T.markers[mdict['ValuePlus']])
-      if T.markers[mdict['ValueMinus']] and T.markers[mdict['ValueMinus']] >= 1: markers += " -{} Value,".format(T.markers[mdict['ValueMinus']])
+      if T.markers[mdict['ValueNoonPlus']] and T.markers[mdict['ValueNoonPlus']] >= 1: markers += " +{} Value,".format(T.markers[mdict['ValueNoonPlus']])
+      if T.markers[mdict['ValueNoonMinus']] and T.markers[mdict['ValueNoonMinus']] >= 1: markers += " -{} Value,".format(T.markers[mdict['ValueNoonMinus']])
       if T.markers[mdict['BulletNoonPlus']] and T.markers[mdict['BulletNoonPlus']] >= 1: markers += " +{} Noon Bullets,".format(T.markers[mdict['BulletNoonPlus']])
       if T.markers[mdict['BulletShootoutPlus']] and T.markers[mdict['BulletShootoutPlus']] >= 1: markers += " +{} Shootout Bullets,".format(T.markers[mdict['BulletShootoutPlus']])
       if T.markers[mdict['PermBullet']] and T.markers[mdict['PermBullet']] >= 1: markers += " +{} Permanent Bullets,".format(T.markers[mdict['PermBullet']])

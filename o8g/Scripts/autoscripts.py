@@ -581,8 +581,8 @@ def TokensX(Autoscript, announceText, card, targetCards = None, notification = N
          elif token == mdict['InfluenceMinus']: minusInfluence(targetCard,silent = True,count = modtokens)
          elif token == mdict['ControlPlus']: plusControl(targetCard,silent = True,count = modtokens)
          elif token == mdict['ControlMinus']: minusControl(targetCard,silent = True,count = modtokens)
-         elif token == mdict['ValuePlus']: plusValue(targetCard,silent = True,valuemod = modtokens)
-         elif token == mdict['ValueMinus']: minusValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ValueNoonPlus']: plusValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ValueNoonMinus']: minusValue(targetCard,silent = True,valuemod = modtokens)
          elif token == mdict['ProdPlus']: modProd(targetCard,silent = True,count = modtokens)
          elif token == mdict['ProdMinus']: modProd(targetCard,silent = True,count = -modtokens)
          else: targetCard.markers[token] += modtokens # Finally we apply the marker modification
@@ -1141,10 +1141,18 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             if not moveTarget: 
                notify(":::ERROR::: No valid moveTarget. Aborting!")
                return 'ABORT'
-            possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to")
-            if not len(possibleTargets): 
-               notify(":::ERROR::: No valid Target to move to found. Aborting!")
-               return 'ABORT'
+            if moveTarget.group(1) == 'Here': # If the moveTarget is "Here", then we try to figure out the current card's location and set it as the destination.
+               if card.Type == 'Dude' or card.Type == 'Deed': possibleTargets = [card]
+               elif card.Type == 'Action': 
+                  notify(":::ERROR::: Bad Script. Actions should never 'moveToHere'. Aborting!")
+                  return 'ABORT'
+               else:
+                  possibleTargets = [fetchHost(card)]
+            else:
+               possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to")
+               if not len(possibleTargets): 
+                  notify(":::ERROR::: No valid Target to move to found. Aborting!")
+                  return 'ABORT'
             x,y = possibleTargets[0].position
             if targetCard.controller == me: targetCard.moveToTable(x + cardDistance(), y)
             else: remoteCall(targetCard.controller,'moveCard',[x + cardDistance(), y])
@@ -1226,6 +1234,12 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       elif re.search(r'-toDeck', Autoscript):
          destination = targetPL.piles['Deck']
          destiVerb = 'rework'
+      elif re.search(r'-toDiscard', Autoscript):
+         destination = targetPL.piles['Discard Pile']
+         destiVerb = 'discard'
+      elif re.search(r'-toBootHill', Autoscript):
+         destination = targetPL.piles['Boot Hill']
+         destiVerb = 'ace'
       else: 
          destination = targetPL.hand
          destiVerb = 'retrieve'

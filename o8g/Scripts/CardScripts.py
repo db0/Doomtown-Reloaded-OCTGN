@@ -637,7 +637,7 @@ Micah Ryse
 -----
 
 +++++
-GR0B0R0:BootTarget-AutoTargeted-atSpell-isUnbooted-onAttachment-isCost$$MoveMyself-moveToDeed_or_Town Square_or_Outfit
+GR0B0R0:BootTarget-AutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$MoveMyself-moveToDeed_or_Town Square_or_Outfit
 .....
 Missed!
 -----
@@ -1437,7 +1437,7 @@ dba818f0-4802-474c-91c8-07536e32fb3d
 -----
 
 +++++
-GR0B1R0:Put1BulletShootoutMinus-Targeted-atDude-isParticipating$$Put1Holy Wheel Gun Mark-Targeted-atAbomination-isParticipating-noTargetingError
+GR0B1R0:Put1BulletShootoutMinus-Targeted-atDude-isParticipating$$Put1Shootout:Holy Wheel Gun Mark-Targeted-atAbomination-isParticipating-noTargetingError
 .....
 Stone Idol
 -----
@@ -1445,7 +1445,7 @@ f94631b0-20f6-492b-b732-e36b816e523f
 -----
 
 +++++
-GR0B1R0:Put3ValueMinus-Targeted-atDude
+GR0B1R0:Put3ValueNoonMinus-Targeted-atDude
 .....
 Corporeal Twist
 -----
@@ -1709,7 +1709,7 @@ e77f6e44-7900-4d0e-b370-defa7cd6796d
 -----
 
 +++++
-
+GR0B1R0:Retrieve1Cards-fromBootHill-toDiscard-grabnonDude
 .....
 [Outlaws Mask]
 -----
@@ -1725,7 +1725,7 @@ e77f6e44-7900-4d0e-b370-defa7cd6796d
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testHex4-spellEffects<UseCustomAbility-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1-isFirstCustom,None>||GR0B1R0:Pull1Card-testHex6-spellEffects<UseCustomAbility-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1-isSecondCustom,None>
 .....
 [Lay on Hands Redux]
 -----
@@ -1733,7 +1733,7 @@ e77f6e44-7900-4d0e-b370-defa7cd6796d
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testMiracle8-spellEffects<BootHost++Put1NoUnboot-Targeted-atDude-isParticipating++SendHomeBootedTarget-Targeted-atDude-isParticipating,None>
 .....
 [Holy Roller Redux]
 -----
@@ -1741,7 +1741,7 @@ a806a33f-8bb2-4a47-9bdc-f3dc7d2058ea
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<Put1BulletShootoutPlus-AutoTargeted-atDude-onHost++Put1Shootout:Holy Roller-AutoTargeted-atDude-onHost,None>
 .....
 [Divine Intervention]
 -----
@@ -1749,7 +1749,7 @@ c5c2fed5-010f-4ece-a5e2-2cf200695064
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testMiracle9-spellEffects<Retrieve1Cards-grabAction++DiscardMyself,None>
 .....
 [Walking the Path]
 -----
@@ -1757,7 +1757,7 @@ c5c2fed5-010f-4ece-a5e2-2cf200695064
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testMiracle7-spellEffects<MoveTarget-Targeted-atDude-targetMine-moveToHere++UnbootTarget-Targeted-atDude-targetMine++ParticipateTarget-Targeted-atDude-targetMine,None>-onlyInShootouts||GR0B1R0:Pull1Card-testMiracle6-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToHere,None>-onlyInNoon
 .....
 [Phantasm]
 -----
@@ -1765,7 +1765,7 @@ c7d43986-30a5-46ac-99a3-01d94ceda540
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testHex9-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetOpponents-isUnbooted-choose1-moveToDeed_or_Town Square_or_Outfit,None>||GR0B1R0:Pull1Card-testHex12-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetOpponents-isBooted-choose1-moveToDeed_or_Town Square_or_Outfit,None>
 .....
 [Restoration]
 -----
@@ -1773,7 +1773,7 @@ c7d43986-30a5-46ac-99a3-01d94ceda540
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testMiracle10-spellEffects<BootHost-isCost++UnbootTarget-DemiAutoTargeted-atDude-targetMine-isBooted-choose1,None>
 .....
 [Abram's Sword]
 -----
@@ -1781,7 +1781,7 @@ a0c826bd-311f-4918-aeeb-9c2a14b176c3
 -----
 
 +++++
-
+GR0B1R0:SimplyAnnounce{Increase the casualties they inflict if they win, by 1}
 .....
 [Clown Carriage]
 -----
@@ -1789,7 +1789,7 @@ a8546fc6-be73-41eb-b33a-62b2b8158696
 -----
 
 +++++
-
+GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atAbomination-choose1-payCost
 .....
 [Bio-charged Neutraliser]
 -----
@@ -1805,7 +1805,7 @@ bc4af72b-b53c-44ef-858b-04d33e1e6a4b
 -----
 
 +++++
-
+GR0B0R0:BootTarget-AutoTargeted-atMiracle-isUnbooted-onAttachment-choose1-isCost$$Put1BulletShootoutPlus-Targeted-atDude-isParticipating-targetMine$$Put3ValueShootoutPlus-Targeted-atDude-isParticipating-targetMine
 .....
 ["Kilmarnock" Columbine]
 -----
@@ -1813,7 +1813,7 @@ bc4af72b-b53c-44ef-858b-04d33e1e6a4b
 -----
 
 +++++
-
+GR0B0R0:BootTarget-AutoTargeted-atMiracle-isUnbooted-onAttachment-choose1-isCost$$UseCustomAbility
 .....
 Nicodemus Whateley
 -----

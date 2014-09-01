@@ -207,8 +207,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.&#xD;&#xA;Shootout Hex 6, Boot: An opposing dude's bullets rating and type become equal to this huckster's." />
-         <property name="Instructions" value="" />
+         <property name="Text" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.&#xD;&#xA;Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's." />
+         <property name="Instructions" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.||Shootout Hex 6, Boot: This huckster's bullet rating and type become equal to an opposing dude's." />
       </card>
       <card id="8d8fa80c-580b-44b3-8e66-b89392299200" name="[Lay on Hands Redux]">
          <property name="Rank" value="4" />
@@ -292,8 +292,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Noon Hex 9, Boot: Move another player's unbooted dude at this or an adjacent location, to an adjacent location&#xD;&#xA;Noon Hex 12, Boot: Move another player's dude at this location to an adjacent location." />
-         <property name="Instructions" value="" />
+         <property name="Text" value="Noon Hex 9, Boot: Move another player's unbooted dude at this or an adjacent location, to an adjacent location&#xD;&#xA;Noon Hex 12, Boot: Move another player's booted dude at this location to an adjacent location." />
+         <property name="Instructions" value="Noon Hex 9, Boot: Move another player's unbooted dude at this or an adjacent location, to an adjacent location||Noon Hex 12, Boot: Move another player's booted dude at this location to an adjacent location." />
       </card>
       <card id="4eba0738-ddf4-4bce-9c3c-ecb06d3381ff" name="[Restoration]">
          <property name="Rank" value="Q" />

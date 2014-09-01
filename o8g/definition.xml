@@ -4,7 +4,7 @@
       name="DT Test" 
       id="7fd3eeac-4916-4644-bd7d-e1f5ff6faaa5" 
       octgnVersion="3.1.0.0"
-      version="0.7.1.2" 
+      version="0.7.1.4" 
       markersize="16"
       tags="western deadlands poker maneuvering multiplayer"
       description="Le Test"
@@ -138,7 +138,7 @@
 		</groupactions>      
 		<groupaction menu="Re-Calculate your total influence &amp; control" default="False" shortcut="Ctrl+C" execute="reCalculate" />
 		<groupaction menu="Sundown Refresh (Unboot cards / Refill Hand)" default="False" shortcut="Ctrl+S" execute="NightfallUnboot" />
-		<cardaction menu="(Un)Mark card as unbootable" default="False" execute="doesNotUnboot" />
+		<cardaction menu="Mark card as unbootable" default="False" execute="doesNotUnboot" />
 		<cardaction menu="Ace card(s)" default="False" shortcut="Ctrl+A" execute="ace" />
 		<cardaction menu="Discard card(s)" default="False" shortcut="Del" execute="discard" />
 	</table>

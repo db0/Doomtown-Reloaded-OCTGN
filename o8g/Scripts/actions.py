@@ -224,6 +224,8 @@ def clearShootout(remoted = False):
             executePlayScripts(card, 'UNPARTICIPATE')
          card.markers[mdict['BulletShootoutPlus']] = 0 
          card.markers[mdict['BulletShootoutMinus']] = 0 
+         card.markers[mdict['ValueShootoutPlus']] = 0 
+         card.markers[mdict['ValueShootoutMinus']] = 0 
          if card.model == '94fe7823-077c-4abd-9278-6e64bda6dc64': delCard(card) # If it's a gunslinger token, we remove it from the game.
    clearDrawHandonTable()
    clearRemainingActions() # Clear any shootout actions used (common mistake)
@@ -398,8 +400,9 @@ def nightfall(card, x = 0, y = 0): # This function "refreshes" each card for nig
    card.markers[mdict['BulletNoonMinus']] = 0 
    card.markers[mdict['Traded']] = 0
    reCalculate(notification = 'silent')
-   if card.highlight != DoesntUnbootColor and card.name != 'Town Square' : # We do not unboot the Town Square card.
+   if not card.markers[mdict['NoUnboot']] and card.name != 'Town Square': # We do not unboot the Town Square card.
       card.orientation = Rot0 # And if we can unboot the card, turn it to 0 degrees.
+   elif card.markers[mdict['NoUnboot']]: card.markers[mdict['NoUnboot']] -= 1 # If the card does not unboot for any number of turns, we
 
 def NightfallUnboot(group, x = 0, y = 0): # This function simply runs all the cards the player controls through the nigtfall function.
    mute()
@@ -413,13 +416,10 @@ def NightfallUnboot(group, x = 0, y = 0): # This function simply runs all the ca
    for card in cards: nightfall(card)
    notify("Sundown refreshes {} cards and refills their hand back to {}.".format(me, handsize))
    
-def doesNotUnboot(card, x = 0, y = 0): # Mark a card as "Does not unboot" or unmark it. We use a card highlight to do this.
-   if card.highlight == DoesntUnbootColor: # If it's already marked, remove highlight from it and inform.
-      card.highlight = None
-      notify("{}'s {} can now unboot during Sundown.".format(me, card))
-   else:
-      card.highlight = DoesntUnbootColor # Otherwise highlight it and inform. 
-      notify("{}'s {} will not unboot during Sundown.".format(me, card))
+def doesNotUnboot(card, x = 0, y = 0): # Mark a card as "Does not unboot" and increase the duration. We use a card marker to do this.
+   mute()
+   card.markers[mdict['NoUnboot']] += 1
+   notify("{}'s {} will not unboot during the next {} Sundowns.".format(me, card, card.markers[mdict['NoUnboot']]))
       
 def spawnTokenDude(group, x = 0, y = 0): # Simply put a fake card in the game.
    table.create("94fe7823-077c-4abd-9278-6e64bda6dc64", x, y, 1)
@@ -669,30 +669,30 @@ def plusValue(card, x = 0, y = 0, silent = False, valuemod = None):
 # Very much like plus Influence and control, but we don't have to worry about modifying the player's totals
    mute()
    if valuemod == None: valuemod = askInteger("Increase {}'s value by how much? (Current value is: {})".format(card.name,calcValue(card)), 3)
-   if mdict['ValueMinus'] in card.markers:
-      if valuemod <= card.markers[mdict['ValueMinus']]:
-         card.markers[mdict['ValueMinus']] -= valuemod
+   if mdict['ValueNoonMinus'] in card.markers:
+      if valuemod <= card.markers[mdict['ValueNoonMinus']]:
+         card.markers[mdict['ValueNoonMinus']] -= valuemod
       else:
-         card.markers[mdict['ValuePlus']] += valuemod - card.markers[mdict['ValueMinus']]
-         card.markers[mdict['ValueMinus']] = 0
+         card.markers[mdict['ValueNoonPlus']] += valuemod - card.markers[mdict['ValueNoonMinus']]
+         card.markers[mdict['ValueNoonMinus']] = 0
    else:
-      card.markers[mdict['ValuePlus']] += valuemod 
-   if calcValue(card,'raw') > 13: card.markers[mdict['ValuePlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
+      card.markers[mdict['ValueNoonPlus']] += valuemod 
+   if calcValue(card,'raw') > 13: card.markers[mdict['ValueNoonPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
    if not silent:
       notify("{} marks that {}'s value has increased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
         
 def minusValue(card, x = 0, y = 0, silent = False, valuemod = None): 
    mute()
    if valuemod == None: valuemod = askInteger("Decrease {}'s value by how much? (Current value is: {})".format(card.name,calcValue(card)), 3)
-   if mdict['ValuePlus'] in card.markers:
-      if valuemod <= card.markers[mdict['ValuePlus']]:
-         card.markers[mdict['ValuePlus']] -= valuemod
+   if mdict['ValueNoonPlus'] in card.markers:
+      if valuemod <= card.markers[mdict['ValueNoonPlus']]:
+         card.markers[mdict['ValueNoonPlus']] -= valuemod
       else:
-         card.markers[mdict['ValueMinus']] += valuemod - card.markers[mdict['ValuePlus']]
-         card.markers[mdict['ValuePlus']] = 0
+         card.markers[mdict['ValueNoonMinus']] += valuemod - card.markers[mdict['ValueNoonPlus']]
+         card.markers[mdict['ValueNoonPlus']] = 0
    else:
-      card.markers[mdict['ValueMinus']] += valuemod         
-   if calcValue(card,'raw') < 1: card.markers[mdict['ValueMinus']] = numrank(card.Rank)
+      card.markers[mdict['ValueNoonMinus']] += valuemod         
+   if calcValue(card,'raw') < 1: card.markers[mdict['ValueNoonMinus']] = numrank(card.Rank)
    if not silent:
       notify("{} marks that {}'s value has decreased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
 
