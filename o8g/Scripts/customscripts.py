@@ -233,11 +233,15 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          whisper(":::ERROR::: No dude targeted. Aborting!")
          return 'ABORT'         
 ### PB 1 ###		 
-   if card.name == "[Leavin' a Scar]" and action == 'PLAY':
+   elif card.name == "[Leavin' a Scar]" and action == 'PLAY':
       targetCards = findTarget('DemiAutoTargeted-isDrawHand-targetOpponents-choose2',card = card, choiceTitle = "Choose which of your opponent's cards to discard")
       if not len(targetCards): return 'ABORT'
       if confirm("If your own draw hand illegal?"): remoteCall(targetCards[0].controller,'TWHITM',[targetCards,True])
       else: remoteCall(targetCards[0].controller,'TWHITM',[targetCards,False])
+   elif card.name == "[Immigration and Tax Office]" and action == 'USE':
+      targetCards = findTarget('Targeted-atDude-choose1',card = card, choiceTitle = "Choose which of your opponent's dudes has to pay their taxes")
+      if not len(targetCards): return 'ABORT'
+      else: remoteCall(targetCards[0].controller,'TaxOffice',[targetCards[0]])
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -274,6 +278,10 @@ def markerEffects(Time = 'Start'):
                  or re.search(r'Shootout',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))
+         if Time == 'High Noon' and re.search(r'Taxed',marker[0]) and card.controller == me: # Immigration and Tax Office removal effects     
+            modProd(card, -card.markers[marker], True)
+            card.markers[marker] = 0
+      
    
 #------------------------------------------------------------------------------
 # Remote Functions
@@ -347,3 +355,17 @@ def TWHITM(targetCards, discardCard = True): # This Will Hurt in the Morning
    resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
    notify("{}'s new hand rank is {}".format(me,resultTXT))
          
+def TaxOffice(dude):
+   mute()
+   upkeep = compileCardStat(dude, stat = 'Upkeep')
+   if upkeep:
+      if not confirm("Pay {} Ghost Rock to retain this dude this turn?".format(upkeep)):
+         discard(dude)
+      else:
+         msg = payCost(upkeep, MSG = "You do you not seem to have enough ghost rock to pay your taxes varmint! Bypass?")
+         if msg == 'ABORT': discard(dude)
+         else:
+            modProd(dude, upkeep, True)
+            TokensX('Put{}Taxed'.format(upkeep), '', dude)
+            notify("{} pays the tax required to retain {}".format(me,dude))
+   else: notify(":> {} has 0 upkeep, so their accounts were already in order.".format(dude))

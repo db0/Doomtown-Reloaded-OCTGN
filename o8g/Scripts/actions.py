@@ -566,25 +566,27 @@ def minusProd(card, x = 0, y = 0):
 
 def modProd(card, count = 1, silent = False):
    if count > 0:
-      if mdict['ProdPlus'] in card.markers or mdict['ProdMinus'] in card.markers: # Putting the clarification about upkeep 
-                                                                                  # only the first time this is changed
-                                                                                  # to make the message more readable
-         if not silent: notify("{} marks that {}'s production has increased by 1 GR.".format(me, card)) 
-      else: 
-         if not silent: notify("{} marks that {}'s production has increased by 1 GR (This will be automatically taken into account during upkeep).".format(me, card))
-      if mdict['ProdMinus'] in card.markers:
-         card.markers[mdict['ProdMinus']] -= 1
-      else:
-         card.markers[mdict['ProdPlus']] += 1         
+      for iter in range(count):
+         if mdict['ProdPlus'] in card.markers or mdict['ProdMinus'] in card.markers: # Putting the clarification about upkeep 
+                                                                                     # only the first time this is changed
+                                                                                     # to make the message more readable
+            if not silent: notify("{} marks that {}'s production has increased by 1 GR.".format(me, card)) 
+         else: 
+            if not silent: notify("{} marks that {}'s production has increased by 1 GR (This will be automatically taken into account during upkeep).".format(me, card))
+         if mdict['ProdMinus'] in card.markers:
+            card.markers[mdict['ProdMinus']] -= 1
+         else:
+            card.markers[mdict['ProdPlus']] += 1         
    else:
-      if mdict['ProdPlus'] in card.markers or mdict['ProdMinus'] in card.markers:
-         if not silent: notify("{} marks that {}'s production has decreased by 1 GR.".format(me, card))
-      else:
-         if not silent: notify("{} marks that {}'s production has decreased by 1 GR (This will be automatically taken into account during upkeep).".format(me, card))
-      if mdict['ProdPlus'] in card.markers:
-         card.markers[mdict['ProdPlus']] -= 1
-      else:
-         card.markers[mdict['ProdMinus']] += 1  
+      for iter in range(abs(count)):
+         if mdict['ProdPlus'] in card.markers or mdict['ProdMinus'] in card.markers:
+            if not silent: notify("{} marks that {}'s production has decreased by 1 GR.".format(me, card))
+         else:
+            if not silent: notify("{} marks that {}'s production has decreased by 1 GR (This will be automatically taken into account during upkeep).".format(me, card))
+         if mdict['ProdPlus'] in card.markers:
+            card.markers[mdict['ProdPlus']] -= 1
+         else:
+            card.markers[mdict['ProdMinus']] += 1  
         
 def plusVP(card, x = 0, y = 0, notification = 'loud', count = 1): # Adds an extra VP marker to cards (usually dudes)
    mute()
