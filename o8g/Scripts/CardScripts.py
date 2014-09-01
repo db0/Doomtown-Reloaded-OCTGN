@@ -1829,7 +1829,7 @@ da32c302-02de-4a5b-89c4-8227dba9f3c7
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 [Robot Dude Maker]
 -----
@@ -1845,7 +1845,7 @@ Abram Grothe
 -----
 
 +++++
-
+GR0B0R0:BootMulti-AutoTargeted-atWeapon-targetOpponents-isParticipating$$Put1BulletShootoutPlus
 .....
 [William Specks]
 -----

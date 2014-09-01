@@ -1547,6 +1547,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
    debugNotify("Card: {}".format(card)) #Debug
    validCard = True
    Autoscript = scrubTransferTargets(Autoscript)
+   host = fetchHost(card)
    if re.search(r'isUnbooted',Autoscript) and card.orientation == Rot90: 
       debugNotify("!!! Failing because it's booted")
       validCard = False
@@ -1559,12 +1560,24 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
    if re.search(r'isDrawDude',Autoscript) and fetchDrawType(card) == 'Stud':
       debugNotify("!!! Failing because card is a Stud")
       validCard = False
-   if re.search(r'isParticipating',Autoscript) and card.highlight != AttackColor and card.highlight != DefendColor and card.highlight != InitiateColor: 
-      debugNotify("!!! Failing because it's not participating")
-      validCard = False
-   if re.search(r'isNotParticipating',Autoscript) and (card.highlight == AttackColor or card.highlight == DefendColor or card.highlight == InitiateColor): 
-      debugNotify("!!! Failing because unit is participating")
-      validCard = False
+   if re.search(r'isParticipating',Autoscript):
+      if host:
+         if host.highlight != AttackColor and host.highlight != DefendColor and host.highlight != InitiateColor:
+            debugNotify("!!! Failing because host is not participating")
+            validCard = False
+      else:
+         if card.highlight != AttackColor and card.highlight != DefendColor and card.highlight != InitiateColor: 
+            debugNotify("!!! Failing because dude is not participating")
+            validCard = False
+   if re.search(r'isNotParticipating',Autoscript):
+      if host:
+         if (host.highlight == AttackColor or host.highlight == DefendColor or host.highlight == InitiateColor): 
+            debugNotify("!!! Failing because host is participating")
+            validCard = False
+      else:
+         if (card.highlight == AttackColor or card.highlight == DefendColor or card.highlight == InitiateColor): 
+            debugNotify("!!! Failing because dude is participating")
+            validCard = False
    if re.search(r'isDrawHand',Autoscript) and card.highlight != DrawHandColor: 
       debugNotify("!!! Failing because card is not in the draw hand")
       validCard = False
