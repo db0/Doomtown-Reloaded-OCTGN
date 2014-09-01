@@ -257,7 +257,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="0" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Private-Strike-Out-of-Town" />
+         <property name="Keywords" value="Private-Strike-Out of Town" />
          <property name="Text" value="During upkeep, put enough Ghost Rock counters on this deed to bring it to 2 counters.&#xD;&#xA;The controller may use Ghost Rock counters on this deed to pay for abilities on gadgets." />
          <property name="Instructions" value="" />
       </card>
@@ -768,7 +768,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="" />
-         <property name="Text" value="While at an out-of-town deed, this dude is worth 1 CP&#xD;&#xA;Any deed this dude is at has its production reduced to 0&#xD;&#xA;Noon, boot: Choose a dude at this location, reduce their influence to 0 until after the next upkeep phase." />
+         <property name="Text" value="While at an Out of Town deed, this dude is worth 1 CP&#xD;&#xA;Any deed this dude is at has its production reduced to 0&#xD;&#xA;Noon, boot: Choose a dude at this location, reduce their influence to 0 until after the next upkeep phase." />
          <property name="Instructions" value="" />
       </card>
       <card id="9eada35c-a9a5-485f-9513-305661421944" name="[Master Swordsman]">

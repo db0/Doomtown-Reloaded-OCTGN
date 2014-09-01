@@ -258,7 +258,25 @@ def fetchSkills(card):
          #confirm("Checking {}".format(strippedCS))
          if strippedCS:
             skillRegex = re.search(r'(Huckster|Blessed|Shaman|Mad Scientist) ([0-9])',strippedCS)
-            if skillRegex: skillList.append((skillRegex.group(1),num(skillRegex.group(2)))) # If we discover a skill, we add it in a tuple with the skill first, then its numerical value second.
+            if skillRegex:
+               skillRank = num(skillRegex.group(2))
+               # We now look for effects that would modify that skill.
+               debugNotify('Skill now {}'.format(skillRank))
+               for marker in card.markers:
+                  if re.search(r'Skill Bonus',marker[0]): skillRank += card.markers[marker]
+                  if re.search(r'Skill Penalty',marker[0]): skillRank -= card.markers[marker]
+               debugNotify('Skill now {}'.format(skillRank))
+               if CardsAS.get(card.model,'') != '':
+                  Autoscripts = CardsAS.get(card.model,'').split('||')
+                  for autoS in Autoscripts:
+                     skillBonusRegex = re.search(r'constantAbility:Skill Bonus:([0-9]+)',autoS)
+                     if skillBonusRegex and checkSpecialRestrictions(autoS,card):
+                        multiplier = per(autoS, card)
+                        skillRank += multiplier * num(skillBonusRegex.group(1))
+                        debugNotify('Skill now {}'.format(skillRank))
+               # Finished checking effects
+               skillList.append((skillRegex.group(1),skillRank)) # If we discover a skill, we add it in a tuple with the skill first, then its numerical value second.
+   #confirm(str(skillList))        
    return skillList
       
 def sendToDrawHand(card):

@@ -1293,7 +1293,7 @@ Paralysis Mark
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testHexX-difficultyValue-spellEffects<BootTarget-DemiAutoTargeted-atDude-choose1,None>
 .....
 ..It's who you know
 -----
@@ -1403,7 +1403,7 @@ Jose Morales
 -----
 1e61fcd0-65fa-414f-8838-d76f1394b041
 -----
-
+constantAbility:Skill Bonus:1-perProperty{Bullets}-isParticipating
 +++++
 
 .....
@@ -1453,7 +1453,7 @@ Corporeal Twist
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testHex5-spellEffects<Put1BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents$$Put2ValueShootoutMinus-Targeted-atDude-isParticipating-targetOpponents,None>
 .....
 Forget
 -----
@@ -1621,7 +1621,7 @@ f138c8f1-00cc-4ca4-b145-e9c5105dc76a
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Summoning
 -----
@@ -1853,7 +1853,7 @@ GR0B0R0:BootMulti-AutoTargeted-atWeapon-targetOpponents-isParticipating$$Put1Bul
 -----
 
 +++++
-
+GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atRanch_or_Out of Town_or_Gadget-choose1-payCost-reduc2
 .....
 [Motor Cycle Gal]
 -----
@@ -1869,7 +1869,7 @@ a2b5195e-4d31-41e9-8407-c40ce54cc334
 -----
 
 +++++
-
+GR0B0R0:BootTarget-AutoTargeted-atHorse-isUnbooted-onAttachment-isCost$$BootTarget-Targeted-atDude-targetOpponents$$MoveMyself-moveToDude-targetOpponents$$CalloutTarget-Targeted-atDude-targetOpponents
 .....
 [The Kingpin]
 -----
@@ -1877,13 +1877,13 @@ dfb10d22-9e8f-4031-9249-50cd13ee7203
 -----
 
 +++++
-
+GR0B1R0:CustomScript
 .....
 [Wizard on the Run]
 -----
 9937f528-6b65-4625-85d8-05a51af488d2
 -----
-
+constantAbility:Skill Bonus:1-perMarker{Bounty}-isParticipating
 +++++
 
 .....
