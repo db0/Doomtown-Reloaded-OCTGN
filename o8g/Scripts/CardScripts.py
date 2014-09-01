@@ -1893,7 +1893,7 @@ constantAbility:Skill Bonus:1-perMarker{Bounty}-isParticipating
 -----
 
 +++++
-
+GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetMine-choose1$$Put1Bounty-DemiAutoTargeted-atDude-targetMine-choose1
 .....
 [A Clown]
 -----
@@ -1901,7 +1901,7 @@ constantAbility:Skill Bonus:1-perMarker{Bounty}-isParticipating
 -----
 
 +++++
-
+GR0B1R0:Put1BulletShootoutMinus-Targeted-atDude-targetOpponents-isParticipating$$Put1ValueShootoutMinus-Targeted-atDude-targetOpponents-isParticipating
 .....
 [Geeky Slavin Sidekick]
 -----
@@ -1917,7 +1917,7 @@ Micah Ryse
 -----
 
 +++++
-
+GR0B0R0:BootTarget-AutoTargeted-atHex-isUnbooted-onAttachment-choose1-isCost$$Put3ValueShootoutMinus-Targeted-atDude-isParticipating-targetOpponents
 .....
 [CSI Armory]
 -----
@@ -1925,7 +1925,7 @@ b6cfa257-5898-4f1a-968c-8f36956f499b
 -----
 
 +++++
-
+GR0B0R1:BootTarget-DemiAutoTargeted-atGadget_or_Spell-isUnbooted-choose1-targetMine-isCost$$CalloutTarget-Targeted-atDude-targetOpponents-leaderTarget{Dude}
 .....
 [The Gadgetorium]
 -----
@@ -1933,7 +1933,7 @@ b6cfa257-5898-4f1a-968c-8f36956f499b
 -----
 
 +++++
-
+GR0B1R0:SimplyAnnounce{optimize the gadget creation}
 .....
 [Campaign of Terror]
 -----
@@ -1941,7 +1941,7 @@ b6cfa257-5898-4f1a-968c-8f36956f499b
 -----
 
 +++++
-
+GR0B1R0:StartJob-AutoTargeted-atTown Square
 .....
 [The Big Show]
 -----
@@ -1949,7 +1949,7 @@ d5ed8e5d-c9f9-4e9e-8bc9-48da7c938045
 -----
 
 +++++
-
+GR0B1R0:BootTarget-DemiAutoTargeted-atAbomination-targetMine-isUnbooted-choose1-isCost$$Gain1Ghost Rock$$BootTarget-Targeted-atDude-targetOpponents-noTargetingError
 .....
 ENDSCRIPTS
 =====
