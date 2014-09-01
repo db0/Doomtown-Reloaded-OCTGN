@@ -1453,7 +1453,7 @@ Corporeal Twist
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHex5-spellEffects<Put1BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents$$Put2ValueShootoutMinus-Targeted-atDude-isParticipating-targetOpponents,None>
+GR0B1R0:Pull1Card-testHex5-spellEffects<Put1BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents++Put2ValueShootoutMinus-Targeted-atDude-isParticipating-targetOpponents,None>
 .....
 Forget
 -----
@@ -1461,7 +1461,7 @@ Forget
 -----
 
 +++++
-
+GR0B1R0:Pull1Card
 .....
 Ridden Down
 -----
