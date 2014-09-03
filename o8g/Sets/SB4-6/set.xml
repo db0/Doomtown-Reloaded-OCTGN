@@ -885,7 +885,7 @@
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Morgan Cattle Company" />
+         <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Mad Scientist 0-Grifter" />
          <property name="Text" value="React: At the start of the game, reveal your play hand. If there are no deeds in your play hand, discard the top 10 cards from you deck. You may choose a Ranch or Improvement from your discard pile and put it in your hand. " />
          <property name="Instructions" value="" />
@@ -902,7 +902,7 @@
          <property name="Draw Type" value="Stud" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Morgan Cattle Company" />
+         <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
          <property name="Text" value="Shootout: Look at a number of random cards in an opponent's hand equal to this dude's bullet value. You may discard one of them." />
          <property name="Instructions" value="" />
@@ -919,7 +919,7 @@
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="2" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Morgan Cattle Company" />
+         <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Mad Scientist:3-Experienced 1" />
          <property name="Text" value="Shootout, Boot: Boot Elander to unboot a gadget in your posse. It can use any printed abilities another time this turn. If it's Experimental, you may unboot Elander. If it's a Weapon, it provides an extra +1 Bullets and the dude holding it becomes a stud." />
          <property name="Instructions" value="" />
@@ -936,7 +936,7 @@
          <property name="Draw Type" value="Stud" />
          <property name="Influence" value="2" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Morgan Cattle Company" />
+         <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Mad Scientist 2" />
          <property name="Text" value="Repeat Noon, pull, Pay 1 GR: Louis makes a Mad Scientist skill check against a value of 10. If successful, you may unboot one your dudes at an in-town location. You may boot Louis instead of paying the GR." />
          <property name="Instructions" value="" />
@@ -953,7 +953,7 @@
          <property name="Draw Type" value="Stud" />
          <property name="Influence" value="2" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Morgan Cattle Company" />
+         <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
          <property name="Text" value="React: When one of you dudes is being aced, discarded or sent home booted as a shootout play, send him home booted instead. This Dude joins your posse (moving if necessary)." />
          <property name="Instructions" value="" />

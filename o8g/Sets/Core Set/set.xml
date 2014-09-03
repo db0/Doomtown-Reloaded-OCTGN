@@ -207,7 +207,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget-Difficulty 7" />
-         <property name="Text" value="After this is invented, attach it to a Ranch that you control.#xD;&#xA;Controller Noon, Boot: Gain 1 ghost rock." />
+         <property name="Text" value="After this is invented, attach it to a Ranch that you control.&#xD;&#xA;Controller Noon, Boot: Gain 1 ghost rock." />
          <property name="Instructions" value="" />
       </card>
       <card id="239ef52d-12a1-47b6-8838-28a8c021a251" name="Auto-Revolver">
@@ -224,7 +224,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Weapon-Gadget-Difficulty 7" />
-         <property name="Text" value="You may equip this Gadget as a Shootout play (pay all costs).#xD;&#xA;When forming a shootout hand, when you redraw after discarding at least one card, you may draw one extra card." />
+         <property name="Text" value="You may equip this Gadget as a Shootout play (pay all costs).&#xD;&#xA;When forming a shootout hand, when you redraw after discarding at least one card, you may draw one extra card." />
          <property name="Instructions" value="" />
       </card>
       <card id="2871b5b3-fd14-40d1-90e5-f7ea4dae30ba" name="Avie Cline">
@@ -326,7 +326,7 @@
          <property name="Control" value="0" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Ranch-Out of Town" />
-         <property name="Text" value="Private • Ranch#xD;&#xA;Out of Town" />
+         <property name="Text" value="Private • Ranch&#xD;&#xA;Out of Town" />
          <property name="Instructions" value="" />
       </card>
       <card id="597ff0fc-a578-4215-9c6d-c5452d387870" name="Blood Curse">
@@ -343,7 +343,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Noon Hex 9, Boot: A dude at this or an adjacent location gets –1 influence and –1 bullets.#xD;&#xA;Shootout Hex 9, Boot: One opposing dude gets –2 bullets." />
+         <property name="Text" value="Noon Hex 9, Boot: A dude at this or an adjacent location gets –1 influence and –1 bullets.&#xD;&#xA;Shootout Hex 9, Boot: One opposing dude gets –2 bullets." />
          <property name="Instructions" value="" />
       </card>
       <card id="a914540e-8564-44a4-b4cf-64f9f392218b" name="Bluetick">
@@ -360,7 +360,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Sidekick" />
-         <property name="Text" value="Sidekick (This card can be discarded to cover one casualty.)#xD;&#xA;Noon, Boot: Move this dude to the same location as a wanted dude." />
+         <property name="Text" value="Sidekick (This card can be discarded to cover one casualty.)&#xD;&#xA;Noon, Boot: Move this dude to the same location as a wanted dude." />
          <property name="Instructions" value="" />
       </card>
       <card id="abb271cf-7cbb-4a15-bd45-0458366c6f65" name="Bobo">
@@ -479,7 +479,7 @@
          <property name="Control" value="0" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Ranch" />
-         <property name="Text" value="This deed has 1 control point if another Ranch is in play.#xD;&#xA;All dudes have their value raised by 3 while at this deed." />
+         <property name="Text" value="This deed has 1 control point if another Ranch is in play.&#xD;&#xA;All dudes have their value raised by 3 while at this deed." />
          <property name="Instructions" value="" />
       </card>
       <card id="57528427-b65a-4056-9fea-082bba8ef4a9" name="Charlie's Place">
@@ -513,7 +513,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Resolution: Pay 5 ghost rock to lower a player’s draw hand by 2 ranks.#xD;&#xA;Cheatin’ Resolution: Lower a player’s draw hand by 2 ranks." />
+         <property name="Text" value="Resolution: Pay 5 ghost rock to lower a player’s draw hand by 2 ranks.&#xD;&#xA;Cheatin’ Resolution: Lower a player’s draw hand by 2 ranks." />
          <property name="Instructions" value="onPlay[Resolution: Pay 5 ghost rock to lower a player’s draw hand by 2 ranks.|-|Cheatin’ Resolution: Lower a player’s draw hand by 2 ranks.]" />
       </card>
       <card id="ec741b63-8ac4-4b5a-9767-9854e05b91c3" name="Circle M Ranch">
@@ -768,7 +768,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Weapon-Gadget-Difficulty 8" />
-         <property name="Text" value="This dude is a stud.#xD;&#xA;Shootout, Pay 1–3 Ghost Rock, Boot: Raise the bullets on this Gadget by 1 for each ghost rock spent. Each round’s loser takes 1 extra casualty." />
+         <property name="Text" value="This dude is a stud.&#xD;&#xA;Shootout, Pay 1–3 Ghost Rock, Boot: Raise the bullets on this Gadget by 1 for each ghost rock spent. Each round’s loser takes 1 extra casualty." />
          <property name="Instructions" value="" />
       </card>
       <card id="40302c3e-668e-474f-a2ae-7ab1bbdf9d63" name="Force Field">
@@ -1074,7 +1074,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="This card is only used for draw hands and pulls.#xD;&#xA;You choose its suit and value. Ace the joker after use." />
+         <property name="Text" value="This card is only used for draw hands and pulls.&#xD;&#xA;You choose its suit and value. Ace the joker after use." />
          <property name="Instructions" value="" />
       </card>
       <card id="a630aa27-9ba9-4e38-86b4-83cade3a7546" name="Joker (black)">
@@ -1091,7 +1091,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="This card is only used for draw hands and pulls.#xD;&#xA;You choose its suit and value. Ace the joker after use." />
+         <property name="Text" value="This card is only used for draw hands and pulls.&#xD;&#xA;You choose its suit and value. Ace the joker after use." />
          <property name="Instructions" value="" />
       </card>
       <card id="0c0087d0-6356-44a4-8237-15f86573716a" name="Jon Longstride">
@@ -1363,7 +1363,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
-         <property name="Text" value="Max is worth 1 control point while you control 2 or more Ranches.#xD;&#xA;Your other dudes at Ranches get +1 influence and +3 value." />
+         <property name="Text" value="Max is worth 1 control point while you control 2 or more Ranches.&#xD;&#xA;Your other dudes at Ranches get +1 influence and +3 value." />
          <property name="Instructions" value="" />
       </card>
       <card id="aa1dec3f-9913-4bf1-bbcd-5d29457f6a80" name="Mechanical Horse">
@@ -1380,7 +1380,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Horse-Gadget-Difficulty 5" />
-         <property name="Text" value="Repeat Noon, Pay 2 Ghost Rock: Move this dude.#xD;&#xA;React, Boot: Prevent this dude from booting when they join a posse (this does not let a booted dude join a posse)." />
+         <property name="Text" value="Repeat Noon, Pay 2 Ghost Rock: Move this dude.&#xD;&#xA;React, Boot: Prevent this dude from booting when they join a posse (this does not let a booted dude join a posse)." />
          <property name="Instructions" value="" />
       </card>
       <card id="6d31cb7e-a409-4256-8bba-26778de6c5f4" name="Micah Ryse">
@@ -1499,7 +1499,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Draw a card.#xD;&#xA;Cheatin' Resolution: Gain 3 ghost rock." />
+         <property name="Text" value="Noon: Draw a card.&#xD;&#xA;Cheatin' Resolution: Gain 3 ghost rock." />
          <property name="Instructions" value="onPlay[Noon: Draw a card.|-|Cheatin' Resolution: Gain 3 ghost rock.]" />
       </card>
       <card id="2dbddcbc-d228-451d-8cde-32b65abe769e" name="Pair of Six-Shooters">
@@ -1754,7 +1754,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Weapon" />
-         <property name="Text" value="Cheatin’ Resolution, Boot: If you have a legal draw hand, exchange draw hands with the cheatin’ player.#xD;&#xA;Cheatin’ cards cannot be played on you for this round of the shootout." />
+         <property name="Text" value="Cheatin’ Resolution, Boot: If you have a legal draw hand, exchange draw hands with the cheatin’ player.&#xD;&#xA;Cheatin’ cards cannot be played on you for this round of the shootout." />
          <property name="Instructions" value="" />
       </card>
       <card id="fa907076-61c7-4f1f-b9a4-87a1df59bfae" name="Railroad Station">
@@ -1805,7 +1805,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Whenever Ramiro joins a posse, pay 1 ghost rock.#xD;&#xA;If you do not or cannot pay, discard him." />
+         <property name="Text" value="Whenever Ramiro joins a posse, pay 1 ghost rock.&#xD;&#xA;If you do not or cannot pay, discard him." />
          <property name="Instructions" value="" />
       </card>
       <card id="9ef9abea-373c-4265-b7fc-3d8391095f64" name="Recruitment Drive">
@@ -1941,7 +1941,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Noon Hex 7, Boot: Move this Huckster to any location.#xD;&#xA;Shootout Hex 7, Boot: Move this Huckster to join your posse. You may make another Shootout play." />
+         <property name="Text" value="Noon Hex 7, Boot: Move this Huckster to any location.&#xD;&#xA;Shootout Hex 7, Boot: Move this Huckster to join your posse. You may make another Shootout play." />
          <property name="Instructions" value="" />
       </card>
       <card id="2af1e511-ca73-4f12-a1ae-9a7a340738da" name="Sheriff Dave Montreal">
@@ -2009,7 +2009,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Sloane’s bounty cannot be reduced below 1.#xD;&#xA;Sloane and your other dudes at her location do not boot when forming or joining a posse." />
+         <property name="Text" value="Sloane’s bounty cannot be reduced below 1.&#xD;&#xA;Sloane and your other dudes at her location do not boot when forming or joining a posse." />
          <property name="Instructions" value="" />
       </card>
       <card id="bf1c8173-843a-4a20-be3b-f4ae650cfdd2" name="Soul Blast">
@@ -2281,7 +2281,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Boot your dude at a deed you don’t own to take ghost rock from the owner up to the production of that#xD;&#xA;deed. Raise the bounty on your dude by the amount of ghost rock taken." />
+         <property name="Text" value="Noon: Boot your dude at a deed you don’t own to take ghost rock from the owner up to the production of that&#xD;&#xA;deed. Raise the bounty on your dude by the amount of ghost rock taken." />
          <property name="Instructions" value="" />
       </card>
       <card id="89686c7d-7845-48ef-bf10-2bf38563522f" name="Tin Star">
@@ -2315,7 +2315,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Deputy" />
-         <property name="Text" value="If your opponent in Tommy’s shootout reveals a cheatin’ hand, raise your draw hand rank by 1 for this round.#xD;&#xA;If your draw hand is also legal, raise your hand rank by 2 instead." />
+         <property name="Text" value="If your opponent in Tommy’s shootout reveals a cheatin’ hand, raise your draw hand rank by 1 for this round.&#xD;&#xA;If your draw hand is also legal, raise your hand rank by 2 instead." />
          <property name="Instructions" value="" />
       </card>
       <card id="03341e26-42b4-4545-897e-8626de5e3dd7" name="Travis Moone">
@@ -2332,7 +2332,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="Grifter" />
-         <property name="Text" value="Grifter (You may only have one Grifter in your starting posse.)#xD;&#xA;React, Boot: At the start of the game, shuffle your play hand into your deck and draw 5 cards." />
+         <property name="Text" value="Grifter (You may only have one Grifter in your starting posse.)&#xD;&#xA;React, Boot: At the start of the game, shuffle your play hand into your deck and draw 5 cards." />
          <property name="Instructions" value="" />
       </card>
       <card id="d4133356-c738-4b89-82ac-9a6d5e35a744" name="Tresspassin'">
@@ -2366,7 +2366,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Abomination" />
-         <property name="Text" value="Abomination#xD;&#xA;Other players cannot choose or affect your Hucksters at this location with action cards if they could legally choose to affect Tyxarglenak instead." />
+         <property name="Text" value="Abomination&#xD;&#xA;Other players cannot choose or affect your Hucksters at this location with action cards if they could legally choose to affect Tyxarglenak instead." />
          <property name="Instructions" value="" />
       </card>
       <card id="a8843dcd-cd66-4f38-b6a9-12fbf5fd8bba" name="Undertaker">

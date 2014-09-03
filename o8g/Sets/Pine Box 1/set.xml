@@ -20,7 +20,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout: Give an opposing dude -2 Bullets and one of your dudes +1 bullets. If your dude is a Deputy, they become a stud." />
+         <property name="Text" value="Shootout: Your dude gets +1 bullets. If they are a Deputy, they become a stud. One opposing dude gets –2 bullets." />
          <property name="Instructions" value="" />
       </card>
       <card id="0b1ae36c-6359-4871-b34b-16808e639243" name="Swinford Finds Trouble">
@@ -37,7 +37,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout: Boot any number of your dudes one by one. As you boot each dude, choose a dude in the opposing posse with a lower bullet rating; boot the chosen dude, or send that dude home if they are already booted." />
+         <property name="Text" value="Shootout: Boot one or more dudes in your posse. As you boot each dude, choose a dude in the opposing posse with a lower bullet rating. Boot the chosen dude, or send them home if they are already booted." />
          <property name="Instructions" value="" />
       </card>
       <card id="adf4a674-bc8a-4158-ae1a-cb7224fbb850" name="Under the Weather">
@@ -54,7 +54,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Choose a dude and pull. If the pull is equal or higher than their grit, boot them. If it exceeds it by 6 or more, send them home booted." />
+         <property name="Text" value="Noon: Choose a dude and pull. If the pull equals or exceeds their grit, boot them. If it exceeds their grit by 6 or more, send them home booted." />
          <property name="Instructions" value="" />
       </card>
       <card id="546a4107-75f3-49f6-84a1-4396ca3c61c1" name="This’ll Hurt in the Mornin’">
@@ -71,7 +71,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Cheatin' Resolution: Discard up to two cards in an opponent's illegal hand and replace them from the top of the owner's deck. This is now their draw hand. If you have a legal hand, you may ace instead of discarding the chosen cards." />
+         <property name="Text" value="Cheatin' Resolution: Choose and discard one or two cards in an opponent's illegal hand. Replace them with cards drawn from the top of their owner's deck. If your hand is legal, then for each card discarded, your opponent must either pay you 1 ghost rock or ace the card." />
          <property name="Instructions" value="" />
       </card>
       <card id="e12da368-0c9a-435b-91e7-e08378a6363c" name="Prayer">
@@ -88,7 +88,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Choose one of your dudes. If the dude is not blessed, they gain the skill Blessed 0, but must discard all miracles attached after Sundown. You may attach miracles as a shootout play and/or at any location." />
+         <property name="Text" value="Noon: Choose one of your dudes, who can attach miracles as a shootout play and at any location. If the dude is not Blessed, they gain the skill Blessed 0, but must discard all attached miracles after Sundown." />
          <property name="Instructions" value="" />
       </card>
       <card id="c27e60e9-8450-4e6e-9c2e-73d19caec7c1" name="Meet The New Boss">
@@ -105,7 +105,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon Job: Mark the town square. If the job succeeds, your leader permanently gets  both +1 Influence and 1 control point. Ace this card." />
+         <property name="Text" value="Noon Job: Mark the town square. If successful, your leader permanently gets +1 influence and 1 control point. Ace this card whether or not the job succeeds." />
          <property name="Instructions" value="" />
       </card>
       <card id="1b2b9609-05a4-4aed-ab98-06ddf6dbe400" name="Pettigrew’s Pawnshop">
@@ -122,7 +122,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
-         <property name="Text" value="Whenever a player plays a non-gadget goods, the controller of this deed gains 1 ghost rock." />
+         <property name="Text" value="After a player plays a non-Gadget goods, this deed's controller gains 1 ghost rock." />
          <property name="Instructions" value="" />
       </card>
       <card id="c5bf5c92-9d15-42fa-aacf-67163913518a" name="California Tax Office">
@@ -139,7 +139,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Government" />
-         <property name="Text" value="Controller Noon, Boot: Choose a dude controlled by another player. That player must pay the dude's printed upkeep to the bank or discard them. If the cost is paid, reduce the dude's upkeep to 0 until after the next upkeep." />
+         <property name="Text" value="Comes into play booted.&#xD;&#xA;Controller Noon, Boot: Choose another player's dude. The dude's owner either pays the dude's upkeep or discards them. Reduce the dude's upkeep to 0 until after the next Upkeep phase. " />
          <property name="Instructions" value="" />
       </card>
       <card id="4bd2615b-6a1b-465e-a16d-923fd77ee443" name="St. Anthony's Chapel">
@@ -156,7 +156,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Holy Ground" />
-         <property name="Text" value="Abominations at this location have -1 bullets.&#xD;&#xA;The controller's dudes get +1 to their skill rating while at this location." />
+         <property name="Text" value="After a dude controlled by a player other than this deed's owner moves here, boot them.Controller Noon, Boot: Move a non-dude card from your Boot Hill to your discard pile." />
          <property name="Instructions" value="" />
       </card>
       <card id="e77f6e44-7900-4d0e-b370-defa7cd6796d" name="The Whateley Estate">
