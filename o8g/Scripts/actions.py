@@ -193,14 +193,15 @@ def setup(group,x=0,y=0):
          placeCard(card,'SetupDude',dudecount)
          dudecount += 1 # This counter increments per dude, ad we use it to move each other dude further back.
          payCost(card.Cost) # Pay the cost of the dude
-         modInfluence(card.Influence, silent) # Add their influence to the total
+         #modInfluence(card.Influence, silent) # Add their influence to the total
          concat_dudes += '{}. '.format(card) # And prepare a concatenated string with all the names.
       else: # If it's any other card...
          placeCard(card,'SetupOther')
          payCost(card.Cost) # We pay the cost 
          modControl(card.Control) # Add any control to the total
-         modInfluence(card.Influence) # Add any influence to the total
+         #modInfluence(card.Influence) # Add any influence to the total
          concat_other = ', brings {} into play'.format(card) # And we create a special concat string to use later for the notification.
+   reCalculate(notification = 'silent')
    if dudecount == 0: concat_dudes = 'and has no starting dudes. ' # In case the player has no starting dudes, we change the notification a bit.
    refill() # We fill the player's play hand to their hand size (usually 5)
    notify("{} is playing {} {} {}Starting Ghost Rock is {} and starting influence is {}.".format(me, concat_home, concat_other, concat_dudes, me.GhostRock, me.Influence))  
@@ -260,7 +261,7 @@ def ace(card, x = 0, y = 0, silent = False): # Ace a card. I.e. kill it and send
    cardowner = card.owner # We need to save the card onwer for later
    if card.highlight != DrawHandColor: # We don't want to do anything else except move cards when they're not really in play.
       if card.markers[mdict['Bounty']]: notify("{} was wanted! Don't forget to collect {} bounty.".format(card,card.markers[mdict['Bounty']])) # Remind the player to take a bounty for wanted dudes.
-      cardRMsync(card) # This function removes any Influence and Control Points that card had from your total. 
+      #cardRMsync(card) # This function removes any Influence and Control Points that card had from your total. 
                        # We need to do it before the card is moved to the boot hill because by then, the markers are removed.
    # Remind the player to take a bounty for wanted dudes. In the future this will be automated.
    if not silent: 
@@ -268,6 +269,7 @@ def ace(card, x = 0, y = 0, silent = False): # Ace a card. I.e. kill it and send
       else: notify("{} has cleared the resident effect of {}.".format(me, card))
    clearAttachLinks(card,'Ace')
    card.moveTo(cardowner.piles['Boot Hill']) # Cards aced need to be sent to their owner's boot hill
+   reCalculate(notification = 'silent')
    debugNotify("<<< ace()") #Debug
 
 
@@ -292,11 +294,12 @@ def discard(card, x = 0, y = 0, silent = False): # Discard a card.
    cardowner = card.owner
    if card.highlight != DrawHandColor and card.highlight != EventColor: # If the card being discarded was not part of a draw hand
       if getGlobalVariable('Shootout') == 'True' and card.markers[mdict['Bounty']]: notify("{} was wanted! Don't forget to collect {} bounty.".format(card,card.markers[mdict['Bounty']])) # Remind the player to take a bounty for wanted dudes.
-      cardRMsync(card) # Then remove it's influence / CP from the player's pool
+      #cardRMsync(card) # Then remove it's influence / CP from the player's pool
       if not silent: 
          if card.highlight != DummyColor: notify("{} has discarded {}.".format(me, card))
          else: notify("{} has cleared the resident effect of {}.".format(me, card))
    clearAttachLinks(card,'Discard')
+   reCalculate(notification = 'silent')
    if (card.highlight == EventColor and re.search('Ace this card', card.Text)) or card.Type == 'Joker': # If the card being discarded was an event in a lowball hand or a joker in a draw hand
                                                                                                         # And that card had instructions to be aced
       card.moveTo(cardowner.piles['Boot Hill'])                                                         # Then assume player error and ace it now        
@@ -942,6 +945,7 @@ def playcard(card,retainPos = False,costReduction = 0):
 # If the card being played has influence or Control points, those will automatically be added to the player's total.
 # Dudes and deeds will be placed at default locations to facilitate quicker play.
    mute()
+   reCalculate(notification = 'silent') # We first make sure we have the right totals
    chkcards = [] # Create an empty list to fill later with cards to check
    uniquecards = (tablecard for tablecard in table # Lets gather all the cards from the table that may prevent us from playing our card
                   if tablecard.name == card.name # First the card need to be the same as ours
@@ -1015,42 +1019,44 @@ def playcard(card,retainPos = False,costReduction = 0):
             if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'BuyDeed')
          notify("{} has acquired the deed to {}.".format(me, card))
-   elif card.Type == "Goods" or card.Type == "Spell": # If we're bringing in any goods, just remind the player to pull for gadgets.
+   elif card.Type == "Goods" or card.Type == "Spell" or (card.Type == "Action" and re.search(r'Condition',card.Keywords)): # If we're bringing in any goods, just remind the player to pull for gadgets.
       chkHighNoon()
       hostCard = findHost(card)
       if not hostCard:
-         whisper("You need to target the card which is going to purchase the goods")
+         whisper("You need to target the card which is going to attach the card")
          if retainPos: card.moveTo(me.hand)
          return
       else:
-         if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): return      
-         if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
-         if re.search('Gadget', card.Keywords):
-            if hostCard.Type == 'Dude':
-               if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"): 
-                  gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
-                  hostCard.orientation = Rot90
-                  notify("{} attempted to manufacture a {} and pulled a {} {}".format(hostCard,card,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
-               else: notify("{} has created a {} without a gadget skill check.".format(hostCard, card))
-            else:
-               if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"):
-                  myDudes = [dude for dude in table if dude.controller == me and dude.orientation == Rot0 and re.search(r'Mad Scientist',dude.Keywords)]
-                  if not len(myDudes):
-                     if confirm("You do not seem to have an available mad scientist to build this gadget. Abort the build?"): 
-                        me.GhostRock += num(card.Cost)
-                        notify(":> {} has aborted the purchase. {} Ghost rock was returned".format(me,num(card.Cost)))
-                        return
-                     else:
-                        myDudes = [dude for dude in table if dude.controller == me and re.search(r'Mad Scientist',dude.Keywords)]
-                  choice = SingleChoice('Choose one of your available Mad Scientists to build this gadget', makeChoiceListfromCardList(myDudes))
-                  if choice != None: 
+         if card.Type == "Goods" or card.Type == "Spell":
+            if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): return      
+            if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
+            if re.search('Gadget', card.Keywords):
+               if hostCard.Type == 'Dude':
+                  if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"): 
                      gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
-                     myDudes[choice].orientation = Rot90
-                     notify("{} attempted to manufacture a {} on {} and pulled a {} {}".format(myDudes[choice],card,hostCard,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+                     hostCard.orientation = Rot90
+                     notify("{} attempted to manufacture a {} and pulled a {} {}".format(hostCard,card,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+                  else: notify("{} has created a {} without a gadget skill check.".format(hostCard, card))
+               else:
+                  if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"):
+                     myDudes = [dude for dude in table if dude.controller == me and dude.orientation == Rot0 and re.search(r'Mad Scientist',dude.Keywords)]
+                     if not len(myDudes):
+                        if confirm("You do not seem to have an available mad scientist to build this gadget. Abort the build?"): 
+                           me.GhostRock += num(card.Cost)
+                           notify(":> {} has aborted the purchase. {} Ghost rock was returned".format(me,num(card.Cost)))
+                           return
+                        else:
+                           myDudes = [dude for dude in table if dude.controller == me and re.search(r'Mad Scientist',dude.Keywords)]
+                     choice = SingleChoice('Choose one of your available Mad Scientists to build this gadget', makeChoiceListfromCardList(myDudes))
+                     if choice != None: 
+                        gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
+                        myDudes[choice].orientation = Rot90
+                        notify("{} attempted to manufacture a {} on {} and pulled a {} {}".format(myDudes[choice],card,hostCard,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+                     else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
                   else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
-               else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
-         elif card.Type == "Spell": notify("{} has learned {}.".format(hostCard, card))
-         else : notify("{} has purchased {}.".format(hostCard, card))
+            elif card.Type == "Spell": notify("{} has learned {}.".format(hostCard, card))
+            else: notify("{} has purchased {}.".format(hostCard, card))
+         else: notify("{} has attached a {}.".format(hostCard, card))
          attachCard(card,hostCard)
    else: 
       if not retainPos: # We only pay the cost if the card was double-clicked, in case the player tried to play the card for free.

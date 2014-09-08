@@ -169,7 +169,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       orgAttachments(targetDude[0])
       notify("{} uses {} and boots {} to build {}, reducing its cost by {}.".format(me,card,targetDude[0],targetDeed[0],reduction))      
    elif card.name == "The Union Casino" and action == 'USE':
-      targetDude = findTarget('Targeted-atDude-isUnbooted')
+      targetDude = findTarget('Targeted-atDude')
       if not len(targetDude):
          whisper(":::ERROR::: You need to target an unbooted dudes at this deed to use this ability")
          return 'ABORT'
@@ -237,11 +237,12 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       notify(":> {} boots to reduce {}'s bullets by {}.{}".format(myDude[0],opDude[0],bulletReduction,sweatedTXT))
    elif card.name == "The R&D Ranch" and action == 'USE':
       rank,suit = pull(silent = True)
+      me.GhostRock += 2 # You always get the GR first anyway.
       if suit == 'Clubs':
          notify(":> {} tries to use {} and pulled a {} of {}. It all goes horribly wrong! They have to discard the deed and all cards at that location".format(me,card,rank,suit))
          if confirm("You pulled a club! Proceed to discard {}?".format(card.name)): discard(card)
+         else: notify(":::INFO::: {} did not discard {} even though they pulled a {}".format(me,card,suit))
       else:
-         me.GhostRock += 2
          notify(":> {} succesfully used {} by pulling a {} of {} and produced some very tasty meat indeed. They gain 2 ghost rock.".format(me,card,rank,suit))      
    elif card.name == "Gang Yi" and action == 'USE':
       if getGlobalVariable('Shootout') != 'True': 

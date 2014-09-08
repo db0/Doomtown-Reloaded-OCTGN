@@ -457,7 +457,7 @@ def clearDrawHandonTable():
 
 def clearRemainingActions():
    for card in table:
-      if card.controller == me and card.Type == 'Action' and card.highlight != DrawHandColor and card.highlight != DummyColor: discard(card)  
+      if card.controller == me and card.Type == 'Action' and not re.search('Condition', card.Keywords) and card.highlight != DrawHandColor and card.highlight != DummyColor: discard(card)  
 
 def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = False):
 # A function that returns a list of strings suitable for a choice menu, out of a list of cards
@@ -523,6 +523,7 @@ def findHost(card):
    # Tries to find a host to attach the gear
    hostCards = eval(getGlobalVariable('Host Cards'))
    if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('Targeted-atDeed-isUnbooted-targetMine') # First we try to do a limited search, in case they forgot too many cards targeted
+   elif re.search(r'Condition',card.Keywords): potentialHosts = findTarget('Targeted') 
    elif card.type == 'Spell':
       if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Huckster-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
       elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Blessed-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to get this inspired with this Miracle") 
