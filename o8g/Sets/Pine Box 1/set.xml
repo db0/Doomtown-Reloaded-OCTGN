@@ -207,7 +207,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.&#xD;&#xA;Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's." />
+         <property name="Text" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.&#xD;&#xA;Shootout Hex 6, Boot: This huckster's bullet rating and type become equal to an opposing dude's." />
          <property name="Instructions" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.||Shootout Hex 6, Boot: This huckster's bullet rating and type become equal to an opposing dude's." />
       </card>
       <card id="8d8fa80c-580b-44b3-8e66-b89392299200" name="Lay On Hands">
@@ -594,7 +594,7 @@
          <property name="Bullets" value="0" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Stud" />
-         <property name="Influence" value="0" />
+         <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Huckster 1" />
