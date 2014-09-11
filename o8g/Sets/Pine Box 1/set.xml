@@ -207,8 +207,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.&#xD;&#xA;Shootout Hex 6, Boot: This huckster's bullet rating and type become equal to an opposing dude's." />
-         <property name="Instructions" value="Shootout Hex 4, Boot: This huckster's bullet rating and type become equal to an opposing dude's.||Shootout Hex 6, Boot: This huckster's bullet rating and type become equal to an opposing dude's." />
+         <property name="Text" value="Shootout Hex 4, Boot: This Huckster loses all bullet bonuses. Set this dude's bullets (type and rating) to that of an opposing dude.&#xD;&#xA;An opposing dude loses all bullet bonuses. Set that dude's bullets (type and rating) to that of this Huckster." />
+         <property name="Instructions" value="Shootout Hex 4, Boot: This Huckster loses all bullet bonuses. Set this dude's bullet's (type and rating) to that of an opposing dude.||Shootout Hex 6, Boot: An opposing dude loses all bullet bonuses. Set that dude's bullets (type and rating) to that of this Huckster." />
       </card>
       <card id="8d8fa80c-580b-44b3-8e66-b89392299200" name="Lay On Hands">
          <property name="Rank" value="4" />
