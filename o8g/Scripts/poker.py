@@ -135,11 +135,11 @@ def checkDMH(rank,suit,jokers,type = shootout): # This function checks whether t
    count = 0
    DMH = [0,0,0,0,0] # Create a list. Each digit will become 1 if the corresponding card has been found for DMH.
    while i < 5:
-      if rank[i] == '8' and suit[i] == 'S': DMH[0] = 1
-      if rank[i] == '8' and suit[i] == 'C': DMH[1] = 1
-      if rank[i] == 'A' and suit[i] == 'S': DMH[2] = 1
-      if rank[i] == 'A' and suit[i] == 'C': DMH[3] = 1
-      if rank[i] == 'J' and suit[i] == 'D': DMH[4] = 1
+      if rank[i] == '8' and suit[i] == 'Spades': DMH[0] = 1
+      if rank[i] == '8' and suit[i] == 'Clubs': DMH[1] = 1
+      if rank[i] == 'A' and suit[i] == 'Spades': DMH[2] = 1
+      if rank[i] == 'A' and suit[i] == 'Clubs': DMH[3] = 1
+      if rank[i] == 'J' and suit[i] == 'Diamonds': DMH[4] = 1
       i += 1
    for card in DMH:
       if card == 1: count += 1
@@ -177,7 +177,7 @@ def flushchk(suit,jokers,type = shootout): # Check if the player's hand is a flu
 def straightchk(rank,jokers,type = shootout): # Check if the player's hand is a straight.
    i = 0
    straight = 0 # A counter to see how many serial numbers the player has
-   while i < 4: 
+   while i < 4 - jokers: 
       if (rank[i] + 1 == rank[i+1] or # We increment our counter if the pair is serial or...
          (rank[i] + 2 == rank[i+1] and jokers >= 1 and type == shootout) or # If the pair is two numbers away 
                                                                             # and the player has at least 1 joker to cover the gap
@@ -215,7 +215,7 @@ def fullrank(rank): # This function simply returns the full rank of non-numeral 
    elif rank == "K": return "King of"
    elif rank == "A": return "Ace of"
    elif rank == "*": return "" # The Joker is announced from the Suit
-   else: return rank
+   else: return rank." of"
  
 def clearHandRanks(): # Cleas player hand ranks so that comparisons can start anew
    debugNotify(">>> clearHandRanks().")
