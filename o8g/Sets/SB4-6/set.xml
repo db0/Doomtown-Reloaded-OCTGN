@@ -54,7 +54,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Choose one of your dudes and an opposing dude at the same location. Move both dudes to another location of your choice. Boot both dudes. If your dude has an unbooted horse, you may boot the horse instead of your dude." />
+         <property name="Text" value="React: After a dude accepts a callout, move the Leader and Mark in an adjacent location. Their controllers must either boot them, or an attached Horse." />
          <property name="Instructions" value="" />
       </card>
       <card id="f7d5aaa2-b476-4156-bef1-697cd39d7dd7" name="[Friends in Low Places]">
@@ -129,7 +129,7 @@
          <property name="Rank" value="A" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
-         <property name="Cost" value="0" />
+         <property name="Cost" value="1" />
          <property name="Upkeep" value="" />
          <property name="Production" value="" />
          <property name="Bullets" value="" />
@@ -139,7 +139,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Choose two dudes owned by the same player at the same deed. The owner must either pay GR equal to their combined influence, boot both dudes, or discard one of the dudes (owner's choice)." />
+         <property name="Text" value="Noon: Target two or more dudes controlled by the same player outside their home. That player has to pay 1 ghost rock per dude in that location, or send the lowest value of those dudes home booted."/>
          <property name="Instructions" value="" />
       </card>
       <card id="3e1d8cfb-03b1-433a-a7ae-b12f124fb7ef" name="[Avoiding the Jackelope Stampede">
@@ -190,7 +190,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Condition" />
-         <property name="Text" value="Noon: Attach this card to a dude with bullets, influence or value less than their printed values.&#xD;&#xA;While this card is attached, this dude has +2 upkeep. If this dude is discarded during upkeep, the owner of this card may pay 1 ghost rock to take it into their hand." />
+         <property name="Text" value="Noon: Attach this card to a dude at a deed with grit lower than their printed grit.&#xD;&#xA;While this card is attached, this dude has +2 upkeep. If this dude is discarded during upkeep, the controller of this card may pay 1 ghost rock to either attach this card to another dude in the same or adjacent location or ace it." />
          <property name="Instructions" value="" />
       </card>
       <card id="b308c49b-6871-4067-a269-9aa7f8917bdc" name="[Sharing Power]">
@@ -207,7 +207,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Ace a dude you own and control. Gain ghost rock equal to their ghost rock cost.&#xD;&#xA;Resolution: Ace one of your dudes to take no casualties during this round of the shootout. Choose another dude who gains +2 Bullets and becomes a Stud. You cannot chicken out at the end of this round of the shootout." />
+         <property name="Text" value="Each time a resolution ability is used, the controller gains 1 Ghost Rock.&#xD;&#xA;Controller Noon, Boot: If you played a cheatin' resolution this turn, Draw a card." />
          <property name="Instructions" value="" />
       </card>
       <card id="29add78a-5369-43d9-80d9-4006f6757a6e" name="[Cheapskate's Casino]">
@@ -292,7 +292,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Non-Unique" />
-         <property name="Text" value="The controller is considered to have +1 influence for the purpose of controlling adjacent deeds.&#xD;&#xA;Controller Shootout, Boot: Put a 2-stud Gunslinger token into play under your control at a shootout in this or an adjacent deed." />
+         <property name="Text" value="Controller Shootout, Boot: Put a 2-stud Gunslinger token into play under your control at a shootout in this or an adjacent deed." />
          <property name="Instructions" value="" />
       </card>
       <card id="5448fd9b-6cce-4973-a40a-f4769b7f6f47" name="[Test Fields]">
@@ -343,7 +343,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Attire" />
-         <property name="Text" value="This dude has +1 influence while they are not wanted.&#xD;&#xA;Noon, Boot: Boot this dude to call out a wanted dude at this location. This dude does not become wanted for joining this shootout at a private location." />
+         <property name="Text" value="This dude has +1 influence while they are not wanted.&#xD;&#xA;Noon, Boot: If this dude is unbooted, call out a wanted dude at this location.&#xD;&#xA;This dude does not become wanted for joining a posse at a private location." />
          <property name="Instructions" value="" />
       </card>
       <card id="caff0709-27f0-4596-8cbb-ad1b403a2368" name="[Courthouse]">
@@ -394,7 +394,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget Difficulty 7" />
-         <property name="Text" value="If this dude is a Gadget, reduce their upkeep by 1.&#xD;&#xA;You may use Ghost Rock on this card to pay for abilities on any gadgets attached to this dude.&#xD;&#xA;React, Boot: After this dude moves, put one ghost rock on this card." />
+         <property name="Text" value="If this dude is a Gadget, reduce their upkeep by 1.&#xD;&#xA;You may use Ghost Rock on this card to pay for abilities on any gadgets at this location.&#xD;&#xA;React, Boot: After this dude moves, put one ghost rock on this card." />
          <property name="Instructions" value="" />
       </card>
       <card id="0c37b916-b5e6-4e43-8640-8a970465b70e" name="Stoker's Sabre">
@@ -410,7 +410,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Weapon-Melee-Mystical" />
+         <property name="Keywords" value="Weapon-Melee-Mystical-Unique" />
          <property name="Text" value="If there is an unbooted non-Melee Weapon in the opposing posse, this weapon provides no bullet bonus.&#xD;&#xA;This dude has +3 Value&#xD;&#xA;Shootout, Boot: Unboot a spell attached to this dude. You may use it another time this turn." />
          <property name="Instructions" value="" />
       </card>
@@ -615,7 +615,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Shootout Hex 9, Boot: Boot all other dudes in this shootout" />
+         <property name="Text" value="Shootout Hex 9, Boot: Boot all other unbooted dudes in this shootout" />
          <property name="Instructions" value="" />
       </card>
       <card id="00867833-050d-4214-bccb-d1e787f15baf" name="[Blessing]">
@@ -666,7 +666,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Miracle" />
-         <property name="Text" value="Shootout Miracle 7: A Melee weapon in your posse gives +2 bullets and the dude holding it becomes a stud and cannot be affected by opposing spells." />
+         <property name="Text" value="Noon Miracle 7: Choose a dude with a Mêlée weapon. They have +2 bullets, become a stud and cannot be affected by opposing spells, while that weapon remains attached to them (until the end of the turn)." />
          <property name="Instructions" value="" />
       </card>
       <card id="686696a5-da6b-46d7-92b2-2ba051a3153e" name="[Cunning Jack]">
@@ -683,7 +683,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout Repeat: If you have more cards in your hand than each other player (individually), this dude is a stud." />
+         <property name="Text" value="After each shootout play, if you have more cards in your hand than each other player (individually), this dude becomes a stud. Otherwise this dude becomes a draw." />
          <property name="Instructions" value="" />
       </card>
       <card id="4d2ffa2b-f09d-47ef-845b-d227b060b603" name="Max Baine">
@@ -802,7 +802,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon, Boot: Choose another player's dude at a location they do not own. Gain ghost rock equal to their bounty." />
+         <property name="Text" value="Noon, Boot: Choose another player's dude at a deed they do not own. Gain ghost rock equal to their bounty." />
          <property name="Instructions" value="" />
       </card>
       <card id="04e204a6-8879-477b-8153-adcda50b1f51" name="Judge Harry Sommerset">
@@ -1006,7 +1006,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Harrowed-Huckster 1-Experienced 1" />
-         <property name="Text" value="If this dude comes into play by experiencing an existing Alvie Cline, you may boot a dude in play and gain 1 ghost rock.&#xD;&#xA;Noon, Boot: Choose an opposing dude with lower influence at an in town location. Move them to Avie's location." />
+         <property name="Text" value="If this dude comes into play by experiencing an existing Alvie Cline, you may boot a dude in play and gain 1 ghost rock.&#xD;&#xA;Noon, Boot: If Avie is at an in-town deed, choose an opposing dude with lower influence at an in town location. Move them to Avie’s location." />
          <property name="Instructions" value="" />
       </card>
       <card id="85989968-0332-4dc2-a5eb-9921267453ff" name="[Gollum]">
