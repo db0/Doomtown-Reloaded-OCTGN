@@ -837,7 +837,7 @@ cb15bd27-76a2-48db-b324-99589b14982b
 -----
 
 +++++
-GR0B0R0:RequestInt{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}$$Put1BulletShootoutPlus-perX
+GR0B0R0:RequestInt{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}$$Lose1Ghost Rock-isCost-perX$$Put1BulletShootoutPlus-perX
 .....
 Reserves
 -----

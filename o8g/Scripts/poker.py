@@ -215,7 +215,7 @@ def fullrank(rank): # This function simply returns the full rank of non-numeral 
    elif rank == "K": return "King of"
    elif rank == "A": return "Ace of"
    elif rank == "*": return "" # The Joker is announced from the Suit
-   else: return rank + " of"
+   else: return "{} of".format(rank)
  
 def clearHandRanks(): # Cleas player hand ranks so that comparisons can start anew
    debugNotify(">>> clearHandRanks().")

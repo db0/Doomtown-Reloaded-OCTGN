@@ -883,7 +883,7 @@
          <property name="Bullets" value="0" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
-         <property name="Influence" value="1" />
+         <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Mad Scientist 0-Grifter" />

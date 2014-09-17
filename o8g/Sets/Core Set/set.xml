@@ -206,7 +206,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Gadget-Difficulty 7" />
+         <property name="Keywords" value="Improvement-Gadget-Difficulty 7" />
          <property name="Text" value="After this is invented, attach it to a Ranch that you control.&#xD;&#xA;Controller Noon, Boot: Gain 1 ghost rock." />
          <property name="Instructions" value="" />
       </card>
