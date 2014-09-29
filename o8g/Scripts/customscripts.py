@@ -187,7 +187,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          whisper(":::ERROR::: You need to target a deed with production to steal from first. Aborting.")
          return 'ABORT'
       deed = targetDeed[0]
-      if deed.controller.GhostRock == 0:
+      if deed.owner.GhostRock == 0:
          whisper(":::ERROR::: {} has no money in their bank to steal. Aborting")
          return 'ABORT'
       deedProd = compileCardStat(deed, stat = 'Production')
@@ -199,15 +199,15 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          whisper(":::ERROR::: You need to target an unbooted dudes at this deed to use this ability. Aborting.")
          return 'ABORT'      
       boot(targetDude[0],silent = True, forced = 'boot')
-      if deedProd > deed.controller.GhostRock: 
-         notify(":> {} doesn't have the full {} ghost rock to steal, so {} is taking the {} possible.".format(deed.controller,deedProd,card,deed.controller.GhostRock))
-         me.GhostRock += deed.controller.GhostRock # We cannot steal more money than the target player has.
-         targetDude[0].markers[mdict['Bounty']] += deed.controller.GhostRock
-         deed.controller.GhostRock = 0
+      if deedProd > deed.owner.GhostRock: 
+         notify(":> {} doesn't have the full {} ghost rock to steal, so {} is taking the {} possible.".format(deed.owner,deedProd,card,deed.controller.GhostRock))
+         me.GhostRock += deed.owner.GhostRock # We cannot steal more money than the target player has.
+         targetDude[0].markers[mdict['Bounty']] += deed.owner.GhostRock
+         deed.owner.GhostRock = 0
       else:
-         notify(":> {} is holding up {} and taking {} ghost rock from {}.".format(targetDude[0],deed,deedProd,deed.controller))
+         notify(":> {} is holding up {} and taking {} ghost rock from {}.".format(targetDude[0],deed,deedProd,deed.owner))
          me.GhostRock += deedProd # We cannot steal more money than the target player has.
-         deed.controller.GhostRock -= deedProd      
+         deed.owner.GhostRock -= deedProd      
          targetDude[0].markers[mdict['Bounty']] += deedProd
    elif card.name == "Unprepared" and action == 'PLAY':
       targetDude = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1')
