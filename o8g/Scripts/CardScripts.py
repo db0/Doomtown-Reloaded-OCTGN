@@ -565,7 +565,7 @@ e6bee3e6-0ccd-40e6-a447-28cb032b7448
 -----
 
 +++++
-GR0B1R0:Put1Bounty-Targeted-atDude
+GR0B1R0:Put1Bounty-Targeted-atDude-targetOpponents-choose1$$BootMulti-Targeted-atDude-targetMine
 .....
 Lawrence Blackwood
 -----
