@@ -8,6 +8,8 @@ def PokerHand(rank,suit,type = shootout, result = 'normal'): # Evaluates 5 cards
       if value == 'Joker': jokers += 1 # Go through the hand and count the jokers available.
    numranks = [numrank(rank[0]), numrank(rank[1]), numrank(rank[2]), numrank(rank[3]), numrank(rank[4])] # Convert the hand into strict integers
    srank = sorted(numranks) # Sort the integers ascending. This is useful for checking for straights
+   asuits = [asuit(suit[0]), asuit(suit[1]), asuit(suit[2]), asuit(suit[3]), asuit(suit[4])] # Convert suits
+   ssuit = sorted(asuits) # Sort the suits ascending. This is useful for checking for flushes
    chkpairs = pairschk(rank,jokers,type) # So that we don't run the procedure 6 times unnecessarily.
 # Look for Dead Man's Hand
    if checkDMH(rank,suit,jokers,type) == 1: 
@@ -26,7 +28,7 @@ def PokerHand(rank,suit,type = shootout, result = 'normal'): # Evaluates 5 cards
       if result == 'comparison': return 7
       else: return '7: Full House'
 # Look for a Flush
-   elif flushchk(suit,jokers,type) == 1: 
+   elif flushchk(ssuit,jokers,type) == 1: 
       if straightchk(srank,jokers,type) == 1:  
          if result == 'comparison': return 9
          else: return "9: Straight Flush"
@@ -73,6 +75,12 @@ def numrank(rank, ask = False): # Convert card ranks into pure integers for comp
    elif rank == 'K': return 13
    else: return num(rank)
    
+def asuit(suit): # Convert card suits to single letters for sorting
+   if suit == 'Joker':
+      return '*'
+   else:
+      return suit[0]
+   
 def pairschk(rank,jokers = 0,type = shootout): 
 # This function checks the hand for similar ranks and depending on how many it finds, it returns the appropriate hand code.
    i = 0
@@ -88,10 +96,11 @@ def pairschk(rank,jokers = 0,type = shootout):
    match2 = 0
    op1 = 5 # These are used to point which was the first card where we found a match of this number.
    op2 = 5
-   while i < 4: 
-      while j < 5: # We start a nested while. First we check the first card with all the others. 
+   while i < 4 - jokers: 
+      while j < 5 - jokers: # We start a nested while. First we check the first card with all the others. 
                    # Then the second one with the 3rd, 4th and 5th.
                    # Then 3rd with 4th and 5th and finally 4th and 5th.
+                   # Always excluding jokers.
          if rank[i] == rank[j] and rank[i] != 'Joker': # If we find a match (but we don't care about matching jokers)
 #            notify("comparing rank[{}] = {} with rank[{}] = {}".format(i,rank[i],j,rank[j])) # Used for testing
             if op1 == 5: # If our first pointer has not been set
@@ -147,46 +156,27 @@ def checkDMH(rank,suit,jokers,type = shootout): # This function checks whether t
    else: return 0
 
 def flushchk(suit,jokers,type = shootout): # Check if the player's hand is a flush.
-   i = 0
-   sames = 0 # A variable to count how many pairs of matching suits we find.
-   match = '' # A Variable to note which is the first matching suit we've found
-   while i < 4:
-      #if suit[i] == '': suit[i] = 'Joker' # Jokers have empty suits, so lets give them something to make this easier to read.
-      if suit[i] == suit[i+1]: # Check if the suit of cards adjacent to each other is the same
-         if match == '' and suit != 'Joker':  # If we haven't found matching suits yet and and the cards are not jokers...
-            match = suit[i] # Mark which is the first matching suit we found (otherwise 2 pairs of different suits will also increase our count.)
-            sames += 1 # Increase our count.
-         elif suit[i] == match and suit != 'Joker': sames+=1 # If we have already found a matching suit, check that what we matched now is the same.
-      elif jokers >= 1 and i < 3:  # If the cards do not match, but we have at least joker, skip one card and compare with the next as above
-         if suit[i] == suit[i+2]:
-            if match == '' and suit != 'Joker': 
-               match = suit[i]
-               sames += 1
-            elif suit[i] == match and suit != 'Joker': sames+=1
-         elif jokers == 2 and i < 2: # If the cards do not match, but we have two jokers, skip two cards and compare with the next as above
-            if suit[i] == suit[i+3]: 
-               if match == '' and suit != 'Joker': 
-                  match = suit[i]
-                  sames += 1
-               elif suit[i] == match and suit != 'Joker': sames+=1
-      i += 1
-   if sames == 4 or (sames + jokers == 4 and type == shootout): return 1 # Four pairs of matching adjacent cards means all cards are of the same suit
-                                                                         # If we have less pairs and enough jokers, it can also be a flush.
-   else: return 0
+   # suits are sorted, so we just have to compare the first and last
+   if type == shootout:
+      return suit[jokers] == suit[4] # jokers come first
+   else:
+      return suit[0] == suit[4]
 
 def straightchk(rank,jokers,type = shootout): # Check if the player's hand is a straight.
    i = 0
+   avjokers = jokers # count jokers being used up to prevent hands like Q 8 7 Joker Joker from being detected as straights
    straight = 0 # A counter to see how many serial numbers the player has
    while i < 4 - jokers: 
       if (rank[i] + 1 == rank[i+1] or # We increment our counter if the pair is serial or...
-         (rank[i] + 2 == rank[i+1] and jokers >= 1 and type == shootout) or # If the pair is two numbers away 
+         (rank[i] + 2 == rank[i+1] and avjokers >= 1 and type == shootout) or # If the pair is two numbers away 
                                                                             # and the player has at least 1 joker to cover the gap
                                                                             # and this is a non-lowball hand or...
                                                                             # (because in lowball you don't want the jokers to be helping you get a higher hand)
-         (rank[i] + 3 == rank[i+1] and jokers == 2 and type == shootout)):  # If the pair is three numbers away 
+         (rank[i] + 3 == rank[i+1] and avjokers == 2 and type == shootout)):  # If the pair is three numbers away 
                                                                             # and the player has 2 jokers to cover the gap
                                                                             # and this is not a lowball hand...
          straight +=1 # Then increase the counter marking how many straight pairs we have by 1.
+         avjokers -= rank[i+1] - rank[i] - 1 # Decrease the count of available jokers
       i += 1
    if straight == 4 or (straight + jokers == 4 and type == shootout): return 1 # If we have 4 straight pairs (including the jokers), then it's a straight.
    else: return 0
