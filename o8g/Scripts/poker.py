@@ -96,12 +96,12 @@ def pairschk(rank,jokers = 0,type = shootout):
    match2 = 0
    op1 = 5 # These are used to point which was the first card where we found a match of this number.
    op2 = 5
-   while i < 4 - jokers: 
-      while j < 5 - jokers: # We start a nested while. First we check the first card with all the others. 
+   while i < 4: 
+      while j < 5: # We start a nested while. First we check the first card with all the others. 
                    # Then the second one with the 3rd, 4th and 5th.
                    # Then 3rd with 4th and 5th and finally 4th and 5th.
                    # Always excluding jokers.
-         if rank[i] == rank[j] and rank[i] != 'Joker': # If we find a match (but we don't care about matching jokers)
+         if rank[i] == rank[j] and rank[i] != '*': # If we find a match (but we don't care about matching jokers)
 #            notify("comparing rank[{}] = {} with rank[{}] = {}".format(i,rank[i],j,rank[j])) # Used for testing
             if op1 == 5: # If our first pointer has not been set
                op1 = i # Put our pointer on the first card of the match
