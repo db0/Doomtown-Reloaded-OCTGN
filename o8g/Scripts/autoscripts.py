@@ -211,7 +211,6 @@ def autoscriptOtherPlayers(lookup, origin_card = OutfitCard, count = 1, origin_p
                                                                             # So if our instance's trigger is currently "UnitCardCapturedFromTable" then the trigger word "CardCaptured" is contained within and will match.
             debugNotify("Couldn't lookup the trigger: {} in autoscript. Ignoring".format(lookup),2)
             continue # Search if in the script of the card, the string that was sent to us exists. The sent string is decided by the function calling us, so for example the ProdX() function knows it only needs to send the 'GeneratedSpice' string.
-         elif not chkLookupRestrictions(card,lookup,origin_card): continue
          if re.search(r'-byOpposingOriginController', autoS) and chkPlayer('byOpponent', origin_card.controller,False, player = card.controller) == 0: continue
          # If we have the -byOpposingOriginController modulator, our scripts need to compare the controller of the card that triggered the script with the controller of the card that has the script.
          # See for example Renegade Squadron Mobilization, where we need to check that the controller of the card leaving play is the opponent of the player that controls Renegade Squadron Mobilization
@@ -234,7 +233,6 @@ def autoscriptOtherPlayers(lookup, origin_card = OutfitCard, count = 1, origin_p
                debugNotify("!!! Failing because Edge Difference ({}) not equal to {}".format(count,edgeDiffRegex.group(2)),2)
                continue
          if not chkDummy(autoS, card): continue
-         if not chkParticipants(autoS, card): continue
          if not checkCardRestrictions(gatherCardProperties(origin_card), prepareRestrictions(autoS,'type')): continue #If we have the '-type' modulator in the script, then need ot check what type of property it's looking for
          else: debugNotify("Not Looking for specific type or type specified found.")
          if not checkOriginatorRestrictions(autoS,card): continue
@@ -583,8 +581,8 @@ def TokensX(Autoscript, announceText, card, targetCards = None, notification = N
          elif token == mdict['InfluenceMinus']: minusInfluence(targetCard,silent = True,count = modtokens)
          elif token == mdict['ControlPlus']: plusControl(targetCard,silent = True,count = modtokens)
          elif token == mdict['ControlMinus']: minusControl(targetCard,silent = True,count = modtokens)
-         elif token == mdict['ValuePlus']: plusValue(targetCard,silent = True,valuemod = modtokens)
-         elif token == mdict['ValueMinus']: minusValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ValueNoonPlus']: plusValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ValueNoonMinus']: minusValue(targetCard,silent = True,valuemod = modtokens)
          elif token == mdict['ProdPlus']: modProd(targetCard,silent = True,count = modtokens)
          elif token == mdict['ProdMinus']: modProd(targetCard,silent = True,count = -modtokens)
          else: targetCard.markers[token] += modtokens # Finally we apply the marker modification
@@ -852,7 +850,7 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
             elif iter == num(action.group(1)) - 1: announceString += " and a {} {}".format(fullrank(rank), fullsuit(suit))
             else: announceString += ", a {} {}".format(fullrank(rank), fullsuit(suit))
          else: remoteCall(targetPL,'pull',[])
-   spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit)([0-9]+|X)', Autoscript)      
+   spellDifficulty = re.search(r'-test(Hex|Miracle|Spirit|Mad Science)([0-9]+|X)', Autoscript)      
    spellResolved = ''
    if spellDifficulty and rank and suit: # We only check for spell effects if we got a rank and suit result.
       if spellDifficulty.group(2) == 'X':
@@ -871,15 +869,18 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
       for skill in skills:
          if (skill[0] == 'Huckster' and spellDifficulty.group(1) == 'Hex'
              or skill[0] == 'Blessed' and spellDifficulty.group(1) == 'Miracle'
-             or skill[0] == 'Spirit' and spellDifficulty.group(1) == 'Shaman'):
+             or skill[0] == 'Mad Science' and spellDifficulty.group(1) == 'Mad Scientist'
+             or skill[0] == 'Shaman' and spellDifficulty.group(1) == 'Spirit'):
             neededSkill = skill
+      if not neededSkill: # If we didn't find a relevant skill on the dude, then we assume they have the required skill at 0, or they wouldn't have been used.
+         if spellDifficulty.group(1) == 'Hex': neededSkill = ('Huckster',0)
+         elif spellDifficulty.group(1) == 'Miracle': neededSkill = ('Blessed',0)
+         elif spellDifficulty.group(1) == 'Spirit': neededSkill = ('Shaman',0)
+         else: neededSkill = ('Mad Scientist',0)
+         notify(":::Warning::: Necessary skill not found on {}. Assuming they have {} 0 from card effects".format(skilledDude,neededSkill[0]))
       skillLevel = neededSkill[1]
-      for key in skilledDude.markers: # If the card has received a bonus or penalty to its skill, we add it to the calculation
-         if re.search(r'Skill Bonus',key[0]):
-            skillLevel += skilledDude.markers[key]
-         if re.search(r'Skill Penalty',key[0]):
-            skillLevel -= skilledDude.markers[key]
       numericRank = numrank(rank, True) # Setting it in advance so that it does't ask the value of a joker twice
+      #confirm('skill = {}, pull = {}, diff = {}'.format(skillLevel, numericRank, difficulty))
       if skillLevel + numericRank >= difficulty: spellResolved = '. {} succeeds the {} skill test by {}'.format(skilledDude,neededSkill[0],skillLevel + numericRank - difficulty) # If the spell is succesful, we want to mention it, before we mention its results
       elif spellEffects.group(2) != '': spellResolved = '. {} fails the {} skill test'.format(skilledDude,neededSkill[0])
       if not neededSkill: whisper(":::ERROR::: Oops, something went wrong. Can't find the required skill on this dude. Aborting!")
@@ -1110,7 +1111,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
          elif action.group(1) == 'Callout':
             leaderTarget = re.search(r"-leaderTarget\{(.+)\}", Autoscript)
             if leaderTarget:
-               possibleTargets = findTarget("DemiAutoTargeted-at{}_and_not{}-choose1".format(leaderTarget.group(1),targetCard.name), card = targetCard,choiceTitle = "Choose which of your dudes performs the call out")
+               possibleTargets = findTarget("DemiAutoTargeted-at{}_and_not{}-targetMine-choose1".format(leaderTarget.group(1),targetCard.name), card = targetCard,choiceTitle = "Choose which of your dudes performs the call out")
                if not len(possibleTargets): 
                   notify(":::ERROR::: No valid Target to move to found. Aborting!")
                   return 'ABORT'
@@ -1136,10 +1137,18 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             if not moveTarget: 
                notify(":::ERROR::: No valid moveTarget. Aborting!")
                return 'ABORT'
-            possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to")
-            if not len(possibleTargets): 
-               notify(":::ERROR::: No valid Target to move to found. Aborting!")
-               return 'ABORT'
+            if moveTarget.group(1) == 'Here': # If the moveTarget is "Here", then we try to figure out the current card's location and set it as the destination.
+               if card.Type == 'Dude' or card.Type == 'Deed': possibleTargets = [card]
+               elif card.Type == 'Action': 
+                  notify(":::ERROR::: Bad Script. Actions should never 'moveToHere'. Aborting!")
+                  return 'ABORT'
+               else:
+                  possibleTargets = [fetchHost(card)]
+            else:
+               possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to")
+               if not len(possibleTargets): 
+                  notify(":::ERROR::: No valid Target to move to found. Aborting!")
+                  return 'ABORT'
             x,y = possibleTargets[0].position
             if targetCard.controller == me: targetCard.moveToTable(x + cardDistance(), y)
             else: remoteCall(targetCard.controller,'moveCard',[x + cardDistance(), y])
@@ -1221,6 +1230,12 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       elif re.search(r'-toDeck', Autoscript):
          destination = targetPL.piles['Deck']
          destiVerb = 'rework'
+      elif re.search(r'-toDiscard', Autoscript):
+         destination = targetPL.piles['Discard Pile']
+         destiVerb = 'discard'
+      elif re.search(r'-toBootHill', Autoscript):
+         destination = targetPL.piles['Boot Hill']
+         destiVerb = 'ace'
       else: 
          destination = targetPL.hand
          destiVerb = 'retrieve'
@@ -1375,9 +1390,8 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None): #
             if targetC.targetedBy and targetC.targetedBy == me: foundTargetsTargeted.append(targetC)
          if targetNRregex:
             debugNotify("!!! targetNRregex exists")# Debug
-            if num(targetNRregex.group(1)) > len(foundTargetsTargeted): pass # Not implemented yet. Once I have choose2 etc I'll work on this
-            else: # If we have the same amount of cards targeted as the amount we need, then we just select the targeted cards
-               foundTargets = foundTargetsTargeted # This will also work if the player has targeted more cards than they need. The later choice will be simply between those cards.
+            if len(foundTargetsTargeted): foundTargets = foundTargetsTargeted # If we have the same amount of cards targeted as the amount we need, then we just select the targeted cards
+                                                                           # This will also work if the player has targeted more cards than they need. The later choice will be simply between those cards.
          else: # If we do not want to choose, then it's probably a bad script. In any case we make sure that the player has targeted something (as the alternative it giving them a random choice of the valid targets)
             del foundTargets[:]
       if len(foundTargets) == 0 and not re.search(r'(?<!Demi)AutoTargeted', Autoscript) and not re.search(r'noTargetingError', Autoscript): 
@@ -1408,7 +1422,6 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None): #
       elif len(foundTargets) >= 1 and re.search(r'-choose',Autoscript):
          debugNotify("Going for a choice menu")# Debug
          choiceType = re.search(r'-choose([0-9]+)',Autoscript)
-         targetChoices = makeChoiceListfromCardList(foundTargets)
          if not choiceTitle:
             if not card: choiceTitle = "Choose one of the valid targets for this effect"
             else: choiceTitle = "Choose one of the valid targets for {}'s ability".format(card.name)
@@ -1416,13 +1429,19 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None): #
          if choiceType.group(1) == '1':
             if len(foundTargets) == 1: choice = 0 # If we only have one valid target, autoselect it.
             #if len(foundTargets) == 1: foundTargets = foundTargets[0] # If we only have one valid target, autoselect it. # for askCard implementation
-            else: choice = SingleChoice(choiceTitle, targetChoices, type = 'button', default = 0)
+            else: choice = SingleChoice(choiceTitle, makeChoiceListfromCardList(foundTargets), type = 'button', default = 0)
             if choice == None: del foundTargets[:]
             else: foundTargets = [foundTargets.pop(choice)] # if we select the target we want, we make our list only hold that target
-            #else:                                                               # for askCard implementation
-               #choice = askCard(foundTargets)                                   # for askCard implementation
-               #if choice: foundTargets = [askCard(foundTargets)]                # for askCard implementation
-               #else: del foundTargets[:]                                        # for askCard implementation
+         else:
+            choiceAmount = num(choiceType.group(1))
+            if len(foundTargets) <= choiceAmount: pass # If the amount of cards we have to target are equal to the available targets, then we just select all of them.
+            else: 			
+               availTargets = list(foundTargets) # We make a new list because we're going to start repopulating the foundTargets list again
+               del foundTargets[:]
+               for iter in range(choiceAmount):
+                  choice = SingleChoice(choiceTitle, makeChoiceListfromCardList(availTargets), type = 'button', default = 0)
+                  if choice == None: break
+                  else: foundTargets.append(availTargets.pop(choice))
    if debugVerbosity >= 3: # Debug
       tlist = [] 
       for foundTarget in foundTargets: tlist.append(foundTarget.name) # Debug
@@ -1524,32 +1543,45 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
    debugNotify("Card: {}".format(card)) #Debug
    validCard = True
    Autoscript = scrubTransferTargets(Autoscript)
+   host = fetchHost(card)
    if re.search(r'isUnbooted',Autoscript) and card.orientation == Rot90: 
-      debugNotify("!!! Failing because it's booted", 2)
+      debugNotify("!!! Failing because it's booted")
       validCard = False
    if re.search(r'isBooted',Autoscript) and card.orientation == Rot0: 
-      debugNotify("!!! Failing because it's unbooted", 2)
+      debugNotify("!!! Failing because it's unbooted")
       validCard = False
-   if re.search(r'isStud',Autoscript) and fetchDrawType(card) == 'Draw':
-      debugNotify("!!! Failing because card is a Draw", 2)
+   if re.search(r'isStudDude',Autoscript) and fetchDrawType(card) == 'Draw':
+      debugNotify("!!! Failing because card is a Draw")
       validCard = False
-   if re.search(r'isDraw',Autoscript) and fetchDrawType(card) == 'Stud':
-      debugNotify("!!! Failing because card is a Stud", 2)
+   if re.search(r'isDrawDude',Autoscript) and fetchDrawType(card) == 'Stud':
+      debugNotify("!!! Failing because card is a Stud")
       validCard = False
-   if re.search(r'isParticipating',Autoscript) and card.highlight != AttackColor and card.highlight != DefendColor and card.highlight != InitiateColor: 
-      debugNotify("!!! Failing because it's not participating", 2)
-      validCard = False
-   if re.search(r'isNotParticipating',Autoscript) and (card.highlight == AttackColor or card.highlight == DefendColor or card.highlight == InitiateColor): 
-      debugNotify("!!! Failing because unit is participating", 2)
-      validCard = False
+   if re.search(r'isParticipating',Autoscript):
+      if host:
+         if host.highlight != AttackColor and host.highlight != DefendColor and host.highlight != InitiateColor:
+            debugNotify("!!! Failing because host is not participating")
+            validCard = False
+      else:
+         if card.highlight != AttackColor and card.highlight != DefendColor and card.highlight != InitiateColor: 
+            debugNotify("!!! Failing because dude is not participating")
+            validCard = False
+   if re.search(r'isNotParticipating',Autoscript):
+      if host:
+         if (host.highlight == AttackColor or host.highlight == DefendColor or host.highlight == InitiateColor): 
+            debugNotify("!!! Failing because host is participating")
+            validCard = False
+      else:
+         if (card.highlight == AttackColor or card.highlight == DefendColor or card.highlight == InitiateColor): 
+            debugNotify("!!! Failing because dude is participating")
+            validCard = False
    if re.search(r'isDrawHand',Autoscript) and card.highlight != DrawHandColor: 
-      debugNotify("!!! Failing because card is not in the draw hand", 2)
+      debugNotify("!!! Failing because card is not in the draw hand")
       validCard = False
    if re.search(r'isNotDrawHand',Autoscript) and card.highlight == DrawHandColor: 
-      debugNotify("!!! Failing because card is in the draw hand", 2)
+      debugNotify("!!! Failing because card is in the draw hand")
       validCard = False
    if not chkPlayer(Autoscript, card.controller, False, True, playerChk): 
-      debugNotify("!!! Failing because not the right controller", 2)
+      debugNotify("!!! Failing because not the right controller")
       validCard = False
    markerName = re.search(r'-hasMarker{([\w +:]+)}',Autoscript) # Checking if we need specific markers on the card.
    if markerName: #If we're looking for markers, then we go through each targeted card and check if it has any relevant markers
@@ -1558,7 +1590,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
       marker = findMarker(card, markerName.group(1))
       debugNotify("Marker match for {} == {}".format(card,str(marker)),4) # Debug
       if not marker: 
-         debugNotify("!!! Failing because it's missing marker", 2)
+         debugNotify("!!! Failing because it's missing marker")
          validCard = False
    markerNeg = re.search(r'-hasntMarker{([\w +:]+)}',Autoscript) # Checking if we need to not have specific markers on the card.
    if markerNeg: #If we're looking for markers, then we go through each targeted card and check if it has any relevant markers
@@ -1566,7 +1598,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
       debugNotify("Marker Name: {}".format(markerNeg.group(1)))# Debug
       marker = findMarker(card, markerNeg.group(1))
       if marker: 
-         debugNotify("!!! Failing because it has marker", 2)
+         debugNotify("!!! Failing because it has marker")
          validCard = False
    elif debugVerbosity >= 4: notify("### No negative marker restrictions.")
    # Checking if the target needs to have a property at a certiain value. 
@@ -1585,7 +1617,7 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
       if markerSeek:
          validCard = compareValue(MarkerReq.group(2), card.markers[markerSeek], num(MarkerReq.group(3)))
    # Checking if the DS Dial needs to be at a specific value
-   debugNotify("<<< checkSpecialRestrictions() with return {}".format(validCard)) #Debug
+   debugNotify("<<< checkSpecialRestrictions() for {} with return {}".format(card.name,validCard)) #Debug
    return validCard
 
 def checkOriginatorRestrictions(Autoscript,card):

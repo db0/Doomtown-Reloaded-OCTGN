@@ -50,8 +50,10 @@ mdict = { # A dictionary which holds all the hard coded markers (in the markers 
     'ControlMinus'         : ("-1 Control",                 "474f95a6-f1a9-4e23-ba4a-8eaba8b7cc0b"),
     'ProdPlus'             : ("+1 Production",              "ddba0f0a-0c34-48b5-b7ea-ad1e1ab07c12"),
     'ProdMinus'            : ("-1 Production",              "869eebe2-f503-4d9f-8fa3-af708c7ad70c"),
-    'ValuePlus'            : ("+1 Value",                   "baff5422-3654-4f74-86fa-782805082fab"),
-    'ValueMinus'           : ("-1 Value",                   "7fa426df-689e-41f5-91b8-5d06cbc46463"),
+    'ValueNoonPlus'        : ("+1 Value",                   "baff5422-3654-4f74-86fa-782805082fab"),
+    'ValueNoonMinus'       : ("-1 Value",                   "7fa426df-689e-41f5-91b8-5d06cbc46463"),
+    'ValueShootoutPlus'    : ("+1 Shootout Value",          "ad3c4ae0-265f-4dcf-abc2-61189a99b728"),
+    'ValueShootoutMinus'   : ("-1 Shootout Value",          "c2e4293c-85be-4b6a-8def-260647612a4b"),
     'BulletNoonPlus'       : ("+1 High Noon Bullet",        "5f740820-4c72-4042-b6eb-dcedc77c82ed"),
     'BulletShootoutPlus'   : ("+1 Shootout Bullet",         "093166b4-fddb-4e67-b6e4-86277faedc91"),
     'PermBullet'           : ("+1 Permanent Bullet",        "a249871c-3cc6-4c7a-85d1-4d0fa7bbfead"),
@@ -60,6 +62,7 @@ mdict = { # A dictionary which holds all the hard coded markers (in the markers 
     'VPPlus'               : ("+1 VP",                      "dd40e5b9-f2c1-491c-b2b6-3312aa2d10d5"),
     'VPMinus'              : ("-1 VP",                      "8660fdc1-f8a5-40b1-a570-12018d17d654"),
     'Winner'               : ("Winner",                     "eeb5f447-f9fc-46b4-846a-a9a40e575cbc"),
+    'NoUnboot'             : ("Does not Unboot",            "d2fccdc3-e93a-4c66-8930-28081aebb23c"),
     'Traded'               : ("Traded",                     "8ba2d501-e8b7-4df0-a168-be2d16b26daf")
 }
 

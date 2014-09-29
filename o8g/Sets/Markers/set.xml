@@ -25,12 +25,15 @@
     <marker name="-1 Control"                         id="474f95a6-f1a9-4e23-ba4a-8eaba8b7cc0b"/>
     <marker name="+1 Production"                      id="ddba0f0a-0c34-48b5-b7ea-ad1e1ab07c12"/>
     <marker name="-1 Production"                      id="869eebe2-f503-4d9f-8fa3-af708c7ad70c"/>
-    <marker name="+1 Value"                           id="baff5422-3654-4f74-86fa-782805082fab"/>
-    <marker name="-1 Value"                           id="7fa426df-689e-41f5-91b8-5d06cbc46463"/>
+    <marker name="+1 High Noon Value"                 id="baff5422-3654-4f74-86fa-782805082fab"/>
+    <marker name="+1 Shootout Value"                  id="ad3c4ae0-265f-4dcf-abc2-61189a99b728"/>
+    <marker name="-1 High Noon Value"                 id="7fa426df-689e-41f5-91b8-5d06cbc46463"/>
+    <marker name="-1 Shootout Value"                  id="c2e4293c-85be-4b6a-8def-260647612a4b"/>
     <marker name="+1 VP"                              id="dd40e5b9-f2c1-491c-b2b6-3312aa2d10d5"/>
     <marker name="-1 VP"                              id="8660fdc1-f8a5-40b1-a570-12018d17d654"/>
     <marker name="Lowball Winner"                     id="eeb5f447-f9fc-46b4-846a-a9a40e575cbc"/>
     <marker name="Traded"                             id="8ba2d501-e8b7-4df0-a168-be2d16b26daf"/>
+    <marker name="Does not Unboot"                    id="d2fccdc3-e93a-4c66-8930-28081aebb23c"/>
   </markers>
   <cards>
    <card id="94fe7823-077c-4abd-9278-6e64bda6dc64" name="Gunslinger">

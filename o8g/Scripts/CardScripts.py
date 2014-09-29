@@ -237,7 +237,7 @@ Cheatin' Varmint
 -----
 
 +++++
-
+onPlay:Pay5Ghost Rock-isCost$$SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}||SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}
 .....
 Circle M Ranch
 -----
@@ -389,7 +389,7 @@ General Store
 -----
 
 +++++
-GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atGoods-choose1-payCost-reduc2
+GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atGoods_or_Spell-choose1-payCost-reduc2
 .....
 Gomorra Parish
 -----
@@ -637,7 +637,7 @@ Micah Ryse
 -----
 
 +++++
-GR0B0R0:BootTarget-AutoTargeted-atSpell-isUnbooted-onAttachment-isCost$$MoveMyself-moveToDeed_or_Town Square_or_Outfit
+GR0B0R0:BootTarget-AutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$MoveMyself-moveToDeed_or_Town Square_or_Outfit
 .....
 Missed!
 -----
@@ -771,7 +771,7 @@ Point Blank
 -----
 498d4eca-db79-40db-9a42-cc053abcfc43
 -----
-onPlay:BootTarget-DemiAutoTargeted-atDude-isParticipating-isUnbooted-isStud-targetMine-choose1-isCost$$SimplyAnnounce{force their opponent to ace a dude with less bullets}
+onPlay:BootTarget-DemiAutoTargeted-atDude-isParticipating-isUnbooted-isStudDude-targetMine-choose1-isCost$$SimplyAnnounce{force their opponent to ace a dude with less bullets}
 +++++
 
 .....
@@ -837,7 +837,7 @@ cb15bd27-76a2-48db-b324-99589b14982b
 -----
 
 +++++
-GR0B0R0:RequestInt{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}$$Put1BulletShootoutPlus-perX
+GR0B0R0:RequestInt{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}$$Lose1Ghost Rock-isCost-perX$$Put1BulletShootoutPlus-perX
 .....
 Reserves
 -----
@@ -1005,7 +1005,7 @@ The Pharmacy
 -----
 
 +++++
-GR0B1R0:UnbootTarget-DemiAutoTargeted-atDude
+GR0B1R0:UnbootTarget-DemiAutoTargeted-atDude-choose1
 .....
 The Sloane Gang
 -----

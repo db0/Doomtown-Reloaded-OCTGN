@@ -23,11 +23,8 @@
 
 def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notification = None, n = 0):
    mute()
+   announceString = ''
    debugNotify(">>> UseCustomAbility() with Autoscript: {}".format(Autoscript)) #Debug
-   if card.name == "Mara Jade": 
-      remoteCall(card.controller,'MaraJade',[card])
-      announceString = ''
-   else: announceString = announceText 
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
@@ -52,7 +49,9 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          targetPL = drawHandPlayers[choice]
       remoteCall(targetPL,'clearDrawHandonTable',[])
       drawhandMany(me.Deck, 5, True,scripted = True)
-      resultTXT = revealHand(me.piles['Draw Hand'], type = 'shootout', event = None, silent = True)
+      if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
+      else: Drawtype = 'lowball'
+      resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
       notify("{}'s new hand rank is {}".format(targetPL,resultTXT))
    elif card.name == "Coachwhip!" and action == 'PLAY':
       debugNotify("Coachwhip Script")
@@ -129,7 +128,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       orgAttachments(targetDude[0])
       notify("{} uses {} and boots {} to build {}, reducing its cost by {}.".format(me,card,targetDude[0],targetDeed[0],reduction))      
    elif card.name == "The Union Casino" and action == 'USE':
-      targetDude = findTarget('Targeted-atDude-isUnbooted')
+      targetDude = findTarget('Targeted-atDude')
       if not len(targetDude):
          whisper(":::ERROR::: You need to target an unbooted dudes at this deed to use this ability")
          return 'ABORT'
@@ -147,7 +146,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          whisper(":::ERROR::: You need to target a deed with production to steal from first. Aborting.")
          return 'ABORT'
       deed = targetDeed[0]
-      if deed.controller.GhostRock == 0:
+      if deed.owner.GhostRock == 0:
          whisper(":::ERROR::: {} has no money in their bank to steal. Aborting")
          return 'ABORT'
       deedProd = compileCardStat(deed, stat = 'Production')
@@ -159,15 +158,15 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          whisper(":::ERROR::: You need to target an unbooted dudes at this deed to use this ability. Aborting.")
          return 'ABORT'      
       boot(targetDude[0],silent = True, forced = 'boot')
-      if deedProd > deed.controller.GhostRock: 
-         notify(":> {} doesn't have the full {} ghost rock to steal, so {} is taking the {} possible.".format(deed.controller,deedProd,card,deed.controller.GhostRock))
-         me.GhostRock += deed.controller.GhostRock # We cannot steal more money than the target player has.
-         targetDude[0].markers[mdict['Bounty']] += deed.controller.GhostRock
-         deed.controller.GhostRock = 0
+      if deedProd > deed.owner.GhostRock: 
+         notify(":> {} doesn't have the full {} ghost rock to steal, so {} is taking the {} possible.".format(deed.owner,deedProd,card,deed.controller.GhostRock))
+         me.GhostRock += deed.owner.GhostRock # We cannot steal more money than the target player has.
+         targetDude[0].markers[mdict['Bounty']] += deed.owner.GhostRock
+         deed.owner.GhostRock = 0
       else:
-         notify(":> {} is holding up {} and taking {} ghost rock from {}.".format(targetDude[0],deed,deedProd,deed.controller))
+         notify(":> {} is holding up {} and taking {} ghost rock from {}.".format(targetDude[0],deed,deedProd,deed.owner))
          me.GhostRock += deedProd # We cannot steal more money than the target player has.
-         deed.controller.GhostRock -= deedProd      
+         deed.owner.GhostRock -= deedProd      
          targetDude[0].markers[mdict['Bounty']] += deedProd
    elif card.name == "Unprepared" and action == 'PLAY':
       targetDude = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1')
@@ -193,7 +192,7 @@ def markerEffects(Time = 'Start'):
       for marker in card.markers:
          if (Time == 'Sundown'
                and (re.search(r'Bad Company',marker[0])
-                 or re.search(r'High Noon',marker[0])
+                 or re.search(r'High Noon:',marker[0])
                  or re.search(r'Hiding in the Shadows',marker[0])
                  or re.search(r'Rumors',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
@@ -214,7 +213,7 @@ def markerEffects(Time = 'Start'):
          if (Time == 'ShootoutEnd'
                and (re.search(r'Sun In Yer Eyes',marker[0])
                  or re.search(r'Unprepared',marker[0])
-                 or re.search(r'Shootout',marker[0]))):
+                 or re.search(r'Shootout:',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))
    
@@ -257,4 +256,3 @@ def UnionCasino(card,mainBet,targetDude, function = 'others bet'):
             targetDude.markers[mdict['PermControl']] += 1
             notify(":> {} outbid all other players by {} and thus {} gains a permanent control point".format(me,mainBet - highBet,targetDude))
          else: notify(":> {} checked the bet by raising {} to {}'s {}".format(me,highBet,card.controller,mainBet))
-            

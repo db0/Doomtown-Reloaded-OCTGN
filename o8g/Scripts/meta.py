@@ -168,7 +168,7 @@ def fetchDrawType(card): # We go through effects which change their draw value i
    return drawType
    
 def calcValue(card, type = 'poker'):
-   numvalue = numrank(card.Rank) + card.markers[mdict['ValuePlus']] - card.markers[mdict['ValueMinus']]
+   numvalue = numrank(card.Rank) + card.markers[mdict['ValueNoonPlus']] - card.markers[mdict['ValueNoonMinus']] + card.markers[mdict['ValueShootoutPlus']] - card.markers[mdict['ValueShootoutMinus']]
    if type == 'raw': return numvalue
    if numvalue > 12 and type == 'numeral': return 13
    if numvalue > 12: return 'K'
@@ -258,7 +258,25 @@ def fetchSkills(card):
          #confirm("Checking {}".format(strippedCS))
          if strippedCS:
             skillRegex = re.search(r'(Huckster|Blessed|Shaman|Mad Scientist) ([0-9])',strippedCS)
-            if skillRegex: skillList.append((skillRegex.group(1),num(skillRegex.group(2)))) # If we discover a skill, we add it in a tuple with the skill first, then its numerical value second.
+            if skillRegex:
+               skillRank = num(skillRegex.group(2))
+               # We now look for effects that would modify that skill.
+               debugNotify('Skill now {}'.format(skillRank))
+               for marker in card.markers:
+                  if re.search(r'Skill Bonus',marker[0]): skillRank += card.markers[marker]
+                  if re.search(r'Skill Penalty',marker[0]): skillRank -= card.markers[marker]
+               debugNotify('Skill now {}'.format(skillRank))
+               if CardsAS.get(card.model,'') != '':
+                  Autoscripts = CardsAS.get(card.model,'').split('||')
+                  for autoS in Autoscripts:
+                     skillBonusRegex = re.search(r'constantAbility:Skill Bonus:([0-9]+)',autoS)
+                     if skillBonusRegex and checkSpecialRestrictions(autoS,card):
+                        multiplier = per(autoS, card)
+                        skillRank += multiplier * num(skillBonusRegex.group(1))
+                        debugNotify('Skill now {}'.format(skillRank))
+               # Finished checking effects
+               skillList.append((skillRegex.group(1),skillRank)) # If we discover a skill, we add it in a tuple with the skill first, then its numerical value second.
+   #confirm(str(skillList))        
    return skillList
       
 def sendToDrawHand(card):
@@ -294,13 +312,14 @@ def modVP(count = 1, notification = silent): # Same as above but for Control Poi
    me.VictoryPoints += count
    if notification == 'loud' and count > 0: notify("{}'s victory points have increased by {}. New total is {}".format(me, count, me.VictoryPoints))         
 
-def payCost(count = 1, notification = silent): # Same as above for Ghost Rock. However we also check if the cost can actually be paid.
+def payCost(count = 1, notification = silent, MSG = None): # Same as above for Ghost Rock. However we also check if the cost can actually be paid.
    count = num(count)
+   if not MSG: MSG = "You do not seem to have enough Ghost Rock in your bank to play this card. Are you sure you want to proceed? \
+                    \n(If you do, your GR will go to the negative. You will need to increase it manually as required.)"
    if count == 0 : return # If the card has 0 cost, there's nothing to do.
    if me.GhostRock < count: # If we don't have enough Ghost Rock in the bank, we assume card effects or mistake and notify the player that they need to do things manually.
       if notification == loud: 
-         if not confirm("You do not seem to have enough Ghost Rock in your bank to play this card. Are you sure you want to proceed? \
-         \n(If you do, your GR will go to the negative. You will need to increase it manually as required.)"): return 'ABORT'
+         if not confirm(MSG): return 'ABORT'
          notify("{} was supposed to pay {} Ghost Rock but only has {} in their bank. They'll need to reduce the cost by {} with card effects.".format(me, count, me.GhostRock, count - me.GhostRock))   
          me.GhostRock -= num(count)
       else: me.GhostRock -= num(count) 
@@ -460,8 +479,8 @@ def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = Fals
       if T.markers[mdict['ControlMinus']] and T.markers[mdict['ControlMinus']] >= 1: markers += " -{} Control,".format(T.markers[mdict['ControlMinus']])
       if T.markers[mdict['ProdPlus']] and T.markers[mdict['ProdPlus']] >= 1: markers += " +{} Production,".format(T.markers[mdict['ProdPlus']])
       if T.markers[mdict['ProdMinus']] and T.markers[mdict['ProdMinus']] >= 1: markers += " +{} Upkeep,".format(T.markers[mdict['ProdMinus']])
-      if T.markers[mdict['ValuePlus']] and T.markers[mdict['ValuePlus']] >= 1: markers += " +{} Value,".format(T.markers[mdict['ValuePlus']])
-      if T.markers[mdict['ValueMinus']] and T.markers[mdict['ValueMinus']] >= 1: markers += " -{} Value,".format(T.markers[mdict['ValueMinus']])
+      if T.markers[mdict['ValueNoonPlus']] and T.markers[mdict['ValueNoonPlus']] >= 1: markers += " +{} Value,".format(T.markers[mdict['ValueNoonPlus']])
+      if T.markers[mdict['ValueNoonMinus']] and T.markers[mdict['ValueNoonMinus']] >= 1: markers += " -{} Value,".format(T.markers[mdict['ValueNoonMinus']])
       if T.markers[mdict['BulletNoonPlus']] and T.markers[mdict['BulletNoonPlus']] >= 1: markers += " +{} Noon Bullets,".format(T.markers[mdict['BulletNoonPlus']])
       if T.markers[mdict['BulletShootoutPlus']] and T.markers[mdict['BulletShootoutPlus']] >= 1: markers += " +{} Shootout Bullets,".format(T.markers[mdict['BulletShootoutPlus']])
       if T.markers[mdict['PermBullet']] and T.markers[mdict['PermBullet']] >= 1: markers += " +{} Permanent Bullets,".format(T.markers[mdict['PermBullet']])
@@ -474,7 +493,7 @@ def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = Fals
       else: traded = ''
       debugNotify("Finished Adding Markers. Adding stats...", 4)# Debug               
       stats = ''
-      stats += "Cost: {}. ".format(T.Cost)
+      stats += "Value: {} of {}.\nCost: {}".format(fullrank(calcValue(T)),fullsuit(T.Suit),T.Cost)
       if T.Influence != '': stats += "\nInfluence: {}. ".format(T.Influence)
       if T.Control != '': stats += "\nControl: {}. ".format(T.Control)
       if T.Type == 'Dude': stats += "\nBullets: {} {}. ".format(T.Bullets, T.properties['Draw Type'])
