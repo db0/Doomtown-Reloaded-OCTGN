@@ -1,6 +1,17 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.1.5.x
+
+* Fixed Flush and Pairs checking
+* Fixed This is a Hold up
+* Law Dogs home will now boot your targeted dudes, but it will only put a bounty on opposing dudes. (To use it to put bounty on your own dudes, do it manually)
+* Cheatin' Varmint will announce.
+* General Store will work for spells as well now.
+* Micah's ability should work now.
+* Remy's ability should cost GR now.
+* Pharmacy should work now.
+
 ### 1.1.4.x
 
 * Added last 3 cards
