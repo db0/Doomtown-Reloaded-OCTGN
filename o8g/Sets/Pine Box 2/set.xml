@@ -272,7 +272,7 @@
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="5" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Mogan Cattle Company" />
+         <property name="Outfit" value="Mogan Cattle Co." />
          <property name="Keywords" value="Exprienced 1-Huckster 2" />
          <property name="Text" value="The cost of Lillian is reduced by 1 for each Horse or Ranch you control.&#xD;&#xA;Noon/Shootout: Play an action from your discard pile as if it was in your hand. Boot a spell on Lillian or ace that card after it resolves." />
          <property name="Instructions" value="" />
@@ -290,7 +290,7 @@
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Morgan Cattle Company" />
+         <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Confederate-Harrowed" />
          <property name="Text" value="Noon, boot: If this dude is at a ranch, choose a dude with a horse. Move the dude to any location." />
          <property name="Instructions" value="" />
