@@ -771,8 +771,8 @@
          <property name="Upkeep" value="1" />
          <property name="Production" value="" />
          <property name="Bullets" value="2" />
-         <property name="Bullet Bonus" value="Stud" />
-         <property name="Draw Type" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="Stud" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="Necessity Alliance" />
