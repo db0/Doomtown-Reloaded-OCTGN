@@ -125,23 +125,6 @@
          <property name="Text" value="Noon Job: Mark the Town Square. If successful, send every dude in the town, home booted. Nobody can win the game this turn. Ace this card." />
          <property name="Instructions" value="" />
       </card>
-      <card id="a056ef7e-8509-43fb-b1da-3ce27661af72" name="[Lula and Lilian Squabble]">
-         <property name="Rank" value="A" />
-         <property name="Suit" value="Clubs" />
-         <property name="Type" value="Action" />
-         <property name="Cost" value="1" />
-         <property name="Upkeep" value="" />
-         <property name="Production" value="" />
-         <property name="Bullets" value="" />
-         <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="" />
-         <property name="Influence" value="" />
-         <property name="Control" value="" />
-         <property name="Outfit" value="" />
-         <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Choose a non-home location with two or more dudes controlled by the same player. That player either pays 1 GR per dude they control in that location, or move all their dudes with the lowest value at that location home booted."/>
-         <property name="Instructions" value="" />
-      </card>
       <card id="3e1d8cfb-03b1-433a-a7ae-b12f124fb7ef" name="[Avoiding the Jackelope Stampede">
          <property name="Rank" value="J" />
          <property name="Suit" value="Clubs" />
@@ -174,23 +157,6 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Event (Only one [Event] may be played per shootout)." />
          <property name="Text" value="Shootout: All dudes in one posse get -1 Bullet. Any dude in the shootout with 1 Bullet or less becomes a Draw." />
-         <property name="Instructions" value="" />
-      </card>
-      <card id="077b71b5-6a7a-42e5-b14b-d9437f22b2f3" name="[Well, that escalated quickly...]">
-         <property name="Rank" value="Q" />
-         <property name="Suit" value="Clubs" />
-         <property name="Type" value="Action" />
-         <property name="Cost" value="2" />
-         <property name="Upkeep" value="" />
-         <property name="Production" value="" />
-         <property name="Bullets" value="" />
-         <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="" />
-         <property name="Influence" value="" />
-         <property name="Control" value="" />
-         <property name="Outfit" value="" />
-         <property name="Keywords" value="Condition" />
-         <property name="Text" value="Noon: Attach this card to a dude at a deed with grit lower than their printed grit.&#xD;&#xA;While this card is attached, this dude has +2 upkeep. If this dude is discarded during upkeep, the controller of this card may pay 1 ghost rock to either attach this card to another dude in the same or adjacent location or ace it." />
          <property name="Instructions" value="" />
       </card>
       <card id="b308c49b-6871-4067-a269-9aa7f8917bdc" name="[Sharing Power]">

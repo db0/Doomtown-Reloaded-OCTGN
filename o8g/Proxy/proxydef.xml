@@ -216,10 +216,10 @@
          <block type="overlay" id="dude_wretched" src="Proxy/Dudes/the_wretched.jpg">         
            <location x="0" y="0" />
          </block>  
-         <block type="overlay" id="dude_alliance" src="Proxy/Dudes/the_society.jpg">         
+         <block type="overlay" id="dude_alliance" src="Proxy/Dudes/the_circle.jpg">         
            <location x="0" y="0" />
          </block>  
-         <block type="overlay" id="dude_108" src="Proxy/Dudes/the_circle.jpg">         
+         <block type="overlay" id="dude_108" src="Proxy/Dudes/the_society.jpg">         
            <location x="0" y="0" />
          </block>  
          <block type="text" id="dude_name">
@@ -251,10 +251,10 @@
          <block type="overlay" id="outfit_wretched" src="Proxy/Outfits/the_wretched.jpg">         
            <location x="0" y="0" />
          </block>  
-         <block type="overlay" id="outfit_alliance" src="Proxy/Outfits/the_society.jpg">         
+         <block type="overlay" id="outfit_alliance" src="Proxy/Outfits/the_circle.jpg">         
            <location x="0" y="0" />
          </block>  
-         <block type="overlay" id="outfit_108" src="Proxy/Outfits/the_circle.jpg">         
+         <block type="overlay" id="outfit_108" src="Proxy/Outfits/the_society.jpg">         
            <location x="0" y="0" />
          </block>  
          <block type="overlay" id="home_outfit_icon_blackjacks" src="Proxy/Icons/fs_blackjacks.png">         
