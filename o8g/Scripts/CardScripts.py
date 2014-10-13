@@ -1085,7 +1085,7 @@ a8843dcd-cd66-4f38-b6a9-12fbf5fd8bba
 -----
 
 +++++
-GR0B1R0:Gain2Ghost Rock
+GR0B0R1:Gain2Ghost Rock
 .....
 Unprepared
 -----
@@ -1597,7 +1597,7 @@ Teleportation Device
 -----
 
 +++++
-GR1B1R0:Pull1Card
+GR1B0R1:Pull1Card
 .....
 Faithful Hound
 -----
