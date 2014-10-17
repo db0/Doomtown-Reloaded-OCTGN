@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <set name="Core Set" id="4faa78e0-7f18-4b5b-89ac-56b79624bc83" 
      gameId="b440d120-025a-4fbe-9f8d-3873acacb37b" 
      version="1.0.0" 
@@ -2420,7 +2420,7 @@
          <property name="Text" value="Noon: One of your dudes gets +2 bullets." />
          <property name="Instructions" value="" />
       </card>
-      <card id="80d43d02-7885-4e2e-98e5-62ba2b189155" name="Whisky Flask">
+      <card id="80d43d02-7885-4e2e-98e5-62ba2b189155" name="Whiskey Flask">
          <property name="Rank" value="4" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
