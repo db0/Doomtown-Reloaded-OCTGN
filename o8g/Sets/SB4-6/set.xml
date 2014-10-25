@@ -6,7 +6,7 @@
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
      xsi:noNamespaceSchemaLocation="CardSet.xsd">
   <cards>
-      <card id="3f0bc78c-6b5d-4951-bcd1-a3ab3b08481e" name="[A Fight They'll Never Forget]">
+      <card id="3f0bc78c-6b5d-4951-bcd1-a3ab3b08481e" name="A Fight They'll Never Forget">
          <property name="Rank" value="2" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -19,11 +19,11 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Event (Only one [Event] may be played per shootout)." />
-         <property name="Text" value="Shootout: All dudes in both posses get +1 bullet. Until the end of the shootout, any time a dude is aced, the leader or mark of the opposing posse gains 1 Control Point. Ace this card." />
+         <property name="Keywords" value="Headline (Only one Headline may be played per shootout)." />
+         <property name="Text" value="Shootout: Each dude in your posse gets +1 bullets. After each time any dude is aced as a casualty, the shooter in the other posse permanently gets 1 control point. Ace this card." />
          <property name="Instructions" value="" />
       </card>
-      <card id="0453a270-56fb-4714-b3d7-41129bf4ccd5" name="[A Good Old Hangin']">
+      <card id="0453a270-56fb-4714-b3d7-41129bf4ccd5" name="Ol' Fashioned Hangin'">
          <property name="Rank" value="5" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -40,7 +40,7 @@
          <property name="Text" value="Noon Job: Mark a wanted dude with at least 2 bounty. If successful, ace that dude and your leader gains 1 Control Point." />
          <property name="Instructions" value="" />
       </card>
-      <card id="1e6f4bb8-762f-4e61-9f19-b3585c0f5186" name="[Rope and Ride]">
+      <card id="1e6f4bb8-762f-4e61-9f19-b3585c0f5186" name="Rope and Ride">
          <property name="Rank" value="3" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -57,7 +57,7 @@
          <property name="Text" value="React: After the Mark accepts your callout (but before posses are formed), boot your Leader, or their attached horse, to move both dudes to any adjacent location that is not your home. Boot the Mark." />
          <property name="Instructions" value="" />
       </card>
-      <card id="f7d5aaa2-b476-4156-bef1-697cd39d7dd7" name="[Friends in Low Places]">
+      <card id="f7d5aaa2-b476-4156-bef1-697cd39d7dd7" name="Cookin' Up Trouble">
          <property name="Rank" value="4" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -74,7 +74,7 @@
          <property name="Text" value="Noon: Look at another player's play hand. If that player has revealed an illegal hand this turn, you may choose and discard one action, goods or spell card in it without a cheatin' ability." />
          <property name="Instructions" value="" />
       </card>
-      <card id="f36622a2-667f-43bc-ac16-0f8c8dabec00" name="[Its Getting Worse...]">
+      <card id="f36622a2-667f-43bc-ac16-0f8c8dabec00" name="Incubation">
          <property name="Rank" value="7" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -91,7 +91,7 @@
          <property name="Text" value="Noon: Choose a booted dude at their home and attach this card to them. &#xD;&#xA;While this card is attached this dude has -1 bullet, -1 influence, -3 value and the ability &quot;Noon, boot: remove one attached [It's getting worse].&quot;" />
          <property name="Instructions" value="" />
       </card>
-      <card id="e5e6dd23-04d0-4614-a8da-a9a74785a7c2" name="[One Man's trash...]">
+      <card id="e5e6dd23-04d0-4614-a8da-a9a74785a7c2" name="Buried Treasure">
          <property name="Rank" value="10" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -108,24 +108,7 @@
          <property name="Text" value="Noon: Ace a card in your discard pile to gain 3 GR and draw a card." />
          <property name="Instructions" value="" />
       </card>
-      <card id="dd4f9f68-d5f7-4cb5-a901-f529599d103b" name="[Plague Panic]">
-         <property name="Rank" value="A" />
-         <property name="Suit" value="Clubs" />
-         <property name="Type" value="Action" />
-         <property name="Cost" value="1" />
-         <property name="Upkeep" value="" />
-         <property name="Production" value="" />
-         <property name="Bullets" value="" />
-         <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="" />
-         <property name="Influence" value="" />
-         <property name="Control" value="" />
-         <property name="Outfit" value="" />
-         <property name="Keywords" value="" />
-         <property name="Text" value="Noon Job: Mark the Town Square. If successful, send every dude in the town, home booted. Nobody can win the game this turn. Ace this card." />
-         <property name="Instructions" value="" />
-      </card>
-      <card id="3e1d8cfb-03b1-433a-a7ae-b12f124fb7ef" name="[Avoiding the Jackelope Stampede">
+      <card id="3e1d8cfb-03b1-433a-a7ae-b12f124fb7ef" name="Flight of the Lepus">
          <property name="Rank" value="J" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -142,7 +125,7 @@
          <property name="Text" value="Cheatin' Resolution: Choose up to 2 dudes and move them home. If this is a shootout you may boot them. If you revealed a legal hand you may choose up to 3 dudes instead." />
          <property name="Instructions" value="" />
       </card>
-      <card id="590b905c-f114-48d2-930f-66e446458c84" name="[Tumblebleeds Attack!]">
+      <card id="590b905c-f114-48d2-930f-66e446458c84" name="Nightmare at Noon">
          <property name="Rank" value="K" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -159,7 +142,7 @@
          <property name="Text" value="Shootout: All dudes in one posse get -1 Bullet. Any dude in the shootout with 1 Bullet or less becomes a Draw." />
          <property name="Instructions" value="" />
       </card>
-      <card id="b308c49b-6871-4067-a269-9aa7f8917bdc" name="[Sharing Power]">
+      <card id="b308c49b-6871-4067-a269-9aa7f8917bdc" name="No Turning Back">
          <property name="Rank" value="Q" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -176,7 +159,7 @@
          <property name="Text" value="Each time a resolution ability is used, the controller gains 1 Ghost Rock.&#xD;&#xA;Controller Noon, Boot: If you played a cheatin' resolution this turn, Draw a card." />
          <property name="Instructions" value="" />
       </card>
-      <card id="29add78a-5369-43d9-80d9-4006f6757a6e" name="[Cheapskate's Casino]">
+      <card id="29add78a-5369-43d9-80d9-4006f6757a6e" name="Flint's Amusements">
          <property name="Rank" value="6" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
@@ -193,7 +176,7 @@
          <property name="Text" value="Each time a resolution ability on an action card is used, the controller gains 1 Ghost Rock.&#xD;&#xA;Controller Noon, Boot: If you played a cheatin' resolution this turn, Draw a card." />
          <property name="Instructions" value="" />
       </card>
-      <card id="5af04c4c-8282-4abf-9e55-a13ace8a998b" name="[Mutant Cattle Breeder]">
+      <card id="5af04c4c-8282-4abf-9e55-a13ace8a998b" name="Secured Stockyard">
          <property name="Rank" value="K" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
@@ -227,7 +210,7 @@
          <property name="Text" value="During upkeep, put enough Ghost Rock counters on this deed to bring it to 2 counters.&#xD;&#xA;The controller may use Ghost Rock counters on this deed to pay for abilities on gadgets." />
          <property name="Instructions" value="" />
       </card>
-      <card id="edc1d27d-2cd3-494f-90d8-36f9edfdbb61" name="[The Jail]">
+      <card id="edc1d27d-2cd3-494f-90d8-36f9edfdbb61" name="Gomorra Jail">
          <property name="Rank" value="10" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
@@ -244,7 +227,7 @@
          <property name="Text" value="If your outfit is the Law Dogs, you may start with this deed in play, and reduce your starting posse by 1.&#xD;&#xA;Controller React, Boot: When a wanted dude is discarded from during high noon, this deed gains a permanent CP." />
          <property name="Instructions" value="" />
       </card>
-      <card id="18df456c-38ac-4e2b-b4ab-f309849d2cb7" name="[The Protection Agency]">
+      <card id="18df456c-38ac-4e2b-b4ab-f309849d2cb7" name="Shane & Graves Security">
          <property name="Rank" value="5" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
@@ -261,7 +244,7 @@
          <property name="Text" value="Controller Shootout, Boot: Put a 2-stud Gunslinger token into play under your control at a shootout in this or an adjacent deed." />
          <property name="Instructions" value="" />
       </card>
-      <card id="5448fd9b-6cce-4973-a40a-f4769b7f6f47" name="[Test Fields]">
+      <card id="5448fd9b-6cce-4973-a40a-f4769b7f6f47" name="Testing Range">
          <property name="Rank" value="Q" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
@@ -278,7 +261,7 @@
          <property name="Text" value="Controller React, Boot, Pay 2 GR: After you invent a gadget, unboot the Mad Scientist who invented it.&#xD;&#xA;Controller React, Boot: After you pull a club due to an Experimental card, ignore the result, and pull again" />
          <property name="Instructions" value="" />
       </card>
-      <card id="0334ecdd-6da1-47bf-a3d0-b4988bdf8a07" name="The Officer's Club">
+      <card id="0334ecdd-6da1-47bf-a3d0-b4988bdf8a07" name="Huntsmen's Society">
          <property name="Rank" value="J" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
@@ -295,7 +278,7 @@
          <property name="Text" value="All the controller's dudes in this or an adjacent location, with a value of 10 or higher, have -1 upkeep." />
          <property name="Instructions" value="" />
       </card>
-      <card id="6da3418d-0c64-425c-8191-680e7f2480b3" name="[Marshall's Duster]">
+      <card id="6da3418d-0c64-425c-8191-680e7f2480b3" name="Dog's Duster">
          <property name="Rank" value="3" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -312,7 +295,7 @@
          <property name="Text" value="This dude has +1 influence while they are not wanted.&#xD;&#xA;Noon, Boot: If this dude is unbooted, call out a wanted dude at this location.&#xD;&#xA;If this dude is a deputy they do not become wanted for joining a posse at a private location." />
          <property name="Instructions" value="" />
       </card>
-      <card id="caff0709-27f0-4596-8cbb-ad1b403a2368" name="[Courthouse]">
+      <card id="caff0709-27f0-4596-8cbb-ad1b403a2368" name="Legal Instruments">
          <property name="Rank" value="4" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -329,7 +312,7 @@
          <property name="Text" value="This deed is now Government&#xD;&#xA;Deputies at this deed have +2 Influence and +3 Value" />
          <property name="Instructions" value="" />
       </card>
-      <card id="c5a6c2ba-866e-4854-bbaf-4e3fd6ea49de" name="Winchester Rifle">
+      <card id="c5a6c2ba-866e-4854-bbaf-4e3fd6ea49de" name="Winchester Model 1873">
          <property name="Rank" value="6" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -346,7 +329,7 @@
          <property name="Text" value="Shootout, Boot: Boot this dude to give them +1 bullet and make them a stud." />
          <property name="Instructions" value="" />
       </card>
-      <card id="4e59a712-6f55-4703-a420-a1f62b483afa" name="Motion-based Generator">
+      <card id="4e59a712-6f55-4703-a420-a1f62b483afa" name="Recursive Motion Machine">
          <property name="Rank" value="6" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -380,7 +363,7 @@
          <property name="Text" value="If there is an unbooted non-Melee Weapon in the opposing posse, this weapon provides no bullet bonus.&#xD;&#xA;This dude has +3 Value&#xD;&#xA;Shootout, Boot: Unboot a spell attached to this dude. You may use it another time this turn." />
          <property name="Instructions" value="" />
       </card>
-      <card id="b756df9e-6c24-4b33-a6f1-ff6b82dd51e5" name="[Blocker Sidekick]">
+      <card id="b756df9e-6c24-4b33-a6f1-ff6b82dd51e5" name="Scoop Hound">
          <property name="Rank" value="10" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -397,7 +380,7 @@
          <property name="Text" value="React,Boot: Before a shootout ability resolves to make a dude join this shootout, or go home booted. Cancel that ability." />
          <property name="Instructions" value="" />
       </card>
-      <card id="34970b97-c353-47a5-bf1c-4cdc0351eef5" name="[Asyncoil gun]">
+      <card id="34970b97-c353-47a5-bf1c-4cdc0351eef5" name="Asyncoil Gun">
          <property name="Rank" value="9" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -414,7 +397,7 @@
          <property name="Text" value="Shootout, Boot: Make a pull. If the pull is a club, discard this dude, else discard an opposing dude with value equal or lower than this dude's bullets." />
          <property name="Instructions" value="" />
       </card>
-      <card id="80905177-39e7-49fd-a244-aa6c70baa9e8" name="[Mechanical Fortune Teller]">
+      <card id="80905177-39e7-49fd-a244-aa6c70baa9e8" name="Fate Dispenser">
          <property name="Rank" value="J" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -431,7 +414,7 @@
          <property name="Text" value="After this gadget is invented, attach it to an in-town deed you own and control.&#xD;&#xA;Controller Noon, Boot: If your hand is below your maximum hand size, draw a card." />
          <property name="Instructions" value="" />
       </card>
-      <card id="68bce669-132a-43ca-9727-8de86b3b039c" name="[The Black Mare]">
+      <card id="68bce669-132a-43ca-9727-8de86b3b039c" name="La Quema">
          <property name="Rank" value="A" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -448,7 +431,7 @@
          <property name="Text" value="+3 Value&#xD;&#xA;Shotoout, Boot: Move this dude into the shootout. You may boot a dude in the opposing posse.&#xD;&#xA;While this dude has a Melee weapon attached, they have +1 bullet" />
          <property name="Instructions" value="" />
       </card>
-      <card id="438f980e-0981-473e-a9c5-0a8d07ee4634" name="[Jack-in-a-Box]">
+      <card id="438f980e-0981-473e-a9c5-0a8d07ee4634" name="Diable en Boite">
          <property name="Rank" value="A" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -465,7 +448,7 @@
          <property name="Text" value="React, Boot: When this dude is aced or discarded during a shootout, send one dude in this shootout home booted and draw a card." />
          <property name="Instructions" value="" />
       </card>
-      <card id="2950ad4b-c835-415f-a24c-b61c9702c728" name="[Longsword]">
+      <card id="2950ad4b-c835-415f-a24c-b61c9702c728" name="Rapier">
          <property name="Rank" value="J" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -482,7 +465,7 @@
          <property name="Text" value="'+1 value&#xD;&#xA;While the opposing posse in this shootout has an unbooted non-Melee weapon, the longsword provides no bullet bonus." />
          <property name="Instructions" value="" />
       </card>
-      <card id="59978194-81c0-482e-8748-1df5b3a6245f" name="[Soul Trap]">
+      <card id="59978194-81c0-482e-8748-1df5b3a6245f" name="Soul Cage">
          <property name="Rank" value="Q" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -499,7 +482,7 @@
          <property name="Text" value="Cheatin' Resolution, Boot: Put one Abomination from your discard or boot hill with a cost equal to, or lower than, the cheatin' hand rank into play at this location at no cost. If this is during a shootout resolution, they join your posse immediately." />
          <property name="Instructions" value="" />
       </card>
-      <card id="03dc1c9f-3b91-4bf6-af64-6bcbdca36839" name="[Super-Serum]">
+      <card id="03dc1c9f-3b91-4bf6-af64-6bcbdca36839" name="Vitality Tonic">
          <property name="Rank" value="Q" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -516,7 +499,7 @@
          <property name="Text" value="This dude is considered an Abomination&#xD;&#xA;React: When this dude is aced in a shootout, discard them instead.&#xD;&#xA;Noon, Repeat, Pay 2 GR, Pull: If the pull is a clubs discard this dude, otherwise unboot them." />
          <property name="Instructions" value="" />
       </card>
-      <card id="bb4aad56-6d02-4088-9f20-f64c571f593b" name="[New Hat]">
+      <card id="bb4aad56-6d02-4088-9f20-f64c571f593b" name="Fancy New Hat">
          <property name="Rank" value="K" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -550,7 +533,7 @@
          <property name="Text" value="Noon Miracle 6, Boot: A dude in this or an adjacent location gains bounty equal to this dude's blessed skill.&#xD;&#xA;Noon Miracle 7, Boot: Take one bounty from a dude at this or an adjacent location into your bank." />
          <property name="Instructions" value="" />
       </card>
-      <card id="ae0d585d-25e0-4495-8757-71ef0efffb0e" name="[Shielding]">
+      <card id="ae0d585d-25e0-4495-8757-71ef0efffb0e" name="Shield of Faith">
          <property name="Rank" value="7" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Spell" />
@@ -567,7 +550,7 @@
          <property name="Text" value="Shootout Miracle 7, Boot: Reduce your casualties this round by 1. No dude may be aced or discarded, except as a casualty for losing a round of the shootout." />
          <property name="Instructions" value="" />
       </card>
-      <card id="12d7d9e6-cffa-46ef-8ae7-d8fbbeb88e4c" name="[Mark of Pestilence]">
+      <card id="12d7d9e6-cffa-46ef-8ae7-d8fbbeb88e4c" name="Mark of Pestilence">
          <property name="Rank" value="9" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Spell" />
@@ -584,7 +567,7 @@
          <property name="Text" value="Shootout Hex 9, Boot: Boot all other unbooted dudes in this shootout" />
          <property name="Instructions" value="" />
       </card>
-      <card id="00867833-050d-4214-bccb-d1e787f15baf" name="[Blessing]">
+      <card id="00867833-050d-4214-bccb-d1e787f15baf" name="Consecration">
          <property name="Rank" value="9" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Spell" />
@@ -601,7 +584,7 @@
          <property name="Text" value="Cheatin Resolution Miracle 7: One of your dudes gains +2 bullets and +2 influence and becomes a stud until the end of the turn. If this is a shootout, reduce your casualties by 3." />
          <property name="Instructions" value="" />
       </card>
-      <card id="abed8d3b-d73f-4426-bbeb-6e0124aae9fb" name="[The Prodigal Son]">
+      <card id="abed8d3b-d73f-4426-bbeb-6e0124aae9fb" name="For Such a Time as This">
          <property name="Rank" value="J" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Spell" />
@@ -618,7 +601,7 @@
          <property name="Text" value="Noon Job Miracle 9, Boot: Mark the Town Square. If Successful, search through your deck and/or discard pile for a dude whose Grit is less than the skill test result. Put that dude into play, reducing their cost by 4 and give them a permanent +1 influence. Ace this card" />
          <property name="Instructions" value="" />
       </card>
-      <card id="39e4ddd4-987b-450b-a3dd-260a20db35a0" name="[Guardian Flame]">
+      <card id="39e4ddd4-987b-450b-a3dd-260a20db35a0" name="Sword of the Spirit">
          <property name="Rank" value="K" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Spell" />
@@ -635,7 +618,7 @@
          <property name="Text" value="Noon Miracle 7: Choose a dude with a Mêlée weapon. They have +2 bullets, become a stud and cannot be affected by opposing spells, while that weapon remains attached to them (until the end of the turn)." />
          <property name="Instructions" value="" />
       </card>
-      <card id="686696a5-da6b-46d7-92b2-2ba051a3153e" name="[Cunning Jack]">
+      <card id="686696a5-da6b-46d7-92b2-2ba051a3153e" name="John &quot;Aces&quot; Radcliffe">
          <property name="Rank" value="4" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -703,7 +686,7 @@
          <property name="Text" value="This dude gains +1 bullets if they have a Weapon attached.&#xD;&#xA;This dude gain +1 Influence if they have an Attire attached.&#xD;&#xA;This dude has -1 Upkeep if they have a Horse attached." />
          <property name="Instructions" value="" />
       </card>
-      <card id="c65152fd-434e-4729-ac44-cf61d1affbdc" name="[Bodyguard]">
+      <card id="c65152fd-434e-4729-ac44-cf61d1affbdc" name="Jaqueline Ishan">
          <property name="Rank" value="K" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -720,7 +703,7 @@
          <property name="Text" value="This dude becomes a Stud when she joins the Mark's posse." />
          <property name="Instructions" value="" />
       </card>
-      <card id="8628bdf2-3900-4e36-941e-043560d81757" name="[Claim Jumpin' King]">
+      <card id="8628bdf2-3900-4e36-941e-043560d81757" name="Old Man McDroste">
          <property name="Rank" value="K" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -737,7 +720,7 @@
          <property name="Text" value="While at an Out of Town deed, this dude is worth 1 CP&#xD;&#xA;Any deed this dude is at has its production reduced to 0&#xD;&#xA;Noon, boot: Choose a dude at this deed, reduce their influence to 0 until after the next upkeep phase." />
          <property name="Instructions" value="" />
       </card>
-      <card id="9eada35c-a9a5-485f-9513-305661421944" name="[Master Swordsman]">
+      <card id="9eada35c-a9a5-485f-9513-305661421944" name="El Grajo">
          <property name="Rank" value="J" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -754,7 +737,7 @@
          <property name="Text" value="Shootout: Boot a melee weapon attached to [this dude) to make him a Stud and gain +2 Bullets (to a maximum of 4)." />
          <property name="Instructions" value="" />
       </card>
-      <card id="e341450b-9b41-4ae1-a1aa-fa50ac743f90" name="[District Attorney]">
+      <card id="e341450b-9b41-4ae1-a1aa-fa50ac743f90" name="Elmore Rhine">
          <property name="Rank" value="5" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -788,7 +771,7 @@
          <property name="Text" value="Noon job, boot: Mark an opposing wanted dude. If a shootout occurs, a 2-stud Gunslinger Token enters play and joins your posse. If successful, discard the target dude." />
          <property name="Instructions" value="" />
       </card>
-      <card id="92d9bfc1-4be6-4973-b820-0ac65e5d7b01" name="[Gideon]">
+      <card id="92d9bfc1-4be6-4973-b820-0ac65e5d7b01" name="Sister Mary Gideon">
          <property name="Rank" value="9" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -805,7 +788,7 @@
          <property name="Text" value="If [Gideon] is in a posse on his own he gets +1 Bullet for each dude in the opposing posse." />
          <property name="Instructions" value="" />
       </card>
-      <card id="7b51deb6-fb5f-4624-8473-32533ec7309c" name="[Informant Prugh]">
+      <card id="7b51deb6-fb5f-4624-8473-32533ec7309c" name="Andrew Burton">
          <property name="Rank" value="A" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -822,7 +805,7 @@
          <property name="Text" value="React, Boot: At the start of the game, discard a card, draw a card and add one bounty to another player's dude." />
          <property name="Instructions" value="" />
       </card>
-      <card id="799ea10c-9dc3-414e-bd72-c1d9fa662926" name="[Councilman Stewart]">
+      <card id="799ea10c-9dc3-414e-bd72-c1d9fa662926" name="Ebenezer Springfield">
          <property name="Rank" value="Q" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -839,7 +822,7 @@
          <property name="Text" value="React: After an opposing player's card affects your dude at this or an adjacent location, you may add a bounty to a dude who is not wanted." />
          <property name="Instructions" value="" />
       </card>
-      <card id="a44b9e09-8941-4e30-ab0e-c2171949e8d5" name="Kermit Conroy">
+      <card id="a44b9e09-8941-4e30-ab0e-c2171949e8d5" name="Howard Aswell">
          <property name="Rank" value="4" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -856,7 +839,7 @@
          <property name="Text" value="React: At the start of the game, reveal your play hand. If there are no deeds in your play hand, discard the top 10 cards from you deck. You may discard a card in your hand to choose a Ranch or Improvement from your discard pile and put it in your hand."/>
          <property name="Instructions" value="" />
       </card>
-      <card id="65b724a9-49e4-4c1c-9db8-e3f3081fa3fe" name="[Abner &quot;Bunny&quot; Williams-MCC Enforcer]">
+      <card id="65b724a9-49e4-4c1c-9db8-e3f3081fa3fe" name="Nathan Shane">
          <property name="Rank" value="7" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -907,7 +890,7 @@
          <property name="Text" value="Repeat Noon, Pull, Pay 1 GR: Louis makes a Mad Scientist skill check against a value of 10. If successful, you may unboot one your dudes at an in-town location." />
          <property name="Instructions" value="" />
       </card>
-      <card id="e20afd82-c3d7-4152-aac9-4392a29733b8" name="[Benjamin Williams-MCC Enforcer]">
+      <card id="e20afd82-c3d7-4152-aac9-4392a29733b8" name="Warren Graves">
          <property name="Rank" value="J" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -924,7 +907,7 @@
          <property name="Text" value="React: When one of you dudes is being aced, discarded or sent home booted as a shootout play, send him home booted instead. This Dude joins your posse (moving if necessary)." />
          <property name="Instructions" value="" />
       </card>
-      <card id="7d58d611-07a2-41e6-ad4d-fc51cc794847" name="Romanian Twins">
+      <card id="7d58d611-07a2-41e6-ad4d-fc51cc794847" name="The Flying Popescus">
          <property name="Rank" value="8" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -941,7 +924,7 @@
          <property name="Text" value="This dude has +1 Influence if they have 2 spells attached&#xD;&#xA;Shootout: If this has a mystical goods attached, they become a stud." />
          <property name="Instructions" value="" />
       </card>
-      <card id="4b50bf0d-29e3-4e93-8acc-f77c60b80e57" name="[Mr. Lady]">
+      <card id="4b50bf0d-29e3-4e93-8acc-f77c60b80e57" name="The Fabulous Mister Miss">
          <property name="Rank" value="6" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -975,7 +958,7 @@
          <property name="Text" value="If this dude comes into play by experiencing an existing Alvie Cline, you may boot a dude in play and gain 1 ghost rock.&#xD;&#xA;Noon, Boot: If Avie is at an in-town deed, choose an opposing dude with lower influence at an in-town location. Move them to Avie’s location." />
          <property name="Instructions" value="" />
       </card>
-      <card id="85989968-0332-4dc2-a5eb-9921267453ff" name="[Gollum]">
+      <card id="85989968-0332-4dc2-a5eb-9921267453ff" name="Junior">
          <property name="Rank" value="A" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -992,7 +975,7 @@
          <property name="Text" value="React: When this dude enters play, you may search your deck and/or discard pile for a non-gadget mystical goods and either attach it to one of your dudes in this location, paying all costs or ace it." />
          <property name="Instructions" value="" />
       </card>
-      <card id="2fab82a8-2a4d-4545-855a-9d1ea011a8c9" name="[Circus Mascot]">
+      <card id="2fab82a8-2a4d-4545-855a-9d1ea011a8c9" name="Funtime Freddy">
          <property name="Rank" value="3" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -1026,7 +1009,7 @@
          <property name="Text" value="Shootout: If this dude has a Melee Weapon attached, he is a stud." />
          <property name="Instructions" value="" />
       </card>
-      <card id="135a9ce8-4e8b-463a-9fcc-23f0168e4762" name="[Sloane Instigator]">
+      <card id="135a9ce8-4e8b-463a-9fcc-23f0168e4762" name="Benny McGill">
          <property name="Rank" value="2" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -1043,7 +1026,7 @@
          <property name="Text" value="Noon: Boot a spell on this dude to call-out a dude with higher bullet rating than this dude's. This call out cannot be refused." />
          <property name="Instructions" value="" />
       </card>
-      <card id="56fd7d6b-d14a-4b9d-a29c-40102bf4377b" name="[Sloane Fixer]">
+      <card id="56fd7d6b-d14a-4b9d-a29c-40102bf4377b" name="Antheia Pansofia">
          <property name="Rank" value="9" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
