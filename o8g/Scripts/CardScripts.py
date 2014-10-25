@@ -1951,6 +1951,510 @@ d5ed8e5d-c9f9-4e9e-8bc9-48da7c938045
 +++++
 GR0B1R0:BootTarget-DemiAutoTargeted-atAbomination-targetMine-isUnbooted-choose1-isCost$$Gain1Ghost Rock$$BootTarget-Targeted-atDude-targetOpponents-noTargetingError
 .....
+A Fight They'll Never Forget
+-----
+3f0bc78c-6b5d-4951-bcd1-a3ab3b08481e
+-----
+
++++++
+
+.....
+Ol' Fashioned Hangin'
+-----
+0453a270-56fb-4714-b3d7-41129bf4ccd5
+-----
+onPlay:StartJob-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-choose1
++++++
+
+.....
+Rope and Ride
+-----
+1e6f4bb8-762f-4e61-9f19-b3585c0f5186
+-----
+
++++++
+
+.....
+Cookin' Up Trouble
+-----
+f7d5aaa2-b476-4156-bef1-697cd39d7dd7
+-----
+onPlay:MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit$$MoveTarget-DemiAutoTargeted-atDude-targetOpponents-choose1-moveToDeed_or_Town Square_or_Outfit$$BootTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
++++++
+
+.....
+Incubation
+-----
+f36622a2-667f-43bc-ac16-0f8c8dabec00
+-----
+
++++++
+
+.....
+Buried Treasure
+-----
+e5e6dd23-04d0-4614-a8da-a9a74785a7c2
+-----
+
++++++
+
+.....
+Flight of the Lepus
+-----
+3e1d8cfb-03b1-433a-a7ae-b12f124fb7ef
+-----
+
++++++
+
+.....
+Nightmare at Noon
+-----
+590b905c-f114-48d2-930f-66e446458c84
+-----
+
++++++
+
+.....
+No Turning Back
+-----
+b308c49b-6871-4067-a269-9aa7f8917bdc
+-----
+
++++++
+
+.....
+Flint's Amusements
+-----
+29add78a-5369-43d9-80d9-4006f6757a6e
+-----
+
++++++
+
+.....
+Secured Stockyard
+-----
+5af04c4c-8282-4abf-9e55-a13ace8a998b
+-----
+
++++++
+
+.....
+Lula's Exploit
+-----
+5529098d-fd5f-41c1-9121-58a4c2b41c89
+-----
+
++++++
+
+.....
+Gomorra Jail
+-----
+edc1d27d-2cd3-494f-90d8-36f9edfdbb61
+-----
+
++++++
+
+.....
+Shane &amp; Graves Security
+-----
+18df456c-38ac-4e2b-b4ab-f309849d2cb7
+-----
+
++++++
+
+.....
+Testing Range
+-----
+5448fd9b-6cce-4973-a40a-f4769b7f6f47
+-----
+
++++++
+
+.....
+Huntsmen's Society
+-----
+0334ecdd-6da1-47bf-a3d0-b4988bdf8a07
+-----
+
++++++
+
+.....
+Dog's Duster
+-----
+6da3418d-0c64-425c-8191-680e7f2480b3
+-----
+
++++++
+
+.....
+Legal Instruments
+-----
+caff0709-27f0-4596-8cbb-ad1b403a2368
+-----
+
++++++
+
+.....
+Winchester Model 1873
+-----
+c5a6c2ba-866e-4854-bbaf-4e3fd6ea49de
+-----
+
++++++
+
+.....
+Recursive Motion Machine
+-----
+4e59a712-6f55-4703-a420-a1f62b483afa
+-----
+
++++++
+
+.....
+Stoker's Sabre
+-----
+0c37b916-b5e6-4e43-8640-8a970465b70e
+-----
+
++++++
+
+.....
+Scoop Hound
+-----
+b756df9e-6c24-4b33-a6f1-ff6b82dd51e5
+-----
+
++++++
+
+.....
+Asyncoil Gun
+-----
+34970b97-c353-47a5-bf1c-4cdc0351eef5
+-----
+
++++++
+
+.....
+Fate Dispenser
+-----
+80905177-39e7-49fd-a244-aa6c70baa9e8
+-----
+
++++++
+
+.....
+La Quema
+-----
+68bce669-132a-43ca-9727-8de86b3b039c
+-----
+
++++++
+
+.....
+Diable en Boite
+-----
+438f980e-0981-473e-a9c5-0a8d07ee4634
+-----
+
++++++
+
+.....
+Rapier
+-----
+2950ad4b-c835-415f-a24c-b61c9702c728
+-----
+
++++++
+
+.....
+Soul Cage
+-----
+59978194-81c0-482e-8748-1df5b3a6245f
+-----
+
++++++
+
+.....
+Vitality Tonic
+-----
+03dc1c9f-3b91-4bf6-af64-6bcbdca36839
+-----
+
++++++
+
+.....
+Fancy New Hat
+-----
+bb4aad56-6d02-4088-9f20-f64c571f593b
+-----
+
++++++
+
+.....
+Confession
+-----
+51b83721-61e5-42bc-be9e-8b671f0668d4
+-----
+
++++++
+
+.....
+Shield of Faith
+-----
+ae0d585d-25e0-4495-8757-71ef0efffb0e
+-----
+
++++++
+
+.....
+Mark of Pestilence
+-----
+12d7d9e6-cffa-46ef-8ae7-d8fbbeb88e4c
+-----
+
++++++
+
+.....
+Consecration
+-----
+00867833-050d-4214-bccb-d1e787f15baf
+-----
+
++++++
+
+.....
+For Such a Time as This
+-----
+abed8d3b-d73f-4426-bbeb-6e0124aae9fb
+-----
+
++++++
+
+.....
+Sword of the Spirit
+-----
+39e4ddd4-987b-450b-a3dd-260a20db35a0
+-----
+
++++++
+
+.....
+John "Aces" Radcliffe
+-----
+686696a5-da6b-46d7-92b2-2ba051a3153e
+-----
+
++++++
+
+.....
+Max Baine
+-----
+4d2ffa2b-f09d-47ef-845b-d227b060b603
+-----
+
++++++
+
+.....
+Steele Archer
+-----
+ef19f3d5-a52f-403a-a342-ae32f3753120
+-----
+
++++++
+
+.....
+J.W. Byrne
+-----
+fde8c18b-58e2-40ab-b407-fe42a4fe549d
+-----
+
++++++
+
+.....
+Jaqueline Ishan
+-----
+c65152fd-434e-4729-ac44-cf61d1affbdc
+-----
+
++++++
+
+.....
+Old Man McDroste
+-----
+8628bdf2-3900-4e36-941e-043560d81757
+-----
+
++++++
+
+.....
+El Grajo
+-----
+9eada35c-a9a5-485f-9513-305661421944
+-----
+
++++++
+
+.....
+Elmore Rhine
+-----
+e341450b-9b41-4ae1-a1aa-fa50ac743f90
+-----
+
++++++
+
+.....
+Judge Harry Sommerset
+-----
+04e204a6-8879-477b-8153-adcda50b1f51
+-----
+
++++++
+
+.....
+Sister Mary Gideon
+-----
+92d9bfc1-4be6-4973-b820-0ac65e5d7b01
+-----
+
++++++
+
+.....
+Andrew Burton
+-----
+7b51deb6-fb5f-4624-8473-32533ec7309c
+-----
+
++++++
+
+.....
+Ebenezer Springfield
+-----
+799ea10c-9dc3-414e-bd72-c1d9fa662926
+-----
+
++++++
+
+.....
+Howard Aswell
+-----
+a44b9e09-8941-4e30-ab0e-c2171949e8d5
+-----
+
++++++
+
+.....
+Nathan Shane
+-----
+65b724a9-49e4-4c1c-9db8-e3f3081fa3fe
+-----
+
++++++
+
+.....
+Elander Boldman
+-----
+294a7ce9-af00-46e1-b33c-aab21ebf3b09
+-----
+
++++++
+
+.....
+Louis Pasteur
+-----
+bc36b880-9e3c-458b-8ef4-9730a926bf38
+-----
+
++++++
+
+.....
+Warren Graves
+-----
+e20afd82-c3d7-4152-aac9-4392a29733b8
+-----
+
++++++
+
+.....
+The Flying Popescus
+-----
+7d58d611-07a2-41e6-ad4d-fc51cc794847
+-----
+
++++++
+
+.....
+The Fabulous Mister Miss
+-----
+4b50bf0d-29e3-4e93-8acc-f77c60b80e57
+-----
+
++++++
+
+.....
+Avie Cline
+-----
+2cba8b31-062a-4701-a9a4-76a330681bb7
+-----
+
++++++
+
+.....
+Junior
+-----
+85989968-0332-4dc2-a5eb-9921267453ff
+-----
+
++++++
+
+.....
+Funtime Freddy
+-----
+2fab82a8-2a4d-4545-855a-9d1ea011a8c9
+-----
+
++++++
+
+.....
+Marion Seville
+-----
+9440378f-dd04-426c-9696-f24e0789e528
+-----
+
++++++
+
+.....
+Benny McGill
+-----
+135a9ce8-4e8b-463a-9fcc-23f0168e4762
+-----
+
++++++
+
+.....
+Antheia Pansofia
+-----
+56fd7d6b-d14a-4b9d-a29c-40102bf4377b
+-----
+
++++++
+
+.....
+Jack O'Hara
+-----
+c4b260a0-1861-4300-8c96-6064f7367cb5
+-----
+
++++++
+
+.....
+Harry Highbinder
+-----
+fffb2b62-4d83-4b3c-9696-2905477d892f
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
