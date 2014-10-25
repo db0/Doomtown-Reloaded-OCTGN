@@ -709,6 +709,40 @@
          <property name="Text" value="Noon Job Miracle 6, boot: Mark the Town Square. If successful this dude gains a number of control points equal to the number of wanted dudes controlled by other players, until the end of the turn. " />
          <property name="Instructions" value="" />
       </card>
+      <card id="947be713-92f7-4546-a57f-64af55c1fe35" name="Blessed Joker">
+         <property name="Rank" value="*" />
+         <property name="Suit" value="Joker" />
+         <property name="Type" value="Joker" />
+         <property name="Cost" value="" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="" />
+         <property name="Keywords" value="" />
+         <property name="Text" value="This card is only used for draw hands and pulls.&#xD;&#xA;You choose its suit and value. Ace the joker after use.&#xD;&#xA;While this card is in your draw hand, your hand is never considered cheatin'.&#xD;&#xA;When you reveal this card in a draw hand, your hand rank is reduced by 3." />
+         <property name="Instructions" value="" />
+      </card>
+      <card id="e5aa241d-bc8c-46ee-a250-dac44616415e" name="Cursed Joker">
+         <property name="Rank" value="*" />
+         <property name="Suit" value="Joker" />
+         <property name="Type" value="Joker" />
+         <property name="Cost" value="" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="" />
+         <property name="Keywords" value="" />
+         <property name="Text" value="This card is only used for draw hands and pulls.&#xD;&#xA;You choose its suit and value. Ace the joker after use.&#xD;&#xA;While this card is in your draw hand, your hand is always considered cheatin'.&#xD;&#xA;When you reveal this card in a draw hand, your hand rank is increased by 2." />
+         <property name="Instructions" value="" />
+      </card>
 
   </cards>
 </set>
