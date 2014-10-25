@@ -1631,7 +1631,7 @@ Summoning
 +++++
 GR0B1R0:Pull1Card-testHex5-spellEffects<StartJob-AutoTargeted-atTown Square,None>
 .....
-[Faster on the Draw]
+Faster on the Draw
 -----
 07c1a52a-fcdc-4775-b42c-f352465942da
 -----
@@ -1639,7 +1639,7 @@ onPlay:Put2BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents$$
 +++++
 
 .....
-[Outgunned]
+Swinford Finds Trouble
 -----
 0b1ae36c-6359-4871-b34b-16808e639243
 -----
@@ -1647,7 +1647,7 @@ onPlay:Put2BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents$$
 +++++
 
 .....
-[Under the Weather]
+Under the Weather
 -----
 adf4a674-bc8a-4158-ae1a-cb7224fbb850
 -----
@@ -1655,7 +1655,7 @@ onPlay:Pull1Card
 +++++
 
 .....
-[Leavin' a Scar]
+This’ll Hurt in the Mornin
 -----
 546a4107-75f3-49f6-84a1-4396ca3c61c1
 -----
@@ -1663,7 +1663,7 @@ onPlay:CustomScript
 +++++
 
 .....
-[Prayer]
+Prayer
 -----
 e12da368-0c9a-435b-91e7-e08378a6363c
 -----
@@ -1671,7 +1671,7 @@ onPlay:Put1Prayer-Targeted-atDude-targetMine$$CreateDummy$$SimplyAnnounce{allow 
 +++++
 
 .....
-[A New Mayor's Elected]
+Meet The New Boss
 -----
 c27e60e9-8450-4e6e-9c2e-73d19caec7c1
 -----
@@ -1679,7 +1679,7 @@ onPlay:StartJob-AutoTargeted-atTown Square
 +++++
 
 .....
-[The Pawnshop]
+Pettigrew's Pawnshop
 -----
 1b2b9609-05a4-4aed-ab98-06ddf6dbe400
 -----
@@ -1687,7 +1687,7 @@ whileInPlay:Gain1Ghost Rock-foreachCardPlayed-typeGoods_and_notGadget-forOpponen
 +++++
 
 .....
-[Immigration and Tax Office]
+California Tax Office
 -----
 c5bf5c92-9d15-42fa-aacf-67163913518a
 -----
@@ -1695,7 +1695,7 @@ c5bf5c92-9d15-42fa-aacf-67163913518a
 +++++
 GR0B1R0:CustomScript
 .....
-[Our Lady Mission]
+St. Anthony's Chapel
 -----
 4bd2615b-6a1b-465e-a16d-923fd77ee443
 -----
@@ -1711,7 +1711,7 @@ e77f6e44-7900-4d0e-b370-defa7cd6796d
 +++++
 GR0B1R0:Retrieve1Cards-fromBootHill-toDiscard-grabnonDude
 .....
-[Outlaws Mask]
+Outlaw Mask
 -----
 4827d51e-458b-4945-8242-ddfd2fdd9821
 -----
@@ -1719,7 +1719,7 @@ GR0B1R0:Retrieve1Cards-fromBootHill-toDiscard-grabnonDude
 +++++
 
 .....
-[Mirror, Mirror]
+Mirror, Mirror
 -----
 9b76ed8e-e25b-47a5-b8d7-e7c020e7a230
 -----
@@ -1727,7 +1727,7 @@ GR0B1R0:Retrieve1Cards-fromBootHill-toDiscard-grabnonDude
 +++++
 GR0B1R0:Pull1Card-testHex4-spellEffects<UseCustomAbility-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1-isFirstCustom,None>||GR0B1R0:Pull1Card-testHex6-spellEffects<UseCustomAbility-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1-isSecondCustom,None>
 .....
-[Lay on Hands Redux]
+Lay on Hands
 -----
 8d8fa80c-580b-44b3-8e66-b89392299200
 -----
@@ -1735,7 +1735,7 @@ GR0B1R0:Pull1Card-testHex4-spellEffects<UseCustomAbility-DemiAutoTargeted-atDude
 +++++
 GR0B1R0:Pull1Card-testMiracle8-spellEffects<BootHost++Put1NoUnboot-Targeted-atDude-isParticipating++SendHomeBootedTarget-Targeted-atDude-isParticipating,None>
 .....
-[Holy Roller Redux]
+Holy Roller
 -----
 a806a33f-8bb2-4a47-9bdc-f3dc7d2058ea
 -----
@@ -1743,7 +1743,7 @@ a806a33f-8bb2-4a47-9bdc-f3dc7d2058ea
 +++++
 GR0B1R0:Pull1Card-testMiracle6-spellEffects<Put1BulletShootoutPlus-AutoTargeted-atDude-onHost++Put1Shootout:Holy Roller-AutoTargeted-atDude-onHost,None>
 .....
-[Divine Intervention]
+The Lord Provides
 -----
 c5c2fed5-010f-4ece-a5e2-2cf200695064
 -----
@@ -1751,7 +1751,7 @@ c5c2fed5-010f-4ece-a5e2-2cf200695064
 +++++
 GR0B1R0:Pull1Card-testMiracle9-spellEffects<Retrieve1Cards-grabAction++DiscardMyself,None>
 .....
-[Walking the Path]
+Walk the Path
 -----
 77df4257-28e1-4865-8d20-5e0087fcd8d5
 -----
@@ -1759,7 +1759,7 @@ GR0B1R0:Pull1Card-testMiracle9-spellEffects<Retrieve1Cards-grabAction++DiscardMy
 +++++
 GR0B1R0:Pull1Card-testMiracle7-spellEffects<MoveTarget-Targeted-atDude-targetMine-moveToHere++UnbootTarget-Targeted-atDude-targetMine++ParticipateTarget-Targeted-atDude-targetMine,None>-onlyInShootouts||GR0B1R0:Pull1Card-testMiracle6-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToHere,None>-onlyInNoon
 .....
-[Phantasm]
+Phantasm
 -----
 c7d43986-30a5-46ac-99a3-01d94ceda540
 -----
@@ -1767,7 +1767,7 @@ c7d43986-30a5-46ac-99a3-01d94ceda540
 +++++
 GR0B1R0:Pull1Card-testHex9-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetOpponents-isUnbooted-choose1-moveToDeed_or_Town Square_or_Outfit,None>||GR0B1R0:Pull1Card-testHex12-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetOpponents-isBooted-choose1-moveToDeed_or_Town Square_or_Outfit,None>
 .....
-[Restoration]
+Soothe
 -----
 4eba0738-ddf4-4bce-9c3c-ecb06d3381ff
 -----
@@ -1775,7 +1775,7 @@ GR0B1R0:Pull1Card-testHex9-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targe
 +++++
 GR0B1R0:Pull1Card-testMiracle10-spellEffects<BootHost-isCost++UnbootTarget-DemiAutoTargeted-atDude-targetMine-isBooted-choose1,None>
 .....
-[Abram's Sword]
+Evanor
 -----
 a0c826bd-311f-4918-aeeb-9c2a14b176c3
 -----
@@ -1783,7 +1783,7 @@ a0c826bd-311f-4918-aeeb-9c2a14b176c3
 +++++
 GR0B1R0:SimplyAnnounce{Increase the casualties they inflict if they win, by 1}
 .....
-[Clown Carriage]
+Clown Carriage
 -----
 a8546fc6-be73-41eb-b33a-62b2b8158696
 -----
@@ -1791,7 +1791,7 @@ a8546fc6-be73-41eb-b33a-62b2b8158696
 +++++
 GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atAbomination-choose1-payCost
 .....
-[Bio-charged Neutraliser]
+Bio-Charged Neutralizer
 -----
 bc4af72b-b53c-44ef-858b-04d33e1e6a4b
 -----
@@ -1799,7 +1799,7 @@ bc4af72b-b53c-44ef-858b-04d33e1e6a4b
 +++++
 
 .....
-[Blessed Tu]
+Sister Lois Otwell
 -----
 2923cd38-686c-4ab3-8996-94fd989bff9b
 -----
@@ -1807,7 +1807,7 @@ bc4af72b-b53c-44ef-858b-04d33e1e6a4b
 +++++
 GR0B0R0:BootTarget-AutoTargeted-atMiracle-isUnbooted-onAttachment-choose1-isCost$$Put1BulletShootoutPlus-Targeted-atDude-isParticipating-targetMine$$Put3ValueShootoutPlus-Targeted-atDude-isParticipating-targetMine
 .....
-["Kilmarnock" Columbine]
+Félix Amador
 -----
 38b1ca04-c236-4d51-80dd-1c283957095e
 -----
@@ -1823,7 +1823,7 @@ Nicodemus Whateley
 +++++
 
 .....
-[Pastor Dude]
+Rev. Perry Inbody
 -----
 da32c302-02de-4a5b-89c4-8227dba9f3c7
 -----
@@ -1831,7 +1831,7 @@ da32c302-02de-4a5b-89c4-8227dba9f3c7
 +++++
 GR0B1R0:Pull1Card
 .....
-[Robot Dude Maker]
+Zoe Halbrook
 -----
 cdfcd050-f5f1-40df-a10a-4039fb74935d
 -----
@@ -1847,7 +1847,7 @@ Abram Grothe
 +++++
 GR0B0R0:BootMulti-AutoTargeted-atWeapon-targetOpponents-isParticipating$$Put1BulletShootoutPlus
 .....
-[William Specks]
+William Specks
 -----
 5a2cbed4-9d68-4c5d-acb6-93e2d25b268f
 -----
@@ -1855,7 +1855,7 @@ GR0B0R0:BootMulti-AutoTargeted-atWeapon-targetOpponents-isParticipating$$Put1Bul
 +++++
 GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atRanch_or_Out of Town_or_Gadget-choose1-payCost-reduc2
 .....
-[Motor Cycle Gal]
+Chuan “Jen” Qí
 -----
 7d2d0bb3-f477-4076-8739-9479911b95a6
 -----
@@ -1871,7 +1871,7 @@ a2b5195e-4d31-41e9-8407-c40ce54cc334
 +++++
 GR0B0R0:BootTarget-AutoTargeted-atHorse-isUnbooted-onAttachment-isCost$$BootTarget-Targeted-atDude-targetOpponents$$MoveMyself-moveToDude-targetOpponents$$CalloutTarget-Targeted-atDude-targetOpponents
 .....
-[The Kingpin]
+The Fixer
 -----
 dfb10d22-9e8f-4031-9249-50cd13ee7203
 -----
@@ -1879,7 +1879,7 @@ dfb10d22-9e8f-4031-9249-50cd13ee7203
 +++++
 GR0B1R0:CustomScript
 .....
-[Wizard on the Run]
+Maria Kingsford
 -----
 9937f528-6b65-4625-85d8-05a51af488d2
 -----
@@ -1887,7 +1887,7 @@ constantAbility:Skill Bonus:1-perMarker{Bounty}-isParticipating
 +++++
 
 .....
-[Ali Bimaker]
+Makiao Kaleo, Esq.
 -----
 933eccf1-ad0d-4153-8381-a23c6de97a60
 -----
@@ -1895,7 +1895,7 @@ constantAbility:Skill Bonus:1-perMarker{Bounty}-isParticipating
 +++++
 GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetMine-choose1$$Put1Bounty-DemiAutoTargeted-atDude-targetMine-choose1
 .....
-[A Clown]
+Pagliaccio
 -----
 6a4d1a94-7e29-465e-9a41-f78389ef49cf
 -----
@@ -1903,7 +1903,7 @@ GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetMine-choos
 +++++
 GR0B1R0:Put1BulletShootoutMinus-Targeted-atDude-targetOpponents-isParticipating$$Put1ValueShootoutMinus-Targeted-atDude-targetOpponents-isParticipating
 .....
-[Geeky Slavin Sidekick]
+Valeria Batten
 -----
 aba65d32-3cb2-4677-b000-f4b905c4a16e
 -----
@@ -1919,7 +1919,7 @@ Micah Ryse
 +++++
 GR0B0R0:BootTarget-AutoTargeted-atHex-isUnbooted-onAttachment-choose1-isCost$$Put3ValueShootoutMinus-Targeted-atDude-isParticipating-targetOpponents
 .....
-[CSI Armory]
+The Arsenal
 -----
 b6cfa257-5898-4f1a-968c-8f36956f499b
 -----
@@ -1927,7 +1927,7 @@ b6cfa257-5898-4f1a-968c-8f36956f499b
 +++++
 GR0B0R1:BootTarget-DemiAutoTargeted-atGadget_or_Spell-isUnbooted-choose1-targetMine-isCost$$CalloutTarget-Targeted-atDude-targetOpponents-leaderTarget{Dude}
 .....
-[The Gadgetorium]
+Morgan Gadgetorium
 -----
 6db17405-bbd3-4c0c-b00f-b89991925291
 -----
@@ -1935,7 +1935,7 @@ GR0B0R1:BootTarget-DemiAutoTargeted-atGadget_or_Spell-isUnbooted-choose1-targetM
 +++++
 GR0B1R0:SimplyAnnounce{optimize the gadget creation}
 .....
-[Campaign of Terror]
+Desolation Row
 -----
 5669e37c-fab7-4954-acb8-7f841ca7a762
 -----
@@ -1943,7 +1943,7 @@ GR0B1R0:SimplyAnnounce{optimize the gadget creation}
 +++++
 GR0B1R0:StartJob-AutoTargeted-atTown Square
 .....
-[The Big Show]
+Oddities of Nature
 -----
 d5ed8e5d-c9f9-4e9e-8bc9-48da7c938045
 -----

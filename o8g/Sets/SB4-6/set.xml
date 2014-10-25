@@ -227,7 +227,7 @@
          <property name="Text" value="If your outfit is the Law Dogs, you may start with this deed in play, and reduce your starting posse by 1.&#xD;&#xA;Controller React, Boot: When a wanted dude is discarded from during high noon, this deed gains a permanent CP." />
          <property name="Instructions" value="" />
       </card>
-      <card id="18df456c-38ac-4e2b-b4ab-f309849d2cb7" name="Shane & Graves Security">
+      <card id="18df456c-38ac-4e2b-b4ab-f309849d2cb7" name="Shane &amp; Graves Security">
          <property name="Rank" value="5" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
