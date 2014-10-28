@@ -122,7 +122,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="While Ulysses is at a Saloon, the Saloon gets 1 additional control point.&#xD;&#xA;Noon: If Ulysses is at a Saloon, move another dude at the same location to the town square booted." />
+         <property name="Text" value="Shootout: Swap Gang Yi with one of your dudes in a posse that is opposing a wanted dude (Gang Yi joins the posse; the other dude moves to Gang Yi's location and is no longer in the posse)." />
          <property name="Instructions" value="" />
       </card>
       <card id="55257be5-9428-4699-8df6-9b397f9fe258" name="Alice Stowe">
@@ -156,7 +156,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
-         <property name="Text" value="React: When a dude is aced, pull. if the pull is higher than the dude’s value, discard them instead." />
+         <property name="Text" value="React: When a dude is aced, pull. If the pull is higher than the dude's value, discard them instead." />
          <property name="Instructions" value="" />
       </card>
       <card id="32f4797f-7584-453c-b6a3-9cf3656dcc96" name="Lillian Morgan">
@@ -377,7 +377,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: One of your dudes calls out an opposing dude at their location. All dudes in both posses use their influence rather than their normal bullet rating for the shootout. Your dude becomes a stud for this shootout." />
+         <property name="Text" value="Noon: One of your dudes calls out an opposing dude at their location. All dudes in both posses use their influence rather than their bullet rating for the shootout (but keep their bullet type). Your dude becomes a stud for this shootout." />
          <property name="Instructions" value="" />
       </card>
       <card id="f51e5631-7582-492f-8351-e1e808d39d19" name="Horse Wranglin'">
@@ -394,7 +394,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Search your deck and/or discard pile for a Horse. You may attach it to one of your unbooted dudes (paying all costs)." />
+         <property name="Text" value="Noon: Search your deck and/or discard pile for a Horse. Attach it to one of your unbooted dudes (paying all costs)." />
          <property name="Instructions" value="onPlay[Search your deck|-|Search your discard pile]" />
       </card>
       <card id="a23d36e0-8231-49e7-bbc4-4e56c179b045" name="It's Not What You Know...">
@@ -411,7 +411,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Resolution: Reduce any player's hand rank by 1.&#xD;&#xA;If targeting an opponent who revealed an illegal play hand, you may instead reduce the hand rank by 4 and this card is a Cheatin'! card." />
+         <property name="Text" value="Resolution: Lower a player's draw hand by 1 rank.&#xD;&#xA;Cheatin' Resolution: Lower a player's draw hand by 4 ranks." />
          <property name="Instructions" value="onPlay[Resolution: Lower a player’s draw hand by 1 rank.|-|Cheatin’ Resolution: Lower a player’s draw hand by 4 ranks.]" />
       </card>
       <card id="ce8a1161-2c83-4a6f-a0de-7a6c19b47a6e" name="The R&amp;D Ranch">
@@ -445,7 +445,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
-         <property name="Text" value="Controller Noon, Boot: Play a deed lowering its cost by 2GR." />
+         <property name="Text" value="Controller Noon, Boot: Play a deed (as shoppin'), reducing its cost by 2 ghost rock." />
          <property name="Instructions" value="" />
       </card>
       <card id="90568a28-333b-4836-b55c-8ebbef266ad1" name="The Mayor's Office">
@@ -496,7 +496,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="Harrowed" />
-         <property name="Text" value="This dude cannot be a casualty unless you lose the shootout by 3 or more ranks." />
+         <property name="Text" value="If you reveal a legal draw hand, Mario cannot be chosen as a casualty unless you lose this shootout round by 3 or more ranks." />
          <property name="Instructions" value="" />
       </card>
       <card id="13cdc52f-986e-4f3b-b053-c3261267790d" name="The Brute">
@@ -530,7 +530,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Huckster 1" />
-         <property name="Text" value="Noon Pull, Boot: Target a dude at this or at an adjacent location. If the pull plus this dude's skill are greater than the target's value, the dude is booted." />
+         <property name="Text" value="Noon, Boot: Make a Huckster skill check against the value of a dude at this or an adjacent location. If successful, boot that dude." />
          <property name="Instructions" value="" />
       </card>
       <card id="e0434a23-02b1-406b-a683-0b230b73111d" name="Mortimer Parsons">
@@ -547,7 +547,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Mad Scientist 0" />
-         <property name="Text" value="If this dude is in a posse when you reveal an illegal draw hand, send him home booted and reduce his influence to 0 (for the rest of this turn)." />
+         <property name="Text" value="If Mortimer is in your posse when you reveal an illegal draw hand, send him home booted and reduce his influence to 0 until after Sundown. If you have no other dudes in your posse, the shootout immediately ends." />
          <property name="Instructions" value="" />
       </card>
       <card id="631a3c9a-b970-47f5-a196-c078ad913d56" name="Gang Yi">
@@ -581,7 +581,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout: Join a posse at an adjacent location." />
+         <property name="Text" value="Shootout: Angéca joins a posse at an adjacent location without moving or booting." />
          <property name="Instructions" value="" />
       </card>
       <card id="1e61fcd0-65fa-414f-8838-d76f1394b041" name="Jose Morales">
@@ -598,7 +598,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="Huckster 0" />
-         <property name="Text" value="During Shootouts this dude's skill is equal to his bullet rating." />
+         <property name="Text" value="While in a shootout, Joséains a bonus to his Huckster skill equal to his bullet rating." />
          <property name="Instructions" value="" />
       </card>
       <card id="826655e8-00b7-43ae-a3fb-4cea781176ad" name="Kyle Wagner">
@@ -632,7 +632,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon Boot, 1GR: Gain GR equal to the production of a deed you control, but do not own." />
+         <property name="Text" value="Noon Boot, Pay 1 Ghost Rock: Gain ghost rock equal to the production of a deed you control, but do not own." />
          <property name="Instructions" value="" />
       </card>
       <card id="ffed2e8d-67cf-42ab-8a34-110110b59c72" name="Ballot Counter">
@@ -649,7 +649,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget-Difficulty 3" />
-         <property name="Text" value="Repeat Noon, 1GR: Add an influence marker to this Gadget.&#xD;&#xA;Discard all influence tokens on this card at the end of the Upkeep Phase." />
+         <property name="Text" value="This dude gets an influence bonus equal to the number of influence counters on this card. Discard all influence counters on this card at the end of the Upkeep phase.&#xD;&#xA;Repeat Noon, Pay 1 Ghost Rock: Add an influence counter to this card." />
          <property name="Instructions" value="" />
       </card>
       <card id="dba818f0-4802-474c-91c8-07536e32fb3d" name="Holy Wheel Gun">
@@ -666,7 +666,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Mystical-Weapon-Gadget-Difficulty 5" />
-         <property name="Text" value="Shootout: Boot this gadget. An opposing dude has -1 bullet. If that dude is an abomination they must be chosen as the first casualty if possible during this shootout." />
+         <property name="Text" value="Shootout, Boot: Choose an opposing dude. That dude gets -1 bullets. If that dude is an Abomination, they must be chosen as the first casualty (if possible)." />
          <property name="Instructions" value="" />
       </card>
       <card id="f94631b0-20f6-492b-b732-e36b816e523f" name="Stone Idol">
@@ -700,7 +700,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Shootout Hex 4: Target a dude in the opposing posse. He suffers -1 Bullet and -2 Value. If he is aced or discarded during this shootout this Huckster gains 1 Control Point." />
+         <property name="Text" value="Shootout Hex 4, Boot: One opposing dude gets -1 bullets and -2 value. If that dude is aced or discarded during this shootout, this Huckster permanently gains 1 control point." />
          <property name="Instructions" value="" />
       </card>
       <card id="0857fa1d-c061-4606-bb55-4736edcfd2e9" name="Forget">
@@ -802,7 +802,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
-         <property name="Text" value="This deed is considered adjacent to all out of town deeds.&#xD;&#xA;Controller Noon: Boot this deed to move your dude on it to an adjacent location." />
+         <property name="Text" value="This deed is considered adjacent to all out of town deeds.&#xD;&#xA;Controller Noon, Boot: Move your dude from this location to an adjacent location." />
          <property name="Instructions" value="" />
       </card>
       <card id="144991c0-f3f4-4914-a075-ab2093991411" name="QUATERMAN">
@@ -853,7 +853,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="Grifter" />
-         <property name="Text" value="React Boot: At the start of the game, discard a card to draw 2 extra cards" />
+         <property name="Text" value="React, Boot: At the start of the game, discard a card from your play hand to draw 2 cards." />
          <property name="Instructions" value="" />
       </card>
       <card id="68b6d3d2-207c-47ed-9311-0949f86308b9" name="Richard Slavin">
@@ -870,7 +870,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon Boot, Pull: If this dude is at an out-of-town deed and the pull is red, search your discard pile or boot hill for a Mystical goods and add it to your hand." />
+         <property name="Text" value="Noon, Boot: If Richard is out of town, pull. If the pull is red, search your discard pile or Boot Hill for a Mystical goods and add it to your hand." />
          <property name="Instructions" value="" />
       </card>
       <card id="d90e5abe-ed12-4dad-9007-16aa47afa2cc" name="Smiling Tom">
@@ -1057,7 +1057,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex-Cheatin'" />
-         <property name="Text" value="Resolution Hex 5: If an opponent revealed an illegal draw hand, you may place a card from your draw hand (if you have one) into your play hand after resolution." />
+         <property name="Text" value="Cheatin' Resolution Hex 5, Boot: You may place a card from your draw hand into your play hand after resolution. If this is a shootout, you suffer 3 less casualties this round." />
          <property name="Instructions" value="" />
       </card>
       <card id="791de7a5-3292-43cd-b907-40f737dc8600" name="Summoning">
