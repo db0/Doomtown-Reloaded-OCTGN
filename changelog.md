@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.2.0.x
+
+** New Town, New Rules** has arrived into town!
+
 ### 1.1.5.x
 
 * Fixed Flush and Pairs checking

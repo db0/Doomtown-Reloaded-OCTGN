@@ -54,7 +54,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget-Difficulty 4" />
-         <property name="Text" value="If you are the Winner, this dude cannot be affected by other players' Shootout abilities.&#xD;&#xA;Repeat Noon, 1GR: Look at a player’s hand." />
+         <property name="Text" value="If you are the Winner, this dude cannot be affected by other players' Shootout abilities.&#xD;&#xA;Repeat Noon, 1GR: Look at a player's hand." />
          <property name="Instructions" value="" />
       </card>
       <card id="aa9e21f5-9a84-479b-90f8-497b6084467b" name="Town Council">
