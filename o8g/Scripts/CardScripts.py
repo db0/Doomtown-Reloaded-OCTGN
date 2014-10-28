@@ -1127,6 +1127,174 @@ b999405d-e2ca-4703-beda-67f9697fc977
 +++++
 GR0B1R0:Put1InfluencePlus-Targeted-atDude
 .....
+Back Ways
+-----
+ef91b1f5-46b8-4246-8e58-401a39ebbf6f
+-----
+onPlay:MoveTarget-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit
++++++
+
+.....
+Kyle Wagner
+-----
+826655e8-00b7-43ae-a3fb-4cea781176ad
+-----
+
++++++
+GR0B1R0:UnbootTarget-Targeted-atRanch-targetMine$$Remove1Used Ability-Targeted-atRanch-targetMine-isSilent
+.....
+Telepathy Helmet
+-----
+b65c9b55-7a81-4052-87dd-70eb515b8b2f
+-----
+
++++++
+
+.....
+Town Council
+-----
+aa9e21f5-9a84-479b-90f8-497b6084467b
+-----
+
++++++
+
+.....
+Faithful Hound
+-----
+bf48f3c1-bd08-4542-a8c6-6af0a8e7cfa4
+-----
+
++++++
+GR1B1R0:Pull1Card
+.....
+Plasma Drill
+-----
+d6c082a2-8e92-404b-b427-a1f7a7cab4aa
+-----
+
++++++
+GR1B1R0:BootHost-isCost$$UseCustomAbility
+.....
+Slade Lighboy
+-----
+d9aefb8f-ea66-4782-8fee-1e5c88c257af
+-----
+
++++++
+GR0B0R0:AceTarget-DemiAutoTargeted-atSpell-onAttachment-isBooted-choose1-isCost$$Pull1Card
+.....
+The R&amp;D Ranch
+-----
+ce8a1161-2c83-4a6f-a0de-7a6c19b47a6e
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Wilber Crowley
+-----
+c765b5ba-c7b1-491c-b504-fcce730bb8a0
+-----
+
++++++
+
+.....
+Hired Help
+-----
+1b68d5c9-e336-4822-aeb9-5ca0cace82a8
+-----
+onPlay:Spawn1Gunslinger-modAction:ParticipateMyself
++++++
+
+.....
+Roderick Byre
+-----
+0203a928-b0b6-4a95-8e71-d82b02a48e9a
+-----
+
++++++
+
+.....
+Rafi Hamid
+-----
+dec376dc-2dcd-4cb8-b1ae-9c4dc7c7dd7e
+-----
+
++++++
+GR0B0R0:MoveTarget-Targeted-atDeputy-moveToGovernment$$ParticipateTarget-Targeted-atDeputy
+.....
+Ulysses Marks
+-----
+15fda041-c825-4278-a5de-15bc00cab80d
+-----
+
++++++
+GR0B0R0:MoveTarget-Targeted-atDude-moveToTown Square$$BootTarget-Targeted-atDude
+.....
+Paralysis Mark
+-----
+18e06cc3-eb57-451a-ba28-18665727999d
+-----
+
++++++
+GR0B1R0:Pull1Card-testHexX-difficultyValue-spellEffects<BootTarget-DemiAutoTargeted-atDude-choose1,None>
+.....
+Wylie Jenks
+-----
+cbb6be72-e387-4742-99cb-b5681e88de82
+-----
+
++++++
+
+.....
+Too Much Attention
+-----
+519a9e2e-56e9-42a2-8cda-64d1a7cd934f
+-----
+onPlay:BootTarget-Targeted
++++++
+
+.....
+Make 'em Sweat
+-----
+7bb386d8-73a0-4d31-bbd1-5204fcde0302
+-----
+onPlay:CustomScript
++++++
+
+.....
+Dulf Zug
+-----
+77653869-e142-4428-8595-c74886e8c8c8
+-----
+
++++++
+
+.....
+Forget
+-----
+0857fa1d-c061-4606-bb55-4736edcfd2e9
+-----
+
++++++
+GR0B1R0:Pull1Card
+.....
+Lillian Morgan
+-----
+32f4797f-7584-453c-b6a3-9cf3656dcc96
+-----
+onParticipation:Put3Ghost Rock||onUnparticipation:Remove999Ghost Rock-isSilent
++++++
+GR0B0R1:Remove1Ghost Rock-isCost-isSilent$$Gain1Ghost Rock
+.....
+Alice Stowe
+-----
+55257be5-9428-4699-8df6-9b397f9fe258
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
