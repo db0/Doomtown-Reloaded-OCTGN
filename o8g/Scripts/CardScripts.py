@@ -1971,7 +1971,7 @@ Rope and Ride
 -----
 1e6f4bb8-762f-4e61-9f19-b3585c0f5186
 -----
-
+onPlay:MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit$$MoveTarget-DemiAutoTargeted-atDude-targetOpponents-choose1-moveToDeed_or_Town Square_or_Outfit$$BootTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
 +++++
 
 .....
@@ -1979,7 +1979,7 @@ Cookin' Up Trouble
 -----
 f7d5aaa2-b476-4156-bef1-697cd39d7dd7
 -----
-onPlay:MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit$$MoveTarget-DemiAutoTargeted-atDude-targetOpponents-choose1-moveToDeed_or_Town Square_or_Outfit$$BootTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
+
 +++++
 
 .....
