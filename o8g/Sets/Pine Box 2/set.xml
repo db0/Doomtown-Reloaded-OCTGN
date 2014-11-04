@@ -21,7 +21,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Condition" />
-         <property name="Text" value="Noon, Job: Play only if there is a dude in Boot Hill. Mark your home. If the job succeeds attach this card to your home and draw 2 cards. While this card is attached to your home your maximum hand size is increased by 1. Discard this card when one of your dudes is aced." />
+         <property name="Text" value="Play only if a dude has been aced this turn.&#xD;&#xA;Noon, Job: Mark your home. If the job succeeds attach this card to your home and draw 2 cards. While this card is attached to your home your maximum hand size is increased by 1. Discard this card when one of your dudes is aced." />
          <property name="Instructions" value="" />
       </card>
 
@@ -39,7 +39,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Technique" />
-         <property name="Text" value="Noon, pull: Boot one of you Kung Fu dudes and pull. If the pull is less than or equal to your dude’s value you may move each opposing dude at this location with a value greater than the pull to any in-town deed.&#xD;&#xA;" />
+         <property name="Text" value="Noon, pull: Boot one of you Kung Fu dudes and pull. If the pull is less than or equal to your dude’s value you may move each opposing dude at this location with a value greater than the pull to any adjacent deed." />
          <property name="Instructions" value="" />
       </card>
 
@@ -74,7 +74,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Event (Only one event may be played per shootout)
+         <property name="Keywords" value="Headline (Only one Headline may be played per shootout)
 " />
          <property name="Text" value="Shootout: No Shootout, React, or non-cheatin' Resolution abilities may be used during this shootout." />
          <property name="Instructions" value="" />
@@ -112,7 +112,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Condition" />
-         <property name="Text" value="Noon Job: Mark a dude who's current influence, bullets or value are lower than their printed values. If successful, attach this card to the mark and your leader gets 1 permanent Control Point.&#xD;&#xA;&#xD;&#xA;Discard any dude with an attached [Third Level of the Plague] at the of the turn." />
+         <property name="Text" value="Noon Job: Mark a dude who's current influence, bullets or value are lower than their printed values. If successful, your leader gets 1 permanent Control Point and attach this card to the mark. Discard any dude with an attached [Third Level of the Plague] at the of the turn." />
          <property name="Instructions" value="" />
       </card>
 
@@ -148,7 +148,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Core" />
-         <property name="Text" value="If you are a Morgan Cattle Co. player, you may start with this deed in play, and reduce your maximum starting posse by 1.&#xD;&#xA;&#xD;&#xA;Noon: Play a strike (as shoppin'), reducing its cost by 1 and give this deed one permanent CP" />
+         <property name="Text" value="If you are a Morgan Cattle Co. player, you may start with this deed in play, and reduce your maximum starting posse by 1.&#xD;&#xA;&#xD;&#xA;Noon: Play an Out-of-Town deed (as shoppin'), reducing its cost by 1 and give this deed one permanent CP" />
          <property name="Instructions" value="" />
       </card>
 
@@ -165,7 +165,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="*" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Private-Saloon-Casino" />
+         <property name="Keywords" value="Private-Saloon" />
          <property name="Text" value="This deeds is worth a number of control points equal to the number of dudes at it, not controlled by the owner of [The Speakeasy]." />
          <property name="Instructions" value="" />
       </card>
@@ -210,7 +210,7 @@
          <property name="Rank" value="8" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="1" />
+         <property name="Cost" value="2" />
          <property name="Upkeep" value="1" />
          <property name="Production" value="" />
          <property name="Bullets" value="4" />
@@ -219,7 +219,7 @@
          <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
-         <property name="Keywords" value="Gadget Difficulty 9-Abomination-Mystical-Non-unique" />
+         <property name="Keywords" value="Gadget Difficulty 9-Abomination-Non-unique" />
          <property name="Text" value="This dude must be invented by a Mad Scientist like any other gadget. It enters at the Mad Scientist's location (but does not attach).&#xD;&#xA;After this dude enters play, you must ace one of your dudes in the same location. The inventing Mad Scientist gains 2 bounty, if still in play.&#xD;&#xA;" />
          <property name="Instructions" value="" />
       </card>
@@ -256,7 +256,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Deputy-Experienced 2-Blessed 1" />
-         <property name="Text" value="The cost of Abram is reduced by 1 for each bounty on opposing dudes.&#xD;&#xA;Shootout: Unboot all your other deputies, and all your weapons at this location." />
+         <property name="Text" value="If you are a Law Dogs playe the cost of Abram is reduced by 1 for each bounty on opposing dudes.&#xD;&#xA;Shootout: Unboot all your other deputies, and all your weapons at this location." />
          <property name="Instructions" value="" />
       </card>
 
@@ -274,7 +274,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Mogan Cattle Co." />
          <property name="Keywords" value="Exprienced 1-Huckster 2" />
-         <property name="Text" value="The cost of Lillian is reduced by 1 for each Horse or Ranch you control.&#xD;&#xA;Noon/Shootout: Play an action from your discard pile as if it was in your hand. Boot a spell on Lillian or ace that card after it resolves." />
+         <property name="Text" value="If you are a Morgan Cattle Co. player the cost of Lillian is reduced by 1 for each Horse or Ranch you control.&#xD;&#xA;Noon/Shootout: Play an action from your discard pile as if it was in your hand. Boot a spell on Lillian or ace that card after it resolves." />
          <property name="Instructions" value="" />
       </card>
 
@@ -327,7 +327,7 @@
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="Necessity Alliance" />
-         <property name="Keywords" value="Shaman 0" />
+         <property name="Keywords" value="Shaman 1" />
          <property name="Text" value="This dude has +2 Influence during High Noon&#xD;&#xA;Noon, boot: Give another dude at this location +1 Influence&#xD;&#xA;" />
          <property name="Instructions" value="" />
       </card>
@@ -354,10 +354,10 @@
          <property name="Rank" value="4" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
-         <property name="Bullets" value="2" />
+         <property name="Bullets" value="0" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="1" />
@@ -372,17 +372,17 @@
          <property name="Rank" value="9" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="2" />
-         <property name="Upkeep" value="1" />
+         <property name="Cost" value="6" />
+         <property name="Upkeep" value="2" />
          <property name="Production" value="" />
-         <property name="Bullets" value="0" />
+         <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="Draw" />
+         <property name="Draw Type" value="Stud" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Confederate-Mad Scientist 1" />
-         <property name="Text" value="May only invent Mystical Gadgets&#xD;&#xA;Can only move to adjacent locations&#xD;&#xA;While this dude is unbooted, boot any dude entering this dude's location.&#xD;&#xA;" />
+         <property name="Text" value="May only invent Mystical Gadgets&#xD;&#xA;React: After you attach a card to a card in play, draw a card." />
          <property name="Instructions" value="" />
       </card>
 
@@ -400,7 +400,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Abomination-Experienced 1-Huckster 3" />
-         <property name="Text" value="The cost of Ivor is reduced by 1 for each Abomination in play.&#xD;&#xA;Repeat Noon, Boot, Pay 1 Ghost Rock: Make a Huckster skill check with difficulty 10. If successful, unboot Ivor and an Abomination in this or an adjacent location" />
+         <property name="Text" value="If you are a Fourth Ring player the cost of Ivor is reduced by 1 for each Abomination in play.&#xD;&#xA;Repeat Noon, Boot, Pay 1 Ghost Rock: Make a Huckster skill check with difficulty 10. If successful, unboot Ivor and an Abomination in this or an adjacent location" />
          <property name="Instructions" value="" />
       </card>
 
@@ -409,7 +409,7 @@
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
          <property name="Cost" value="5" />
-         <property name="Upkeep" value="0" />
+         <property name="Upkeep" value="1" />
          <property name="Production" value="" />
          <property name="Bullets" value="3" />
          <property name="Bullet Bonus" value="" />
@@ -436,12 +436,12 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="Experienced 1" />
-         <property name="Text" value="The cost of Sloane is reduced by 1 for every bounty you have on your dudes. &#xD;&#xA;When Sloane comes into play Unboot all your wanted dudes and give Sloane 1 bounty for each dude unbooted this way." />
+         <property name="Text" value="If you are a Sloane Gang player the cost of Sloane is reduced by 1 for every bounty you have on your dudes. &#xD;&#xA;When Sloane comes into play Unboot all your wanted dudes and give Sloane 1 bounty for each dude unbooted this way." />
          <property name="Instructions" value="" />
       </card>
 
       <card id="95d23e7f-daa9-44ef-bcd3-50683340db62" name="[Tools of the Trade]">
-         <property name="Rank" value="8" />
+         <property name="Rank" value="7" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
          <property name="Cost" value="1" />
@@ -544,7 +544,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon Job: Mark a location. If successful, you may send all dudes at that location home booted. If you marked the Town Square, you may take one Condition or Abomination from your discard pile into your hand.&#xD;&#xA;" />
+         <property name="Text" value="React, Boot: After a dude is discarded or aced from play, you may take a condition into your hand from your discard pile. If the dude wasn't yours, you can take an abomination instead." />
          <property name="Instructions" value="" />
       </card>
 
@@ -562,7 +562,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="You may have an extra Grifter in your starting posse&#xD;&#xA;React, Boot: When draw hands are revealed, if your hand is Cheatin' and an opponent revealed a legal draw hand, gain GR equal to 1 plus the number of Grifters or Wanted dudes you have in play" />
+         <property name="Text" value="You may start with an extra Grifter and all your grifters have their cost reduced by 1.&#xD;&#xA;Resolution, Boot: Add one bounty to one of your Grifters to increase your hand rank by 1. Your hand is considered cheating. Gain 1 Ghost Rock." />
          <property name="Instructions" value="" />
       </card>
 
@@ -598,7 +598,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Miracle" />
-         <property name="Text" value="React Miracle 8, Boot: After you draw your draw hand, boot this blessed to look though your deck for a card, reveal it, shuffle your deck, and put  that card at the top of your deck." />
+         <property name="Text" value="React Miracle 8, Boot: After you draw your draw hand (before you redraw), boot this blessed to look though your deck for a card, reveal it, shuffle your deck, and put that card at the top of your deck." />
          <property name="Instructions" value="" />
       </card>
 
@@ -642,7 +642,7 @@
          <property name="Rank" value="K" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Spell" />
-         <property name="Cost" value="1" />
+         <property name="Cost" value="0" />
          <property name="Upkeep" value="" />
          <property name="Production" value="" />
          <property name="Bullets" value="" />
