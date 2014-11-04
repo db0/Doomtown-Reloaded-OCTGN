@@ -4,7 +4,7 @@
       name="DT Test" 
       id="7fd3eeac-4916-4644-bd7d-e1f5ff6faaa5" 
       octgnVersion="3.1.0.0"
-      version="0.8.1.0" 
+      version="0.8.2.0" 
       markersize="16"
       tags="western deadlands poker maneuvering multiplayer"
       description="Le Test"
@@ -84,7 +84,8 @@
 			<groupaction menu="Start/End a Shootout Phase." default="False" shortcut="F10" execute="goToShootout" />
 		</groupactions>
 		<groupaction menu="Announce Pass." default="False" shortcut="Ctrl+Space" execute="Pass" />
-		<groupaction menu="Spawn Gunslinger Token." default="False" execute="spawnTokenDude" />
+		<groupaction menu="Spawn Gunslinger Token." default="False" execute="spawnGunslinger" />
+		<groupaction menu="Spawn Ancestor Spirit Token." default="False" execute="spawnAncestor" />
 		<groupaction menu="Show Hand Rank Guide" default="False" execute="HandRankGuide" />
       <cardactions menu="Posse/Job/Callout reactions...">
          <cardaction menu="Join Attacking/Job Posse." default="False" shortcut="Ctrl+Shift+J" execute="joinAttack" />

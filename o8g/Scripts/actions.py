@@ -424,8 +424,12 @@ def doesNotUnboot(card, x = 0, y = 0): # Mark a card as "Does not unboot" and in
    card.markers[mdict['NoUnboot']] += 1
    notify("{}'s {} will not unboot during the next {} Sundowns.".format(me, card, card.markers[mdict['NoUnboot']]))
       
-def spawnTokenDude(group, x = 0, y = 0): # Simply put a fake card in the game.
+def spawnGunslinger(group, x = 0, y = 0): # Simply put a fake card in the game.
    table.create("94fe7823-077c-4abd-9278-6e64bda6dc64", x, y, 1)
+
+def spawnAncestor(group, x = 0, y = 0): # Simply put a fake card in the game.
+   table.create("53a212a6-34a6-47b0-bb24-45f1888bebf6", x, y, 1)
+   reCalculate()
 
 def HandRankGuide(group, x = 0, y = 0): # Put the Hand Rank guide onto the table, in case player need help to remember.
    HRG = table.create("851b726b-3b0c-43df-bbd7-710b5a0ffbf6", x, y, 1)   

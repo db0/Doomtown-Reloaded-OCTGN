@@ -1655,7 +1655,7 @@ onPlay:Pull1Card
 +++++
 
 .....
-This’ll Hurt in the Mornin
+This'll Hurt in the Mornin
 -----
 546a4107-75f3-49f6-84a1-4396ca3c61c1
 -----
@@ -1807,7 +1807,7 @@ Sister Lois Otwell
 +++++
 GR0B0R0:BootTarget-AutoTargeted-atMiracle-isUnbooted-onAttachment-choose1-isCost$$Put1BulletShootoutPlus-Targeted-atDude-isParticipating-targetMine$$Put3ValueShootoutPlus-Targeted-atDude-isParticipating-targetMine
 .....
-Félix Amador
+Felix Amador
 -----
 38b1ca04-c236-4d51-80dd-1c283957095e
 -----
@@ -1855,7 +1855,7 @@ William Specks
 +++++
 GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atRanch_or_Out of Town_or_Gadget-choose1-payCost-reduc2
 .....
-Chuan “Jen” Qí
+Chuan "Jen" Qi
 -----
 7d2d0bb3-f477-4076-8739-9479911b95a6
 -----

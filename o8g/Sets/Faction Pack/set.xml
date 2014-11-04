@@ -245,7 +245,7 @@
          <property name="Rank" value="5" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
          <property name="Bullets" value="0" />

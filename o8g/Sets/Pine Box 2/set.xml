@@ -378,7 +378,7 @@
          <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Stud" />
-         <property name="Influence" value="1" />
+         <property name="Influence" value="2" />
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Confederate-Mad Scientist 1" />
