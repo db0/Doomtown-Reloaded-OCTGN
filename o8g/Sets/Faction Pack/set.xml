@@ -11,7 +11,7 @@
          <property name="Rank" value="2" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
-         <property name="Cost" value="0" />
+         <property name="Cost" value="1" />
          <property name="Upkeep" value="" />
          <property name="Production" value="" />
          <property name="Bullets" value="" />
@@ -21,7 +21,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Technique" />
-         <property name="Text" value="Noon, pull: Move each of your unbooted dudes at an in-town location to another in-town location (you must move all of them). Kung Fu dudes with a value greater than or equal to the pull do not have to be moved, and may be moved even if booted." />
+         <property name="Text" value="Noon, pull: Choose an in-town location. Move any of your Kung Fu dudes with a value greater than or equal to the pull to that location (without booting)." />
          <property name="Instructions" value="" />
       </card>
 
@@ -309,7 +309,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Necessity Alliance" />
          <property name="Keywords" value="Shaman 2" />
-         <property name="Text" value="The cost of this dude is reduced by 1 for each card attached to a location.&#xD;&#xA;Noon, Boot: While in the Town Square, this dude has 1 Control Point for each card your control attached to a location." />
+         <property name="Text" value="If you are an Eagle Wardens player, the cost of this dude is reduced by 1 for each card attached to a location.&#xD;&#xA;Noon, Boot: While in the Town Square, this dude has 1 Control Point for each card your control attached to a location." />
          <property name="Instructions" value="" />
       </card>
 
@@ -345,7 +345,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="Grifter" />
-         <property name="Text" value="React, boot: At the start of the game, you may discard any number of cards from your hand and gain GR equal to the number of cards discarded. If you discarded atleast one card, draw a card." />
+         <property name="Text" value="React, boot: At the start of the game, you may discard any number of cards from your hand for every card you discard reduce the upkeep of one of your dudes by 2GR until the first High Noon phase. If you discarded at least 2 cards, draw a card." />
          <property name="Instructions" value="" />
       </card>
 
@@ -399,7 +399,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="While this dude has a melee weapon he is a stud&#xD;&#xA;Shootout, pull: Boot an opposing dude. If the pull is a club this dude gets -2 bullets, otherwise this dude gets a bullet bonus equal to the number of 108 dudes in his posse." />
+         <property name="Text" value="While this dude has a melee weapon he is a stud&#xD;&#xA;Shootout, Boot: Boot an opposing dude and pull. If the pull is not club, that dude has -3 bullets. This dude gets -3 bullets if the opposing posse has more unbooted dudes than your posse." />
          <property name="Instructions" value="" />
       </card>
 
@@ -421,11 +421,11 @@
          <property name="Instructions" value="" />
       </card>
 
-      <card id="7a390eac-db25-477b-80a9-7bbc051d87da" name="[Randall]">
+      <card id="7a390eac-db25-477b-80a9-7bbc051d87da" name="[The Barber]">
          <property name="Rank" value="6" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="5" />
+         <property name="Cost" value="4" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
          <property name="Bullets" value="1" />
@@ -435,7 +435,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="The Upkeep of each 108 dude at this dude's location is reduced by 1 (to a minimum of 1).&#xD;&#xA;Noon: Gain 1 GR for each of your dudes with an upkeep at this location.&#xD;&#xA;&#xD;&#xA;" />
+         <property name="Text" value="Your other dudes at this or adjacent locations have +1 influence during upkeep." />
          <property name="Instructions" value="" />
       </card>
 
@@ -542,7 +542,7 @@
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="Kung Fu 3" />
+         <property name="Keywords" value="Kung Fu 2" />
          <property name="Text" value="Shootout: If you have less ghost rock than the the controller of the opposing posse, this dude becomes a Stud." />
          <property name="Instructions" value="" />
       </card>
@@ -579,7 +579,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="The cost of T’ou Chi Chow is reduced by 1 for each deed you control&#xD;&#xA;Noon / Shootout: Play a 108 dude from your hand or discard pile with a value less than your opponent's total GR. If this is a shootout the dude immediately join T’ou Chi’s posse." />
+         <property name="Text" value="If you are a 108 player the cost of T’ou Chi Chow is reduced by 1 for each deed you control&#xD;&#xA;Noon / Shootout: Play a 108 dude from your hand or discard pile with a value less than your opponent's total GR. If this is a shootout the dude immediately join T’ou Chi’s posse." />
          <property name="Instructions" value="" />
       </card>
 
@@ -633,7 +633,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Necessity Alliance" />
          <property name="Keywords" value="" />
-         <property name="Text" value="While you have the highest influence, your hand size is increased by 1&#xD;&#xA;Noon, Boot: If you have the highest influence in the Town Square, boot a dude in it to draw 2 cards and then discard or ace a card from your hand." />
+         <property name="Text" value="While you have the highest influence, your hand size is increased by 1&#xD;&#xA;Noon, Boot: If you have the highest influence in the Town Square, boot one of your dudes in it to draw 2 cards and then discard or ace a card from your hand." />
          <property name="Instructions" value="" />
       </card>
 
@@ -651,7 +651,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Your dudes at an in-town deed have +1 Influence while you have less ghost rock than each other player.&#xD;&#xA;Noon, Boot, Boot one of your dudes to move another of your dudes at the same location to another and gain 1 GR." />
+         <property name="Text" value="Noon, Boot: Move your dude to the location of one of your 108 Dudes (without booting and even while booted)" />
          <property name="Instructions" value="" />
       </card>
 
@@ -687,7 +687,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit" />
-         <property name="Text" value="Cheating Resolution, Boot, Spirit 5: Look at the top 6 cards of your deck. You may discard any number of those cards, replacing the remainder in any order. If this is a shootout reduce your casualties by three.&#xD;&#xA;" />
+         <property name="Text" value="Cheating Resolution, Boot, Spirit 5: Look at the top 5 cards of your deck. You may discard any number of those cards, replacing the remainder in any order. You may draw a card (into your play hand). If this a shootout, reduce your casualties by 3." />
          <property name="Instructions" value="" />
       </card>
 
@@ -723,7 +723,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit-Totem" />
-         <property name="Text" value="This Spirit attaches to a deed you control at which have a Shaman. Any shaman at this deed can use this spirit (regardless of control).&#xD;&#xA;This deed is adjacent to any other deed with a [Spirit Path] attached.&#xD;&#xA;Noon Spirit 7, Boot: Move your dude at this deed, to another location." />
+         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;This location is adjacent to any other location with a [Spirit Path] attached.&#xD;&#xA;Noon Spirit 7, Boot: Move your dude at this location, to another location." />
          <property name="Instructions" value="" />
       </card>
 
@@ -741,7 +741,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit" />
-         <property name="Text" value="Shootout Spirit 10, Boot: A 2-stud gunslinger token comes into play and joins your posse." />
+         <property name="Text" value="Shootout Spirit 10, Boot: A 2-stud gunslinger token comes into play and joins this Shaman's posse." />
          <property name="Instructions" value="" />
       </card>
 
@@ -794,8 +794,24 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Spirit-Totem" />
-         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;Noon Spirit 7, Boot: All your dudes at this and adjacent locations have +1 influence during High Noon." />
+         <property name="Keywords" value="Spirit" />
+         <property name="Text" value="Noon, Spirit 9, Boot: Put a 1-Influence Ancestor Token in play at this location." />
+         <property name="Instructions" value="" />
+      </card>
+      <card id="53a212a6-34a6-47b0-bb24-45f1888bebf6" name="Ancestor Spirit">
+         <property name="Rank" value="A" />
+         <property name="Suit" value="S" />
+         <property name="Type" value="Dude" />
+         <property name="Cost" value="0" />
+         <property name="Upkeep" value="0" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="0" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="Stud" />
+         <property name="Influence" value="1" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="Drifter" />
+         <property name="Text" value="This card cannot be included in your deck. Remove this card from play if it moves from this location or at the end of the turn." />
          <property name="Instructions" value="" />
       </card>
 
