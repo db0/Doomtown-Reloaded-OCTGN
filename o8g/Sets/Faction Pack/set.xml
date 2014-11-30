@@ -8,7 +8,7 @@
   <cards>
 
       <card id="ceaefbb7-2540-44cf-abaf-755042f318ae" name="Dragon Walking">
-         <property name="Rank" value="2" />
+         <property name="Rank" value="6" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
          <property name="Cost" value="1" />
@@ -21,12 +21,12 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Technique" />
-         <property name="Text" value="Noon, pull: Choose an in-town location. Move any of your Kung Fu dudes with a value greater than or equal to the pull to that location (without booting)." />
+         <property name="Text" value="Noon / Shootout, Pull: Choose an in-town location, or the current location if this is a shootout. Move any of your Kung Fu dudes with a value greater than or equal to the pull to that location (without booting). If this is a shootout they join your posse." />
          <property name="Instructions" value="" />
       </card>
 
       <card id="12fb4862-f1e1-4ad3-b28f-2206b1a194e9" name="[Tai'Chi Demonstration]">
-         <property name="Rank" value="4" />
+         <property name="Rank" value="A" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
          <property name="Cost" value="1" />
@@ -39,7 +39,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Technique" />
-         <property name="Text" value="Noon job, pull: Choose one of your Kung Fu dudes and pull. If the pull is less than or equal to your dude’s value, he leads a job marking a non-home location. If the job is successful, all opposing dudes at that location are booted and the leader gets a permanent control point." />
+         <property name="Text" value="Noon:  Choose one of your kung-fu dudes and pull. If the pull is lower than their value, your dude gets +1 inf and +2 Kung Fu while not at home, and you may discard up to 5 cards of the top of your deck." />
          <property name="Instructions" value="" />
       </card>
 
@@ -62,7 +62,7 @@
       </card>
 
       <card id="c77c3030-224b-4cb2-bf27-7be6cf6d5fcc" name="[Tiger Strike]">
-         <property name="Rank" value="7" />
+         <property name="Rank" value="2" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
          <property name="Cost" value="0" />
@@ -74,8 +74,8 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Technique" />
-         <property name="Text" value="Shootout, pull: Choose one of your Kung Fu dudes in this posse without a weapon. If the pull is less than or equal to your dude’s value they gets +2 bullets and becomes a stud." />
+         <property name="Keywords" value="Technique-Tao Lu" />
+         <property name="Text" value="Shootout: Choose one of your kung-fu dudes and pull. If the pull is lower than their value, increase your dude's bullet rating by 1 and decrease the bullet of an opposing dude by 1. If your dude now has higher bullets, you may immediately play a different technique from your discard pile or hand." />
          <property name="Instructions" value="" />
       </card>
 
@@ -93,7 +93,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Choose your dude. Return a card a card attached to an opposing dude at the same location to its owner's hand. If the opposing dude does not have a weapon you may unboot your dude and immediately call the opposing dude out." />
+         <property name="Text" value="Noon: Choose your dude. Return a card attached to an opposing dude at the same location to its owner's hand. If the opposing dude does not have a weapon and is not at home your dude may immediately call him out." />
          <property name="Instructions" value="" />
       </card>
 
@@ -119,7 +119,7 @@
          <property name="Rank" value="2" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="7" />
+         <property name="Cost" value="6" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
          <property name="Bullets" value="0" />
@@ -344,13 +344,13 @@
          <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="Grifter" />
+         <property name="Keywords" value="Grifter-Kung Fu 2" />
          <property name="Text" value="React, boot: At the start of the game, you may discard any number of cards from your hand for every card you discard reduce the upkeep of one of your dudes by 2GR until the first High Noon phase. If you discarded at least 2 cards, draw a card." />
          <property name="Instructions" value="" />
       </card>
 
       <card id="910c051f-f36d-4245-88db-767d80998fc1" name="Xui Yin">
-         <property name="Rank" value="3" />
+         <property name="Rank" value="4" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
          <property name="Cost" value="4" />
@@ -362,8 +362,8 @@
          <property name="Influence" value="2" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="Kung Fu 4" />
-         <property name="Text" value="Shootout, Pull: If the pull is less than or equal to this dude's value she cannot be affected by other players abilities." />
+         <property name="Keywords" value="Kung Fu 3" />
+         <property name="Text" value="Shootout, Boot: All other dudes in your posse become studs and get +1 inf" />
          <property name="Instructions" value="" />
       </card>
 
@@ -386,7 +386,7 @@
       </card>
 
       <card id="a0a7fb60-18a3-4a8e-8dd1-a92931e724b1" name="[Former Pitfighter]">
-         <property name="Rank" value="5" />
+         <property name="Rank" value="6" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
          <property name="Cost" value="4" />
@@ -417,7 +417,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="Abomination-Kung Fu 1" />
-         <property name="Text" value="React, Boot: When an opponent's shoot-out ability will affect a another of you dudes in this shoot-out. The ability affects this dude instead" />
+         <property name="Text" value="While this dude is unbooted at a location you control, other players cannot choose or affect your dudes with their abilities if they could legally choose to affect this dude instead." />
          <property name="Instructions" value="" />
       </card>
 
@@ -425,7 +425,7 @@
          <property name="Rank" value="6" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
          <property name="Bullets" value="1" />
@@ -439,7 +439,7 @@
          <property name="Instructions" value="" />
       </card>
 
-      <card id="1b7d462c-4ba6-4317-904e-7efc49b4a15e" name="[Desoiled Dove]">
+      <card id="1b7d462c-4ba6-4317-904e-7efc49b4a15e" name="[Yarn Spinner]">
          <property name="Rank" value="2" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -453,7 +453,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="At the end of upkeep, if you have less GR than your opponent, gain a GR" />
+         <property name="Text" value="While this dude is at the same location with 2 other dudes, your hand size is increased by 1" />
          <property name="Instructions" value="" />
       </card>
 
@@ -461,17 +461,17 @@
          <property name="Rank" value="3" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="7" />
+         <property name="Cost" value="5" />
          <property name="Upkeep" value="1" />
          <property name="Production" value="" />
-         <property name="Bullets" value="2" />
+         <property name="Bullets" value="1" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Stud" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="Kung Fu 4" />
-         <property name="Text" value="All other dudes in this dude’s posse have +2 Value&#xD;&#xA;Shootout: Unboot a dude with lower value in this dude’s posse&#xD;&#xA;Shootout: Unboot a Kung Fu dude in this dude’s posse" />
+         <property name="Text" value="While [THIS DUDE] is at home, you have an additional 1-stud bonus during all shootouts" />
          <property name="Instructions" value="" />
       </card>
 
@@ -480,7 +480,7 @@
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
          <property name="Cost" value="3" />
-         <property name="Upkeep" value="2" />
+         <property name="Upkeep" value="0" />
          <property name="Production" value="" />
          <property name="Bullets" value="1" />
          <property name="Bullet Bonus" value="" />
@@ -489,7 +489,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="Kung Fu 1" />
-         <property name="Text" value="Shootout, Boot: All other dudes in your posse become studs and gain +1 influence." />
+         <property name="Text" value="While in a shootout at a location you control, increase the bullets and value of all other dudes in your posse by 1" />
          <property name="Instructions" value="" />
       </card>
 
@@ -497,17 +497,17 @@
          <property name="Rank" value="8" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
-         <property name="Upkeep" value="2" />
+         <property name="Cost" value="6" />
+         <property name="Upkeep" value="1" />
          <property name="Production" value="" />
          <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
-         <property name="Influence" value="2" />
+         <property name="Influence" value="3" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="Kung Fu 3" />
-         <property name="Text" value="Noon, Boot 2GR: Each other player discards 1 GR." />
+         <property name="Keywords" value="" />
+         <property name="Text" value="While at a deed you do not own, decrease all your other dude's upkeep by 1." />
          <property name="Instructions" value="" />
       </card>
 
@@ -524,8 +524,8 @@
          <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="" />
-         <property name="Text" value="Reduce this dudes upkeep by one when she is at a location with another 108 Dude." />
+         <property name="Keywords" value="Kung Fu 1" />
+         <property name="Text" value="While at another player's home, increase your hand size by 2 and decrease this dude's upkeep by 1." />
          <property name="Instructions" value="" />
       </card>
 
@@ -533,17 +533,17 @@
          <property name="Rank" value="A" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="1" />
+         <property name="Cost" value="2" />
          <property name="Upkeep" value="2" />
          <property name="Production" value="" />
          <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="Draw" />
+         <property name="Draw Type" value="Stud" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="Kung Fu 2" />
-         <property name="Text" value="Shootout: If you have less ghost rock than the the controller of the opposing posse, this dude becomes a Stud." />
+         <property name="Keywords" value="Transient-Kung Fu 2" />
+         <property name="Text" value="React: After this dude comes into play during High Noon, move one of your 108 dudes to another location." />
          <property name="Instructions" value="" />
       </card>
 
@@ -615,11 +615,29 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Mystical-Unique" />
-         <property name="Text" value="During High-Noon, this dude has a bonus to their influence equal to their highest skill.&#xD;&#xA;React, Boot: After you attach a card to a deed, you may boot or unboot a dude in the same or an adjacent location as that deed." />
+         <property name="Text" value="During High-Noon, this dude gets +2 influence.&#xD;&#xA;Noon, Boot: Move a card you control attached to a location, to another location that you control, to which it could legally attach." />
          <property name="Instructions" value="" />
       </card>
 
       <card id="dfb469f4-efc8-46f9-84df-66f5f973c09c" name="[Sundown Dominance]">
+         <property name="Rank" value="" />
+         <property name="Suit" value="" />
+         <property name="Type" value="Outfit" />
+         <property name="Cost" value="19" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="3" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="Necessity Alliance" />
+         <property name="Keywords" value="" />
+         <property name="Text" value="Noon, Boot: Boot your dude in the Town Square to draw two cards. If no other player has higher influence in it, you may draw an additional card. Discard or ace a card in your hand." />
+         <property name="Instructions" value="" />
+      </card>
+
+      <card id="94c5b661-8f3d-46ea-975e-482ff0e2be8a" name="[108 Outfit]">
          <property name="Rank" value="" />
          <property name="Suit" value="" />
          <property name="Type" value="Outfit" />
@@ -631,27 +649,9 @@
          <property name="Draw Type" value="" />
          <property name="Influence" value="" />
          <property name="Control" value="" />
-         <property name="Outfit" value="Necessity Alliance" />
-         <property name="Keywords" value="" />
-         <property name="Text" value="While you have the highest influence, your hand size is increased by 1&#xD;&#xA;Noon, Boot: If you have the highest influence in the Town Square, boot one of your dudes in it to draw 2 cards and then discard or ace a card from your hand." />
-         <property name="Instructions" value="" />
-      </card>
-
-      <card id="94c5b661-8f3d-46ea-975e-482ff0e2be8a" name="[108 Outfit]">
-         <property name="Rank" value="" />
-         <property name="Suit" value="" />
-         <property name="Type" value="Outfit" />
-         <property name="Cost" value="15" />
-         <property name="Upkeep" value="" />
-         <property name="Production" value="4" />
-         <property name="Bullets" value="" />
-         <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="" />
-         <property name="Influence" value="" />
-         <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon, Boot: Move your dude to the location of one of your 108 Dudes (without booting and even while booted)" />
+         <property name="Text" value="Noon, Boot: Move your dude to the location of one of your 108 Dudes (without booting and even while booted)" />" />
          <property name="Instructions" value="" />
       </card>
 
@@ -705,7 +705,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit-Totem" />
-         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;React Spirit 9, Boot: After this shaman enters a shootout in this location, a 2-stud gunslinger comes into play booted and joins your posse." />
+         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;React Spirit 8, Boot: After this shaman enters a shootout in this location, a 2-stud gunslinger comes into play booted and joins your posse." />
          <property name="Instructions" value="" />
       </card>
 
@@ -723,7 +723,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit-Totem" />
-         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;This location is adjacent to any other location with a [Spirit Path] attached.&#xD;&#xA;Noon Spirit 7, Boot: Move your dude at this location, to another location." />
+         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;This location is adjacent to any other location with a [Spirit Path] attached.&#xD;&#xA;Noon Spirit 6, Boot: Move your dude at this location, to another location." />
          <property name="Instructions" value="" />
       </card>
 
@@ -759,7 +759,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Technique" />
-         <property name="Text" value="React, pull: Pull after your Kung Fu dude is discarded or aced as a casualty in a shootout. If the pull is less than your equal to your dudes value, all dude's in the shootout go home booted." />
+         <property name="Text" value="Shootout: Boot one of your Kung-Fu dudes and pull. If the pull if less than or equal to their value you may move this dude or an opposing dude home booted." />
          <property name="Instructions" value="" />
       </card>
 
