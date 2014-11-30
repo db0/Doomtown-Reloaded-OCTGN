@@ -43,24 +43,6 @@
          <property name="Instructions" value="" />
       </card>
 
-      <card id="23a1a9a2-cfc2-478c-9d93-46c23cb6a567" name="Change of Momentum">
-         <property name="Rank" value="6" />
-         <property name="Suit" value="Clubs" />
-         <property name="Type" value="Action" />
-         <property name="Cost" value="0" />
-         <property name="Upkeep" value="" />
-         <property name="Production" value="" />
-         <property name="Bullets" value="" />
-         <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="" />
-         <property name="Influence" value="" />
-         <property name="Control" value="" />
-         <property name="Outfit" value="" />
-         <property name="Keywords" value="" />
-         <property name="Text" value="Shootout, Pull: Choose a dude in your posse and an opposing dude. If the pull is lower than your dudes value they become a Stud. If the pull is higher than the opposing Dudes value they become a Draw." />
-         <property name="Instructions" value="" />
-      </card>
-
       <card id="c77c3030-224b-4cb2-bf27-7be6cf6d5fcc" name="[Tiger Strike]">
          <property name="Rank" value="2" />
          <property name="Suit" value="Clubs" />
@@ -75,7 +57,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Technique-Tao Lu" />
-         <property name="Text" value="Shootout: Choose one of your kung-fu dudes and pull. If the pull is lower than their value, increase your dude's bullet rating by 1 and decrease the bullet of an opposing dude by 1. If your dude now has higher bullets, you may immediately play a different technique from your discard pile or hand." />
+         <property name="Text" value="Shootout: Choose one of your kung-fu dudes and pull. If the pull is lower than their value, increase your dude's bullet rating by 1 and decrease the bullet of an opposing dude by 1. Combo: If your dude now has higher bullets than the opposing dude." />
          <property name="Instructions" value="" />
       </card>
 

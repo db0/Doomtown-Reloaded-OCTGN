@@ -38,8 +38,8 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Technique" />
-         <property name="Text" value="Noon, pull: Boot one of you Kung Fu dudes and pull. If the pull is less than or equal to your dude’s value you may move each opposing dude at this location with a value greater than the pull to any adjacent deed." />
+         <property name="Keywords" value="Technique-Tao Lu" />
+         <property name="Text" value="Shootout: Choose one of your kung-fu dudes and pull. If the pull is lower than their value, your dude becomes and stud and you may boot an opposing dude with lower bullets. Combo: If the opposing dude's bullets are now 0." />
          <property name="Instructions" value="" />
       </card>
 
@@ -76,7 +76,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Headline (Only one Headline may be played per shootout)
 " />
-         <property name="Text" value="Shootout: No Shootout, React, or non-cheatin' Resolution abilities may be used during this shootout." />
+         <property name="Text" value="Shootout: No Shootout, React, or non-cheatin' Resolution abilities may be used during this shootout. Any player may discard 2 cards from their hand as a Shootout play, to cancel this effect." />
          <property name="Instructions" value="" />
       </card>
 
@@ -120,14 +120,14 @@
          <property name="Rank" value="4" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
-         <property name="Cost" value="1" />
+         <property name="Cost" value="4" />
          <property name="Upkeep" value="" />
-         <property name="Production" value="0" />
+         <property name="Production" value="1" />
          <property name="Bullets" value="" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="" />
          <property name="Influence" value="" />
-         <property name="Control" value="1" />
+         <property name="Control" value="2" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Casino-Seedy" />
          <property name="Text" value="React, Boot: After placing your lowbal ante, increase your ante by 1. After you draw your lowball hand, you may discard a card from your draw hand and redraw one card." />
@@ -166,7 +166,7 @@
          <property name="Control" value="*" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Saloon" />
-         <property name="Text" value="This deeds is worth a number of control points equal to the number of dudes at it, not controlled by the owner of [The Speakeasy]." />
+         <property name="Text" value="This deeds is worth 2 control points when not controlled by the owner of [The Speakeasy]." />
          <property name="Instructions" value="" />
       </card>
 
@@ -282,7 +282,7 @@
          <property name="Rank" value="9" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
+         <property name="Cost" value="3" />
          <property name="Upkeep" value="2" />
          <property name="Production" value="" />
          <property name="Bullets" value="3" />
@@ -333,25 +333,25 @@
       </card>
 
       <card id="45a5acd3-3659-4654-8033-44ef084e1dba" name="[The Turkish Bear]">
-         <property name="Rank" value="3" />
+         <property name="Rank" value="5" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="5" />
-         <property name="Upkeep" value="2" />
+         <property name="Cost" value="4" />
+         <property name="Upkeep" value="1" />
          <property name="Production" value="" />
-         <property name="Bullets" value="3" />
+         <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Stud" />
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="Kung Fu 2" />
-         <property name="Text" value="Noon: Choose and boot another 108 dude you control at this location to increase their bullets by this dude's bullet rating. If the chosen dude is Kung Fu, they become a stud." />
+         <property name="Keywords" value="Kung Fu 0" />
+         <property name="Text" value="React: After a dude at this location makes a pull for a technique (even one not involving this dude), pull again and use that value instead." />
          <property name="Instructions" value="" />
       </card>
 
       <card id="ad7f9fb2-c845-49bd-82e2-0a94037e1d77" name="[Kalani Slanding]">
-         <property name="Rank" value="4" />
+         <property name="Rank" value="3" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
          <property name="Cost" value="3" />
@@ -364,7 +364,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout: Move a goods from [Kalani Slanding] to another of your dudes in your posse. Unboot the goods. Its abilities may be used another time this turn." />
+         <property name="Text" value="Repeatable, Noon: Discard a card from you hand to move another dude at this location to another location" />
          <property name="Instructions" value="" />
       </card>
 
@@ -372,17 +372,17 @@
          <property name="Rank" value="9" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="6" />
-         <property name="Upkeep" value="2" />
+         <property name="Cost" value="5" />
+         <property name="Upkeep" value="1" />
          <property name="Production" value="" />
          <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Stud" />
-         <property name="Influence" value="2" />
+         <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Confederate-Mad Scientist 1" />
-         <property name="Text" value="May only invent Mystical Gadgets&#xD;&#xA;React: After you attach a card to a card in play, draw a card." />
+         <property name="Text" value="May only invent Mystical Gadgets&#xD;&#xA;[This Dude] can invent gadgets in the Town Square." />
          <property name="Instructions" value="" />
       </card>
 
@@ -426,7 +426,7 @@
          <property name="Rank" value="K" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="10" />
+         <property name="Cost" value="9" />
          <property name="Upkeep" value="3" />
          <property name="Production" value="" />
          <property name="Bullets" value="4" />
@@ -436,7 +436,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="Experienced 1" />
-         <property name="Text" value="If you are a Sloane Gang player the cost of Sloane is reduced by 1 for every bounty you have on your dudes. &#xD;&#xA;When Sloane comes into play Unboot all your wanted dudes and give Sloane 1 bounty for each dude unbooted this way." />
+         <property name="Text" value="If you are a Sloane Gang player the cost of Sloane is reduced by 1 for each dude you have with a bounty. &#xD;&#xA;When Sloane comes into play from a shoppi' play, unboot all your wanted dudes and give Sloane 1 bounty for each dude unbooted this way." />
          <property name="Instructions" value="" />
       </card>
 
@@ -444,7 +444,7 @@
          <property name="Rank" value="7" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
-         <property name="Cost" value="1" />
+         <property name="Cost" value="0" />
          <property name="Upkeep" value="" />
          <property name="Production" value="" />
          <property name="Bullets" value="" />
@@ -544,7 +544,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="" />
-         <property name="Text" value="React, Boot: After a dude is discarded or aced from play, you may take a condition into your hand from your discard pile. If the dude wasn't yours, you can take an abomination instead." />
+         <property name="Text" value="Noon, Boot: Choose your dude and give another dude at the same or adjacent location -1 Bullets and -1 Value to give your dude +1 influence or +1 to their Huckster skill." />
          <property name="Instructions" value="" />
       </card>
 
@@ -723,7 +723,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="This card is only used for draw hands and pulls.&#xD;&#xA;You choose its suit and value. Ace the joker after use.&#xD;&#xA;While this card is in your draw hand, your hand is never considered cheatin'.&#xD;&#xA;When you reveal this card in a draw hand, your hand rank is reduced by 3." />
+         <property name="Text" value="This card is only used for draw hands and pulls.&#xD;&#xA;You choose its suit and value. Ace the joker after use.&#xD;&#xA;While this card is in your draw hand, your hand is never considered cheatin'.&#xD;&#xA;When you reveal this card in a draw hand, your hand rank is reduced by 2." />
          <property name="Instructions" value="" />
       </card>
       <card id="e5aa241d-bc8c-46ee-a250-dac44616415e" name="Cursed Joker">
