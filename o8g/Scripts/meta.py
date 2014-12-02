@@ -131,10 +131,10 @@ def compileCardStat(card, stat = 'Influence'):
          count += c.markers[mdict['PermInfluence']] + c.markers[mdict['InfluencePlus']] - c.markers[mdict['InfluenceMinus']] # If any of the card's attachments have influence markers, then they affect their host as well.
    elif stat == 'Bullets':
       count = num(card.properties[stat])
-      count += card.markers[mdict['PermBullet']] + card.markers[mdict['BulletNoonPlus']] - card.markers[mdict['BulletNoonMinus']] + card.markers[mdict['BulletShootoutPlus']] - card.markers[mdict['BulletShootoutMinus']]
+      count += card.markers[mdict['PermBulletPlus']] + card.markers[mdict['BulletNoonPlus']] - card.markers[mdict['BulletNoonMinus']] + card.markers[mdict['BulletShootoutPlus']] - card.markers[mdict['BulletShootoutMinus']]
       for c in attachedCards: 
          count += num(c.properties['Bullet Bonus']) # Attached cards which provide bullets use a different field
-         count += c.markers[mdict['PermBullet']] + c.markers[mdict['BulletNoonPlus']] - c.markers[mdict['BulletNoonMinus']] + c.markers[mdict['BulletShootoutPlus']] - c.markers[mdict['BulletShootoutMinus']]
+         count += c.markers[mdict['PermBulletPlus']] + c.markers[mdict['BulletNoonPlus']] - c.markers[mdict['BulletNoonMinus']] + c.markers[mdict['BulletShootoutPlus']] - c.markers[mdict['BulletShootoutMinus']]
    elif stat == 'Control':
       count = num(card.properties[stat])
       count += card.markers[mdict['PermControl']] + card.markers[mdict['ControlPlus']] - card.markers[mdict['ControlMinus']]
@@ -168,7 +168,7 @@ def fetchDrawType(card): # We go through effects which change their draw value i
    return drawType
    
 def calcValue(card, type = 'poker'):
-   numvalue = numrank(card.Rank) + card.markers[mdict['ValueNoonPlus']] - card.markers[mdict['ValueNoonMinus']] + card.markers[mdict['ValueShootoutPlus']] - card.markers[mdict['ValueShootoutMinus']]
+   numvalue = numrank(card.Rank) + card.markers[mdict['ValueNoonPlus']] - card.markers[mdict['ValueNoonMinus']] + card.markers[mdict['ValueShootoutPlus']] - card.markers[mdict['ValueShootoutMinus']] + card.markers[mdict['ValuePermPlus']] - card.markers[mdict['ValuePermMinus']]
    if type == 'raw': return numvalue
    if numvalue > 12 and type == 'numeral': return 13
    if numvalue > 12: return 'K'
@@ -483,7 +483,8 @@ def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = Fals
       if T.markers[mdict['ValueNoonMinus']] and T.markers[mdict['ValueNoonMinus']] >= 1: markers += " -{} Value,".format(T.markers[mdict['ValueNoonMinus']])
       if T.markers[mdict['BulletNoonPlus']] and T.markers[mdict['BulletNoonPlus']] >= 1: markers += " +{} Noon Bullets,".format(T.markers[mdict['BulletNoonPlus']])
       if T.markers[mdict['BulletShootoutPlus']] and T.markers[mdict['BulletShootoutPlus']] >= 1: markers += " +{} Shootout Bullets,".format(T.markers[mdict['BulletShootoutPlus']])
-      if T.markers[mdict['PermBullet']] and T.markers[mdict['PermBullet']] >= 1: markers += " +{} Permanent Bullets,".format(T.markers[mdict['PermBullet']])
+      if T.markers[mdict['PermBulletPlus']] and T.markers[mdict['PermBulletPlus']] >= 1: markers += " +{} Permanent Bullets,".format(T.markers[mdict['PermBulletPlus']])
+      if T.markers[mdict['PermBulletMinus']] and T.markers[mdict['PermBulletMinus']] >= 1: markers += " -{} Permanent Bullets,".format(T.markers[mdict['PermBulletMinus']])
       if T.markers[mdict['BulletNoonMinus']] and T.markers[mdict['BulletNoonMinus']] >= 1: markers += " -{} Noon Bullets,".format(T.markers[mdict['BulletNoonMinus']])
       if T.markers[mdict['BulletShootoutMinus']] and T.markers[mdict['BulletShootoutMinus']] >= 1: markers += " -{} Shootout Bullets,".format(T.markers[mdict['BulletShootoutMinus']])
       if T.markers[mdict['Ghost Rock']] and T.markers[mdict['Ghost Rock']] >= 1: markers += "{} GR,".format(T.markers[mdict['Ghost Rock']])

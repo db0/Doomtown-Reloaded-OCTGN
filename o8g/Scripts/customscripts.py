@@ -266,16 +266,16 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          whisper(":::ERROR::: No dude targeted. Aborting!")
          return 'ABORT'         
 ### PB 1 ###		 
-   elif card.name == "[Leavin' a Scar]" and action == 'PLAY':
+   elif card.name == "This'll Hurt in the Mornin" and action == 'PLAY':
       targetCards = findTarget('DemiAutoTargeted-isDrawHand-targetOpponents-choose2',card = card, choiceTitle = "Choose which of your opponent's cards to discard")
       if not len(targetCards): return 'ABORT'
       if confirm("If your own draw hand illegal?"): remoteCall(targetCards[0].controller,'TWHITM',[targetCards,True])
       else: remoteCall(targetCards[0].controller,'TWHITM',[targetCards,False])
-   elif card.name == "[Immigration and Tax Office]" and action == 'USE':
+   elif card.name == "California Tax Office" and action == 'USE':
       targetCards = findTarget('Targeted-atDude',card = card, choiceTitle = "Choose which of your opponent's dudes has to pay their taxes")
       if not len(targetCards): return 'ABORT'
       else: remoteCall(targetCards[0].controller,'TaxOffice',[targetCards[0]])
-   elif card.name == "[The Kingpin]" and action == 'USE':
+   elif card.name == "The Fixer" and action == 'USE':
       for c in me.Deck.top(5): c.moveTo(me.piles['Discard Pile'])
       update()
       discardCards = [c for c in me.piles['Discard Pile']]
@@ -285,6 +285,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       discardCards[choice].moveTo(me.hand)
       update()
       if re.search(r'Noon Job',discardCards[choice].Text) and discardCards[choice].Type == 'Action': remoteCall(me,'boot',[card]) # Doing remote call, so as to have a chance to finish the animation
+### SB 4-6 ###
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 

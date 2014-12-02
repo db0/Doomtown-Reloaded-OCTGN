@@ -395,12 +395,14 @@ def nightfall(card, x = 0, y = 0): # This function "refreshes" each card for nig
    mute()
    card.markers[mdict['UsedAbility']] = 0 # Remove the markers.
    card.markers[SHActivatedMarker] = 0
-   card.markers[mdict['ControlMinus']] = 0 # Remove temporary bullet, contol and influence modifications
+   card.markers[mdict['ControlMinus']] = 0 # Remove temporary bullet, contol, value and influence modifications
    card.markers[mdict['ControlPlus']] = 0 
    card.markers[mdict['InfluenceMinus']] = 0
    card.markers[mdict['InfluencePlus']] = 0 
    card.markers[mdict['BulletNoonPlus']] = 0 
    card.markers[mdict['BulletNoonMinus']] = 0 
+   card.markers[mdict['ValueNoonMinus']] = 0 
+   card.markers[mdict['ValueNoonPlus']] = 0 
    card.markers[mdict['Traded']] = 0
    reCalculate(notification = 'silent')
    if not card.markers[mdict['NoUnboot']] and card.name != 'Town Square': # We do not unboot the Town Square card.
@@ -491,27 +493,37 @@ def setWinner(winner):
 
 def plusPermControl(card, x = 0, y = 0, silent = False, count = 1): # Adds an extra control marker to cards (usually deeds)
    mute()
-   #confirm(card.name) # debug
    if not silent:
       notify("{} marks that {} permanently provides {} more control.".format(me, card, count))
    for i in range(0,count):
-      card.markers[mdict['PermControl']] += 1
-      if num(card.Control) - card.markers[mdict['ControlMinus']] + card.markers[mdict['PermControl']] > 0: modControl() 
-        
+      if mdict['PermControlMinus'] in card.markers: # If we have a -CP counter already, just remove one of those.
+         card.markers[mdict['PermControlMinus']] -= 1
+      else: # Otherwise just add an extra +CP
+         card.markers[mdict['PermControlPlus']] += 1
+   reCalculate(notification = 'silent')        
+   
+def minusPermControl(card, x = 0, y = 0, silent = False, count = 1): # Adds an extra control marker to cards (usually deeds)
+   mute()
+   if not silent:
+      notify("{} marks that {} permanently provides {} less control.".format(me, card, count))
+   for i in range(0,count):
+      if mdict['PermControlPlus'] in card.markers: 
+         card.markers[mdict['PermControlPlus']] -= 1
+      else: 
+         card.markers[mdict['PermControlMinus']] += 1
+   reCalculate(notification = 'silent')        
+   
 def plusControl(card, x = 0, y = 0, silent = False, count = 1): # Adds an extra control marker to cards (usually deeds)
    mute()
    if not silent:
       notify("{} marks that {} provides {}  more control.".format(me, card, count))
    for i in range(0,count):
       if mdict['ControlMinus'] in card.markers: # If we have a -CP counter already, just remove one of those.
-         if num(card.Control) - card.markers[mdict['ControlMinus']] + card.markers[mdict['PermControl']]>= 0: 
-            modControl() # This function takes care of modifying the player's control counter. In this case it increases it by 1.
-                         # But we only go through with it if the -CP markers didn't actually take the cards' CP below 0.
          card.markers[mdict['ControlMinus']] -= 1
       else: # Otherwise just add an extra +CP
          card.markers[mdict['ControlPlus']] += 1
-         modControl() 
-        
+   reCalculate(notification = 'silent')        
+   
 def minusControl(card, x = 0, y = 0, silent = False, count = 1): # Similar to adding Control but we remove instead.
    mute()
    if not silent:
@@ -519,18 +531,29 @@ def minusControl(card, x = 0, y = 0, silent = False, count = 1): # Similar to ad
    for i in range(0,count):
       if mdict['ControlPlus'] in card.markers:
          card.markers[mdict['ControlPlus']] -= 1
-         modControl(-1)
       else:
-         if num(card.Control) - card.markers[mdict['ControlMinus']] + card.markers[mdict['PermControl']] > 0: modControl(-1) # We only reduce a players totals if the control was above 0
-                                                                                     # As the minimum CP on a card is always 0.
          card.markers[mdict['ControlMinus']] += 1     
-
+   reCalculate(notification = 'silent')
+   
 def plusPermInfluence(card, x = 0, y = 0, silent = False, count = 1): # The same as pluControl but for influence
    mute()
    if not silent: notify("{} marks that {} permanently has {} more influence".format(me, card, count))
    for i in range(0,count):
-      card.markers[mdict['PermInfluence']] += 1         
-      if num(card.Influence) - card.markers[mdict['InfluenceMinus']] + card.markers[mdict['PermInfluence']] > 0: modInfluence()
+      if mdict['PermInfluenceMinus'] in card.markers:
+         card.markers[mdict['PermInfluenceMinus']] -= 1
+      else:
+         card.markers[mdict['PermInfluencePlus']] += 1         
+   reCalculate(notification = 'silent')
+        
+def minusPermInfluence(card, x = 0, y = 0, silent = False, count = 1): # The same as pluControl but for influence
+   mute()
+   if not silent: notify("{} marks that {} permanently has {} less influence".format(me, card, count))
+   for i in range(0,count):
+      if mdict['PermInfluencePlus'] in card.markers:
+         card.markers[mdict['PermInfluencePlus']] -= 1
+      else:
+         card.markers[mdict['PermInfluenceMinus']] += 1         
+   reCalculate(notification = 'silent')
         
 def plusInfluence(card, x = 0, y = 0, silent = False, count = 1): # The same as pluControl but for influence
    mute()
@@ -538,13 +561,11 @@ def plusInfluence(card, x = 0, y = 0, silent = False, count = 1): # The same as 
       notify("{} marks that {}'s influence has increased by {}".format(me, card, count))
    for i in range(0,count):
       if mdict['InfluenceMinus'] in card.markers:
-         if num(card.Influence) - card.markers[mdict['InfluenceMinus']] + card.markers[mdict['PermInfluence']] >= 0:
-                modInfluence()
          card.markers[mdict['InfluenceMinus']] -= 1
       else:
          card.markers[mdict['InfluencePlus']] += 1         
-         modInfluence()
-        
+   reCalculate(notification = 'silent')        
+   
 def minusInfluence(card, x = 0, y = 0, silent = False, count = 1): # The same as minusContorl but for influence
    mute()
    if not silent:
@@ -552,11 +573,10 @@ def minusInfluence(card, x = 0, y = 0, silent = False, count = 1): # The same as
    for i in range(0,count):
       if mdict['InfluencePlus'] in card.markers:
          card.markers[mdict['InfluencePlus']] -= 1
-         modInfluence(-1)
       else:
          if num(card.Influence) - card.markers[mdict['InfluenceMinus']] + card.markers[mdict['PermInfluence']] > 0: modInfluence(-1)
          card.markers[mdict['InfluenceMinus']] += 1 
-
+   reCalculate(notification = 'silent')
         
 def plusProd(source, x = 0, y = 0): # Very much like plus Influence and control, but we don't have to worry about modifying the player's totals
    mute()
@@ -639,8 +659,21 @@ def plusBulletShootout(card, x = 0, y = 0,count = 1, silent = False):
 def plusPermBullet(card, x = 0, y = 0, silent = False):
    mute()
    if not silent: notify("{} marks that {}'s bullets have permanently increased by 1.".format(me, card))
-   card.markers[mdict['PermBulletPlus']] += 1
+   for i in range(0,count):
+      if mdict['PermBulletMinus'] in card.markers:
+         card.markers[mdict['PermBulletMinus']] -= 1
+      else:
+         card.markers[mdict['PermBulletPlus']] += 1 
 
+def minusPermBullet(card, x = 0, y = 0,count = 1, silent = False): # Very much like plus Value
+   mute()
+   if not silent: notify("{} marks that {}'s bullets have permanently decreased by 1.".format(me, card))
+   for i in range(0,count):
+      if mdict['PermBulletPlus'] in card.markers:
+         card.markers[mdict['PermBulletPlus']] -= 1
+      else:
+         card.markers[mdict['PermBulletMinus']] += 1 
+         
 def minusBulletNoon(card, x = 0, y = 0,count = 1, silent = False): # Very much like plus Value
    mute()
    if not silent: notify("{} marks that {}'s bullets have decreased by 1 until Sundown.".format(me, card))
@@ -702,6 +735,37 @@ def minusValue(card, x = 0, y = 0, silent = False, valuemod = None):
    if calcValue(card,'raw') < 1: card.markers[mdict['ValueNoonMinus']] = numrank(card.Rank)
    if not silent:
       notify("{} marks that {}'s value has decreased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
+
+def plusPermValue(card, x = 0, y = 0, silent = False, valuemod = None): 
+# Very much like plus Influence and control, but we don't have to worry about modifying the player's totals
+   mute()
+   if valuemod == None: valuemod = askInteger("Increase {}'s value by how much? (Current value is: {})".format(card.name,calcValue(card)), 3)
+   if mdict['ValuePermMinus'] in card.markers:
+      if valuemod <= card.markers[mdict['ValuePermMinus']]:
+         card.markers[mdict['ValuePermMinus']] -= valuemod
+      else:
+         card.markers[mdict['ValuePermPlus']] += valuemod - card.markers[mdict['ValuePermMinus']]
+         card.markers[mdict['ValuePermMinus']] = 0
+   else:
+      card.markers[mdict['ValuePermPlus']] += valuemod 
+   if calcValue(card,'raw') > 13: card.markers[mdict['ValuePermPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
+   if not silent:
+      notify("{} marks that {}'s value has permanently increased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
+        
+def minusPermValue(card, x = 0, y = 0, silent = False, valuemod = None): 
+   mute()
+   if valuemod == None: valuemod = askInteger("Decrease {}'s value by how much? (Current value is: {})".format(card.name,calcValue(card)), 3)
+   if mdict['ValuePermPlus'] in card.markers:
+      if valuemod <= card.markers[mdict['ValuePermPlus']]:
+         card.markers[mdict['ValuePermPlus']] -= valuemod
+      else:
+         card.markers[mdict['ValuePermMinus']] += valuemod - card.markers[mdict['ValuePermPlus']]
+         card.markers[mdict['ValuePermPlus']] = 0
+   else:
+      card.markers[mdict['ValuePermMinus']] += valuemod         
+   if calcValue(card,'raw') < 1: card.markers[mdict['ValuePermMinus']] = numrank(card.Rank)
+   if not silent:
+      notify("{} marks that {}'s value has permanently decreased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
 
 def setValue(card, x = 0, y = 0):
    mute()
