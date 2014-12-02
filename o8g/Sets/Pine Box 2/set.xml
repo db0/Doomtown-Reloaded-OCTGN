@@ -29,7 +29,7 @@
          <property name="Rank" value="3" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
-         <property name="Cost" value="1" />
+         <property name="Cost" value="0" />
          <property name="Upkeep" value="" />
          <property name="Production" value="" />
          <property name="Bullets" value="" />
