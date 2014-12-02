@@ -156,7 +156,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Each time a resolution ability is used, the controller gains 1 Ghost Rock.&#xD;&#xA;Controller Noon, Boot: If you played a cheatin' resolution this turn, Draw a card." />
+         <property name="Text" value="Noon: Ace a dude you own and control to gain ghost rock equal to their ghost rock cost.&#xD;&#xA;Resolution: Ace a dude you own and control to reduce your casualties this round to zero. Choose a dude who gains +2 bullets and becomes a stud. Your dudes cannot chicken out this round." />
          <property name="Instructions" value="" />
       </card>
       <card id="29add78a-5369-43d9-80d9-4006f6757a6e" name="Flint's Amusements">

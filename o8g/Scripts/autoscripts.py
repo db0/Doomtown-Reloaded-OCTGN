@@ -1173,7 +1173,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             else: 
                remoteCall(targetCard.controller,'moveCard',[targetCard,x + cardDistance(), y])
             if targetCard.highlight == AttackColor or targetCard.highlight == DefendColor: leavePosse(targetCard)
-            boot(targetCard,silent = True, forced = 'boot')
+            if not re.search(r'-doNotBoot',Autoscript): boot(targetCard,silent = True, forced = 'boot')
             orgAttachments(targetCard)
          elif action.group(1) == 'Takeover':
             targetPLs = ofwhom(Autoscript, card.controller)

@@ -1987,7 +1987,7 @@ Incubation
 -----
 f36622a2-667f-43bc-ac16-0f8c8dabec00
 -----
-onPlay:Put
+onPlay:Put1PermInfluenceMinus$$Put1PermBulletMinus$$Put3ValuePermMinus
 +++++
 
 .....
@@ -1995,7 +1995,7 @@ Buried Treasure
 -----
 e5e6dd23-04d0-4614-a8da-a9a74785a7c2
 -----
-
+onPlay:Retrieve1Card-toBootHill$$Gain3Ghost Rock$$Draw1Card
 +++++
 
 .....
@@ -2003,7 +2003,7 @@ Flight of the Lepus
 -----
 3e1d8cfb-03b1-433a-a7ae-b12f124fb7ef
 -----
-
+onPlay:SendHomeBootedMulti-doNotBoot-Targeted-atDude-isParticipating
 +++++
 
 .....
@@ -2011,7 +2011,7 @@ Nightmare at Noon
 -----
 590b905c-f114-48d2-930f-66e446458c84
 -----
-
+onPlay:Put1BulletShootoutMinus-AutoTargeted-atDude-isParticipating-targetOpponents$$Put1Shootout:Draw-isSilent-AutoTargeted-atDude-isParticipating-isStudDude-hasProperty{Bullets}le1
 +++++
 
 .....
