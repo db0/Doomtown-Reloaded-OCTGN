@@ -125,19 +125,19 @@ def compileCardStat(card, stat = 'Influence'):
    attachedCards = [Card(att_id) for att_id in hostCards if hostCards[att_id] == card._id]
    if stat == 'Influence':
       count = num(card.properties[stat])
-      count += card.markers[mdict['PermInfluence']] + card.markers[mdict['InfluencePlus']] - card.markers[mdict['InfluenceMinus']]
+      count += card.markers[mdict['PermInfluencePlus']] - card.markers[mdict['PermInfluenceMinus']] + card.markers[mdict['InfluencePlus']] - card.markers[mdict['InfluenceMinus']]
       for c in attachedCards: 
          count += num(c.Influence) # Attached cards which provide influence, effectively increase the influence of the card
-         count += c.markers[mdict['PermInfluence']] + c.markers[mdict['InfluencePlus']] - c.markers[mdict['InfluenceMinus']] # If any of the card's attachments have influence markers, then they affect their host as well.
+         count += c.markers[mdict['PermInfluencePlus']] - card.markers[mdict['PermInfluenceMinus']] + c.markers[mdict['InfluencePlus']] - c.markers[mdict['InfluenceMinus']] # If any of the card's attachments have influence markers, then they affect their host as well.
    elif stat == 'Bullets':
       count = num(card.properties[stat])
-      count += card.markers[mdict['PermBulletPlus']] + card.markers[mdict['BulletNoonPlus']] - card.markers[mdict['BulletNoonMinus']] + card.markers[mdict['BulletShootoutPlus']] - card.markers[mdict['BulletShootoutMinus']]
+      count += card.markers[mdict['PermBulletPlus']] - card.markers[mdict['PermBulletMinus']] + card.markers[mdict['BulletNoonPlus']] - card.markers[mdict['BulletNoonMinus']] + card.markers[mdict['BulletShootoutPlus']] - card.markers[mdict['BulletShootoutMinus']]
       for c in attachedCards: 
          count += num(c.properties['Bullet Bonus']) # Attached cards which provide bullets use a different field
-         count += c.markers[mdict['PermBulletPlus']] + c.markers[mdict['BulletNoonPlus']] - c.markers[mdict['BulletNoonMinus']] + c.markers[mdict['BulletShootoutPlus']] - c.markers[mdict['BulletShootoutMinus']]
+         count += c.markers[mdict['PermBulletPlus']] - card.markers[mdict['PermBulletMinus']] + c.markers[mdict['BulletNoonPlus']] - c.markers[mdict['BulletNoonMinus']] + c.markers[mdict['BulletShootoutPlus']] - c.markers[mdict['BulletShootoutMinus']]
    elif stat == 'Control':
       count = num(card.properties[stat])
-      count += card.markers[mdict['PermControl']] + card.markers[mdict['ControlPlus']] - card.markers[mdict['ControlMinus']]
+      count += card.markers[mdict['PermControlPlus']] - card.markers[mdict['PermControlMinus']] + card.markers[mdict['ControlPlus']] - card.markers[mdict['ControlMinus']]
    elif stat == 'Value': count = calcValue(card,'numeral')
    elif stat == 'Production':
       count = num(card.properties[stat])
