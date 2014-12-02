@@ -909,7 +909,7 @@ Silas Aims
 -----
 
 +++++
-GR0B0R1:Gain1PermBullet
+GR0B0R1:Gain1PermBulletPlus
 .....
 Sloane
 -----
@@ -1979,7 +1979,7 @@ Cookin' Up Trouble
 -----
 f7d5aaa2-b476-4156-bef1-697cd39d7dd7
 -----
-
+onPlay:CustomScript
 +++++
 
 .....
@@ -1987,7 +1987,7 @@ Incubation
 -----
 f36622a2-667f-43bc-ac16-0f8c8dabec00
 -----
-
+onPlay:Put
 +++++
 
 .....

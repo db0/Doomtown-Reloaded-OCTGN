@@ -639,7 +639,7 @@ def plusBulletShootout(card, x = 0, y = 0,count = 1, silent = False):
 def plusPermBullet(card, x = 0, y = 0, silent = False):
    mute()
    if not silent: notify("{} marks that {}'s bullets have permanently increased by 1.".format(me, card))
-   card.markers[mdict['PermBullet']] += 1
+   card.markers[mdict['PermBulletPlus']] += 1
 
 def minusBulletNoon(card, x = 0, y = 0,count = 1, silent = False): # Very much like plus Value
    mute()

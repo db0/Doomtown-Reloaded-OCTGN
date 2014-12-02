@@ -633,7 +633,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon, Boot: Move your dude to the location of one of your 108 Dudes (without booting and even while booted)" />" />
+         <property name="Text" value="Noon, Boot: Move your dude to the location of one of your 108 Dudes (without booting and even while booted)" />
          <property name="Instructions" value="" />
       </card>
 
