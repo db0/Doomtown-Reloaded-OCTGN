@@ -475,10 +475,12 @@ def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = Fals
       markers = 'Counters:'
       if T.markers[mdict['Bounty']] and T.markers[mdict['Bounty']] >= 1: markers += "{} Bounty,".format(T.markers[mdict['Bounty']])
       if T.markers[mdict['Harrowed']] and T.markers[mdict['Harrowed']] >= 1: markers += "Harrowed,"
-      if T.markers[mdict['PermInfluence']] and T.markers[mdict['PermInfluence']] >= 1: markers += " +{} Permanent Influence,".format(T.markers[mdict['PermInfluence']])
+      if T.markers[mdict['PermInfluencePlus']] and T.markers[mdict['PermInfluencePlus']] >= 1: markers += " +{} Permanent Influence,".format(T.markers[mdict['PermInfluencePlus']])
+      if T.markers[mdict['PermInfluenceMinus']] and T.markers[mdict['PermInfluenceMinus']] >= 1: markers += " +{} Permanent Influence,".format(T.markers[mdict['PermInfluenceMinus']])
       if T.markers[mdict['InfluencePlus']] and T.markers[mdict['InfluencePlus']] >= 1: markers += " +{} Influence,".format(T.markers[mdict['InfluencePlus']])
       if T.markers[mdict['InfluenceMinus']] and T.markers[mdict['InfluenceMinus']] >= 1: markers += " -{} Influence,".format(T.markers[mdict['InfluenceMinus']])
-      if T.markers[mdict['PermControl']] and T.markers[mdict['PermControl']] >= 1: markers += " +{} Permanent Control,".format(T.markers[mdict['PermControl']])
+      if T.markers[mdict['PermControlPlus']] and T.markers[mdict['PermControlPlus']] >= 1: markers += " +{} Permanent Control,".format(T.markers[mdict['PermControlPlus']])
+      if T.markers[mdict['PermControlMinus']] and T.markers[mdict['PermControlMinus']] >= 1: markers += " +{} Permanent Control,".format(T.markers[mdict['PermControlMinus']])
       if T.markers[mdict['ControlPlus']] and T.markers[mdict['ControlPlus']] >= 1: markers += " +{} Control,".format(T.markers[mdict['ControlPlus']])
       if T.markers[mdict['ControlMinus']] and T.markers[mdict['ControlMinus']] >= 1: markers += " -{} Control,".format(T.markers[mdict['ControlMinus']])
       if T.markers[mdict['ProdPlus']] and T.markers[mdict['ProdPlus']] >= 1: markers += " +{} Production,".format(T.markers[mdict['ProdPlus']])

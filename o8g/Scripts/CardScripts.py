@@ -237,7 +237,7 @@ Cheatin' Varmint
 -----
 
 +++++
-onPlay:Pay5Ghost Rock-isCost$$SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}||SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}
+onPlay:Pay5Ghost Rock-isCost$$SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}||SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}-isResolution
 .....
 Circle M Ranch
 -----
@@ -1683,7 +1683,7 @@ Pettigrew's Pawnshop
 -----
 1b2b9609-05a4-4aed-ab98-06ddf6dbe400
 -----
-whileInPlay:Gain1Ghost Rock-foreachCardPlayed-typeGoods_and_notGadget-forOpponent
+whileInPlay:Gain1Ghost Rock-foreachCardPlayed-typeGoods_and_notGadget
 +++++
 
 .....
@@ -2027,9 +2027,9 @@ Flint's Amusements
 -----
 29add78a-5369-43d9-80d9-4006f6757a6e
 -----
-
+whileInPlay:Gain1Ghost Rock-foreachResolution-typeAction
 +++++
-
+GR0B1R0:Draw1Card
 .....
 Secured Stockyard
 -----

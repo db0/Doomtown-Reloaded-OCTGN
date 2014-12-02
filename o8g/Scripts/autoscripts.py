@@ -106,6 +106,7 @@ def executePlayScripts(card, action):
             else: notify("{} activates {}'s optional ability".format(me,card))
          executeAutoscripts(card,autoS,action = action)
          scriptEffect = 'COMPLETE'
+         if re.search(r'-isResolution',autoS): autoscriptOtherPlayers('Resolution',card) # This is used for cards which specifically trigger from Resolution effects.
    debugNotify("About to go check if I'm to go into executeAttachmentScripts()",2) # Debug
    if not re.search(r'HOST-',action): executeAttachmentScripts(card, action) # if the automation we're doing now is not for an attachment, then we check the current card's attachments for more scripts
    debugNotify("<<< executePlayScripts() with scriptEffect = {}".format(scriptEffect))
@@ -177,6 +178,7 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
                      if actionCostRegex.group(3) == '0':
                         if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 # If a card is repeat, we don't put a marker
                         else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
+                     if re.search(r'-isResolution',selectedAutoscript): autoscriptOtherPlayers('Resolution',card) # This is used for cards which specifically trigger from Resolution effects.
                else:
                   if num(actionCostRegex.group(1)): 
                      #whisper(":::INFO::: Ability aborted. Returning ghost rock cost")
