@@ -38,8 +38,8 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Technique-Tao Lu" />
-         <property name="Text" value="Shootout: Choose one of your kung-fu dudes and pull. If the pull is lower than their value, your dude becomes and stud and you may boot an opposing dude with lower bullets. Combo: If the opposing dude's bullets are now 0." />
+         <property name="Keywords" value="Technique-Tao of the Tiger" />
+         <property name="Text" value="Shootout: Choose one of your kung-fu dudes and pull. If the pull is lower than their value, boot a dude and give them -2 value. Combo: If the chosen dude has lower value than this dude." />
          <property name="Instructions" value="" />
       </card>
 
@@ -382,7 +382,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Confederate-Mad Scientist 1" />
-         <property name="Text" value="May only invent Mystical Gadgets&#xD;&#xA;[This Dude] can invent gadgets in the Town Square." />
+         <property name="Text" value="May only invent Mystical Gadgets&#xD;&#xA;[This Dude] can invent mystical gadgets and trade them to other dudes while in the Town Square. " />
          <property name="Instructions" value="" />
       </card>
 
@@ -444,7 +444,7 @@
          <property name="Rank" value="7" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
-         <property name="Cost" value="0" />
+         <property name="Cost" value="2" />
          <property name="Upkeep" value="" />
          <property name="Production" value="" />
          <property name="Bullets" value="" />
@@ -454,7 +454,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Can only be attached to Grifters.&#xD;&#xA;A dude may not have more than 1 tools of the trade attached.&#xD;&#xA;This dude has +1 Production." />
+         <property name="Text" value="Cannot be traded..&#xD;&#xA;Attaches to Grifters costing 2 less ghost rock.&#xD;&#xA;This dude gains +1 Production and the &quit;Grifter&quot; keyword and cannot have more than 1 [Tools of the Trade] attached." />
          <property name="Instructions" value="" />
       </card>
 

@@ -20,8 +20,8 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Technique" />
-         <property name="Text" value="Noon / Shootout, Pull: Choose an in-town location, or the current location if this is a shootout. Move any of your Kung Fu dudes with a value greater than or equal to the pull to that location (without booting). If this is a shootout they join your posse." />
+         <property name="Keywords" value="Technique-Tao of the Falcon" />
+         <property name="Text" value="Shootout: Choose one of your Kung-fu dudes and pull. If the pull is lower than their value, move this dude into the current shootout and unboot them. Combo: If there are equal or more dudes in the opposing posse." />
          <property name="Instructions" value="" />
       </card>
 
@@ -43,6 +43,42 @@
          <property name="Instructions" value="" />
       </card>
 
+      <card id="ba290d31-e66f-427d-bc33-65200b20ad52" name="[Skunk Technique]">
+         <property name="Rank" value="5" />
+         <property name="Suit" value="Clubs" />
+         <property name="Type" value="Action" />
+         <property name="Cost" value="0" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="" />
+         <property name="Keywords" value="Technique-Tao of the Falcon" />
+         <property name="Text" value="Shootout: Choose one of your Kung-fu dudes and pull. If the pull is lower than their value, send this dude and an opposing a dude home booted. Combo: If there is a stud in the opposing posse." />
+         <property name="Instructions" value="" />
+      </card>
+
+      <card id="23a1a9a2-cfc2-478c-9d93-46c23cb6a567" name="Whirlwind Kick">
+         <property name="Rank" value="J" />
+         <property name="Suit" value="Clubs" />
+         <property name="Type" value="Action" />
+         <property name="Cost" value="0" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="" />
+         <property name="Keywords" value="Technique-Tao of the Tiger" />
+         <property name="Text" value="Shootout: Choose one of your Kung-fu dudes and pull. If the pull is lower than their value, send home booted all opposing dudes with value lower than this dude's bullets. If those were already booted, they will not unboot during Sundown." />
+         <property name="Instructions" value="" />
+      </card>
+
       <card id="c77c3030-224b-4cb2-bf27-7be6cf6d5fcc" name="[Tiger Strike]">
          <property name="Rank" value="2" />
          <property name="Suit" value="Clubs" />
@@ -56,7 +92,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Technique-Tao Lu" />
+         <property name="Keywords" value="Technique-Tao of the Tiger" />
          <property name="Text" value="Shootout: Choose one of your kung-fu dudes and pull. If the pull is lower than their value, increase your dude's bullet rating by 1 and decrease the bullet of an opposing dude by 1. Combo: If your dude now has higher bullets than the opposing dude." />
          <property name="Instructions" value="" />
       </card>
@@ -314,10 +350,10 @@
       </card>
 
       <card id="942e1f7e-d6d0-4882-b8e7-68135e9d52fc" name="[Benjamin Byrne]">
-         <property name="Rank" value="2" />
+         <property name="Rank" value="A" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="2" />
+         <property name="Cost" value="1" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
          <property name="Bullets" value="2" />
@@ -326,8 +362,8 @@
          <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
-         <property name="Keywords" value="Grifter-Kung Fu 2" />
-         <property name="Text" value="React, boot: At the start of the game, you may discard any number of cards from your hand for every card you discard reduce the upkeep of one of your dudes by 2GR until the first High Noon phase. If you discarded at least 2 cards, draw a card." />
+         <property name="Keywords" value="Grifter" />
+         <property name="Text" value="React, boot: At the start of the game, you may discard one or more cards from your hand and draw a card. For every card you discard reduce the upkeep of one of your dudes by 2GR until the first High Noon phase." />
          <property name="Instructions" value="" />
       </card>
 
@@ -435,7 +471,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The 108" />
          <property name="Keywords" value="" />
-         <property name="Text" value="While this dude is at the same location with 2 other dudes, your hand size is increased by 1" />
+         <property name="Text" value="While this dude is at the same location with 2 or more other dudes, your hand size is increased by 1" />
          <property name="Instructions" value="" />
       </card>
 
@@ -530,7 +566,7 @@
       </card>
 
       <card id="ed07deb6-3693-4ede-ae62-0f132d538211" name="[Kirk Guezela]">
-         <property name="Rank" value="A" />
+         <property name="Rank" value="2" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
          <property name="Cost" value="1" />
@@ -687,7 +723,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit-Totem" />
-         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;React Spirit 8, Boot: After this shaman enters a shootout in this location, a 2-stud gunslinger comes into play booted and joins your posse." />
+         <property name="Text" value="This Spirit attaches to a location you control at which have a Shaman. Any shaman at this location can use this spirit (regardless of control).&#xD;&#xA;Token dudes at this location have +1 bullet, and are considered Harrowed.&#xD;&#xA;Shootout Spirit 8, Boot: A 2-stud gunslinger comes into play booted and joins your posse at this location" />
          <property name="Instructions" value="" />
       </card>
 
@@ -724,24 +760,6 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit" />
          <property name="Text" value="Shootout Spirit 10, Boot: A 2-stud gunslinger token comes into play and joins this Shaman's posse." />
-         <property name="Instructions" value="" />
-      </card>
-
-      <card id="ba290d31-e66f-427d-bc33-65200b20ad52" name="[Skunk Technique]">
-         <property name="Rank" value="5" />
-         <property name="Suit" value="Clubs" />
-         <property name="Type" value="Action" />
-         <property name="Cost" value="0" />
-         <property name="Upkeep" value="" />
-         <property name="Production" value="" />
-         <property name="Bullets" value="" />
-         <property name="Bullet Bonus" value="" />
-         <property name="Draw Type" value="" />
-         <property name="Influence" value="" />
-         <property name="Control" value="" />
-         <property name="Outfit" value="" />
-         <property name="Keywords" value="Technique" />
-         <property name="Text" value="Shootout: Boot one of your Kung-Fu dudes and pull. If the pull if less than or equal to their value you may move this dude or an opposing dude home booted." />
          <property name="Instructions" value="" />
       </card>
 
