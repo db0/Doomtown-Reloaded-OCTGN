@@ -1143,7 +1143,7 @@ Kyle Wagner
 +++++
 GR0B1R0:UnbootTarget-Targeted-atRanch-targetMine$$Remove1Used Ability-Targeted-atRanch-targetMine-isSilent
 .....
-Telepathy Helmet
+ESP Helmet
 -----
 b65c9b55-7a81-4052-87dd-70eb515b8b2f
 -----

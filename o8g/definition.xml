@@ -88,7 +88,7 @@
 			<groupaction menu="Start/End a Shootout Phase." default="False" shortcut="F10" execute="goToShootout" />
 		</groupactions>
 		<groupaction menu="Announce Pass." default="False" shortcut="Ctrl+Space" execute="Pass" />
-		<groupaction menu="Spawn Gunslinger Token." default="False" execute="spawnTokenDude" />
+		<groupaction menu="Spawn Gunslinger Token." default="False" execute="spawnGunslinger" />
 		<groupaction menu="Show Hand Rank Guide" default="False" execute="HandRankGuide" />
       <cardactions menu="Posse/Job/Callout reactions...">
          <cardaction menu="Join Attacking/Job Posse." default="False" shortcut="Ctrl+Shift+J" execute="joinAttack" />
