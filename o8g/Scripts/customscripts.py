@@ -299,3 +299,17 @@ def UnionCasino(card,mainBet,targetDude, function = 'others bet'):
             targetDude.markers[mdict['PermControl']] += 1
             notify(":> {} outbid all other players by {} and thus {} gains a permanent control point".format(me,mainBet - highBet,targetDude))
          else: notify(":> {} checked the bet by raising {} to {}'s {}".format(me,highBet,card.controller,mainBet))
+
+def PlasmaDrill(card):
+   mute()
+   production = compileCardStat(card, stat = 'Production')
+   if production > me.GhostRock: extraTXT = "\n\nAttention! You do not seem to have enough Ghost Rock to save this deed from the Plasma Drill. Pay anyway?\
+                                          \n(Saying yes will bring your ghost rock bank to the negative)"                                          
+   else: extraTXT = ''
+   if confirm("Do you want to pay {} to save {} from the Plasma Drill?{}".format(production,card.name,extraTXT)) and payCost(production) != 'ABORT': 
+      notify(":> {} pays {} to repair {} from the damage inflicted by the Plasma Drill".format(me,production,card))
+   else:
+      discard(card,silent = True)
+      notify(":> {} is damaged beyond repair by the plasma drill and is discarded".format(card))
+                               
+         
