@@ -53,7 +53,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Gadget-Difficulty 4" />
+         <property name="Keywords" value="Gadget-Difficulty 5" />
          <property name="Text" value="If you are the Winner, this dude cannot be affected by other players' Shootout abilities.&#xD;&#xA;Repeat Noon, 1GR: Look at a player's hand." />
          <property name="Instructions" value="" />
       </card>
@@ -108,7 +108,7 @@
          <property name="Text" value="Noon, Pay 1 Ghost Rock, Boot this Dude: Choose a deed at an adjacent location. Its owner must pay ghost rock equal to its production. If they cannot or do not, discard the deed (any dudes there go home booted)." />
          <property name="Instructions" value="" />
       </card>
-      <card id="d9aefb8f-ea66-4782-8fee-1e5c88c257af" name="Slade Lighboy">
+      <card id="d9aefb8f-ea66-4782-8fee-1e5c88c257af" name="Slade Lighbody">
          <property name="Rank" value="5" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />

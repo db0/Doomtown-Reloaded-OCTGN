@@ -175,7 +175,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          return 'ABORT'
       boot(targetDude[0],silent = True, forced = 'boot')
       TokensX('Put1Unprepared', '', targetDude[0])
-      dudeGoods = findTarget('AutoTargeted-atGoods_or_Spells-onAttachment', card = targetDude[0])
+      dudeGoods = findTarget('AutoTargeted-atGoods_or_Spell-onAttachment', card = targetDude[0])
       for attachment in dudeGoods: 
          boot(attachment,silent = True, forced = 'boot')
          TokensX('Put1Unprepared', '', attachment)         

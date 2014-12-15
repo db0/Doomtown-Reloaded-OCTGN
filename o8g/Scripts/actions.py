@@ -111,7 +111,9 @@ def goToShootout(group = table, x = 0, y = 0, silent = False): # Start or End a 
             else: notify("A shootout is breaking out!".format(me))
          setGlobalVariable('Shootout','True')
          for card in table: 
-            if card.highlight == InitiateColor: card.highlight = AttackColor # If a shootout breaks out, all cards in the existing (initiating) posse join the shootout.               
+            if card.highlight == InitiateColor: 
+               card.highlight = AttackColor # If a shootout breaks out, all cards in the existing (initiating) posse join the shootout.
+               executePlayScripts(card, 'PARTICIPATION')               
          atTimedEffects("ShootoutStart")
    else: # When the shootout ends however, any card.highlights for attacker and defender are quickly cleared.
       notify("The shootout has ended.".format(me))
