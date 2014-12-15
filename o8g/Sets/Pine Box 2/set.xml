@@ -454,7 +454,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Cannot be traded..&#xD;&#xA;Attaches to Grifters costing 2 less ghost rock.&#xD;&#xA;This dude gains +1 Production and the &quit;Grifter&quot; keyword and cannot have more than 1 [Tools of the Trade] attached." />
+         <property name="Text" value="Cannot be traded.&#xD;&#xA;Attaches to Grifters costing 2 less ghost rock.&#xD;&#xA;This dude gains +1 Production and the &quot;Grifter&quot; keyword and cannot have more than 1 [Tools of the Trade] attached." />
          <property name="Instructions" value="" />
       </card>
 
