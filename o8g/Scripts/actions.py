@@ -212,6 +212,9 @@ def setup(group,x=0,y=0):
 def Pass(group, x = 0, y = 0): # Player says pass. A very common action.
    notify('{} Passes.'.format(me))
 
+def Pass(group, x = 0, y = 0): # Player says ready. A very common action.
+   notify('{} is Ready!'.format(me))
+
 def clearShootout(remoted = False):
    if not remoted:
       setGlobalVariable('Shootout','False')

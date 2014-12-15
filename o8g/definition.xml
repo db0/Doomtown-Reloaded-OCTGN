@@ -88,6 +88,7 @@
 			<groupaction menu="Start/End a Shootout Phase." default="False" shortcut="F10" execute="goToShootout" />
 		</groupactions>
 		<groupaction menu="Announce Pass." default="False" shortcut="Ctrl+Space" execute="Pass" />
+		<groupaction menu="Announce Ready." default="False" shortcut="Ctrl+R" execute="Ready" />
 		<groupaction menu="Spawn Gunslinger Token." default="False" execute="spawnGunslinger" />
 		<groupaction menu="Show Hand Rank Guide" default="False" execute="HandRankGuide" />
       <cardactions menu="Posse/Job/Callout reactions...">
@@ -95,7 +96,7 @@
          <cardaction menu="Accept Call Out." default="False" shortcut="F5" execute="defend" />
          <cardaction menu="Refuse / Run Home Booted." default="False" shortcut="Esc" execute="refuseCallout" />
          <cardaction menu="Join Defending Posse." default="False" shortcut="Ctrl+Shift+D" execute="joinDefence" />
-         <cardaction menu="Remove from Posse." default="False" shortcut="Ctrl+R" execute="leavePosse" />
+         <cardaction menu="Remove from Posse." default="False" execute="leavePosse" />
       </cardactions>
       <cardaction menu="Announce move without booting." default="False" shortcut="Ctrl+M" execute="move" />
       <cardaction menu="Announce move by booting." default="False" shortcut="Ctrl+B" execute="moveBoot" />
