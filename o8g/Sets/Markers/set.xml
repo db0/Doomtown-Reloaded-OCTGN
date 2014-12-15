@@ -10,6 +10,7 @@
     <marker name="+1 Permanent Bullet"                id="a249871c-3cc6-4c7a-85d1-4d0fa7bbfead"/>
     <marker name="-1 High Noon Bullet"                id="909d3755-8f49-4f46-a263-91427f275447"/>
     <marker name="-1 Shootout Bullet"                 id="15a965ec-5289-4e87-97c3-6e56bcc59ced"/>
+    <marker name="-1 Permanent Bullet"                id="f1a85393-f482-47be-b2fa-09ef5feaacde"/>
     <marker name="Red"                                id="08aae3d6-cff5-4e55-bcc9-76354f1e7b21"/>
     <marker name="Blue"                               id="c671cb32-c8ef-46ea-93ed-f685b3e3aac5"/>
     <marker name="Used Ability"                       id="836dfd81-805b-489a-a3d6-b55d68ff5a71"/>	
@@ -19,16 +20,20 @@
     <marker name="Jailbroken"                         id="692a1ab1-9aa9-49da-aff5-114644da921f"/>			
     <marker name="+1 Permanent Influence"             id="2428921d-f3d0-4d01-9a4a-393f1557aab4"/>	
     <marker name="+1 Influence"                       id="43a4a6ba-d63b-46fd-8305-f9ffedf74f6d"/>	
+    <marker name="-1 Permanent Influence"             id="18c9ae50-e098-4c20-8981-f0751a6d8497"/>	
     <marker name="-1 Influence"                       id="b59df5b4-708b-481a-8b38-2d50eac48465"/>		
     <marker name="+1 Permanent Control"               id="e2c21df1-cc34-4a0e-aacf-9c458e6fd11d"/>		
     <marker name="+1 Control"                         id="6dbe2df7-4e9f-4e52-ab7d-c80afd7356ae"/>		
+    <marker name="-1 Permanent Control"               id="df3a9d1d-f60b-4304-aa1d-80f4d79d9ef4"/>		
     <marker name="-1 Control"                         id="474f95a6-f1a9-4e23-ba4a-8eaba8b7cc0b"/>
     <marker name="+1 Production"                      id="ddba0f0a-0c34-48b5-b7ea-ad1e1ab07c12"/>
     <marker name="-1 Production"                      id="869eebe2-f503-4d9f-8fa3-af708c7ad70c"/>
     <marker name="+1 High Noon Value"                 id="baff5422-3654-4f74-86fa-782805082fab"/>
     <marker name="+1 Shootout Value"                  id="ad3c4ae0-265f-4dcf-abc2-61189a99b728"/>
+    <marker name="+1 Permanent Value"                 id="9707333a-514e-40fb-aca3-ad17f17b0f6d"/>
     <marker name="-1 High Noon Value"                 id="7fa426df-689e-41f5-91b8-5d06cbc46463"/>
     <marker name="-1 Shootout Value"                  id="c2e4293c-85be-4b6a-8def-260647612a4b"/>
+    <marker name="-1 Permanent Value"                 id="2bcb73c4-2ae9-46ac-8eaa-2d06aa37c908"/>
     <marker name="+1 VP"                              id="dd40e5b9-f2c1-491c-b2b6-3312aa2d10d5"/>
     <marker name="-1 VP"                              id="8660fdc1-f8a5-40b1-a570-12018d17d654"/>
     <marker name="Lowball Winner"                     id="eeb5f447-f9fc-46b4-846a-a9a40e575cbc"/>

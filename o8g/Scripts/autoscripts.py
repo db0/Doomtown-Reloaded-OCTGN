@@ -106,6 +106,7 @@ def executePlayScripts(card, action):
             else: notify("{} activates {}'s optional ability".format(me,card))
          executeAutoscripts(card,autoS,action = action)
          scriptEffect = 'COMPLETE'
+         if re.search(r'-isResolution',autoS): autoscriptOtherPlayers('Resolution',card) # This is used for cards which specifically trigger from Resolution effects.
    debugNotify("About to go check if I'm to go into executeAttachmentScripts()",2) # Debug
    if not re.search(r'HOST-',action): executeAttachmentScripts(card, action) # if the automation we're doing now is not for an attachment, then we check the current card's attachments for more scripts
    debugNotify("<<< executePlayScripts() with scriptEffect = {}".format(scriptEffect))
@@ -177,6 +178,7 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
                      if actionCostRegex.group(3) == '0':
                         if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 # If a card is repeat, we don't put a marker
                         else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
+                     if re.search(r'-isResolution',selectedAutoscript): autoscriptOtherPlayers('Resolution',card) # This is used for cards which specifically trigger from Resolution effects.
                else:
                   if num(actionCostRegex.group(1)): 
                      #whisper(":::INFO::: Ability aborted. Returning ghost rock cost")
@@ -577,12 +579,20 @@ def TokensX(Autoscript, announceText, card, targetCards = None, notification = N
          elif token == mdict['BulletShootoutMinus']: minusBulletShootout(targetCard,silent = True, count = modtokens)
          elif token == mdict['BulletNoonPlus']: plusBulletNoon(targetCard,silent = True,count = modtokens)
          elif token == mdict['BulletNoonMinus']: minusBulletNoon(targetCard,silent = True,count = modtokens)
+         elif token == mdict['PermBulletPlus']: plusPermBullet(targetCard,silent = True,count = modtokens)
+         elif token == mdict['PermBulletMinus']: minusPermBullet(targetCard,silent = True,count = modtokens)
          elif token == mdict['InfluencePlus']: plusInfluence(targetCard,silent = True,count = modtokens)
          elif token == mdict['InfluenceMinus']: minusInfluence(targetCard,silent = True,count = modtokens)
+         elif token == mdict['PermInfluencePlus']: plusPermInfluence(targetCard,silent = True,count = modtokens)
+         elif token == mdict['PermInfluenceMinus']: minusPermInfluence(targetCard,silent = True,count = modtokens)
          elif token == mdict['ControlPlus']: plusControl(targetCard,silent = True,count = modtokens)
          elif token == mdict['ControlMinus']: minusControl(targetCard,silent = True,count = modtokens)
+         elif token == mdict['PermControlPlus']: plusPermControl(targetCard,silent = True,count = modtokens)
+         elif token == mdict['PermControlMinus']: minusPermControl(targetCard,silent = True,count = modtokens)
          elif token == mdict['ValueNoonPlus']: plusValue(targetCard,silent = True,valuemod = modtokens)
          elif token == mdict['ValueNoonMinus']: minusValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ValuePermPlus']: plusPermValue(targetCard,silent = True,valuemod = modtokens)
+         elif token == mdict['ValuePermMinus']: minusPermValue(targetCard,silent = True,valuemod = modtokens)
          elif token == mdict['ProdPlus']: modProd(targetCard,silent = True,count = modtokens)
          elif token == mdict['ProdMinus']: modProd(targetCard,silent = True,count = -modtokens)
          else: targetCard.markers[token] += modtokens # Finally we apply the marker modification
@@ -1165,7 +1175,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             else: 
                remoteCall(targetCard.controller,'moveCard',[targetCard,x + cardDistance(), y])
             if targetCard.highlight == AttackColor or targetCard.highlight == DefendColor: leavePosse(targetCard)
-            boot(targetCard,silent = True, forced = 'boot')
+            if not re.search(r'-doNotBoot',Autoscript): boot(targetCard,silent = True, forced = 'boot')
             orgAttachments(targetCard)
          elif action.group(1) == 'Takeover':
             targetPLs = ofwhom(Autoscript, card.controller)
