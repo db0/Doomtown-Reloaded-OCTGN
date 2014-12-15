@@ -181,6 +181,49 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          TokensX('Put1Unprepared', '', attachment)         
       targetDude[0].markers[mdict['BulletShootoutMinus']] += 1
       notify("{} has been caught with their pants down.".format(targetDude[0]))
+### SB 1-3 ###
+   elif card.name == "Make 'em Sweat" and action == 'PLAY':
+      myDude = findTarget('DemiAutoTargeted-atDude-targetMine-isUnbooted-isParticipating-choose1',card = card, choiceTitle = "Choose which of your dudes to boot for {}".format(card.name))
+      opDude = findTarget('DemiAutoTargeted-atDude-targetMine-isParticipating-choose1',card = card, choiceTitle = "Choose which dude to affect with {}".format(card.name))
+      if len(myDude) == 0 or len(opDude) == 0: return 'ABORT'
+      boot(myDude[0], silent = True)
+      bulletReduction = compileCardStat(myDude[0], stat = 'Bullets')
+      if bulletReduction: minusBulletShootout(opDude[0],count = bulletReduction)
+      if compileCardStat(opDude[0], stat = 'Bullets') == 0 and opDude[0].orientation == Rot0: 
+         boot(opDude[0], silent = True)
+         sweatedTXT = ' {} is booted.'.format(opDude[0])
+      else: sweatedTXT = ''
+      notify(":> {} boots to reduce {}'s bullets by {}.{}".format(myDude[0],opDude[0],bulletReduction,sweatedTXT))
+   elif card.name == "The R&D Ranch" and action == 'USE':
+      rank,suit = pull(silent = True)
+      me.GhostRock += 2 # You always get the GR first anyway.
+      if suit == 'Clubs':
+         notify(":> {} tries to use {} and pulled a {} of {}. It all goes horribly wrong! They have to discard the deed and all cards at that location".format(me,card,rank,suit))
+         if confirm("You pulled a club! Proceed to discard {}?".format(card.name)): discard(card)
+         else: notify(":::INFO::: {} did not discard {} even though they pulled a {}".format(me,card,suit))
+      else:
+         notify(":> {} succesfully used {} by pulling a {} of {} and produced some very tasty meat indeed. They gain 2 ghost rock.".format(me,card,rank,suit))      
+   elif card.name == "Gang Yi" and action == 'USE':
+      if getGlobalVariable('Shootout') != 'True': 
+         whisper(":::ERROR::: {} can only use his shootout ability during shootouts".format(card))
+         return 'ABORT'
+      foundDude = False
+      for c in table:
+         if c.targetedBy and c.targetedBy == me and c.Type == 'Dude' and c.controller == me and (c.highlight == AttackColor or c.highlight == DefendColor): # If we've targeted a dude in a shootout
+            x,y = c.position
+            Jx,Jy = card.position
+            c.moveToTable(Jx,Jy)
+            card.moveToTable(x,y)
+            orgAttachments(card)
+            orgAttachments(c)
+            participateDude(card)
+            leavePosse(c)
+            foundDude = True
+            notify("{} switches places with {}".format(card,c))
+            break
+      if not foundDude: 
+         whisper(":::ERROR::: No dude targeted. Aborting!")
+         return 'ABORT'         
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
