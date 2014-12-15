@@ -241,7 +241,7 @@ def markerEffects(Time = 'Start'):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))
          if Time == 'Sundown' and re.search(r'Come Git Some',marker[0]) and card.controller == me and card.owner == me: # This is the Sloane outfit ability
-            if card.markers[mdict['PermControl']]: 
+            if card.markers[mdict['PermControlPlus']]: 
                choice = SingleChoice("Do you want to take one Ghost Rock per player?", ['No, {} is not in the Town Square anymore.'.format(card.name),'Yes! Take 1 GR per player.'])
             else: choice = SingleChoice("Do you want to take one Ghost Rock per player, or put a permanent control point on this dude?'.", ['None of the above. {} is not in the Town Square anymore.'.format(card.name),'Take 1 GR per player.','Put 1 permanent CP on {}.'.format(card.name)])
             if not choice: # If the choice is 0 or None (i.e. closed the selection window) the dude is assumed to be out of the Town Square
@@ -251,7 +251,7 @@ def markerEffects(Time = 'Start'):
                notify("{}'s {} and shakes down the citizens of Gomorra for {} Ghost Rock".format(me,card,len(getActivePlayers()) - 1))
             else: 
                notify("{}'s {} puts the fear of the gun to the town, giving them one permanent control point".format(me,card))
-               card.markers[mdict['PermControl']] += 1
+               card.markers[mdict['PermControlPlus']] += 1
             card.markers[marker] = 0
          if (Time == 'ShootoutEnd'
                and (re.search(r'Sun In Yer Eyes',marker[0])

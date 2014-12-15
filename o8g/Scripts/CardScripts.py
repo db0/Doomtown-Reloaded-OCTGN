@@ -45,7 +45,7 @@ dfd2d635-4b88-4cea-9939-14deec3896cf
 -----
 
 +++++
-GR0B1R0:Put1PermControl
+GR0B1R0:Put1PermControlPlus
 .....
 Ambush
 -----
@@ -621,7 +621,7 @@ Max Baine
 -----
 
 +++++
-GR0B0R1:Refill1PermControl
+GR0B0R1:Refill1PermControlPlus
 .....
 Mechanical Horse
 -----
@@ -909,7 +909,7 @@ Silas Aims
 -----
 
 +++++
-GR0B0R1:Gain1PermBullet
+GR0B0R1:Gain1PermBulletPlus
 .....
 Sloane
 -----
