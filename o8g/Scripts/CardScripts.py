@@ -461,7 +461,7 @@ b072a22f-6c55-441f-8cce-4351038ed15c
 -----
 
 +++++
-
+GR0B0R0:Put1Huckster Skill Bonus
 .....
 Jackson's Strike
 -----
@@ -1143,13 +1143,13 @@ Kyle Wagner
 +++++
 GR0B1R0:UnbootTarget-Targeted-atRanch-targetMine$$Remove1Used Ability-Targeted-atRanch-targetMine-isSilent
 .....
-ESP Helmet
+Telepathy Helmet
 -----
 b65c9b55-7a81-4052-87dd-70eb515b8b2f
 -----
 
 +++++
-
+GR1B0R1:CustomScript
 .....
 Town Council
 -----

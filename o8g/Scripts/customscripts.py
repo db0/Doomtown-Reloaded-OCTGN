@@ -224,6 +224,10 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       if not foundDude: 
          whisper(":::ERROR::: No dude targeted. Aborting!")
          return 'ABORT'         
+   elif card.name == "Telepathy Helmet" and action == 'USE':
+      opponents = [pl for pl in getActivePlayers() if pl != me]
+      choice = SingleChoice("Choose which player's hand to look at",[pl.name for pl in opponents])
+      remoteCall(opponents[choice],'TelepathyHelmet',[me,card]) 
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -312,4 +316,20 @@ def PlasmaDrill(card):
       discard(card,silent = True)
       notify(":> {} is damaged beyond repair by the plasma drill and is discarded".format(card))
                                
-         
+def TelepathyHelmet(originator,card):
+   mute()
+   notify("{}'s {} is revealing {} hand...".format(originator,card,me))
+   me.hand.addViewer(originator)
+   update()
+   remoteCall(originator,'WhisperCards',[me,[c for c in me.hand]])
+   while not confirm("You are now revealing your hand to {}. Press Yes to continue, Press No to ping the other player to see if they had enough time to see the cards"):
+      notify("{} wants to know if it's OK to hide their hand once more".format(me))
+   me.hand.removeViewer(originator)
+   notify("{} hides their play hand once more".format(me))
+   
+def WhisperCards(player,cardList):
+   mute()
+   initText = "{} is revealing: ".format(player)
+   for c in cardList:
+      initText += "- {}\n".format(c)   
+   whisper(cardList)
