@@ -687,7 +687,7 @@ def plusBulletShootout(card, x = 0, y = 0,count = 1, silent = False):
          else:
             card.markers[mdict['BulletShootoutPlus']] += 1 
 
-def plusPermBullet(card, x = 0, y = 0, silent = False):
+def plusPermBullet(card, x = 0, y = 0, count = 1, silent = False):
    mute()
    if not silent: notify("{} marks that {}'s bullets have permanently increased by 1.".format(me, card))
    for i in range(0,count):
