@@ -76,10 +76,10 @@ def goToHighNoon(group = table, x = 0, y = 0): # Go directly to the High Noon ph
    mute()
    if me.getGlobalVariable('UpkeepDone') == 'False':
       if confirm("You do not seem to have completed your upkeep yet. Do so now?\n (Pressing No will remain in the upkeep phase so that you have a chance to discard dudes)"): upkeep()
-      else: return
+      return # We always return aftewards because upkeep will anyway come back to High Noon if all players have finished their upkeep.
    for player in getActivePlayers():
       if player != me and player.getGlobalVariable('UpkeepDone') == 'False':
-         if not confirm("The other players have not yet finished their upkeep phase. Bypass?\n\nPressing 'No' will prompt them to finish their upkeep"): 
+         while not confirm("The other players have not yet finished their upkeep phase. Bypass?\n\nPressing 'No' will prompt them to finish their upkeep"): 
             notify(":> {} is waiting for {} to finish their upkeep phase...".format(me,player))
    clearPotCard()
    setGlobalVariable('Phase','3')
@@ -397,6 +397,10 @@ def upkeep(group = table, x = 0, y = 0): # Automatically receive production and 
          notify("{} has paid {} upkeep in total this turn. {}".format(me, upk, concat_upk)) #Inform the players how much they paid and for what.
       me.GhostRock -= upk # Finally take the money out of their bank
    me.setGlobalVariable('UpkeepDone','True')
+   leftOverUpk = False
+   for player in getActivePlayers():
+      if player != me and player.getGlobalVariable('UpkeepDone') == 'False': leftOverUpk = True
+   if not leftOverUpk: goToHighNoon() # If all players have now done their upkeep, we automatically proceed to high noon.
    
 def HNActivate(card, x = 0, y = 0): # A function to add or remove High Noon (HN) markers. 
                                     # Those markers are used to signify when a high noon ability has been used, 

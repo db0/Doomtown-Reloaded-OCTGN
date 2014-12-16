@@ -8,6 +8,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 * Upkeep will now prompt you if you want to pay dudes with >3 upkeep
 * Game will now remind you to pay your upkeep if you try to take a high-noon action.
 * Game will not block continuing to High Noon if other players have not done their upkeep yet.
+* Once all players do upkeep, game will automatically move to High Noon
 
 ### 1.2.0.x
 

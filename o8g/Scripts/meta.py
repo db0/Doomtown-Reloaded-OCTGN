@@ -455,10 +455,12 @@ def clearPotCard():
    
 def clearDrawHandonTable():
    for card in table:
-      if card.controller == me and card.highlight == DrawHandColor:
-         discard(card)  
-         card.highlight = None
-      if card.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1': delCard(card)
+      if card.controller == me:
+         if card.highlight == DrawHandColor:
+            discard(card)  
+            card.highlight = None
+         if card.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1': # The cheatin' icon
+            delCard(card)
 
 def clearRemainingActions():
    for card in table:

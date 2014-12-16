@@ -5,10 +5,10 @@ import re
 
 phases = [
     '{} is currently in the Pre-game Setup Phase'.format(me),
-    "It is now GAMBLIN' time. Play Lowball!",
-    "The time has come to pay your UPKEEP",
-    "It is now HIGH NOON",
-    "SUNDOWN has come."]
+    "\n=== It is now GAMBLIN' time. Play Lowball! ===\n",
+    "\n=== The time has come to pay your UPKEEP ===\n",
+    "\n=== It is now HIGH NOON ===\n",
+    "\n===  SUNDOWN has come. ===\n"]
 
 ### Highlight Colours ###
 DoesntUnbootColor = "#ffffff"
