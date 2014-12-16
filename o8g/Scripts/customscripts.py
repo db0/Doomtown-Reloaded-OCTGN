@@ -225,8 +225,10 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          whisper(":::ERROR::: No dude targeted. Aborting!")
          return 'ABORT'         
    elif card.name == "Telepathy Helmet" and action == 'USE':
-      opponents = [pl for pl in getActivePlayers() if pl != me]
-      choice = SingleChoice("Choose which player's hand to look at",[pl.name for pl in opponents])
+      opponents = [pl for pl in getActivePlayers() if (pl != me or len(getActivePlayers()) == 1)]
+      if len(opponents) == 1: choice = 0
+      else: choice = SingleChoice("Choose which player's hand to look at",[pl.name for pl in opponents])
+      if choice == None: return
       remoteCall(opponents[choice],'TelepathyHelmet',[me,card]) 
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
