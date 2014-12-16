@@ -151,6 +151,7 @@
       <globalvariable name="Hand Rank" value="N/A" /> 
       <globalvariable name="specialCards" value="{}" /> 
       <globalvariable name="playerOutfit" value="None" /> 
+      <globalvariable name="UpkeepDone" value="False" /> 
 		<hand name="Play Hand" visibility="me" ordered="False" width="90" height="126" icon="Groups/playhand.png">
 			<cardaction menu="Play" default="True" execute="playcard" />
 			<cardaction menu="Inspect Card" default="False" shortcut="Ctrl+I" execute="inspectCard" />

@@ -74,6 +74,9 @@ def goToUpkeep(group = table, x = 0, y = 0): # Go directly to the Upkeep phase
 
 def goToHighNoon(group = table, x = 0, y = 0): # Go directly to the High Noon phase
    mute()
+   if me.getGlobalVariable('UpkeepDone') == 'False':
+      if confirm("You do not seem to have completed your upkeep yet. Do so now?\n (Pressing No will remain in the upkeep phase so that you have a chance to discard dudes)"): upkeep()
+      else: return
    clearPotCard()
    setGlobalVariable('Phase','3')
    clearHandRanks() # Just in case it was forgotten
@@ -326,7 +329,7 @@ def discardTarget(table = table, x = 0, y = 0, silent = False, targetCards = Non
       else: discard(card,silent = silent)
    
    
-def upkeep(group, x = 0, y = 0): # Automatically receive production and pay upkeep costs
+def upkeep(group = table, x = 0, y = 0): # Automatically receive production and pay upkeep costs
 # This function goes through each of your cards and checks if it provides production or requires upkeep, then automatically removes it from your bank.
    if getGlobalVariable('Phase') != '2': #One can only call for upkeep during the upkeep phase
       if not confirm(":::WARNING::: It is not yet the Upkeep phase. Do you want to jump to upkeep now?"): return
@@ -376,7 +379,8 @@ def upkeep(group, x = 0, y = 0): # Automatically receive production and pay upke
       else: # If we can pay the upkeep, do so.
          notify("{} has paid {} upkeep in total this turn. {}".format(me, upk, concat_upk)) #Inform the players how much they paid and for what.
          me.GhostRock -= upk # Finally take the money out of their bank
-         
+   me.setGlobalVariable('UpkeepDone','True')
+   
 def HNActivate(card, x = 0, y = 0): # A function to add or remove High Noon (HN) markers. 
                                     # Those markers are used to signify when a high noon ability has been used, 
                                     # as printed abilities can only ever be used once per turn, even if they do not require booting.
@@ -1456,7 +1460,9 @@ def winLowball(group = table, x = 0,y = 0, winner = me): # A function which sets
    #confirm('winner = {}'.format(winner.name)) # Debug
    debugNotify(">>> winLowball()")
    #potCard = getPotCard()
-   if getGlobalVariable('Phase') != '1' and not confirm(":::WARNING::: You are not currently in the Gamblin' phase. Are you sure you want to win lowball now?"): return      
+   if getGlobalVariable('Phase') != '1' and not confirm(":::WARNING::: You are not currently in the Gamblin' phase. Are you sure you want to win lowball now?"): return 
+   #if not getPotCard(True) and not confirm("Lowball winner seems to have been declared already. Proceed to win the lowball pot again anyway?"): return
+   for player in getActivePlayers(): me.setGlobalVariable('UpkeepDone','False')
    setWinner(winner) # Set the winner's marker
    #winner.GhostRock += potCard.markers[mdict['Ghost Rock']] # Give them all the money from the lowball pot
    winner.GhostRock += len(getActivePlayers()) # We just give them one GR per player, to avoid OCTGN lag issues
