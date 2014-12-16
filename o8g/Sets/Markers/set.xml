@@ -121,5 +121,21 @@
       <property name="Text" value="" />
       <property name="Instructions" value="" />
    </card>
+   <card id="cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1" name="Cheatin'">
+      <property name="Rank" value="" />
+      <property name="Suit" value="" />
+      <property name="Type" value="Token" />
+      <property name="Cost" value="" />
+      <property name="Upkeep" value="" />
+      <property name="Production" value="" />
+      <property name="Bullets" value="" />
+      <property name="Bullet Bonus" value="" />
+      <property name="Draw Type" value="" />
+      <property name="Influence" value="" />
+      <property name="Control" value="" />
+      <property name="Outfit" value="" />
+      <property name="Text" value="" />
+      <property name="Instructions" value="" />
+   </card>
   </cards>
 </set>
