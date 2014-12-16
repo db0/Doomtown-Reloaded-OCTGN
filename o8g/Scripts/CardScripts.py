@@ -859,7 +859,7 @@ Rumors
 -----
 d7e770dd-793f-4a53-a404-e3873a762ad1
 -----
-onPlay:Put1InfluenceMinus-Targeted-atDude-targetOpponents||Put1Rumors-Targeted-atDude-targetOpponents
+onPlay:Put1InfluenceMinus-Targeted-atDude-targetOpponents$$Put1Rumors-Targeted-atDude-targetOpponents
 +++++
 
 .....
