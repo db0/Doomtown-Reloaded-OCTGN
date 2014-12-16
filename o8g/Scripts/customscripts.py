@@ -321,17 +321,17 @@ def PlasmaDrill(card):
 def TelepathyHelmet(originator,card):
    mute()
    notify("{}'s {} is revealing {} hand...".format(originator,card,me))
-   me.hand.addViewer(originator)
+   if originator != me: me.hand.addViewer(originator)
    update()
    remoteCall(originator,'WhisperCards',[me,[c for c in me.hand]])
-   while not confirm("You are now revealing your hand to {}. Press Yes to continue, Press No to ping the other player to see if they had enough time to see the cards"):
+   while not confirm("You are now revealing your hand to {}. Press Yes to continue, Press No to ping the other player to see if they had enough time to see the cards".format(originator.name)):
       notify("{} wants to know if it's OK to hide their hand once more".format(me))
-   me.hand.removeViewer(originator)
+   if originator != me: me.hand.removeViewer(originator)
    notify("{} hides their play hand once more".format(me))
    
 def WhisperCards(player,cardList):
    mute()
-   initText = "{} is revealing: ".format(player)
+   initText = "{} is revealing:\n".format(player)
    for c in cardList:
       initText += "- {}\n".format(c)   
-   whisper(cardList)
+   whisper(initText)

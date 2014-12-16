@@ -444,6 +444,7 @@ def HandRankGuide(group, x = 0, y = 0): # Put the Hand Rank guide onto the table
 def inspectCard(card, x = 0, y = 0): # This function shows the player the card text, to allow for easy reading until High Quality scans are procured.
    if card.Text == '': information("{} has no text".format(card.name))
    else: information("{}".format(card.Text))
+   if len(getPlayers()) == 1: confirm("{}".format(CardsAA.get(card.model,'')))
    
 def inspectTarget(table, x = 0, y = 0): # This function shows the player the card text, to allow for easy reading until High Quality scans are procured.
    for c in table:
