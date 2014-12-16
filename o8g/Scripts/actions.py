@@ -338,6 +338,7 @@ def upkeep(group = table, x = 0, y = 0): # Automatically receive production and 
    gr = 0 # Variable used to track each cards production/upkeep
    concat_prod = '' # A string which we will use to provide a succint notification at the end
    concat_upk = '' # Same as above
+   upkeep_concats_dict = {}
    prod = 0 # Variable to track total production received.
    upk = 0 # Variable to track total upkeep paid.
    cards = (card for card in table # Create a group with all the cards you own and control on the table.
@@ -366,19 +367,31 @@ def upkeep(group = table, x = 0, y = 0): # Automatically receive production and 
          prod += gr
          concat_prod += '{} GR from {}. '.format(str(gr),card) # This is where the concatenation happens
       elif gr < 0: # Much like production, we only add the name to the string if it's having any upkeep
-         upk += -gr # Add the negative gr as a positive amount to the variable, so that we can compare it later to  our remaining GR.
-         concat_upk += '{} GR for {}. '.format(str(gr),card)
+         if gr < -3:
+            if not confirm("{} has {} upkeep. Are you sure you want to pay their upkeep this turn? (Pressing No will discard them)".format(card.name,abs(gr))): 
+               discard(card)
+               continue
+         upk += abs(gr) # Add the negative gr as a positive amount to the variable, so that we can compare it later to  our remaining GR.
+         #concat_upk += '{} GR for {}. '.format(str(gr),card)
+         upkeep_concats_dict[card] = ('{} GR for {}. '.format(str(gr),card), abs(gr)) # We make a tuple of the string to add and the money we have to pay
+   if upk > 0 and me.GhostRock + prod - upk < 0: 
+      upkDudes = [(dude, upkeep_concats_dict[dude][1]) for dude in upkeep_concats_dict]
+      while len(upkDudes) and me.GhostRock + prod - upk < 0:
+         choice = SingleChoice("You do not have enough money to pay your upkeep this turn. Choose one of your dudes with upkeep to discard.\n\n(You need to reduce your upkeep by {}. Close this window to discard nobody else.)".format(abs(me.GhostRock + prod - upk)),["{} - {} upk".format(dude[0].name,dude[1]) for dude in upkDudes])
+         if choice == None: break # If they close the window, we assume they're going to keep their dudes, even if they cannot pay them (card effects?)
+         unpaid_dude = upkDudes.pop(choice)
+         discard(unpaid_dude[0])
+         upk -= unpaid_dude[1]
+         upkeep_concats_dict[unpaid_dude[0]] = ('Discarded {}. '.format(unpaid_dude[0]),0)
+   for dude in upkeep_concats_dict: concat_upk += upkeep_concats_dict[dude][0]
    notify("{} has produced {} ghost rock this turn: {}".format(me, prod, concat_prod)) # Inform the players how much they produced and from where.
    me.GhostRock += prod # Then add the money to their Ghost Rock counter.
-                        # Note that you can only modify counters with a single-string name due to bug 372
-                        # See https://octgn.16bugs.com/projects/3602/bugs/188803
    if upk > 0: # If we need to pay any upkeep, we do it after receiving production for the turn.
-      if me.GhostRock < upk: # If we cannot pay with the money we have, then let the player decide what to do.
-                             # I could have made their bank account negative and let them modify it manually, but I think this way is better.
-         notify("{} has {}GR in their bank but needs to pay {}GR for upkeep ({}). No GR has been taken but please discard enough cards with upkeep and reduce your remaining Ghost Rock manually.".format(me, me.GhostRock, upk, concat_upk))
+      if me.GhostRock < upk: # If we cannot pay with the money we have, then put the player's money to negative and let them fix it manually.
+         notify("{} has {} GR in their bank but needs to pay {} GR for upkeep ({}). Their Ghost Rock stash is now negative and they'll need to fix it manually before proceeding.".format(me, me.GhostRock, upk, concat_upk))
       else: # If we can pay the upkeep, do so.
          notify("{} has paid {} upkeep in total this turn. {}".format(me, upk, concat_upk)) #Inform the players how much they paid and for what.
-         me.GhostRock -= upk # Finally take the money out of their bank
+      me.GhostRock -= upk # Finally take the money out of their bank
    me.setGlobalVariable('UpkeepDone','True')
    
 def HNActivate(card, x = 0, y = 0): # A function to add or remove High Noon (HN) markers. 
