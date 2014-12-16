@@ -77,6 +77,10 @@ def goToHighNoon(group = table, x = 0, y = 0): # Go directly to the High Noon ph
    if me.getGlobalVariable('UpkeepDone') == 'False':
       if confirm("You do not seem to have completed your upkeep yet. Do so now?\n (Pressing No will remain in the upkeep phase so that you have a chance to discard dudes)"): upkeep()
       else: return
+   for player in getActivePlayers():
+      if player != me and player.getGlobalVariable('UpkeepDone') == 'False':
+         if not confirm("The other players have not yet finished their upkeep phase. Bypass?\n\nPressing 'No' will prompt them to finish their upkeep"): 
+            notify(":> {} is waiting for {} to finish their upkeep phase...".format(me,player))
    clearPotCard()
    setGlobalVariable('Phase','3')
    clearHandRanks() # Just in case it was forgotten
@@ -1492,7 +1496,9 @@ def winLowball(group = table, x = 0,y = 0, winner = me): # A function which sets
    #potCard = getPotCard()
    if getGlobalVariable('Phase') != '1' and not confirm(":::WARNING::: You are not currently in the Gamblin' phase. Are you sure you want to win lowball now?"): return 
    #if not getPotCard(True) and not confirm("Lowball winner seems to have been declared already. Proceed to win the lowball pot again anyway?"): return
-   for player in getActivePlayers(): me.setGlobalVariable('UpkeepDone','False')
+   for player in getActivePlayers(): 
+      if player == me: me.setGlobalVariable('UpkeepDone','False')
+      else: remoteCall(player,'setPlayerVariable',['UpkeepDone','False'])      
    setWinner(winner) # Set the winner's marker
    #winner.GhostRock += potCard.markers[mdict['Ghost Rock']] # Give them all the money from the lowball pot
    winner.GhostRock += len(getActivePlayers()) # We just give them one GR per player, to avoid OCTGN lag issues

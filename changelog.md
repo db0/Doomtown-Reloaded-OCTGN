@@ -1,6 +1,14 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.2.1.x
+
+* Cheatin' Draw Hands will now have a little icon to make it more obvious, without having to look in the chat.
+* Upkeep will now prompt you to discard dudes you cannot pay
+* Upkeep will now prompt you if you want to pay dudes with >3 upkeep
+* Game will now remind you to pay your upkeep if you try to take a high-noon action.
+* Game will not block continuing to High Noon if other players have not done their upkeep yet.
+
 ### 1.2.0.x
 
 ** New Town, New Rules** has arrived into town!

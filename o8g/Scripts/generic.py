@@ -687,4 +687,7 @@ def delCard(card,wait = False):
 def moveCard(card,x,y):
    mute()
    card.moveToTable(x, y)
-      
+
+def setPlayerVariable(var,value):
+   mute()
+   me.setGlobalVariable(var,value)
