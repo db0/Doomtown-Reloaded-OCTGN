@@ -9,6 +9,11 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 * Game will now remind you to pay your upkeep if you try to take a high-noon action.
 * Game will not block continuing to High Noon if other players have not done their upkeep yet.
 * Once all players do upkeep, game will automatically move to High Noon
+* Scripted the Telepathy Helmet
+* Added "I'm Ready" announcement (Ctrl+R)
+* Unprepared will now boot spells
+* Mendoza and Irving will now lose/gain GR when they call out.
+* Scripted Plasma Drill and the other SB1 scripts
 
 ### 1.2.0.x
 
