@@ -312,7 +312,7 @@ def discard(card, x = 0, y = 0, silent = False): # Discard a card.
          else: notify("{} has cleared the resident effect of {}.".format(me, card))
    clearAttachLinks(card,'Discard')
    reCalculate(notification = 'silent')
-   if (card.highlight == EventColor and re.search('Ace this card', card.Text)) or card.Type == 'Joker': # If the card being discarded was an event in a lowball hand or a joker in a draw hand
+   if (card.highlight == EventColor and re.search('Ace this card', card.Text)) or (card.Type == 'Joker' and card.highlight == DrawHandColor): # If the card being discarded was an event in a lowball hand or a joker in a draw hand
                                                                                                         # And that card had instructions to be aced
       card.moveTo(cardowner.piles['Boot Hill'])                                                         # Then assume player error and ace it now        
       if card.Type == 'Joker': notify("{} has been aced as per card instructions.".format(card)) # And inform the players.
