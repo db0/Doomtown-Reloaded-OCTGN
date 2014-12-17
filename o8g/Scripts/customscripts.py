@@ -302,7 +302,7 @@ def UnionCasino(card,mainBet,targetDude, function = 'others bet'):
                      card.markers[currBet] = 0
                      highBetter = player
          if mainBet >= (highBet + 4) or not highBetter: 
-            targetDude.markers[mdict['PermControl']] += 1
+            targetDude.markers[mdict['PermControlPlus']] += 1
             notify(":> {} outbid all other players by {} and thus {} gains a permanent control point".format(me,mainBet - highBet,targetDude))
          else: notify(":> {} checked the bet by raising {} to {}'s {}".format(me,highBet,card.controller,mainBet))
 

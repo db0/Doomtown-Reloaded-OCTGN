@@ -938,8 +938,9 @@ def tradeGoods(card, x = 0, y = 0):
       whisper(":::ERROR::: This dude does not hold any goods they can trade.")
       return
    elif len(attachedGoods) == 1: 
-      if attachedGoods[0].markers[mdict['Traded']] and not confirm("This goods has already been traded this turn. Bypass once-per-turn restriction?"): return
-      else: extraTXT = ' (Bypassing the once-per-turn restriction)'
+      if attachedGoods[0].markers[mdict['Traded']]:
+         if not confirm("This goods has already been traded this turn. Bypass once-per-turn restriction?"): return
+         else: extraTXT = ' (Bypassing the once-per-turn restriction)'
       attachCard(attachedGoods[0],newHost)  #If there's only 1 goods attached, we assume that's the one that is going to be moved.
       chosenGoods.append(attachedGoods[0])
       attachedGoods[0].markers[mdict['Traded']] += 1
