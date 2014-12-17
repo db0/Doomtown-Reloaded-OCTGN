@@ -394,6 +394,9 @@ def redirect(Autoscript, card, action, X = 0,targetC = None):
    elif regexHooks['ChooseKeyword'].search(Autoscript): 
       debugNotify("in ChooseKeyword hook")
       if ChooseKeyword(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
+   elif regexHooks['SpawnX'].search(Autoscript): 
+      debugNotify("in SpawnX hook")
+      if SpawnX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
    elif regexHooks['ModifyStatus'].search(Autoscript): 
       debugNotify("in ModifyStatus hook")
       if ModifyStatus(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
@@ -412,9 +415,6 @@ def redirect(Autoscript, card, action, X = 0,targetC = None):
    elif regexHooks['PullX'].search(Autoscript): 
       debugNotify("in PullX hook")
       if PullX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
-   elif regexHooks['SpawnX'].search(Autoscript): 
-      debugNotify("in SpawnX hook")
-      if SpawnX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
    else: debugNotify("No regexhook match! :(") # Debug
    debugNotify("Loop for scipt {} finished".format(Autoscript), 2)
    return X # If all went well,we return the X.
@@ -1005,7 +1005,7 @@ def SpawnX(Autoscript, announceText, card, targetCards = None, notification = No
    debugNotify(str(action.groups()),4)
    markers = re.search(r'\bSpawn[A-Za-z0-9_ -]*(-with)([A-Za-z0-9_ -]*)', Autoscript)
    modAction = re.search(r'-modAction:(.+)', Autoscript)
-   debugNotify(str(modAction.groups()),4)
+   if modAction: debugNotify(str(modAction.groups()),4)
    if action.group(2) == 'Gunslinger': spawnModel = '94fe7823-077c-4abd-9278-6e64bda6dc64' # for now we only have the gunslinger token, but in the future we might get more of them.
    else:
       whisper(":::ERROR::: Spawn Model for '{}' not understood. Aborting".format(action.group(2)))
