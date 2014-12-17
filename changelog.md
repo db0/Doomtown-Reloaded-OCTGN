@@ -1,6 +1,16 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.2.3.x
+
+* Hired Help and Bounty Hunter will now properly spawn gunslingers
+* Union Casino should work now
+* Joker will not be aced from Pony Express anymore.
+
+### 1.2.2.x
+
+Various bugfixes
+
 ### 1.2.1.x
 
 * Cheatin' Draw Hands will now have a little icon to make it more obvious, without having to look in the chat.
