@@ -132,7 +132,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       if not len(targetDude):
          whisper(":::ERROR::: You need to target an unbooted dudes at this deed to use this ability")
          return 'ABORT'
-      boot(targetDude[0],silent = True)
+      #boot(targetDude[0],silent = True) # It doesn't actually boot the dude. Huh.
       myBet = askInteger("How much ghost rock do you want to bet on the Union Casino?",4)
       if payCost(myBet, loud) == 'ABORT': return 'ABORT'
       if myBet <= 3: notify(":> {} felt the need to burn some money by wasting {} Ghost Rock on Union Casino. Nothing else happens".format(me,myBet))
