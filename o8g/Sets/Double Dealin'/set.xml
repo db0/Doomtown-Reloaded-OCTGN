@@ -274,7 +274,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Unique-Mystical." />
+         <property name="Keywords" value="Unique-Mystical" />
          <property name="Text" value="Noon/Shootout, Boot: Give a target dude -3 Value (to a minimum of 1)" />
          <property name="Instructions" value="" />
       </card>
@@ -308,7 +308,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Hex-Cheatin'" />
+         <property name="Keywords" value="Hex" />
          <property name="Text" value="Cheatin' Resolution Hex 5, Boot: You may place a card from your draw hand into your play hand after resolution. If this is a shootout, you suffer 3 less casualties this round." />
          <property name="Instructions" value="" />
       </card>
