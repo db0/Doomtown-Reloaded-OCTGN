@@ -1295,6 +1295,150 @@ Alice Stowe
 +++++
 
 .....
+Dr. Emanuel Ashbel
+-----
+17760a8d-adc3-40cc-9c85-578b7f2b30c5
+-----
+
++++++
+GR0B0R0:Pull1Cards
+.....
+..It's who you know
+-----
+48c8526d-6dee-4ee8-9636-01d3891db8f8
+-----
+onPlay:CalloutTarget-Targeted-atDude-targetOpponents-leaderTarget{Dude}
++++++
+
+.....
+Horse Wranglin'
+-----
+f51e5631-7582-492f-8351-e1e808d39d19
+-----
+onPlay:Retrieve1Cards-grabHorse-toTable-payCost||onPlay:Retrieve1Cards-grabHorse-toTable-payCost-fromDiscard
++++++
+
+.....
+It's Not What You Know...
+-----
+a23d36e0-8231-49e7-bbc4-4e56c179b045
+-----
+
++++++
+onPlay:SimplyAnnounce{Reduce a player's draw rank by 1 hand rank}||SimplyAnnounce{Reduce a player's draw rank by 4 hand ranks}-isResolution
+.....
+Baird's Build and Loan
+-----
+949e9f9d-bc65-4486-b115-a1d364aaae0d
+-----
+
++++++
+GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atDeed-choose1-payCost-reduc2
+.....
+Leonardo "Leon" Cavallo
+-----
+90b3fbde-2834-4c49-9577-1d8723feadd4
+-----
+
++++++
+GR0B1R0:Pull1Card-testHexX-difficultyValue-spellEffects<BootTarget-Targeted,None>
+.....
+Gang Yi
+-----
+631a3c9a-b970-47f5-a196-c078ad913d56
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+Angelica Espinosa
+-----
+08fbd7c6-0413-4b5b-872e-a9ba16e3276d
+-----
+
++++++
+GR0B0R0:ParticipateMyself
+.....
+Jose Morales
+-----
+1e61fcd0-65fa-414f-8838-d76f1394b041
+-----
+constantAbility:Skill Bonus:1-perProperty{Bullets}-isParticipating
++++++
+
+.....
+Tallulah "Lula" Morgan
+-----
+434353cb-3040-4709-a7d5-e4f36006128b
+-----
+
++++++
+GR1B1R0:Gain1Ghost Rock-perTargetProperty{Production}-Targeted-atDeed-targetMine
+.....
+Ballot Counter
+-----
+ffed2e8d-67cf-42ab-8a34-110110b59c72
+-----
+
++++++
+GR1B0R1:Put1InfluencePlus
+.....
+Holy Wheel Gun
+-----
+dba818f0-4802-474c-91c8-07536e32fb3d
+-----
+
++++++
+GR0B1R0:Put1BulletShootoutMinus-Targeted-atDude-isParticipating$$Put1Shootout:Holy Wheel Gun Mark-Targeted-atAbomination-isParticipating-noTargetingError
+.....
+Stone Idol
+-----
+f94631b0-20f6-492b-b732-e36b816e523f
+-----
+
++++++
+GR0B1R0:Put3ValueNoonMinus-Targeted-atDude
+.....
+Corporeal Twist
+-----
+8272e52f-aa01-403e-9ea4-0408bdcf3fdc
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex5-spellEffects<Put1BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents++Put2ValueShootoutMinus-Targeted-atDude-isParticipating-targetOpponents,None>
+.....
+Surveyor's Office
+-----
+cdc1e1d2-d985-400f-ab3c-f91744619eed
+-----
+
++++++
+GR0B1R0:MoveTarget-DemiAutoTargeted-atDude-targetMine-moveToDeed_or_Town Square_or_Outfit
+.....
+Genesee "Gina" Tailfeathers
+-----
+437cd8a9-fe8a-497f-9625-9054511f91ea
+-----
+
++++++
+GR0B1R0:DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Draw2Cards
+.....
+Richard Slavin
+-----
+68b6d3d2-207c-47ed-9311-0949f86308b9
+-----
+
++++++
+GR0B1R0:Pull1Card
+.....
+Fetch
+-----
+f138c8f1-00cc-4ca4-b145-e9c5105dc76a
+-----
+
++++++
+GR0B1R0:Pull1Card-isResolution
+.....
 ENDSCRIPTS
 =====
 '''
