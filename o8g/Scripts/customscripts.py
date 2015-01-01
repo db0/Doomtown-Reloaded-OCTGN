@@ -41,18 +41,13 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          if c.controller != me and c.controller not in drawHandPlayers and c.highlight == DrawHandColor: drawHandPlayers.append(c.controller)
       if len(drawHandPlayers) == 1: targetPL = drawHandPlayers[0]
       elif len(drawHandPlayers) == 0:
-         whisper(":::ERRROR::: No valid player found to bottom deal. Aborting!")
+         whisper(":::ERROR::: No valid player found to bottom deal. Aborting!")
          return 'ABORT'
       else: 
          choice = SingleChoice("Please choose which of your opponents you're bottom dealin'.", [pl.name for pl in drawHandPlayers])
          if choice == None: return 'ABORT'
          targetPL = drawHandPlayers[choice]
-      remoteCall(targetPL,'clearDrawHandonTable',[])
-      drawhandMany(me.Deck, 5, True,scripted = True)
-      if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
-      else: Drawtype = 'lowball'
-      resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
-      notify("{}'s new hand rank is {}".format(targetPL,resultTXT))
+      remoteCall(targetPL,'BottomDealing',[me,card])
    elif card.name == "Coachwhip!" and action == 'PLAY':
       debugNotify("Coachwhip Script")
       targetDude = [c for c in table if c.targetedBy and c.targetedBy == me and c.controller != me and c.Type == 'Dude']
@@ -335,3 +330,10 @@ def WhisperCards(player,cardList):
    for c in cardList:
       initText += "- {}\n".format(c)   
    whisper(initText)
+
+def BottomDealing(originPlayer,card):
+   drawhandMany(originPlayer.Deck, 5, True,scripted = True)
+   if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
+   else: Drawtype = 'lowball'
+   resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
+   notify("{}'s new hand rank is {}".format(me,resultTXT))

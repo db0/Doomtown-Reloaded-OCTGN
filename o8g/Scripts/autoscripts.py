@@ -78,6 +78,9 @@ def executePlayScripts(card, action):
       for autoS in Autoscripts:
          debugNotify("First Processing: {}".format(autoS)) # Debug
          effectType = re.search(r'(on[A-Za-z]+|while[A-Za-z]+):', autoS)
+         if not effectType: 
+            whisper(":::ERROR::: Script on {} is malformed. Please contact Db0!".format(card))
+            return
          scriptHostCHK = re.search(r'(?<!-)onHost([A-Za-z]+)',effectType.group(1))
          actionHostCHK = re.search(r'HOST-([A-Z-]+)',action)
          currObjID = getGlobalVariable('Engaged Objective')
