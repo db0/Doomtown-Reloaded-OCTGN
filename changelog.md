@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.3.0.x
+
+** Double Dealin'** has arrived into town!
+
 ### 1.2.3.x
 
 * Hired Help and Bounty Hunter will now properly spawn gunslingers
