@@ -47,6 +47,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          choice = SingleChoice("Please choose which of your opponents you're bottom dealin'.", [pl.name for pl in drawHandPlayers])
          if choice == None: return 'ABORT'
          targetPL = drawHandPlayers[choice]
+      passPileControl(deck,targetPL)   
       remoteCall(targetPL,'BottomDealing',[me,card])
    elif card.name == "Coachwhip!" and action == 'PLAY':
       debugNotify("Coachwhip Script")
@@ -335,5 +336,8 @@ def BottomDealing(originPlayer,card):
    drawhandMany(originPlayer.Deck, 5, True,scripted = True)
    if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
    else: Drawtype = 'lowball'
+   rnd(1,10)
    resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
    notify("{}'s new hand rank is {}".format(me,resultTXT))
+   passPileControl(originPlayer.Deck,originPlayer)   
+

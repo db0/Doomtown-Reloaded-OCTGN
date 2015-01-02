@@ -533,7 +533,6 @@ def getActivePlayers():
    return [player for player in getPlayers() if len(player.Deck) > 0 or len(player.piles['Discard Pile']) > 0]
    
 def claimCard(card, player = me): # Requests the controller of a card to pass control to another player (script runner by default)
-   debugNotify(">>> claimCard()") #Debug
    if card.controller != player: # If the card is already ours, we do not need to do anything.
       prevController = card.controller
       prevGroup = card.group
@@ -549,10 +548,8 @@ def claimCard(card, player = me): # Requests the controller of a card to pass co
             debugNotify(":::ERROR::: claimCard() failed. Card controller still {} instead of {}. Giving up".format(card.controller.name,player)) # This always seems to fail (https://github.com/kellyelton/OCTGN/issues/416#issuecomment-31157031)
             return
       #if prevGroup == table: autoscriptOtherPlayers('{}:CardTakeover:{}'.format(player,prevController),card)
-   debugNotify("<<< claimCard()") #Debug
    
 def giveCard(card,player,pile = None): # Passes control of a card to a given player.
-   debugNotify(">>> giveCard()") #Debug
    mute()
    if card.group == table: 
       prevController = card.controller
@@ -564,15 +561,30 @@ def giveCard(card,player,pile = None): # Passes control of a card to a given pla
       # If the card is in one of our piles, we cannot pass control to another player since we control the whole pile. We need to move it to their scripting pile. 
       # This should automatically also pass control to the controller of that pile
    update()
-   debugNotify("<<< giveCard()") #Debug
 
+def grabPileControl(pile, player = me):
+   if pile.controller != player:
+      if pile.controller != me: remoteCall(pile.controller,'passPileControl',[pile,player])
+      else: passPileControl(pile,player) # We don't want to do a remote call if the current controller is ourself, as the call we go out after we finish all scripts, which will end up causing a delay later while the game is checking if control pass is done.
+   count = 0
+   while pile.controller != player: 
+      if count >= 2 and not count % 2: notify("=> {} is still trying to take control of {}...".format(player,pileName(pile)))
+      rnd(1,100)
+      count += 1
+      if count >= 3: 
+         notify(":::ERROR::: Pile Control not passed! Will see errors.")
+         break   
+
+def passPileControl(pile,player):
+   mute()
+   update()
+   pile.setController(player)
+   
 def fetchHost(card):
-   debugNotify(">>> fetchHost()") #Debug
    host = None
    hostCards = eval(getGlobalVariable('Host Cards'))
    hostID = hostCards.get(card._id,None)
    if hostID: host = Card(hostID) 
-   debugNotify("<<< fetchHost() with return {}".format(host)) #Debug
    return host
          
 #---------------------------------------------------------------------------
