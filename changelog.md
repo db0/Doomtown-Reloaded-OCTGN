@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.3.1.x
+
+* Fixes error on Bottom Dealin'
+
 ### 1.3.0.x
 
 ** Double Dealin'** has arrived into town!
