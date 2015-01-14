@@ -488,7 +488,9 @@ def reCalculate(group = table, x = 0, y = 0, notification = 'loud'):
    concat_inf = ' (' # We start our concatenated list of the cards with influence. We're going to put them in parenthesis for easy reading.
    concat_cp = ' ('
    cards = (card for card in table # We only care for cards we control. 
-            if card.controller == me)
+            if card.controller == me
+            and card.highlight != DrawHandColor
+            and card.highlight != DummyColor)
    for card in cards:
       count = num(card.Influence) + card.markers[mdict['InfluencePlus']] + card.markers[mdict['PermInfluencePlus']] - card.markers[mdict['InfluenceMinus']] # Put the card's total influence on a temp marker.
       if count > 0: # We only care to do anything if the card had any influence
