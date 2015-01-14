@@ -1271,14 +1271,6 @@ Dulf Zug
 +++++
 
 .....
-Forget
------
-0857fa1d-c061-4606-bb55-4736edcfd2e9
------
-
-+++++
-GR0B1R0:Pull1Card
-.....
 Lillian Morgan
 -----
 32f4797f-7584-453c-b6a3-9cf3656dcc96
