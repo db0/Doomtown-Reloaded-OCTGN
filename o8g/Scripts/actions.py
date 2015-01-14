@@ -120,7 +120,7 @@ def goToShootout(group = table, x = 0, y = 0, silent = False): # Start or End a 
          for card in table: 
             if card.highlight == InitiateColor: 
                card.highlight = AttackColor # If a shootout breaks out, all cards in the existing (initiating) posse join the shootout.
-               executePlayScripts(card, 'PARTICIPATION')               
+               if getGlobalVariable('Job Active') != 'True': executePlayScripts(card, 'PARTICIPATION') # If they were part of a job posse, then these scripts have already been triggered, so we don't do it again.
          atTimedEffects("ShootoutStart")
    else: # When the shootout ends however, any card.highlights for attacker and defender are quickly cleared.
       notify("The shootout has ended.".format(me))
