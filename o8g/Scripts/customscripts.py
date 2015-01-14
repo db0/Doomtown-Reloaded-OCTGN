@@ -178,9 +178,9 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       targetDude[0].markers[mdict['BulletShootoutMinus']] += 1
       notify("{} has been caught with their pants down.".format(targetDude[0]))
 ### SB 1-3 ###
-   elif card.name == "Make 'em Sweat" and action == 'PLAY':
-      myDude = findTarget('DemiAutoTargeted-atDude-targetMine-isUnbooted-isParticipating-choose1',card = card, choiceTitle = "Choose which of your dudes to boot for {}".format(card.name))
-      opDude = findTarget('DemiAutoTargeted-atDude-targetMine-isParticipating-choose1',card = card, choiceTitle = "Choose which dude to affect with {}".format(card.name))
+   if card.name == "Make 'em Sweat" and action == 'PLAY':
+      myDude = findTarget('DemiAutoTargeted-atDude-targetMine-isUnbooted-isParticipating-choose1', choiceTitle = "Choose which of your dudes to boot for {}".format(card.name))
+      opDude = findTarget('DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1', choiceTitle = "Choose which dude to affect with {}".format(card.name))
       if len(myDude) == 0 or len(opDude) == 0: return 'ABORT'
       boot(myDude[0], silent = True)
       bulletReduction = compileCardStat(myDude[0], stat = 'Bullets')
