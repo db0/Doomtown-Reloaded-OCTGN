@@ -3,9 +3,13 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 
 ### 1.3.2.x
 
-* Fixes It's Who You Know
-* Fixes Make 'Em Sweat
-* Fixes Mongwau always discarding his first spell
+* Fixed It's Who You Know calling out with opposing dude
+* Fixed Make 'Em Sweat targeting your own dude
+* Fixed Mongwau always discarding his first spell
+* Fixed Faithful hound costing 1
+* Fixed Paying/Gaining Twice for Mendoza/Irving on jobs
+* Fixed Surveyor's office not targeting correctly
+* Fixed Recalculating counting draw hand cards
 
 ### 1.3.1.x
 
