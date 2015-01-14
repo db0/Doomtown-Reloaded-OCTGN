@@ -1407,6 +1407,14 @@ Corporeal Twist
 +++++
 GR0B1R0:Pull1Card-testHex5-spellEffects<Put1BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents++Put2ValueShootoutMinus-Targeted-atDude-isParticipating-targetOpponents,None>
 .....
+Forget
+-----
+0857fa1d-c061-4606-bb55-4736edcfd2e9
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex5-spellEffects<Put1High Noon:Forget-Targeted-atDude,None>
+.....
 Surveyor's Office
 -----
 cdc1e1d2-d985-400f-ab3c-f91744619eed
