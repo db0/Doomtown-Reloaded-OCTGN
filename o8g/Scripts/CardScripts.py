@@ -653,7 +653,7 @@ Mongwau the Mighty
 -----
 
 +++++
-GR0B0R0:DiscardTarget-AutoTargeted-atSpell-onAttachment-isCost$$Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
+GR0B0R0:DiscardTarget-DemiAutoTargeted-atSpell-onAttachment-isCost-choose1$$Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
 .....
 Morgan Cattle Co.
 -----
