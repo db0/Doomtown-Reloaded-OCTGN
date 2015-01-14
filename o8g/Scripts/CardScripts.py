@@ -1413,7 +1413,7 @@ cdc1e1d2-d985-400f-ab3c-f91744619eed
 -----
 
 +++++
-GR0B1R0:MoveTarget-DemiAutoTargeted-atDude-targetMine-moveToDeed_or_Town Square_or_Outfit
+GR0B1R0:MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit
 .....
 Genesee "Gina" Tailfeathers
 -----

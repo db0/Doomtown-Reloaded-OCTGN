@@ -1,6 +1,12 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.3.2.x
+
+* Fixes It's Who You Know
+* Fixes Make 'Em Sweat
+* Fixes Mongwau always discarding his first spell
+
 ### 1.3.1.x
 
 * Fixes error on Bottom Dealin'
