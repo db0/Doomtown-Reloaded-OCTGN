@@ -1165,7 +1165,7 @@ bf48f3c1-bd08-4542-a8c6-6af0a8e7cfa4
 -----
 
 +++++
-GR1B1R0:Pull1Card
+GR0B1R0:Pull1Card
 .....
 Plasma Drill
 -----
