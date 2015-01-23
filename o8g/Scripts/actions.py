@@ -233,9 +233,13 @@ def clearShootout(remoted = False):
       clearHandRanks()  # Clear the Hand Ranks, in case one is leftover.
       setGlobalVariable('Mark','None')
       setGlobalVariable('Job Active','False')
+   announcedLeader = False
    for card in table:
       if card.controller == me:
-         if card.highlight == DefendColor or card.highlight == AttackColor or card.highlight == InitiateColor: 
+         if card.highlight == DefendColor or card.highlight == AttackColor or card.highlight == InitiateColor:
+            if card.highlight == AttackColor:
+               if not announcedLeader: notify(":::INFO::: {} was the Leader in this shootout.".format(card.controller))
+               announcedLeader = True
             card.highlight = None
             executePlayScripts(card, 'UNPARTICIPATE')
          card.markers[mdict['BulletShootoutPlus']] = 0 
