@@ -626,6 +626,10 @@ def orgAttachments(card,facing = 'Same'):
       attNR += 1
       debugNotify("Moving {}, Iter = {}".format(attachment,attNR), 4)
    card.sendToFront() # Because things don't work as they should :(
+   for c in table:
+      if c.model == "ac0b08ed-8f78-4cff-a63b-fa1010878af9": 
+         c.sendToBack() # We always send the Town Square to the back so that it doesn't hide our attachments
+         break
    if debugVerbosity >= 4: # Checking Final Indices
       for attachment in cardAttachements: notify("{} index = {}".format(attachment,attachment.getIndex)) # Debug
    debugNotify("<<< orgAttachments()", 3) #Debug      
