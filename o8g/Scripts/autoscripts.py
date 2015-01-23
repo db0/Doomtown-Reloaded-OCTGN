@@ -875,7 +875,8 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
             difficulty = compileCardStat(targetCards[0], 'Influence') + compileCardStat(targetCards[0], 'Bullets') + compileCardStat(targetCards[0], 'Value')
          else: difficulty = compileCardStat(targetCards[0], 'Value') # If it's not grit, the only other option (for now) is value
       else: difficulty = num(spellDifficulty.group(2))  # If it's not a variable difficulty, then we just set the numeric value for it
-      skilledDude = fetchHost(card)
+      if card.Type == 'Dude': skilledDude = card # if the card calling the script is a dude, we assume the ability is coming from them.
+      else: skilledDude = fetchHost(card)
       skills = fetchSkills(skilledDude)
       neededSkill = None
       spellEffects = re.search(r'-spellEffects<(.*?),(.*?)>', Autoscript)
