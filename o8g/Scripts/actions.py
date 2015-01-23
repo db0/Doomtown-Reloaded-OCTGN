@@ -1380,6 +1380,7 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
          elif playeraxis == Yaxis: card.moveToTable(cwidth(card) / -2 + i * (cwidth(card) / 4), homeDistance(card) - cardDistance(card))
          else: card.moveToTable(i * (cwidth(card) / 4) - cwidth(card), 0)
          if foundjoker == 'yes': random = rnd(100, 10000)
+      if i == 2: cxp, cyp = card.position  # We note down the middle card location, so that we put the cheatin marker precicely.
       card.highlight = DrawHandColor # Highlight them
       if type == 'lowball' and card == event: 
          card.highlight = EventColor # If this is the selected event, highlight it differently
@@ -1391,18 +1392,18 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
    if cheatResult != '': 
       if type == 'shootout':
          if playeraxis == Xaxis:
-            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",homeDistance(card) - cardDistance(card) * 3 + 3 / 2 * (cwidth(card) / 4), cheight(card) * 3 / 2 , 1, False)
+            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp - 30, 1, False)
          elif playeraxis == Yaxis: 
-            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cwidth(card) / -2 + 2 * (cwidth(card) / 4), homeDistance(card) - cardDistance(card) * 2, 1, False)
+            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp - 30, 1, False)
          else: 
-            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",2 * (cwidth(card) / 4) - cwidth(card), 0, 1, False)
+            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, 0, 1, False)
       else:
          if playeraxis == Xaxis:
-            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",homeDistance(card) - cardDistance(card) * 3 + 3 / 2 * (cwidth(card) / 4), cheight(card) * -3 / 2, 1, False)
+            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp + 30, 1, False)
          elif playeraxis == Yaxis: 
-            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cwidth(card) / -3 + 2 * (cwidth(card) / 4), homeDistance(card) - cardDistance(card), 1, False)
+            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp + 30, 1, False)
          else: 
-            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",2 * (cwidth(card) / 4) - cwidth(card), 0, 1, False)
+            cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, 30, 1, False)
       #cheatinNotice.highlight = DrawHandColor
    resultTXT = "{}{} ({} {}, {} {}, {} {}, {} {}, {} {})".format(PokerHand(rank,suit,type), cheatResult, fullrank(rank[0]), fullsuit(suit[0]), fullrank(rank[1]), fullsuit(suit[1]), fullrank(rank[2]), fullsuit(suit[2]), fullrank(rank[3]), fullsuit(suit[3]), fullrank(rank[4]), fullsuit(suit[4]))
    handRank = PokerHand(rank,suit,type,'comparison')

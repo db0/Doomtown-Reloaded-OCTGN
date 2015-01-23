@@ -121,7 +121,7 @@
       <property name="Text" value="" />
       <property name="Instructions" value="" />
    </card>
-   <card id="cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1" name="Cheatin'">
+   <card id="cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1" name="Cheatin'" size="button">
       <property name="Rank" value="" />
       <property name="Suit" value="" />
       <property name="Type" value="Token" />
