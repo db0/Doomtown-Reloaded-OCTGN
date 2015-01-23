@@ -1,6 +1,12 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.3.4.x
+
+* Fixes Ulysses Marks
+* Fixes Leon Cavallo
+* After shootout ends, game will announce who was the leader.
+
 ### 1.3.3.x
 
 * Added a new Town Square image. increased its size and made it anchored so that it cannot be moved.
