@@ -1,6 +1,11 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.3.3.x
+
+* Added a new Town Square imagem. increased its size and made it anchored so that it cannot be moved.
+* Fixed the cheatin' marker placement and size.
+
 ### 1.3.2.x
 
 * Fixed It's Who You Know calling out with opposing dude
