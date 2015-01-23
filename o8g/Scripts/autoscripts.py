@@ -1164,7 +1164,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                   return 'ABORT'
             x,y = possibleTargets[0].position
             if targetCard.controller == me: targetCard.moveToTable(x + cardDistance(), y)
-            else: remoteCall(targetCard.controller,'moveCard',[x + cardDistance(), y])
+            else: remoteCall(targetCard.controller,'moveCard',[targetCard, x + cardDistance(), y])
             orgAttachments(targetCard)
             if possibleTargets[0].type == 'Deed': extraTXT = " to {}".format(possibleTargets[0])
             else: extraTXT = " to {}'s location".format(possibleTargets[0])
