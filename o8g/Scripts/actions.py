@@ -139,6 +139,8 @@ def defaultAction(card, x = 0, y = 0):
    leadingPosse = [c for c in table if c.highlight == InitiateColor]
    if card.model == 'c421c742-c920-4cad-9f72-032c3378191e': # If the player has double-clicked the lowball card, we assume they are the ones that won lowball.
       if confirm("Did you win this round's lowball?"): winLowball()
+   if card.model == 'ac0b08ed-8f78-4cff-a63b-fa1010878af9': # If the player has double-clicked the Town Square card, we assume it's a mistake
+      pass
    elif card.highlight == DrawHandColor: 
       card.highlight = None
       notify("{} moves {} from their draw hand into play".format(me,card))
@@ -180,8 +182,9 @@ def setup(group,x=0,y=0):
    chooseSide() # The classic place where the players choose their side.
    me.Deck.shuffle() # First let's shuffle our deck now that we have the chance.
    if len([c for c in table if c.name == 'Town Square']) == 0: # Only create a Town Square token if there's not one in the table until now
-      TSL = table.create("ac0b08ed-8f78-4cff-a63b-fa1010878af9",2 - cwidth(divisor = 0),0, 1, True) # Create a Left Town Square card in the middle of the table.
-      TSR = table.create("72f6c0a9-e4f6-4b17-9777-185f88187ad7",-1,0, 1, True) # Create a Right Town Square card in the middle of the table.
+      TSL = table.create("ac0b08ed-8f78-4cff-a63b-fa1010878af9",-170,-50, 1, True) # Create a Town Square card in the middle of the table.
+      TSL.anchor = True
+      #TSR = table.create("72f6c0a9-e4f6-4b17-9777-185f88187ad7",-1,0, 1, True) # Create a Right Town Square card in the middle of the table.
    for card in me.hand: # For every card in the player's hand... (which should be an outfit and a bunch of dudes usually)
       if card.Type == "Outfit" :  # First we do a loop to find an play the outfit, (in case the player managed to mess the order somehow)
          placeCard(card,'SetupHome')

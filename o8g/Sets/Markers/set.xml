@@ -57,23 +57,7 @@
       <property name="Text" value="Token Dude. Remove from play at end of shootout" />
       <property name="Instructions" value="" />
    </card>
-   <card id="ac0b08ed-8f78-4cff-a63b-fa1010878af9" name="Town Square">
-      <property name="Rank" value="" />
-      <property name="Suit" value="" />
-      <property name="Type" value="Token" />
-      <property name="Cost" value="" />
-      <property name="Upkeep" value="" />
-      <property name="Production" value="" />
-      <property name="Bullets" value="" />
-      <property name="Bullet Bonus" value="" />
-      <property name="Draw Type" value="" />
-      <property name="Influence" value="" />
-      <property name="Control" value="" />
-      <property name="Outfit" value="" />
-      <property name="Text" value="You do not have to boot when moving from the Town Square to an adjacent location, except your home." />
-      <property name="Instructions" value="" />
-   </card>
-   <card id="72f6c0a9-e4f6-4b17-9777-185f88187ad7" name="Town Square">
+   <card id="ac0b08ed-8f78-4cff-a63b-fa1010878af9" name="Town Square" size="townsquare">
       <property name="Rank" value="" />
       <property name="Suit" value="" />
       <property name="Type" value="Token" />
