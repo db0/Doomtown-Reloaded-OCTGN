@@ -1299,7 +1299,7 @@ GR0B0R0:Pull1Cards
 -----
 48c8526d-6dee-4ee8-9636-01d3891db8f8
 -----
-onPlay:CalloutTarget-Targeted-atDude-targetOpponents-leaderTarget{Dude}
+onPlay:CalloutTarget-Targeted-atDude-targetOpponents-leaderTarget{Dude}$$Put1Shootout:Stud-Targeted-atDude-targetMine
 +++++
 
 .....
