@@ -141,7 +141,7 @@ c3638e9f-f664-43a6-abe0-645aab082455
 -----
 
 +++++
-
+GR0B0R1:SimplyAnnounce{increase their draw hand rank by 1}
 .....
 Blake Ranch
 -----
