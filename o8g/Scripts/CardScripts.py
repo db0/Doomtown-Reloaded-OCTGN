@@ -589,7 +589,7 @@ Lucinda "Lucy" Clover
 -----
 
 +++++
-GR0B0R1:Put1Bounty-AutoTargeted-atDude-isParticipating-TargetOpponents
+GR0B0R1:Put1Bounty-AutoTargeted-atDude-isParticipating-targetOpponents
 .....
 Magical Distraction
 -----
