@@ -829,15 +829,27 @@ def StartJob(Autoscript, announceText, card, targetCards = None, notification = 
             if choice == None: return 'ABORT'
             else: leader = availableDudes.pop(choice)
    leader.highlight = InitiateColor
+   x,y = mark.position
+   if mark.name == 'Town Square': 
+      x += 180 # We start the placement of dudes at the middle of TS
+      multiplier = 1
+   else:  multiplier = 2
+   leader.moveToTable(x + multiplier * cardDistance(), y)
+   orgAttachments(leader)
    executePlayScripts(leader, 'PARTICIPATION')
    if re.search(r'bootLeader', Autoscript): leader.orientation = Rot90
    if re.search(r'bountyLeader', Autoscript) or re.search(r'bountyPosse', Autoscript): modBounty(leader)
+   moveTarget = leader
    if len(posse):
       for c in posse: 
          c.highlight = InitiateColor
+         x,y = moveTarget.position
+         c.moveToTable(x + cardDistance(), y)
+         moveTarget = c
+         orgAttachments(c)
          if re.search(r'bountyPosse', Autoscript): modBounty(c)
          executePlayScripts(c, 'PARTICIPATION')
-      posseTXT = " and {} are also in their posse".format([c.name for c in posse])
+         posseTXT = " and {} are also in their posse".format([c.name for c in posse])
    else: posseTXT = ''
    setGlobalVariable('Mark',str(mark._id))
    jobEffects = re.search(r'-jobEffects<(.*?),(.*?)>', Autoscript)
@@ -1167,7 +1179,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                   return 'ABORT'
             x,y = possibleTargets[0].position
             if targetCard.controller == me: targetCard.moveToTable(x + cardDistance(), y)
-            else: remoteCall(targetCard.controller,'moveCard',[targetCard, x + cardDistance(), y])
+            else: remoteCall(targetCard.controller,'moveCard',[targetCard, x + -cardDistance(), y])
             orgAttachments(targetCard)
             if possibleTargets[0].type == 'Deed': extraTXT = " to {}".format(possibleTargets[0])
             else: extraTXT = " to {}'s location".format(possibleTargets[0])
