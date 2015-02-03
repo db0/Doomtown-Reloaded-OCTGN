@@ -126,7 +126,7 @@ def completeJob():
    jobResults = eval(getGlobalVariable('Job Active'))
    jobCard = Card(num(jobResults[0]))
    leader = Card(num(jobResults[3]))
-   if leader.controller != me: remoteCall(leader.controller,'completeJob',[])
+   if jobCard.controller != me: remoteCall(jobCard.controller,'completeJob',[])
    else:
       if getGlobalVariable('Shootout') == 'True': jobPosse = [c for c in table if c.highlight == AttackColor]
       else: jobPosse = [c for c in table if c.highlight == InitiateColor]
@@ -138,16 +138,16 @@ def completeJob():
          orgAttachments(card)            
          iter += 1
       notify("The job is successful and the job posse {} goes home booted".format([c.name for c in jobPosse]))
-      if confirm("Did the {} job succeed?".format(leader.Name)): # If we actually have scripts in the job, we try to execute them.
+      if confirm("Did the {} job succeed?".format(jobCard.Name)): # If we actually have scripts in the job, we try to execute them.
          if re.search(r'-MarkNotTheTarget',jobResults[1]): targetCards = None
          elif re.search(r'-LeaderIsTarget',jobResults[1]): targetCards = [leader]
          else: targetCards = [Card(eval(getGlobalVariable('Mark')))]
-         executeAutoscripts(leader,jobResults[1].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
+         executeAutoscripts(jobCard,jobResults[1].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
       elif jobResults[2] != 'None': # Otherwise we execute the job fail scripts
          if re.search(r'-MarkNotTheTarget',jobResults[1]): targetCards = None
          elif re.search(r'-LeaderIsTarget',jobResults[1]): targetCards = [leader]
          else: targetCards = [Card(eval(getGlobalVariable('Mark')))]
-         executeAutoscripts(leader,jobResults[2].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
+         executeAutoscripts(jobCard,jobResults[2].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
       if getGlobalVariable('Shootout') == 'True': 
          if getGlobalVariable('Shootout') == 'True': atTimedEffects("ShootoutEnd")
       setGlobalVariable('Mark','None') # We also clear the Called Out variable just in case

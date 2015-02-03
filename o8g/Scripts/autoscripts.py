@@ -551,6 +551,9 @@ def TokensX(Autoscript, announceText, card, targetCards = None, notification = N
    else:
       debugNotify("In normal tokens module")
       for targetCard in targetCards:
+         if targetCard.group != table: 
+            modtokens = 0
+            continue
          if action.group(1) == 'Put':
             if re.search(r'isCost', Autoscript) and targetCard.markers[token] and targetCard.markers[token] > 0 and not confirm(":::ERROR::: This card already has a {} marker on it. Proceed anyway?".format(token[0])):
                return 'ABORT'
@@ -1128,8 +1131,8 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                whisper(":::INFO::: Failed to pay the boot cost. ABORTING")
                return 'ABORT'
          elif action.group(1) == 'Unboot': boot(targetCard, silent = True, forced = 'unboot') 
-         elif action.group(1) == 'Discard': discardTarget(targetCards = [targetCard], silent = True)        
-         elif action.group(1) == 'Ace': aceTarget(targetCards = [targetCard], silent = True)
+         elif action.group(1) == 'Discard' and targetCard.group == table: discardTarget(targetCards = [targetCard], silent = True)        
+         elif action.group(1) == 'Ace' and targetCard.group == table : aceTarget(targetCards = [targetCard], silent = True)
          elif action.group(1) == 'SendToDraw': sendToDrawHand(targetCard)
          elif action.group(1) == 'Participate':
             if not participateDude(targetCard): 
@@ -1147,7 +1150,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                   callout(possibleTargets[0], silent = True, targetDudes = [targetCard])
                   extraTXT = " with {}".format(possibleTargets[0])
             else: callout(card, silent = True, targetDudes = [targetCard])
-         elif action.group(1) == 'Return': 
+         elif action.group(1) == 'Return' and targetCard.group == table: 
             returnToHand(targetCard, silent = True)
             extraTXT = " to their owner's hand"
          elif action.group(1) == 'Play': 
@@ -1160,7 +1163,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                placeCard(targetCard)
                executePlayScripts(targetCard, 'PLAY') # We execute the play scripts here only if the card is 0 cost.
                autoscriptOtherPlayers('CardPlayed',targetCard)            
-         elif action.group(1) == 'Move':
+         elif action.group(1) == 'Move' and targetCard.group == table:
             moveTarget = re.search(r"-moveTo(.+)", Autoscript)
             if not moveTarget: 
                notify(":::ERROR::: No valid moveTarget. Aborting!")
@@ -1183,7 +1186,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             orgAttachments(targetCard)
             if possibleTargets[0].type == 'Deed': extraTXT = " to {}".format(possibleTargets[0])
             else: extraTXT = " to {}'s location".format(possibleTargets[0])
-         elif action.group(1) == 'SendHomeBooted':
+         elif action.group(1) == 'SendHomeBooted' and targetCard.group == table:
             for c in table: 
                if c.Type == 'Outfit' and c.controller == targetCard.controller: 
                   home = c
@@ -1191,7 +1194,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             x,y = home.position
             if targetCard.controller == me: targetCard.moveToTable(x + cardDistance(), y)
             else: 
-               remoteCall(targetCard.controller,'moveCard',[targetCard,x + cardDistance(), y])
+               remoteCall(targetCard.controller,'moveCard',[targetCard,x - cardDistance(), y])
             if targetCard.highlight == AttackColor or targetCard.highlight == DefendColor: leavePosse(targetCard)
             if not re.search(r'-doNotBoot',Autoscript): boot(targetCard,silent = True, forced = 'boot')
             orgAttachments(targetCard)
