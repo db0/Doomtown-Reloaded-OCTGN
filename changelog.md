@@ -1,6 +1,11 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.3.5.x
+
+* Jobs now script their effects. If you press F10 when nobody has defended or during a shootout, it will ask if the job was successful and appropriately do the effects. 
+* Jobs will now move you to the Mark's location
+
 ### 1.3.4.x
 
 * Fixes Ulysses Marks
