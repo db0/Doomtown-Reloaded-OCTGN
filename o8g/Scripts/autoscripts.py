@@ -323,12 +323,6 @@ def executeAutoscripts(card,Autoscript,count = 0,action = 'PLAY',targetCards = N
       for passedScript in selectedAutoscripts: 
          if chkWarn(card, passedScript) == 'ABORT': return 'ABORT'
          if chkPlayer(passedScript, card.controller,False) == 0: continue
-         if re.search(r'-ifHaveForce', passedScript) and not haveForce(): 
-            debugNotify("Rejected -ifHaveForce script")
-            continue
-         if re.search(r'-ifHaventForce', passedScript) and haveForce(): 
-            debugNotify("Rejected -ifHaventForce script")
-            continue         
          X = redirect(passedScript, card, action, X,targetCards)
          if failedRequirement or X == 'ABORT': return 'ABORT' # If one of the Autoscripts was a cost that couldn't be paid, stop everything else.
 
@@ -1131,8 +1125,8 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                whisper(":::INFO::: Failed to pay the boot cost. ABORTING")
                return 'ABORT'
          elif action.group(1) == 'Unboot': boot(targetCard, silent = True, forced = 'unboot') 
-         elif action.group(1) == 'Discard' and targetCard.group == table: discardTarget(targetCards = [targetCard], silent = True)        
-         elif action.group(1) == 'Ace' and targetCard.group == table : aceTarget(targetCards = [targetCard], silent = True)
+         elif action.group(1) == 'Discard' and targetCard.group != me.piles['Boot Hill'] : discardTarget(targetCards = [targetCard], silent = True)        
+         elif action.group(1) == 'Ace' and targetCard.group != me.piles['Discard Pile'] : aceTarget(targetCards = [targetCard], silent = True)
          elif action.group(1) == 'SendToDraw': sendToDrawHand(targetCard)
          elif action.group(1) == 'Participate':
             if not participateDude(targetCard): 
