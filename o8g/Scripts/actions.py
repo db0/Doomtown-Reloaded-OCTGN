@@ -99,19 +99,10 @@ def goToShootout(group = table, x = 0, y = 0, silent = False): # Start or End a 
    mute()
    if getGlobalVariable('Shootout') == 'False': # The shootout phase just shows a nice notification when it starts and does nothing else.
       jobPosse = [c for c in table if c.highlight == InitiateColor]
-      if getGlobalVariable('Job Active') == 'True' and len(jobPosse) and jobPosse[0].controller == me: # If there's no current shootout but there's a job ongoing with us as the leader, we assume the job just ended without a shootout.
-         iter = 0
-         for card in jobPosse: # at the end of jobs, we send the leader's posse home booted
-            card.orientation = Rot90
-            if playeraxis == Xaxis: card.moveToTable(homeDistance(card) + (playerside * cwidth(card,-4)) + (iter * cardDistance()), 0)
-            elif playeraxis == Yaxis: card.moveToTable(0,homeDistance(card) + (playerside * cheight(card,-4)) + (iter * cardDistance()))
-            orgAttachments(card)            
-            iter += 1
-         notify("The job is successful and the job posse {} goes home booted".format([c.name for c in jobPosse]))
-         clearShootout()
+      if getGlobalVariable('Job Active') != 'False' and len(jobPosse) and jobPosse[0].controller == me: remoteCall(me,'completeJob',[]) # If there's no current shootout but there's a job ongoing with us as the leader, we assume the job just ended without a shootout.
       else:
          if not silent: 
-            if getGlobalVariable('Job Active') == 'True': notify("{} is defending against the job. A shootout has broken out!".format(me))
+            if getGlobalVariable('Job Active') != 'False': notify("{} is defending against the job. A shootout has broken out!".format(me))
             elif getGlobalVariable('Mark') != 'None': 
                notify("{} accepts the call out. A shootout begins!".format(Card(num(getGlobalVariable('Mark')))))
                joinDefence(Card(num(getGlobalVariable('Mark'))),silent = True)
@@ -120,14 +111,43 @@ def goToShootout(group = table, x = 0, y = 0, silent = False): # Start or End a 
          for card in table: 
             if card.highlight == InitiateColor: 
                card.highlight = AttackColor # If a shootout breaks out, all cards in the existing (initiating) posse join the shootout.
-               if getGlobalVariable('Job Active') != 'True': executePlayScripts(card, 'PARTICIPATION') # If they were part of a job posse, then these scripts have already been triggered, so we don't do it again.
+               if getGlobalVariable('Job Active') == 'False': executePlayScripts(card, 'PARTICIPATION') # If they were part of a job posse, then these scripts have already been triggered, so we don't do it again.
          atTimedEffects("ShootoutStart")
    else: # When the shootout ends however, any card.highlights for attacker and defender are quickly cleared.
       notify("The shootout has ended.".format(me))
-      clearShootout()
-      setGlobalVariable('Mark','None') # We also clear the Called Out variable just in case
-      atTimedEffects("ShootoutEnd")
+      if getGlobalVariable('Job Active') != 'True': remoteCall(me,'completeJob',[])
+      else:
+         clearShootout()
+         setGlobalVariable('Mark','None') # We also clear the Called Out variable just in case
+         atTimedEffects("ShootoutEnd")
 
+def completeJob():
+   mute()
+   jobResults = eval(getGlobalVariable('Job Active'))
+   if Card(jobResults[0]).controller != me: remoteCall(Card(jobResults[0]).controller,'completeJob',[])
+   else:
+      if getGlobalVariable('Shootout') == 'True': jobPosse = [c for c in table if c.highlight == AttackColor]
+      else: jobPosse = [c for c in table if c.highlight == InitiateColor]
+      iter = 0
+      for card in jobPosse: # at the end of jobs, we send the leader's posse home booted
+         card.orientation = Rot90
+         if playeraxis == Xaxis: card.moveToTable(homeDistance(card) + (playerside * cwidth(card,-4)) + (iter * cardDistance()), 0)
+         elif playeraxis == Yaxis: card.moveToTable(0,homeDistance(card) + (playerside * cheight(card,-4)) + (iter * cardDistance()))
+         orgAttachments(card)            
+         iter += 1
+      notify("The job is successful and the job posse {} goes home booted".format([c.name for c in jobPosse]))
+      if confirm("Did the {} job succeed?".format(Card(jobResults[0]).Name)): # If we actually have scripts in the job, we try to execute them.
+         if re.search(r'-MarkNotTheTarget',jobResults[1]): targetCards = []
+         else: targetCards = [Card(eval(getGlobalVariable('Mark')))]
+         executeAutoscripts(Card(jobResults[0]),jobResults[1].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
+      elif jobResults[2] != 'None': # Otherwise we execute the job fail scripts
+         if re.search(r'-MarkNotTheTarget',jobResults[1]): targetCards = []
+         else: targetCards = [Card(eval(getGlobalVariable('Mark')))]
+         executeAutoscripts(Card(jobResults[0]),jobResults[2].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
+      if getGlobalVariable('Shootout') == 'True': 
+         if getGlobalVariable('Shootout') == 'True': atTimedEffects("ShootoutEnd")
+      setGlobalVariable('Mark','None') # We also clear the Called Out variable just in case
+      clearShootout()
 #---------------------------------------------------------------------------
 # Table group actions
 #---------------------------------------------------------------------------
@@ -152,7 +172,7 @@ def defaultAction(card, x = 0, y = 0):
       reCalculate(notification = 'silent')
    elif getGlobalVariable('Shootout') == 'True' and card.Type == 'Dude':
       if not participateDude(card): boot(card) # If the dude is already participating, then just boot them.
-   elif card.Type == 'Dude' and Mark != 'None' and getGlobalVariable('Job Active') == 'True' and len(leadingPosse):
+   elif card.Type == 'Dude' and Mark != 'None' and getGlobalVariable('Job Active') != 'False' and len(leadingPosse):
       if card.controller != leadingPosse[0].controller: defend(card) # if there is a job in progress, anyone but the leader double clicking one of their dudes will defend it or join it.
       elif not participateDude(card): boot(card) 
    elif card.Type == 'Dude' and len([c for c in table if c.Type == 'Dude' and c.targetedBy and c.targetedBy == me and c.controller != me]) and Mark == 'None': # If the player has an opposing dude targeted when they doubled clicked, we assume they want to call out
@@ -998,7 +1018,7 @@ def defend(card = None, x = 0, y = 0): # Same as the defending posse but with di
       elif mark.Type == 'Dude': card = mark # IF the player just pressed F5 to accept a callout, we set the mark as defending.
       if card and card != table : cardTXT = card # If the player double clicked a card to accept, or there's a dude as a mark, we announce that it's the one defending
       else: cardTXT = me # Otherwise we announce it's the player defending.
-      if getGlobalVariable('Job Active') == 'True':
+      if getGlobalVariable('Job Active') != 'False':
          notify("{} is defending against this job. A shootout is breaking out!".format(cardTXT))
       else:
          notify("{} has accepted the call out. A shootout is breaking out!".format(cardTXT))
@@ -1009,7 +1029,7 @@ def defend(card = None, x = 0, y = 0): # Same as the defending posse but with di
 def refuseCallout(focus = None, x = 0, y = 0): # Boots the dude and moves him to your home or informs you if they cannot refuse.
    mute ()
    if getGlobalVariable('Shootout') == 'True' and focus != table: runAway(focus)# If the player has moused over a card and pressed ESC while in a shootout, they're trying to run away from the shootout
-   elif getGlobalVariable('Mark') == 'None' or getGlobalVariable('Job Active') == 'True': whisper(":::ERROR::: There seems to be no callout in progress")
+   elif getGlobalVariable('Mark') == 'None' or getGlobalVariable('Job Active') != 'False': whisper(":::ERROR::: There seems to be no callout in progress")
    else:
       chickenDude = Card(num(getGlobalVariable('Mark')))
       if chickenDude.controller != me: return # Only the owner of the cowardly dude can decide to run away.

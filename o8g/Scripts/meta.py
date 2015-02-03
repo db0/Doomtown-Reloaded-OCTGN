@@ -222,7 +222,7 @@ def participateDude(card): # Marks a card as participating in a shootout.
          if side == 'Defence': joinDefence(card)
          else: joinAttack(card)         
          cardParticipated = True
-      elif getGlobalVariable('Job Active') == 'True':
+      elif getGlobalVariable('Job Active') != 'False':
          for c in table: # If there is a job in progress and the leader participates with one of their own dudes, they join their posse.
             if c.highlight == InitiateColor and c.controller == me: 
                card.highlight = InitiateColor

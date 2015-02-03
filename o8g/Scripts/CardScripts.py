@@ -19,7 +19,7 @@ A Coach Comes to Town
 -----
 6656eabf-4a69-4854-950d-f30d7771c4ae
 -----
-onPlay:StartJob-AutoTargeted-atTown Square
+onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<Gain4Ghost Rock,Gain4Ghost Rock-onOpponent>
 +++++
 
 .....
@@ -29,7 +29,7 @@ Abram Grothe
 -----
 
 +++++
-GR0B1R0:StartJob-DemiAutoTargeted-atDeed_and_Holy Ground-choose1
+GR0B1R0:StartJob-DemiAutoTargeted-atDeed_and_Holy Ground-choose1-jobEffects<DiscardMulti-Targeted-atDude-MarkNotTheTarget,None>
 .....
 Ace in the Hole
 -----
@@ -51,7 +51,7 @@ Ambush
 -----
 cc2092bd-b575-4a26-8e96-aa13f8736d75
 -----
-onPlay:StartJob-DemiAutoTargeted-atDude-bootLeader-choose1-targetOpponents
+onPlay:StartJob-DemiAutoTargeted-atDude-bootLeader-choose1-targetOpponents-jobEffects<AceTarget,None>
 +++++
 
 .....
@@ -331,7 +331,7 @@ Establishin' Who's in Charge
 -----
 2ae1a463-0106-426c-b9fd-6bb22df27aff
 -----
-onPlay:StartJob-DemiAutoTargeted-atDeed-choose1
+onPlay:StartJob-DemiAutoTargeted-atDeed-choose1-jobEffects<Put1PermControlPlus,None>
 +++++
 
 .....
@@ -517,7 +517,7 @@ Judge Harry Somerset
 -----
 
 +++++
-GR0B1R0:StartJob-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-choose1
+GR0B1R0:StartJob-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-choose1-jobEffects<AceTarget,None>
 .....
 Kevin Wainwright
 -----
@@ -531,7 +531,7 @@ Kidnappin'
 -----
 e11367a5-6fad-40a4-b22a-a2571eb7c330
 -----
-onPlay:StartJob-DemiAutoTargeted-atDude-choose1-bootLeader-bountyPosse-targetOpponents
+onPlay:StartJob-DemiAutoTargeted-atDude-choose1-bootLeader-bountyPosse-targetOpponents-jobEffects<DiscardTarget,None>
 +++++
 
 .....
@@ -827,7 +827,7 @@ Recruitment Drive
 -----
 9ef9abea-373c-4265-b7fc-3d8391095f64
 -----
-onPlay:StartJob-AutoTargeted-atTown Square
+onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<Retrieve1Card-grabDeed_or_Dude-fromDiscard-toTable-payCost-reduc4,None>
 +++++
 
 .....

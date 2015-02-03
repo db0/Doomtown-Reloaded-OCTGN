@@ -311,7 +311,7 @@ def atTimedEffects(Time = 'Start'): # Function which triggers card effects at th
 #------------------------------------------------------------------------------
 def executeAutoscripts(card,Autoscript,count = 0,action = 'PLAY',targetCards = None):
    debugNotify(">>> executeAutoscripts(){}".format(extraASDebug(Autoscript))) #Debug
-   debugNotify("card = {}, count = {}, action = {}, targetCards = {}".format(card,count,action,targetCards),1)
+   #confirm("card = {}, count = {}, action = {}, targetCards = {}".format(card,count,action,targetCards))
    global failedRequirement
    failedRequirement = False
    X = count # The X Starts as the "count" passed variable which sometimes may need to be passed.
@@ -333,7 +333,7 @@ def executeAutoscripts(card,Autoscript,count = 0,action = 'PLAY',targetCards = N
          if failedRequirement or X == 'ABORT': return 'ABORT' # If one of the Autoscripts was a cost that couldn't be paid, stop everything else.
 
 def redirect(Autoscript, card, action, X = 0,targetC = None):
-   debugNotify(">>> redirect(){}".format(extraASDebug(Autoscript))) #Debug
+   debugNotify(">>> redirect(){}".format(Autoscript)) #Debug
    global TitleDone
    if re.search(r':Pass\b', Autoscript): return X # Pass is a simple command of doing nothing ^_^. We put it first to avoid checking for targets and so on
    if not targetC: targetC = findTarget(Autoscript,card = card)
@@ -840,7 +840,9 @@ def StartJob(Autoscript, announceText, card, targetCards = None, notification = 
       posseTXT = " and {} are also in their posse".format([c.name for c in posse])
    else: posseTXT = ''
    setGlobalVariable('Mark',str(mark._id))
-   setGlobalVariable('Job Active','True')
+   jobEffects = re.search(r'-jobEffects<(.*?),(.*?)>', Autoscript)
+   if jobEffects: setGlobalVariable('Job Active',str((card._id,jobEffects.group(1),jobEffects.group(2)))) # We store the success and fail clause of the job as a tuple. We then retrieve it later.
+   else: setGlobalVariable('Job Active','True')
    if notification == 'Quick': announceString = "{} start a job marking {}. {} is leading{}.".format(announceText, mark, leader,posseTXT)
    else: announceString = "{} start a job marking {}. {} is leading{}.".format(announceText, mark, leader,posseTXT)
    if notification: notify(':> {}.'.format(announceString))
