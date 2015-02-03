@@ -842,7 +842,7 @@ def StartJob(Autoscript, announceText, card, targetCards = None, notification = 
    setGlobalVariable('Mark',str(mark._id))
    jobEffects = re.search(r'-jobEffects<(.*?),(.*?)>', Autoscript)
    if jobEffects: setGlobalVariable('Job Active',str((card._id,jobEffects.group(1),jobEffects.group(2)))) # We store the success and fail clause of the job as a tuple. We then retrieve it later.
-   else: setGlobalVariable('Job Active','True')
+   else: setGlobalVariable('Job Active',str((card._id,'None','None')))
    if notification == 'Quick': announceString = "{} start a job marking {}. {} is leading{}.".format(announceText, mark, leader,posseTXT)
    else: announceString = "{} start a job marking {}. {} is leading{}.".format(announceText, mark, leader,posseTXT)
    if notification: notify(':> {}.'.format(announceString))

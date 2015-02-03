@@ -115,7 +115,7 @@ def goToShootout(group = table, x = 0, y = 0, silent = False): # Start or End a 
          atTimedEffects("ShootoutStart")
    else: # When the shootout ends however, any card.highlights for attacker and defender are quickly cleared.
       notify("The shootout has ended.".format(me))
-      if getGlobalVariable('Job Active') != 'True': remoteCall(me,'completeJob',[])
+      if getGlobalVariable('Job Active') != 'False': remoteCall(me,'completeJob',[])
       else:
          clearShootout()
          setGlobalVariable('Mark','None') # We also clear the Called Out variable just in case
@@ -124,7 +124,8 @@ def goToShootout(group = table, x = 0, y = 0, silent = False): # Start or End a 
 def completeJob():
    mute()
    jobResults = eval(getGlobalVariable('Job Active'))
-   if Card(jobResults[0]).controller != me: remoteCall(Card(jobResults[0]).controller,'completeJob',[])
+   #confirm("{}".format(jobResults)) # Debug
+   if Card(num(jobResults[0])).controller != me: remoteCall(Card(jobResults[0]).controller,'completeJob',[])
    else:
       if getGlobalVariable('Shootout') == 'True': jobPosse = [c for c in table if c.highlight == AttackColor]
       else: jobPosse = [c for c in table if c.highlight == InitiateColor]
