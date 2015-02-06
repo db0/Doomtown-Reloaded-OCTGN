@@ -1439,6 +1439,174 @@ f138c8f1-00cc-4ca4-b145-e9c5105dc76a
 +++++
 GR0B1R0:Pull1Card-isResolution
 .....
+The Brute
+-----
+13cdc52f-986e-4f3b-b053-c3261267790d
+-----
+
++++++
+
+.....
+Smiling Tom
+-----
+d90e5abe-ed12-4dad-9007-16aa47afa2cc
+-----
+
++++++
+
+.....
+Philip Swinford
+-----
+f1012bb4-2429-4ec3-9b89-6ebcb3f94184
+-----
+
++++++
+GR0B0R1:Draw1Card$$DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost
+.....
+Drew Beauman
+-----
+19fc7ff8-d4da-492f-8a41-7a838490c9e4
+-----
+
++++++
+GR0B0R1:PlayTarget-DemiAutoTargeted-fromHand-atGadget-choose1-payCost-isCost
+.....
+Dr. Arden Gillman
+-----
+95b9d8df-a95d-4b5e-aeed-98f8e99ca5a5
+-----
+
++++++
+GR0B1R0:Pull1Card
+.....
+Arvid Mardh
+-----
+33b97a88-5b7f-4073-8e30-5c66da9060c5
+-----
+
++++++
+
+.....
+Allie Hensman
+-----
+28c37361-c5ac-4561-b1bc-5f41113e0625
+-----
+
++++++
+GR0B0R0:StartJob-DemiAutoTargeted-atDude-bootLeader-choose1-targetOpponents-jobEffects<UseCustomAbility,None>
+.....
+Milt Clemons
+-----
+cd99ead2-3b50-4989-8331-59f76b5edb0b
+-----
+
++++++
+
+.....
+Jake Smiley
+-----
+36c80330-39fc-4fdc-8736-4c8d47758063
+-----
+
++++++
+
+.....
+QUATERMAN
+-----
+144991c0-f3f4-4914-a075-ab2093991411
+-----
+
++++++
+
+.....
+Angela Payne
+-----
+6b01cb98-4ae3-4b6e-b7d1-29fe035c9e2d
+-----
+
++++++
+GR0B1R0:Gain2Ghost Rock
+.....
+The Mayor's Office
+-----
+90568a28-333b-4836-b55c-8ebbef266ad1
+-----
+
++++++
+GR0B1R0:Put1InfluencePlus-Targeted-atDude||GR0B1R0:Put1InfluenceMinus-Targeted-atDude
+.....
+Hunter Protections
+-----
+1f6dc79e-65ad-4727-bf8e-1c42eee98fe1
+-----
+
++++++
+GR0B1R0:BootTarget-Targeted-atDude-isUnbooted-hasntMarker{PermControlPlus}-isCost$$Put2Bounty-Targeted-atDude-hasntMarker{PermControlPlus}$$Put1PermControlPlus-Targeted-atDude-hasntMarker{PermControlPlus}
+.....
+The Evidence
+-----
+9687ab08-0ae9-4a15-8304-6e9797edc87e
+-----
+
++++++
+GR0B0R0:Remove999Bounty-Targeted-atDude-hasMarker{Bounty}$$DiscardMyself||GR1B0R0:Put2Bounty-Targeted-atDude$$AceMyself
+.....
+Teleportation Device
+-----
+28d66d3e-bc96-4c2c-9ebb-38dfabceb440
+-----
+
++++++
+GR1B0R1:Pull1Card
+.....
+Mayfair Family Deck
+-----
+68310bec-735a-46bc-be6c-949e26bc5758
+-----
+
++++++
+
+.....
+Puppet
+-----
+146c6a48-ffb5-4201-b07e-74e5560da771
+-----
+
++++++
+
+.....
+Summoning
+-----
+791de7a5-3292-43cd-b907-40f737dc8600
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex5-spellEffects<StartJob-AutoTargeted-atTown Square,None>
+.....
+Ridden Down
+-----
+cd378a50-f1c7-4a1f-a99d-80436806feea
+-----
+
++++++
+onPlay:BootTarget-DemiAutoTargeted-atHorse-isUnbooted-targetMine-choose1-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
+.....
+Tail Between Yer Legs
+-----
+ff26cca7-830f-440a-90cd-08e32c629d7e
+-----
+onPlay:Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1
++++++
+
+.....
+Election Day Slaughter
+-----
+25787651-53b5-456e-bb42-8f38fd7b3caf
+-----
+onPlay:StartJob-AutoTargeted-atTown Square 
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''

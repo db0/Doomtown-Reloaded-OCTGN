@@ -25,6 +25,14 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
    mute()
    announceString = ''
    debugNotify(">>> UseCustomAbility() with Autoscript: {}".format(Autoscript)) #Debug
+   if card.name == "Plasma Drill":
+      targetDeed = findTarget('Targeted-atDeed',card = card)
+      if len(targetDeed) == 0: return 'ABORT'
+      production = compileCardStat(targetDeed[0], stat = 'Production')
+      if not production: notify(":> {} uses the plasma drill on, but it has no production, so that was fairly useless, wasn't it?".format(me))
+      else: remoteCall(targetDeed[0].owner,'PlasmaDrill',[targetDeed[0]])      
+   elif card.name == "Allie Hensman":    
+      remoteCall(targetCards[0].controller,'AllieHensmanXP',[targetCards[0],card])
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
@@ -341,3 +349,18 @@ def BottomDealing(originPlayer,card):
    notify("{}'s new hand rank is {}".format(me,resultTXT))
    passPileControl(originPlayer.Deck,originPlayer)   
 
+def AllieHensmanXP(mark,allie):
+   mute()
+   markInfluence = compileCardStat(mark, stat = 'Influence')
+   if confirm("Do you want to pay {} to {} to avoid discarding {}?".format(markInfluence,allie.controller.name,mark.Name)):
+      if me.GhostRock >= markInfluence or not confirm("You do not seem to have enough Ghost Rock left. Bypass?"):
+         me.GhostRock -= markInfluence
+         allie.controller.GhostRock += markInfluence
+         notify("{} corners {} and extracts {} Ghost Rock from {} for their safety".format(allie,mark,markInfluence,mark.controller))
+      else: 
+         discard(mark,silent = True)
+         notify("{} couldn't afford {}'s tax and has to discard {}".format(mark.controller,allie,mark))
+   else: 
+      discard(mark,silent = True)
+      notify("{} couldn't afford {}'s tax and has to discard {}".format(mark.controller,allie,mark))
+   

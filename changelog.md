@@ -1,5 +1,15 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.4.0.x
+
+An ** Election Day Slaughter'** has occured!
+* Trickier Scripts
+  * Summoning: Won't automate the job effects
+  * Puppet: Not automated
+  * Teleportation Device: Won't move. Just pulls
+  * Arden Gillman: Just pulls
+  * Milt Clemons: Manual use
+  
 
 ### 1.3.5.x
 
