@@ -137,7 +137,8 @@ def completeJob():
          elif playeraxis == Yaxis: card.moveToTable(0,homeDistance(card) + (playerside * cheight(card,-4)) + (iter * cardDistance()))
          orgAttachments(card)            
          iter += 1
-      notify("The job is successful and the job posse {} goes home booted".format([c.name for c in jobPosse]))
+      if len(jobPosse): notify("{} is successful and the job posse {} goes home booted".format(jobCard,[c.name for c in jobPosse]))
+      else: notify("{} is unsuccessful".format(jobCard))
       if confirm("Did the {} job succeed?".format(jobCard.Name)): # If we actually have scripts in the job, we try to execute them.
          if re.search(r'-MarkNotTheTarget',jobResults[1]): targetCards = None
          elif re.search(r'-LeaderIsTarget',jobResults[1]): targetCards = [leader]
