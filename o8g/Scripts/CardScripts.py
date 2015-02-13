@@ -1587,9 +1587,9 @@ Ridden Down
 -----
 cd378a50-f1c7-4a1f-a99d-80436806feea
 -----
-
-+++++
 onPlay:BootTarget-DemiAutoTargeted-atHorse-isUnbooted-targetMine-choose1-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
++++++
+
 .....
 Tail Between Yer Legs
 -----
