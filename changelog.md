@@ -1,5 +1,9 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.4.1.x
+
+* Minor fixes
+
 ### 1.4.0.x
 
 An ** Election Day Slaughter'** has occured!
