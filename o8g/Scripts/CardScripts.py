@@ -827,7 +827,7 @@ Recruitment Drive
 -----
 9ef9abea-373c-4265-b7fc-3d8391095f64
 -----
-onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<Retrieve1Card-grabDeed_or_Dude-fromDiscard-toTable-payCost-reduc4,None>
+onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<Retrieve1Card-grabDeed_or_Dude-fromDiscard-toTable-payCost-reduc5,None>
 +++++
 
 .....
