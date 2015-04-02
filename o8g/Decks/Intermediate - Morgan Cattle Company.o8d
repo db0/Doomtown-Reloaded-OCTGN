@@ -4,19 +4,20 @@
     <card qty="1" id="4f21000a-fb64-4e4b-8e8a-1c5d588dc577">Morgan Cattle Co.</card>
   </section>
   <section name="Starting Cards" shared="False">
+    <card qty="1" id="d9586ca6-50bc-446e-aa3b-fc84b0545dcd">Irving Patterson</card>
     <card qty="1" id="feb37a5b-a95c-4c03-92e0-acd27d7a3ef3">James Ghetty</card>
     <card qty="1" id="03341e26-42b4-4545-897e-8626de5e3dd7">Travis Moone</card>
-    <card qty="1" id="8e50a03b-b42c-4207-9d0d-7a144ad31e3b">Elander Boldman</card>
+    <card qty="1" id="0c0087d0-6356-44a4-8237-15f86573716a">Jon Longstride</card>
   </section>
   <section name="Deck" shared="False">
     <card qty="1" id="c263b2ff-3d4b-4beb-aa3b-d4e1f72e56ff">Lane Healey</card>
     <card qty="1" id="f8437fa5-c088-41b2-b6c9-2060f69ec7be">Prof. Eustace True</card>
-    <card qty="2" id="0c0087d0-6356-44a4-8237-15f86573716a">Jon Longstride</card>
+    <card qty="1" id="8e50a03b-b42c-4207-9d0d-7a144ad31e3b">Elander Boldman</card>
+    <card qty="1" id="0c0087d0-6356-44a4-8237-15f86573716a">Jon Longstride</card>
     <card qty="1" id="c57efc28-77d3-492b-81ad-f3c5ce130041">Jarrett Blake</card>
     <card qty="1" id="f64c8b68-0d63-4f5d-a898-f38576024f75">Harold Aimslee</card>
     <card qty="1" id="cb15bd27-76a2-48db-b324-99589b14982b">Remy LaPointe</card>
     <card qty="1" id="4ad6e3d4-3c6c-43a4-a612-293586609150">Max Baine</card>
-    <card qty="1" id="d9586ca6-50bc-446e-aa3b-fc84b0545dcd">Irving Patterson</card>
     <card qty="1" id="335662d9-0d7c-430e-a556-11693385f5aa">Steven Wiles</card>
     <card qty="1" id="f149dcc9-44a4-4399-8786-62d2496559e4">Eve Henry</card>
     <card qty="1" id="36c91361-cab3-4988-bed2-2c3401746695">Dr. Dawn Edwards</card>
