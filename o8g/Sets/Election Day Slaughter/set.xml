@@ -206,7 +206,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="2" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Public-Government" />
+         <property name="Keywords" value="Private-Government" />
          <property name="Text" value="Controller Noon, Boot: Raise or lower the influence of a dude at this or an adjacent location by 1." />
          <property name="Instructions" value="Controller Noon: Boot this deed to raise the influence of a dude at this or an adjacent location by 1||Controller Noon: Boot this deed to lower the influence of a dude at this or an adjacent location by 1" />
       </card>
