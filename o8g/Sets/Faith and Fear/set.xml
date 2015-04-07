@@ -666,7 +666,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Your dudes with 4 or more bounty are worth +1 control point.&#xD;&#xA;Noon Job: Boot this card (not the job's leader) to mark the town square. If successful and your leader is still in the posse, give them 2 bounty then gain ghost rock equal to their bullet rating (to a maximum of 4)." />
+         <property name="Text" value="Your dudes with 4 or more bounty are worth +1 control point.&#xD;&#xA;Noon Job: Boot this card (not the job's leader) to mark the town square. If successful and your leader is still in the posse, give them 2 bounty then gain ghost rock equal to their bullet rating to a maximum of 4." />
          <property name="Instructions" value="" />
       </card>
       <card id="d5ed8e5d-c9f9-4e9e-8bc9-48da7c938045" name="Oddities of Nature">
