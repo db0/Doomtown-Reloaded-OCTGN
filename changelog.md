@@ -7,7 +7,6 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
   * Swinford Finds Trouble: Manual Use
   * Under the Weather: Just makes a pull
   * Outlaw Mask: Track Manually
-  * Rev Perry: Only Makes a Pull
   * Chuan Qi: Add permanent bullets and influence with Ctrl+Alt+I (or B)
   * Valeria Batten: Game can't figure out she's a Mad Scientist, you may have to do the pull manually.
   * Gadgetorium: Only Announces
