@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="b440d120-025a-4fbe-9f8d-3873acacb37b" sleeveid="0">
+  <section name="Outfit" shared="False">
+    <card qty="1" id="6db17405-bbd3-4c0c-b00f-b89991925291">Morgan Gadgetorium</card>
+  </section>
+  <section name="Starting Cards" shared="False">
+    <card qty="1" id="826655e8-00b7-43ae-a3fb-4cea781176ad">Kyle Wagner</card>
+    <card qty="1" id="03341e26-42b4-4545-897e-8626de5e3dd7">Travis Moone</card>
+    <card qty="1" id="7d2d0bb3-f477-4076-8739-9479911b95a6">Chuān “Jen” Qí</card>
+    <card qty="1" id="5a2cbed4-9d68-4c5d-acb6-93e2d25b268f">William Specks</card>
+    <card qty="1" id="36c80330-39fc-4fdc-8736-4c8d47758063">Jake Smiley</card>
+  </section>
+  <section name="Deck" shared="False">
+    <card qty="4" id="bc4af72b-b53c-44ef-858b-04d33e1e6a4b">Bio-Charged Neutralizer</card>
+    <card qty="2" id="c20de5e3-daea-4dce-a8ce-eaa5349c8187">Flame-Thrower</card>
+    <card qty="2" id="498d4eca-db79-40db-9a42-cc053abcfc43">Point Blank</card>
+    <card qty="2" id="452fd385-a516-45d9-8408-8628f4788fa5">Takin' Ya With Me</card>
+    <card qty="2" id="aa1dec3f-9913-4bf1-bbcd-5d29457f6a80">Mechanical Horse</card>
+    <card qty="2" id="a8546fc6-be73-41eb-b33a-62b2b8158696">Clown Carriage</card>
+    <card qty="2" id="40302c3e-668e-474f-a2ae-7ab1bbdf9d63">Force Field</card>
+    <card qty="2" id="a23d36e0-8231-49e7-bbc4-4e56c179b045">It's Not What You Know...</card>
+    <card qty="2" id="f149dcc9-44a4-4399-8786-62d2496559e4">Eve Henry</card>
+    <card qty="1" id="a2b5195e-4d31-41e9-8407-c40ce54cc334">Lane Healey</card>
+    <card qty="1" id="33b97a88-5b7f-4073-8e30-5c66da9060c5">Arvid Mardh</card>
+    <card qty="1" id="cb15bd27-76a2-48db-b324-99589b14982b">Rémy Lapointe</card>
+    <card qty="1" id="077d03fd-1509-43a2-8844-c2bd8d62b837">Clint Ramsey</card>
+    <card qty="1" id="36c91361-cab3-4988-bed2-2c3401746695">Dr. Dawn Edwards</card>
+    <card qty="1" id="c57efc28-77d3-492b-81ad-f3c5ce130041">Jarrett Blake</card>
+    <card qty="1" id="95b9d8df-a95d-4b5e-aeed-98f8e99ca5a5">Dr. Arden Gillman</card>
+    <card qty="1" id="949e9f9d-bc65-4486-b115-a1d364aaae0d">Baird's Build and Loan</card>
+    <card qty="1" id="84e33474-5247-4969-b7d1-e335b720a566">The Pharmacy</card>
+    <card qty="1" id="45438749-ab3b-4f88-adb3-8c3cc65cfd54">General Store</card>
+    <card qty="1" id="fa907076-61c7-4f1f-b9a4-87a1df59bfae">Railroad Station</card>
+    <card qty="1" id="75e35d17-de1e-457f-88e0-42e2bc9301bc">Morgan Research Institute</card>
+    <card qty="1" id="0eeba3c3-792a-4d39-879a-aab77b0f3981">Jackson's Strike</card>
+    <card qty="1" id="9cba89ca-5a3f-4dad-aff0-91d62581dc31">Bunkhouse</card>
+    <card qty="2" id="3029937b-17cc-4c87-a109-9888747f3134">Cheatin' Varmint</card>
+    <card qty="1" id="cdc1e1d2-d985-400f-ab3c-f91744619eed">Surveyor's Office</card>
+    <card qty="2" id="cd378a50-f1c7-4a1f-a99d-80436806feea">Ridden Down</card>
+    <card qty="1" id="d9586ca6-50bc-446e-aa3b-fc84b0545dcd">Irving Patterson</card>
+    <card qty="2" id="4bd2615b-6a1b-465e-a16d-923fd77ee443">St. Anthony's Chapel</card>
+    <card qty="2" id="1f230385-e07c-43e2-a205-79547ce18380">Unprepared</card>
+    <card qty="1" id="a0c826bd-311f-4918-aeeb-9c2a14b176c3">Evanor</card>
+    <card qty="1" id="ff26cca7-830f-440a-90cd-08e32c629d7e">Tail Between Yer Legs</card>
+    <card qty="1" id="b999405d-e2ca-4703-beda-67f9697fc977">Yan Li's Tailoring</card>
+  </section>
+  <notes><![CDATA[Can use consistently its ability with gadgets at 8 difficulty or less when you have at least MS:2. using at higher diff, or less skill a bit more risky but doable.
+
+Build up a lot of stud shooters, then use Point Blank to do extra kills.
+
+Draw Values are primarily Q and 9]]></notes>
+</deck>

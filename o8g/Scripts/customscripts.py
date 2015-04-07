@@ -33,6 +33,47 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       else: remoteCall(targetDeed[0].owner,'PlasmaDrill',[targetDeed[0]])      
    elif card.name == "Allie Hensman":    
       remoteCall(targetCards[0].controller,'AllieHensmanXP',[targetCards[0],card])
+   ### F&F ###      
+   elif card.name == "Desolation Row":
+      leader = targetCards[0]
+      if leader.group == table and (leader.highlight == AttackColor or leader.highlight == InitiateColor):
+         count = compileCardStat(leader, stat = 'Bullets')
+         if count > 4: count = 4
+         me.GhostRock += count
+         leader.markers[mdict['Bounty']] += 2
+         notify("{} completes the {} job and gains {} ghost rock, while {}'s bounty increases by 2".format(me,card,count,leader))
+      else: notify("{} completes the {} job abut gains nothing since {} is not in their posse anymore".format(me,card,leader))
+   elif card.name == "Mirror, Mirror":
+      #targetCards = findTarget('DemiAutoTargeted-atDude-isParticipating-choose1',card = card, choiceTitle = "Choose which dude to mirror.")
+      #if not len(targetCards): return 'ABORT'
+      huckster = fetchHost(card)
+      target = targetCards[0]         
+      hucksterBullets = compileCardStat(huckster, stat = 'Bullets')
+      targetBullets = compileCardStat(target, stat = 'Bullets')
+      if re.search(r'-isFirstCustom',Autoscript):
+         if hucksterBullets < targetBullets: plusBulletShootout(huckster, count = targetBullets - hucksterBullets, silent = True)
+         elif hucksterBullets > targetBullets: minusBulletShootout(huckster, count = hucksterBullets - targetBullets, silent = True)
+         if fetchDrawType(target) == 'Draw' and fetchDrawType(huckster) == 'Stud': 
+            TokensX('Remove999Shootout:Stud', '', huckster)
+            if huckster.properties['Draw Type'] == 'Stud': TokensX('Put1Shootout:Draw', '', huckster)  
+         elif fetchDrawType(target) == 'Stud' and fetchDrawType(huckster) == 'Draw': 
+            TokensX('Remove999Shootout:Draw', '', huckster)  
+            if huckster.properties['Draw Type'] == 'Draw': TokensX('Put1Shootout:Stud', '', huckster)
+         notify("{} sets {}'s bullets to {} {}".format(me,huckster,targetBullets, fetchDrawType(target)))
+      else:
+         if targetBullets < hucksterBullets: plusBulletShootout(target, count = hucksterBullets - targetBullets, silent = True)
+         elif targetBullets > hucksterBullets: minusBulletShootout(target, count = targetBullets - hucksterBullets, silent = True)
+         if fetchDrawType(huckster) == 'Draw' and fetchDrawType(target) == 'Stud': 
+            TokensX('Remove999Shootout:Stud', '', target)  
+            if target.properties['Draw Type'] == 'Stud': TokensX('Put1Shootout:Draw', '', target)  
+         elif fetchDrawType(huckster) == 'Stud' and fetchDrawType(target) == 'Draw': 
+            TokensX('Remove999Shootout:Draw', '', target)  
+            if target.properties['Draw Type'] == 'Draw': TokensX('Put1Shootout:Stud', '', target)  
+         notify("{} sets {}'s bullets to {} {}".format(me,target,hucksterBullets, fetchDrawType(huckster)))
+   elif card.name == 'Felix Amador':
+      me.piles['Deck'].addViewer(me)
+      whisper("The top card of your deck is {} ({} of {})".format(me.piles['Deck'].top(),fullrank(me.piles['Deck'].top().Rank),fullsuit(me.piles['Deck'].top().Suit)))
+      me.piles['Deck'].removeViewer(me)
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
@@ -234,6 +275,26 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       else: choice = SingleChoice("Choose which player's hand to look at",[pl.name for pl in opponents])
       if choice == None: return
       remoteCall(opponents[choice],'TelepathyHelmet',[me,card]) 
+### F&F ###		 
+   elif card.name == "This'll Hurt in the Mornin" and action == 'PLAY':
+      targetCards = findTarget('DemiAutoTargeted-isDrawHand-targetOpponents-choose2',card = card, choiceTitle = "Choose which of your opponent's cards to discard")
+      if not len(targetCards): return 'ABORT'
+      if confirm("If your own draw hand illegal?"): remoteCall(targetCards[0].controller,'TWHITM',[targetCards,True])
+      else: remoteCall(targetCards[0].controller,'TWHITM',[targetCards,False])
+   elif card.name == "California Tax Office" and action == 'USE':
+      targetCards = findTarget('Targeted-atDude',card = card, choiceTitle = "Choose which of your opponent's dudes has to pay their taxes")
+      if not len(targetCards): return 'ABORT'
+      else: remoteCall(targetCards[0].controller,'TaxOffice',[targetCards[0]])
+   elif card.name == "The Fixer" and action == 'USE':
+      for c in me.Deck.top(5): c.moveTo(me.piles['Discard Pile'])
+      update()
+      discardCards = [c for c in me.piles['Discard Pile']]
+      choice = SingleChoice('Choose one of your discarded cards to take to your hand', makeChoiceListfromCardList(discardCards))
+      notify("{} uses {} to take {} into their hand".format(me,card,discardCards[choice]))
+      rnd(1,10)
+      discardCards[choice].moveTo(me.hand)
+      update()
+      if re.search(r'Noon Job',discardCards[choice].Text) and discardCards[choice].Type == 'Action': remoteCall(me,'boot',[card]) # Doing remote call, so as to have a chance to finish the animation
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -269,6 +330,9 @@ def markerEffects(Time = 'Start'):
                  or re.search(r'Shootout:',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))
+         if Time == 'High Noon' and re.search(r'UpkeepPrePaid',marker[0]) and card.controller == me: # Tax Office reduction effects removal
+            modProd(card, -card.markers[marker], True)
+            card.markers[marker] = 0
    
 #------------------------------------------------------------------------------
 # Remote Functions
@@ -364,3 +428,36 @@ def AllieHensmanXP(mark,allie):
       discard(mark,silent = True)
       notify("{} couldn't afford {}'s tax and has to discard {}".format(mark.controller,allie,mark))
    
+def TWHITM(targetCards, discardCard = True): # This Will Hurt in the Morning
+   mute()
+   for card in targetCards:
+      if discardCard: discard(card)
+      else:
+         if me.GhostRock >= 1 and confirm("Pay 1 Ghost Rock to prevent {} from being aced?".format(card.name)):
+            me.GhostRock -= 1
+            discard(card)
+            notify("{} pays 1 ghost rock to avoid acing {}".format(me,card)) 
+         else: 
+            ace(card)
+   for c in table:
+      if c.highlight == DrawHandColor: c.moveTo(me.piles['Draw Hand']) # We move the remaining card back to the draw hand to be able to calculate value again
+   drawhandMany(me.Deck, 2, True,scripted = True)
+   if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
+   else: Drawtype = 'lowball'
+   resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
+   notify("{}'s new hand rank is {}".format(me,resultTXT))
+         
+def TaxOffice(dude):
+   mute()
+   upkeep = compileCardStat(dude, stat = 'Upkeep')
+   if upkeep:
+      if not confirm("Pay {} Ghost Rock to retain this dude this turn?".format(upkeep)):
+         discard(dude)
+      else:
+         msg = payCost(upkeep, MSG = "You do you not seem to have enough ghost rock to pay your taxes varmint! Bypass?")
+         if msg == 'ABORT': discard(dude)
+         else:
+            modProd(dude, upkeep, True)
+            TokensX('Put{}UpkeepPrePaid'.format(upkeep), '', dude)
+            notify("{} pays the tax required to retain {}".format(me,dude))
+   else: notify(":> {} has 0 upkeep, so their accounts were already in order.".format(dude))

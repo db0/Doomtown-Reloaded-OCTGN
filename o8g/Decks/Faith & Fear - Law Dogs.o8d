@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="b440d120-025a-4fbe-9f8d-3873acacb37b" sleeveid="0">
+  <section name="Outfit" shared="False">
+    <card qty="1" id="b6cfa257-5898-4f1a-968c-8f36956f499b">The Arsenal</card>
+  </section>
+  <section name="Starting Cards" shared="False">
+    <card qty="1" id="da32c302-02de-4a5b-89c4-8227dba9f3c7">Rev. Perry Inbody</card>
+    <card qty="1" id="5167ca6e-657d-4d96-a72b-247b2298abf9">Abram Grothe</card>
+    <card qty="1" id="36c80330-39fc-4fdc-8736-4c8d47758063">Jake Smiley</card>
+    <card qty="1" id="fb5f0076-bbb3-486e-9420-02084643592b">Philip Swinford</card>
+  </section>
+  <section name="Deck" shared="False">
+    <card qty="4" id="a806a33f-8bb2-4a47-9bdc-f3dc7d2058ea">Holy Roller</card>
+    <card qty="2" id="460fcab1-be68-41f1-90bf-41ee11aa17c4">Hot Lead Flyin'</card>
+    <card qty="2" id="07c1a52a-fcdc-4775-b42c-f352465942da">Faster on the Draw</card>
+    <card qty="2" id="b4442f8d-71d0-4d12-9000-4df27ea78643">Killer Bunnies Casino</card>
+    <card qty="1" id="2c51b78f-b130-4663-9c78-0cc69a20a059">Stagecoach Office</card>
+    <card qty="1" id="e0434a23-02b1-406b-a683-0b230b73111d">Mortimer Parsons</card>
+    <card qty="4" id="77df4257-28e1-4865-8d20-5e0087fcd8d5">Walk the Path</card>
+    <card qty="2" id="8d8fa80c-580b-44b3-8e66-b89392299200">Lay On Hands</card>
+    <card qty="1" id="e22efbb0-e796-4c72-9793-23ed7635dfce">Xiong "Wendy" Cheng</card>
+    <card qty="1" id="cbb6be72-e387-4742-99cb-b5681e88de82">Wylie Jenks</card>
+    <card qty="1" id="631a3c9a-b970-47f5-a196-c078ad913d56">Gang Yi</card>
+    <card qty="1" id="077d03fd-1509-43a2-8844-c2bd8d62b837">Clint Ramsey</card>
+    <card qty="1" id="6203abc7-7882-4718-a361-33cf1cf90df0">Mario Crane</card>
+    <card qty="1" id="6b01cb98-4ae3-4b6e-b7d1-29fe035c9e2d">Angela Payne</card>
+    <card qty="1" id="38b1ca04-c236-4d51-80dd-1c283957095e">Félix Amador</card>
+    <card qty="1" id="6560b478-c5fe-4717-a2d1-40ef7c6effa6">Carter's Bounties</card>
+    <card qty="1" id="949e9f9d-bc65-4486-b115-a1d364aaae0d">Baird's Build and Loan</card>
+    <card qty="1" id="27d3649c-fdcf-4b40-83ec-d7d04543cefe">Clyde Owens</card>
+    <card qty="1" id="d340ff50-aec3-4800-a993-c76c954c34a9">The Union Casino</card>
+    <card qty="2" id="519a9e2e-56e9-42a2-8cda-64d1a7cd934f">Too Much Attention</card>
+    <card qty="1" id="c5bf5c92-9d15-42fa-aacf-67163913518a">California Tax Office</card>
+    <card qty="1" id="4bd2615b-6a1b-465e-a16d-923fd77ee443">St. Anthony's Chapel</card>
+    <card qty="1" id="fa907076-61c7-4f1f-b9a4-87a1df59bfae">Railroad Station</card>
+    <card qty="1" id="cdc1e1d2-d985-400f-ab3c-f91744619eed">Surveyor's Office</card>
+    <card qty="2" id="9ef9abea-373c-4265-b7fc-3d8391095f64">Recruitment Drive</card>
+    <card qty="1" id="75e35d17-de1e-457f-88e0-42e2bc9301bc">Morgan Research Institute</card>
+    <card qty="1" id="ec741b63-8ac4-4b5a-9767-9854e05b91c3">Circle M Ranch</card>
+    <card qty="1" id="2ad321e1-eaa0-4984-bdd0-a8d088045588">Blake Ranch</card>
+    <card qty="1" id="57528427-b65a-4056-9fea-082bba8ef4a9">Charlie's Place</card>
+    <card qty="2" id="74fbc995-aeca-4026-a4f4-682684e6feb1">Good Stiff Drink</card>
+    <card qty="1" id="6409f8c3-8fcc-4b31-96e6-96318f629230">Quickdraw Handgun</card>
+    <card qty="1" id="9687ab08-0ae9-4a15-8304-6e9797edc87e">The Evidence</card>
+    <card qty="2" id="a23d36e0-8231-49e7-bbc4-4e56c179b045">It's Not What You Know...</card>
+    <card qty="1" id="a0c826bd-311f-4918-aeeb-9c2a14b176c3">Evanor</card>
+  </section>
+  <notes><![CDATA[Idea of the deck is to make Abram into an unstoppable killing machine.  
+
+You should try to get a Holy Roler on him before sending him out, but then you should send him out solo if you don't expect shenanigans like Unprepared.
+
+Draw Values are primarily 6 and 10
+]]></notes>
+</deck>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="b440d120-025a-4fbe-9f8d-3873acacb37b" sleeveid="0">
+  <section name="Outfit" shared="False">
+    <card qty="1" id="5669e37c-fab7-4954-acb8-7f841ca7a762">Desolation Row</card>
+  </section>
+  <section name="Starting Cards" shared="False">
+    <card qty="1" id="933eccf1-ad0d-4153-8381-a23c6de97a60">Makiao Kaleo, Esq.</card>
+    <card qty="1" id="cd99ead2-3b50-4989-8331-59f76b5edb0b">Milt Clemons</card>
+    <card qty="1" id="dfb10d22-9e8f-4031-9249-50cd13ee7203">The Fixer</card>
+    <card qty="1" id="28b5d3c7-bb58-4b63-aae5-659e86fee876">Silas Aims</card>
+  </section>
+  <section name="Deck" shared="False">
+    <card qty="1" id="84e33474-5247-4969-b7d1-e335b720a566">The Pharmacy</card>
+    <card qty="1" id="6560b478-c5fe-4717-a2d1-40ef7c6effa6">Carter's Bounties</card>
+    <card qty="1" id="55257be5-9428-4699-8df6-9b397f9fe258">Alice Stowe</card>
+    <card qty="1" id="8ed33c69-c79e-4ced-a180-3fe57bf0d25d">Lawrence Blackwood</card>
+    <card qty="1" id="a9b3a2b8-9f22-474d-b35a-59a380c0921f">Pony Express</card>
+    <card qty="2" id="c8453a00-e4f9-4dbe-922c-3daf79586cef">Pearl-handled Revolver</card>
+    <card qty="1" id="6b01cb98-4ae3-4b6e-b7d1-29fe035c9e2d">Angela Payne</card>
+    <card qty="1" id="e686782d-1d7c-464d-82ed-910fcaa2945d">Sanford Taylor</card>
+    <card qty="4" id="25787651-53b5-456e-bb42-8f38fd7b3caf">Election Day Slaughter</card>
+    <card qty="2" id="fcc6f54f-e9d1-40a6-9870-1be438eeef12">Sun in Yer Eyes</card>
+    <card qty="3" id="0b1ae36c-6359-4871-b34b-16808e639243">Swinford Finds Trouble</card>
+    <card qty="2" id="4827d51e-458b-4945-8242-ddfd2fdd9821">Outlaw Mask</card>
+    <card qty="2" id="5c5b6579-a2de-419d-b531-6d08c1eba77d">Hiding in the Shadows</card>
+    <card qty="2" id="1a3e8af5-302b-47e5-8c30-901b8ed995bc">Bottom Dealin'</card>
+    <card qty="1" id="cc2092bd-b575-4a26-8e96-aa13f8736d75">Ambush</card>
+    <card qty="2" id="8649f082-f7cd-414d-b360-9b1b72f6172b">The Stakes Just Rose</card>
+    <card qty="2" id="ef91b1f5-46b8-4246-8e58-401a39ebbf6f">Back Ways</card>
+    <card qty="2" id="9a18cd02-63dd-4381-ba9f-49d80fac935a">Bad Company</card>
+    <card qty="2" id="546a4107-75f3-49f6-84a1-4396ca3c61c1">This’ll Hurt in the Mornin’</card>
+    <card qty="4" id="7bb386d8-73a0-4d31-bbd1-5204fcde0302">Make 'em Sweat</card>
+    <card qty="2" id="2dbddcbc-d228-451d-8cde-32b65abe769e">Pair of Six-Shooters</card>
+    <card qty="1" id="3c904ee6-15de-4478-8837-61e394bb31ee">Bank of California</card>
+    <card qty="1" id="dfd2d635-4b88-4cea-9939-14deec3896cf">Allie Hensman</card>
+    <card qty="1" id="5d610a44-7f13-4333-a941-ee5e1fa2fb37">Clementine Lepp</card>
+    <card qty="1" id="57528427-b65a-4056-9fea-082bba8ef4a9">Charlie's Place</card>
+    <card qty="2" id="7779228b-f33c-4c36-ae90-17fdf54cd142">This is a Holdup!</card>
+    <card qty="1" id="36c80330-39fc-4fdc-8736-4c8d47758063">Jake Smiley</card>
+    <card qty="2" id="6656eabf-4a69-4854-950d-f30d7771c4ae">A Coach Comes to Town</card>
+  </section>
+  <notes><![CDATA[A very aggressive Job and Actions based deck.
+
+Use Jobs to quickle jumpstart your advantage, and if they try to oppose you in the early game, reduce their bullets so that your easy flushes can take carry you through
+
+Deck structure is Staight Flush A-5 Clubs. Extra aces are backups. ]]></notes>
+</deck>

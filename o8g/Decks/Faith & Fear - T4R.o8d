@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<deck game="b440d120-025a-4fbe-9f8d-3873acacb37b" sleeveid="0">
+  <section name="Outfit" shared="False">
+    <card qty="1" id="d5ed8e5d-c9f9-4e9e-8bc9-48da7c938045">Oddities of Nature</card>
+  </section>
+  <section name="Starting Cards" shared="False">
+    <card qty="3" id="6a4d1a94-7e29-465e-9a41-f78389ef49cf">Pagliaccio</card>
+    <card qty="1" id="36c80330-39fc-4fdc-8736-4c8d47758063">Jake Smiley</card>
+    <card qty="1" id="1ff5d90e-e801-4199-80bc-7313bc8cf99e">Micah Ryse</card>
+  </section>
+  <section name="Deck" shared="False">
+    <card qty="2" id="ac681d62-c7df-469f-8ac6-80816c781136">Shotgun</card>
+    <card qty="2" id="f94631b0-20f6-492b-b732-e36b816e523f">Stone Idol</card>
+    <card qty="2" id="8272e52f-aa01-403e-9ea4-0408bdcf3fdc">Corporeal Twist</card>
+    <card qty="3" id="18e06cc3-eb57-451a-ba28-18665727999d">Paralysis Mark</card>
+    <card qty="1" id="1aa58444-fccc-4121-ac6c-482fd48e4b8e">Arnold McCadish</card>
+    <card qty="1" id="03c50bb2-d027-4d02-b8b6-4bc542dceddb">Kevin Wainwright</card>
+    <card qty="1" id="91863a08-01d9-4b7e-9eff-0bb62826f433">The Ghostly Gun</card>
+    <card qty="2" id="e6db104b-d882-41c5-9285-84ed77a74eac">Tyxarglenak</card>
+    <card qty="1" id="6a4d1a94-7e29-465e-9a41-f78389ef49cf">Pagliaccio</card>
+    <card qty="1" id="ecfa0567-5576-427f-a829-a049e817f4b0">Androcles Brocklehurst</card>
+    <card qty="1" id="2ad321e1-eaa0-4984-bdd0-a8d088045588">Blake Ranch</card>
+    <card qty="1" id="2cd7a17c-ce6a-4ffd-92b0-06fe310c7d6c">Cattle Market</card>
+    <card qty="2" id="e11367a5-6fad-40a4-b22a-a2571eb7c330">Kidnappin'</card>
+    <card qty="1" id="b5fbbe61-aba3-4de7-b501-4feb1f9cf203">Pinned Down</card>
+    <card qty="2" id="1f6dc79e-65ad-4727-bf8e-1c42eee98fe1">Hunter Protections</card>
+    <card qty="4" id="f138c8f1-00cc-4ca4-b145-e9c5105dc76a">Fetch</card>
+    <card qty="1" id="0eeba3c3-792a-4d39-879a-aab77b0f3981">Jackson's Strike</card>
+    <card qty="2" id="7a949a25-df55-47e3-9d6e-674b51cc0f0f">Hex Slingin'</card>
+    <card qty="2" id="0ab4453e-e9bd-4899-96e1-1eb6757ecd94">Raising Hell</card>
+    <card qty="1" id="45438749-ab3b-4f88-adb3-8c3cc65cfd54">General Store</card>
+    <card qty="1" id="90b3fbde-2834-4c49-9577-1d8723feadd4">Leonardo "Leon" Cavallo</card>
+    <card qty="2" id="bf1c8173-843a-4a20-be3b-f4ae650cfdd2">Soul Blast</card>
+    <card qty="1" id="b072a22f-6c55-441f-8cce-4351038ed15c">Ivor Hawley</card>
+    <card qty="2" id="c5bf5c92-9d15-42fa-aacf-67163913518a">California Tax Office</card>
+    <card qty="1" id="a8843dcd-cd66-4f38-b6a9-12fbf5fd8bba">Undertaker</card>
+    <card qty="1" id="077d03fd-1509-43a2-8844-c2bd8d62b837">Clint Ramsey</card>
+    <card qty="2" id="0857fa1d-c061-4606-bb55-4736edcfd2e9">Forget</card>
+    <card qty="1" id="0482af4d-f834-4f73-88fc-9f57e44c465a">Doyle's Hoyle</card>
+    <card qty="1" id="c27e60e9-8450-4e6e-9c2e-73d19caec7c1">Meet The New Boss</card>
+    <card qty="1" id="fa907076-61c7-4f1f-b9a4-87a1df59bfae">Railroad Station</card>
+    <card qty="1" id="546a4107-75f3-49f6-84a1-4396ca3c61c1">This’ll Hurt in the Mornin’</card>
+  </section>
+  <notes><![CDATA[A Shotgun/Soul Blast deck meant to kill enemies before it comes down to draw hands
+
+Control the game until you get your shoguns and value reducers.
+
+Then reduce their values with Micah Xp, Stone Idol and Corporeal Twist, then kill them.
+
+Draw Values are primarily 7 and J]]></notes>
+</deck>
