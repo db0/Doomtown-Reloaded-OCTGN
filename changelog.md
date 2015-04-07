@@ -2,7 +2,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 ### 1.5.0.x
 
-** Faith & Fear** has descended on the Town!
+**Faith & Fear** has descended on the Town!
 * Trickier Scripts
   * Swinford Finds Trouble: Manual Use
   * Under the Weather: Just makes a pull
@@ -19,7 +19,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 
 ### 1.4.0.x
 
-An ** Election Day Slaughter'** has occured!
+An **Election Day Slaughter'** has occured!
 * Trickier Scripts
   * Summoning: Won't automate the job effects
   * Puppet: Not automated
@@ -60,7 +60,7 @@ An ** Election Day Slaughter'** has occured!
 
 ### 1.3.0.x
 
-** Double Dealin'** has arrived into town!
+**Double Dealin'** has arrived into town!
 
 ### 1.2.3.x
 
