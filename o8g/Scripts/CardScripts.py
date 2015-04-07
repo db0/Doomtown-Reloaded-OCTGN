@@ -1797,7 +1797,7 @@ Nicodemus Whateley
 -----
 
 +++++
-
+GR0B0R1:BootTarget-Targeted-atDude-targetMine$$Put1ControlPlus
 .....
 Rev. Perry Inbody
 -----
@@ -1805,7 +1805,7 @@ da32c302-02de-4a5b-89c4-8227dba9f3c7
 -----
 
 +++++
-GR0B1R0:Pull1Card
+GR0B1R0:Pull1Card-testMiracle9-spellEffects<UnbootHost++UnbootTarget-DemiAutoTargeted-atDude_and_Law Dogs-targetMine-isBooted-choose1,None>
 .....
 Zoe Halbrook
 -----
