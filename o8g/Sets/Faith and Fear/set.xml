@@ -20,7 +20,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Shootout: Your dude gets +1 bullets. If they are a Deputy, they become a stud. One opposing dude gets –2 bullets." />
+         <property name="Text" value="Shootout: Your dude gets +1 bullets. If they are a Deputy, they become a stud. One opposing dude gets -2 bullets." />
          <property name="Instructions" value="" />
       </card>
       <card id="0b1ae36c-6359-4871-b34b-16808e639243" name="Swinford Finds Trouble">
@@ -139,7 +139,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Government" />
-         <property name="Text" value="Comes into play booted.&#xD;&#xA;Controller Noon, Boot: Choose another player's dude. The dude's owner either pays the dude's upkeep or discards them. Reduce the dude's upkeep to 0 until after the next Upkeep phase. " />
+         <property name="Text" value="Comes into play booted.&#xD;&#xA;Controller Noon, Boot: Choose another player's dude. The dude's owner either pays the dude's upkeep or discards that dude. Reduce the dude's upkeep to 0 until after the next Upkeep phase. " />
          <property name="Instructions" value="" />
       </card>
       <card id="4bd2615b-6a1b-465e-a16d-923fd77ee443" name="St. Anthony's Chapel">
@@ -156,7 +156,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private-Holy Ground" />
-         <property name="Text" value="After a dude controlled by a player other than this deed's owner moves here, boot them.Controller Noon, Boot: Move a non-dude card from your Boot Hill to your discard pile." />
+         <property name="Text" value="Abominations at this location get -1 bullets.&#xD;&#xA;The controller's dudes get +1 to their skill ratings while at this deed" />
          <property name="Instructions" value="" />
       </card>
       <card id="e77f6e44-7900-4d0e-b370-defa7cd6796d" name="The Whateley Estate">
@@ -173,7 +173,7 @@
          <property name="Control" value="2" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
-         <property name="Text" value="Dudes controlled by a player other than the owner of this deed are booted after they move here.&#xD;&#xA;Controller Noon, Boot: Move a non-dude card from your Boot Hill to your discard pile." />
+         <property name="Text" value="Dudes not controlled by this deed's owner boot after moving here&#xD;&#xA;Controller Noon, Boot: Move a non-dude card from your Boot Hill to your discard pile." />
          <property name="Instructions" value="" />
       </card>
       <card id="4827d51e-458b-4945-8242-ddfd2fdd9821" name="Outlaw Mask">
@@ -190,7 +190,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Attire" />
-         <property name="Text" value="This dude's influence is increased by their bounty while they are in the town square." />
+         <property name="Text" value="While in the town square, this dude gets a bonus to their influence equal to their bounty." />
          <property name="Instructions" value="" />
       </card>
       <card id="9b76ed8e-e25b-47a5-b8d7-e7c020e7a230" name="Mirror, Mirror">
@@ -207,8 +207,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Shootout Hex 4, Boot: This Huckster loses all bullet bonuses. Set this dude's bullets (type and rating) to that of an opposing dude.&#xD;&#xA;An opposing dude loses all bullet bonuses. Set that dude's bullets (type and rating) to that of this Huckster." />
-         <property name="Instructions" value="Shootout Hex 4, Boot: This Huckster loses all bullet bonuses. Set this dude's bullet's (type and rating) to that of an opposing dude.||Shootout Hex 6, Boot: An opposing dude loses all bullet bonuses. Set that dude's bullets (type and rating) to that of this Huckster." />
+         <property name="Text" value="Shootout Hex 4, Boot: This Huckster's bullet type becomes that of an opposing dude. If this Huckster has a lower bullet rating, they get a bullet bonus equal to the difference in ratings.&#xD;&#xA;Shootout Hex 4, Boot: An opposing dude's bullet type becomes that of this Huckster. If this Huckster has a lower bullet rating, that dude suffers a bullet penalty equal to the difference in ratings" />
+         <property name="Instructions" value="Shootout Hex 4, Boot: This Huckster's bullet type becomes that of an opposing dude. If this Huckster has a lower bullet rating, they get a bullet bonus equal to the difference in ratings.||Shootout Hex 4, Boot: An opposing dude's bullet type becomes that of this Huckster. If this Huckster has a lower bullet rating, that dude suffers a bullet penalty equal to the difference in ratings" />
       </card>
       <card id="8d8fa80c-580b-44b3-8e66-b89392299200" name="Lay On Hands">
          <property name="Rank" value="4" />
@@ -224,7 +224,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Miracle" />
-         <property name="Text" value="React Miracle 8, boot: When one of your other dudes at this or an adjacent location is being discarded as a casualty or aced, boot this blessed. The dude is sent home booted instead and will not unboot during sundown." />
+         <property name="Text" value="React Miracle 8, boot: When another dude at this or an adjacent location is being discarded as a casualty, or aced (at any time), boot this Blessed. Send that dude home booted instead. That dude will not unboot during the Sundown phase at the end of this turn." />
          <property name="Instructions" value="" />
       </card>
       <card id="a806a33f-8bb2-4a47-9bdc-f3dc7d2058ea" name="Holy Roller">
@@ -241,7 +241,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Miracle" />
-         <property name="Text" value="Shootout Miracle 6, boot: This blessed get +1 bullet and cannot be taken as a casualty this round of the shootout unless you lose by 3 or more hand ranks." />
+         <property name="Text" value="Shootout Miracle 6, boot: This Blessed get +1 bullet and cannot be taken as a casualty this round of the shootout unless you lose by 3 or more hand ranks." />
          <property name="Instructions" value="" />
       </card>
       <card id="c5c2fed5-010f-4ece-a5e2-2cf200695064" name="The Lord Provides">
@@ -258,7 +258,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Miracle" />
-         <property name="Text" value="Shootout Miracle 9, boot: Boot this blessed. Search your deck and discard pile for an action card, show it to your opponent and put it in your hand. Discard this spell." />
+         <property name="Text" value="Shootout Miracle 9, boot: Boot this blessed. Search your deck and/or discard pile for an action card, reveal it, and place it in your hand. Discard this spell." />
          <property name="Instructions" value="" />
       </card>
       <card id="77df4257-28e1-4865-8d20-5e0087fcd8d5" name="Walk the Path">
@@ -275,7 +275,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Miracle" />
-         <property name="Text" value="Noon Miracle 6, boot: Move another one of your dudes to this location&#xD;&#xA;Shootout Miracle 7, boot: Another of your dudes joins your posse (moving if necessary) and is unbooted." />
+         <property name="Text" value="Noon Miracle 6, boot: Move another one of your dudes to this Blessed's location (from any location, without booting)&#xD;&#xA;Shootout Miracle 7, boot: One of your dudes in any location joins this Blessed's posse (moving if necessary). Unboot that dude." />
          <property name="Instructions" value="" />
       </card>
       <card id="c7d43986-30a5-46ac-99a3-01d94ceda540" name="Phantasm">
@@ -292,8 +292,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Noon Hex 9, Boot: Move another player's unbooted dude at this or an adjacent location, to an adjacent location&#xD;&#xA;Noon Hex 12, Boot: Move another player's booted dude at this location to an adjacent location." />
-         <property name="Instructions" value="Noon Hex 9, Boot: Move another player's unbooted dude at this or an adjacent location, to an adjacent location||Noon Hex 12, Boot: Move another player's booted dude at this location to an adjacent location." />
+         <property name="Text" value="Noon Hex 9, Boot: Choose another player's unbooted dude at this or an adjacent location. Move them to a location adjacent to where they are now (without booting)&#xD;&#xA;Noon Hex 12, Boot: Move another player's booted dude at this location to an adjacent location." />
+         <property name="Instructions" value="Noon Hex 9, Boot: Choose another player's unbooted dude at this or an adjacent location. Move them to a location adjacent to where they are now||Noon Hex 12, Boot: Move another player's booted dude at this location to an adjacent location." />
       </card>
       <card id="4eba0738-ddf4-4bce-9c3c-ecb06d3381ff" name="Soothe">
          <property name="Rank" value="Q" />
@@ -309,7 +309,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Miracle" />
-         <property name="Text" value="Noon Miracle 10, boot: Boot this blessed. Unboot another dude at this or an adjacent location." />
+         <property name="Text" value="Noon Miracle 10, boot: Boot this blessed to unboot another dude at this or an adjacent location." />
          <property name="Instructions" value="" />
       </card>
       <card id="a0c826bd-311f-4918-aeeb-9c2a14b176c3" name="Evanor">
@@ -325,8 +325,8 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Mêlée-Weapon-Mystical-Unique" />
-         <property name="Text" value="If there is an unbooted non-Mêlée Weapon in the opposing posse, this weapon provides no bullet bonus.&#xD;&#xA;Shootout, Boot: Your posse inflicts 1 additional casualty if you win this round. If this dude is Blessed, they cannot be a casualty next round." />
+         <property name="Keywords" value="Melee-Weapon-Mystical-Unique" />
+         <property name="Text" value="If there is an unbooted non-Mêlée Weapon in the opposing posse, this weapon provides no bullet bonus.&#xD;&#xA;Shootout, Boot: If this dude is Blessed, they cannot be a casualty in the next round of the shootout (they are not protected this round). If you win this round, the loser takes 1 additional casualty." />
          <property name="Instructions" value="" />
       </card>
       <card id="a8546fc6-be73-41eb-b33a-62b2b8158696" name="Clown Carriage">
@@ -343,7 +343,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Horse-Mystical-Gadget-Difficulty 8" />
-         <property name="Text" value="RReact, Boot: When joining or forming a posse, this dude and any number of unbooted Abominations at this location do not have to boot when joining.&#xD;&#xA;Shootout, Boot: Play an Abomination from your hand into your posse paying all costs." />
+         <property name="Text" value="React, Boot: When joining or forming a posse, this dude and any number of unbooted Abominations at this dude's location do not have to boot to join the posse (this does not allow a booted dude to join a posse)&#xD;&#xA;Play an abomination from your hand into your posse (paying all costs)" />
          <property name="Instructions" value="" />
       </card>
       <card id="bc4af72b-b53c-44ef-858b-04d33e1e6a4b" name="Bio-Charged Neutralizer">
@@ -360,7 +360,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget-Difficulty 9-Weapon" />
-         <property name="Text" value="This card cannot be traded, nor can it be affected by opposing player’s card effects. This dude is a stud." />
+         <property name="Text" value="This dude is a stud. This card cannot be traded and is not affected by other player's card effects." />
          <property name="Instructions" value="" />
       </card>
       <card id="2923cd38-686c-4ab3-8996-94fd989bff9b" name="Sister Lois Otwell">
@@ -411,7 +411,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="Huckster 3" />
-         <property name="Text" value="All other dudes you control with influence, at an in-town deed, gain the ability: &quot;Noon, Boot: Give Nicodemus a control point.&quot;&#xD;&#xA;At sundown, or if Nicodemus is ever at home, he loses all control points." />
+         <property name="Text" value="While your dudes are at in-town deeds, they gain the ability: &quot;Noon,Boot: If this dude has 1 or more influence, give Nicodemus a control point&quot;&#xD;&#xA;At the end of Sundown, or if he is ever at home, Nicodemus loses all his control points." />
          <property name="Instructions" value="" />
       </card>
       <card id="da32c302-02de-4a5b-89c4-8227dba9f3c7" name="Rev. Perry Inbody">
@@ -445,7 +445,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Mad Scientist 0" />
-         <property name="Text" value="Robot Dude Maker can only invent Weapon Gadgets.&#xD;&#xA;Robot Dude Maker has a bonus Mad Scientist skill rating equal to the number of deputies at her location." />
+         <property name="Text" value="Zoe can only invent Weapon Gadget cards. &#xD;&#xA;Zoe gets a bonus to her Mad Scientist skill equal to the number of Deputies at her location.Zoe gets a bonus to her Mad Scientist skill equal to the number of Deputies at her location." />
          <property name="Instructions" value="" />
       </card>
       <card id="5167ca6e-657d-4d96-a72b-247b2298abf9" name="Abram Grothe">
@@ -462,7 +462,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Experienced 1-Blessed 1-Deputy" />
-         <property name="Text" value="Shootout: This shootout play cannot be used in the first round of the shootout. Boot all unbooted weapons in the opposing posse. Weapons in the opposing posse provide no bullet bonuses. Abram gains +1 bullets." />
+         <property name="Text" value="Abram cannot use his ability in the first round of a shootout.&#xD;&#xA;Shootout: Abram gets +1 bullets. Boot all Weapons in the opposing posse and reduce their bullet bonuses to 0. " />
          <property name="Instructions" value="" />
       </card>
       <card id="5a2cbed4-9d68-4c5d-acb6-93e2d25b268f" name="William Specks">
@@ -479,7 +479,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Mad Scientist 2" />
-         <property name="Text" value="Noon, Boot: Play a Gadget, Ranch, or Out of Town deed (as Shoppin') reducing its cost by this dude's Mad Scientist Skill." />
+         <property name="Text" value="Noon, Boot: Play a Ranch or Out of Town deed (as Shoppin’), or invent a Gadget. Reduce the cost by William’s Mad Scientist skill." />
          <property name="Instructions" value="" />
       </card>
       <card id="7d2d0bb3-f477-4076-8739-9479911b95a6" name="Chuān “Jen” Qí">
@@ -496,7 +496,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Mad Scientist 0" />
-         <property name="Text" value="While this dude has a Horse, she has +1 influence. &#xD;&#xA;While this this dude has a Gadget, she has +2 bullets." />
+         <property name="Text" value="While Jen has a Horse, she gets +1 influence.&#xD;&#xA;While Jen has a Gadget, she gets +2 bullets." />
          <property name="Instructions" value="" />
       </card>
       <card id="a2b5195e-4d31-41e9-8407-c40ce54cc334" name="Lane Healey">
@@ -513,7 +513,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Experienced 1" />
-         <property name="Text" value="Noon: Boot Lane’s Horse to boot another player's dude at an adjacent deed. Lane moves to the deed and calls out the chosen dude." />
+         <property name="Text" value="Noon: Boot Lane's Horse to choose a dude at an adjacent deed. Boot that dude. Lane moves to that deed and calls out the chosen dude. " />
          <property name="Instructions" value="" />
       </card>
       <card id="dfb10d22-9e8f-4031-9249-50cd13ee7203" name="The Fixer">
@@ -530,7 +530,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="Grifter" />
-         <property name="Text" value="React, Boot: At the start of the game, discard the top five cards from your deck. You may take one of those cards in your hand. If that card was a job, unboot The Kingpin." />
+         <property name="Text" value="React, Boot: At the start of the game, discard five cards from your deck. You may place one of those cards in your hand. If that card was an action card that starts a job, unboot The Fixer." />
          <property name="Instructions" value="" />
       </card>
       <card id="9937f528-6b65-4625-85d8-05a51af488d2" name="Maria Kingsford">
@@ -547,7 +547,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="Huckster 0" />
-         <property name="Text" value="While this dude is in a shootout she has a bonus to her Huckster rating equal to her bounty." />
+         <property name="Text" value="Add Maria's bounty to each Huckster skill check she makes while in a shootout. " />
          <property name="Instructions" value="" />
       </card>
       <card id="933eccf1-ad0d-4153-8381-a23c6de97a60" name="Makiao Kaleo, Esq.">
@@ -564,7 +564,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon: Move one bounty on one of your dudes to another of your dudes." />
+         <property name="Text" value="Noon: Move one bounty from one of your dudes to another of your dudes." />
          <property name="Instructions" value="" />
       </card>
       <card id="6a4d1a94-7e29-465e-9a41-f78389ef49cf" name="Pagliaccio">
@@ -581,7 +581,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Non-Unique-Abomination" />
-         <property name="Text" value="Shootout, Boot: Reduce the bullet rating and value of an opposing dude by 1." />
+         <property name="Text" value="Shootout, Boot: One opposing dude gets -1 bullets and -1 value." />
          <property name="Instructions" value="" />
       </card>
       <card id="aba65d32-3cb2-4677-b000-f4b905c4a16e" name="Valeria Batten">
@@ -598,11 +598,11 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Huckster 1" />
-         <property name="Text" value="This dude can invent mystical gadgets as if she were a mad scientist using her huckster skill rating." />
+         <property name="Text" value="Valeria can invent Mystical gadgets using her Huckster skill (as if it were Mad Scientist)." />
          <property name="Instructions" value="" />
       </card>
       <card id="1ff5d90e-e801-4199-80bc-7313bc8cf99e" name="Micah Ryse">
-         <property name="Rank" value="5" />
+         <property name="Rank" value="9" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
          <property name="Cost" value="7" />
@@ -615,7 +615,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="Experienced 1-Huckster 1" />
-         <property name="Text" value="Shootout: Boot a Hex or Mystical goods attached to Micah to reduce the value of an opposing dude by 3." />
+         <property name="Text" value="Shootout: Boot a hex or Mystical goods attached to Micah to give an opposing dude -3 value." />
          <property name="Instructions" value="" />
       </card>
       <card id="b6cfa257-5898-4f1a-968c-8f36956f499b" name="The Arsenal">
@@ -632,7 +632,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon, Repeat: Boot a gadget or spell attached to your dude to have them call out an unbooted or wanted dude in the same location." />
+         <property name="Text" value="Noon, Repeat: Boot a Gadget or spell attached to your dude to have them call out an unbooted or wanted dude (at your dude's location)." />
          <property name="Instructions" value="" />
       </card>
       <card id="6db17405-bbd3-4c0c-b00f-b89991925291" name="Morgan Gadgetorium">
@@ -649,7 +649,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
-         <property name="Text" value="React, boot: Before using a skill, increase the difficulty by 2. If successful gain one ghost rock, and unboot the dude if they booted to use the skill." />
+         <property name="Text" value="React, Boot: When using a skill, increase the difficulty by 2. If successful, gain one ghost rock, and cancel the dude booting if they must boot to use the ability." />
          <property name="Instructions" value="" />
       </card>
       <card id="5669e37c-fab7-4954-acb8-7f841ca7a762" name="Desolation Row">
@@ -666,7 +666,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Sloane Gang" />
          <property name="Keywords" value="" />
-         <property name="Text" value="All your dudes with 4 or more bounty provide 1 control point.&#xD;&#xA;Noon Job, Boot: Mark the town square. If the job succeeds and your leader is still in the posse, increase their bounty by 2 then gain ghost rock equal to their bullet rating (max 4)" />
+         <property name="Text" value="Your dudes with 4 or more bounty are worth +1 control point.&#xD;&#xA;Noon Job: Boot this card (not the job's leader) to mark the town square. If successful and your leader is still in the posse, give them 2 bounty then gain ghost rock equal to their bullet rating (to a maximum of 4)." />
          <property name="Instructions" value="" />
       </card>
       <card id="d5ed8e5d-c9f9-4e9e-8bc9-48da7c938045" name="Oddities of Nature">
@@ -683,7 +683,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="" />
-         <property name="Text" value="All your Abominations have +1 influence while in the town square.&#xD;&#xA;Noon, Boot: Boot one of your Abominations at the town square to gain 1 ghost rock. You may boot another dude in the same location." />
+         <property name="Text" value="Your Abomination dudes get +1 influence while in the town square.&#xD;&#xA;Noon, Boot: Boot your Abomination in the town square to gain 1 ghost rock. Boot an opposing dude in the town square." />
          <property name="Instructions" value="" />
       </card>
   </cards>
