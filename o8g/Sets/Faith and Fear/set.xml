@@ -163,7 +163,7 @@
          <property name="Rank" value="K" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
-         <property name="Cost" value="3" />
+         <property name="Cost" value="4" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="0" />
          <property name="Bullets" value="" />
