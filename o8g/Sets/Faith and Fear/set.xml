@@ -343,7 +343,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Horse-Mystical-Gadget-Difficulty 8" />
-         <property name="Text" value="React, Boot: When joining or forming a posse, this dude and any number of unbooted Abominations at this dude's location do not have to boot to join the posse (this does not allow a booted dude to join a posse)&#xD;&#xA;Play an abomination from your hand into your posse (paying all costs)" />
+         <property name="Text" value="React, Boot: When joining or forming a posse, this dude and unbooted Abominations at this dude's location do not have to boot to join the posse (this does not allow a booted dude to join a posse)&#xD;&#xA;Play an abomination from your hand into your posse (paying all costs)" />
          <property name="Instructions" value="" />
       </card>
       <card id="bc4af72b-b53c-44ef-858b-04d33e1e6a4b" name="Bio-Charged Neutralizer">
@@ -394,7 +394,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Drifter" />
          <property name="Keywords" value="Confederate-Blessed 2" />
-         <property name="Text" value="Noon: Boot an attached spell to look at the top card of your deck." />
+         <property name="Text" value="Noon: Boot a Miracle attached to Felix to look at the top card of your deck." />
          <property name="Instructions" value="" />
       </card>
       <card id="35a3cffb-6a57-4a90-ab93-63f519910c99" name="Nicodemus Whateley">
@@ -513,7 +513,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="Experienced 1" />
-         <property name="Text" value="Noon: Boot Lane's Horse to choose a dude at an adjacent deed. Boot that dude. Lane moves to that deed and calls out the chosen dude. " />
+         <property name="Text" value="Noon: Boot Lane's Horse to choose an opposing dude at an adjacent deed. Boot that dude. Lane moves to that deed and calls out the chosen dude." />
          <property name="Instructions" value="" />
       </card>
       <card id="dfb10d22-9e8f-4031-9249-50cd13ee7203" name="The Fixer">
@@ -649,7 +649,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
-         <property name="Text" value="React, Boot: When using a skill, increase the difficulty by 2. If successful, gain one ghost rock, and cancel the dude booting if they must boot to use the ability." />
+         <property name="Text" value="React, Boot: When pulling for a skill check, increase the difficulty by 2. If successful, gain one ghost rock, and unboot the dude if they booted to use the ability." />
          <property name="Instructions" value="" />
       </card>
       <card id="5669e37c-fab7-4954-acb8-7f841ca7a762" name="Desolation Row">
