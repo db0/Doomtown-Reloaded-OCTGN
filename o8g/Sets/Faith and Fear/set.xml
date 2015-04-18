@@ -649,7 +649,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
-         <property name="Text" value="React, Boot: When pulling for a skill check, increase the difficulty by 2. If successful, gain one ghost rock, and unboot the dude if they booted to use the ability." />
+         <property name="Text" value="React, Boot: When pulling for a skill check, increase the difficulty by 2. If successful, gain one ghost rock, and unboot the dude if they booted to use the skill or ability." />
          <property name="Instructions" value="" />
       </card>
       <card id="5669e37c-fab7-4954-acb8-7f841ca7a762" name="Desolation Row">
