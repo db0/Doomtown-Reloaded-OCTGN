@@ -445,7 +445,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
-         <property name="Text" value="Dudes with 0 or 1 influence have +1 influence while at this deed." />
+         <property name="Text" value="Dudes with 0 or 1 influence, excluding any modifiers from this deed, have +1 influence while at this deed." />
          <property name="Instructions" value="" />
       </card>
       <card id="6560b478-c5fe-4717-a2d1-40ef7c6effa6" name="Carter's Bounties">
@@ -615,7 +615,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Cheatin’ Resolution: The cheatin’ player must boot a dude. If in a shootout, that dude gets aced instead. If you have a legal hand, you choose the dude to boot or ace." />
+         <property name="Text" value="Cheatin’ Resolution: The cheatin’ player must boot one of their dudes. If in a shootout, that dude gets aced instead. If you have a legal hand, you choose the dude to boot or ace." />
          <property name="Instructions" value="" />
       </card>
       <card id="9c4f6a3b-70e0-40d8-adde-e26c4e5eab12" name="Concealed Weapons">
@@ -666,7 +666,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Mystical" />
-         <property name="Text" value="React, Boot: If this dude makes a pull or is in a posse, you may discard the pull or a card from your draw hand to replace it with this card. If the discarded card was a 2, raise your draw hand rank by one." />
+         <property name="Text" value="React, Boot: After this dude makes a pull, discard the pull to replace it with this card.&#xD;&#xA;Resolution Boot: Discard a card from your draw hand to replace it with this card. If the discarded card was a 2, raise your hand rank by one." />
          <property name="Instructions" value="" />
       </card>
       <card id="36c91361-cab3-4988-bed2-2c3401746695" name="Dr. Dawn Edwards">
