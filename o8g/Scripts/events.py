@@ -57,7 +57,7 @@ def chooseSide(silent = False): # Called from many functions to check if the pla
    global playerside, playeraxis
    plCount = 0
    for player in sorted(getPlayers()):
-      if len(player.Deck) == 0: continue # We ignore spectators
+      if len(player.Deck) == 0 and len(player.piles['Discard Pile']) == 0: continue # We ignore spectators
       plCount += 1
       if player != me: continue # We only set our own side
       if plCount == 1: # First player is on the right

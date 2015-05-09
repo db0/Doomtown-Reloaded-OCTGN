@@ -672,10 +672,10 @@ def cardDistance(card = None):
 # So for example, if a player is playing on the bottom side. This function will always return a positive cardheight.
 #   Thus by adding this in a moveToTable's y integer, the card being placed will be moved towards your side by one multiple of card height
 #   While if you remove it from the y integer, the card being placed will be moved towards the centre of the table by one multiple of card height.
-   if playeraxis == Xaxis:
-      return (playerside * cwidth())
-   elif playeraxis == Yaxis:
+   if playeraxis == Yaxis:
       return (playerside * cheight())
+   else:
+      return (playerside * cwidth())
 
 #------------------------------------------------------------------------------
 # Remote Calls

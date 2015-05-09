@@ -1188,7 +1188,9 @@ def playcard(card,retainPos = False,costReduction = 0):
                         notify("{} attempted to manufacture a {} on {} and pulled a {} {}".format(myDudes[choice],card,hostCard,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
                      else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
                   else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
-            elif card.Type == "Spell": notify("{} has learned {}.".format(hostCard, card))
+            elif card.Type == "Spell": 
+               if hostCard.Type == 'Dude': notify("{} has learned {}.".format(hostCard, card))
+               else: notify("{} been prepared on {}.".format(card,hostCard))
             else: notify("{} has purchased {}.".format(hostCard, card))
          else: notify("{} has attached a {}.".format(hostCard, card))
          attachCard(card,hostCard)
