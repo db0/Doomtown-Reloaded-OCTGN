@@ -1,5 +1,9 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.5.1.x
+
+Moved to OCTGN API 3.1.0.1
+
 ### 1.5.0.x
 
 **Faith & Fear** has descended on the Town!
