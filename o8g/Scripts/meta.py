@@ -715,7 +715,7 @@ def fetchCardScripts(group = table, x=0, y=0, silent = False): # Creates 2 dicti
       CardsAS[Split_Details[1].strip()] = Split_Scripts[0].strip()
       CardsAA[Split_Details[1].strip()] = Split_Scripts[1].strip()
       if debugVerbosity >= 5: notify(Split_Details[0].strip() + "-- STORED")
-   if num(getGlobalVariable('Turn')) > 0: whisper("+++ All card scripts refreshed!")
+   whisper("+++ All card scripts refreshed!")
    if debugVerbosity >= 5: # Debug
       notify("CardsAS Dict:\n{}".format(str(CardsAS)))
       notify("CardsAA Dict:\n{}".format(str(CardsAA))) 

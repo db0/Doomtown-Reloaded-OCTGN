@@ -510,3 +510,30 @@ def TaxOffice(dude):
             TokensX('Put{}UpkeepPrePaid'.format(upkeep), '', dude)
             notify("{} pays the tax required to retain {}".format(me,dude))
    else: notify(":> {} has 0 upkeep, so their accounts were already in order.".format(dude))
+
+def FuntimeFreddyChoose(card,spell1,spell2):
+   mute()
+   notify("{} is choosing which hex to ace from {}'s ability".format(me,card))
+   acedSpell = None
+   whisper(":::CHOICE::: Choose which hex to ace")
+   while not acedSpell: acedSpell = askCard([spell1,spell2],'Choose which spell to ace')
+   if acedSpell == spell1: savedSpell = spell2
+   else: savedSpell = spell1
+   remoteCall(card.controller,'FuntimeFreddyFinish',[card,acedSpell,savedSpell,me])
+
+def FuntimeFreddyFinish(card,acedSpell,savedSpell,acingPlayer):
+   mute()
+   ace(acedSpell, silent = True)
+   ace(card, silent = True)
+   hostCard = findHost(savedSpell)
+   if hostCard: 
+      attachCard(savedSpell,hostCard)
+      payCost(savedSpell.Cost)
+      savedSpell.highlight = None
+   handDiscard = None
+   while not handDiscard:
+      handDiscard = askCard([c for c in me.hand],"Choose which card to discard from your hand")
+   handDiscard.moveTo(me.piles['Discard Pile'])
+   notify("{} discarded {} and aced {} to fetch and play {} (paying {}) on {} and {} chose to ace {}".format(me,handDiscard,card,savedSpell,savedSpell.Cost,hostCard,acingPlayer,acedSpell))
+
+   
