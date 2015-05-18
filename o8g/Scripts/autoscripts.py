@@ -1182,14 +1182,15 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
             if possibleTargets[0].type == 'Deed': extraTXT = " to {}".format(possibleTargets[0])
             else: extraTXT = " to {}'s location".format(possibleTargets[0])
          elif action.group(1) == 'SendHomeBooted' and targetCard.group == table:
+            SentHomeCount += 1 # We increase that so that we place the send home card away from each other
             for c in table: 
                if c.Type == 'Outfit' and c.controller == targetCard.controller: 
                   home = c
                   break
             x,y = home.position
-            if targetCard.controller == me: targetCard.moveToTable(x + cardDistance(), y)
+            if targetCard.controller == me: targetCard.moveToTable(x + cardDistance() * SentHomeCount, y)
             else: 
-               remoteCall(targetCard.controller,'moveCard',[targetCard,x - cardDistance(), y])
+               remoteCall(targetCard.controller,'moveCard',[targetCard,x - cardDistance() * SentHomeCount, y])
             if targetCard.highlight == AttackColor or targetCard.highlight == DefendColor: leavePosse(targetCard)
             if not re.search(r'-doNotBoot',Autoscript): boot(targetCard,silent = True, forced = 'boot')
             orgAttachments(targetCard)
