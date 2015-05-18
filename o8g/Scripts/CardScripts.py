@@ -2045,7 +2045,7 @@ c5a6c2ba-866e-4854-bbaf-4e3fd6ea49de
 -----
 
 +++++
-GR0B1R0:Put1BulletShootoutPlus$$Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
+GR0B1R0:BootHost-isCost$$Put1BulletShootoutPlus-AutoTargeted-atDude-onHost$$Remove999Shootout:Draw-isSilent-AutoTargeted-atDude-onHost$$Put1Shootout:Stud-AutoTargeted-atDude-onHost
 .....
 Fancy New Hat
 -----
