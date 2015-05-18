@@ -1087,7 +1087,7 @@ def playcard(card,retainPos = False,costReduction = 0):
                   and tablecard.owner == me # Cards are unique only for each owner.
                   and (tablecard.Type == 'Dude'  # But only dude or deeds...
                         or tablecard.Type == 'Deed' 
-                        or (re.search('Unique.', tablecard.Text) # ...or cards with an explicit "Unique" in the text that are Goods, Improvements or Spells.
+                        or (re.search('Unique.', tablecard.Keywords) # ...or cards with an explicit "Unique" in the text that are Goods, Improvements or Spells.
                            and (tablecard.Type == 'Goods'        # Because otherwise those types can be up to 4 per player.
                               or tablecard.Type == 'Improvement' 
                               or tablecard.Type == 'Spell')))) 
@@ -1099,7 +1099,7 @@ def playcard(card,retainPos = False,costReduction = 0):
                   and acedcard != card
                   and (acedcard.Type == 'Dude' 
                         or acedcard.Type == 'Deed' 
-                        or (re.search('Unique.', acedcard.Text) 
+                        or (re.search('Unique.', acedcard.Keywords) 
                            and (acedcard.Type == 'Goods' 
                               or acedcard.Type == 'Improvement' 
                               or acedcard.Type == 'Spell')))) 
@@ -1139,31 +1139,32 @@ def playcard(card,retainPos = False,costReduction = 0):
             notify ("{} wanted to bring {} in play but it currently RIP in {}'s Boot Hill".format(me,card,chkcard.owner))
          return
    if costReduction > num(card.Cost): costReduction = num(card.Cost)
+   reduction = reduceCost(card, action = 'PLAY', fullCost = num(card.Cost))
    if card.Type == "Dude":
       chkHighNoon()
       if chkGadgetCraft(card):
          if not retainPos: 
-            if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
+            if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'HireDude')
          notify("{} has hired {}.".format(me, card)) # Inform of the new hire      
    elif card.Type == "Deed" :
       chkHighNoon()
       if chkGadgetCraft(card):
          if not retainPos: 
-            if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
+            if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'BuyDeed')
          notify("{} has acquired the deed to {}.".format(me, card))
-   elif card.Type == "Goods" or card.Type == "Spell": # If we're bringing in any goods, just remind the player to pull for gadgets.
-      chkHighNoon()
+   elif card.Type == "Goods" or card.Type == "Spell" or (card.Type == "Action" and re.search(r'Condition',card.Keywords) and not re.search(r'(Noon [jJ]ob:|Noon [jJ]ob, Boot:)',card.Text)): # If we're bringing in any goods, just remind the player to pull for gadgets.
+      if card.Type != "Action": chkHighNoon()
       hostCard = findHost(card)
       if not hostCard:
          whisper("You need to target the card which is going to attach the card")
          if retainPos: card.moveTo(me.hand)
          return
       else:
+         if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
          if card.Type == "Goods" or card.Type == "Spell":
             if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): return      
-            if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             if re.search('Gadget', card.Keywords):
                if hostCard.Type == 'Dude':
                   if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"): 
@@ -1197,7 +1198,7 @@ def playcard(card,retainPos = False,costReduction = 0):
    else: 
       if not retainPos: # We only pay the cost if the card was double-clicked, in case the player tried to play the card for free.
          if chkTargeting(card) == 'ABORT': return 'ABORT'# If it's an Action and has targeting requirements, check with the user first.
-         if payCost(num(card.Cost) - costReduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
+         if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
          if playeraxis == Xaxis: card.moveToTable(cardDistance(),0) # For anything else, just say they play it.
          else: card.moveToTable(0,cardDistance())
       notify("{} plays {} from their hand.".format(me, card))
