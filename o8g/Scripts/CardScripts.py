@@ -1927,6 +1927,174 @@ d5ed8e5d-c9f9-4e9e-8bc9-48da7c938045
 +++++
 GR0B1R0:BootTarget-DemiAutoTargeted-atAbomination-targetMine-isUnbooted-choose1-isCost$$Gain1Ghost Rock$$BootTarget-Targeted-atDude-targetOpponents-noTargetingError
 .....
+Funtime Freddy
+-----
+2fab82a8-2a4d-4545-855a-9d1ea011a8c9
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+The Flying Popescus
+-----
+7d58d611-07a2-41e6-ad4d-fc51cc794847
+-----
+
++++++
+GR0B0R0:Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
+.....
+Andrew Burton
+-----
+7b51deb6-fb5f-4624-8473-32533ec7309c
+-----
+
++++++
+GR0B1R0:Put1Bounty-Targeted-atDude$$DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Draw1Cards
+.....
+Elmore Rhine
+-----
+e341450b-9b41-4ae1-a1aa-fa50ac743f90
+-----
+
++++++
+GR0B1R0:Gain1GhostRock-perTargetMarker{Bounty}
+.....
+Howard Aswell
+-----
+a44b9e09-8941-4e30-ab0e-c2171949e8d5
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+Louis Pasteur
+-----
+bc36b880-9e3c-458b-8ef4-9730a926bf38
+-----
+
++++++
+GR1B0R1:Pull1Card-testMad Science10-spellEffects<UnbootTarget-Targeted-atDude-targetMine,None>
+.....
+Benny McGill
+-----
+135a9ce8-4e8b-463a-9fcc-23f0168e4762
+-----
+
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted-atSpell_and_Hex-onAttachment-choose1-isCost$$CalloutTarget-Targeted-atDude
+.....
+Marion Seville
+-----
+9440378f-dd04-426c-9696-f24e0789e528
+-----
+
++++++
+GR0B0R0:Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud$$BootTarget-DemiAutoTargeted-atWeapon_and_Melee-targetOpponents-choose1
+.....
+J.W. Byrne
+-----
+fde8c18b-58e2-40ab-b407-fe42a4fe549d
+-----
+
++++++
+
+.....
+Shane &amp; Graves Security
+-----
+18df456c-38ac-4e2b-b4ab-f309849d2cb7
+-----
+
++++++
+GR0B1R0:Spawn1Gunslinger-modAction:ParticipateMyself
+.....
+Gomorra Jail
+-----
+edc1d27d-2cd3-494f-90d8-36f9edfdbb61
+-----
+
++++++
+GR0B1R0:Put1PermControlPlus
+.....
+Diable en Boite
+-----
+438f980e-0981-473e-a9c5-0a8d07ee4634
+-----
+
++++++
+GR0B1R0:SendHomeBootedTarget-DemiAutoTargeted-isParticipating-choose1$$Draw1Card
+.....
+Legal Instruments
+-----
+caff0709-27f0-4596-8cbb-ad1b403a2368
+-----
+
++++++
+
+.....
+Recursive Motion Machine
+-----
+4e59a712-6f55-4703-a420-a1f62b483afa
+-----
+onPlay:Put1ProdPlus-AutoTargeted-atGadget-onHost-noTargetingError
++++++
+GR0B1R0:Put1Ghost Rock
+.....
+Winchester Model 1873
+-----
+c5a6c2ba-866e-4854-bbaf-4e3fd6ea49de
+-----
+
++++++
+GR0B1R0:Put1BulletShootoutPlus$$Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
+.....
+Fancy New Hat
+-----
+bb4aad56-6d02-4088-9f20-f64c571f593b
+-----
+
++++++
+
+.....
+Confession
+-----
+51b83721-61e5-42bc-be9e-8b671f0668d4
+-----
+
++++++
+GR0B1R0:Pull1Card-spellEffects<Put1Bounty-Targeted-atDude,None>||GR0B1R0:Pull1Card-spellEffects<Remove1Bounty-Targeted-atDude-isCost++Gain1Ghost Rock,None>
+.....
+Shield of Faith
+-----
+ae0d585d-25e0-4495-8757-71ef0efffb0e
+-----
+
++++++
+GR0B1R0:Pull1Card-spellEffects<SimplyAnnounce{prevent dudes from being aced or discarded during this shootout and reduce their casualties by 1 for this round},None>
+.....
+Rope and Ride
+-----
+1e6f4bb8-762f-4e61-9f19-b3585c0f5186
+-----
+onPlay:MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit$$MoveTarget-DemiAutoTargeted-atDude-targetOpponents-choose1-moveToDeed_or_Town Square_or_Outfit$$BootTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
++++++
+
+.....
+Incubation
+-----
+f36622a2-667f-43bc-ac16-0f8c8dabec00
+-----
+onPlay:Put1PermInfluenceMinus-AutoTargeted-atDude-onHost$$Put1PermBulletMinus-AutoTargeted-atDude-onHost$$Put3ValuePermMinus-AutoTargeted-atDude-onHost
++++++
+
+.....
+Flight of the Lepus
+-----
+3e1d8cfb-03b1-433a-a7ae-b12f124fb7ef
+-----
+onPlay:SendHomeBootedMulti-doNotBoot-Targeted-atDude-isParticipating-targetMine-onlyInShootouts-noTargetingError$$SendHomeBootedMulti-Targeted-atDude-isParticipating-targetOpponents-onlyInShootouts-noTargetingError||onPlay:SendHomeBootedMulti-doNotBoot-Targeted-atDude-onlyInNoon
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
