@@ -30,6 +30,8 @@ Automations = {'Play'                   : True, # If True, game will automatical
 CardsAA = {} # Dictionary holding all the AutoAction scripts for all cards
 CardsAS = {} # Dictionary holding all the autoScript scripts for all cards
 Stored_Keywords = {} # A Dictionary holding all the Keywords a card has.
+costReducers = []
+costIncreasers = []
                
 #---------------------------------------------------------------------------
 # Misc
