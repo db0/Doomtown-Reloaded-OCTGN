@@ -1651,7 +1651,7 @@ Meet The New Boss
 -----
 c27e60e9-8450-4e6e-9c2e-73d19caec7c1
 -----
-onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<Put1PermControlPlus-Targeted-LeaderIsTarget++Put1PermInfluencePlus-Targeted,None>
+onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<Put1PermControlPlus-Targeted-LeaderIsTarget++Put1PermInfluencePlus-Targeted++AceMyself,AceMyself>
 +++++
 
 .....

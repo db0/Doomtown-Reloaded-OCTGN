@@ -298,6 +298,18 @@ def sendToDrawHand(card):
    card.highlight = DrawHandColor
    clearAttachLinks(card) # When a card becomes a draw hand card, we discard all its attachments, if it had any.
 
+def revealCards(cardList): # Moves all cards in a list to the table and reveals them to all players
+   mute()
+   notice = "{} reveals: ".format(me)
+   for iter in range(len(cardList)):
+      card = cardList[iter]
+      card.moveToTable(iter * cwidth(card) - (len(cardList) * cwidth(card) / 2), 0, False)
+      card.highlight = DrawHandColor
+      update()
+      if iter == len(cardList) - 1: notice += "{}.".format(card)
+      else: notice += "{}, ".format(card)
+   notify(notice)
+      
 def reduceCost(card, action = 'PLAY', fullCost = 0, dryRun = False, reversePlayer = False): 
    # reversePlayer is a variable that holds if we're looking for cost reducing effects affecting our opponent, rather than the one running the script.
    global costReducers,costIncreasers
