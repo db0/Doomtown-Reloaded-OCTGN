@@ -295,6 +295,55 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       discardCards[choice].moveTo(me.hand)
       update()
       if re.search(r'Noon Job',discardCards[choice].Text) and discardCards[choice].Type == 'Action': remoteCall(me,'boot',[card]) # Doing remote call, so as to have a chance to finish the animation
+### SB 4-6 ###
+   elif card.name == "Howard Aswell" and action == 'USE':
+      handCards = [c for c in me.hand]
+      revealCards(handCards)
+      while not confirm("You are now revealing your hand to all players. Press Yes to continue, Press No to ping the other players to see if they had enough time to see the cards"):
+         notify("{} wants to know if it's OK to hide their hand once more".format(me))
+      for c in handCards: c.moveTo(me.hand)
+      notify("{} hides their play hand once more".format(me))   
+      for c in me.Deck.top(10): c.moveTo(me.piles['Discard Pile'])
+      update()
+      discardCards = [c for c in me.piles['Discard Pile'] if re.search(r'(Ranch|Improvement)',c.Keywords)]
+      if not len(discardCards):
+         notify("{} tried to design some Ranches or Improvements but was unsuccesful.".format(card))
+      else:
+         choice = askCard(discardCards,"Choose card to retrieve")
+         if choice == None:
+            notify("{} chooses not to take a Ranch of Improvement into their hand".format(me))
+         else:
+            choicehand = askCard([c for c in me.hand],"Choose card to discard from hand.")
+            choicehand.moveTo(me.piles['Discard Pile'])
+            notify("{} uses {} and discards {} to take {} into their hand".format(me,card,choicehand,choice))
+            choice.moveTo(me.hand)
+            update()
+   elif card.name == "Funtime Freddy" and action == 'USE':
+      notify(":> {} is choosing the two hexes to retrieve with {}".format(me,card))
+      whisper(":::CHOICE::: Choose first hex to retrieve")
+      spell1 = askCard([c for c in deck if c.Type == 'Spell' and re.search(r'Hex',c.Keywords)],"Choose first spell to retrieve")
+      if not spell1: 
+         deck.shuffle()
+         return 'ABORT'
+      spell1.moveToTable(cwidth(),0)
+      spell1.highlight = DrawHandColor
+      spell2 = askCard([c for c in deck if c.Type == 'Spell' and re.search(r'Hex',c.Keywords)],"Choose second spell to retrieve")
+      whisper(":::CHOICE::: Choose second hex to retrieve")
+      while not spell2 or spell2.model == spell1.model:
+         if confirm(":::ERROR::: You need to choose two different Hexes. Abort?"): 
+            deck.shuffle()
+            return 'ABORT'
+         else: spell2 = askCard([c for c in deck if c.Type == 'Spell' and re.search(r'Hex',c.Keywords)],"Choose second spell to retrieve")      
+      spell2.moveToTable(-1 * cwidth(),0)
+      spell2.highlight = DrawHandColor
+      opponents = [pl for pl in getPlayers() if pl != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else: 
+         choice = SingleChoice("Choose the player who is going to select which spell you get to keep",[pl.name for pl in opponents])
+         if choice == None: return 'ABORT'
+         else: player = opponents[choice]
+      remoteCall(player,'FuntimeFreddyChoose',[card,spell1,spell2])
+      deck.shuffle()
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
