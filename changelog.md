@@ -1,5 +1,13 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.6.0.x
+
+**Frontier Justice** has come in effect!
+* Trickier Scripts
+  * J.W. Byrne: Add Markers manually
+  * Legal Instruments: Track manually
+  * Flight of the Lepus: Might complain when used in lowball. Just press Yes to proceed.
+
 ### 1.5.1.x
 
 Moved to OCTGN API 3.1.0.1
