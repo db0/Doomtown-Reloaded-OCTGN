@@ -315,11 +315,8 @@ def reduceCost(card, action = 'PLAY', fullCost = 0, dryRun = False, reversePlaye
             continue
          reductionSearch = re.search(r'Reduce([0-9S]+)Cost({}|All)'.format(type), autoS)
          oppponent = ofwhom('-ofOpponent')
-         if reductionSearch.group(1) == 'S': # S is for Special reductions, like Ivor Howley
-            if card.model == 'e1d93d5b-222d-4a82-b18f-62728f7791c0': # Ivor Howley xp
-               count = len([c for c in table if re.search(r'Abomination',c.Keywords)])
-               for pl in getActivePlayers(): count += len([c for c in pl.piles['Boot Hill'] if re.search(r'Abomination',c.Keywords)])
-               multiplier = 1
+         if reductionSearch.group(1) == 'S': # S is for Special reductions
+            pass
          else:
             count = num(reductionSearch.group(1))
             targetCards = findTarget(autoS,card = card)
