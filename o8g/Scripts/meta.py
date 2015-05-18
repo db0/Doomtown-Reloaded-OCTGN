@@ -296,6 +296,38 @@ def sendToDrawHand(card):
    card.highlight = DrawHandColor
    clearAttachLinks(card) # When a card becomes a draw hand card, we discard all its attachments, if it had any.
 
+def reduceCost(card, action = 'PLAY', fullCost = 0, dryRun = False, reversePlayer = False): 
+   # reversePlayer is a variable that holds if we're looking for cost reducing effects affecting our opponent, rather than the one running the script.
+   global costReducers,costIncreasers
+   type = action.capitalize()
+   #if fullCost == 0: return 0 # Not used as we now have actions which also increase costs
+   fullCost = abs(fullCost)
+   reduction = 0
+   ### First we check if the card has an innate reduction.
+   Autoscripts = CardsAS.get(card.model,'').split('||')
+   if len(Autoscripts):
+      debugNotify("Checking for onPay reductions")
+      for autoS in Autoscripts:
+         if not re.search(r'onPay', autoS):
+            debugNotify("No onPay trigger found in {}!".format(autoS), 2)
+            continue
+         reductionSearch = re.search(r'Reduce([0-9S]+)Cost({}|All)'.format(type), autoS)
+         oppponent = ofwhom('-ofOpponent')
+         if reductionSearch.group(1) == 'S': # S is for Special reductions, like Ivor Howley
+            if card.model == 'e1d93d5b-222d-4a82-b18f-62728f7791c0': # Ivor Howley xp
+               count = len([c for c in table if re.search(r'Abomination',c.Keywords)])
+               for pl in getActivePlayers(): count += len([c for c in pl.piles['Boot Hill'] if re.search(r'Abomination',c.Keywords)])
+               multiplier = 1
+         else:
+            count = num(reductionSearch.group(1))
+            targetCards = findTarget(autoS,card = card)
+            multiplier = per(autoS, card, 0, targetCards)
+         reduction += (count * multiplier)
+         if reduction > fullCost: reduction = fullCost
+         fullCost -= (count * multiplier)
+         if reduction > 0 and not dryRun: notify("-- {}'s full cost is reduced by {}".format(card,reduction))
+   return reduction
+
 #---------------------------------------------------------------------------
 # Counter Manipulation
 #---------------------------------------------------------------------------
