@@ -48,6 +48,8 @@ def executePlayScripts(card, action):
              re.search(r'-isTrigger', autoS) or
              re.search(r'Empty', autoS)): Autoscripts.remove(autoS) # Empty means the card has no autoscript, but we still want an empty list.
          elif not chkDummy(autoS, card): Autoscripts.remove(autoS)
+         if re.search(r'-onlyInShootouts',autoS) and getGlobalVariable('Shootout') != 'True': Autoscripts.remove(autoS)
+         if re.search(r'-onlyInNoon',autoS) and getGlobalVariable('Shootout') == 'True': Autoscripts.remove(autoS)      
       debugNotify('Looking for multiple choice options') # Debug
       if action == 'PLAY': trigger = 'onPlay' # We figure out what can be the possible multiple choice trigger
       else: trigger = 'N/A'
@@ -83,7 +85,6 @@ def executePlayScripts(card, action):
             return
          scriptHostCHK = re.search(r'(?<!-)onHost([A-Za-z]+)',effectType.group(1))
          actionHostCHK = re.search(r'HOST-([A-Z-]+)',action)
-         currObjID = getGlobalVariable('Engaged Objective')
          #if debugVerbosity >= 2 and scriptHostCHK: notify ('### scriptHostCHK: {}'.format(scriptHostCHK.group(1))) # Debug
          #if debugVerbosity >= 2 and actionHostCHK: notify ('### actionHostCHK: {}'.format(actionHostCHK.group(1))) # Debug
          if (scriptHostCHK or actionHostCHK) and not ((scriptHostCHK and actionHostCHK) and (re.search(r'{}'.format(scriptHostCHK.group(1).upper()),actionHostCHK.group(1)))): continue # If this is a host card
