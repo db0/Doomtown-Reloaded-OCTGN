@@ -782,7 +782,7 @@ def plusValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValueNoonMinus']] = 0
    else:
       card.markers[mdict['ValueNoonPlus']] += valuemod 
-   if calcValue(card,'raw') > 13: card.markers[mdict['ValueNoonPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
+   #if calcValue(card,'raw') > 13: card.markers[mdict['ValueNoonPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
    if not silent:
       notify("{} marks that {}'s value has increased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
         
@@ -797,7 +797,7 @@ def minusValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValueNoonPlus']] = 0
    else:
       card.markers[mdict['ValueNoonMinus']] += valuemod         
-   if calcValue(card,'raw') < 1: card.markers[mdict['ValueNoonMinus']] = numrank(card.Rank)
+   #if calcValue(card,'raw') < 1: card.markers[mdict['ValueNoonMinus']] = numrank(card.Rank)
    if not silent:
       notify("{} marks that {}'s value has decreased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
 
@@ -813,7 +813,7 @@ def plusPermValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValuePermMinus']] = 0
    else:
       card.markers[mdict['ValuePermPlus']] += valuemod 
-   if calcValue(card,'raw') > 13: card.markers[mdict['ValuePermPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
+   #if calcValue(card,'raw') > 13: card.markers[mdict['ValuePermPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
    if not silent:
       notify("{} marks that {}'s value has permanently increased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
         
@@ -828,7 +828,7 @@ def minusPermValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValuePermPlus']] = 0
    else:
       card.markers[mdict['ValuePermMinus']] += valuemod         
-   if calcValue(card,'raw') < 1: card.markers[mdict['ValuePermMinus']] = numrank(card.Rank)
+   #if calcValue(card,'raw') < 1: card.markers[mdict['ValuePermMinus']] = numrank(card.Rank)
    if not silent:
       notify("{} marks that {}'s value has permanently decreased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
 

@@ -182,9 +182,9 @@ def calcValue(card, type = 'poker'):
    if numvalue == 12: return 'Q'
    if numvalue == 11 and type == 'numeral': return 11
    if numvalue == 11: return 'J'
-   if numvalue == 1 and type == 'numeral': return 1
-   if numvalue == 1: return 'A'
-   if numvalue < 1: return 0
+   if numvalue <= 1 and type == 'numeral': return 1
+   if numvalue <= 1: return 'A'
+   #if numvalue < 1: return 0
    return numvalue
 
 def chkTargeting(card):

@@ -1085,6 +1085,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
    if targetCards is None: targetCards = []
    targetCardlist = '' # A text field holding which cards are going to get tokens.
    extraTXT = ''
+   SentHomeCount = 0
    action = re.search(r'\b(Boot|Unboot|SendHomeBooted|Discard|Ace|Return|Play|SendToBottom|SendToDraw|Takeover|Participate|Unparticipate|Callout|Move)(Target|Host|Multi|Myself)[-to]*([A-Z][A-Za-z&_ ]+)?', Autoscript)
    if action.group(2) == 'Myself': 
       del targetCards[:] # Empty the list, just in case.
