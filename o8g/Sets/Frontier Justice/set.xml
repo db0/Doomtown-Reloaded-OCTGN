@@ -62,13 +62,13 @@
          <property name="Rank" value="5" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
-         <property name="Cost" value="4" />
-         <property name="Upkeep" value="1" />
+         <property name="Cost" value="6" />
+         <property name="Upkeep" value="2" />
          <property name="Production" value="" />
          <property name="Bullets" value="1" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
-         <property name="Influence" value="2" />
+         <property name="Influence" value="3" />
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="" />
@@ -240,7 +240,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Gadget Difficulty 7" />
+         <property name="Keywords" value="Gadget Difficulty 5" />
          <property name="Text" value="If this dude is a Gadget, it gets –1 upkeep. You may use ghost rock on this card to pay for abilities on Gadgets at this location.&#xD;&#xA;React, Boot: After this dude moves, put one ghost rock on this card (it is not a bounty)." />
          <property name="Instructions" value="" />
       </card>
