@@ -82,7 +82,7 @@
          <property name="Cost" value="3" />
          <property name="Upkeep" value="0" />
          <property name="Production" value="" />
-         <property name="Bullets" value="0" />
+         <property name="Bullets" value="2" />
          <property name="Bullet Bonus" value="" />
          <property name="Draw Type" value="Draw" />
          <property name="Influence" value="0" />
