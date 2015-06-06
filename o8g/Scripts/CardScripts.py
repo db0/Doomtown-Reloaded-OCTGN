@@ -2061,7 +2061,7 @@ Confession
 -----
 
 +++++
-GR0B1R0:Pull1Card-spellEffects<Put1Bounty-Targeted-atDude,None>||GR0B1R0:Pull1Card-spellEffects<Remove1Bounty-Targeted-atDude-isCost++Gain1Ghost Rock,None>
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<BootHost-isCost++Put1Bounty-Targeted-atDude,None>||GR0B1R0:Pull1Card-testMiracle7-spellEffects<Remove1Bounty-Targeted-atDude-isCost++Gain1Ghost Rock,None>
 .....
 Shield of Faith
 -----
@@ -2069,7 +2069,7 @@ ae0d585d-25e0-4495-8757-71ef0efffb0e
 -----
 
 +++++
-GR0B1R0:Pull1Card-spellEffects<SimplyAnnounce{prevent dudes from being aced or discarded during this shootout and reduce their casualties by 1 for this round},None>
+GR0B1R0:Pull1Card-testMiracle7-spellEffects<SimplyAnnounce{prevent dudes from being aced or discarded during this shootout and reduce their casualties by 1 for this round},None>
 .....
 Rope and Ride
 -----
