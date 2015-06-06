@@ -207,8 +207,8 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Hex" />
-         <property name="Text" value="Shootout Hex 4, Boot: This Huckster's bullet type becomes that of an opposing dude. If this Huckster has a lower bullet rating, they get a bullet bonus equal to the difference in ratings.&#xD;&#xA;Shootout Hex 4, Boot: An opposing dude's bullet type becomes that of this Huckster. If this Huckster has a lower bullet rating, that dude suffers a bullet penalty equal to the difference in ratings" />
-         <property name="Instructions" value="Shootout Hex 4, Boot: This Huckster's bullet type becomes that of an opposing dude. If this Huckster has a lower bullet rating, they get a bullet bonus equal to the difference in ratings.||Shootout Hex 4, Boot: An opposing dude's bullet type becomes that of this Huckster. If this Huckster has a lower bullet rating, that dude suffers a bullet penalty equal to the difference in ratings" />
+         <property name="Text" value="Shootout Hex 4, Boot: This Huckster's bullet type becomes that of an opposing dude. If this Huckster has a lower bullet rating, they get a bullet bonus equal to the difference in ratings.&#xD;&#xA;Shootout Hex 6, Boot: An opposing dude's bullet type becomes that of this Huckster. If this Huckster has a lower bullet rating, that dude suffers a bullet penalty equal to the difference in ratings" />
+         <property name="Instructions" value="Shootout Hex 4, Boot: This Huckster's bullet type becomes that of an opposing dude. If this Huckster has a lower bullet rating, they get a bullet bonus equal to the difference in ratings.||Shootout Hex 6, Boot: An opposing dude's bullet type becomes that of this Huckster. If this Huckster has a lower bullet rating, that dude suffers a bullet penalty equal to the difference in ratings" />
       </card>
       <card id="8d8fa80c-580b-44b3-8e66-b89392299200" name="Lay On Hands">
          <property name="Rank" value="4" />
