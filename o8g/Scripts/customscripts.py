@@ -344,6 +344,14 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          else: player = opponents[choice]
       remoteCall(player,'FuntimeFreddyChoose',[card,spell1,spell2])
       deck.shuffle()
+   elif card.name == "Cookin' Up Trouble" and action == 'PLAY':
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else:
+         choice = SingleChoice("Choose which player to sabotage", [pl.name for pl in opponents])
+         if choice == None: return 'ABORT'
+         else: player = opponents[choice]         
+      remoteCall(player,'CookinTroubleStart',[card])
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -536,4 +544,43 @@ def FuntimeFreddyFinish(card,acedSpell,savedSpell,acingPlayer):
    handDiscard.moveTo(me.piles['Discard Pile'])
    notify("{} discarded {} and aced {} to fetch and play {} (paying {}) on {} and {} chose to ace {}".format(me,handDiscard,card,savedSpell,savedSpell.Cost,hostCard,acingPlayer,acedSpell))
 
+def CookinTroubleStart(card):
+   mute()
+   if not len(me.hand): notify(":::INFO::: {}'s play hand is empty. You have nothing to cook".format(me))
+   else:
+      me.hand.addViewer(card.controller)
+      notify(":> {} Reveals their hand to {}".format(me,card.controller))
+      remoteCall(card.controller,'CookinTroubleChoose',[card,[c for c in me.hand]])
+      
+def CookinTroubleChoose(card,handList):
+   mute()
+   update()
+   whisper(":::CHOICE::: If your opponent cheated this turn, choose an action, goods, or spell to discard.")
+   cardChoice = askCard([c for c in handList],'Choose an action,goods or spell card to discard.')
+   if cardChoice == None:
+      notify("{} does not sabotage any card in {}'s hand".format(me,handList[0].controller))
+   while cardChoice.Type != 'Action' and cardChoice.Type != 'Goods' and cardChoice.Type != 'Spell': # If they chose a non-action, we force them to choose an action.
+      if confirm("You cannot select cards which are not action, goods or spell  to discard with Cookin' Up Trouble. Do you want to choose nothing?"): 
+         notify("{} does not sabotage any card in {}'s hand".format(me,handList[0].controller))
+         cardChoice = None
+         break
+      else: 
+         actionsList = [c for c in handList if (c.Type == 'Action' or c.Type == 'Goods' or c.Type == 'Spell')]
+         if not actionsList: 
+            notify("{} does not find any appropriate cards in {}'s hand to sabotage".format(me,handList[0].controller))
+            cardChoice = None
+            break
+         else:
+            cardChoice = askCard(actionsList,'Choose an action,goods or spell card to discard.')
+            if cardChoice == None: 
+               notify("{} does not sabotage any card in {}'s hand".format(me,handList[0].controller))
+               break
+   remoteCall(handList[0].controller,'CookinTroubleEnd',[card,cardChoice])
+
+def CookinTroubleEnd(card,cardChoice):
+   mute()
+   if cardChoice:
+      cardChoice.moveTo(me.piles['Discard Pile'])
+      notify("{}'s {} sabotages {} out of {}'s play hand".format(card.controller,card,cardChoice,me))
+   me.hand.removeViewer(card.controller)
    
