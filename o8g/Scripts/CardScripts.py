@@ -2095,6 +2095,174 @@ onPlay:SendHomeBootedMulti-doNotBoot-Targeted-atDude-isParticipating-targetMine-
 +++++
 
 .....
+Avie Cline
+-----
+2cba8b31-062a-4701-a9a4-76a330681bb7
+-----
+
++++++
+GR0B1R0:MoveTarget-Targeted-atDude-moveToDeed
+.....
+Judge Harry Sommerset
+-----
+04e204a6-8879-477b-8153-adcda50b1f51
+-----
+
++++++
+GR0B1R0:StartJob-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-choose1-jobEffects<DiscardTarget,None>$$Spawn1Gunslinger-modAction:ParticipateMyself
+.....
+Ebenezer Springfield
+-----
+799ea10c-9dc3-414e-bd72-c1d9fa662926
+-----
+
++++++
+GR0B0R0:Put1Bounty-Targeted-atDude-targetOpponents
+.....
+Elander Boldman
+-----
+294a7ce9-af00-46e1-b33c-aab21ebf3b09
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Antheia Pansofia
+-----
+56fd7d6b-d14a-4b9d-a29c-40102bf4377b
+-----
+
++++++
+
+.....
+Harry Highbinder
+-----
+fffb2b62-4d83-4b3c-9696-2905477d892f
+-----
+
++++++
+
+.....
+Max Baine
+-----
+4d2ffa2b-f09d-47ef-845b-d227b060b603
+-----
+
++++++
+GR0B1R0:PlayCard-DemiAutoTargeted-atDude-hasProperty{Value}ge10-choose1-fromHand-payCost-reduc3
+.....
+El Grajo
+-----
+9eada35c-a9a5-485f-9513-305661421944
+-----
+
++++++
+GR0B0R0:BootTarget-AutoTargeted-atWeapon_and_Melee-onAttachment$$Gain2Bullets$$Remove999Shootout:Draw-isSilent
+.....
+Jacqueline Isham
+-----
+c65152fd-434e-4729-ac44-cf61d1affbdc
+-----
+
++++++
+
+.....
+Huntsmen's Society
+-----
+0334ecdd-6da1-47bf-a3d0-b4988bdf8a07
+-----
+
++++++
+
+.....
+Secured Stockyard
+-----
+5af04c4c-8282-4abf-9e55-a13ace8a998b
+-----
+
++++++
+GR0B1R0:Gain1Ghost Rock
+.....
+La Quema
+-----
+68bce669-132a-43ca-9727-8de86b3b039c
+-----
+
++++++
+GR0B1R0:ParticipateHost$$BootTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1
+.....
+Asyncoil Gun
+-----
+34970b97-c353-47a5-bf1c-4cdc0351eef5
+-----
+
++++++
+GR0B1R0:Pull1Card
+.....
+Scoop Hound
+-----
+b756df9e-6c24-4b33-a6f1-ff6b82dd51e5
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{prevent dudes from joining or leaving the shootout via shootout actions}
+.....
+Rapier
+-----
+2950ad4b-c835-415f-a24c-b61c9702c728
+-----
+
++++++
+
+.....
+Vitality Tonic
+-----
+03dc1c9f-3b91-4bf6-af64-6bcbdca36839
+-----
+
++++++
+GR2B0R1:Pull1Card
+.....
+Consecration
+-----
+00867833-050d-4214-bccb-d1e787f15baf
+-----
+
++++++
+GR0B1R0:Pull1Card-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
+.....
+Mark of Pestilence
+-----
+12d7d9e6-cffa-46ef-8ae7-d8fbbeb88e4c
+-----
+
++++++
+GR0B1R0:Pull1Card-spellEffects<BootMultiple-AutoTargeted-atDude-isParticipating++UnbootMyself,None>
+.....
+Cookin' Up Trouble
+-----
+f7d5aaa2-b476-4156-bef1-697cd39d7dd7
+-----
+onPlay:CustomScript
++++++
+
+.....
+Ol' Fashioned Hangin'
+-----
+0453a270-56fb-4714-b3d7-41129bf4ccd5
+-----
+onPlay:StartJob-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-choose1-jobEffects<AceTarget,None>
++++++
+
+.....
+No Turning Back
+-----
+b308c49b-6871-4067-a269-9aa7f8917bdc
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
