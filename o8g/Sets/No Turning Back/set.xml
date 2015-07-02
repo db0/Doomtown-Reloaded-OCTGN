@@ -143,7 +143,7 @@
          <property name="Text" value="Shootout: Boot a Melee Weapon attached to El Grajo to make him a stud and give him +2 bullets, to a maximum rating of 4 bullets." />
          <property name="Instructions" value="" />
       </card>
-      <card id="c65152fd-434e-4729-ac44-cf61d1affbdc" name="Jaqueline Ishan">
+      <card id="c65152fd-434e-4729-ac44-cf61d1affbdc" name="Jacqueline Isham">
          <property name="Rank" value="K" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />

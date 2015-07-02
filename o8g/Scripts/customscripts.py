@@ -344,6 +344,34 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          else: player = opponents[choice]
       remoteCall(player,'FuntimeFreddyChoose',[card,spell1,spell2])
       deck.shuffle()
+   elif card.model == "294a7ce9-af00-46e1-b33c-aab21ebf3b09" and action == 'USE': # Elander Boldman Xp
+      if getGlobalVariable('Shootout') != 'True': 
+         whisper(":::ERROR::: {} can only use his shootout ability during shootouts".format(card))
+         return 'ABORT'
+      foundGadget = False
+      hostCards = eval(getGlobalVariable('Host Cards'))
+      for c in table:
+         if c.targetedBy and c.targetedBy == me and c.Type == 'Goods' and (Card(hostCards[c._id]).highlight == AttackColor or Card(hostCards[c._id]).highlight == DefendColor): # If we've targeted a gadget with a participating dude...
+            foundGadget = c   
+            break
+      if not foundGadget: 
+         whisper(":::ERROR::: No Gadget on a participating dude targeted. Aborting!")
+         return 'ABORT'
+      else:
+         foundGadget.orientation = Rot0         
+         if re.search(r'Experimental',foundGadget.Keywords): 
+            elUnboot = ", then finally unboots {}".format(card)
+            update()
+            rnd(1,10)
+            remoteCall(me,'boot',[card,0,0,True]) # Doing remote call, so as to have a chance to finish the animation
+         else: elUnboot = "".format(card)
+         if re.search(r'Weapon',foundGadget.Keywords):          
+            weaponBonus = ", make it provide +1 bullet and make {} a stud".format(Card(hostCards[foundGadget._id]))
+            foundGadget.markers[mdict['BulletShootoutPlus']] += 1
+            TokensX('Remove999Shootout:Draw', '', Card(hostCards[foundGadget._id]))
+            TokensX('Put1Shootout:Stud', '', Card(hostCards[foundGadget._id]))
+         else: weaponBonus = ""
+         notify("{} uses {} to unboot {}{}{}".format(me,card,foundGadget,weaponBonus,elUnboot))
    elif card.name == "Cookin' Up Trouble" and action == 'PLAY':
       opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
       if len(opponents) == 1: player = opponents[0]
