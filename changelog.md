@@ -1,5 +1,19 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.7.0.x
+
+There's **No Turning Back** from OCTGN!
+* Trickier Scripts
+  * J.W. Byrne: Add Markers manually
+  * Antheia Pansofia: Not Scripted
+  * Huntsmen's Society: Put or remove +1 Prod on relevant dudes manually 
+  * Asyncoil Gun: Only makes the pull. Discard manually.
+  * Scoop Hound: Simply announces
+  * Rapier: Track manually
+  * Vitality Tonic: Only makes the pull. Unboot Manually.
+  * No Turning Back: Not scripted
+  
+
 ### 1.6.0.x
 
 **Frontier Justice** has come in effect!

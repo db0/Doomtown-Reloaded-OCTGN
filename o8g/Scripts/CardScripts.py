@@ -2165,7 +2165,7 @@ c65152fd-434e-4729-ac44-cf61d1affbdc
 -----
 
 +++++
-
+GR0B0R1:Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
 .....
 Huntsmen's Society
 -----
