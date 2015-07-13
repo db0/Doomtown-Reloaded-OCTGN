@@ -1218,7 +1218,7 @@ def shuffle(group): # A simple function to shuffle piles
 
 def reshuffle(group = me.piles['Discard Pile']): # This function reshuffles the player's discard pile into their deck.
    mute()
-   Deck = me.Deck # Just to save us some repetition
+   Deck = group.player.Deck # Just to save us some repetition
    for card in group: card.moveTo(Deck) # Move the player's cards from the discard to their deck one-by-one.
    random = rnd(100, 10000) # Bug 105 workaround. This delays the next action until all animation is done. 
                            # see https://octgn.16bugs.com/projects/3602/bugs/102681
@@ -1340,7 +1340,7 @@ def drawhandMany(group = me.Deck, count = None, silent = False, scripted = False
    if count == None: count = askInteger("Draw how many cards to your Draw Hand?", 5)
    if count == None: return
    for i in range(0, count): 
-      if len(group) == 0: reshuffle()
+      if len(group) == 0: reshuffle(group.player.piles['Discard Pile'])
       group.top().moveTo(me.piles['Draw Hand'])
    if not silent: notify("{} draws {} cards to their draw hand.".format(me, count))   
 

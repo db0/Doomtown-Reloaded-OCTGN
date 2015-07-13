@@ -97,6 +97,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          if choice == None: return 'ABORT'
          targetPL = drawHandPlayers[choice]
       passPileControl(deck,targetPL)   
+      passPileControl(discardPile,targetPL)   
       remoteCall(targetPL,'BottomDealing',[me,card])
    elif card.name == "Coachwhip!" and action == 'PLAY':
       debugNotify("Coachwhip Script")
@@ -497,6 +498,7 @@ def BottomDealing(originPlayer,card):
    resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
    notify("{}'s new hand rank is {}".format(me,resultTXT))
    passPileControl(originPlayer.Deck,originPlayer)   
+   passPileControl(originPlayer.piles['Discard Pile'],originPlayer)   
 
 def AllieHensmanXP(mark,allie):
    mute()
