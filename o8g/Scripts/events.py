@@ -131,6 +131,52 @@ def chkMarkerChanges(card,markerName,oldValue,newValue,isScriptChange):
    #if markerName == "-1 Influence" and num(card.Influence) > card.markers[mdict['InfluenceMinus']]: modInfluence()
    #if markerName == "+1 Control": modControl(-1)
    #if markerName == "-1 Control" and num(card.Influence) > card.markers[mdict['ControlMinus']]: modControl()   
+     
+def checkPlayerGlobalVars(player,name,oldValue,value):
+   mute()
+   if name == 'RevealReady' and me._id == 1 and value != 'False': checkHandReveal() # Only the hosting player reveals hands
+   if name == 'Hand Rank' and me._id == 1 and value != 'N/A': compareHandRanks() # Only the hosting player reveals hands
+
+def checkHandReveal():           
+   playersReady = []
+   if getGlobalVariable('Shootout') == 'True': # If it's a shootout, we only care to see if that player's opponent is ready.
+      for player in getActivePlayers():
+         if player.getGlobalVariable('RevealReady') == 'Shootout': playersReady.append(player)
+         if len(playersReady) == 2: break
+      if len(playersReady) < 2:
+         notify("{} is ready to reveal their shootout hand. Waiting for their opponent...".format(player))
+      else:
+         for player in playersReady:
+            remoteCall(player,'revealShootoutHand',[player.piles['Draw Hand'],True])
+   else:
+      for player in getActivePlayers():
+         if player.getGlobalVariable('RevealReady') != 'False': playersReady.append(player)
+      if len(playersReady) < len(getActivePlayers()):
+         notify("{} is ready to reveal their lowball hand. Waiting for everyone else...".format(player))
+      else:
+         for player in playersReady:
+            remoteCall(player,'revealLowballHand',[player.piles['Draw Hand'],True])
+   
+def compareHandRanks():
+   if getGlobalVariable('Shootout') == 'True': 
+      competingPlayers = []
+      for player in getActivePlayers():
+         if player.getGlobalVariable('Hand Rank') != 'N/A': competingPlayers.append(player)
+         if len(competingPlayers) == 2: break
+      if len(competingPlayers) == 2: 
+         if num(competingPlayers[0].getGlobalVariable('Hand Rank')) < num(competingPlayers[1].getGlobalVariable('Hand Rank')): 
+            notify("\n-- The winner is {} by {} ranks and {} must absorb as many casualties in this round.".format(competingPlayers[1], (num(competingPlayers[1].getGlobalVariable('Hand Rank')) - num(competingPlayers[0].getGlobalVariable('Hand Rank'))), competingPlayers[0]))
+         elif num(competingPlayers[0].getGlobalVariable('Hand Rank')) > num(competingPlayers[1].getGlobalVariable('Hand Rank')): 
+            notify("\n-- The winner is {} by {} ranks and {} must absorb as many casualties in this round.".format(competingPlayers[0], (num(competingPlayers[0].getGlobalVariable('Hand Rank')) - num(competingPlayers[1].getGlobalVariable('Hand Rank'))), competingPlayers[1]))
+         else: 
+            notify ("\n-- The Shootout is a tie. Both player suffer one casualty")
+         clearHandRanks()
+   else:
+      winner = findLowballWinner()
+      if winner == 'tie': notify ("\n-- It's a tie! Y'all need to compare high cards to determine the lucky bastard. (Winner needs to press Ctrl+W)")
+      else: # Otherwise the evuation will fail which means that the winner variable holds is a player class.
+         notify ("\n-- The winner is {}. (They need to press Ctrl+W once the resolution phase has ended.)".format(winner)) # Thus we can just announce them.
+         setWinner(winner)
    
 def reconnect(group = table, x=0, y=0):
    global OutfitCard

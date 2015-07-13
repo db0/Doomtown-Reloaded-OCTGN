@@ -200,7 +200,7 @@ def setup(group,x=0,y=0):
    mute()
    if me.getGlobalVariable('playerOutfit') != 'None' and not confirm("Are you sure you want to setup for a new game? (This action should only be done after a table reset)"): return # We make sure the player intended to start a new game
    resetAll()
-   for player in players: # We check that all players have loaded a deck before proceeding to choose side
+   for player in getPlayers(): # We check that all players have loaded a deck before proceeding to choose side
       if len(player.Deck) == 0:
          if not confirm("Have all non-spectators loaded a deck? (If not, the game sides will not setup correctly)"): return
          else: break
@@ -274,6 +274,7 @@ def clearShootout(remoted = False):
          if card.model == '94fe7823-077c-4abd-9278-6e64bda6dc64': delCard(card) # If it's a gunslinger token, we remove it from the game.
    clearDrawHandonTable()
    clearRemainingActions() # Clear any shootout actions used (common mistake)
+   me.setGlobalVariable('RevealReady','False')
       
 def boot(card, x = 0, y = 0, silent = False, forced =  None): # Boot or Unboot a card. I.e. turn it 90 degrees sideways or set it straight.
    mute()
@@ -1453,59 +1454,69 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
    #notify("===> Set my Hand Rank to {}".format(me.getGlobalVariable('Hand Rank'))) # Debug
    debugNotify("<<< revealHand()") 
       
-def revealShootoutHand(group): 
+def revealShootoutHand(group = me.piles['Draw Hand'], revealReady = False): 
 # Simply call the procedure above and then compares hands to see who won. 
 # The evaluation works only for 2 players but there can never be more than 2 players shooting it out anyway.
    debugNotify(">>> revealShootoutHand()")
-   if len(group) > 5: 
-      whisper("Please reduce your draw hand to 5 cards before revealing it")
-      return
-   debugNotify("About to revealHand(). group = {}".format(group.name))
-   revealHand(group, shootout)
-   for player in getActivePlayers():
-      if player == me or player.getGlobalVariable('Hand Rank') == 'N/A': continue
-      #if player.HandRank < me.HandRank: 
-      if num(player.getGlobalVariable('Hand Rank')) < num(me.getGlobalVariable('Hand Rank')): 
-         notify("\n-- The winner is {} by {} ranks and {} must absorb as many casualties in this round.".format(me, (num(me.getGlobalVariable('Hand Rank')) - num(player.getGlobalVariable('Hand Rank'))), player))
-         clearHandRanks()
-      #elif player.HandRank > me.HandRank: 
-      elif num(player.getGlobalVariable('Hand Rank')) > num(me.getGlobalVariable('Hand Rank')): 
-         notify("\n-- The winner is {} by {} ranks and {} must absorb as many casualties in this round.".format(player, (num(player.getGlobalVariable('Hand Rank')) - num(me.getGlobalVariable('Hand Rank'))), me))
-         clearHandRanks()
+   mute()
+   if not revealReady:
+      if len(group) > 5: 
+         whisper("Please reduce your draw hand to 5 cards before revealing it")
+         return
+      if me.getGlobalVariable('RevealReady') != 'Shootout': 
+         me.setGlobalVariable('RevealReady','Shootout')
+         if me._id == 1: checkHandReveal() # Because for some reason this event doesn't trigger for the player who's variable changed.
       else: 
-         notify ("\n-- The Shootout is a tie. Both player suffer one casualty")
-         clearHandRanks()
+         waitingList = [
+                        "{} is twitchin' their fingers...".format(me),
+                        "{} is eyeballin' the clock...".format(me),
+                        "{} is chewin' some tobacco menacingly...".format(me),
+                        "{} is movin' their hand...".format(me),
+                        "{} is squintin' threatingly...".format(me),
+                        "{} is adjustin' their duster...".format(me),
+                        "{} is tappin' their holster...".format(me),
+                        "{} is shufflin' their foot...".format(me)
+         ]
+         notify("{}".format(waitingList[rnd(0,len(waitingList) - 1)]))
+   else:
+      me.setGlobalVariable('RevealReady','False')
+      if not len(group): return # IF we have an empty hand just exit silently)
+      debugNotify("About to revealHand(). group = {}".format(group.name))
+      revealHand(group, shootout)
    debugNotify(">>> revealShootoutHand()")
    
-def revealLowballHand(group = me.piles['Draw Hand'], type = 'normal'): 
+def revealLowballHand(group = me.piles['Draw Hand'], revealReady = False): 
    debugNotify(">>> revealLowballHand()")
    mute()
-   if len(group) > 5: 
-      whisper("Please reduce your draw hand to 5 cards before revealing it")
-      return
+   if not revealReady:
+      if len(group) > 5: 
+         whisper("Please reduce your draw hand to 5 cards before revealing it")
+         return
+      if me.getGlobalVariable('RevealReady') != 'Lowball': 
+         me.setGlobalVariable('RevealReady','Lowball')
+         if me._id == 1: checkHandReveal() # Because for some reason this event doesn't trigger for the player who's variable changed.
+      else: 
+         notify("{} is waiting patiently for everyone else to reveal their lowball hand...".format(me))
+   else:
    # Checking for events before passing on to the reveal function
-   evCount = 0
-   foundEvents = ['','','','',''] # We need to declare the list because it will not work if it doesn't exist.
-   for card in group:
-      if card.Type == 'Event': # Check if the card is an event and save it's name.
-         foundEvents[evCount] = card
-         evCount += 1 # Count how many events we have in the hand
-   if evCount > 1: # If we have more than one, select one at random
-      eventPointer = rnd(0,evCount-1)
-      revealHand(group, 'lowball',foundEvents[eventPointer]) # Then pass its name to the next function so that it can be highlighted and announced.
-   elif evCount == 1: # If there's only one event, then just pass it's name on the revealHand function so that it can be highlighted and announced.
-      revealHand(group, 'lowball',foundEvents[0])      
-   else: revealHand(group, 'lowball')
-   winner = findLowballWinner()
-   try:
-      if winner == 'tie': notify ("\n-- It's a tie! Y'all need to compare high cards to determine the lucky bastard. (Winner needs to press Ctrl+W)")
-   except: # Otherwise the evuation will fail which means that the winner variable holds is a player class.
-      notify ("\n-- The winner is {}. (Winner need to press Ctrl+W once the resolution phase has ended.)".format(winner)) # Thus we can just announce them.
-      setWinner(winner)
+      me.setGlobalVariable('RevealReady','False')
+      if not len(group): return # IF we have an empty hand just exit silently)
+      evCount = 0
+      foundEvents = ['','','','',''] # We need to declare the list because it will not work if it doesn't exist.
+      for card in group:
+         if card.Type == 'Event': # Check if the card is an event and save it's name.
+            foundEvents[evCount] = card
+            evCount += 1 # Count how many events we have in the hand
+      if evCount > 1: # If we have more than one, select one at random
+         eventPointer = rnd(0,evCount-1)
+         revealHand(group, 'lowball',foundEvents[eventPointer]) # Then pass its name to the next function so that it can be highlighted and announced.
+      elif evCount == 1: # If there's only one event, then just pass it's name on the revealHand function so that it can be highlighted and announced.
+         revealHand(group, 'lowball',foundEvents[0])      
+      else: revealHand(group, 'lowball')
    debugNotify("<<< revealLowballHand()")
 
 def revealHandAsk(group):
-   if confirm("Are you revealing a shootout hand?"): revealShootoutHand(group)
+   if getGlobalVariable('Shootout') == 'True': revealShootoutHand(group)
    else: revealLowballHand(group)
    
 def playLowball(group = me.Deck):
@@ -1517,13 +1528,14 @@ def playLowball(group = me.Deck):
 # * If there isn't a tie, then uses it gives the winner all the GR from the shared lowball pot
 # * It assigns a "Winner" counter to the winner's outfit and wipes the previous winner's marker.
    mute()
-   if getGlobalVariable('Phase') != '1':
-      #if not confirm(":::WARNING::: It is not yet the Gamblin' phase. Do you want to jump to lowball now?"): return
-      goToGamblin()
-   drawhandMany(me.Deck, 5, True)
-   random = rnd(100, 1000) # Bug Workaround
-   betLowball()
-   revealLowballHand()
+   if me.getGlobalVariable('RevealReady') == 'Lowball': notify("{} is waiting patiently for everyone else to reveal their lowball hand...".format(me))
+   else:
+      if getGlobalVariable('Phase') != '1':
+         #if not confirm(":::WARNING::: It is not yet the Gamblin' phase. Do you want to jump to lowball now?"): return
+         goToGamblin()
+      drawhandMany(me.Deck, 5, True)
+      betLowball()
+      revealLowballHand()
 
 def betLowball(group = table,x = 0,y = 0, silent = False): # Bets a 1 ghost rock to the lowball pot
    mute()

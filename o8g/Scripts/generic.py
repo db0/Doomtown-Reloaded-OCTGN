@@ -530,7 +530,7 @@ def findMarker(card, markerDesc): # Goes through the markers on the card and loo
    return foundKey
       
 def getActivePlayers():
-   return [player for player in getPlayers() if len(player.Deck) > 0 or len(player.piles['Discard Pile']) > 0]
+   return [player for player in getPlayers() if len(player.Deck) > 0 or len(player.piles['Discard Pile']) > 0 or len(player.hand) > 0]
    
 def claimCard(card, player = me): # Requests the controller of a card to pass control to another player (script runner by default)
    if card.controller != player: # If the card is already ours, we do not need to do anything.

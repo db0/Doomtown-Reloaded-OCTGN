@@ -34,6 +34,7 @@
        <event name="OnLoadDeck" action="checkDeck" />
        <event name="OnMoveCards" action="checkMovedCards" />
        <event name="OnMarkerChanged" action="chkMarkerChanges" />
+       <event name="OnPlayerGlobalVariableChanged" action="checkPlayerGlobalVars" />
    </events>
    <fonts>
        <font src="Fonts/american-typewriter-medium-bt-2.ttf" size="12" target="context"/>
@@ -156,6 +157,7 @@
       <globalvariable name="specialCards" value="{}" /> 
       <globalvariable name="playerOutfit" value="None" /> 
       <globalvariable name="UpkeepDone" value="False" /> 
+      <globalvariable name="RevealReady" value="False" />      
 		<hand name="Play Hand" visibility="me" ordered="False" width="90" height="126" icon="Groups/playhand.png">
 			<cardaction menu="Play" default="True" execute="playcard" />
 			<cardaction menu="Inspect Card" default="False" shortcut="Ctrl+I" execute="inspectCard" />
