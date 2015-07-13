@@ -1,5 +1,14 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.7.1.x
+
+* Jobs can now include booted dudes for participants (leader still has to be unbooted)
+* Fixed Makaio and Somerset xp names
+* Bottom Dealin' won't break when your deck is empty
+* **Significant:** Draw Hand will now be revealed simultaneously after all players have set themselves ready. This should prevent the game state messing up when both player tried to do lowball at the same time.
+* Game will now announce how much GR you have left after upkeep (to make backtracking easier)
+* Fixed Max Baine's xp ability
+
 ### 1.7.0.x
 
 There's **No Turning Back** from OCTGN!
