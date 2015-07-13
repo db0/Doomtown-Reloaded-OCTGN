@@ -24,7 +24,7 @@
          <property name="Text" value="Noon, Boot: If Avie is at a deed in town, choose an opposing dude with lower influence in town. Move them to Avie’s location." />
          <property name="Instructions" value="" />
       </card>
-      <card id="04e204a6-8879-477b-8153-adcda50b1f51" name="Judge Harry Sommerset">
+      <card id="04e204a6-8879-477b-8153-adcda50b1f51" name="Judge Harry Somerset">
          <property name="Rank" value="8" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />

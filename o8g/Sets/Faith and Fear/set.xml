@@ -550,7 +550,7 @@
          <property name="Text" value="Add Maria's bounty to each Huckster skill check she makes while in a shootout. " />
          <property name="Instructions" value="" />
       </card>
-      <card id="933eccf1-ad0d-4153-8381-a23c6de97a60" name="Makiao Kaleo, Esq.">
+      <card id="933eccf1-ad0d-4153-8381-a23c6de97a60" name="Makaio Kaleo, Esq.">
          <property name="Rank" value="6" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
