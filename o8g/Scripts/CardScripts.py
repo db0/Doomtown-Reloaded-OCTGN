@@ -2149,7 +2149,7 @@ Max Baine
 -----
 
 +++++
-GR0B1R0:PlayCard-DemiAutoTargeted-atDude-hasProperty{Value}ge10-choose1-fromHand-payCost-reduc3
+GR0B1R0:PlayTarget-Targeted-atDude-fromHand-payCost-reduc3
 .....
 El Grajo
 -----
