@@ -331,6 +331,7 @@ def aceTarget(table = table, x = 0, y = 0, silent = False, targetCards = None):
       else: ace(card, silent = silent)
       
 def discard(card, x = 0, y = 0, silent = False): # Discard a card.
+   if card.model == 'ac0b08ed-8f78-4cff-a63b-fa1010878af9': return
    if card.controller != me: 
       remoteCall(card.controller,"discard",[card])
       return
