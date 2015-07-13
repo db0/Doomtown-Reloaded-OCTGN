@@ -137,6 +137,10 @@ def completeJob():
          elif playeraxis == Yaxis: card.moveToTable(0,homeDistance(card) + (playerside * cheight(card,-4)) + (iter * cardDistance()))
          orgAttachments(card)            
          iter += 1
+         card.markers[mdict['BulletShootoutPlus']] = 0 # We need to clear these to prevent job effects from taking them into account. E.g. Desolation row.
+         card.markers[mdict['BulletShootoutMinus']] = 0 
+         card.markers[mdict['ValueShootoutPlus']] = 0 
+         card.markers[mdict['ValueShootoutMinus']] = 0 
       if len(jobPosse): notify("{} is successful and the job posse {} goes home booted".format(jobCard,[c.name for c in jobPosse]))
       else: notify("{} is unsuccessful".format(jobCard))
       if confirm("Did the {} job succeed?".format(jobCard.Name)): # If we actually have scripts in the job, we try to execute them.

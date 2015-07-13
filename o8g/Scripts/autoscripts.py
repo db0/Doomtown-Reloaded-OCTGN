@@ -799,21 +799,24 @@ def StartJob(Autoscript, announceText, card, targetCards = None, notification = 
       posse = [c for c in table
                if c.Type == 'Dude'
                and c.controller == me
-               and c.orientation == Rot0
                and c.targetedBy and c.targetedBy == me
                and c != mark]
    else:
       targetedDudes = [c for c in table
                        if c.Type == 'Dude'
                        and c.controller == me
-                       and c.orientation == Rot0
                        and c.targetedBy and c.targetedBy == me
                        and c != mark]
-      if len(targetedDudes) == 1: leader = targetedDudes[0]
-      elif len(targetedDudes) > 1:
-         choice = SingleChoice('Choose one of your targeted dudes to lead this job\n\n(the rest will be marked as being in your posse)', makeChoiceListfromCardList(targetedDudes))  
+      availableLeaders = [c for c in targetedDudes if c.orientation == Rot0]
+      if len(availableLeaders) == 1: 
+         leader = availableLeaders[0]
+         targetedDudes.remove(leader)
+         posse = targetedDudes
+      elif len(availableLeaders) > 1:
+         choice = SingleChoice('Choose one of your unbooted targeted dudes to lead this job\n\n(the rest will be marked as being in your posse)', makeChoiceListfromCardList(availableLeaders)) 
          if choice == None: return 'ABORT'
-         else: leader = targetedDudes.pop(choice)
+         else: leader = availableLeaders.pop(choice)
+         targetedDudes.remove(leader)
          posse = targetedDudes
       else:
          availableDudes = [c for c in table
@@ -826,6 +829,12 @@ def StartJob(Autoscript, announceText, card, targetCards = None, notification = 
             choice = SingleChoice("Choose one of your available dudes to lead this job\n\n(You will need to double click any other dude you'd like to join manually)", makeChoiceListfromCardList(availableDudes))
             if choice == None: return 'ABORT'
             else: leader = availableDudes.pop(choice)
+         else: 
+            notify(":::ERROR::: You must have an unbooted dude to start the job! Aborting!")
+            return 'ABORT'
+         if len(targetedDudes):
+            if leader in targetedDudes: targetedDudes.remove(leader)
+            posse = targetedDudes
    leader.highlight = InitiateColor
    x,y = mark.position
    if mark.name == 'Town Square': 
