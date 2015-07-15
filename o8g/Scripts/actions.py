@@ -434,7 +434,7 @@ def upkeep(group = table, x = 0, y = 0): # Automatically receive production and 
       else: # If we can pay the upkeep, do so.
          notify("{} has paid {} upkeep in total this turn. {}".format(me, upk, concat_upk)) #Inform the players how much they paid and for what.
       me.GhostRock -= upk # Finally take the money out of their bank
-   notify("-- {} has {} Ghost Rock in their stash after upkeep".format(me))
+   notify("-- {} has {} Ghost Rock in their stash after upkeep".format(me,me.GhostRock))
    me.setGlobalVariable('UpkeepDone','True')
    leftOverUpk = False
    for player in getActivePlayers():
