@@ -134,17 +134,17 @@ def chkMarkerChanges(card,markerName,oldValue,newValue,isScriptChange):
      
 def checkPlayerGlobalVars(player,name,oldValue,value):
    mute()
-   if name == 'RevealReady' and me._id == 1 and value != 'False': checkHandReveal() # Only the hosting player reveals hands
+   if name == 'RevealReady' and me._id == 1 and value != 'False': checkHandReveal(player) # Only the hosting player reveals hands
    if name == 'Hand Rank' and me._id == 1 and value != 'N/A': compareHandRanks() # Only the hosting player reveals hands
 
-def checkHandReveal():           
+def checkHandReveal(playerVar):           
    playersReady = []
    if getGlobalVariable('Shootout') == 'True': # If it's a shootout, we only care to see if that player's opponent is ready.
       for player in getActivePlayers():
          if player.getGlobalVariable('RevealReady') == 'Shootout': playersReady.append(player)
          if len(playersReady) == 2: break
       if len(playersReady) < 2:
-         notify("{} is ready to reveal their shootout hand. Waiting for their opponent...".format(player))
+         notify("{} is ready to reveal their shootout hand. Waiting for their opponent...".format(playerVar))
       else:
          for player in playersReady:
             remoteCall(player,'revealShootoutHand',[player.piles['Draw Hand'],True])
@@ -152,7 +152,7 @@ def checkHandReveal():
       for player in getActivePlayers():
          if player.getGlobalVariable('RevealReady') != 'False': playersReady.append(player)
       if len(playersReady) < len(getActivePlayers()):
-         notify("{} is ready to reveal their lowball hand. Waiting for everyone else...".format(player))
+         notify("{} is ready to reveal their lowball hand. Waiting for everyone else...".format(playerVar))
       else:
          for player in playersReady:
             remoteCall(player,'revealLowballHand',[player.piles['Draw Hand'],True])

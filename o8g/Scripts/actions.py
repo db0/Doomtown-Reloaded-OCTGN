@@ -1473,7 +1473,7 @@ def revealShootoutHand(group = me.piles['Draw Hand'], revealReady = False):
          return
       if me.getGlobalVariable('RevealReady') != 'Shootout': 
          me.setGlobalVariable('RevealReady','Shootout')
-         if me._id == 1: checkHandReveal() # Because for some reason this event doesn't trigger for the player who's variable changed.
+         if me._id == 1: checkHandReveal(me) # Because for some reason this event doesn't trigger for the player who's variable changed.
       else: 
          waitingList = [
                         "{} is twitchin' their fingers...".format(me),
@@ -1502,7 +1502,7 @@ def revealLowballHand(group = me.piles['Draw Hand'], revealReady = False):
          return
       if me.getGlobalVariable('RevealReady') != 'Lowball': 
          me.setGlobalVariable('RevealReady','Lowball')
-         if me._id == 1: checkHandReveal() # Because for some reason this event doesn't trigger for the player who's variable changed.
+         if me._id == 1: checkHandReveal(me) # Because for some reason this event doesn't trigger for the player who's variable changed.
       else: 
          notify("{} is waiting patiently for everyone else to reveal their lowball hand...".format(me))
    else:
