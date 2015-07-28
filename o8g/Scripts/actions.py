@@ -1171,7 +1171,9 @@ def playcard(card,retainPos = False,costReduction = 0):
       else:
          if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
          if card.Type == "Goods" or card.Type == "Spell":
-            if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): return      
+            if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): 
+               me.GhostRock += num(card.Cost)
+               return      
             if re.search('Gadget', card.Keywords):
                if hostCard.Type == 'Dude':
                   if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"): 
@@ -1197,10 +1199,10 @@ def playcard(card,retainPos = False,costReduction = 0):
                      else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
                   else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
             elif card.Type == "Spell": 
-               if hostCard.Type == 'Dude': notify("{} has learned {}.".format(hostCard, card))
-               else: notify("{} been prepared on {}.".format(card,hostCard))
-            else: notify("{} has purchased {}.".format(hostCard, card))
-         else: notify("{} has attached a {}.".format(hostCard, card))
+               if hostCard.Type == 'Dude': notify("{} has learned {}.".format(hostCard, card.Name))
+               else: notify("{} been prepared on {}.".format(card.Name,hostCard))
+            else: notify("{} has purchased {}.".format(hostCard, card.Name))
+         else: notify("{} has attached a {}.".format(hostCard, card.Name))
          attachCard(card,hostCard)
    else: 
       if not retainPos: # We only pay the cost if the card was double-clicked, in case the player tried to play the card for free.

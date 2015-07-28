@@ -507,7 +507,13 @@ def clearDrawHandonTable():
 
 def clearRemainingActions():
    for card in table:
-      if card.controller == me and card.Type == 'Action' and card.highlight != DrawHandColor and card.highlight != DummyColor: discard(card)  
+      if (card.controller == me 
+          and card.Type == 'Action' 
+          and not re.search('Condition', card.Keywords) 
+          and not re.search('Noon Job[:,]', card.Text) # Noon Jobs are discarded only at the end of the shootout.
+          and card.Name != 'Bounty Hunter' # BH cards are discarded only at the end of the shootout
+          and card.highlight != DrawHandColor 
+          and card.highlight != DummyColor): discard(card)  
 
 def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = False):
 # A function that returns a list of strings suitable for a choice menu, out of a list of cards

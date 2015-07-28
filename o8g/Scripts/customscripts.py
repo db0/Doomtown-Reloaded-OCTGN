@@ -162,7 +162,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       if not len(targetDeed):
          whisper(":::ERROR::: You have no deeds in your hand to attempt to build")
          return 'ABORT'
-      targetDude = findTarget('DemiAutoTargeted-atDude-isUnbooted-hasProperty{Influence}gt0-choose1')
+      targetDude = findTarget('DemiAutoTargeted-atDude-isUnbooted-choose1-targetMine')
       if not len(targetDude):
          whisper(":::ERROR::: You have no available dudes in play to build that deed")
          return 'ABORT'
