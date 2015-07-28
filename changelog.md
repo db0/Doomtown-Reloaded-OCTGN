@@ -1,5 +1,15 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.7.2.x
+
+* Attaching goods/spells now will announce their name
+* Lowball will announce the correct name of ready players
+* Morgan outfit should recognise attires on 0 inf dudes
+* Cost of goods refunded when all your dudes are booted and you opt to cancel the play
+* Bounty Hunter and Jobs will stay on the table until shootout ends.
+* Removed "Draw cards to play hand" action to prevent common accidents
+
+
 ### 1.7.1.x
 
 * Jobs can now include booted dudes for participants (leader still has to be unbooted)
