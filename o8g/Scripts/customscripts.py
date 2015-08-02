@@ -74,7 +74,6 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       me.piles['Deck'].addViewer(me)
       whisper("The top card of your deck is {} ({} of {})".format(me.piles['Deck'].top(),fullrank(me.piles['Deck'].top().Rank),fullsuit(me.piles['Deck'].top().Suit)))
       me.piles['Deck'].removeViewer(me)
-   debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    ### IOUF ###
    elif card.name == 'Marcia Ridge':
       notify(":> {} use {}".format(announceText,targetCards[0]))
@@ -98,6 +97,7 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          choicehand.moveTo(me.piles['Discard Pile'])
          verb = 'discard'
       notify("{} booted {} to draw {} cards and {} {} from their hand".format(me,bootingDude,cardDraw,verb,choicehand))
+   debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
 def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly unique to specific cards, not worth making a whole generic function for them.
