@@ -897,6 +897,9 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
          else: difficulty = compileCardStat(targetCards[0], 'Value') # If it's not grit, the only other option (for now) is value
       else: difficulty = num(spellDifficulty.group(2))  # If it's not a variable difficulty, then we just set the numeric value for it
       if card.Type == 'Dude': skilledDude = card # if the card calling the script is a dude, we assume the ability is coming from them.
+      elif re.search(r'Totem',card.Keywords): 
+         skilledDude = askCard([c for c in table if c.controller == me and re.search(r'Shaman',c.Keywords)],"Which of your Shamans is using this Totem?",card.Name)
+         if not skilledDude: return 'ABORT'
       else: skilledDude = fetchHost(card)
       skills = fetchSkills(skilledDude)
       neededSkill = None
@@ -1502,7 +1505,7 @@ def gatherCardProperties(card):
       strippedCS = cardSubtype.strip() # Remove any leading/trailing spaces between traits. We need to use a new variable, because we can't modify the loop iterator.
       if strippedCS:
          cardProperties.append(strippedCS) # If there's anything left after the stip (i.e. it's not an empty string anymrore) add it to the list.
-         skillRegex = re.search(r'(Huckster|Blessed|Shaman|Mad Scientist) [0-9]',strippedCS)
+         skillRegex = re.search(r'(Huckster|Blessed|Shaman|Mad Scientist|Kung Fu) [0-9]',strippedCS)
          if skillRegex: cardProperties.append(skillRegex.group(1)) # If we discover a skill, we also append only its name, so that it's seekable alone, without the level of the skill.
    debugNotify("Appending Suit",4) # Debug                
    cardProperties.append(card.Suit)

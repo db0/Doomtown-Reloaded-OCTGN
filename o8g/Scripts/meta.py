@@ -582,6 +582,8 @@ def findHost(card):
    # Tries to find a host to attach the gear
    hostCards = eval(getGlobalVariable('Host Cards'))
    if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('Targeted-atDeed-isUnbooted-targetMine') # First we try to do a limited search, in case they forgot too many cards targeted
+   elif re.search(r'Totem',card.Keywords): potentialHosts = findTarget('Targeted-atDeed_or_Town Square_or_Outfit-targetMine') 
+   elif re.search(r'Condition',card.Keywords): potentialHosts = findTarget('Targeted') 
    elif card.type == 'Spell':
       if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Huckster-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
       elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Blessed-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to get this inspired with this Miracle") 
@@ -589,9 +591,10 @@ def findHost(card):
       else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Spell") 
    else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to receive these goods") 
    if len(potentialHosts) == 0: # If they haven't targeted a normally valid card, we try to discover one they've just targeted anyway
-      potentialHosts = findTarget('Targeted-atDeed_or_Dude',choiceTitle = "Choose one of your dudes to attach this {}".format(card.Type)) # If they manually targeted a card, we let them go through with it, in case they know something we don't
+      potentialHosts = findTarget('Targeted-atDeed_or_Dude_or_Outfit',choiceTitle = "Choose one of your dudes to attach this {}".format(card.Type)) # If they manually targeted a card, we let them go through with it, in case they know something we don't
    if len(potentialHosts) == 0: # If they haven't targeted a card, we try to discover one
-      if type == 'Improvement': potentialHosts = findTarget('DemiAutoTargeted-atDeed-isUnbooted-choose1') 
+      if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDeed-isUnbooted-choose1') 
+      elif re.search(r'Condition',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-choose1',choiceTitle = "Choose one of your cards attach this condition") 
       elif card.type == 'Spell':
          if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Huckster-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
          elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Blessed-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to get inspired with this Miracle") 
