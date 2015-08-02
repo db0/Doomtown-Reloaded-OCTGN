@@ -194,6 +194,12 @@
          <block type="overlay" id="outfit_icon_wretched" src="Proxy/Icons/fs_the_wretched.png">         
            <location x="15" y="450" />
          </block>     
+         <block type="overlay" id="outfit_icon_alliance" src="Proxy/Icons/fs_coyote_tribe.png">         
+           <location x="15" y="450" />
+         </block>  
+         <block type="overlay" id="outfit_icon_108" src="Proxy/Icons/fs_maze_rats.png">         
+           <location x="15" y="450" />
+         </block>     
    <!-- Dude Blocks -->
          <block type="overlay" id="dude_blackjacks" src="Proxy/Dudes/blackjacks.jpg">         
            <location x="0" y="0" />
@@ -208,6 +214,12 @@
            <location x="0" y="0" />
          </block>  
          <block type="overlay" id="dude_wretched" src="Proxy/Dudes/the_wretched.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="dude_alliance" src="Proxy/Dudes/the_circle.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="dude_108" src="Proxy/Dudes/the_society.jpg">         
            <location x="0" y="0" />
          </block>  
          <block type="text" id="dude_name">
@@ -239,6 +251,12 @@
          <block type="overlay" id="outfit_wretched" src="Proxy/Outfits/the_wretched.jpg">         
            <location x="0" y="0" />
          </block>  
+         <block type="overlay" id="outfit_alliance" src="Proxy/Outfits/the_circle.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="overlay" id="outfit_108" src="Proxy/Outfits/the_society.jpg">         
+           <location x="0" y="0" />
+         </block>  
          <block type="overlay" id="home_outfit_icon_blackjacks" src="Proxy/Icons/fs_blackjacks.png">         
            <location x="520" y="110" />
          </block>  
@@ -249,6 +267,12 @@
            <location x="520" y="110" />
          </block>  
          <block type="overlay" id="home_outfit_icon_wretched" src="Proxy/Icons/fs_the_wretched.png">         
+           <location x="520" y="110" />
+         </block>  
+         <block type="overlay" id="home_outfit_icon_alliance" src="Proxy/Icons/fs_coyote_tribe.png">         
+           <location x="520" y="110" />
+         </block>  
+         <block type="overlay" id="home_outfit_icon_108" src="Proxy/Icons/fs_maze_rats.png">         
            <location x="520" y="110" />
          </block>  
          <block type="text" id="starting_rock">
@@ -345,6 +369,14 @@
                      <link block="outfit_wretched" />
                      <link block="home_outfit_icon_wretched" />
                   </case>
+                  <case value="Eagle Wardens">
+                     <link block="outfit_alliance" />
+                     <link block="home_outfit_icon_alliance" />
+                  </case>
+                  <case value="108 Righteous Bandits">
+                     <link block="outfit_108" />
+                     <link block="home_outfit_icon_108" />
+                  </case>
                </switch>
             </conditional>
          </overlayblocks>
@@ -386,6 +418,14 @@
                   <case value="The Fourth Ring">
                      <link block="dude_wretched" />
                      <link block="outfit_icon_wretched" />
+                  </case>
+                  <case value="Eagle Wardens">
+                     <link block="dude_alliance" />
+                     <link block="outfit_icon_alliance" />
+                  </case>
+                  <case value="108 Righteous Bandits">
+                     <link block="dude_108" />
+                     <link block="outfit_icon_108" />
                   </case>
                   <default>
                      <link block="dude_drifter" />
