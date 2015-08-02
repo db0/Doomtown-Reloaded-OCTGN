@@ -75,6 +75,29 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       whisper("The top card of your deck is {} ({} of {})".format(me.piles['Deck'].top(),fullrank(me.piles['Deck'].top().Rank),fullsuit(me.piles['Deck'].top().Suit)))
       me.piles['Deck'].removeViewer(me)
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
+   ### IOUF ###
+   elif card.name == 'Marcia Ridge':
+      notify(":> {} use {}".format(announceText,targetCards[0]))
+      useAbility(targetCards[0])
+   elif card.name == 'Eagle Wardens':
+      bootingDude = targetCards[0]
+      boot(bootingDude, silent = True)
+      if compileCardStat(bootingDude, 'Influence') >= 2: cardDraw = 3
+      else: cardDraw = 2
+      drawMany(me.deck, cardDraw, silent = True)      
+      if len(me.hand):
+         choicehand = None
+         while choicehand == None:
+            choicehand = askCard([c for c in me.hand],'Choose which card to discard or ace from your hand',card.Name)
+      destination = SingleChoice("Discard or Ace {}?".format(choicehand.Name), ['Discard','Ace'])
+      if not destination: destination = 0
+      if destination: 
+         choicehand.moveTo(me.piles['Boot Hill'])
+         verb = 'ace'
+      else: 
+         choicehand.moveTo(me.piles['Discard Pile'])
+         verb = 'discard'
+      notify("{} booted {} to draw {} cards and {} {} from their hand".format(me,bootingDude,cardDraw,verb,choicehand))
    return announceString
 
 def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly unique to specific cards, not worth making a whole generic function for them.
@@ -381,6 +404,60 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          if choice == None: return 'ABORT'
          else: player = opponents[choice]         
       remoteCall(player,'CookinTroubleStart',[card])
+   elif card.name == "Nathan Shane" and action == 'USE':
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else:
+         choice = SingleChoice("Choose which player to snipe", [pl.name for pl in opponents])
+         if choice == None: return 'ABORT'
+         else: player = opponents[choice]         
+      remoteCall(player,'NathanShaneStart',[card])
+   ### IOUF ###
+   elif card.name == "Butch Deuces" and action == 'USE':
+      topC = list(deck.top(5))
+      chosenC = askCard(topC,'Choose one Spirit or Attire to reveal or close this window to leave these cards where they are',card.Name)
+      if not chosenC: notify("{} boots {} to look at the top 5 cards of their deck but opts to keep their current hand".format(me,card))
+      else:
+         for c in me.hand: c.moveToBottom(deck)
+         for c in deck.top(5): c.moveTo(me.hand)
+         notify("{} boots {} to reveal {} from the top 5 cards of their deck,  take those cards to their hand and shuffle their previous hand to their deck".format(me,card,chosenC.Name))
+         deck.shuffle()         
+   elif card.name == "Laughing Crow" and action == 'USE':
+      topC = list(deck.top(2))
+      spirits = []
+      for c in topC: 
+         c.moveTo(discardPile)
+         if re.search(r'Spirit',c.Keywords): spirits.append(c)
+      playedSpirit = 'select'
+      while len(spirits) and playedSpirit != None:
+         playedSpirit = askCard(spirits,'Select a spirit to play (paying all costs)',card.Name)
+         if playedSpirit:
+            playcard(playedSpirit)
+            spirits.remove(playedSpirit)
+            topC.remove(playedSpirit)
+      if len(topC): notify("{} discarded {} from the top of their deck".format(card,[c.Name for c in topC]))
+   elif card.name == "Benjamin Washington" and action == 'USE':
+      handCards = list(me.hand)
+      discardedC = askCard(handCards,'Select one card to discard or close this window to finish',card.Name)
+      if not discardedC: return
+      while discardedC != None and len(me.hand):
+         discardedC.moveTo(discardPile)
+         notify(":> {} uses {} to discard {}".format(me,card,discardedC))
+         handCards.remove(discardedC)
+         discardedC = askCard(handCards,'Select another card to discard or close this window to finish',card.Name)
+      discardedNR = 5 - len(handCards)
+      for iter in range(discardedNR):
+         upkeepDudes = [c for c in table if compileCardStat(c, 'Upkeep') >= 1 and c.controller == me]
+         upkeepFixed = askCard(upkeepDudes,'Select one of your dudes to reduce their upkeep by 2 ({}/{})'.format(iter + 1,discardedNR),card.Name)
+         if not upkeepFixed: break
+         if compileCardStat(upkeepFixed, 'Upkeep') >= 2: 
+            upkeepFixed.markers[mdict['ProdPlus']] += 2
+            TokensX('Put2UpkeepPrePaid', '', upkeepFixed)
+         else: 
+            upkeepFixed.markers[mdict['ProdPlus']] += 1 # We cannot exceed their production, as they would get prod instead then.
+            TokensX('Put1UpkeepPrePaid', '', upkeepFixed)
+         notify(":> {} reduces the upkeep of {} to {} until High Noon".format(card,upkeepFixed,compileCardStat(upkeepFixed, 'Upkeep')))
+      draw()
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -613,4 +690,49 @@ def CookinTroubleEnd(card,cardChoice):
       cardChoice.moveTo(me.piles['Discard Pile'])
       notify("{}'s {} sabotages {} out of {}'s play hand".format(card.controller,card,cardChoice,me))
    me.hand.removeViewer(card.controller)
+
+def NathanShaneStart(card):
+   mute()
+   bullets = compileCardStat(card, stat = 'Bullets')
+   if not len(me.hand): notify(":::INFO::: {}'s play hand is empty. Nathan has nothing to snipe".format(me))
+   elif not bullets: notify(":::INFO::: {} has currently 0 bullets and no capacity to snipe anything".format(card))
+   else:
+      randomCards = []
+      for iter in range(bullets):
+         randomC = me.hand.random()
+         randomCards.append(randomC)
+         randomC.moveTo(me.ScriptingPile)         
+      notify(":> {} Reveals {} random cards to {}".format(me,bullets,card.controller))      
+      remoteCall(card.controller,'NathanShaneChoose',[card,[c for c in me.ScriptingPile]])
+
+def NathanShaneChoose(card,handList):
+   mute()
+   update()
+   cardChoice = askCard([c for c in handList],"Choose action card to discard.")
+   if cardChoice == None:
+      notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
+   while cardChoice.Type != 'Action': # If they chose a non-action, we force them to choose an action.
+      if confirm("You cannot select non-action cards to discard with Nathan's ability. Do you want to choose nothing?"): 
+         notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
+         cardChoice = None
+         break
+      else: 
+         actionsList = [c for c in handList if c.Type == 'Action']
+         if not actionsList: 
+            notify("{} does not find any action in {}'s hand to snipe".format(me,handList[0].controller))
+            cardChoice = None
+            break
+         else:
+            cardChoice = askCard(actionsList,"Choose action card to discard.")
+            if cardChoice == None: 
+               notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
+               break
+   remoteCall(handList[0].controller,'NathanShaneEnd',[card,cardChoice])
+
+def NathanShaneEnd(card,cardChoice):
+   mute()
+   if cardChoice:
+      cardChoice.moveTo(me.piles['Discard Pile'])
+      notify("{}'s {} snipes {} out of {}'s play hand".format(card.controller,card,cardChoice,me))
+   for c in me.ScriptingPile: c.moveTo(me.hand)
    
