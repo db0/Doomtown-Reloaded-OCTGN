@@ -2263,6 +2263,174 @@ b308c49b-6871-4067-a269-9aa7f8917bdc
 +++++
 
 .....
+Junior
+-----
+85989968-0332-4dc2-a5eb-9921267453ff
+-----
+onPlay:Retrieve1Card-toTable-grabGoods_and_Mystical_and_nonGadget-payCost-searchComplete
++++++
+
+.....
+The Fabulous Mister Miss
+-----
+4b50bf0d-29e3-4e93-8acc-f77c60b80e57
+-----
+
++++++
+GR0B0R1:Put3InfluenceMinus-Targeted-atDude-targetOpponents
+.....
+Sister Mary Gideon
+-----
+92d9bfc1-4be6-4973-b820-0ac65e5d7b01
+-----
+
++++++
+
+.....
+Nathan Shane
+-----
+65b724a9-49e4-4c1c-9db8-e3f3081fa3fe
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Warren Graves
+-----
+e20afd82-c3d7-4152-aac9-4392a29733b8
+-----
+
++++++
+GR0B0R0:SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetMine-choose1$$ParticipateMyself
+.....
+Jack O'Hara
+-----
+c4b260a0-1861-4300-8c96-6064f7367cb5
+-----
+
++++++
+
+.....
+John "Aces" Radcliffe
+-----
+686696a5-da6b-46d7-92b2-2ba051a3153e
+-----
+
++++++
+
+.....
+Steele Archer
+-----
+ef19f3d5-a52f-403a-a342-ae32f3753120
+-----
+
++++++
+GR0B0R0:UnbootTarget-DemiAutoTargeted-atHex-choose1
+.....
+Old Man McDroste
+-----
+8628bdf2-3900-4e36-941e-043560d81757
+-----
+
++++++
+GR0B1R0:Put5InfluenceMinus-Targeted-atDude
+.....
+Flint's Amusements
+-----
+29add78a-5369-43d9-80d9-4006f6757a6e
+-----
+whileInPlay:Gain1Ghost Rock-foreachResolution-typeAction
++++++
+GR0B1R0:Draw1Card
+.....
+Lula's Exploit
+-----
+5529098d-fd5f-41c1-9121-58a4c2b41c89
+-----
+atPhaseGamblin:Refill2Ghost Rock
++++++
+GR0B0R1:Remove1Ghost Rock-isCost-isSilent$$Gain1Ghost Rock
+.....
+Testing Range
+-----
+5448fd9b-6cce-4973-a40a-f4769b7f6f47
+-----
+
++++++
+GR2B1R0:UnbootTarget-DemiAutoTargeted-atMad Scientist-isBooted||GR0B1R0:Pull1Card
+.....
+Dog's Duster
+-----
+6da3418d-0c64-425c-8191-680e7f2480b3
+-----
+
++++++
+GR0B1R0:CalloutTarget-Targeted-atDude-hasMarker{Bounty}
+.....
+Stoker's Sabre
+-----
+0c37b916-b5e6-4e43-8640-8a970465b70e
+-----
+
++++++
+GR0B1R0:UnbootTarget-Targeted-atSpell$$Remove1Used Ability-Targeted-atSpell-targetMine-isSilent
+.....
+Fate Dispenser
+-----
+80905177-39e7-49fd-a244-aa6c70baa9e8
+-----
+
++++++
+GR0B1R0:Draw1Card
+.....
+Soul Cage
+-----
+59978194-81c0-482e-8748-1df5b3a6245f
+-----
+
++++++
+GR0B1R0:Retrieve1Card-fromBootHill-toTable-grabAbomination
+.....
+For Such a Time as This
+-----
+abed8d3b-d73f-4426-bbeb-6e0124aae9fb
+-----
+
++++++
+GR0B1R0:Pull1Card-spellEffects<StartJob-AutoTargeted-atTown Square, None>||GR0B0R1:Retrieve1Card-toTable-grabDude-searchComplete-payCost-reduc4
+.....
+Sword of the Spirit
+-----
+39e4ddd4-987b-450b-a3dd-260a20db35a0
+-----
+
++++++
+GR0B1R0:Pull1Card-spellEffects<Put1BulletNoonPlus-Targeted-atDude$$Put1High Noon:Stud-Targeted-atDude,None>
+.....
+A Fight They'll Never Forget
+-----
+3f0bc78c-6b5d-4951-bcd1-a3ab3b08481e
+-----
+
++++++
+
+.....
+Buried Treasure
+-----
+e5e6dd23-04d0-4614-a8da-a9a74785a7c2
+-----
+onPlay:Retrieve1Card-fromDiscard-toBootHill$$Gain3Ghost Rock$$Draw1Card
++++++
+
+.....
+Nightmare at Noon
+-----
+590b905c-f114-48d2-930f-66e446458c84
+-----
+onPlay:Put1BulletShootoutMinus-AutoTargeted-atDude-isParticipating-targetOpponents$$Put1Shootout:Draw-isSilent-AutoTargeted-atDude-isParticipating-isStudDude-hasProperty{Bullets}le1
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
