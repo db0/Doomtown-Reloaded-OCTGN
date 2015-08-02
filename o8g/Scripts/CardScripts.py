@@ -2431,6 +2431,342 @@ onPlay:Put1BulletShootoutMinus-AutoTargeted-atDude-isParticipating-targetOpponen
 +++++
 
 .....
+Raking Dragons
+-----
+c946d5d9-276e-4464-8958-c1bf3045a817
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:BootTarget-Targeted-atDude-targetOpponents-isParticipating$$Put2ValueShootoutMinus-Targeted-atDude-targetOpponents-isParticipating
+.....
+Shifu Speaks
+-----
+12fb4862-f1e1-4ad3-b28f-2206b1a194e9
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:Put1Influence-Targeted-atDude_and_Kung Fu-targetMine$$RequestInt{Discard how many cards?}-Min-Max5$$Draw1Card-toDiscard-perX
+.....
+Rabbit's Lunar Leap
+-----
+ceaefbb7-2540-44cf-abaf-755042f318ae
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:ParticipateTarget-Targeted-atDude_and_Kung Fu-targetMine$$UnbootTarget-Targeted-atDude_and_Kung Fu-targetMine
+.....
+Zhu's Reward
+-----
+23a1a9a2-cfc2-478c-9d93-46c23cb6a567
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted-atDude_and_Kung Fu-TargetMine-isParticipating-choose1-isCost$$SendHomeBootedMulti-Targeted-atDude-targetOpponents-isParticipating
+.....
+Zhu's Ferocity
+-----
+c77c3030-224b-4cb2-bf27-7be6cf6d5fcc
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:Put1BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents$$Put1BulletShootoutPlus-Targeted-atDude_and_Kung Fu-isParticipating-targetMine
+.....
+Richard Faulkner
+-----
+1456fe5c-9edb-4521-abd7-3a029851222d
+-----
+
++++++
+
+.....
+Mazatl
+-----
+3b853568-7da7-40d2-952c-72b611330f11
+-----
+
++++++
+GR0B0R0:MoveMyself-moveToDeed_or_Town Square_or_Outfit
+.....
+Marcia Ridge
+-----
+381e141f-b745-4c05-b455-b4fe3c1fc73c
+-----
+
++++++
+GR0B0R1:UseCustomAbility-DemiAutoTargeted-atDeed-targetOpponents-choose1
+.....
+Black Elk
+-----
+d9beac18-b2a7-451d-a17f-6b5202cd3b1a
+-----
+
++++++
+
+.....
+Lydia Bear-Hands
+-----
+ff016aea-9c16-44a6-bacf-4ee2ca9a913e
+-----
+
++++++
+GR0B0R0:BootTarget-AutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$Put1Shootout:Harrowed-DemiAutoTargeted-atDude-isParticipating-TargetMine-choose1
+.....
+Jackson Trouble
+-----
+1086db48-f246-4e5f-a6d2-2bd6ebce9ba8
+-----
+
++++++
+
+.....
+Three-Eyed Hawk
+-----
+3b3815a8-ca49-48c0-96eb-d50d1d493d68
+-----
+
++++++
+GR0B0R1:Gain1Ghost Rock
+.....
+Bloody Teeth
+-----
+b49ca811-796c-4cb9-abd4-9657d88a9ceb
+-----
+
++++++
+
+.....
+Butch Deuces
+-----
+2256eecb-02d3-4d01-b407-3417a109691e
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Smiling Frog
+-----
+c665872f-61b0-4a23-b923-12ea6d5d8c95
+-----
+
++++++
+GR0B0R0:Discard1Card-DemiAutoTargeted-choose1-fromHand$$Put1BulletNoonPlus
+.....
+Sarah Meoquanee
+-----
+245f816f-f407-41e7-b8e6-9fb6cd638bf3
+-----
+
++++++
+
+.....
+Chief Stephen Seven-Eagles
+-----
+eed9713a-5a8b-4a10-91b1-4ecd27eee125
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{make Chief Stephen Seven Eagles worth 1 control point per card attached to a deed they control}
+.....
+Laughing Crow
+-----
+7d921e83-5ac4-40c7-a756-4f596b1fe8ee
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+Benjamin Washington
+-----
+942e1f7e-d6d0-4882-b8e7-68135e9d52fc
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Randall
+-----
+1b7d462c-4ba6-4317-904e-7efc49b4a15e
+-----
+
++++++
+GR0B0R1:Draw1Card
+.....
+Longwei Fu
+-----
+bcc0f3cf-105d-4030-a4fc-b45d978bfc7e
+-----
+
++++++
+
+.....
+Xui Yin Chen
+-----
+910c051f-f36d-4245-88db-767d80998fc1
+-----
+
++++++
+GR0B1R0:Remove999Shootout:Draw-isSilent-AutoTargeted-atDude-targetMine-isParticipating$$Put1Shootout:Stud-AutoTargeted-atDude-targetMine-isParticipating
+.....
+Natalya
+-----
+48e2565e-1c96-45c8-837a-85533efc554b
+-----
+
++++++
+GR0B0R0:Gain1Ghost Rock-perTargetProperty{Production}-Targeted-atDeed
+.....
+Hamshanks
+-----
+05b9067b-7356-4fbf-b5a7-ee96c3135b9f
+-----
+
++++++
+
+.....
+Hiram Capatch
+-----
+7a390eac-db25-477b-80a9-7bbc051d87da
+-----
+
++++++
+
+.....
+Yunxu Jiang
+-----
+3c9f4821-0e6c-4e68-9666-d1784a0eca4e
+-----
+
++++++
+
+.....
+Abuelita Espinoza
+-----
+f58ccb1d-d0f7-4339-abc7-6c017bac34c4
+-----
+
++++++
+
+.....
+Bai Yang Chen
+-----
+306a6cce-32c1-480f-b8a6-e239dad1379c
+-----
+
++++++
+GR0B0R1:Draw2Cards$$Put1ProdPlus
+.....
+Daomei Wang
+-----
+1c3b7ec1-882e-458d-9409-21e23fef5f2d
+-----
+onPlay:MoveTarget-DemiAutoTargeted-atDude_and_108 Glorious Bandits-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit
++++++
+
+.....
+Xiaodan Li
+-----
+ed07deb6-3693-4ede-ae62-0f132d538211
+-----
+
++++++
+
+.....
+T'ou Chi Chow
+-----
+e5c43d70-6280-43e4-a0c6-8bc4239382e7
+-----
+
++++++
+GR0B0R1:BootTarget-Targeted-atDeed-targetMine-isCost$$UnbootTarget-Targeted-atDude-targetMine
+.....
+Nunchucks
+-----
+06c47afe-528b-416e-b068-5b609225afe0
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{reduce the pull by this dude's Kung Fu rating}
+.....
+Idol of Tlazolteotl
+-----
+f0e6f9a4-1a55-4cd6-9296-e06c823e22b2
+-----
+
++++++
+GR0B1R0:RehostTarget-Targeted-atTotem_or_Improvement_or_Condition
+.....
+Eagle Wardens
+-----
+dfb469f4-efc8-46f9-84df-66f5f973c09c
+-----
+
++++++
+GR0B1R0:UseCustomAbility-DemiAutoTargeted-atDude-isUnbooted-targetMine-choose1
+.....
+108 Righteous Bandits
+-----
+94c5b661-8f3d-46ea-975e-482ff0e2be8a
+-----
+
++++++
+GR0B1R0:MoveTarget-Targeted-atDude-moveToDude
+.....
+Spirit Guidance
+-----
+d6931afe-58cd-430f-9fe2-178738614cf8
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit7-spellEffects<DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost++Draw1Card,None>||GR0B1R0:Pull1Card-testSpirit10-spellEffects<Draw2Cards++DiscardTarget-DemiAutoTargeted-fromHand-choose1++DiscardTarget-DemiAutoTargeted-fromHand-choose1,None>
+.....
+The Pack Awakens
+-----
+79254945-f5f3-48ab-90d9-f1da1dd15d74
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<Spawn1Nature Spirit-modAction:ParticipateMyself,None>
+.....
+Spirit Trail
+-----
+a655edaa-c2e8-41d3-9710-e96bf21fae1b
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit6-spellEffects<MoveTarget-Targeted-atDude-targetMine-moveToDeed_or_Town Square_or_Outfit,None>
+.....
+Many Speak as One
+-----
+889fa2dd-dd3e-4830-8d59-7cb242e1c68e
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit9-spellEffects<Spawn1Ancestor Spirit,None>
+.....
+Spirit Dance
+-----
+e4b062de-79ef-4005-a1e0-7ce0a4ed9d34
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit10-spellEffects<Spawn1Nature Spirit-modAction:ParticipateMyself,None>
+.....
+Ancestor Spirit
+-----
+53a212a6-34a6-47b0-bb24-45f1888bebf6
+-----
+
++++++
+
+.....
+Nature Spirit
+-----
+c4689399-c350-46b3-a79a-f8c62d926cd5
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
