@@ -505,7 +505,7 @@ def clearDrawHandonTable():
          if card.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1': # The cheatin' icon
             delCard(card)
 
-def clearRemainingActions():
+def clearRemainingActions(all = False): # all is set to true when finishing a shootout, so that it then clears jobs and BH actions cards etc.
    for card in table:
       if (card.controller == me 
           and card.Type == 'Action' 

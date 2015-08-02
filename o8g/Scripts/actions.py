@@ -279,7 +279,7 @@ def clearShootout(remoted = False):
          card.markers[mdict['ValueShootoutMinus']] = 0 
          if card.model == '94fe7823-077c-4abd-9278-6e64bda6dc64' or card.model == 'c4689399-c350-46b3-a79a-f8c62d926cd5': delCard(card) # If it's a gunslinger or nature token, we remove it from the game.
    clearDrawHandonTable()
-   clearRemainingActions() # Clear any shootout actions used (common mistake)
+   clearRemainingActions(True) # Clear any shootout actions used (common mistake)
    me.setGlobalVariable('RevealReady','False')
       
 def boot(card, x = 0, y = 0, silent = False, forced =  None): # Boot or Unboot a card. I.e. turn it 90 degrees sideways or set it straight.
