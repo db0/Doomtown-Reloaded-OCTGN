@@ -1032,6 +1032,8 @@ def SpawnX(Autoscript, announceText, card, targetCards = None, notification = No
    modAction = re.search(r'-modAction:(.+)', Autoscript)
    if modAction: debugNotify(str(modAction.groups()),4)
    if action.group(2) == 'Gunslinger': spawnModel = '94fe7823-077c-4abd-9278-6e64bda6dc64' # for now we only have the gunslinger token, but in the future we might get more of them.
+   elif action.group(2) == 'Nature Spirit': spawnModel = 'c4689399-c350-46b3-a79a-f8c62d926cd5' 
+   elif action.group(2) == 'Ancestor Spirit': spawnModel = '53a212a6-34a6-47b0-bb24-45f1888bebf6' 
    else:
       whisper(":::ERROR::: Spawn Model for '{}' not understood. Aborting".format(action.group(2)))
       return 'ABORT'

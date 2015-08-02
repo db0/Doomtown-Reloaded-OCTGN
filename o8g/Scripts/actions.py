@@ -62,6 +62,8 @@ def goToGamblin(group = table, x = 0, y = 0): # Go directly to the gamblin' phas
       clearShootout() # Clear any Shootout and/or Draw Hand Cards remaining on the table.
       getPotCard() # Create the PotCard to allow the players to bet manually if need be
       for player in getActivePlayers(): remoteCall(player,'atTimedEffects',["Gamblin"])
+      for card in table:
+         if card.model == '53a212a6-34a6-47b0-bb24-45f1888bebf6': delCard(card)
 
 def goToUpkeep(group = table, x = 0, y = 0): # Go directly to the Upkeep phase
    mute()
@@ -275,7 +277,7 @@ def clearShootout(remoted = False):
          card.markers[mdict['BulletShootoutMinus']] = 0 
          card.markers[mdict['ValueShootoutPlus']] = 0 
          card.markers[mdict['ValueShootoutMinus']] = 0 
-         if card.model == '94fe7823-077c-4abd-9278-6e64bda6dc64': delCard(card) # If it's a gunslinger token, we remove it from the game.
+         if card.model == '94fe7823-077c-4abd-9278-6e64bda6dc64' or card.model == 'c4689399-c350-46b3-a79a-f8c62d926cd5': delCard(card) # If it's a gunslinger or nature token, we remove it from the game.
    clearDrawHandonTable()
    clearRemainingActions() # Clear any shootout actions used (common mistake)
    me.setGlobalVariable('RevealReady','False')
@@ -497,6 +499,9 @@ def doesNotUnboot(card, x = 0, y = 0): # Mark a card as "Does not unboot" and in
       
 def spawnGunslinger(group, x = 0, y = 0): # Simply put a fake card in the game.
    table.create("94fe7823-077c-4abd-9278-6e64bda6dc64", x, y, 1)
+
+def spawnNature(group, x = 0, y = 0): # Simply put a fake card in the game.
+   table.create("c4689399-c350-46b3-a79a-f8c62d926cd5", x, y, 1)
 
 def spawnAncestor(group, x = 0, y = 0): # Simply put a fake card in the game.
    table.create("53a212a6-34a6-47b0-bb24-45f1888bebf6", x, y, 1)
