@@ -1,5 +1,13 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.8.0.x
+
+There's **Nightmare at Noon**  AND **IOUF** have been added to  OCTGN!
+
+**Important**: Techniques are not fully scripted. They will automatically pull when played, but they won't do any effects. Until this is done: If the pull is successful, target the relevant cards and Ctrl+Z the action card itself.
+
+There's quite a lot of things scripted. I'll try to prepare a list of the trickier scripts soon. 
+
 ### 1.7.2.x
 
 * Attaching goods/spells now will announce their name
