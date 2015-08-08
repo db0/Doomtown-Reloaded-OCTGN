@@ -133,7 +133,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          else: 
             remoteCall(targetDude[0].controller,'boot',[targetDude[0]])
             notify(":> {} is caught cheating in lowball while {} has a legal hand and the Coachwhip forces them to boot {}".format(targetDude[0].controller,me,targetDude[0]))
-   elif card.name == "Elander Boldman" and action == 'USE':
+   elif card.model == "8e50a03b-b42c-4207-9d0d-7a144ad31e3b" and action == 'USE': # Elander Boldman nonxp
       if getGlobalVariable('Shootout') != 'True': 
          whisper(":::ERROR::: {} can only use his shootout ability during shootouts".format(card))
          return 'ABORT'
