@@ -458,6 +458,17 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
             TokensX('Put1UpkeepPrePaid', '', upkeepFixed)
          notify(":> {} reduces the upkeep of {} to {} until High Noon".format(card,upkeepFixed,compileCardStat(upkeepFixed, 'Upkeep')))
       draw()
+   elif card.name == "Smiling Frog" and action == 'USE':
+      discardC = findTarget('DemiAutoTargeted-choose1-fromHand')
+      if not len(discardC): return 'ABORT'
+      else:
+         if re.search(r'Spirit',discardC[0].Keywords): 
+            TokensX('Put2BulletNoonPlus', '', card)
+            notify("{} discards {} to empower himself with 2 extra bullets".format(card,discardC[0]))
+         else: 
+            TokensX('Put1BulletNoonPlus', '', card)
+            notify("{} discards {} and gains 1 extra bullet".format(card,discardC[0]))
+         discardTarget(targetCards = discardC, silent = True)         
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 

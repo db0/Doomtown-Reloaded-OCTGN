@@ -2549,7 +2549,7 @@ c665872f-61b0-4a23-b923-12ea6d5d8c95
 -----
 
 +++++
-GR0B0R0:Discard1Card-DemiAutoTargeted-choose1-fromHand$$Put1BulletNoonPlus
+GR0B0R0:CustomScript
 .....
 Sarah Meoquanee
 -----
