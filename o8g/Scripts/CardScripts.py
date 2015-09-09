@@ -2557,7 +2557,7 @@ Sarah Meoquanee
 -----
 
 +++++
-
+GR0B0R0:ParticipateMyself$$Put1Shootout:Stud
 .....
 Chief Stephen Seven-Eagles
 -----
