@@ -1152,7 +1152,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
          elif action.group(1) == 'Callout':
             leaderTarget = re.search(r"-leaderTarget\{(.+)\}", Autoscript)
             if leaderTarget:
-               possibleTargets = findTarget("DemiAutoTargeted-at{}_and_not{}-targetMine-choose1".format(leaderTarget.group(1),targetCard.name),choiceTitle = "Choose which of your dudes performs the call out")
+               possibleTargets = findTarget("DemiAutoTargeted-at{}-targetMine-choose1".format(leaderTarget.group(1)),choiceTitle = "Choose which of your dudes performs the call out")
                if not len(possibleTargets): 
                   notify(":::ERROR::: No valid Target to move to found. Aborting!")
                   return 'ABORT'
