@@ -5,6 +5,8 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 * For such a time as this now should start the job properly and search the discard as well.
 * Smiling Frog will now announce which card he discards and also gain 2 bullets on spirits
 * Added more shortcuts for Remove From posse (Ctrl+N), Trade (Ctrl+T) and Draw a Draw Hand (Ctrl+X)
+* Kidnapping shouldn't affect out of play dudes anymore.
+* Nathan Shane shouldn't crash on closing the choice window anymore
 
 ### 1.8.0.x
 

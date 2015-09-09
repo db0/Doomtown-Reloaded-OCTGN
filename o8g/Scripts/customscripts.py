@@ -722,22 +722,23 @@ def NathanShaneChoose(card,handList):
    cardChoice = askCard([c for c in handList],"Choose action card to discard.")
    if cardChoice == None:
       notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
-   while cardChoice.Type != 'Action': # If they chose a non-action, we force them to choose an action.
-      if confirm("You cannot select non-action cards to discard with Nathan's ability. Do you want to choose nothing?"): 
-         notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
-         cardChoice = None
-         break
-      else: 
-         actionsList = [c for c in handList if c.Type == 'Action']
-         if not actionsList: 
-            notify("{} does not find any action in {}'s hand to snipe".format(me,handList[0].controller))
+   else:
+      while cardChoice.Type != 'Action': # If they chose a non-action, we force them to choose an action.
+         if confirm("You cannot select non-action cards to discard with Nathan's ability. Do you want to choose nothing?"): 
+            notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
             cardChoice = None
             break
-         else:
-            cardChoice = askCard(actionsList,"Choose action card to discard.")
-            if cardChoice == None: 
-               notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
+         else: 
+            actionsList = [c for c in handList if c.Type == 'Action']
+            if not actionsList: 
+               notify("{} does not find any action in {}'s hand to snipe".format(me,handList[0].controller))
+               cardChoice = None
                break
+            else:
+               cardChoice = askCard(actionsList,"Choose action card to discard.")
+               if cardChoice == None: 
+                  notify("{} does not snipe any card in {}'s hand".format(me,handList[0].controller))
+                  break
    remoteCall(handList[0].controller,'NathanShaneEnd',[card,cardChoice])
 
 def NathanShaneEnd(card,cardChoice):

@@ -747,7 +747,7 @@ Pinned Down
 -----
 b5fbbe61-aba3-4de7-b501-4feb1f9cf203
 -----
-onPlay:Put1Shootout:Pinned Down-Targeted-atDude-isParticipating-targetOpponents$$Put3BulletShootoutMinus-Targeted-atDude-isParticipating-targetOpponents
+onPlay:Put1Shootout:Pinned Down-Targeted-atDude-isParticipating-targetOpponents
 +++++
 
 .....
