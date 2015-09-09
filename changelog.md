@@ -1,5 +1,9 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.8.1.x
+
+* For such a time as this now should start the job properly and search the discard as well.
+
 ### 1.8.0.x
 
 There's **Nightmare at Noon**  AND **IOUF** have been added to  OCTGN!

@@ -372,7 +372,7 @@ def payCost(count = 1, notification = silent, MSG = None): # Same as above for G
       else: me.GhostRock -= num(count) 
    else: # Otherwise, just take the money out and inform that we did if we're "loud".
       me.GhostRock -= num(count)
-      if notification == 'loud': notify("{} has paid {} Ghost Rock. {} is left their bank".format(me, count, me.GhostRock))  
+      if notification == 'loud': notify("{} has paid {} Ghost Rock. {} is left in their stash".format(me, count, me.GhostRock))  
 
 def cardRMsync(card, notification = 'loud'): # a function which removes influence and CP when a card which had them leaves play.
    if card.Type != 'Dude' and card.Type != 'Deed': return
