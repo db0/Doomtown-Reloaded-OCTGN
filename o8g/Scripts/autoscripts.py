@@ -1186,7 +1186,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                else:
                   possibleTargets = [fetchHost(card)]
             else:
-               possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to")
+               possibleTargets = findTarget("DemiAutoTargeted-at{}-choose1".format(moveTarget.group(1)), card = targetCard,choiceTitle = "Choose which location you're moving to",ignoreCardList = [targetCard])
                if not len(possibleTargets): 
                   notify(":::ERROR::: No valid Target to move to found. Aborting!")
                   return 'ABORT'
@@ -1363,7 +1363,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
 # Helper Functions
 #------------------------------------------------------------------------------
        
-def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None): # Function for finding the target of an autoscript
+def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ignoreCardList = None): # Function for finding the target of an autoscript
    debugNotify(">>> findTarget(){}".format(extraASDebug(Autoscript))) #Debug
    debugNotify("fromHand = {}. card = {}".format(fromHand,card)) #Debug
    if fromHand == True or re.search(r'-fromHand',Autoscript): group = me.hand
@@ -1388,6 +1388,7 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None): #
          # * Card is targeted and targeted by the player OR target search has the -AutoTargeted modulator and it is NOT highlighted as a Fate, Edge or Captured.
          # * The player who controls this card is supposed to be me or the enemy.
             debugNotify("Checking {}".format(targetLookup))
+            if ignoreCardList and targetLookup in ignoreCardList: continue # This is a list of specific card objects we never want to match
             playerChk = me
             if card:
                if card.controller != me: # If we have provided the originator card to findTarget, and the card is not our, we assume that we need to treat the script as being run by our opponent
