@@ -8,6 +8,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 * Kidnapping shouldn't affect out of play dudes anymore.
 * Nathan Shane shouldn't crash on closing the choice window anymore
 * Sword of the Spirit now should work normally
+* Spirit Dance and Dance Awakens should work now
 
 ### 1.8.0.x
 
