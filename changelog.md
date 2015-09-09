@@ -3,6 +3,8 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 ### 1.8.1.x
 
 * For such a time as this now should start the job properly and search the discard as well.
+* Smiling Frog will now announce which card he discards and also gain 2 bullets on spirits
+* Added more shortcuts for Remove From posse (Ctrl+N), Trade (Ctrl+T) and Draw a Draw Hand (Ctrl+X)
 
 ### 1.8.0.x
 

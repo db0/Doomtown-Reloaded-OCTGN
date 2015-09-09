@@ -4,7 +4,7 @@
       name="Doomtown-Reloaded" 
       id="b440d120-025a-4fbe-9f8d-3873acacb37b" 
       octgnVersion="3.1.0.0"
-      version="1.8.0.0" 
+      version="1.8.0.1" 
       markersize="16"
       tags="western deadlands poker maneuvering multiplayer"
       description="Doomtown Rides again! The award winning game of poker gunfights and spatial maneuvering is back.
@@ -103,12 +103,12 @@
          <cardaction menu="Accept Call Out." default="False" shortcut="F5" execute="defend" />
          <cardaction menu="Refuse / Run Home Booted." default="False" shortcut="Esc" execute="refuseCallout" />
          <cardaction menu="Join Defending Posse." default="False" shortcut="Ctrl+Shift+D" execute="joinDefence" />
-         <cardaction menu="Remove from Posse." default="False" execute="leavePosse" />
+         <cardaction menu="Remove from Posse." default="False" shortcut="Ctrl+N" execute="leavePosse" />
       </cardactions>
       <cardaction menu="Announce move without booting." default="False" shortcut="Ctrl+M" execute="move" />
       <cardaction menu="Announce move by booting." default="False" shortcut="Ctrl+B" execute="moveBoot" />
       <cardaction menu="Call out target dude." default="False" shortcut="Ctrl+Shift+C" execute="callout" />
-      <cardaction menu="Trade Goods to target dude." default="False" execute="tradeGoods" />
+      <cardaction menu="Trade Goods to target dude." default="False" shortcut="Ctrl+T" execute="tradeGoods" />
       <cardaction menu="Mark as Harrowed." default="False" shortcut="Alt+H" execute="addHarrowedMarker" />
 		<cardactions menu="Deed-Specific">
 			<cardaction menu="Announce as target location." default="False" shortcut="Ctrl+L" execute="locationTarget" />
@@ -171,7 +171,7 @@
 		</hand>
 		<group name="Draw Hand" visibility="me" ordered="False" width="90" height="126" icon="Groups/drawhand.png" collapsed="False">
 			<cardaction menu="Discard card (target cards to refill)" default="True" shortcut="Del" execute="drawDiscard" />
-			<groupaction menu="Reveal Hand" default="True" execute="revealHandAsk" />
+			<groupaction menu="Draw/Reveal Hand" default="True" shortcut="Ctrl+X"  execute="drawRevealHand" />
 			<groupaction menu="Reveal Lowball Hand" default="False" execute="revealLowballHand" />
 			<groupaction menu="Reveal Shootout Hand" default="False" execute="revealShootoutHand" />
 			<groupaction menu="Discard hand" default="False" execute="discardDrawHand" />

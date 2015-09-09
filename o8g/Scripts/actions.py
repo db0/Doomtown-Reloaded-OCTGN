@@ -1528,8 +1528,9 @@ def revealLowballHand(group = me.piles['Draw Hand'], revealReady = False):
       else: revealHand(group, 'lowball')
    debugNotify("<<< revealLowballHand()")
 
-def revealHandAsk(group):
-   if getGlobalVariable('Shootout') == 'True': revealShootoutHand(group)
+def drawRevealHand(group):
+   if len(group) == 0: drawhandMany()
+   elif getGlobalVariable('Shootout') == 'True': revealShootoutHand(group)
    else: revealLowballHand(group)
    
 def playLowball(group = me.Deck):
