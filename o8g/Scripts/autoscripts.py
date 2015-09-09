@@ -1141,8 +1141,8 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                whisper(":::INFO::: Failed to pay the boot cost. ABORTING")
                return 'ABORT'
          elif action.group(1) == 'Unboot': boot(targetCard, silent = True, forced = 'unboot') 
-         elif action.group(1) == 'Discard' and targetCard.group != me.piles['Boot Hill'] : discardTarget(targetCards = [targetCard], silent = True)        
-         elif action.group(1) == 'Ace' and targetCard.group != me.piles['Discard Pile'] : aceTarget(targetCards = [targetCard], silent = True)
+         elif action.group(1) == 'Discard' and targetCard.group.name != 'Boot Hill': discardTarget(targetCards = [targetCard], silent = True)        
+         elif action.group(1) == 'Ace' and targetCard.group.name != 'Discard Pile': aceTarget(targetCards = [targetCard], silent = True)
          elif action.group(1) == 'SendToDraw': sendToDrawHand(targetCard)
          elif action.group(1) == 'Participate':
             if not participateDude(targetCard): 
