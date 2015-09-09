@@ -2397,7 +2397,7 @@ abed8d3b-d73f-4426-bbeb-6e0124aae9fb
 -----
 
 +++++
-GR0B1R0:Pull1Card-spellEffects<StartJob-AutoTargeted-atTown Square, None>||GR0B0R1:Retrieve1Card-toTable-grabDude-searchComplete-payCost-reduc4
+GR0B1R0:Pull1Card-testMiracle9-spellEffects<StartJob-AutoTargeted-atTown Square,None>||GR0B0R1:Retrieve1Card-toTable-grabDude-searchComplete-payCost-reduc4
 .....
 Sword of the Spirit
 -----

@@ -1299,6 +1299,13 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
          if checkCardRestrictions(gatherCardProperties(c), restrictions) and checkSpecialRestrictions(Autoscript,c):
             cardList.append(c)
             if re.search(r'-isTopmost', Autoscript) and len(cardList) == count: break # If we're selecting only the topmost cards, we select only the first matches we get. 
+      if re.search(r'searchComplete', Autoscript):
+         for c in targetPL.piles['Discard Pile'].top(topCount):
+            debugNotify("Checking card: {}".format(c),4)
+            if re.search(r'-tellPlayer',Autoscript): delayed_whisper(":::INFO::: {} card is: {}".format(numOrder(c.getIndex),c)) # The -tellPlayer modulator, will tell the one retrieving what all cards were, even if they are not valid targets
+            if checkCardRestrictions(gatherCardProperties(c), restrictions) and checkSpecialRestrictions(Autoscript,c):
+               cardList.append(c)
+               if re.search(r'-isTopmost', Autoscript) and len(cardList) == count: break # If we're selecting only the topmost cards, we select only the first matches we get. 
       debugNotify("cardList: {}".format(cardList),3)
       chosenCList = []
       abortedRetrieve = False
