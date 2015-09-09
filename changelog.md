@@ -7,6 +7,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 * Added more shortcuts for Remove From posse (Ctrl+N), Trade (Ctrl+T) and Draw a Draw Hand (Ctrl+X)
 * Kidnapping shouldn't affect out of play dudes anymore.
 * Nathan Shane shouldn't crash on closing the choice window anymore
+* Sword of the Spirit now should work normally
 
 ### 1.8.0.x
 

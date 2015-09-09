@@ -2229,7 +2229,7 @@ Consecration
 -----
 
 +++++
-GR0B1R0:Pull1Card-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
+GR0B0R0:Pull1Card-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
 .....
 Mark of Pestilence
 -----
@@ -2405,7 +2405,7 @@ Sword of the Spirit
 -----
 
 +++++
-GR0B1R0:Pull1Card-spellEffects<Put1BulletNoonPlus-Targeted-atDude$$Put1High Noon:Stud-Targeted-atDude,None>
+GR0B0R0:Pull1Card-testMiracle7-spellEffects<Put1BulletNoonPlus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
 .....
 A Fight They'll Never Forget
 -----
