@@ -1869,7 +1869,7 @@ Makiao Kaleo, Esq.
 -----
 
 +++++
-GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetMine-choose1$$Put1Bounty-DemiAutoTargeted-atDude-targetMine-choose1
+GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetMine-choose1-choiceTitle{Choose from which dude to remove the Bounty}$$Put1Bounty-DemiAutoTargeted-atDude-targetMine-choose1-choiceTitle{Choose which dude should receive the Bounty}
 .....
 Pagliaccio
 -----

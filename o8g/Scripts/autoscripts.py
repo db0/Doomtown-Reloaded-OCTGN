@@ -1473,7 +1473,9 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
          debugNotify("Going for a choice menu")# Debug
          choiceType = re.search(r'-choose([0-9]+)',Autoscript)
          if not choiceTitle:
-            if not card: choiceTitle = "Choose one of the valid targets for this effect"
+            choiceTitleRegex = re.search(r'-choiceTitle{(.+?)}',Autoscript)
+            if choiceTitleRegex: choiceTitle = choiceTitleRegex.group(1)
+            elif not card: choiceTitle = "Choose one of the valid targets for this effect"
             else: choiceTitle = "Choose one of the valid targets for {}'s ability".format(card.name)
          debugNotify("Checking for SingleChoice")# Debug
          if choiceType.group(1) == '1':
