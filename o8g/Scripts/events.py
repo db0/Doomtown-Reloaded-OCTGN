@@ -117,7 +117,7 @@ def checkMovedCards(player,cards,fromGroups,toGroups,oldIndexs,indexs,oldXs,oldY
          clearAttachLinks(card) # If the card was manually removed from play then we simply take care of any attachments
          reCalculate(notification = 'silent')
       elif fromGroup == table and toGroup == table and card.controller == me: # If the player dragged a card manually to a different location on the table, we want to re-arrange the attachments
-         if card.Type == 'Dude' or card.Type == 'Deed': 
+         if card.Type == 'Dude' or card.Type == 'Deed' or card.Type == 'Outfit': 
             update()
             orgAttachments(card) 
 
