@@ -8,6 +8,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 * Lowball winner will only be assigned on Ctrl+W
 * Soul Cage will also search the discard pile
 * Huntsmen Society now can be used to add prod.
+* Kung Fu now included in the value of dudes on the table
 
 ### 1.8.1.x
 

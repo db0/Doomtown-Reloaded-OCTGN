@@ -171,6 +171,7 @@ def fetchDrawType(card): # We go through effects which change their draw value i
    
 def calcValue(card, type = 'poker'):
    numvalue = numrank(card.Rank) + card.markers[mdict['ValueNoonPlus']] - card.markers[mdict['ValueNoonMinus']] + card.markers[mdict['ValueShootoutPlus']] - card.markers[mdict['ValueShootoutMinus']] + card.markers[mdict['ValuePermPlus']] - card.markers[mdict['ValuePermMinus']]
+   if card.group == table: numvalue += fetchKF(card)
    hostCards = eval(getGlobalVariable('Host Cards'))
    attachedCards = [Card(att_id) for att_id in hostCards if hostCards[att_id] == card._id]
    for c in attachedCards: 
@@ -286,6 +287,7 @@ def fetchSkills(card):
    return skillList
       
 def fetchKF(card):
+   KFRank = 0
    if card.Type == 'Dude': # only dudes have Kung Fu
       cardSubtypes = card.keywords.split('-') # And each individual Keyword. Keywords are separated by " - "
       for cardSubtype in cardSubtypes:
