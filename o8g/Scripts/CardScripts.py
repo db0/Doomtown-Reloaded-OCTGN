@@ -2389,7 +2389,7 @@ Soul Cage
 -----
 
 +++++
-GR0B1R0:Retrieve1Card-fromBootHill-toTable-grabAbomination
+GR0B1R0:Retrieve1Card-fromBootHill-toTable-grabAbomination-searchComplete
 .....
 For Such a Time as This
 -----

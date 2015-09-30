@@ -1300,6 +1300,8 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
             cardList.append(c)
             if re.search(r'-isTopmost', Autoscript) and len(cardList) == count: break # If we're selecting only the topmost cards, we select only the first matches we get. 
       if re.search(r'searchComplete', Autoscript):
+         if countRestriction: topCount = num(countRestriction.group(1))
+         else: topCount = len(targetPL.piles['Discard Pile'])
          for c in targetPL.piles['Discard Pile'].top(topCount):
             debugNotify("Checking card: {}".format(c),4)
             if re.search(r'-tellPlayer',Autoscript): delayed_whisper(":::INFO::: {} card is: {}".format(numOrder(c.getIndex),c)) # The -tellPlayer modulator, will tell the one retrieving what all cards were, even if they are not valid targets
@@ -1317,13 +1319,13 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
             del cardChoices[:]
             del cardTexts[:]
             for c in cardList:
-               if c.Text not in cardTexts: # we don't want to provide the player with a the same card as a choice twice.
+               if c.Text not in cardTexts or re.search(r'searchComplete', Autoscript): # we don't want to provide the player with a the same card as a choice twice.
                   debugNotify("Appending card",4)
                   cardChoices.append(c)
                   cardTexts.append(c.Text) # We check the card text because there are cards with the same name in different sets (e.g. Darth Vader)            
             if re.search(r'upToAmount',Autoscript): cancelButtonName = 'Done'
             else: cancelButtonName = 'Cancel'
-            choice = SingleChoice("Choose card to retrieve{}".format({1:''}.get(count,' {}/{}'.format(iter + 1,count))), makeChoiceListfromCardList(cardChoices), type = 'button', cancelName = cancelButtonName)
+            choice = SingleChoice("Choose card to retrieve{}".format({1:''}.get(count,' {}/{}'.format(iter + 1,count))), makeChoiceListfromCardList(cardChoices, includeGroup = True), type = 'button', cancelName = cancelButtonName)
             if choice == None:
                if not re.search(r'upToAmount',Autoscript): abortedRetrieve = True # If we have the upToAmount, it means the retrieve can get less cards than the max amount, so cancel does not work as a cancel necessarily.            
                break
