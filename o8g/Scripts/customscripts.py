@@ -77,7 +77,8 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
    ### IOUF ###
    elif card.name == 'Marcia Ridge':
       notify(":> {} use {}".format(announceText,targetCards[0]))
-      useAbility(targetCards[0])
+      remoteCall(targetCards[0].controller,'MarciaRidgeStart',[card,targetCards[0]])
+      #useAbility(targetCards[0])
    elif card.name == 'Eagle Wardens':
       bootingDude = targetCards[0]
       boot(bootingDude, silent = True)
@@ -747,4 +748,12 @@ def NathanShaneEnd(card,cardChoice):
       cardChoice.moveTo(me.piles['Discard Pile'])
       notify("{}'s {} snipes {} out of {}'s play hand".format(card.controller,card,cardChoice,me))
    for c in me.ScriptingPile: c.moveTo(me.hand)
+   
+def MarciaRidgeStart(marcia,usedDeed):
+   usedDeed.setController(marcia.controller)
+   remoteCall(marcia.controller,'MarciaRidgeDeedUse',[marcia,usedDeed,me])
+
+def MarciaRidgeDeedUse(marcia,usedDeed,origController):
+   useAbility(usedDeed)
+   usedDeed.setController(origController)
    
