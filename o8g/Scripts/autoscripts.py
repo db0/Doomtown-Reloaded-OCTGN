@@ -1396,6 +1396,7 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
                   playerChk = card.controller
             if not checkSpecialRestrictions(Autoscript,targetLookup,playerChk): continue
             hostCards = eval(getGlobalVariable('Host Cards'))
+            parent = None
             if re.search(r'-onHost',Autoscript):   
                debugNotify("Looking for Host")
                if not card: continue # If this targeting script targets only a host and we have not passed what the attachment is, we cannot find the host, so we abort.
@@ -1421,6 +1422,12 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
                   if hostCards[attachment] == card._id and attachment == targetLookup._id: 
                      debugNotify("Attachment found! {}".format(targetLookup))
                      isAttachment = True
+                  if attachment == card._id: parent = Card(hostCards[attachment]) # We also want to check if the attachments of the parent are a valid target
+               if parent: 
+                  for attachment in hostCards:
+                     if hostCards[attachment] == parent._id and attachment == targetLookup._id: 
+                        debugNotify("Attachment found! {}".format(targetLookup))
+                        isAttachment = True               
                if not isAttachment: 
                   debugNotify("{} is not  attached to {}. Skipping".format(targetLookup,card))
                   continue
