@@ -1663,9 +1663,9 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
    # Checking if the target needs to have a property at a certiain value. 
    propertyReq = re.search(r'-hasProperty{([\w ]+)}(eq|le|ge|gt|lt)([0-9])',Autoscript) 
    if propertyReq and validCard: 
-      if propertyReq == 'Influence' or propertyReq == 'Control' or propertyReq == 'Bullets' or propertyReq == 'Value' or propertyReq == 'Production' or propertyReq == 'Upkeep': 
+      if propertyReq.group(1) == 'Influence' or propertyReq.group(1) == 'Control' or propertyReq.group(1) == 'Bullets' or propertyReq.group(1) == 'Value' or propertyReq.group(1) == 'Production' or propertyReq.group(1) == 'Upkeep': 
       # If it's one of the core card stats, we make sure to include markers and attachments in our calculations
-         compareValue(propertyReq.group(2), compileCardStat(card, propertyReq), num(propertyReq.group(3))) 
+         validCard = compareValue(propertyReq.group(2), compileCardStat(card, propertyReq.group(1)), num(propertyReq.group(3))) 
       else: validCard = compareValue(propertyReq.group(2), num(card.properties[propertyReq.group(1)]), num(propertyReq.group(3))) 
    # Since we're placing the value straight into validCard, we don't want to check at all is validCard is already false
    # Checking if the target needs to have a markers at a particular value.
