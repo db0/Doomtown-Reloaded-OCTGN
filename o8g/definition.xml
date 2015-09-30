@@ -172,8 +172,8 @@
 		<group name="Draw Hand" visibility="me" ordered="False" width="90" height="126" icon="Groups/drawhand.png" collapsed="False">
 			<cardaction menu="Discard card (target cards to refill)" default="True" shortcut="Del" execute="drawDiscard" />
 			<groupaction menu="Draw/Reveal Hand" default="True" shortcut="Ctrl+X"  execute="drawRevealHand" />
-			<groupaction menu="Reveal Lowball Hand" default="False" execute="revealLowballHand" />
-			<groupaction menu="Reveal Shootout Hand" default="False" execute="revealShootoutHand" />
+			<groupaction menu="Force-Reveal Lowball Hand" default="False" execute="revealLowballHand" />
+			<groupaction menu="Force-Reveal Shootout Hand" default="False" execute="revealShootoutHand" />
 			<groupaction menu="Discard hand" default="False" execute="discardDrawHand" />
 		</group>
 		<group name="Deck" visibility="none" ordered="False" width="90" height="126" icon="Groups/deck.png" collapsed="False">

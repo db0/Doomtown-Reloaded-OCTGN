@@ -147,7 +147,7 @@ def checkHandReveal(playerVar):
          notify("{} is ready to reveal their shootout hand. Waiting for their opponent...".format(playerVar))
       else:
          for player in playersReady:
-            remoteCall(player,'revealShootoutHand',[player.piles['Draw Hand'],True])
+            remoteCall(player,'revealShootoutHand',[player.piles['Draw Hand'],True,False])
    else:
       for player in getActivePlayers():
          if player.getGlobalVariable('RevealReady') != 'False': playersReady.append(player)
@@ -155,7 +155,7 @@ def checkHandReveal(playerVar):
          notify("{} is ready to reveal their lowball hand. Waiting for everyone else...".format(playerVar))
       else:
          for player in playersReady:
-            remoteCall(player,'revealLowballHand',[player.piles['Draw Hand'],True])
+            remoteCall(player,'revealLowballHand',[player.piles['Draw Hand'],True,False])
    
 def compareHandRanks():
    if getGlobalVariable('Shootout') == 'True': 

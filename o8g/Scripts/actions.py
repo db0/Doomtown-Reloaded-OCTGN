@@ -1471,19 +1471,19 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
    #notify("===> Set my Hand Rank to {}".format(me.getGlobalVariable('Hand Rank'))) # Debug
    debugNotify("<<< revealHand()") 
       
-def revealShootoutHand(group = me.piles['Draw Hand'], revealReady = False): 
+def revealShootoutHand(group = me.piles['Draw Hand'], revealReady = False, manual = True): 
 # Simply call the procedure above and then compares hands to see who won. 
 # The evaluation works only for 2 players but there can never be more than 2 players shooting it out anyway.
    debugNotify(">>> revealShootoutHand()")
    mute()
-   if not revealReady:
+   if not revealReady and not manual:
       if len(group) > 5: 
          whisper("Please reduce your draw hand to 5 cards before revealing it")
          return
       if me.getGlobalVariable('RevealReady') != 'Shootout': 
          me.setGlobalVariable('RevealReady','Shootout')
          if me._id == 1: checkHandReveal(me) # Because for some reason this event doesn't trigger for the player who's variable changed.
-      else: 
+      else:
          waitingList = [
                         "{} is twitchin' their fingers...".format(me),
                         "{} is eyeballin' the clock...".format(me),
@@ -1502,17 +1502,17 @@ def revealShootoutHand(group = me.piles['Draw Hand'], revealReady = False):
       revealHand(group, shootout)
    debugNotify(">>> revealShootoutHand()")
    
-def revealLowballHand(group = me.piles['Draw Hand'], revealReady = False): 
+def revealLowballHand(group = me.piles['Draw Hand'], revealReady = False, manual = True): 
    debugNotify(">>> revealLowballHand()")
    mute()
-   if not revealReady:
+   if not revealReady and not manual:
       if len(group) > 5: 
          whisper("Please reduce your draw hand to 5 cards before revealing it")
          return
       if me.getGlobalVariable('RevealReady') != 'Lowball': 
          me.setGlobalVariable('RevealReady','Lowball')
          if me._id == 1: checkHandReveal(me) # Because for some reason this event doesn't trigger for the player who's variable changed.
-      else: 
+      else:
          notify("{} is waiting patiently for everyone else to reveal their lowball hand...".format(me))
    else:
    # Checking for events before passing on to the reveal function
@@ -1534,8 +1534,8 @@ def revealLowballHand(group = me.piles['Draw Hand'], revealReady = False):
 
 def drawRevealHand(group):
    if len(group) == 0: drawhandMany()
-   elif getGlobalVariable('Shootout') == 'True': revealShootoutHand(group)
-   else: revealLowballHand(group)
+   elif getGlobalVariable('Shootout') == 'True': revealShootoutHand(group, manual = False)
+   else: revealLowballHand(group, manual = False)
    
 def playLowball(group = me.Deck):
 # This function does the following. 
@@ -1553,7 +1553,7 @@ def playLowball(group = me.Deck):
          goToGamblin()
       drawhandMany(me.Deck, 5, True)
       betLowball()
-      revealLowballHand()
+      revealLowballHand(manual = False)
 
 def betLowball(group = table,x = 0,y = 0, silent = False): # Bets a 1 ghost rock to the lowball pot
    mute()
