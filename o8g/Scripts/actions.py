@@ -1088,7 +1088,7 @@ def posseReady (group, x = 0, y = 0):
 # Hand and Deck actions
 #---------------------------------------------------------------------------
       
-def playcard(card,retainPos = False,costReduction = 0): 
+def playcard(card,retainPos = False,costReduction = 0, preHost = None, scripted = False): 
 # This is the function to play cards from your hand. It's one of the core functions
 # It will automatically pay the cost of cards if you can, or inform you if you cannot.
 # If the card being played has influence or Control points, those will automatically be added to the player's total.
@@ -1156,22 +1156,23 @@ def playcard(card,retainPos = False,costReduction = 0):
    if costReduction > num(card.Cost): costReduction = num(card.Cost)
    reduction = reduceCost(card, action = 'PLAY', fullCost = num(card.Cost))
    if card.Type == "Dude":
-      chkHighNoon()
+      if not scripted: chkHighNoon()
       if chkGadgetCraft(card):
          if not retainPos: 
             if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'HireDude')
          notify("{} has hired {}.".format(me, card)) # Inform of the new hire      
    elif card.Type == "Deed" :
-      chkHighNoon()
+      if not scripted: chkHighNoon()
       if chkGadgetCraft(card):
          if not retainPos: 
             if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'BuyDeed')
          notify("{} has acquired the deed to {}.".format(me, card))
-   elif card.Type == "Goods" or card.Type == "Spell" or (card.Type == "Action" and re.search(r'Condition',card.Keywords) and not re.search(r'(Noon [jJ]ob:|Noon [jJ]ob, Boot:)',card.Text)): # If we're bringing in any goods, just remind the player to pull for gadgets.
-      if card.Type != "Action": chkHighNoon()
-      hostCard = findHost(card)
+   elif card.Type == "Goods" or card.Type == "Spell" or (card.Type == "Action" and re.search(r'Condition',card.Keywords) and not re.search(r'(Noon [jJ]ob:|Noon [jJ]ob, Boot:|Noon, [jJ]ob:)',card.Text)): # If we're bringing in any goods, just remind the player to pull for gadgets.
+      if card.Type != "Action" and not scripted: chkHighNoon()
+      if preHost: hostCard = preHost
+      else: hostCard = findHost(card)
       if not hostCard:
          whisper("You need to target the card which is going to attach the card")
          if retainPos: card.moveTo(me.hand)
@@ -1179,7 +1180,7 @@ def playcard(card,retainPos = False,costReduction = 0):
       else:
          if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
          if card.Type == "Goods" or card.Type == "Spell":
-            if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): 
+            if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not preHost and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): 
                me.GhostRock += num(card.Cost)
                return      
             if re.search('Gadget', card.Keywords):
