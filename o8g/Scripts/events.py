@@ -143,7 +143,7 @@ def checkHandReveal(playerVar):
       for player in getActivePlayers():
          if player.getGlobalVariable('RevealReady') == 'Shootout': playersReady.append(player)
          if len(playersReady) == 2: break
-      if len(playersReady) < 2:
+      if len(playersReady) < 2 and len(getPlayers()) != 1:
          notify("{} is ready to reveal their shootout hand. Waiting for their opponent...".format(playerVar))
       else:
          for player in playersReady:
