@@ -176,7 +176,6 @@ def compareHandRanks():
       if winner == 'tie': notify ("\n-- It's a tie! Y'all need to compare high cards to determine the lucky bastard. (Winner needs to press Ctrl+W)")
       else: # Otherwise the evuation will fail which means that the winner variable holds is a player class.
          notify ("\n-- The winner is {}. (They need to press Ctrl+W once the resolution phase has ended.)".format(winner)) # Thus we can just announce them.
-         setWinner(winner)
    
 def reconnect(group = table, x=0, y=0):
    global OutfitCard
