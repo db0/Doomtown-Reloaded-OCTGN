@@ -2683,7 +2683,7 @@ Nunchucks
 -----
 06c47afe-528b-416e-b068-5b609225afe0
 -----
-
+constantAbility:Kung Fu Bonus:1-isParticipating
 +++++
 GR0B1R0:SimplyAnnounce{reduce the pull by this dude's Kung Fu rating}
 .....
