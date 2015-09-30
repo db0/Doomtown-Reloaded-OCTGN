@@ -580,8 +580,8 @@ def WhisperCards(player,cardList):
 
 def BottomDealing(originPlayer,card):
    drawhandMany(originPlayer.Deck, 5, True,scripted = True)
-   if getGlobalVariable('Shootout') == 'True': Drawtype = 'shootout'
-   else: Drawtype = 'lowball'
+   if getGlobalVariable('Shootout') == 'True': Drawtype = 'lowball'
+   else: Drawtype = 'shootout' # These two are reversed so that the jokers are always used for their worst value comparatively.
    rnd(1,10)
    resultTXT = revealHand(me.piles['Draw Hand'], type = Drawtype, event = None, silent = True)
    notify("{}'s new hand rank is {}".format(me,resultTXT))
