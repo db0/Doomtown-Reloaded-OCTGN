@@ -285,6 +285,48 @@ def fetchSkills(card):
    #confirm(str(skillList))        
    return skillList
       
+def fetchKF(card):
+   if card.Type == 'Dude': # only dudes have Kung Fu
+      cardSubtypes = card.keywords.split('-') # And each individual Keyword. Keywords are separated by " - "
+      for cardSubtype in cardSubtypes:
+         strippedCS = cardSubtype.strip() # Remove any leading/trailing spaces between traits. We need to use a new variable, because we can't modify the loop iterator.
+         #confirm("Checking {}".format(strippedCS))
+         if strippedCS:
+            KFRegex = re.search(r'Kung Fu ([0-9])',strippedCS)
+            if KFRegex:
+               KFRank = num(KFRegex.group(1))
+               # We now look for effects that would modify Kung Fu.
+               debugNotify('KF now {}'.format(KFRank))
+               for marker in card.markers:
+                  if re.search(r'Kung Fu Bonus',marker[0]): KFRank += card.markers[marker]
+                  if re.search(r'Kung Fu Penalty',marker[0]): KFRank -= card.markers[marker]
+               debugNotify('KF now {}'.format(KFRank))
+               if CardsAS.get(card.model,'') != '':
+                  Autoscripts = CardsAS.get(card.model,'').split('||')
+                  for autoS in Autoscripts:
+                     KFBonusRegex = re.search(r'constantAbility:Kung Fu Bonus:([0-9]+)',autoS)
+                     if KFBonusRegex and checkSpecialRestrictions(autoS,card):
+                        multiplier = per(autoS, card)
+                        KFRank += multiplier * num(KFBonusRegex.group(1))
+                        debugNotify('KF now {}'.format(KFRank))
+               # Finished checking effects on Dude themselves. Checking Attachments
+               hostCards = eval(getGlobalVariable('Host Cards'))
+               attachedCards = [Card(att_id) for att_id in hostCards if hostCards[att_id] == card._id]
+               for attachment in attachedCards:
+                  for marker in attachment.markers:
+                     if re.search(r'Kung Fu Bonus',marker[0]): KFRank += attachment.markers[marker]
+                     if re.search(r'Kung Fu Penalty',marker[0]): KFRank -= attachment.markers[marker]
+                  debugNotify('KF now {}'.format(KFRank))
+                  if CardsAS.get(attachment.model,'') != '':
+                     Autoscripts = CardsAS.get(attachment.model,'').split('||')
+                     for autoS in Autoscripts:
+                        KFBonusRegex = re.search(r'constantAbility:Kung Fu Bonus:([0-9]+)',autoS)
+                        if KFBonusRegex and checkSpecialRestrictions(autoS,attachment):
+                           multiplier = per(autoS, attachment,targetCards = findTarget(autoS))
+                           KFRank += multiplier * num(KFBonusRegex.group(1))
+                           debugNotify('Skill now {}'.format(KFRank))  
+   return KFRank
+      
 def sendToDrawHand(card):
    myDrawHand = [c for c in table if c.highlight == DrawHandColor and c.controller == me]
    maX = None
