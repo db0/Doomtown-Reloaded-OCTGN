@@ -1,5 +1,14 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.8.2.x
+
+* Bottom Dealing will always use Jokers in the worst way
+* Nightmare at noon will now take into account bullet modifiers
+* Marcia will not use deed effects as if the controller used them.
+* Lowball winner will only be assigned on Ctrl+W
+* Soul Cage will also search the discard pile
+* Huntsmen Society now can be used to add prod.
+
 ### 1.8.1.x
 
 * For such a time as this now should start the job properly and search the discard as well.
