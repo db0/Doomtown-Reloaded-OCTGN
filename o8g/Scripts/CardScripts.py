@@ -2767,6 +2767,334 @@ c4689399-c350-46b3-a79a-f8c62d926cd5
 +++++
 
 .....
+Rabbit's Deception
+-----
+ba290d31-e66f-427d-bc33-65200b20ad52
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:SendHomeBootedTarget-DemiAutoTargeted-atDude_and_Kung Fu-isParticipating-targetMine-choose1$$SendHomeBootedTarget-Targeted-atDude-isParticipating-targetOpponents-noTargetingError
+.....
+A Hero's Passing
+-----
+d332f810-af0a-42ee-9649-a4b34809a6e1
+-----
+
++++++
+
+.....
+Tummy Twister
+-----
+82cd476b-6ff5-4f49-adad-a3a283f8928a
+-----
+
++++++
+GR0B0R0:RehostMyself-Targeted-atDude$$Put1ProdMinus-AutoTargeted-onHost
+.....
+Backroom Deals
+-----
+59fba6dd-ae8f-4369-9596-1b6a44e6685e
+-----
+onPlay:Put1UpkeepPrePaid-perTargetProperty{Upkeep}-Targeted-atDude-targetMine-isSilent$$Put1ProdPlus-perTargetProperty{Upkeep}-Targeted-atDude-targetMine
++++++
+
+.....
+Civil War
+-----
+b4a04153-f279-4feb-aa29-a9e86607dd3b
+-----
+onPlay:SimplyAnnounce{to force their opponent to move one of theit targeted dudes to another location}
++++++
+
+.....
+Forced Quarantine
+-----
+ea2b5db4-659a-4524-8ca3-e84ae8d1f9b5
+-----
+onPlay:StartJob-Targeted-atDude-bootLeader-jobEffects<RehostMyself-AutoTargeted-atDude-isMark++BootHost,None>||atPhaseGamblin:DiscardHost
++++++
+
+.....
+The Extra Bet
+-----
+ff370ba2-fd39-4996-ae02-abd3f46c9af7
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Morgan Mining Company
+-----
+b5ef38d4-d929-4a54-8ac8-36871ba2d66a
+-----
+atPhaseUpkeep:Gain1Ghost Rock-perEveryCard-AutoTargeted-atStrike-targetMine
++++++
+
+.....
+Quarantine Tent
+-----
+9312b25c-db3d-4889-9c6e-8b4ec495f3a8
+-----
+
++++++
+GR0B1R0:BootTarget-Targeted-atDude-targetMine-isCost$$UnbootTarget-AutoTargeted-atOutfit-targetMine$$Remove1UsedAbility-AutoTargeted-atOutfit-targetMine-isSilent
+.....
+Cooke's Nightcap
+-----
+a2cae75c-ac0b-437b-a951-a9e891ce4034
+-----
+
++++++
+
+.....
+Margaret Hagerty
+-----
+89b1a934-a4a5-4900-a3b7-f2c5c98f1d1d
+-----
+
++++++
+
+.....
+The Wretched
+-----
+2c14e947-f0de-4049-8016-9d4679f9b2a5
+-----
+onPlay:AceTarget-AutoTargeted-atDude-targetMine-choose1$$Put2Bounty-DemiAutoTargeted-atDude_and_Mad Scientist-targetMine-choose1-noTargetingError
++++++
+
+.....
+Deborah West
+-----
+d775dd42-183d-4165-83ed-3d825ea051a2
+-----
+
++++++
+GR0B0R1:Put1Shootout:Stud
+.....
+Abram Grothe
+-----
+11c7f4dc-334e-466f-868a-d5df9157322e
+-----
+onPay:Reduce1CostPlay-perEveryCardMarker{Bounty}-AutoTargeted-atDude-hasMarker{Bounty}-targetOpponents
++++++
+GR0B0R0:UnbootMulti-Targeted-atDude_and_Deputy-targetMine$$UnbootMyself
+.....
+"Dead" Billy Jones
+-----
+5005c7d4-a6f3-440d-ae61-dc75412266fb
+-----
+
++++++
+GR0B0R0:MoveTarget-Targeted-atDude-moveToDeed_or_Town Square_or_Outfit
+.....
+Lillian Morgan
+-----
+a17a638e-7ad1-4216-8748-f9526be7107a
+-----
+onPay:Reduce1CostPlay-perEveryCard-AutoTargeted-atRanch_or_Horse-targetMine
++++++
+GR0B0R0:Retrieve1Card-fromDiscard-grabAction-toTable-payCost
+.....
+Jim Cheveyo
+-----
+ca460412-7ba2-4b04-8ec2-44c86460ce1a
+-----
+
++++++
+
+.....
+Enapay
+-----
+ea2ecabb-966e-466f-a285-29028dba628b
+-----
+
++++++
+GR0B1R0:Put1InfluencePlus-Targeted-atDude
+.....
+Danny Wilde
+-----
+aae392c5-3374-42af-827d-653a9ced3e9b
+-----
+
++++++
+
+.....
+Michael "The Badger" Dodge
+-----
+a0a7fb60-18a3-4a8e-8dd1-a92931e724b1
+-----
+
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atDude-isParticipating-choose1$$Pull1Card
+.....
+Asakichi Cooke
+-----
+ad7f9fb2-c845-49bd-82e2-0a94037e1d77
+-----
+
++++++
+GR0B0R0:DiscardTarget-DemiAutoTargeted-fromHand-isCost-choose1$$MoveTarget-Targeted-atDude-targetMine-moveToDeed_or_Town Square_or_Outfit
+.....
+Emre, The Turkish Bear
+-----
+45a5acd3-3659-4654-8033-44ef084e1dba
+-----
+
++++++
+GR0B0R0:Pull1Card$$Remove999High Noon:Draw-isSilent$$Put1High Noon:Stud
+.....
+Dabney Scuttlesby
+-----
+ad157676-5166-40b3-99a4-9cbe1300366d
+-----
+
++++++
+
+.....
+Ivor Hawley
+-----
+e1d93d5b-222d-4a82-b18f-62728f7791c0
+-----
+onPay:ReduceSCostPlay||onPlay:Retrieve2Cards-fromBootHill-grabAbomination_or_Hex-toTable-payCost-reduc3
++++++
+
+.....
+Samantha "Sammy" Cooke
+-----
+8aa596d9-7b03-4939-9217-3b150fbe77d1
+-----
+
++++++
+GR1B1R0:DiscardTarget-Targeted-atGoods$$Put1Bounty
+.....
+Sloane
+-----
+6a8c7f99-7f5c-4824-99b7-a9c5f9d9d715
+-----
+onPay:Reduce1CostPlay-perEveryCard-AutoTargeted-atDude-hasMarker{Bounty}-targetMine||onPlay:Put1Bounty-perEveryCard-AutoTargeted-atDude-hasMarker{Bounty}-targetMine
++++++
+
+.....
+Mutant Cattle
+-----
+88967399-9c8c-4502-bf63-5f442aff836b
+-----
+
++++++
+
+.....
+Monte Bank
+-----
+95d23e7f-daa9-44ef-bcd3-50683340db62
+-----
+
++++++
+
+.....
+Wendy's Teethkickers
+-----
+31a6a524-0191-4034-a20c-ec3008d28a6e
+-----
+
++++++
+GR0B1R0:UnbootHost$$Put1InfluencePlus-AutoTargeted-onHost
+.....
+Rich Man's Guard Dog
+-----
+2a59bc29-adca-4b5c-94f3-e9c94353d4b5
+-----
+
++++++
+GR0B1R0:Pull1Card
+.....
+Devil's Joker (red)
+-----
+e5aa241d-bc8c-46ee-a250-dac44616415e
+-----
+
++++++
+
+.....
+Devil's Joker (black)
+-----
+c8311233-937c-4468-89f1-8c667ced576b
+-----
+
++++++
+
+.....
+Abram's Crusaders
+-----
+24d74ad6-5532-4a11-ac66-a8b9f258cbf9
+-----
+
++++++
+GR0B1R0:Put1High Noon:Deputy-Targeted-atDude-targetMine
+.....
+The Sanatorium
+-----
+6f9a4a04-411a-4c2b-b4c2-4db8d6c18157
+-----
+
++++++
+GR0B1R0:Put1BulletNoonMinus-Targeted-atDude-targetOpponents$$Put1ValueNoonMinus-Targeted-atDude-targetOpponents$$Put1InfluencePlus-Targeted-atDude-targetMine||GR0B1R0:Put1BulletNoonMinus-targetOpponents$$Put1ValueNoonMinus-targetOpponents$$Put1Noon:Huckster Skill Bonus-Targeted-atDude-targetMine
+.....
+Den of Thieves
+-----
+922a0a4b-c9b6-404a-b26b-87f079fc7a6c
+-----
+
++++++
+GR0B1R0:Put1Bounty-DemiAutoTargeted-atDude_and_Grifter-targetMine-choose1$$Gain1Ghost Rock$$UseCustomAbility
+.....
+Dumbstruck
+-----
+c5f02d5f-ad42-452f-8a7d-b48f58c6e76b
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle9-spellEffects<UnbootHost++Put1High Noon:Dumbstruck Protected-AutoTargeted-onHost,None>-onlyInNoon||GR0B1R0:Pull1Card-testMiracle9-spellEffects<UnbootHost++Put1Shootout:Dumbstruck Protected-AutoTargeted-onHost,None>-onlyInShootouts
+.....
+Fiery Rhetoric
+-----
+507348af-e310-42c1-9878-c8c605882128
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<StartJob-AutoTargeted-atTown Square,None>
+.....
+Strength of the Ancestors
+-----
+98b3a9a9-3ab6-4413-b6c0-cc113ed26731
+-----
+
++++++
+GR0B1R0:Pull1Card-testMSpirit5-spellEffects<Put3BulletNoonPlus-AutoTargeted-atDude-onHost++Remove999High Noon:Draw-AutTargeted-atDude-onHost-isSilent$$Put1High Noon:Stud-AutoTargeted-atDude-onHost++Refill1Strength of Ancestors-AutoTargeted-atDude-onHost-isSilent,None>
+.....
+Phantom Fingers
+-----
+899f3c84-3f9f-4589-83d9-2c2fe663d6a2
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex6-spellEffects<BootTarget-Targeted-atGoods-targetOpponents++Refill1Phantom Fingers-Targeted-atGoods-targetOpponents-isSilent++UseCustomAbility-Targeted-atGoods-targetOpponents,None>
+.....
+Red Horse's Tail
+-----
+aea19556-2c30-4e03-a677-d0e6f6fa6c66
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpiritX-difficultyValue-Targeted-atDude-spellEffects<BootTarget-Targeted-atDude,None>-onlyInNoon||GR0B1R0:Pull1Card-testSpiritX-difficultyGrit-Targeted-atDude-spellEffects<SendHomeBootedTarget-Targeted-atDude-targetOpponents,None>-onlyInShootouts
+.....
+Fire of Nanahbozho
+-----
+03da32d4-2e32-43d3-94c7-f3457414d298
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<UnbootTarget-Targeted-atDude,None>
+.....
 ENDSCRIPTS
 =====
 '''
