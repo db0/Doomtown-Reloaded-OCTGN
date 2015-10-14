@@ -98,6 +98,28 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          choicehand.moveTo(me.piles['Discard Pile'])
          verb = 'discard'
       notify("{} booted {} to draw {} cards and {} {} from their hand".format(me,bootingDude,cardDraw,verb,choicehand))
+   elif card.name == 'Den of Thieves':
+      drawHandCards = [c for c in table if c.highlight == DrawHandColor and c.controller == me]
+      if len(drawHandCards) != 5:
+         whisper(":::ERROR::: You can only use the den of thieves if you have a draw hand revealed on the table")
+         return 'ABORT'
+      else: cxp, cyp = drawHandCards[2].position
+      if not len([c for c in table if c.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1' and c.controller == me]):
+         if type == 'shootout':
+            if playeraxis == Xaxis:
+               cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp - 30, 1, False)
+            elif playeraxis == Yaxis: 
+               cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp - 30, 1, False)
+            else: 
+               cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, 0, 1, False)
+         else:
+            if playeraxis == Xaxis:
+               cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp + 30, 1, False)
+            elif playeraxis == Yaxis: 
+               cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp + 30, 1, False)
+            else: 
+               cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, 30, 1, False)
+      notify("{} make their hand illegal and increase its rank by 1".format(announceText))
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
@@ -470,6 +492,20 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
             TokensX('Put1BulletNoonPlus', '', card)
             notify("{} discards {} and gains 1 extra bullet".format(card,discardC[0]))
          discardTarget(targetCards = discardC, silent = True)         
+   ### TLS ###
+   elif card.name == "The Extra Bet" and action == 'USE':
+      if getGlobalVariable('Phase') != '1':
+         #if not confirm(":::WARNING::: It is not yet the Gamblin' phase. Do you want to jump to lowball now?"): return
+         goToGamblin()
+      drawhandMany(me.Deck, 5, True)
+      betLowball()
+      if me.GhostRock < 1 and confirm("You do not seem to have enough ghost rock in your stash to use {}. Proceed to reveal your lowball hand as normal instead?".format(card.Name)):
+         revealLowballHand()
+         notify("{} did not have enough ghost rock in their stash to use {}".format(me,card))
+      else: 
+         betLowball()
+         me.piles['Draw Hand'].lookAt(-1)
+         notify("{} uses {} to ante an extra ghost rock and is looking at their draw hand for a card to redraw".format(me,card))
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 

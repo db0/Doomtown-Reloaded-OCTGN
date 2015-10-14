@@ -1442,6 +1442,7 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
       suit[i] = card.Suit # save their suit into the table
       i += 1 # prepare for the next card.
    cheatResult = cheatinchk(rank,suit)
+   if len([c for c in drawHandCards if re.search(r"Devil's Joker",c.Name)]): cheatResult = " (Cheatin'!)" # Checking for Devil's Jokers
    if cheatResult != '': 
       if type == 'shootout':
          if playeraxis == Xaxis:
