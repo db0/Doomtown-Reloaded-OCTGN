@@ -1,5 +1,11 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
+### 1.8.0.x
+
+**The Light Shineth** on  OCTGN!
+
+The new set has been added and is available scripted for play. Enjoy the new spell, kung-fu and Wretched shenanigans!
+
 ### 1.8.2.x
 
 * Bottom Dealing will always use Jokers in the worst way

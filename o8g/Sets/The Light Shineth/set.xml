@@ -76,7 +76,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="" />
-         <property name="Text" value="React: Play when an opposing dude is discarded during the Upkeep phase. That dude remains in play instead. You control them until the end of the turn.&#xD;&#xA;React: Play at the start of the Upkeep phase to give one of your dudes –2 upkeep until the end of the phase." />
+         <property name="Text" value="React: Play when an opposing dude is discarded during the Upkeep phase. That dude remains in play instead. You control them until the end of the turn.&#xD;&#xA;React: Play at the start of the Upkeep phase to give one of your dudes -2 upkeep until the end of the phase." />
          <property name="Instructions" value="" />
       </card>
 
@@ -148,7 +148,7 @@
          <property name="Control" value="0" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
-         <property name="Text" value="This deed has +1 production for each Strike you control." />
+         <property name="Text" value="This deed has +1 production for each Strike you control." />
          <property name="Instructions" value="" />
       </card>
 
@@ -310,7 +310,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Eagle Wardens" />
          <property name="Keywords" value="" />
-         <property name="Text" value="While at the same location as a Spirit, Jim has +1 influence and is a stud." />
+         <property name="Text" value="While at the same location as a Spirit, Jim has +1 influence and is a stud." />
          <property name="Instructions" value="" />
       </card>
 
@@ -328,7 +328,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Eagle Wardens" />
          <property name="Keywords" value="Shaman 1" />
-         <property name="Text" value="Enapay has +2 influence during High Noon.&#xD;&#xA;Noon, Boot: Another dude at this location gets +1 influence." />
+         <property name="Text" value="Enapay has +2 influence during High Noon.&#xD;&#xA;Noon, Boot: Another dude at this location gets +1 influence." />
          <property name="Instructions" value="" />
       </card>
 
@@ -364,7 +364,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="108 Righteous Bandits" />
          <property name="Keywords" value="Kung Fu 0" />
-         <property name="Text" value="While The Badger has a Melee Weapon he is a stud&#xD;&#xA;Shootout, Boot: Boot an opposing dude. The Badger gets –3 bullets if the opposing posse has more unbooted dudes than your posse. Pull. If the pull is not a club, the dude you booted gets –3 bullets." />
+         <property name="Text" value="While The Badger has a Melee Weapon he is a stud&#xD;&#xA;Shootout, Boot: Boot an opposing dude. The Badger gets -3 bullets if the opposing posse has more unbooted dudes than your posse. Pull. If the pull is not a club, the dude you booted gets -3 bullets." />
          <property name="Instructions" value="" />
       </card>
 
@@ -544,7 +544,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Gadget Difficulty 6" />
-         <property name="Text" value="You may immediately play this gadget when another player reveals an illega draw hand. If this Gadget is invented while you are in a shootout, attach it to a dude in your posse.&#xD;&#xA;&#xD;&#xA;Cheatin’ Resolution: Pull. If the pull is equal to or higher than the value of the opposing shooter, discard them, otherwise send them home booted." />
+         <property name="Text" value="You may immediately play this gadget when another player reveals an illega draw hand. If this Gadget is invented while you are in a shootout, attach it to a dude in your posse.&#xD;&#xA;&#xD;&#xA;Cheatin' Resolution: Pull. If the pull is equal to or higher than the value of the opposing shooter, discard them, otherwise send them home booted." />
          <property name="Instructions" value="" />
       </card>
 
@@ -598,7 +598,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Your Deputies with a Melee Weapon get +1 bullets.&#xD;&#xA;Your Deputies with a Miracle get +1 influence.&#xD;&#xA;Noon, Boot: One of your dudes gains the Deputy keyword." />
+         <property name="Text" value="Your Deputies with a Melee Weapon get +1 bullets.&#xD;&#xA;Your Deputies with a Miracle get +1 influence.&#xD;&#xA;Noon, Boot: One of your dudes gains the Deputy keyword." />
          <property name="Instructions" value="" />
       </card>
 
@@ -616,7 +616,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="The Fourth Ring" />
          <property name="Keywords" value="" />
-         <property name="Text" value="Noon, Boot: Choose your dude and another dude at the same or adjacent location. Your dude gets either +1 influence or +1 Huckster skill. The other dude gets –1 bullets and –1 value." />
+         <property name="Text" value="Noon, Boot: Choose your dude and another dude at the same or adjacent location. Your dude gets either +1 influence or +1 Huckster skill. The other dude gets -1 bullets and -1 value." />
          <property name="Instructions" value="Gain 1 Influence||Gain 1 Huckster skill" />
       </card>
 
@@ -688,7 +688,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Spirit" />
-         <property name="Text" value="Noon Spirit 5, Boot: This dude gets +3 bullets, becomes a stud, and other players’ card effects cannot boot them or send them home booted. These effects end if this dude leaves this location (or at the end of the turn)." />
+         <property name="Text" value="Noon Spirit 5, Boot: This dude gets +3 bullets, becomes a stud, and other players' card effects cannot boot them or send them home booted. These effects end if this dude leaves this location (or at the end of the turn)." />
          <property name="Instructions" value="" />
       </card>
 
