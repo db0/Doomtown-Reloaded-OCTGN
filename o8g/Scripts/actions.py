@@ -1405,7 +1405,9 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
    clearDrawHandonTable()
    rank = ['','','','',''] # We create some empty lists for the suits and ranks.
    suit = ['','','','','']
+   drawHandCards = []
    for card in group: # For each card in the Draw Hand pile...
+      drawHandCards.append(card)
       debugNotify("Iterating through card {}".format(card))
       foundjoker = 'no'
       if type == 'shootout':
@@ -1432,7 +1434,6 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
          if playeraxis == Xaxis: card.moveToTable(homeDistance(card) - cardDistance(card) * 3 + i * (cwidth(card) / 4), cheight(card) * -2)
          elif playeraxis == Yaxis: card.moveToTable(cwidth(card) / -2 + i * (cwidth(card) / 4), homeDistance(card) - cardDistance(card))
          else: card.moveToTable(i * (cwidth(card) / 4) - cwidth(card), 0)
-         if foundjoker == 'yes': random = rnd(100, 10000)
       if i == 2: cxp, cyp = card.position  # We note down the middle card location, so that we put the cheatin marker precicely.
       card.highlight = DrawHandColor # Highlight them
       if type == 'lowball' and card == event: 
