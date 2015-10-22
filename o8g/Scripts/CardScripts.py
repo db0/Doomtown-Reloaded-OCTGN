@@ -1573,7 +1573,7 @@ Puppet
 -----
 
 +++++
-
+GR0B1R0:Pull1Cards
 .....
 Summoning
 -----
