@@ -112,7 +112,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Condition" />
-         <property name="Text" value="Discard this dude at the of the turn.&#xD;&#xA;Noon Job: Mark a dude whose current influence, bullets or value are lower than their printed values. If successful, boot the mark, attach this card to them, and your leader gets one permanent control point." />
+         <property name="Text" value="Discard this dude at the of the turn.&#xD;&#xA;Noon Job: Mark an opposing dude whose current influence, bullets or value are lower than their printed values. If successful, boot the mark, attach this card to them, and your leader gets one permanent control point." />
          <property name="Instructions" value="" />
       </card>
 
