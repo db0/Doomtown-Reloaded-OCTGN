@@ -1,6 +1,19 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
-### 1.8.0.x
+
+### 1.10.0.x
+
+OCTGN has been performing some **Dirty Deeds**. The new set is now available and fully scripted!
+
+* Trickier Scripts
+  * Xiang Fang: Target deed before you play her
+  * Karl Odett: You can use him to add his influence quick
+  * BUford Hurley: Target the deed and use.
+  * MAZA Gang: Use to put extra prod.
+  * Rabbit takes revenge: Only Pulls
+  
+
+### 1.9.0.x
 
 **The Light Shineth** on  OCTGN!
 
@@ -25,10 +38,6 @@ The new set has been added and is available scripted for play. Enjoy the new spe
 * Nathan Shane shouldn't crash on closing the choice window anymore
 * Sword of the Spirit now should work normally
 * Spirit Dance and Dance Awakens should work now
-
-### 1.10.0.x
-
-OCTGN has been performing some **Dirty Deeds**. The new set is now available and fully scripted!
 
 ### 1.8.0.x
 
