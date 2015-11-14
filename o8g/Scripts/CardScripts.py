@@ -3255,6 +3255,30 @@ onPlay:Pull1Card
 +++++
 
 .....
+Morgan Stables
+-----
+668fb674-5e1f-4bc9-98ae-ca7120277ea9
+-----
+
++++++
+GR0B0R1:PlayTarget-DemiAutoTargeted-atHorse-fromHand-choose1-payCost-reduc1||GR0B1R0:UseCustomAbility
+.....
+108 Worldly Desires
+-----
+fb84426c-6b63-4dee-a2df-2d3c7b89c230
+-----
+
++++++
+GR0B0R1:Draw1Card-toDrawHand$$DiscardTarget-DemiAutoTargeted-fromDrawHand-choose1
+.....
+Beyond the Veil 
+-----
+d47cff43-d675-4410-929c-508475fd7814
+-----
+
++++++
+GR0B1R0:BootTarget-Targeted-atTotem-targetMine-isCost$$MoveTarget-Targeted-atDude-targetMine-moveToTotem
+.....
 ENDSCRIPTS
 =====
 '''
