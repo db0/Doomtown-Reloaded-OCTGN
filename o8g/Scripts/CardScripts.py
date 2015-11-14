@@ -3095,6 +3095,166 @@ Fire of Nanahbozho
 +++++
 GR0B1R0:Pull1Card-testSpirit8-spellEffects<UnbootTarget-Targeted-atDude,None>
 .....
+Xiang Fang
+-----
+5c204eb2-3416-4f3e-8822-ac93c5f66978
+-----
+onPlay:Gain1Ghost Rock-perTargetProperty{Production}-Targeted-atDeed_or_Outfit$$Put1ProdMinus-perTargetProperty{Production}-Targeted-atDeed-targetOpponents-noTargetingError-isSilent$$Put1ProductionPrePaid-perTargetProperty{Production}-Targeted-atDeed-targetOpponents-noTargetingError-isSilent$$Put1ProdMinus-perTargetProperty{Production}-Targeted-atOutfit-targetMine-noTargetingError-isSilent$$Put1ProductionPrePaid-perTargetProperty{Production}-Targeted-atOutfit-targetMine-noTargetingError-isSilent
++++++
+
+.....
+He Fang
+-----
+555ee88e-b7a2-41b9-a781-357a9fc53f65
+-----
+
++++++
+GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atAbomination_and_nonGadget-choose1-payCost-reduc2
+.....
+Kabeda Hakurei
+-----
+934a695a-50c9-4fcc-8434-cb87d6c5e967
+-----
+
++++++
+
+.....
+Zachary Deloria
+-----
+4c2da757-17a9-43ed-b7cd-c26efcbc0ff7
+-----
+
++++++
+
+.....
+Karl Odett
+-----
+1ee1c912-a6d1-4c74-8fb7-a3430a2cd1c8
+-----
+
++++++
+GR0B0R1:Put3PermInfluencePlus
+.....
+Erik Samson
+-----
+8cc64eef-41b5-4e60-a68a-e35384d41a7a
+-----
+
++++++
+
+.....
+Dr. Brian Foxworth
+-----
+08c8a178-3613-4b03-a885-5fc205e7e68e
+-----
+
++++++
+GR0B0R1:SimplyAnnounce{reduce their casualties by this dude's influence}$$DiscardMyself
+.....
+Buford Hurley
+-----
+654372b0-0c12-4d64-9f78-128adf6d6457
+-----
+
++++++
+GR0B0R0:Put1ProdPlus$$Put1ProdMinus-Targeted-atDeed
+.....
+Doris Powell
+-----
+0f21f34d-76ba-4a54-b690-fafa160ef170
+-----
+
++++++
+GR0B0R0:Put1ControlPlus
+.....
+Rico Rodegain
+-----
+d760b8cd-7d30-4e1b-a4e6-9b7163eedf85
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Maza Gang Hideout
+-----
+381aa2d3-aa99-49a9-8d53-6b09f8f4bceb
+-----
+
++++++
+GR0B0R0:Put1ProdPlus
+.....
+Miasmatic Purifier
+-----
+9c101ef5-5214-4d20-8e45-906f8fcc23b3
+-----
+atSundown:CustomScript
++++++
+
+.....
+Disgenuine Currency Press
+-----
+4bef1feb-f6b5-44ff-8af4-790d121d12e7
+-----
+onPlay:Gain5Ghost Rock$$UnbootHost
++++++
+
+.....
+Tlaloc's Furies
+-----
+774ebaf2-a983-414b-acc3-7250bd61b9f2
+-----
+constantAbility:Skill Bonus:1-perEveryCard-AutoTargeted-atTlaloc's Furies
++++++
+
+.....
+Personal Ornithopter
+-----
+e258726e-3705-4d0f-ae7a-d37ce2952b82
+-----
+
++++++
+GR1B0R1:ParticipateHost||GR0B1R0:SendHomeBootedHost
+.....
+Jael's Guile
+-----
+7eb84c0d-be8e-40b5-891c-b1b4c95b55af
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Hustled
+-----
+0967a396-2be7-4a61-afe9-a119034266fc
+-----
+onPlay:BootTarget-DemiAutoTargeted-atDude-targetMine-choose1$$Gain2Ghost Rock$$BootTarget-Targeted-targetOpposing-noTargetingError
++++++
+
+.....
+An Accidental Reunion
+-----
+79ec0f19-cc3a-4f63-930e-f3dadf2645f7
+-----
+onPlay:SimplyAnnounce{force each cheating player to take 2 casualties}$$Lose2Ghost Rock-isCost-isOptional$$UninstallMyself
++++++
+
+.....
+A Slight Modification
+-----
+2c8fd25e-ff8b-4129-8a6c-2c6f3590c455
+-----
+onPlay:BootTarget-DemiAutoTargeted-atGoods_and_Gadget-targetMine-choose1$$SimplyAnnounce{cancel the shootout action}
++++++
+
+.....
+Rabbit Takes Revenge
+-----
+2f4ad55c-0be5-422e-bb47-ccb1a6fe21e0
+-----
+onPlay:Pull1Card
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''

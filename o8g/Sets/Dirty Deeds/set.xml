@@ -368,6 +368,59 @@
          <property name="Instructions" value="" />
       </card>
 
+      <card id="668fb674-5e1f-4bc9-98ae-ca7120277ea9" name="Morgan Stables">
+         <property name="Rank" value="" />
+         <property name="Suit" value="" />
+         <property name="Type" value="Outfit" />
+         <property name="Cost" value="18" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="3" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="Morgan Cattle Co." />
+         <property name="Keywords" value="" />
+         <property name="Text" value="Reduce the cost of the first Horse you play each turn by 1 ghost rock. &#xD;&#xA;React, Boot: After you complete a Noon or Shootout ability that moved one of your  dudes, draw a card and discard a card. Make another play or pass; if you are not in a shootout, that play cannot be actin'." />
+         <property name="Instructions" value="Play a horse, reducing its cost by 1||Draw a card and discard a card." />
+      </card>
+
+      <card id="fb84426c-6b63-4dee-a2df-2d3c7b89c230" name="108 Worldly Desires">
+         <property name="Rank" value="" />
+         <property name="Suit" value="" />
+         <property name="Type" value="Outfit" />
+         <property name="Cost" value="19" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="3" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="108 Righteous Bandits" />
+         <property name="Keywords" value="" />
+         <property name="Text" value="Repeat React: After you draw a draw hand, if you have the lowest ghost rock among all players, draw an additional card into your draw hand and then discard a card. You can only use this ability once per draw hand." />
+         <property name="Instructions" value="" />
+      </card>
+
+      <card id="d47cff43-d675-4410-929c-508475fd7814" name="Beyond the Veil">
+         <property name="Rank" value="" />
+         <property name="Suit" value="" />
+         <property name="Type" value="Outfit" />
+         <property name="Cost" value="19" />
+         <property name="Upkeep" value="" />
+         <property name="Production" value="3" />
+         <property name="Bullets" value="" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="" />
+         <property name="Influence" value="" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="Eagle Wardens" />
+         <property name="Keywords" value="" />
+         <property name="Text" value="While your dudes are at a deed with a Totem, they have +1 influence.&#xD;&#xA;Noon, Boot: Boot a Totem you control to move one of your dudes to its location." />
+         <property name="Instructions" value="" />
+      </card>
       
   </cards>
 </set>

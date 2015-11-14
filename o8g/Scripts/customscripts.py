@@ -506,6 +506,29 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          betLowball()
          me.piles['Draw Hand'].lookAt(-1)
          notify("{} uses {} to ante an extra ghost rock and is looking at their draw hand for a card to redraw".format(me,card))
+   ### SB7-9 ###
+   elif card.name == "Rico Rodegain" and action == 'USE':
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else:
+         choice = SingleChoice("Choose which player to investigate", [pl.name for pl in opponents])
+         if choice == None: return 'ABORT'
+         else: player = opponents[choice]         
+      remoteCall(player,'RicoStart',[card])
+   elif card.name == "Jael's Guile" and action == 'USE':
+      for c in table:
+         if c.model == "cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1" and c.controller == me:
+            dude = fetchHost(card)
+            if dude.orientation == Rot90 and not confirm("You need to boot your dude to use {} when your hand is illegal. Bypass?".format(card.Name)): return 'ABORT'
+            boot(dude)
+            break
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else:
+         choice = SingleChoice("Which player are you shooting it out with?", [pl.name for pl in opponents])
+         if choice == None: return 'ABORT'
+         else: player = opponents[choice]         
+      remoteCall(player,'JaelGuile',[card])
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -792,4 +815,58 @@ def MarciaRidgeStart(marcia,usedDeed):
 def MarciaRidgeDeedUse(marcia,usedDeed,origController):
    useAbility(usedDeed)
    usedDeed.setController(origController)
+
+def RicoStart(card):
+   mute()
+   if not len(me.hand): notify(":::INFO::: {}'s play hand is empty for some reason!".format(me))
+   else:
+      me.hand.addViewer(card.controller)
+      notify(":> {} Reveals their hand to {}".format(me,card.controller))
+      remoteCall(card.controller,'RicoView',[card,[c for c in me.hand]])
+      
+def RicoView(card,handList):
+   mute()
+   update()
+   askCard([c for c in handList],"This is your opponent's current hand. Double click a card or close this window to continue")
+   remoteCall(handList[0].controller,'RicoStopView',[card])
+   if confirm("Do you want to retain your current starting gang? (In order to save time)"): 
+      notify(":> {} opts to retain their current starting gang without change")
+   else:
+      startingDudesNR = 0
+      for c in table:
+         if c.Type == 'Dude' and c.controller == me and not re.search(r'Grifter',c.Keywords):
+            clearAttachLinks(c)
+            me.GhostRock += num(c.Cost)
+            c.moveTo(me.Deck)
+            startingDudesNR += 1
+      selectedDudesNR = 0
+      if startingDudesNR:
+         me.Deck.addViewer(me)
+         while selectedDudesNR < startingDudesNR:
+            choiceDude = askCard([c for c in me.Deck if c.Type == 'Dude' and not re.search(r'Grifter',c.Keywords) and not re.search(r'Gadget',c.Keywords)],"Select dude to add to your starting posse ({}/{})\n Close the window to finish".format(selectedDudesNR + 1,startingDudesNR))
+            if not choiceDude: break
+            placeCard(choiceDude,'SetupDude',selectedDudesNR)
+            payCost(choiceDude.Cost)
+            selectedDudesNR += 1
+         me.Deck.removeViewer(me)
+         me.Deck.shuffle()
+      announceText = "{}'s new starting gang is ".format(me)
+      for dude in [c for c in table if c.controller == me and c.Type != 'Outfit' and c.Type != "Token"]:
+         announceText += "{}, ".format(dude)
+      notify(announceText)      
+
+def RicoStopView(card):
+   mute()
+   if card.controller != me: me.hand.removeViewer(card.controller) # If clause, for debug purposes
+   
+def JaelGuile(card):
+   mute()
+   for iter in range(2):
+      choiceDudes = findTarget('AutoTargeted-atDude-hasMarker{Bounty}-targetMine-isParticipating')
+      if not len(choiceDudes): choiceDudes = findTarget('AutoTargeted-atDude-targetMine-isParticipating')
+      if len(choiceDudes):
+         choiceDude = askCard(choiceDudes,"Select a dude to be hit by {} ({}/2). \nAn unbooted dude will boot. A Booted dude will be discarded".format(card.Name,iter + 1))
+         if choiceDude.orientation == Rot0: boot(choiceDude)
+         else: discard(choiceDude)
+   
    
