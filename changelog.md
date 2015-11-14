@@ -26,6 +26,10 @@ The new set has been added and is available scripted for play. Enjoy the new spe
 * Sword of the Spirit now should work normally
 * Spirit Dance and Dance Awakens should work now
 
+### 1.10.0.x
+
+OCTGN has been performing some **Dirty Deeds**. The new set is now available and fully scripted!
+
 ### 1.8.0.x
 
 There's **Nightmare at Noon**  AND **IOUF** have been added to  OCTGN!
