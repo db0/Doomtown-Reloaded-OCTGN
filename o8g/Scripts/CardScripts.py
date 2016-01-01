@@ -2229,7 +2229,7 @@ Consecration
 -----
 
 +++++
-GR0B0R0:Pull1Card-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
+GR0B0R0:Pull1Card-testMiracle6-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
 .....
 Mark of Pestilence
 -----
@@ -2237,7 +2237,7 @@ Mark of Pestilence
 -----
 
 +++++
-GR0B1R0:Pull1Card-spellEffects<BootMultiple-AutoTargeted-atDude-isParticipating++UnbootMyself,None>
+GR0B1R0:Pull1Card-testHex9-spellEffects<BootMultiple-AutoTargeted-atDude-isParticipating++UnbootMyself,None>
 .....
 Cookin' Up Trouble
 -----
