@@ -534,11 +534,23 @@ def getPotCard(chkOnly = False): # Checks if the Lowball Pot Card is on the tabl
          potCard = c
          break
    if not potCard and getGlobalVariable('Phase') == '1' and not chkOnly:
-      potCard = table.create("c421c742-c920-4cad-9f72-032c3378191e",cwidth() / -2,-20, 1, False)
-      potCard.orientation = Rot90
+      if me._id == 1: 
+         potCard = table.create("c421c742-c920-4cad-9f72-032c3378191e",cwidth() / -2,-20, 1, False)
+         potCard.orientation = Rot90
+      else: 
+         for player in getPlayers():
+            if player._id == 1: remoteCall(player,'getPotCard',[])
    #notify("returning {}".format(potCard)) # Debug
    return potCard # We return the card to the function that called us, so that it can use it.
 
+def incrPotCard(count = 1):
+   if me._id == 1:
+      potCard = getPotCard()
+      potCard.markers[mdict['Ghost Rock']] += 1
+   else: 
+      for player in getPlayers():
+         if player._id == 1: remoteCall(player,'incrPotCard',[count])
+   
 def clearPotCard():
    potCard = getPotCard(True)
    if potCard: delCard(potCard,True)

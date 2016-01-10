@@ -1572,24 +1572,26 @@ def playLowball(group = me.Deck):
 def betLowball(group = table,x = 0,y = 0, silent = False): # Bets a 1 ghost rock to the lowball pot
    mute()
    me.GhostRock -= 1
-   potCard = getPotCard()
-   potCard.markers[mdict['Ghost Rock']] += 1
+   incrPotCard(1)
    if not silent: notify ("{} has put their ante in their Lowball pot.".format(me))
 
 def winLowball(group = table, x = 0,y = 0, winner = me): # A function which sets the lowball winner and awards him the lowball money
    mute()
    #confirm('winner = {}'.format(winner.name)) # Debug
    debugNotify(">>> winLowball()")
-   #potCard = getPotCard()
+   if not getPotCard(True) and not confirm("Lowball winner seems to have been declared already. Proceed to win the lowball pot again anyway?"): return
+   potCard = getPotCard()
    if getGlobalVariable('Phase') != '1' and not confirm(":::WARNING::: You are not currently in the Gamblin' phase. Are you sure you want to win lowball now?"): return 
-   #if not getPotCard(True) and not confirm("Lowball winner seems to have been declared already. Proceed to win the lowball pot again anyway?"): return
    for player in getActivePlayers(): 
       if player == me: me.setGlobalVariable('UpkeepDone','False')
       else: remoteCall(player,'setPlayerVariable',['UpkeepDone','False'])      
    setWinner(winner) # Set the winner's marker
-   #winner.GhostRock += potCard.markers[mdict['Ghost Rock']] # Give them all the money from the lowball pot
-   winner.GhostRock += len(getActivePlayers()) # We just give them one GR per player, to avoid OCTGN lag issues
-   notify("{} is the lowball winner has received {} Ghost Rock from the pot".format(winner, len(getActivePlayers()))) # Notify all other players
+   if potCard: 
+      notify("{} is the lowball winner has received {} Ghost Rock from the pot".format(winner, potCard.markers[mdict['Ghost Rock']])) # Notify all other players
+      winner.GhostRock += potCard.markers[mdict['Ghost Rock']] # Give them all the money from the lowball pot
+   else: 
+      notify("{} is the lowball winner has received {} Ghost Rock from the pot".format(winner, len(getActivePlayers()))) # Notify all other players
+      winner.GhostRock += len(getActivePlayers()) # If the potcard is gone, we just give them one GR per player.
    clearPotCard() # Remove the lowball card from the table
    for card in table: # once we have a winner, we clear all the draw hands from the table.
       if card.highlight == DrawHandColor: 
