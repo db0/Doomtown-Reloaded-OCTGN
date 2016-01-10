@@ -3037,7 +3037,7 @@ The Sanatorium
 -----
 
 +++++
-GR0B1R0:Put1BulletNoonMinus-Targeted-atDude-targetOpponents$$Put1ValueNoonMinus-Targeted-atDude-targetOpponents$$Put1InfluencePlus-Targeted-atDude-targetMine||GR0B1R0:Put1BulletNoonMinus-targetOpponents$$Put1ValueNoonMinus-targetOpponents$$Put1Noon:Huckster Skill Bonus-Targeted-atDude-targetMine
+GR0B1R0:Put1BulletNoonMinus-Targeted-atDude-targetOpponents$$Put1ValueNoonMinus-Targeted-atDude-targetOpponents$$Put1InfluencePlus-Targeted-atDude-targetMine||GR0B1R0:Put1BulletNoonMinus-Targeted-atDude-targetOpponents$$Put1ValueNoonMinus-Targeted-atDude-targetOpponents$$Put1Noon:Huckster Skill Bonus-Targeted-atDude-targetMine
 .....
 Den of Thieves
 -----
