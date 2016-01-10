@@ -3069,7 +3069,7 @@ Strength of the Ancestors
 -----
 
 +++++
-GR0B1R0:Pull1Card-testMSpirit5-spellEffects<Put3BulletNoonPlus-AutoTargeted-atDude-onHost++Remove999High Noon:Draw-AutTargeted-atDude-onHost-isSilent$$Put1High Noon:Stud-AutoTargeted-atDude-onHost++Refill1Strength of Ancestors-AutoTargeted-atDude-onHost-isSilent,None>
+GR0B1R0:Pull1Card-testSpirit5-spellEffects<Put3BulletNoonPlus-AutoTargeted-atDude-onHost++Remove999High Noon:Draw-AutTargeted-atDude-onHost-isSilent++Put1High Noon:Stud-AutoTargeted-atDude-onHost++Refill1High Noon:Strength of Ancestors-AutoTargeted-atDude-onHost-isSilent,None>
 .....
 Phantom Fingers
 -----

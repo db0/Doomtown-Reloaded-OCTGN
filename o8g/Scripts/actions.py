@@ -524,10 +524,11 @@ def inspectTarget(table, x = 0, y = 0): # This function shows the player the car
          if c.Text == '': information("{} has no text".format(c.name))
          else: information("{}".format(c.Text))
    
-def reCalculate(group = table, x = 0, y = 0, notification = 'loud'): 
+def reCalculate(group = table, x = 0, y = 0, notification = 'loud', remote = False): 
 # This function will calculate the amount of influence and Control you have on the table and update your counters.
    mute()
-   for player in fetchAllOpponents(): remoteCall(player,'reCalculate',[])
+   if not remote and notification == 'loud': 
+      for player in fetchAllOpponents(): remoteCall(player,'reCalculate',[table,0,0,notification,True])
    influence = 0 
    control = 0
    count = 0
