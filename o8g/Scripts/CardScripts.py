@@ -3279,6 +3279,174 @@ d47cff43-d675-4410-929c-508475fd7814
 +++++
 GR0B1R0:BootTarget-Targeted-atTotem-targetMine-isCost$$MoveTarget-Targeted-atDude-targetMine-moveToTotem
 .....
+Shizeng Lu
+-----
+bc2f230e-1c4a-47fe-ab97-31a58112e473
+-----
+
++++++
+
+.....
+"Lucky" Sky Borne
+-----
+16d4df2b-4494-4e65-b910-2c35e07d604c
+-----
+
++++++
+GR0B0R1:Retrieve1Card-grabSidekick-toTable-payCost
+.....
+Riorden O'Lithen
+-----
+644870b4-541c-4824-af19-3e9a5cd28264
+-----
+
++++++
+GR0B0R0:BootTarget-AutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$Put1Bounty-Targeted-atDude
+.....
+Mariel Lewis
+-----
+45f31939-bdaf-49ee-850f-b08f5c809dc0
+-----
+
++++++
+GR0B0R0:UnparticipateTarget-Targeted-atDude-targetOpponents$$MoveTarget-Targeted-atDude-moveToOutfit-targetOpponents
+.....
+Miranda Clarke
+-----
+43abee45-ec1d-4e5f-8997-e8501d66ed5b
+-----
+
++++++
+
+.....
+Elliot Smithson
+-----
+662dd66d-9cb9-48f6-84bd-4496b3484d01
+-----
+
++++++
+GR0B0R0:Gain1Ghost Rock$$UnbootTarget-Targeted-atDude
+.....
+Forster Cooke
+-----
+1d283fb4-9fe2-4143-83e2-b6080149df3f
+-----
+
++++++
+
+.....
+The Tattooed Man
+-----
+f1d866bc-8056-4cc8-976a-ee76afca5054
+-----
+
++++++
+
+.....
+Joseph Dusty Hill
+-----
+7f2d6abb-5b50-4d3c-8a2d-aeb447ea5fbd
+-----
+
++++++
+
+.....
+Shelby Hunt
+-----
+41a8c1e5-03e8-427e-a1f2-ffc59dbc420b
+-----
+
++++++
+GR0B0R0:Put1BulletShootoutPlus$$Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
+.....
+Xemo's Turban
+-----
+288545a8-9c7b-4e31-ad00-c97910b19b17
+-----
+
++++++
+GR0B1R1:UseCustomAbility
+.....
+Guide Horse
+-----
+aa1c1ffa-db99-464b-849d-5cb6264245b7
+-----
+
++++++
+GR0B1R0:MoveHost-moveToTown Square
+.....
+Blight Serum
+-----
+0ed71726-f276-419e-b037-17eb62294489
+-----
+
++++++
+GR0B0R1:SendHomeBootedTarget-Targeted-atDude$$AceMyself||GR0B1R0:RehostMyself
+.....
+Marty
+-----
+fcac7bbf-dd62-43de-8ade-8ba9893a986f
+-----
+
++++++
+GR0B1R0:BootMyself-isCost$$UnbootHost
+.....
+The Joker's Smile
+-----
+d3a57ce1-7abd-45b0-82d7-fa0d6324a91d
+-----
+whileInPlay:Gain1Ghost Rock-foreachUsedJokerAced
++++++
+GR0B1R0:DiscardTarget-DemiAutoTargeted-atJoker-fromHand-choose1-isCost$$Gain1Ghost Rock$$Draw1Cards||GR1B1R0:Retrieve1Cards-fromBootHill-toDiscard-grabJoker
+.....
+Old Marge's Manor
+-----
+19bdb26b-0853-4520-9f72-71d7e4ab6c1d
+-----
+
++++++
+GR0B1R0:Remove999Ghost Rock-Targeted-isCost$$Put1Ghost Rock-perX||GR0B1R0:Put1Ghost Rock||GR0B0R1:Remove1Ghost Rock-isCost$$Gain1Ghost Rock
+.....
+Owl's Insight
+-----
+e530bd2e-0fae-4f00-a522-ba5801904a44
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit5-spellEffects<PlayMulti-Targeted-atGoods_or_Spell-payCost-reduc1-fromHand++Draw999Cards,None>
+.....
+Righteous Fury
+-----
+dd9cbe71-952b-4b3f-8b53-afa6144488ac
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle8-spellEffects<SimplyAnnounce{increase their opponent's casualties by 2 if they win},None>||GR0B1R0:Pull1Card-testMiracle12-spellEffects<SimplyAnnounce{increase their opponent's casualties by 2}++AceMyself,None>
+.....
+Outgunned
+-----
+24bb7502-06a2-4871-9ede-fe28d7539eec
+-----
+onPlay:BootTarget-DemiAutoTargeted-atDude-targetMine-isParticipating-isCost-choose1-isResolution
++++++
+
+.....
+Martyr's Cry
+-----
+27d7356b-3c4d-4b2d-9c23-28aca5cc9c81
+-----
+onPlay:DiscardTarget-Targeted-atMiracle-targetMine-isResolution
++++++
+
+.....
+Deliberate Infection
+-----
+31ac9e9d-ff78-4f42-a8c1-9014c7df461e
+-----
+onPlay:Put1PermInfluenceMinus-AutoTargeted-atDude-onHost$$Put1ProdMinus-AutoTargeted-atDude-onHost
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''

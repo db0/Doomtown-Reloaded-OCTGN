@@ -120,6 +120,8 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
             else: 
                cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, 30, 1, False)
       notify("{} make their hand illegal and increase its rank by 1".format(announceText))
+   ### TLS ###
+   elif card.name == 'Phantom Fingers' and re.search(r'(Gadget|Mystical)',targetCards[0].Keywords): DrawX('Draw1Card', announceText, card, notification = 'Quick')   
    ### SB7-9 ###
    elif card.name == "Morgan Stables":
       drawMany(me.deck, 1, silent = True)
@@ -128,6 +130,20 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          choicehand = askCard([c for c in me.hand],'Choose which card to discard from your hand',card.Name)
       choicehand.moveTo(me.piles['Discard Pile'])
       notify("{} boot {} to draw 1 card and discard {} from their hand".format(announceText,card,choicehand))
+   elif card.name == "Xemo's Turban":
+      if card.orientation == Rot90: return 'ABORT'
+      if pull()[1] == 'Clubs':
+         notify(":> {}'s {} has malfunctioned and provides no more insights into the future".format(fetchHost(card),card))
+      elif payCost(1) == 'ABORT':
+         notify(":> {} remembered he didn't have the money to pay for Xemo's Turban, so they just pulled a card for nothing.".format(me))
+      else:      
+         drawMany(me.deck, 1, silent = True)
+         choicehand = None
+         while choicehand == None:
+            choicehand = askCard([c for c in me.hand],'Choose which card to discard from your hand',card.Name)
+         choicehand.moveTo(me.piles['Discard Pile'])
+         remoteCall(me,'boot',[card])
+         notify("{} boot {} to draw 1 card and discard {} from their hand".format(announceText,card,choicehand))
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
