@@ -852,6 +852,7 @@ def RicoView(card,handList):
    mute()
    update()
    askCard([c for c in handList],"This is your opponent's current hand. Double click a card or close this window to continue")
+   whisper("Reminder: The opponent's hand contained: {}".format([c.Name for c in handList]))
    remoteCall(handList[0].controller,'RicoStopView',[card])
    if confirm("Do you want to retain your current starting gang? (In order to save time)"): 
       notify(":> {} opts to retain their current starting gang without change")
