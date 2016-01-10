@@ -2971,7 +2971,7 @@ Sloane
 -----
 6a8c7f99-7f5c-4824-99b7-a9c5f9d9d715
 -----
-onPay:Reduce1CostPlay-perEveryCard-AutoTargeted-atDude-hasMarker{Bounty}-targetMine||onPlay:Put1Bounty-perEveryCard-AutoTargeted-atDude-hasMarker{Bounty}-targetMine
+onPay:Reduce1CostPlay-perEveryCard-AutoTargeted-atDude-hasMarker{Bounty}-targetMine||onPlay:UnbootMulti-AutoTargeted-atDude-hasMarker{Bounty}-targetMine
 +++++
 
 .....
