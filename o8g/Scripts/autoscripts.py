@@ -200,6 +200,7 @@ def autoscriptOtherPlayers(lookup, origin_card = OutfitCard, count = 1, origin_p
    if not Automations['Triggers']: return # If automations have been disabled, do nothing.
    debugNotify(">>> autoscriptOtherPlayers() with lookup: {} and origin_card: {}".format(lookup,origin_card)) #Debug
    for card in table:
+      if card.highlight == DrawHandColor: continue # Draw Hand cards are inactive.
       debugNotify(' Checking {}'.format(card)) # Debug
       costText = '{} activates {} to'.format(card.controller, card) 
       Autoscripts = CardsAS.get(card.model,'').split('||')
