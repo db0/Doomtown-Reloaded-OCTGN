@@ -14,7 +14,8 @@ OCTGN **Foul Play** has been detected. Once more the new set is available and fu
   * Joseph Dusty Hill: No Script
   * Marty: Use after inventing 
   * Marge's Mannor: Target card with GR and use. Or just use to gain money back.
-  
+* Jake Smiley will now get 2 influence markers when coming into play to remind you his sundown inf
+
   
 
 ### 1.10.0.x
