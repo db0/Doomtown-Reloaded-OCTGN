@@ -568,6 +568,16 @@ def setWinner(winner):
       if outfit.owner == winner: outfit.markers[mdict['Winner']] = 1
       else: outfit.markers[mdict['Winner']] = 0
 
+
+def announceMulliganOrder(group=table,x=0,y=0):
+   mute()
+   orderList = []
+   playerList = getPlayers()
+   for playerCount in range(len(getPlayers())):
+      orderList.append(playerList.pop(rnd(0,len(playerList) - 1)).name)
+   notify("The order of mulligan for this game is {}".format(orderList))
+      
+      
 #---------------------------------------------------------------------------
 # Marker functions
 #---------------------------------------------------------------------------
