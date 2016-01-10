@@ -15,7 +15,15 @@ OCTGN **Foul Play** has been detected. Once more the new set is available and fu
   * Marty: Use after inventing 
   * Marge's Mannor: Target card with GR and use. Or just use to gain money back.
 * Jake Smiley will now get 2 influence markers when coming into play to remind you his sundown inf
-
+* T'Ou and Seven-Eagles now get discounts. 
+* Sloane xp will now only unboot your wanted dudes but not give bounty. Do that part manually.
+* Strength of the Ancestors Fixed
+* Extra Bet's extra bet will now be taken into account when winning Lowball
+* Sanatorium will now assign markers correctly when increasing huckster skill
+* Rico Rodegain will now whisper you the cards you saw for reference
+* Recalculating totals will now do so for your opponents as well
+* Added a new option to determine who goes first for mulligan. Ctrl+Shift+M, or look under the game menu.
+* Cards will now longer trigger effects from within draw hands
   
 
 ### 1.10.0.x
