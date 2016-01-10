@@ -1,6 +1,22 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.11.0.x
+
+OCTGN **Foul Play** has been detected. Once more the new set is available and fully scripted
+
+* Trickier Scripts
+  * Shizeng Lu: No Script
+  * Riorden won't discard the spell automatically if the target wasn't wanted
+  * Miranda Clarke: No Script
+  * Forster Cooke: No script
+  * Tattooed man: No Script
+  * Joseph Dusty Hill: No Script
+  * Marty: Use after inventing 
+  * Marge's Mannor: Target card with GR and use. Or just use to gain money back.
+  
+  
+
 ### 1.10.0.x
 
 OCTGN has been performing some **Dirty Deeds**. The new set is now available and fully scripted!
