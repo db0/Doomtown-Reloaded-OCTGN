@@ -2563,7 +2563,7 @@ Chief Stephen Seven-Eagles
 -----
 eed9713a-5a8b-4a10-91b1-4ecd27eee125
 -----
-
+onPay:Reduce1CostPlay-perEveryCard-AutoTargeted-atTotem_or_Improvement
 +++++
 GR0B1R0:SimplyAnnounce{make Chief Stephen Seven Eagles worth 1 control point per card attached to a deed they control}
 .....
@@ -2675,7 +2675,7 @@ T'ou Chi Chow
 -----
 e5c43d70-6280-43e4-a0c6-8bc4239382e7
 -----
-
+onPay:Reduce1CostPlay-perEveryCard-AutoTargeted-atDeed-targetMine
 +++++
 GR0B0R1:BootTarget-Targeted-atDeed-targetMine-isCost$$UnbootTarget-Targeted-atDude-targetMine
 .....
