@@ -2229,7 +2229,7 @@ Consecration
 -----
 
 +++++
-GR0B0R0:Pull1Card-testMiracle6-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
+GR0B0R0:Pull1Card-testMiracle7-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
 .....
 Mark of Pestilence
 -----
