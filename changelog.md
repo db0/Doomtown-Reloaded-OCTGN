@@ -1,6 +1,11 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.12.1.x
+
+* Jake Smiley, Hawley's Rose and non-owned Nightcaps will not add their influence/control to your totals via the recalculation to help you track them better
+* Added option to prepare for lowball without immediately revealing your hand. This will put the money in the pot but won't draw cards. This way you can do draw/redraw functions like a shootout hand before revealing 
+
 ### 1.12.0.x
 
 **Foul Play** has been brewed on OCTGN. Once more the new set is available and fully scripted
@@ -9,7 +14,6 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
   * Janosz Pratt: Targeting is a bit confused because game has to also figure out who is inventing.
   * The Place: You can use its ability to quickly add +2 prod to any deed, but you have to remove them manually.
   * Focusing Chi: Not scripted yet
-* Jake Smiley, Hawley's Rose and non-owned Nightcaps will not add their influence/control to your totals via the recalculation to help you track them better
   
 ### 1.11.0.x
 
