@@ -542,12 +542,15 @@ def reCalculate(group = table, x = 0, y = 0, notification = 'loud', remote = Fal
             and card.highlight != DummyColor)
    for card in cards:
       count = num(card.Influence) + card.markers[mdict['InfluencePlus']] + card.markers[mdict['PermInfluencePlus']] - card.markers[mdict['InfluenceMinus']] # Put the card's total influence on a temp marker.
+      if card.name == "Jake Smiley": count += 2
+      if card.name == "Hawley's Rose": count += 1      
       if count > 0: # We only care to do anything if the card had any influence
          if i > 0: concat_inf += ', ' # We separate with comma only after we have at least 1 card in the list
          concat_inf += '{} from {}'.format(str(count),card) # Add the count as a string to the concatenated list before the name, e.g. "3 from Black Jack"
          i += 1 # Once we have found at least one card with influence, we separate the rest with commas
          influence += count # We add this card's total influence to our tally.
       count = num(card.Control) + card.markers[mdict['ControlPlus']] + card.markers[mdict['PermControlPlus']] - card.markers[mdict['PermControlMinus']] - card.markers[mdict['ControlMinus']] # Put the card's total influence on a temp marker.
+      if card.name == "Cooke's Nightcap" and card.owner != me: count += 2
       if count > 0: # Same as influence but for control this time
          if c > 0: concat_cp += ', '
          concat_cp += '{} from {}'.format(str(count),card)
