@@ -9,6 +9,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
   * Janosz Pratt: Targeting is a bit confused because game has to also figure out who is inventing.
   * The Place: You can use its ability to quickly add +2 prod to any deed, but you have to remove them manually.
   * Focusing Chi: Not scripted yet
+* Jake Smiley, Hawley's Rose and non-owned Nightcaps will not add their influence/control to your totals via the recalculation to help you track them better
   
 ### 1.11.0.x
 
