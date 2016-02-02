@@ -3447,6 +3447,175 @@ onPlay:Put1PermInfluenceMinus-AutoTargeted-atDude-onHost$$Put1ProdMinus-AutoTarg
 +++++
 
 .....
+Sophie Lacoste
+-----
+e54fe16d-a197-4461-9309-42718820a294
+-----
+
++++++
+GR1B0R1:Put1InfluencePlus-Targeted-atDude-targetMine
+.....
+"Crazy" Mike Draksil
+-----
+12bea32a-b544-47e8-b2c7-4355aa1606ac
+-----
+
++++++
+
+.....
+Horace Manse
+-----
+5126c19e-76f4-4355-8dad-8023adab95e7
+-----
+onPlay:Retrieve1Card-grabAbomination$$DiscardTarget-DemiAutoTargeted-fromHand-choose1
++++++
+
+.....
+Jia Mein
+-----
+1a69a29f-8d3e-4b90-a4b0-8050855974df
+-----
+
++++++
+GR0B0R0:PlayTarget-DemiAutoTargeted-atCondition-fromHand--payCost-reduc2-choose1||GR1B0R1:BootTarget-AutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$Retrieve1Card-grabCondition-fromDiscard
+.....
+Janosz Pratt
+-----
+b791fa54-dbe2-4cda-90dd-91a0df866ed1
+-----
+
++++++
+GR0B1R0:Retrieve1Cards-fromDiscard-grabGadget_and_Weapon-toTable-payCost-reduc2$$Put1Janosz Rig-AutoTargeted-atGadget_and_Weapon-onAttachment-choose1$$RehostTarget-AutoTargeted-atGadget_and_Weapon-onAttachment
+.....
+Vasilis the Boar
+-----
+20ff3990-e458-4fe7-a8c3-8f7839430e73
+-----
+
++++++
+
+.....
+Luke, the Errand Boy
+-----
+06798ab4-80bd-4497-b6fe-d2093c788ba8
+-----
+
++++++
+GR0B0R0:RehostTarget-Targeted-atGadget_and_Goods
+.....
+Arnold McCadish
+-----
+1aa58444-fccc-4121-ac6c-482fd48e4b8e
+-----
+
++++++
+GR0B1R0:Pull1Card
+.....
+Rick Henderson
+-----
+198921ba-aafd-4379-bf9d-205b4a4c7763
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+
+Willa Mae MacGowan
+-----
+4be0dce0-1671-4ac1-9539-d721e8fa5b34
+-----
+
++++++
+GR0B0R0:AceMyself$$SendHomeBootedMulti-AutoTargeted-atDude-targetMine-isParticipating
+.....
+The Orphanage
+-----
+6d816729-b023-4801-8aee-426ebe657835
+-----
+
++++++
+GR0B1R0:Put2ProdPlus-AutoTargeted-atDeed-hasProperty{Control}ge2$$Put1ControlMinus-AutoTargeted-atDeed-hasProperty{Control}ge2$$Put2UpkeepPrePaid-AutoTargeted-atDeed-hasProperty{Control}ge2
+.....
+The Place
+-----
+c9534712-af16-422c-8fb5-dac7b8c82c65
+-----
+
++++++
+GR0B0R1:Put2ProdPlus-Targeted-atDeed
+.....
+Hawley's Rose
+-----
+f316fc32-d8a7-4810-bb75-7c1491058ad8
+-----
+
++++++
+
+.....
+LeMat Revolver
+-----
+3347bf9b-ca97-4625-8409-521a4b90af3e
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{increase their hand rank by this dude's bullet rating}
+.....
+Yagn's Mechanical Skeleton
+-----
+2fb05302-5326-458a-81bf-c5ad611e63e1
+-----
+onPlay:Put3ValueNoonPlus
++++++
+
+.....
+Fool's Gold
+-----
+8aad1d23-54ea-4439-8d94-e84b1c283d67
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex5-spellEffects<Put1Bounty-AutoTargeted-atDude-onHost++UseCustomAbility,None>
+.....
+Mother Bear's Rage
+-----
+5d7757ad-32cf-4383-959e-594e8a7314be
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit5-spellEffects<Spawn1Nature Spirit-modAction:CalloutTarget-Targeted-atDude-targetOpponents,None>
+.....
+Focusing Chi
+-----
+614b4a5f-6a75-4a4d-af99-269ce0c53375
+-----
+onPull:CustomScript||onPlay:Pull1Card
++++++
+
+.....
+Mugging
+-----
+1ba6917a-9efe-4e3e-a118-3270e1c36854
+-----
+onPlay:BootMulti-Targeted-atGoods_or_Action_or_Spell-targetOpponents$$StartJob-DemiAutoTargeted-atDude-choose1-targetOpponents-jobEffects<SendHomeBootedTarget-Targeted-atDude++AceMulti-Targeted-atGoods_or_Action_or_Spell-isBooted-targetOpponents-MarkNotTheTarget,None>
++++++
+
+.....
+Signing Over the Stores
+-----
+2d728020-2cf6-4908-8034-7325e9fcb394
+-----
+onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<RequestInt{Discard how many cards?}-Max5++Draw1Cards-perX-toDiscard++Retrieve3Cards-grabGoods-fromDiscard-toTable-payCost-reduc2,None>
++++++
+
+.....
+No Funny Stuff
+-----
+b046d41f-0b5c-4c0c-8d71-507c7877807e
+-----
+onPlay:SimplyAnnounce{prevent shootout or non-cheatin resolution abilities}
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''

@@ -1,6 +1,15 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.12.0.x
+
+**Foul Play** has been brewed on OCTGN. Once more the new set is available and fully scripted
+
+* Trickier Scripts
+  * Janosz Pratt: Targeting is a bit confused because game has to also figure out who is inventing.
+  * The Place: You can use its ability to quickly add +2 prod to any deed, but you have to remove them manually.
+  * Focusing Chi: Not scripted yet
+  
 ### 1.11.0.x
 
 OCTGN **Foul Play** has been detected. Once more the new set is available and fully scripted

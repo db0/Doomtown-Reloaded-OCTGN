@@ -144,6 +144,27 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          choicehand.moveTo(me.piles['Discard Pile'])
          remoteCall(me,'boot',[card])
          notify("{} boot {} to draw 1 card and discard {} from their hand".format(announceText,card,choicehand))
+   elif card.name == "Arnold Stewart":
+      topCards = list(me.piles['Deck'].top(5))
+      for c in topCards: c.moveTo(me.piles['Discard Pile'])
+      notify(":> {} discards {}".format(card,[c.Name for c in topCards]))
+      availDeeds = [c for c in topCards if re.search(r'Out of Town',c.Keywords)]
+      if availDeeds and card.orientation == Rot0:
+         choiceDeed = askCard(availDeeds,'These were the available Out of Town deeds that were at the top of your deck. You may boot Arnold to take one in your hand',card.Name)
+         notify("{} boot {} to take {} to their hand".format(announceText,card,choiceDeed))
+         if choiceDeed: 
+            choiceDeed.moveTo(me.hand)
+            boot(card,True)
+      elif not availDeeds and card.orientation == Rot0:
+         notify(":> {} didn't discover any good spots out of town.".format(card))
+   elif card.name == "Fool's Gold":
+      potCard = getPotCard(True)
+      if potCard:
+         if potCard.markers[mdict['Ghost Rock']]: 
+            me.GhostRock += 1
+            potCard.markers[mdict['Ghost Rock']] -= 1
+      else: me.GhostRock += 1 # If the potcard is not there for some reason (bug) we just give the player 1 GR 
+      notify("{} take one Ghost Rock from the pot".format(announceText))
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
@@ -553,6 +574,10 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          if choice == None: return 'ABORT'
          else: player = opponents[choice]         
       remoteCall(player,'JaelGuile',[card])
+   elif card.name == "Rick Henderson" and action == 'USE':
+      targetCards = findTarget('Targeted-atDude',card = card, choiceTitle = "Choose the dude you're robbing")
+      if not len(targetCards): return 'ABORT'
+      else: remoteCall(targetCards[0].controller,'RickHenderson',[targetCards[0],card])
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -893,5 +918,15 @@ def JaelGuile(card):
          choiceDude = askCard(choiceDudes,"Select a dude to be hit by {} ({}/2). \nAn unbooted dude will boot. A Booted dude will be discarded".format(card.Name,iter + 1))
          if choiceDude.orientation == Rot0: boot(choiceDude)
          else: discard(choiceDude)
+   
+def RickHenderson(dude,rick):
+   mute()
+   if not confirm("Pay 1 Ghost Rock to {} to retain {}?".format(rick.Name,dude.Name)): discard(dude)
+   else:
+      msg = payCost(1, MSG = "You do you not seem to have enough ghost rock to pay off {}! Bypass?".format(rick.Name))
+      if msg == 'ABORT': discard(dude)
+      else:
+         rick.controller.GhostRock += 1
+         notify("{} pays off {} to retain {}".format(me,rick,dude))
    
    
