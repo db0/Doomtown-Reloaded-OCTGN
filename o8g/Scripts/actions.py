@@ -541,7 +541,7 @@ def reCalculate(group = table, x = 0, y = 0, notification = 'loud', remote = Fal
             and card.highlight != DrawHandColor
             and card.highlight != DummyColor)
    for card in cards:
-      count = num(card.Influence) + card.markers[mdict['InfluencePlus']] + card.markers[mdict['PermInfluencePlus']] - card.markers[mdict['InfluenceMinus']] # Put the card's total influence on a temp marker.
+      count = num(card.Influence) + card.markers[mdict['InfluencePlus']] + card.markers[mdict['PermInfluencePlus']] - card.markers[mdict['PermInfluenceMinus']] - card.markers[mdict['InfluenceMinus']] # Put the card's total influence on a temp marker.
       if card.name == "Jake Smiley": count += 2
       if card.name == "Hawley's Rose": count += 1      
       if count > 0: # We only care to do anything if the card had any influence
@@ -1553,6 +1553,15 @@ def drawRevealHand(group):
    if len(group) == 0: drawhandMany()
    elif getGlobalVariable('Shootout') == 'True': revealShootoutHand(group, manual = False)
    else: revealLowballHand(group, manual = False)
+
+def prepLowball(group = me.Deck):
+# This function is like playLowball, but merely preares you to do Lowball rather than doing the draw and reveal. Allows you a chance to affect the ante and your draw hand 
+   mute()
+   if getGlobalVariable('Phase') == '4':
+      #if not confirm(":::WARNING::: It is not yet the Gamblin' phase. Do you want to jump to lowball now?"): return
+      goToGamblin()
+   betLowball()
+   notify("{} has ante'd up for lowball".format(me))
    
 def playLowball(group = me.Deck):
 # This function does the following. 
@@ -1565,7 +1574,7 @@ def playLowball(group = me.Deck):
    mute()
    if me.getGlobalVariable('RevealReady') == 'Lowball': notify("{} is waiting patiently for everyone else to reveal their lowball hand...".format(me))
    else:
-      if getGlobalVariable('Phase') != '1':
+      if getGlobalVariable('Phase') == '4':
          #if not confirm(":::WARNING::: It is not yet the Gamblin' phase. Do you want to jump to lowball now?"): return
          goToGamblin()
       drawhandMany(me.Deck, 5, True)
@@ -1600,6 +1609,6 @@ def winLowball(group = table, x = 0,y = 0, winner = me): # A function which sets
       if card.highlight == DrawHandColor: 
          discard(card)  
          card.highlight = None
-   goToUpkeep()
+   if getGlobalVariable('Phase') == '1': goToUpkeep()
    debugNotify("<<< winLowball()")
       

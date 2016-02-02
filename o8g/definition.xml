@@ -166,7 +166,7 @@
 			<cardaction menu="Inspect Card" default="False" shortcut="Ctrl+I" execute="inspectCard" />
 			<cardaction menu="Discard card" default="False" shortcut="Del" execute="handDiscard" />
 			<cardaction menu="Ace card" default="False" execute="handAce" />
-<!--			<groupaction menu="Set Hand Size" default="False" shortcut="Ctrl+H" execute="setHandSize" /> -->
+<!--         <groupaction menu="Set Hand Size" default="False" shortcut="Ctrl+H" execute="setHandSize" /> -->
 			<groupaction menu="Random Discard" default="False" shortcut="Ctrl+Alt+D" execute="randomDiscard" />
 			<groupaction menu="Shuffle Hand into Deck" default="False" execute="handShuffle" />
 		</hand>
@@ -181,6 +181,7 @@
 			<groupaction menu="Draw" default="True" shortcut="Ctrl+D" execute="draw" />
 			<groupaction menu="Pull" default="False" shortcut="Ctrl+P" execute="pull" />
 			<groupaction menu="QuickPlay Lowball!" default="False" shortcut="Ctrl+Q"  execute="playLowball" />
+			<groupaction menu="Prepare for Lowball!" default="False" shortcut="Ctrl+L"  execute="prepLowball" />
 			<groupaction menu="Draw cards to Draw Hand" default="False" execute="drawhandMany" />
 			<groupaction menu="Shuffle" default="False" execute="shuffle" />
 		</group>
