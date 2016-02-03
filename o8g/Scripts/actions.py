@@ -1557,7 +1557,7 @@ def drawRevealHand(group):
 def prepLowball(group = me.Deck):
 # This function is like playLowball, but merely preares you to do Lowball rather than doing the draw and reveal. Allows you a chance to affect the ante and your draw hand 
    mute()
-   if getGlobalVariable('Phase') == '4':
+   if getGlobalVariable('Phase') == '4' or getGlobalVariable('Phase') == '0':
       #if not confirm(":::WARNING::: It is not yet the Gamblin' phase. Do you want to jump to lowball now?"): return
       goToGamblin()
    betLowball()
@@ -1574,7 +1574,7 @@ def playLowball(group = me.Deck):
    mute()
    if me.getGlobalVariable('RevealReady') == 'Lowball': notify("{} is waiting patiently for everyone else to reveal their lowball hand...".format(me))
    else:
-      if getGlobalVariable('Phase') == '4':
+      if getGlobalVariable('Phase') == '4' or getGlobalVariable('Phase') == '0':
          #if not confirm(":::WARNING::: It is not yet the Gamblin' phase. Do you want to jump to lowball now?"): return
          goToGamblin()
       drawhandMany(me.Deck, 5, True)
