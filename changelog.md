@@ -5,6 +5,8 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 
 * Fixed Luke's ability
 * Fixed Taking over the stores
+* Fixed Forced Quarantine
+* Fixed Luis Pasteur's ability
 
 
 ### 1.12.1.x
