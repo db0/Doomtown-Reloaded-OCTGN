@@ -1315,7 +1315,7 @@ def refill(group = me.hand): # Refill the player's hand to its hand size.
          if handSizeRegex.group(1) == 'Plus': handsize += num(handSizeRegex.group(2))
          else: handsize -= num(handSizeRegex.group(2))
    playhand = len(me.hand) # count how many cards there are currently there.
-   if playhand < handsize: drawMany(me.Deck, handsize - playhand, True) # If there's less cards than the handsize, draw from the deck until it's full.
+   if playhand < handsize: drawMany(me.Deck, handsize - playhand, silent = True) # If there's less cards than the handsize, draw from the deck until it's full.
    return handsize
 
 def handDiscard(card, x = 0, y = 0): # Discard a card from your hand.
