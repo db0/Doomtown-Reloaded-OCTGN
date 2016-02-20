@@ -613,9 +613,10 @@ def TokensX(Autoscript, announceText, card, targetCards = None, notification = N
    else: return announceString
  
 def DrawX(Autoscript, announceText, card, targetCards = None, notification = None, n = 0): # Core Command for drawing X Cards from the house deck to your hand.
-   debugNotify(">>> DrawX(){}".format(extraASDebug(Autoscript))) #Debug
+   debugNotify(">>> DrawX(){}".format(Autoscript)) #Debug
    if targetCards is None: targetCards = []
    destiVerb = 'draw'
+   destPath =  ""
    action = re.search(r'\bDraw([0-9]+)Card', Autoscript)
    targetPLs = ofwhom(Autoscript, card.controller)
    if len(targetPLs) > 1 or targetPLs[0] != me: otherTXT = ' force {} to'.format([targetPL.name for targetPL in targetPLs])
@@ -636,6 +637,9 @@ def DrawX(Autoscript, announceText, card, targetCards = None, notification = Non
       elif re.search(r'-toDiscard', Autoscript):
          destination = targetPL.piles['Discard Pile']
          destiVerb = 'discard'   
+      elif re.search(r'-toDrawHand', Autoscript):
+         destination = targetPL.piles['Draw Hand']
+         destPath =  " to their Draw Hand"
       else: destination = targetPL.hand
       preventDraw = False
       if source == targetPL.piles['Deck'] and destination == targetPL.hand: # We need to look if there's card on the table which prevent card draws.
@@ -651,12 +655,10 @@ def DrawX(Autoscript, announceText, card, targetCards = None, notification = Non
       if not preventDraw:
          debugNotify("Card Draw not prevented")
          draw = num(action.group(1))
-         if draw == 999:
+         if draw == 999: 
             multiplier = 1
-            if targetPL.Reserves >= len(targetPL.hand): # Otherwise drawMany() is going to try and draw "-1" cards which somehow draws our whole deck except one card.
-               count = drawMany(source, targetPL.Reserves - len(targetPL.hand), destination, True) # 999 means we refresh our hand
-            else: count = 0 
-            #confirm("cards drawn: {}".format(count)) # Debug
+            currHandSize = len(me.hand)
+            count = refill() - currHandSize
          else: # Any other number just draws as many cards.
             multiplier = per(Autoscript, card, n, targetCards, notification)
             count = drawMany(source, draw * multiplier, destination, True)
@@ -665,9 +667,9 @@ def DrawX(Autoscript, announceText, card, targetCards = None, notification = Non
       else: count = 0
    debugNotify("About to announce.")
    #if count == 0: return announceText # If there are no cards, then we effectively did nothing, so we don't change the notification.
-   if notification == 'Quick': announceString = "{} draw {} cards{}".format(announceText, action.group(1),sourcePath)
-   elif source.name == 'Deck' and destination.name == 'Hand': announceString = "{}{} draw {} cards.".format(announceText, otherTXT, action.group(1))
-   else: announceString = "{}{} {} cards from {}{}".format(announceText,otherTXT, destiVerb, action.group(1), source.name, destPath)
+   if notification == 'Quick': announceString = "{} {} {} cards{}{}".format(announceText, destiVerb, count,sourcePath,destPath)
+   elif source.name == 'Deck' and destination.name == 'Hand': announceString = "{}{} draw {} cards.".format(announceText, otherTXT, count)
+   else: announceString = "{}{} {} cards from {}{}".format(announceText,otherTXT, destiVerb, count, source.name, destPath)
    if notification and multiplier > 0: notify(':> {}.'.format(announceString))
    debugNotify("<<< DrawX()")
    return announceString
