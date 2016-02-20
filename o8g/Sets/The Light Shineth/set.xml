@@ -543,7 +543,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Gadget Difficulty 6" />
+         <property name="Keywords" value="Gadget-Difficulty 6" />
          <property name="Text" value="You may immediately play this gadget when another player reveals an illega draw hand. If this Gadget is invented while you are in a shootout, attach it to a dude in your posse.&#xD;&#xA;&#xD;&#xA;Cheatin' Resolution: Pull. If the pull is equal to or higher than the value of the opposing shooter, discard them, otherwise send them home booted." />
          <property name="Instructions" value="" />
       </card>

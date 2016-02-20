@@ -1101,7 +1101,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
    targetCardlist = '' # A text field holding which cards are going to get tokens.
    extraTXT = ''
    SentHomeCount = 0
-   action = re.search(r'\b(Boot|Unboot|SendHomeBooted|Discard|Ace|Return|Play|SendToBottom|SendToDraw|Takeover|Participate|Unparticipate|Callout|Move)(Target|Host|Multi|Myself)[-to]*([A-Z][A-Za-z&_ ]+)?', Autoscript)
+   action = re.search(r'\b(Boot|Unboot|SendHomeBooted|Discard|Ace|Return|Play|SendToBottom|SendToDraw|Takeover|Participate|Unparticipate|Callout|Move|Rehost)(Target|Host|Multi|Myself)[-to]*([A-Z][A-Za-z&_ ]+)?', Autoscript)
    if action.group(2) == 'Myself': 
       del targetCards[:] # Empty the list, just in case.
       targetCards.append(card)
@@ -1145,6 +1145,12 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
          elif action.group(1) == 'Discard' and targetCard.group.name != 'Boot Hill': discardTarget(targetCards = [targetCard], silent = True)        
          elif action.group(1) == 'Ace' and targetCard.group.name != 'Discard Pile': aceTarget(targetCards = [targetCard], silent = True)
          elif action.group(1) == 'SendToDraw': sendToDrawHand(targetCard)
+         elif action.group(1) == 'Rehost':
+            newHost = findHost(targetCard)
+            if not newHost: 
+               whisper("You need to target the card which is going to attach the card")
+               return 'ABORT'
+            else: attachCard(targetCard,newHost)
          elif action.group(1) == 'Participate':
             if not participateDude(targetCard): 
                whisper(":::ERROR::: {} is already in this shootout!".format(targetCard))

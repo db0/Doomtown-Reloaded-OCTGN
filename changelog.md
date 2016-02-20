@@ -1,6 +1,11 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.12.2.x
+
+* Fixed Luke's ability
+
+
 ### 1.12.1.x
 
 * Jake Smiley, Hawley's Rose and non-owned Nightcaps will not add their influence/control to your totals via the recalculation to help you track them better
