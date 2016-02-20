@@ -4,6 +4,7 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 ### 1.12.2.x
 
 * Fixed Luke's ability
+* Fixed Taking over the stores
 
 
 ### 1.12.1.x
