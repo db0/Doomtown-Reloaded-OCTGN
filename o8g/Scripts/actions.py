@@ -1287,10 +1287,17 @@ def drawMany(group, count = None, destination = None, silent = False): # This fu
    if destination == None: destination = me.hand
    if count == None: count = askInteger("Draw how many cards to your Play Hand?", 5) # Ask the player how many cards they want.
    if count == None: return
-   for i in range(0, count): 
-      if len(group) == 0: reshuffle() # If before moving a card the deck is empty, reshuffle.
-      group.top().moveTo(me.hand) # Then move them one by one into their play hand.
+   drawnC = 0
+   for i in range(0, count):
+      if len(group) == 0: 
+         if len(me.piles['Discard Pile']) == 0: 
+            notify(":::WARNING::: No more cards to draw!")
+            break # If our discard pile is empty, we abort because reshuffling will do nothing.
+         else: reshuffle() # If before moving a card the deck is empty, reshuffle.
+      group.top().moveTo(destination) # Then move them one by one into their play hand.
+      drawnC += 1
    if not silent: notify("{} draws {} cards to their play hand.".format(me, count)) # And if we're "loud", notify what happened.
+   return drawnC
 
 def setHandSize(group): # A function to modify a player's hand size. This is used during nighfall when refilling the player's hand automatically.
    global handsize
