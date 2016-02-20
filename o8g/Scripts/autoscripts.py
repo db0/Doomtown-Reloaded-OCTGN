@@ -910,7 +910,7 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
       for skill in skills:
          if (skill[0] == 'Huckster' and spellDifficulty.group(1) == 'Hex'
              or skill[0] == 'Blessed' and spellDifficulty.group(1) == 'Miracle'
-             or skill[0] == 'Mad Science' and spellDifficulty.group(1) == 'Mad Scientist'
+             or skill[0] == 'Mad Scientist' and spellDifficulty.group(1) == 'Mad Science'
              or skill[0] == 'Shaman' and spellDifficulty.group(1) == 'Spirit'):
             neededSkill = skill
       if not neededSkill: # If we didn't find a relevant skill on the dude, then we assume they have the required skill at 0, or they wouldn't have been used.
