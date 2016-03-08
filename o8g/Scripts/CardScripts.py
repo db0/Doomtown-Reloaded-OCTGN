@@ -3616,6 +3616,14 @@ onPlay:SimplyAnnounce{prevent shootout or non-cheatin resolution abilities}
 +++++
 
 .....
+Arnold Stewart
+-----
+55c7c4fb-53ee-4fef-96f2-666ef2f1ec2d
+-----
+
++++++
+GR0B0R0:BootTarget-AutoTargeted-atGadget-onAttachment-isCost$$UseCustomAbility
+.....
 ENDSCRIPTS
 =====
 '''
