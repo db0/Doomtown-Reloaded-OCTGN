@@ -150,6 +150,7 @@ def completeJob():
          elif re.search(r'-LeaderIsTarget',jobResults[1]): targetCards = [leader]
          else: targetCards = [Card(eval(getGlobalVariable('Mark')))]
          executeAutoscripts(jobCard,jobResults[1].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
+         discard(jobCard)
       elif jobResults[2] != 'None': # Otherwise we execute the job fail scripts
          if re.search(r'-MarkNotTheTarget',jobResults[1]): targetCards = None
          elif re.search(r'-LeaderIsTarget',jobResults[1]): targetCards = [leader]
