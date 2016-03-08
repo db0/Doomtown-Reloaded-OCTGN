@@ -1345,14 +1345,17 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       debugNotify("chosenCList: {}".format(chosenCList))
       if not abortedRetrieve:   
          for c in chosenCList:
-            if destination == table: 
+            if destination == table:
+               if re.search(r'-preHost',Autoscript): # This modulator just means the host will be autochosen. Initially only selects ourselves (for Sky)
+                  preHost = card
+               else: preHost = None
                if re.search(r'-payCost',Autoscript): # This modulator means the script is going to pay for the card normally
                   preReducRegex = re.search(r'-reduc([0-9])',Autoscript) # this one means its going to reduce the cost a bit.
                   if preReducRegex: preReduc = num(preReducRegex.group(1))
                   else: preReduc = 0
-                  playcard(c,costReduction = preReduc, scripted = True)
+                  playcard(c,costReduction = preReduc, scripted = True, preHost = preHost)
                else:
-                  placeCard(c)
+                  placeCard(c,preHost = preHost)
                   executePlayScripts(c, 'PLAY') # We execute the play scripts here only if the card is 0 cost.
                   autoscriptOtherPlayers('CardPlayed',c)            
             else: c.moveTo(destination)

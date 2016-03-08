@@ -1,6 +1,13 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.12.3.x
+
+* Stopped asking so much about being in high noon when using scripted cards.
+* Jobs will now discard themselves after they're done
+* Arnold Stewart is now scripted.
+* Sky will now autohost the sidekick on herself.
+
 ### 1.12.2.x
 
 * Fixed Luke's ability

@@ -3293,7 +3293,7 @@ bc2f230e-1c4a-47fe-ab97-31a58112e473
 -----
 
 +++++
-GR0B0R1:Retrieve1Card-grabSidekick-toTable-payCost
+GR0B0R1:Retrieve1Card-grabSidekick-toTable-payCost-preHost
 .....
 Riorden O'Lithen
 -----
