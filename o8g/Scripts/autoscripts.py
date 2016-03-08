@@ -1177,7 +1177,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                preReducRegex = re.search(r'-reduc([0-9])',Autoscript) # this one means its going to reduce the cost a bit.
                if preReducRegex: preReduc = num(preReducRegex.group(1))
                else: preReduc = 0
-               playcard(targetCard,costReduction = preReduc)
+               playcard(targetCard,costReduction = preReduc, scripted = True)
             else:
                placeCard(targetCard)
                executePlayScripts(targetCard, 'PLAY') # We execute the play scripts here only if the card is 0 cost.
@@ -1350,7 +1350,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
                   preReducRegex = re.search(r'-reduc([0-9])',Autoscript) # this one means its going to reduce the cost a bit.
                   if preReducRegex: preReduc = num(preReducRegex.group(1))
                   else: preReduc = 0
-                  playcard(c,costReduction = preReduc)
+                  playcard(c,costReduction = preReduc, scripted = True)
                else:
                   placeCard(c)
                   executePlayScripts(c, 'PLAY') # We execute the play scripts here only if the card is 0 cost.
