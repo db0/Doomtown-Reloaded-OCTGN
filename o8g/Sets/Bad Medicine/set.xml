@@ -327,7 +327,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Feat" />
+         <property name="Keywords" value="Feat-Technique" />
          <property name="Text" value="If revealed for a Technique pull, you may unboot this dude, look at the top three cards of your deck, and discard any of them. Return the rest to your deck in the same order.&#xD;&#xA;&#xD;&#xA;Noon/Shootout Technique: Place this card on top of your deck, or draw a card." />
          <property name="Instructions" value="" />
       </card>
