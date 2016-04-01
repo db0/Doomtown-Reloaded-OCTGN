@@ -155,7 +155,6 @@ def completeJob():
          elif re.search(r'-LeaderIsTarget',jobResults[1]): targetCards = [leader]
          else: targetCards = [Card(eval(getGlobalVariable('Mark')))]
          executeAutoscripts(jobCard,jobResults[2].replace('++','$$'),action = 'USE',targetCards = targetCards) # If the spell is succesful, execute it's effects
-      discard(jobCard)
       if getGlobalVariable('Shootout') == 'True': 
          if getGlobalVariable('Shootout') == 'True': atTimedEffects("ShootoutEnd")
       setGlobalVariable('Mark','None') # We also clear the Called Out variable just in case
@@ -237,14 +236,44 @@ def setup(group,x=0,y=0):
          placeCard(card,'SetupDude',dudecount)
          dudecount += 1 # This counter increments per dude, ad we use it to move each other dude further back.
          payCost(card.Cost) # Pay the cost of the dude
-         #modInfluence(card.Influence, silent) # Add their influence to the total
          concat_dudes += '{}. '.format(card) # And prepare a concatenated string with all the names.
       else: # If it's any other card...
-         placeCard(card,'SetupOther')
-         payCost(card.Cost) # We pay the cost 
-         modControl(card.Control) # Add any control to the total
-         #modInfluence(card.Influence) # Add any influence to the total
-         concat_other = ', brings {} into play'.format(card) # And we create a special concat string to use later for the notification.
+         if card.Type == "Goods" or card.Type == "Spell" or (card.Type == "Action" and re.search(r'Condition',card.Keywords)): 
+            hostCard = findHost(card)
+            if card.Type == "Goods" or card.Type == "Spell":
+               if re.search('Gadget', card.Keywords):
+                  if hostCard.Type == 'Dude':
+                     if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"): 
+                        gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
+                        hostCard.orientation = Rot90
+                        notify("{} attempted to manufacture a {} and pulled a {} {}".format(hostCard,card,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+                     else: notify("{} has created a {} without a gadget skill check.".format(hostCard, card))
+                  else:
+                     if confirm("You are trying to create a gadget. Would you like to do a gadget skill check at this point?"):
+                        myDudes = [dude for dude in table if dude.controller == me and dude.orientation == Rot0 and re.search(r'Mad Scientist',dude.Keywords)]
+                        if not len(myDudes):
+                           if confirm("You do not seem to have an available mad scientist to build this gadget. Abort the build?"): 
+                              me.GhostRock += num(card.Cost)
+                              notify(":> {} has aborted the purchase. {} Ghost rock was returned".format(me,num(card.Cost)))
+                              return
+                           else:
+                              myDudes = [dude for dude in table if dude.controller == me and re.search(r'Mad Scientist',dude.Keywords)]
+                        choice = SingleChoice('Choose one of your available Mad Scientists to build this gadget', makeChoiceListfromCardList(myDudes))
+                        if choice != None: 
+                           gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
+                           myDudes[choice].orientation = Rot90
+                           notify("{} attempted to manufacture a {} on {} and pulled a {} {}".format(myDudes[choice],card,hostCard,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+                        else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
+                     else: notify("{} has attached a {} on {} without a gadget skill check.".format(me, card, hostCard))
+               elif card.Type == "Spell": notify("{} has learned {}.".format(hostCard, card))
+            else: notify("{} has purchased {}.".format(hostCard, card))
+            payCost(card.Cost) # Pay the cost of the dude
+            attachCard(card,hostCard)
+            concat_other = ', attaches {} to {}'.format(card,hostCard) # And we create a special concat string to use later for the notification.
+         else:
+            placeCard(card,'SetupOther')
+            payCost(card.Cost) # We pay the cost 
+            concat_other = ', brings {} into play'.format(card) # And we create a special concat string to use later for the notification.
    reCalculate(notification = 'silent')
    if dudecount == 0: concat_dudes = 'and has no starting dudes. ' # In case the player has no starting dudes, we change the notification a bit.
    refill() # We fill the player's play hand to their hand size (usually 5)
@@ -312,7 +341,7 @@ def ace(card, x = 0, y = 0, silent = False): # Ace a card. I.e. kill it and send
    mute()
    cardowner = card.owner # We need to save the card onwer for later
    if card.highlight != DrawHandColor: # We don't want to do anything else except move cards when they're not really in play.
-      if card.markers[mdict['Bounty']]: notify("{} was wanted! Don't forget to collect {} bounty.".format(card,card.markers[mdict['Bounty']])) # Remind the player to take a bounty for wanted dudes.
+      if card.markers[mdict['Bounty']] and not silent: notify(":::INFO::: {} was wanted! Don't forget to collect {} bounty.".format(card,card.markers[mdict['Bounty']])) # Remind the player to take a bounty for wanted dudes.
       #cardRMsync(card) # This function removes any Influence and Control Points that card had from your total. 
                        # We need to do it before the card is moved to the boot hill because by then, the markers are removed.
    # Remind the player to take a bounty for wanted dudes. In the future this will be automated.
@@ -346,17 +375,19 @@ def discard(card, x = 0, y = 0, silent = False): # Discard a card.
    mute()
    cardowner = card.owner
    if card.highlight != DrawHandColor and card.highlight != EventColor: # If the card being discarded was not part of a draw hand
-      if getGlobalVariable('Shootout') == 'True' and card.markers[mdict['Bounty']]: notify("{} was wanted! Don't forget to collect {} bounty.".format(card,card.markers[mdict['Bounty']])) # Remind the player to take a bounty for wanted dudes.
+      if getGlobalVariable('Shootout') == 'True' and card.markers[mdict['Bounty']] and not silent: notify(":::INFO::: {} was wanted! Don't forget to collect {} bounty.".format(card,card.markers[mdict['Bounty']])) # Remind the player to take a bounty for wanted dudes.
       #cardRMsync(card) # Then remove it's influence / CP from the player's pool
       if not silent: 
          if card.highlight != DummyColor: notify("{} has discarded {}.".format(me, card))
          else: notify("{} has cleared the resident effect of {}.".format(me, card))
    clearAttachLinks(card,'Discard')
    reCalculate(notification = 'silent')
-   if (card.highlight == EventColor and re.search('Ace this card', card.Text)) or (card.Type == 'Joker' and card.highlight == DrawHandColor): # If the card being discarded was an event in a lowball hand or a joker in a draw hand
+   if (card.highlight == EventColor and re.search('Ace this card', card.Text)) or (card.Type == 'Joker' and card.highlight == DrawHandColor and card.model != 'e2e638ff-27cb-4704-b324-bd318dc9170a'): # If the card being discarded was an event in a lowball hand or a joker in a draw hand
                                                                                                         # And that card had instructions to be aced
       card.moveTo(cardowner.piles['Boot Hill'])                                                         # Then assume player error and ace it now        
-      if card.Type == 'Joker': notify("{} has been aced as per card instructions.".format(card)) # And inform the players.
+      if card.Type == 'Joker' and card.model != 'e2e638ff-27cb-4704-b324-bd318dc9170a': 
+         notify("{} has been aced as per card instructions.".format(card)) # And inform the players.
+         autoscriptOtherPlayers('UsedJokerAced',card)
       else: notify("{} was the active event and has been aced as per card instructions.".format(card)) 
    else: card.moveTo(cardowner.piles['Discard Pile']) # Cards aced need to be sent to their owner's discard pile
    debugNotify("<<< discard()") #Debug
@@ -492,6 +523,7 @@ def NightfallUnboot(group, x = 0, y = 0): # This function simply runs all the ca
                  if card.controller == me)
    for card in cards: nightfall(card)
    notify("Sundown refreshes {} cards and refills their hand back to {}.".format(me, handsize))
+   atTimedEffects("TurnEnd")
    
 def doesNotUnboot(card, x = 0, y = 0): # Mark a card as "Does not unboot" and increase the duration. We use a card marker to do this.
    mute()
@@ -502,11 +534,11 @@ def spawnGunslinger(group = table, x = 0, y = 0): # Simply put a fake card in th
    card = table.create("94fe7823-077c-4abd-9278-6e64bda6dc64", x, y, 1)
    return card
 
-def spawnNature(group, x = 0, y = 0): # Simply put a fake card in the game.
+def spawnNature(group = table, x = 0, y = 0): # Simply put a fake card in the game.
    card = table.create("c4689399-c350-46b3-a79a-f8c62d926cd5", x, y, 1)
    return card
 
-def spawnAncestor(group, x = 0, y = 0): # Simply put a fake card in the game.
+def spawnAncestor(group = table, x = 0, y = 0): # Simply put a fake card in the game.
    card = table.create("53a212a6-34a6-47b0-bb24-45f1888bebf6", x, y, 1)
    reCalculate()
    return card
@@ -517,7 +549,6 @@ def HandRankGuide(group, x = 0, y = 0): # Put the Hand Rank guide onto the table
 def inspectCard(card, x = 0, y = 0): # This function shows the player the card text, to allow for easy reading until High Quality scans are procured.
    if card.Text == '': information("{} has no text".format(card.name))
    else: information("{}".format(card.Text))
-   if len(getPlayers()) == 1: confirm("{}".format(CardsAA.get(card.model,'')))
    
 def inspectTarget(table, x = 0, y = 0): # This function shows the player the card text, to allow for easy reading until High Quality scans are procured.
    for c in table:
@@ -813,7 +844,7 @@ def plusValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValueNoonMinus']] = 0
    else:
       card.markers[mdict['ValueNoonPlus']] += valuemod 
-   #if calcValue(card,'raw') > 13: card.markers[mdict['ValueNoonPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
+   if calcValue(card,'raw') > 13: card.markers[mdict['ValueNoonPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
    if not silent:
       notify("{} marks that {}'s value has increased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
         
@@ -828,7 +859,7 @@ def minusValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValueNoonPlus']] = 0
    else:
       card.markers[mdict['ValueNoonMinus']] += valuemod         
-   #if calcValue(card,'raw') < 1: card.markers[mdict['ValueNoonMinus']] = numrank(card.Rank)
+   if calcValue(card,'raw') < 1: card.markers[mdict['ValueNoonMinus']] = numrank(card.Rank)
    if not silent:
       notify("{} marks that {}'s value has decreased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
 
@@ -844,7 +875,7 @@ def plusPermValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValuePermMinus']] = 0
    else:
       card.markers[mdict['ValuePermPlus']] += valuemod 
-   #if calcValue(card,'raw') > 13: card.markers[mdict['ValuePermPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
+   if calcValue(card,'raw') > 13: card.markers[mdict['ValuePermPlus']] = 13 - numrank(card.Rank) # Max value is 13 (King)
    if not silent:
       notify("{} marks that {}'s value has permanently increased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
         
@@ -859,7 +890,7 @@ def minusPermValue(card, x = 0, y = 0, silent = False, valuemod = None):
          card.markers[mdict['ValuePermPlus']] = 0
    else:
       card.markers[mdict['ValuePermMinus']] += valuemod         
-   #if calcValue(card,'raw') < 1: card.markers[mdict['ValuePermMinus']] = numrank(card.Rank)
+   if calcValue(card,'raw') < 1: card.markers[mdict['ValuePermMinus']] = numrank(card.Rank)
    if not silent:
       notify("{} marks that {}'s value has permanently decreased by {} and is now {}.".format(me, card, valuemod, calcValue(card)))
 
@@ -1272,15 +1303,13 @@ def pull(group = me.Deck, x = 0, y = 0, silent = False): # Draws one card from t
    if len(Deck) == 0: # In case the deck is empty, invoke the reshuffle function.
       notify("{}'s Deck empty. Will reshuffle discard pile".format(me))
       reshuffle()
-      rnd(1, 100) # Bug workaround. We wait a bit so that we are sure the cards are there.
-   Deck.top().moveTo(me.piles['Discard Pile']) # Move the top card from the deck into the discard pile
-   rnd(1, 100) # Wait a bit more, as in multiplayer games, things are slower.
-   rank = me.piles['Discard Pile'].top().Rank # Save the card's rank
-   suit = me.piles['Discard Pile'].top().Suit # Save the card's suit
+   card = me.Deck.top()
+   card.moveTo(me.piles['Discard Pile']) # Move the top card from the deck into the discard pile
+   rank = card.Rank # Save the card's rank
+   suit = card.Suit # Save the card's suit
    if not silent: notify("{} Pulled a {} {}.".format(me, fullrank(rank), fullsuit(suit)))  # Announce them nicely to everyone.
-   if me.piles['Discard Pile'].top().Type == 'Joker': 
-      me.piles['Discard Pile'].top().moveTo(me.piles['Boot Hill'])
-      #notify(":> The Joker was aced as per instructions")
+   executePlayScripts(card, 'PULL')
+   if card.Type == 'Joker' and card.model != 'e2e638ff-27cb-4704-b324-bd318dc9170a': card.moveTo(me.piles['Boot Hill'])
    return (rank,suit)
 
 def drawMany(group, count = None, destination = None, silent = False): # This function draws a variable number cards into the player's hand.
@@ -1467,7 +1496,9 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
       i += 1 # prepare for the next card.
    cheatResult = cheatinchk(rank,suit)
    if len([c for c in drawHandCards if re.search(r"Devil's Joker",c.Name)]): cheatResult = " (Cheatin'!)" # Checking for Devil's Jokers
+   if len([c for c in drawHandCards if re.search(r"Heretic Joker",c.Name)]): cheatResult = "" # Checking for Devil's Jokers
    if cheatResult != '': 
+      if chkHenryMoran(type): return
       if type == 'shootout':
          if playeraxis == Xaxis:
             cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp - 30, 1, False)
@@ -1540,9 +1571,9 @@ def revealLowballHand(group = me.piles['Draw Hand'], revealReady = False, manual
       else:
          notify("{} is waiting patiently for everyone else to reveal their lowball hand...".format(me))
    else:
-   # Checking for events before passing on to the reveal function
       me.setGlobalVariable('RevealReady','False')
       if not len(group): return # IF we have an empty hand just exit silently)
+      # Checking for events before passing on to the reveal function
       evCount = 0
       foundEvents = ['','','','',''] # We need to declare the list because it will not work if it doesn't exist.
       for card in group:
@@ -1561,7 +1592,7 @@ def drawRevealHand(group):
    if len(group) == 0: drawhandMany()
    elif getGlobalVariable('Shootout') == 'True': revealShootoutHand(group, manual = False)
    else: revealLowballHand(group, manual = False)
-
+   
 def prepLowball(group = me.Deck):
 # This function is like playLowball, but merely preares you to do Lowball rather than doing the draw and reveal. Allows you a chance to affect the ante and your draw hand 
    mute()
@@ -1570,7 +1601,7 @@ def prepLowball(group = me.Deck):
       goToGamblin()
    betLowball()
    notify("{} has ante'd up for lowball".format(me))
-   
+
 def playLowball(group = me.Deck):
 # This function does the following. 
 # * It takes one Ghost Rock from the player and adds it to the shared Lowball pot.

@@ -176,6 +176,7 @@ def calcValue(card, type = 'poker'):
    attachedCards = [Card(att_id) for att_id in hostCards if hostCards[att_id] == card._id]
    for c in attachedCards: 
       numvalue += c.markers[mdict['ValueNoonPlus']] - c.markers[mdict['ValueNoonMinus']] + c.markers[mdict['ValueShootoutPlus']] - c.markers[mdict['ValueShootoutMinus']] + c.markers[mdict['ValuePermPlus']] - c.markers[mdict['ValuePermMinus']]
+      if c.Name == 'Tusk' and c.controller != me: numvalue += 5
    if type == 'raw': return numvalue
    if numvalue > 12 and type == 'numeral': return 13
    if numvalue > 12: return 'K'
@@ -183,14 +184,16 @@ def calcValue(card, type = 'poker'):
    if numvalue == 12: return 'Q'
    if numvalue == 11 and type == 'numeral': return 11
    if numvalue == 11: return 'J'
-   if numvalue <= 1 and type == 'numeral': return 1
-   if numvalue <= 1: return 'A'
-   #if numvalue < 1: return 0
+   if numvalue == 1 and type == 'numeral': return 1
+   if numvalue == 1: return 'A'
+   if numvalue < 1: return 0
    return numvalue
 
 def chkTargeting(card):
    debugNotify(">>> chkTargeting(){}".format(extraASDebug())) #Debug
    for Autoscript in CardsAS.get(card.model,'').split('||'):
+      if re.search(r'-onlyInShootouts',Autoscript) and getGlobalVariable('Shootout') != 'True': continue
+      if re.search(r'-onlyInNoon',Autoscript) and getGlobalVariable('Shootout') == 'True': continue
       for autoS in Autoscript.split('$$'):
          if (re.search(r'on(Play)[^|]+(?<!Auto)Targeted', autoS)
                and len(findTarget(autoS)) == 0
@@ -241,16 +244,23 @@ def chkGadgetCraft(card):
       if confirm("You are trying to create a gadget {}. Would you like to do a gadget skill check at this point?".format(card.Type)):
          myDudes = [dude for dude in table if dude.controller == me and dude.orientation == Rot0 and re.search(r'Mad Scientist',dude.Keywords)]
          if not len(myDudes):
-            if confirm("You do not seem to have an available mad scientist to build this gadget. Abort the build?"):
+            if confirm("You do not seem to have an available unbooted mad scientist to build this gadget. Abort the build?"):
                success = False
                return
             else:
                myDudes = [dude for dude in table if dude.controller == me and re.search(r'Mad Scientist',dude.Keywords)]
-         choice = SingleChoice('Choose one of your available Mad Scientists to build this gadget dude', makeChoiceListfromCardList(myDudes))
-         if choice != None: 
+         MadScientist = None
+         for dude in myDudes:
+            if dude.targetedBy and dude.targetedBy == me: 
+               MadScientist = dude
+               break
+         if not MadScientist:
+            choice = SingleChoice('Choose one of your available Mad Scientists to build this gadget dude', makeChoiceListfromCardList(myDudes))
+            if choice != None: MadScientist = myDudes[choice]
+         if MadScientist:
             gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
-            myDudes[choice].orientation = Rot90
-            notify("{} attempted to manufacture a {} and pulled a {} {}".format(myDudes[choice],card,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+            MadScientist.orientation = Rot90
+            notify("{} attempted to manufacture a {} and pulled a {} {}".format(MadScientist,card,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
          else: notify("{} has built a {} without a gadget skill check.".format(me, card))
       else: notify("{} has built a {} without a gadget skill check.".format(me, card))
    return success
@@ -281,7 +291,22 @@ def fetchSkills(card):
                         multiplier = per(autoS, card)
                         skillRank += multiplier * num(skillBonusRegex.group(1))
                         debugNotify('Skill now {}'.format(skillRank))
-               # Finished checking effects
+               # Finished checking effects on Dude themselves. Checking Attachments
+               hostCards = eval(getGlobalVariable('Host Cards'))
+               attachedCards = [Card(att_id) for att_id in hostCards if hostCards[att_id] == card._id]
+               for attachment in attachedCards:
+                  for marker in attachment.markers:
+                     if re.search(r'Skill Bonus',marker[0]): skillRank += attachment.markers[marker]
+                     if re.search(r'Skill Penalty',marker[0]): skillRank -= attachment.markers[marker]
+                  debugNotify('Skill now {}'.format(skillRank))
+                  if CardsAS.get(attachment.model,'') != '':
+                     Autoscripts = CardsAS.get(attachment.model,'').split('||')
+                     for autoS in Autoscripts:
+                        skillBonusRegex = re.search(r'constantAbility:Skill Bonus:([0-9]+)',autoS)
+                        if skillBonusRegex and checkSpecialRestrictions(autoS,attachment):
+                           multiplier = per(autoS, attachment,targetCards = findTarget(autoS))
+                           skillRank += multiplier * num(skillBonusRegex.group(1))
+                           debugNotify('Skill now {}'.format(skillRank))                  
                skillList.append((skillRegex.group(1),skillRank)) # If we discover a skill, we add it in a tuple with the skill first, then its numerical value second.
    #confirm(str(skillList))        
    return skillList
@@ -353,39 +378,30 @@ def revealCards(cardList): # Moves all cards in a list to the table and reveals 
       if iter == len(cardList) - 1: notice += "{}.".format(card)
       else: notice += "{}, ".format(card)
    notify(notice)
-      
-def reduceCost(card, action = 'PLAY', fullCost = 0, dryRun = False, reversePlayer = False): 
-   # reversePlayer is a variable that holds if we're looking for cost reducing effects affecting our opponent, rather than the one running the script.
-   global costReducers,costIncreasers
-   type = action.capitalize()
-   #if fullCost == 0: return 0 # Not used as we now have actions which also increase costs
-   fullCost = abs(fullCost)
-   reduction = 0
-   ### First we check if the card has an innate reduction.
-   Autoscripts = CardsAS.get(card.model,'').split('||')
-   if len(Autoscripts):
-      debugNotify("Checking for onPay reductions")
-      for autoS in Autoscripts:
-         if not re.search(r'onPay', autoS):
-            debugNotify("No onPay trigger found in {}!".format(autoS), 2)
-            continue
-         reductionSearch = re.search(r'Reduce([0-9S]+)Cost({}|All)'.format(type), autoS)
-         oppponent = ofwhom('-ofOpponent')
-         if reductionSearch.group(1) == 'S': # S is for Special reductions, like Ivor Howley
-            if card.model == 'e1d93d5b-222d-4a82-b18f-62728f7791c0': # Ivor Howley xp
-               count = len([c for c in table if re.search(r'Abomination',c.Keywords)])
-               for pl in getActivePlayers(): count += len([c for c in pl.piles['Boot Hill'] if re.search(r'Abomination',c.Keywords)])
-               multiplier = 1
-         else:
-            count = num(reductionSearch.group(1))
-            targetCards = findTarget(autoS,card = card)
-            multiplier = per(autoS, card, 0, targetCards)
-         reduction += (count * multiplier)
-         if reduction > fullCost: reduction = fullCost
-         fullCost -= (count * multiplier)
-         if reduction > 0 and not dryRun: notify("-- {}'s full cost is reduced by {}".format(card,reduction))
-   return reduction
-
+   
+def getKeywords(card): # A function which combines the existing card keywords, with markers which give it extra ones.
+   debugNotify(">>> getKeywords(){}".format(extraASDebug())) #Debug
+   global Stored_Keywords
+   #confirm("getKeywords") # Debug
+   keywordsList = []
+   cKeywords = card.Keywords # First we try a normal grab, if the card properties cannot be read, then we flip face up.
+   strippedKeywordsList = cKeywords.split('-')
+   for cardKW in strippedKeywordsList:
+      strippedKW = cardKW.strip() # Remove any leading/trailing spaces between traits. We need to use a new variable, because we can't modify the loop iterator.
+      if strippedKW: keywordsList.append(strippedKW) # If there's anything left after the stip (i.e. it's not an empty string anymrore) add it to the list.   
+   if card.markers:
+      for key in card.markers:
+         markerKeyword = re.search('Keyword:([\w ]+)',key[0])
+         if markerKeyword:
+            #confirm("marker found: {}\n key: {}".format(markerKeyword.groups(),key[0])) # Debug
+            keywordsList.append(markerKeyword.group(1))
+   keywords = ''
+   for KW in keywordsList:
+      keywords += '{}-'.format(KW)
+   debugNotify("<<< getKeywords() by returning: {}.".format(keywords[:-1]), 3)
+   return keywords[:-1] # We need to remove the trailing dash '-'
+   
+   
 #---------------------------------------------------------------------------
 # Counter Manipulation
 #---------------------------------------------------------------------------
@@ -648,18 +664,20 @@ def findHost(card):
       elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Blessed-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to get this inspired with this Miracle") 
       elif re.search(r'Shaman',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Shaman-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to communicate with this Spirit") 
       else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Spell") 
+   elif card.Name == 'Blight Serum': # Blight Serum is a special case and it attaches to both Dudes and Deeds.
+      potentialHosts = findTarget('Targeted-atDude_or_Deed-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to receive these goods") 
    else: potentialHosts = findTarget('Targeted-atDude-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to receive these goods") 
    if len(potentialHosts) == 0: # If they haven't targeted a normally valid card, we try to discover one they've just targeted anyway
       potentialHosts = findTarget('Targeted-atDeed_or_Dude_or_Outfit',choiceTitle = "Choose one of your dudes to attach this {}".format(card.Type)) # If they manually targeted a card, we let them go through with it, in case they know something we don't
    if len(potentialHosts) == 0: # If they haven't targeted a card, we try to discover one
-      if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDeed-isUnbooted-choose1') 
+      if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDeed-choose1') 
       elif re.search(r'Condition',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-choose1',choiceTitle = "Choose one of your cards attach this condition") 
       elif card.type == 'Spell':
-         if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Huckster-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
-         elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Blessed-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to get inspired with this Miracle") 
-         elif re.search(r'Shaman',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Shaman-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to communicate with this Spirit") 
-         else: potentialHosts = findTarget('DemiAutoTargeted-atDude-isUnbooted-choose1-targetMine',choiceTitle = "Choose one of your dudes to learn this Spell") 
-      else: potentialHosts = findTarget('DemiAutoTargeted-atDude-isUnbooted-choose1',choiceTitle = "Choose one of your dudes to receive these goods") 
+         if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Huckster-choose1-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
+         elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Blessed-choose1-targetMine',choiceTitle = "Choose one of your dudes to get inspired with this Miracle") 
+         elif re.search(r'Shaman',card.Keywords): potentialHosts = findTarget('DemiAutoTargeted-atDude_and_Shaman-choose1-targetMine',choiceTitle = "Choose one of your dudes to communicate with this Spirit") 
+         else: potentialHosts = findTarget('DemiAutoTargeted-atDude-choose1-targetMine',choiceTitle = "Choose one of your dudes to learn this Spell") 
+      else: potentialHosts = findTarget('DemiAutoTargeted-atDude-choose1',choiceTitle = "Choose one of your dudes to receive these goods") 
    debugNotify("Finished gatherting potential hosts",2)
    if len(potentialHosts) == 0: # If they still didn't select a target, we abort.
       delayed_whisper(":::ERROR::: Please Target a valid dude for these goods")
@@ -673,13 +691,16 @@ def attachCard(attachment,host,facing = 'Same'):
    hostCards = eval(getGlobalVariable('Host Cards'))
    hostCards[attachment._id] = host._id
    setGlobalVariable('Host Cards',str(hostCards))
-   orgAttachments(host,facing)
+   if host.controller != me:
+      attachment.moveToTable(0,0)
+      giveCard(attachment,host.controller)
+      remoteCall(host.controller,'orgAttachments',[host,facing])
+   else: orgAttachments(host,facing)
    debugNotify("<<< attachCard()", 3)
    
 def clearAttachLinks(card,type = 'Discard'):
 # This function takes care to discard any attachments of a card that left play
 # It also clear the card from the host dictionary, if it was itself attached to another card
-# If the card was hosted by a Daemon, it also returns the free MU token to that daemon
    debugNotify(">>> clearAttachLinks()") #Debug
    hostCards = eval(getGlobalVariable('Host Cards'))
    cardAttachementsNR = len([att_id for att_id in hostCards if hostCards[att_id] == card._id])
@@ -690,8 +711,6 @@ def clearAttachLinks(card,type = 'Discard'):
             if Card(attachmentID) in table: 
                debugNotify("Attachment exists. Trying to remove.", 2)      
                discard(Card(attachmentID)) # We always just discard attachments 
-               #if type == 'Discard': discard(Card(attachmentID))
-               #else: ace(Card(attachmentID))
             del hostCards[attachmentID]
    debugNotify("Checking if the card is attached to unlink.", 2)      
    if hostCards.has_key(card._id):
@@ -702,6 +721,16 @@ def clearAttachLinks(card,type = 'Discard'):
    else: setGlobalVariable('Host Cards',str(hostCards))
    debugNotify("<<< clearAttachLinks()", 3) #Debug   
 
+def unlinkHosts(card): #Checking if the card is attached to unlink.
+   debugNotify(">>> returnHostTokens()") #Debug
+   hostCards = eval(getGlobalVariable('Host Cards'))
+   if hostCards.has_key(card._id):
+      hostCard = Card(hostCards[card._id])
+      del hostCards[card._id] # If the card was an attachment, delete the link
+      setGlobalVariable('Host Cards',str(hostCards)) # We need to store again before orgAttachments takes over
+      orgAttachments(hostCard) # Reorganize the attachments if the parent is not a daemon-type card.
+   debugNotify("<<< returnHostTokens()", 3) #Debug   
+   
 
 def orgAttachments(card,facing = 'Same'):
 # This function takes all the cards attached to the current card and re-places them so that they are all visible
@@ -730,8 +759,9 @@ def orgAttachments(card,facing = 'Same'):
       else: # else is the default of 'Same' and means the facing stays the same as before.
          if attachment.isFaceUp: FaceDown = False
          else: FaceDown = True
+      if attachment.controller != me: remoteCall(attachment.controller,'giveCard',[attachment,me])
       attachment.moveToTable(x + (xAlg * attNR), y + (yAlg * attNR),FaceDown)
-      if attachment.controller == me and FaceDown: attachment.peek()
+      if FaceDown: attachment.peek()
       attachment.setIndex(len(cardAttachements) - attNR) # This whole thing has become unnecessary complicated because sendToBack() does not work reliably
       debugNotify("{} index = {}".format(attachment,attachment.getIndex), 4) # Debug
       attNR += 1
@@ -749,6 +779,40 @@ def sendBack(card): # Function which asks the current card controller to send it
    mute()
    if card.controller == me: card.sendToBack()
    else: remoteCall(card.controller,'sendBack',[card])
+   
+   
+def reduceCost(card, action = 'PLAY', fullCost = 0, dryRun = False, reversePlayer = False): 
+   # reversePlayer is a variable that holds if we're looking for cost reducing effects affecting our opponent, rather than the one running the script.
+   global costReducers,costIncreasers
+   type = action.capitalize()
+   #if fullCost == 0: return 0 # Not used as we now have actions which also increase costs
+   fullCost = abs(fullCost)
+   reduction = 0
+   ### First we check if the card has an innate reduction.
+   Autoscripts = CardsAS.get(card.model,'').split('||')
+   if len(Autoscripts):
+      debugNotify("Checking for onPay reductions")
+      for autoS in Autoscripts:
+         if not re.search(r'onPay', autoS):
+            debugNotify("No onPay trigger found in {}!".format(autoS), 2)
+            continue
+         reductionSearch = re.search(r'Reduce([0-9S]+)Cost({}|All)'.format(type), autoS)
+         oppponent = ofwhom('-ofOpponent')
+         if reductionSearch.group(1) == 'S': # S is for Special reductions, like Ivor Howley
+            if card.model == 'e1d93d5b-222d-4a82-b18f-62728f7791c0': # Ivor Howley xp
+               count = len([c for c in table if re.search(r'Abomination',c.Keywords)])
+               for pl in getActivePlayers(): count += len([c for c in pl.piles['Boot Hill'] if re.search(r'Abomination',c.Keywords)])
+               multiplier = 1
+         else:
+            count = num(reductionSearch.group(1))
+            targetCards = findTarget(autoS,card = card)
+            multiplier = per(autoS, card, 0, targetCards)
+         reduction += (count * multiplier)
+         if reduction > fullCost: reduction = fullCost
+         fullCost -= (count * multiplier)
+         if reduction > 0 and not dryRun: notify("-- {}'s full cost is reduced by {}".format(card,reduction))
+   return reduction
+   
 #------------------------------------------------------------------------------
 #  Online Functions
 #------------------------------------------------------------------------------
@@ -795,7 +859,6 @@ def fetchCardScripts(group = table, x=0, y=0, silent = False): # Creates 2 dicti
       CardsAS[Split_Details[1].strip()] = Split_Scripts[0].strip()
       CardsAA[Split_Details[1].strip()] = Split_Scripts[1].strip()
       if debugVerbosity >= 5: notify(Split_Details[0].strip() + "-- STORED")
-   whisper("+++ All card scripts refreshed!")
    if debugVerbosity >= 5: # Debug
       notify("CardsAS Dict:\n{}".format(str(CardsAS)))
       notify("CardsAA Dict:\n{}".format(str(CardsAA))) 

@@ -91,6 +91,7 @@ def executePlayScripts(card, action):
          if ((effectType.group(1) == 'onPlay' and action != 'PLAY') or 
              (effectType.group(1) == 'onParticipation' and action != 'PARTICIPATION') or
              (effectType.group(1) == 'onUnparticipation' and action != 'UNPARTICIPATE') or
+             (effectType.group(1) == 'onPull' and action != 'PULL') or
              (effectType.group(1) == 'onThwart' and action != 'THWART')):
             debugNotify("Skipping autoS. Not triggered.\n#### EffectType: {}\n#### action = {}".format(effectType.group(1),action)) 
             continue 
@@ -183,6 +184,7 @@ def useAbility(card, x = 0, y = 0, manual = True): # The start of autoscript act
                         if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 # If a card is repeat, we don't put a marker
                         else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
                      if re.search(r'-isResolution',selectedAutoscript): autoscriptOtherPlayers('Resolution',card) # This is used for cards which specifically trigger from Resolution effects.
+                     if re.search(r'-isShootout',selectedAutoscript): autoscriptOtherPlayers('Shootout',card) # This is used for cards which specifically trigger from Shootout effects.
                else:
                   if num(actionCostRegex.group(1)): 
                      #whisper(":::INFO::: Ability aborted. Returning ghost rock cost")
@@ -264,12 +266,12 @@ def autoscriptOtherPlayers(lookup, origin_card = OutfitCard, count = 1, origin_p
 # Start/End of Turn/Phase trigger
 #------------------------------------------------------------------------------
    
-def atTimedEffects(Time = 'Start'): # Function which triggers card effects at the start or end of the turn.
+def atTimedEffects(Time = 'Gamblin'): # Function which triggers card effects at the start or end of the turn.
    mute()
    global TitleDone
    debugNotify(">>> atTimedEffects() at time: {}".format(Time)) #Debug
    if not Automations['Triggers']: 
-      if Time == 'Start': delayed_whisper(":::WARNING::: Your trigger automations have been deactivated.")
+      if Time == 'Lowball': delayed_whisper(":::WARNING::: Your trigger automations have been deactivated.")
       return
    TitleDone = False
    X = 0
@@ -281,7 +283,7 @@ def atTimedEffects(Time = 'Start'): # Function which triggers card effects at th
       Autoscripts = CardsAS.get(card.model,'').split('||')
       for autoS in Autoscripts:
          debugNotify("Processing {} Autoscript: {}".format(card, autoS))
-         effect = re.search(r'atPhase(Gamblin|Upkeep|High Noon|Sundown|ShootoutStart|ShootoutEnd):(.*)', autoS) #Putting the phase in a group to compare with the Time variable later
+         effect = re.search(r'atPhase(Gamblin|Upkeep|High Noon|Sundown|ShootoutStart|ShootoutEnd|TurnEnd):(.*)', autoS) #Putting the phase in a group to compare with the Time variable later
          if not effect: continue
          debugNotify("Time Regex fits. Script triggers on: {}".format(effect.group(1)))
          if chkPlayer(effect.group(2), card.controller,False) == 0: continue # Check that the effect's origninator is valid. 
@@ -318,11 +320,11 @@ def executeAutoscripts(card,Autoscript,count = 0,action = 'PLAY',targetCards = N
    failedRequirement = False
    X = count # The X Starts as the "count" passed variable which sometimes may need to be passed.
    selectedAutoscripts = Autoscript.split('$$')
-   if debugVerbosity >= 2: notify ('selectedAutoscripts: {}'.format(selectedAutoscripts)) # Debug
    if re.search(r'CustomScript', Autoscript):  
       return CustomScript(card,action) # If it's a customscript, we don't need to try and split it and it has its own checks.
    else: 
       for passedScript in selectedAutoscripts: 
+         if not chkRobinHood(passedScript): continue
          if chkWarn(card, passedScript) == 'ABORT': return 'ABORT'
          if chkPlayer(passedScript, card.controller,False) == 0: continue
          X = redirect(passedScript, card, action, X,targetCards)
@@ -332,8 +334,10 @@ def redirect(Autoscript, card, action, X = 0,targetC = None):
    debugNotify(">>> redirect(){}".format(Autoscript)) #Debug
    global TitleDone
    if re.search(r':Pass\b', Autoscript): return X # Pass is a simple command of doing nothing ^_^. We put it first to avoid checking for targets and so on
-   if not targetC: targetC = findTarget(Autoscript,card = card)
-   if not TitleDone and not (len(targetC) == 0 and re.search(r'AutoTargeted',Autoscript)): # We don't want to put a title if we have a card effect that activates only if we have some valid targets (e.g. Admiral Motti)
+   if not targetC: 
+      #confirm("finding target for {}".format(Autoscript)) #DEbug
+      targetC = findTarget(Autoscript,card = card) # If it's a spell effect, we don't want to select a target until the spell activates.
+   if not TitleDone and not (len(targetC) == 0 and re.search(r'AutoTargeted',Autoscript)): # We don't want to put a title if we have a card effect that activates only if we have some valid targets 
       Phase = re.search(r'after([A-za-z]+)',action)
       if Phase: title = "{}'s Post-{} Effects".format(me,Phase.group(1))
       else: title = "{}'s {}-of-Turn Effects".format(me,action)
@@ -363,7 +367,9 @@ def redirect(Autoscript, card, action, X = 0,targetC = None):
       if DrawX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
    elif regexHooks['RetrieveX'].search(Autoscript): 
       debugNotify("in RetrieveX hook")
-      if RetrieveX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
+      retrieveTuple = RetrieveX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X)
+      if retrieveTuple == 'ABORT': return 'ABORT'
+      X = len(retrieveTuple[1])
    elif regexHooks['TokensX'].search(Autoscript): 
       debugNotify("in TokensX hook")
       if TokensX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
@@ -396,9 +402,6 @@ def redirect(Autoscript, card, action, X = 0,targetC = None):
    elif regexHooks['SpawnX'].search(Autoscript): 
       debugNotify("in SpawnX hook")
       if SpawnX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
-   elif regexHooks['ModifyStatus'].search(Autoscript): 
-      debugNotify("in ModifyStatus hook")
-      if ModifyStatus(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
    elif regexHooks['GameX'].search(Autoscript): 
       debugNotify("in GameX hook")
       if GameX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
@@ -414,6 +417,9 @@ def redirect(Autoscript, card, action, X = 0,targetC = None):
    elif regexHooks['PullX'].search(Autoscript): 
       debugNotify("in PullX hook")
       if PullX(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
+   elif regexHooks['ModifyStatus'].search(Autoscript): 
+      debugNotify("in ModifyStatus hook")
+      if ModifyStatus(Autoscript, announceText, card, targetC, notification = 'Quick', n = X) == 'ABORT': return 'ABORT'
    else: debugNotify("No regexhook match! :(") # Debug
    debugNotify("Loop for scipt {} finished".format(Autoscript), 2)
    return X # If all went well,we return the X.
@@ -1188,7 +1194,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
                notify(":::ERROR::: No valid moveTarget. Aborting!")
                return 'ABORT'
             if moveTarget.group(1) == 'Here': # If the moveTarget is "Here", then we try to figure out the current card's location and set it as the destination.
-               if card.Type == 'Dude' or card.Type == 'Deed': possibleTargets = [card]
+               if card.Type == 'Dude' or card.Type == 'Deed' or card.Type == 'Outfit': possibleTargets = [card]
                elif card.Type == 'Action': 
                   notify(":::ERROR::: Bad Script. Actions should never 'moveToHere'. Aborting!")
                   return 'ABORT'
@@ -1316,7 +1322,6 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
             if re.search(r'-tellPlayer',Autoscript): delayed_whisper(":::INFO::: {} card is: {}".format(numOrder(c.getIndex),c)) # The -tellPlayer modulator, will tell the one retrieving what all cards were, even if they are not valid targets
             if checkCardRestrictions(gatherCardProperties(c), restrictions) and checkSpecialRestrictions(Autoscript,c):
                cardList.append(c)
-               if re.search(r'-isTopmost', Autoscript) and len(cardList) == count: break # If we're selecting only the topmost cards, we select only the first matches we get. 
       debugNotify("cardList: {}".format(cardList),3)
       chosenCList = []
       abortedRetrieve = False
@@ -1345,17 +1350,14 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       debugNotify("chosenCList: {}".format(chosenCList))
       if not abortedRetrieve:   
          for c in chosenCList:
-            if destination == table:
-               if re.search(r'-preHost',Autoscript): # This modulator just means the host will be autochosen. Initially only selects ourselves (for Sky)
-                  preHost = card
-               else: preHost = None
+            if destination == table: 
                if re.search(r'-payCost',Autoscript): # This modulator means the script is going to pay for the card normally
                   preReducRegex = re.search(r'-reduc([0-9])',Autoscript) # this one means its going to reduce the cost a bit.
                   if preReducRegex: preReduc = num(preReducRegex.group(1))
                   else: preReduc = 0
-                  playcard(c,costReduction = preReduc, scripted = True, preHost = preHost)
+                  playcard(c,costReduction = preReduc, scripted = True)
                else:
-                  placeCard(c,preHost = preHost)
+                  placeCard(c)
                   executePlayScripts(c, 'PLAY') # We execute the play scripts here only if the card is 0 cost.
                   autoscriptOtherPlayers('CardPlayed',c)            
             else: c.moveTo(destination)
@@ -1371,7 +1373,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
    else: announceString = "{} {} {} {}.".format(announceText, destiVerb, cardNames, sourcePath)
    if notification and multiplier > 0: notify(':> {}.'.format(announceString))
    debugNotify("<<< RetrieveX()")
-   return announceString
+   return (announceString,chosenCList)
    
 #------------------------------------------------------------------------------
 # Helper Functions
@@ -1381,7 +1383,7 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
    debugNotify(">>> findTarget(){}".format(extraASDebug(Autoscript))) #Debug
    debugNotify("fromHand = {}. card = {}".format(fromHand,card)) #Debug
    if fromHand == True or re.search(r'-fromHand',Autoscript): group = me.hand
-   elif re.search(r'-fromCommonReserves',Autoscript): group = grabFullReserves() # We can afford to use a list as a group, because we're not using any special class functions here, just stuff lists can also do
+   elif re.search(r'-fromDrawHand',Autoscript): group = me.piles['Draw Hand']
    elif re.search(r'-fromTopDeckMine',Autoscript): # Quick job because I cannot be bollocksed.
       debugNotify("Returing my top deck card",2)
       return [me.piles['Deck'].top()]
@@ -1391,6 +1393,10 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
       return [opponentPL.piles['Deck'].top()]
    else: group = table
    foundTargets = []
+   #confirm(Autoscript) #Debug
+   RemoveSecondaryScripts = Autoscript.split('<')
+   Autoscript = RemoveSecondaryScripts[0]
+   #confirm(Autoscript) # Debug
    if re.search(r'Targeted', Autoscript):
       requiredAllegiances = []
       targetGroups = prepareRestrictions(Autoscript)
@@ -1436,12 +1442,12 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
                   if hostCards[attachment] == card._id and attachment == targetLookup._id: 
                      debugNotify("Attachment found! {}".format(targetLookup))
                      isAttachment = True
-                  if attachment == card._id: parent = Card(hostCards[attachment]) # We also want to check if the attachments of the parent are a valid target
+                  if attachment == card._id: parent = Card(hostCards[attachment]) # We also want to check if the attachments of the parent are a valid target (e.g. Spirit Horse)
                if parent: 
                   for attachment in hostCards:
                      if hostCards[attachment] == parent._id and attachment == targetLookup._id: 
                         debugNotify("Attachment found! {}".format(targetLookup))
-                        isAttachment = True               
+                        isAttachment = True                  
                if not isAttachment: 
                   debugNotify("{} is not  attached to {}. Skipping".format(targetLookup,card))
                   continue
@@ -1530,8 +1536,9 @@ def gatherCardProperties(card):
    cardProperties.append(card.Type) # We are going to check its Type
    debugNotify("Appending Outfit",4) # Debug                
    cardProperties.append(card.Outfit) # We are going to check its Outfit
-   debugNotify("Appending Keywords",4) # Debug                
-   cardSubtypes = card.keywords.split('-') # And each individual Keyword. Keywords are separated by " - "
+   debugNotify("Appending Keywords",4) # Debug
+   cardKW = getKeywords(card)
+   cardSubtypes = cardKW.split('-') # And each individual Keyword. Keywords are separated by " - "
    for cardSubtype in cardSubtypes:
       strippedCS = cardSubtype.strip() # Remove any leading/trailing spaces between traits. We need to use a new variable, because we can't modify the loop iterator.
       if strippedCS:
@@ -1552,11 +1559,11 @@ def prepareRestrictions(Autoscript, seek = 'target'):
    validTargets = [] # a list that holds any type that a card must be, in order to be a valid target.
    targetGroups = []
    Autoscript = scrubTransferTargets(Autoscript)
-   if seek == 'type': whatTarget = re.search(r'\b(type)([A-Za-z_{},&. ]+)[-]?', Autoscript) # seek of "type" is used by autoscripting other players, and it's separated so that the same card can have two different triggers (e.g. see Darth Vader)
-   elif seek == 'retrieve': whatTarget = re.search(r'\b(grab)([A-Za-z_{},&. ]+)[-]?', Autoscript) # seek of "retrieve" is used when checking what types of cards to retrieve from one's deck or discard pile
-   elif seek == 'reduce': whatTarget = re.search(r'\b(affects)([A-Za-z_{},&. ]+)[-]?', Autoscript) # seek of "reduce" is used when checking for what types of cards to recuce the cost.
-   elif seek == 'hostType': whatTarget = re.search(r'\b(ifHost)([A-Za-z_{},&. ]+)[-]?', Autoscript) # seek of "reduce" is used when checking for what types of cards to recuce the cost.
-   else: whatTarget = re.search(r'-(at)([A-Za-z_{},& ]+)[-]?', Autoscript) # We signify target restrictions keywords by starting a string with "or"
+   if seek == 'type': whatTarget = re.search(r'\b(type)([A-Za-z0-9_{},&.\' ]+)[-]?', Autoscript) # seek of "type" is used by autoscripting other players, and it's separated so that the same card can have two different triggers (e.g. see Darth Vader)
+   elif seek == 'retrieve': whatTarget = re.search(r'\b(grab)([A-Za-z0-9_{},&.\' ]+)[-]?', Autoscript) # seek of "retrieve" is used when checking what types of cards to retrieve from one's deck or discard pile
+   elif seek == 'reduce': whatTarget = re.search(r'\b(affects)([A-Za-z0-9_{},&.\' ]+)[-]?', Autoscript) # seek of "reduce" is used when checking for what types of cards to recuce the cost.
+   elif seek == 'hostType': whatTarget = re.search(r'\b(ifHost)([A-Za-z0-9_{},&.\' ]+)[-]?', Autoscript) # seek of "reduce" is used when checking for what types of cards to recuce the cost.
+   else: whatTarget = re.search(r'-(at)([A-Za-z0-9_{},&\' ]+)[-]?', Autoscript) # We signify target restrictions keywords by starting a string with "or"
    if whatTarget: 
       debugNotify("Splitting on _or_") #Debug
       validTargets = whatTarget.group(2).split('_or_') # If we have a list of valid targets, split them into a list, separated by the string "_or_". Usually this results in a list of 1 item.
@@ -1629,6 +1636,10 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
    if re.search(r'isDrawDude',Autoscript) and fetchDrawType(card) == 'Stud':
       debugNotify("!!! Failing because card is a Stud")
       validCard = False
+   if re.search(r'isMark',Autoscript):
+      currentMark = getGlobalVariable('Mark')
+      if currentMark == 'None': validCard = False
+      elif Card(num(currentMark)) != card: validCard = False
    if re.search(r'isParticipating',Autoscript):
       if host:
          if host.highlight != AttackColor and host.highlight != DefendColor and host.highlight != InitiateColor:
@@ -1820,6 +1831,15 @@ def chkWarn(card, Autoscript): # Function for checking that an autoscript announ
    debugNotify("<<< chkWarn() gracefully") 
    return 'OK'
 
+def chkRobinHood(Autoscript): # A function which check if we have less ghost rock than all other players
+   poorer = True
+   if re.search(r'-ifRobinHood',Autoscript):
+      companhurst = len([c for c in table if c.Name == "Companhurst's" and c.controller == me])
+      for pl in getActivePlayers():
+         if pl == me: continue
+         if me.GhostRock - companhurst >= pl.GhostRock: poorer = False
+   return poorer
+      
 def per(Autoscript, card = None, count = 0, targetCards = None, notification = None): # This function goes through the autoscript and looks for the words "per<Something>". Then figures out what the card multiplies its effect with, and returns the appropriate multiplier.
    debugNotify(">>> per(){}".format(extraASDebug(Autoscript))) #Debug
    if targetCards is None: targetCards = []
@@ -1835,7 +1855,8 @@ def per(Autoscript, card = None, count = 0, targetCards = None, notification = N
          if per.group(2) == 'Target' and len(targetCards) == 0: 
             delayed_whisper(":::ERROR::: Script expected a card targeted but found none! Exiting with 0 multiplier.")
             # If we were expecting a target card and we have none we shouldn't even be in here. But in any case, we return a multiplier of 0
-         elif per.group(2) == 'Every' and len(targetCards) == 0: pass #If we looking for a number of cards and we found none, then obviously we return 0
+         elif per.group(2) == 'Every' and len(targetCards) == 0: 
+            pass #If we looking for a number of cards and we found none, then obviously we return 0
          else:
             if per.group(2) == 'Host': targetCards = [fetchHost(card)]
             for perCard in targetCards:

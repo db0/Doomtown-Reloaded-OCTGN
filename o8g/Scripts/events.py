@@ -30,9 +30,9 @@ def checkDeck(player,groups):
                   if counts['Jokers'] > 2:
                      ok = False
                      notify(":::ERROR::: More than 2 Jokers found in{}'s deck!".format(player))
-               if card.name == 'Gunslinger':
+               if card.name == 'Gunslinger' or card.name == 'Nature Spirit' or card.name == 'Ancestor Spirit':
                   ok = False
-                  notify(":::ERROR::: Gunslinger token found in {}'s deck!".format(player))
+                  notify(":::ERROR::: Token card found in {}'s deck!".format(player))
                counts[card.name] += 1
                if counts[card.name] > 4: 
                   ok = False
