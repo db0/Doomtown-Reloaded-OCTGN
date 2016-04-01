@@ -3624,6 +3624,334 @@ Arnold Stewart
 +++++
 GR0B0R0:BootTarget-AutoTargeted-atGadget-onAttachment-isCost$$UseCustomAbility
 .....
+Companhurst's
+-----
+97babd64-ce97-4996-a4a5-f6782660c895
+-----
+
++++++
+
+.....
+Auto-Gatling
+-----
+e3efb184-9dc0-4c4f-9b07-b7c01c66a424
+-----
+
++++++
+
+.....
+Heretic Joker (Red)
+-----
+e2e638ff-27cb-4704-b324-bd318dc9170a
+-----
+
++++++
+
+.....
+Heretic Joker (Black)
+-----
+57039087-1868-4430-a94b-fb7eedeb04a5
+-----
+
++++++
+
+.....
+Ol' Howard
+-----
+f9f258f4-dd3b-43c8-9081-79939b5b76b0
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Market Street
+-----
+e734385a-eb43-4dd0-931d-16b99750de17
+-----
+
++++++
+GR0B0R0:BootMyself
+.....
+Silent Sigil
+-----
+3e3fff09-9401-46d2-ab8e-cfce77ddde58
+-----
+atPhaseTurnEnd:Draw1Cards
++++++
+
+.....
+Notary Public
+-----
+98487814-4411-4701-85e6-3c45340679d0
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Constance Daughtry
+-----
+7ab8a00e-d449-42ec-ae60-3dff03151dce
+-----
+
++++++
+GR0B0R0:UnbootMyself
+.....
+"Mahogany" Jackson
+-----
+8bb9b173-38ce-4b99-8874-3197a596b17e
+-----
+onParticipation:Draw2Cards-toDiscard
++++++
+
+.....
+Gomorra Lot Commission
+-----
+74d2d9ea-bcc7-4c61-b4a1-0a54856501dc
+-----
+
++++++
+GR0B1R0:DiscardTarget-DemiAutoTargeted-atDeed-fromHand-choose1-isCost$$Gain1Ghost Rock
+.....
+Requiem For A Good Boy
+-----
+b1db504d-513e-4ce8-8113-c64ded1b0ad5
+-----
+onPlay:DiscardTarget-DemiAutoTargeted-atSidekick-targetMine-isParticipating-isCost-choiceTitle{Choose the sidekick to discard}-choose1-isResolution$$UnbootTarget-DemiAutoTargeted-atDude-isParticipating-targetMine-choiceTitle{Choose the Host of the discarded Sidekick}-choose1$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choiceTitle{Choose the dude you're sending home booted}-choose1
++++++
+
+.....
+Crafty Hare
+-----
+b2371c67-bdd2-4ba6-b236-86a551e0f2c1
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpiritX-difficultyValue-Targeted-atDude-isParticipating-targetOpponents-spellEffects<UnparticipateHost++MoveHost-moveToDeed_or_Town Square_or_Outfit,None>
+.....
+Framed
+-----
+92a85b68-c791-46ac-8515-22379ea67e99
+-----
+onPlay:CustomScript
++++++
+
+.....
+Rhonda Sageblossom
+-----
+a8b44597-b8b4-4a8a-b077-d6f0495248d7
+-----
+
++++++
+
+.....
+Wagner Memorial Ranch
+-----
+aacdc6a0-f543-4cc2-8370-b2bec8eccc6a
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{reduce the invention difficulty by 2}
+.....
+Fiddle Game
+-----
+2c318b93-e6b8-422d-b062-baecfc06e62a
+-----
+onPlay:StartJob-AutoTargeted-atOutfit-targetMine-jobEffects<RehostMyself-AutoTargeted-atOutfit-targetMine-isMark,None>
++++++
+
+.....
+Francisco Rosales
+-----
+f21a80e4-27f0-4c87-a44e-64661765a000
+-----
+
++++++
+GR0B1R0:StartJob-AutoTargeted-atTown Square-bootLeader-jobEffects<Retrieve1Cards-grabSidekick_or_Horse-fromDiscard-toTable-payCost-reduc2,None>
+.....
+Plague of Grasshoppers
+-----
+e27b4a68-2a7b-48e9-9dae-a42d02f8a66f
+-----
+onPlay:CustomScript
++++++
+
+.....
+Epidemic Laboratory
+-----
+df42a53c-8fab-4603-9294-f51d4a44e95e
+-----
+
++++++
+GR0B0R0:StartJob-bootLeader-DemiAutoTargeted-atEpidemic Laboratory-choose1-jobEffects<Put1PermControlPlus++Put1ProdPlus,None>
+.....
+Sunday Best
+-----
+63df2636-a2b4-4470-9b3f-596c2e311dd1
+-----
+
++++++
+GR0B1R0:MoveHost-moveToDeed_or_Town Square_or_Outfit
+.....
+Sight Beyond Sight
+-----
+27ddc945-bfc5-4dd9-84d8-d6bc44c904ae
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex7-spellEffects<UseCustomAbility,None>
+.....
+Technological Exhibition
+-----
+083b92c1-bf91-4d5b-95e0-23a72bd0d05a
+-----
+onPlay:StartJob-DemiAutoTargeted-atDeed_or_Town Square_or_Outfit-choose1-jobEffects<UseCustomAbility,None>
++++++
+
+.....
+Carlton "Min" Rutherford
+-----
+8463332e-61fb-4744-b6cb-89fbcec18bdd
+-----
+
++++++
+GR1B0R0:UnbootMyself-ifRobinHood
+.....
+Walters Creek Distillery
+-----
+f7be47f3-b72b-4739-8391-e7d718868b90
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+A Piece Of The Action
+-----
+c5d383fa-b1e7-4135-bb1a-a530b9f8338d
+-----
+onPlay:CustomScript
++++++
+
+.....
+Foreboding Glance
+-----
+38c663b2-e6f8-4135-83d0-46122e5be7d6
+-----
+onPlay:CustomScript
++++++
+
+.....
+Spirit Steed
+-----
+ccc98846-eea5-4568-9726-2f86d9b90896
+-----
+
++++++
+GR0B1R0:MoveHost-moveToSpirit||GR0B0R1:BootTarget-DemiAutoTargeted-atSpirit-onAttachment-choose1-isCost$$MoveHost-moveToDeed_or_Town Square_or_Outfit
+.....
+Mountain Lion Friend
+-----
+54cd83d3-4735-4948-9a49-9570710da531
+-----
+
++++++
+GR0B0R0:DiscardMyself$$SimplyAnnounce{reduce their casualties by two}
+.....
+Ambrose Douglas
+-----
+62a29361-d2d6-4934-ac70-916435475094
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+Lucretia Fanzini
+-----
+c2d7e814-dddf-4f21-9315-d2d5993da004
+-----
+
++++++
+
+.....
+Turtle's Guard
+-----
+28b4125d-61a9-4714-870c-2f27e4872e9f
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit4-spellEffects<UseCustomAbility,None>
+.....
+Onward Christian Soldiers
+-----
+ed8fda6f-0cee-4d73-9af0-159fbb3db4e0
+-----
+
++++++
+GR0B1R0:Put1BulletShootoutPlus-AutoTargeted-atDude-targetMine-isParticipating$$Put1Shootout:Bullet Immunity-AutoTargeted-atDude-targetMine-isParticipating
+.....
+Pigging Out
+-----
+4964e22f-04f8-4d72-b70c-9b1c8d85a53a
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:Draw5Cards-toDiscard$$Retrieve1Card-fromDiscard-grabTao of Zhu Bajie$$Put1Shootout:Pigging Out-Targeted-atDude-targetMine-isParticipating
+.....
+Tusk
+-----
+4b68dd9b-fb40-4912-8ff6-d7de771861dd
+-----
+onPlay:Draw1Card
++++++
+
+.....
+Darragh Meng
+-----
+991495ee-2b58-4e7f-92d0-11ffaca1cff5
+-----
+
++++++
+
+.....
+Fool Me Once...
+-----
+61e47afb-cb64-46b5-86ae-893590b84139
+-----
+onPlay:Draw3Cards-onOpponent
++++++
+GR0B0R1:CustomScript
+.....
+Henry Moran
+-----
+22df7ba7-5a3e-45de-b12a-a6c672ad6ccf
+-----
+
++++++
+
+.....
+Tallulah "Lula" Morgan
+-----
+3c6ad64f-f716-4ee8-80db-f13602745d44
+-----
+
++++++
+GR0B0R1:Gain1Ghost Rock
+.....
+Theo Whateley-Boyer
+-----
+6bbd7290-5c98-4378-b581-0c044b96860a
+-----
+
++++++
+GR0B0R1:CustomScript
+.....
+Travis Moone
+-----
+cde1ec30-fedd-46de-af9b-110856d0f1c7
+-----
+
++++++
+GR0B1R0:Draw2Cards
+.....
 ENDSCRIPTS
 =====
 '''

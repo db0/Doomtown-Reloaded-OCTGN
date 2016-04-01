@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.13.0.x
+
+OCTGN has turned into a **Ghost Town**. The new Pine Box is now available for y'all!
+
 ### 1.12.3.x
 
 * Stopped asking so much about being in high noon when using scripted cards.
