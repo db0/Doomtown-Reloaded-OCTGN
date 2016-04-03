@@ -930,3 +930,69 @@ def RickHenderson(dude,rick):
          notify("{} pays off {} to retain {}".format(me,rick,dude))
    
    
+def Framed(card,dude):
+   if dude.orientation != Rot90 and me.GhostRock > 0 and confirm('Do you want to boot {} and pay 1 Ghost Rock to {} to avoid giving them a bounty?'.format(dude.Name,card.controller)):
+      dude.orientation = Rot90
+      me.GhostRock -= 1
+      card.controller.GhostRock += 1
+      notify(":> {} boots {} and pays 1 Ghost Rock to {} to avoid becoming wanted".format(me,dude,card.controller))
+      return
+   dude.markers[mdict['Bounty']] += 1
+   notify(":> {} succesfull framed {} for 1 bounty".format(card.controller,dude))
+   
+def SightBeyondSightStart(card):
+   mute()
+   if not len(me.hand): notify(":::INFO::: {}'s play hand is empty. Nathan has nothing to snipe".format(me))
+   else:
+      randomCards = []
+      for iter in range(2):
+         randomC = me.hand.random()
+         randomCards.append(randomC)
+         randomC.moveTo(me.ScriptingPile)         
+      notify(":> {} Reveals 2 random cards to {}".format(me,card.controller))      
+      remoteCall(card.controller,'SightBeyondSightChoose',[card,[c for c in me.ScriptingPile]])
+
+def SightBeyondSightChoose(card,handList):
+   mute()
+   update()
+   cardChoice = askCard([c for c in handList],"Choose one non-Unique card to ace or close this window to ace none.")
+   if cardChoice == None:
+      notify("{} does not hex any card in {}'s hand".format(me,handList[0].controller))
+   else:
+      while ((cardChoice.Type == 'Dude' or cardChoice.Type == 'Deed') and not re.search(r'Non-Unique',cardChoice.Keywords)) or ((cardChoice.Type == 'Goods' or cardChoice.Type == 'Action') and re.search(r'Unique',cardChoice.Keywords)): # If they chose a unique card, we force them to choose an non-unique.
+         if confirm("You cannot select unique cards to ace with Sight Beyond Sight's ability. Do you want to choose nothing?"): 
+            notify("{} does not hex any card in {}'s hand".format(me,handList[0].controller))
+            cardChoice = None
+            break
+         else: 
+            cardList = [c for c in handList if ((c.Type == 'Dude' or c.Type == 'Deed') and re.search(r'Non-Unique',c.Keywords)) or ((c.Type == 'Goods' or c.Type == 'Action') and not re.search(r'Unique',c.Keywords))]
+            if not cardList: 
+               notify("{} does not find any non-unique in {}'s hand to hex".format(me,handList[0].controller))
+               cardChoice = None
+               break
+            else:
+               cardChoice = askCard(cardList,"Choose non-unique card to discard.")
+               if cardChoice == None: 
+                  notify("{} does not hex any card in {}'s hand".format(me,handList[0].controller))
+                  break
+   remoteCall(handList[0].controller,'SightBeyondSightEnd',[card,cardChoice])
+
+def SightBeyondSightEnd(card,cardChoice):
+   mute()
+   if cardChoice:
+      cardChoice.moveTo(me.piles['Boot Hill'])
+      notify("{}'s {} hexes {} out of {}'s play hand".format(card.controller,card,cardChoice,me))
+   for c in me.ScriptingPile: c.moveTo(me.hand)
+   
+def chkHenryMoran(type):
+   if type == 'lowball':
+      for card in table:
+         if card.Name == 'Henry Moran' and card.controller == me and card.orientation == Rot0:
+            notify(":> {} is about to reveal a cheating hand in lowball, so {} is booting and forcing them to reveal the top 5 cards of their deck instead".format(me,card))
+            boot(card, silent = True)
+            for c in table:
+               if c.highlight == DrawHandColor and c.controller == me: c.moveTo(c.owner.piles['Discard Pile']) # Henry always discards, and won't ace Jokers.
+            drawhandMany(count = 5, silent = True, scripted = True)
+            revealHand(me.piles['Draw Hand'], 'lowball')
+            return True
+   return False   
