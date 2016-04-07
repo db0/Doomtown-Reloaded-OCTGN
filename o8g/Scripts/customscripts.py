@@ -578,6 +578,183 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       targetCards = findTarget('Targeted-atDude',card = card, choiceTitle = "Choose the dude you're robbing")
       if not len(targetCards): return 'ABORT'
       else: remoteCall(targetCards[0].controller,'RickHenderson',[targetCards[0],card])
+   ### Ghost Town ###
+   elif card.name == "Ol' Howard" and action == 'USE':
+      retrieveTuple = RetrieveX('Retrieve1Card-grabDeed-toTable-payCost', '', card)
+      if retrieveTuple == 'ABORT':return 'ABORT'
+      elif len(retrieveTuple[1]):
+         deed = retrieveTuple[1][0]
+         deed.markers[mdict['ProdMinus']] += num(deed.Production)
+         deed.markers[mdict['ControlMinus']] += num(deed.Control)
+         attachCard(card,deed)
+         notify("{} startings haunting {}".format(card,deed))
+   elif card.name == "Notary Public" and action == 'USE':
+      deeds = findTarget('Targeted-atDeed_and_Government_or_Deed_and_Public-isUnbooted')
+      if not len(deeds): return 'ABORT'
+      else:
+         pub = False
+         gov = False
+         deed = deeds[0]
+         boot(deed,silent = True)
+         if re.search(r'Government',getKeywords(deed)): 
+            dudesGov = findTarget('DemiAutoTargeted-atDude-choose1-choiceTitle{Choose which dude should receive a bounty}')
+            if len(dudesGov):
+               dudesGov[0].markers[mdict['Bounty']] += 1
+               gov = True           
+         if re.search(r'Public',getKeywords(deed)):
+            dudesPub = findTarget('DemiAutoTargeted-atDude-targetMine-choose1-choiceTitle{Choose which dude should be moved}')
+            if len(dudesPub):
+               ModifyStatus('MoveTarget-moveToDeed_or_Town Square_or_Outfit', '', card, dudesPub)
+               pub = True
+      if gov and pub: notify("{} boots {} to increase the bounty of {} and move {} to another location".format(me,card,dudesGov[0], dudesPub[0]))
+      elif gov: notify("{} boots {} to increase the bounty of {}".format(me,card,dudesGov[0]))
+      elif pub: notify("{} boots {} move {} to another location".format(me,card,dudesPub[0]))
+   elif card.name == "Framed" and action == 'PLAY':
+      dudes = findTarget('DemiAutoTargeted-atDude-targetOpponents-choose1')
+      if len(dudes):
+         dude = dudes[0]
+         if dude.markers[mdict['Bounty']]:
+            dude.markers[mdict['Bounty']] += 3
+            notify("{} easily frames the already wanted {}, increasing their bounty by 3.".format(me,dude))
+         else:
+            if payCost(compileCardStat(dude,'Influence'), MSG = "You do not have enough ghost rock to frame {}! Bypass?".format(dude)) == 'ABORT': return 'ABORT'
+            remoteCall(dude.controller,'Framed',[card,dude])
+   elif card.name == "Plague of Grasshoppers" and action == 'PLAY':
+      dudes = findTarget('Targeted-atDude_and_Kung Fu-isUnbooted')
+      location = findTarget('DemiAutoTargeted-atDeed_or_Town Square_or_Outfit-choose1')
+      successDudes = []
+      for dude in dudes:
+         rank,suit = pull(silent = True)
+         dudeKF = compileCardStat(dude,'Value')
+         if num(rank) < dudeKF: 
+            notify(":> {} pulled {} for {}, succeeding their Kung Fu pull by {}".format(me,rank,dude,dudeKF - num(rank) - 1))
+            successDudes.append(dude)
+         else:
+            notify(":> {} failed their Kung Fu pull by {} by pulling a {}".format(dude,num(rank) - dudeKF + 1,rank))
+      iter = 0
+      for dude in successDudes:
+         iter += 1
+         x,y = location[0].position
+         dude.moveToTable(x + cardDistance() * iter, y)
+         orgAttachments(dude)
+      if len(successDudes):
+         notify("{} moves {} dudes to {} ({})".format(me,len(successDudes),location[0],[c.Name for c in successDudes]))
+      else: 
+         notify ("{} tried to move {} dudes to {} but failed miserably to move even a single one".format(me,len(dudes),location[0]))
+   elif card.name == "Walters Creek Distillery" and action == 'USE':
+      deeds = findTarget('Targeted-atDeed_and_Saloon_or_Deed_and_Casino-isUnbooted')
+      if not len(deeds): return 'ABORT'
+      else:
+         saloon = False
+         casino = False
+         deed = deeds[0]
+         boot(deed,silent = True)
+         if re.search(r'Saloon',getKeywords(deed)): 
+               handC = findTarget('DemiAutoTargeted-fromHand-choose1')
+               if len(handC): 
+                  discardTarget(targetCards = handC, silent = True)   
+                  drawMany(deck, 1, silent = True)
+                  saloon = True           
+         if re.search(r'Casino',getKeywords(deed)):
+            me.GhostRock += 2
+            casino = True
+      if saloon and casino: notify("{} boots {} to gain 2 ghost rock and discard a card to draw a card".format(me,card))
+      elif saloon: notify("{} boots {} to discard a card to draw a card".format(me,card))
+      elif casino: notify("{} boots {} to gain 2 ghost rock".format(me,card))
+   elif card.name == "A Piece Of The Action" and action == 'PLAY':
+      handDudes = findTarget('DemiAutoTargeted-atDude-fromHand-choose1')
+      if not len(handDudes): return 'ABORT'
+      dude = handDudes[0]
+      cost = num(dude.Cost)
+      if cost >= 4: 
+         reducedCost = cost - 4
+         if reducedCost < 4: reducedCost = 4
+         reduction = cost - reducedCost
+      else: 
+         reducedCost = cost
+         reduction = 0
+      if chkGadgetCraft(dude):
+         if payCost(reducedCost) == 'ABORT' : return 'ABORT' 
+         placeCard(dude,'HireDude')
+         notify(":> {} is giving {} a piece of the action".format(me,dude))
+      availGoods = [c for c in discardPile if c.Type == 'Goods' and not re.search(r'Gadget',c.Keywords)]
+      if len(availGoods):
+         goods = askCard(availGoods,'You can equip a goods from your discard pile to {} with a {} Ghost Rock reduction to its cost. \nChoose one or close this window to equip nothing'.format(dude.Name,reduction),card.Name)
+         if goods: playcard(goods,costReduction = reduction, preHost = dude)
+   elif card.name == "Foreboding Glance" and action == 'PLAY':
+      myDudes = findTarget('DemiAutoTargeted-atDude-targetMine-choose1')
+      opDudes = findTarget('DemiAutoTargeted-atDude-targetOpponents-choose1')
+      if not len(myDudes) or not len(opDudes):
+         whisper("You need to target one of your dudes and one opposing dude to use this action")
+         return 'ABORT'
+      myDude = myDudes[0]
+      opDude = opDudes[0]
+      if compileCardStat(myDude, 'Control') > compileCardStat(opDude, 'Control'):
+         hostCards = eval(getGlobalVariable('Host Cards'))
+         attachmentsList = [Card(cID) for cID in hostCards if hostCards[cID] == opDude._id]
+         for attachment in attachmentsList: boot(attachment, silent = 'True')
+         notify(":> {}'s attachements are booted".format(opDude))
+      if compileCardStat(myDude, 'Influence') > compileCardStat(opDude, 'Influence'):
+         boot(opDude, silent = 'True')
+         notify(":> {} is booted".format(opDude))
+      if myDude.markers[mdict['Bounty']] > opDude.markers[mdict['Bounty']]:
+         callout(myDude, silent = 'True', targetDudes = opDudes)
+         notify(":> {} is calling out {}".format(myDude,opDude))
+   elif card.name == "Ambrose Douglas" and action == 'USE':
+      discardC = findTarget('DemiAutoTargeted-choose1-fromHand')
+      if not len(discardC): return 'ABORT'
+      else:
+         TokensX('Put1InfluencePlus', '', card)
+         if discardC[0].type == 'Spell' or (discardC[0].type == 'Goods' and re.search(r'Mystical',discardC[0].Keywords)): 
+            OutfitCard.orientation = Rot0
+            OutfitCard.markers[mdict['UsedAbility']] = 0
+            notify("{} discards {} to gain 1 influence and are able to re-use their outfit card ability".format(card,discardC[0]))
+         else: 
+            notify("{} discards {} to gain 1 influence ".format(card,discardC[0]))
+         discardTarget(targetCards = discardC, silent = True)         
+   elif card.name == "Fool Me Once..." and action == 'USE':
+      for player in getActivePlayers():
+         if player != me: remoteCall(player,'drawMany',[player.Deck, 1, None, True])
+      notify("{} revealed an illegal draw hand and everyone else gets to draw a card".format(me))
+   elif card.name == "Theo Whateley-Boyer" and action == 'USE':
+      if getGlobalVariable('Phase') == '1':
+         if payCost(1, silent) == 'ABORT': return 'ABORT'
+         jokers = findTarget('DemiAutoTargeted-atJoker-isDrawHand-choose1-targetMine')
+         if not len(jokers):
+            whisper(":::ERROR::: You need to have revealed a joker to use this ability")
+            return 'ABORT'
+         attachCard(jokers[0],card)
+         jokers[0].highlight = None
+         notify("{} paid 1 Ghost Rock to attach {} to {}".format(me,jokers[0],card))
+      elif getGlobalVariable('Shootout') == 'True':
+         if not card.markers[mdict['UsedAbility']] or (card.markers[mdict['UsedAbility']] and confirm("You've already used {}'s Ability Bypass Restriction?".format(card.name))): 
+            if not card.markers[mdict['UsedAbility']]: card.markers[mdict['UsedAbility']] += 1 
+            else: notify(":::WARN::: {} bypassed once-per turn restriction on {}'s ability".format(me,card))
+            jokers = []
+            hostCards = eval(getGlobalVariable('Host Cards'))
+            attachmentsList = [Card(cID) for cID in hostCards if hostCards[cID] == card._id]
+            for attachment in attachmentsList:
+               if attachment.Type == 'Joker': jokers.append(attachment)
+            if not len(jokers):
+               whisper(":::ERROR::: You need to have an attached joker to use this ability")
+               return 'ABORT'
+            elif len(jokers) == 1: joker = jokers[0]
+            else:
+               joker = jokers[SingleChoice('Choose one of your attached jokers to put in your draw hand',[c.Name for c in jokers])]
+            hex = findTarget('DemiAutoTargeted-atHex-onAttachment-isUnbooted-choose1', card = card, choiceTitle = "Choose which hex to boot to use this ability")
+            if not len(hex): return 'ABORT'
+            boot(hex[0], silent = True)
+            discardCards = findTarget('DemiAutoTargeted-isDrawHand-targetMine-choose1')
+            if not len(discardCards): return 'ABORT'
+            discardCards[0].moveTo(discardCards[0].owner.piles['Discard Pile'])
+            for c in table:
+               if c.highlight == DrawHandColor and c.controller == me: c.moveTo(me.piles['Draw Hand'])
+            joker.moveTo(me.piles['Draw Hand'])
+            clearAttachLinks(joker)
+            notify("{} boots their {} to replace {} with {}".format(card,hex[0],discardCards[0],joker))
+            revealHand(me.piles['Draw Hand'], type = 'shootout') # We move the cards back ot the draw hand and reveal again, letting the game announce the new rank.
+      else:
+         whisper(":::ERROR::: You can only use Theo's ability during lowball or shootouts")
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
