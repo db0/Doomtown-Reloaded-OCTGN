@@ -925,7 +925,7 @@ bf1c8173-843a-4a20-be3b-f4ae650cfdd2
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHexX-difficultyGrit-spellEffects<SendHomeBootedTarget-DemiAutoTargeted-isParticipating-choose1,SendHomeBootedHost>
+GR0B1R0:Pull1Card-testHexX-difficultyGrit-Targeted-isParticipating-spellEffects<SendHomeBootedTarget-Targeted-choose1,SendHomeBootedHost>
 .....
 Stagecoach Office
 -----
@@ -1237,7 +1237,7 @@ Paralysis Mark
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHexX-difficultyValue-spellEffects<BootTarget-DemiAutoTargeted-atDude-choose1,None>
+GR0B1R0:Pull1Card-testHexX-difficultyValue-Targeted-atDude-spellEffects<BootTarget-Targeted,None>
 .....
 Wylie Jenks
 -----
@@ -1333,7 +1333,7 @@ Leonardo "Leon" Cavallo
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHexX-difficultyValue-spellEffects<BootTarget-Targeted,None>
+GR0B1R0:Pull1Card-testHexX-difficultyValue-Targeted-atDude-spellEffects<BootTarget-Targeted-atDude,None>
 .....
 Gang Yi
 -----
