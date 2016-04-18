@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.13.2.x
+
+Fixed some broken spells and added the custom Ghost Town abilities that were missing (e.g. Ol' Howard)
+
 ### 1.13.1.x
 
 * Fixed lowball error and added missing scripts for Framed, Henry and Sight Beyond Sight
