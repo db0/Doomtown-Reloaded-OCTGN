@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.13.3.x
+
+* Added missing scripts for Sight Beyond Sight, Technological Exhibition and Turtle's Guard
+
 ### 1.13.2.x
 
 Fixed some broken spells and added the custom Ghost Town abilities that were missing (e.g. Ol' Howard)

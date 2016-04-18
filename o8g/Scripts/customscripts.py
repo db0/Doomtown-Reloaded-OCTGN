@@ -165,6 +165,59 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
             potCard.markers[mdict['Ghost Rock']] -= 1
       else: me.GhostRock += 1 # If the potcard is not there for some reason (bug) we just give the player 1 GR 
       notify("{} take one Ghost Rock from the pot".format(announceText))
+   ### Ghost Town ###
+   elif card.name == "Sight Beyond Sight":
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else:
+         choice = SingleChoice("Choose which player to hex", [pl.name for pl in opponents])
+         if choice == None: return 'ABORT'
+         else: player = opponents[choice]         
+      remoteCall(player,'SightBeyondSightStart',[card])
+   elif card.name == "Technological Exhibition":
+      jobResults = eval(getGlobalVariable('Job Active'))
+      leader = Card(num(jobResults[3]))
+      if leader.group != table:
+         whisper("Your leader is gone and cannot invent anything anymore!")
+         return
+      handG = []
+      discG = []
+      for c in me.hand: 
+         if re.search(r'Gadget',c.Keywords):
+            handG.append(c)
+      for c in me.piles['Discard Pile']: 
+         if re.search(r'Gadget',c.Keywords):
+            discG.append(c)
+      if len(handG) and len(discG):
+         choice = SingleChoice("Choose Gadget Seek Option",['Hand ({} Gadgets Available)'.format(len(handG)),'Discard Pile ({} Gadgets Available)'.format(len(discG))])
+         if choice == None: return 'ABORT'
+      elif len(handG): choice = 0
+      elif len(discG): choice = 1
+      else: 
+         notify("{} didn't have any gadgets in their hand or discard pile to exhibit!".format(me))
+         return
+      if choice == 0:
+         if len(handG) == 1: gadget = handG[0]
+         else: gadget = askCard([c for c in handG],"Which of your Gadgets in your hand will you exhibit?",card.Name)
+      else:
+         if len(discG) == 1: gadget = discG[0]
+         else: gadget = askCard([c for c in discG],"Which of your Gadgets in your discard pile will you exhibit?",card.Name)
+      if not gadget: return 'ABORT'
+      playcard(gadget,costReduction = 5, preHost = leader) # We make sure it's the leader who tries to make the gadget.
+      mark = Card(eval(getGlobalVariable('Mark')))
+      if mark.Name == 'Town Square': 
+         gadget.markers[mdict['ControlPlus']] += 1
+         notify("{}'s {} succeeds at a technological exhibition in the Town Square. They invented a {} which gained a permanent Control Point!".format(me,leader,gadget))
+      else:
+         notify("{}'s {} succeeds at a technological exhibition. They invented a {}.".format(me,leader,gadget))      
+   elif card.model == '28b4125d-61a9-4714-870c-2f27e4872e9f': # Turtle's Guard     
+      if len([c for c in table if c.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1' and c.controller != me]): # If the opponent is cheatin' we want to create a harrowed spirit token.
+         token = spawnNature()
+         participateDude(token)
+         token.markers[mdict['Harrowed']] += 1
+         notify("{} marks all their dudes as harrowed for this round and spawns a harrowed nature spirit".format(me))
+      else:
+         notify("{} marks all their dudes as harrowed for this round".format(me))
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
