@@ -3952,6 +3952,174 @@ cde1ec30-fedd-46de-af9b-110856d0f1c7
 +++++
 GR0B1R0:Draw2Cards
 .....
+Caitlin McCue
+-----
+32020b31-dc6d-443a-b76f-944b82ae8158
+-----
+
++++++
+
+.....
+Bethany Shiile
+-----
+08260cae-a6bc-49bf-ac5f-694d29eb0f6e
+-----
+
++++++
+
+.....
+Tyxarglenak
+-----
+b2ba1118-98be-4eed-bcce-c7946ed08b24
+-----
+
++++++
+
+.....
+Dr. Dayl Burnett
+-----
+fa74d816-9331-4b83-abf9-7e1ae4c19ae3
+-----
+
++++++
+GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-targetOpponents$$UseCustomAbility
+.....
+Maggie Harris
+-----
+752aa5ff-20c2-418f-bcb7-69a833d013f6
+-----
+
++++++
+GR0B1R0:StartJob-AutoTargeted-atOutfit-targetMine-bootLeader-jobEffects<Retrieve1Cards-grabHorse-fromDiscard-toTable-payCost-reduc1,None>
+.....
+Emilia Vivirias
+-----
+091152d4-8930-448b-a859-970194fc3d94
+-----
+
++++++
+
+.....
+"Professor" Duncan
+-----
+9a6fdabd-be4b-4f03-9dab-36fd222091df
+-----
+
++++++
+
+.....
+The Highbinder Hotel
+-----
+5d13805f-d9e9-45aa-8d76-59dd1e3e715f
+-----
+
++++++
+
+.....
+2nd Bank of Gomorra
+-----
+952ac3e4-6525-44ff-aea5-f0033e145f60
+-----
+
++++++
+
+.....
+High Stakes Haven
+-----
+f12bcc27-884e-44e6-81cc-8a7748fb7d11
+-----
+
++++++
+
+.....
+Culpability Scientizer
+-----
+760bdfc3-f7a9-4ddf-b246-c995d676d7a1
+-----
+
++++++
+
+.....
+Espuelas
+-----
+2add91b1-f7e1-4c52-9262-ef0177bc3957
+-----
+
++++++
+
+.....
+Rites of the Smoking Mirror
+-----
+2e1a6b44-4436-4157-a26b-5b45f401b09e
+-----
+
++++++
+
+.....
+Essence of Armitage
+-----
+1a53f2b8-89fa-4681-8a90-ead0009762d8
+-----
+
++++++
+
+.....
+Festering Grasp
+-----
+8de45e93-ead5-47b9-90a5-7b5c9376b300
+-----
+
++++++
+
+.....
+Silver Pheasant's Bounty
+-----
+99c47d1a-472b-4c71-9f17-ae53f4c04280
+-----
+
++++++
+
+.....
+Comin' Up Roses
+-----
+52a46c18-b415-4af1-aa86-16670d32d689
+-----
+
++++++
+
+.....
+Run Rabbit Run
+-----
+fc75402b-6e28-4789-a236-c10d97e7a1df
+-----
+
++++++
+
+.....
+Putting the Pieces Together
+-----
+8f678b9d-ce07-419e-9984-59feac52a075
+-----
+
++++++
+
+.....
+Someone Else's Problem
+-----
+cfffa3bd-b54b-4ef7-b19a-2e49530f0be7
+-----
+
++++++
+
+.....
+Lost to the Plague
+-----
+a248365d-3277-43ae-8772-dbd930ad7d17
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''

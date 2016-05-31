@@ -218,6 +218,11 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          notify("{} marks all their dudes as harrowed for this round and spawns a harrowed nature spirit".format(me))
       else:
          notify("{} marks all their dudes as harrowed for this round".format(me))
+   elif card.name == 'Dr. Dayl Burnett':  
+      gadgets = findTarget('DemiAutoTargeted-atGadget-fromHand-choose1',card = card, choiceTitle = "Choose which gadget to invent.")
+      if len(gadgets):
+         gadget = gadgets[0]
+         playcard(gadget,preHost = card)
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
