@@ -1514,6 +1514,7 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
          else: 
             cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, 30, 1, False)
       #cheatinNotice.highlight = DrawHandColor
+      autoscriptOtherPlayers('CheatinRevealed',cheatinNotice)
    resultTXT = "{}{} ({} {}, {} {}, {} {}, {} {}, {} {})".format(PokerHand(rank,suit,type), cheatResult, fullrank(rank[0]), fullsuit(suit[0]), fullrank(rank[1]), fullsuit(suit[1]), fullrank(rank[2]), fullsuit(suit[2]), fullrank(rank[3]), fullsuit(suit[3]), fullrank(rank[4]), fullsuit(suit[4]))
    handRank = PokerHand(rank,suit,type,'comparison')
    if not silent:

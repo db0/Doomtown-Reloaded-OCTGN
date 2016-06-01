@@ -226,7 +226,7 @@ def autoscriptOtherPlayers(lookup, origin_card = OutfitCard, count = 1, origin_p
          # If we had let it as it was, it would simply check if Renegade Squadron Mobilization is controlled by the opponent, thus triggering the script each time our opponent's action discarded a unit, even if the unit was ours.
          if re.search(r'-byFriendlyOriginController', autoS) and chkPlayer('byAlly', origin_card.controller,False, player = card.controller) == 0: continue
          if chkPlayer(autoS, card.controller,False, player = origin_player) == 0: continue # Check that the effect's origninator is valid.
-         if re.search(r'-ifCapturingObjective', autoS) and capturingObjective != card: continue  # If the card required itself to be the capturing objective, we check it here via a global variable.             
+         if re.search(r'-ifPhaseGamblin', autoS) and getGlobalVariable('Phase') != '1': continue  # If the effect works only in Lowball, ignore it.
          confirmText = re.search(r'ifConfirm{(A-Za-z0-9)+}', autoS) # If the card contains the modified "ifConfirm{some text}" then we present "some text" as a question before proceeding.
                                                                     # This is different from -isOptional in order to be able to trigger abilities we cannot automate otherwise.
          if confirmText and not confirm(confirmText.group(1)): continue
@@ -1352,10 +1352,15 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
          for c in chosenCList:
             if destination == table: 
                if re.search(r'-payCost',Autoscript): # This modulator means the script is going to pay for the card normally
+                  if re.search(r'-preHost',Autoscript): 
+                     if card.Type != 'Dude' and card.Type != 'Deed':
+                        preHost = fetchHost(card) # Only Dudes and Deeds can host cards.
+                     else: preHost = card # This modulator means the card will come prehosted on the card which triggered it.
+                  else: preHost = None
                   preReducRegex = re.search(r'-reduc([0-9])',Autoscript) # this one means its going to reduce the cost a bit.
                   if preReducRegex: preReduc = num(preReducRegex.group(1))
                   else: preReduc = 0
-                  playcard(c,costReduction = preReduc, scripted = True)
+                  playcard(c,costReduction = preReduc, preHost = preHost, scripted = True)
                else:
                   placeCard(c)
                   executePlayScripts(c, 'PLAY') # We execute the play scripts here only if the card is 0 cost.

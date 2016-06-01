@@ -222,7 +222,11 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       gadgets = findTarget('DemiAutoTargeted-atGadget-fromHand-choose1',card = card, choiceTitle = "Choose which gadget to invent.")
       if len(gadgets):
          gadget = gadgets[0]
-         playcard(gadget,preHost = card)
+#         playcard(gadget,preHost = card)
+         if payCost(num(gadget.Cost), loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
+         gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
+         notify("{} attempted to manufacture a {} and pulled a {} {}".format(card,gadget,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
+         attachCard(gadget,card)
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 

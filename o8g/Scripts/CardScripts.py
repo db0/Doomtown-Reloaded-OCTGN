@@ -3395,7 +3395,7 @@ The Joker's Smile
 -----
 d3a57ce1-7abd-45b0-82d7-fa0d6324a91d
 -----
-whileInPlay:Gain1Ghost Rock-foreachUsedJokerAced
+whileInPlay:Gain1Ghost Rock-foreachUsedJokerAced-ifPhaseGamblin
 +++++
 GR0B1R0:DiscardTarget-DemiAutoTargeted-atJoker-fromHand-choose1-isCost$$Gain1Ghost Rock$$Draw1Cards||GR1B1R0:Retrieve1Cards-fromBootHill-toDiscard-grabJoker
 .....
@@ -3982,7 +3982,7 @@ fa74d816-9331-4b83-abf9-7e1ae4c19ae3
 -----
 
 +++++
-GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-targetOpponents$$UseCustomAbility
+GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-isCost-choose1$$UseCustomAbility
 .....
 Maggie Harris
 -----
@@ -4014,7 +4014,7 @@ The Highbinder Hotel
 -----
 
 +++++
-
+GR0B1R0:SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetMine-choose1
 .....
 2nd Bank of Gomorra
 -----
@@ -4022,13 +4022,13 @@ The Highbinder Hotel
 -----
 
 +++++
-
+GR0B1R0:Put2Ghost Rock||GR0B1R0:Gain1Ghost Rock-perMarker{Ghost Rock}$$Remove999Ghost Rock
 .....
 High Stakes Haven
 -----
 f12bcc27-884e-44e6-81cc-8a7748fb7d11
 -----
-
+whileInPlay:Lose1Ghost Rock-foreachCheatinRevealed-byMe-ifPhaseGamblin
 +++++
 
 .....
@@ -4036,9 +4036,9 @@ Culpability Scientizer
 -----
 760bdfc3-f7a9-4ddf-b246-c995d676d7a1
 -----
-
+onPlay:Put2Bounty-DemiAutoTargeted-atDude-choose1
 +++++
-
+GR0B0R0:DiscardMyself$$CalloutTarget-Targeted-atDude-hasMarker{Bounty}
 .....
 Espuelas
 -----
@@ -4046,7 +4046,7 @@ Espuelas
 -----
 
 +++++
-
+GR0B1R0:MoveHost-moveToDeed_or_Town Square_or_Outfit
 .....
 Rites of the Smoking Mirror
 -----
@@ -4054,7 +4054,7 @@ Rites of the Smoking Mirror
 -----
 
 +++++
-
+GR0B0R0:PlayTarget-DemiAutoTargeted-fromHand-atGoods_and_Mystical-choose1-payCost-isCost-reduc4$$AceMyself||GR0B0R0:UnbootTarget-Targeted-atDude$$DiscardMyself
 .....
 Essence of Armitage
 -----
@@ -4070,15 +4070,15 @@ Festering Grasp
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testHex13-spellEffects<Retrieve1Card-toTable-grabSidekick-fromDiscard-payCost-reduc2-preHost,None>
 .....
 Silver Pheasant's Bounty
 -----
 99c47d1a-472b-4c71-9f17-ae53f4c04280
 -----
-
+onPlay:Put1ProdPlus-AutoTargeted-atDeed-onHost
 +++++
-
+GR0B1R0:Pull1Card-testSpirit6-spellEffects<BootHost-isCost++Gain2Ghost Rock,None>
 .....
 Comin' Up Roses
 -----
@@ -4092,15 +4092,15 @@ Run Rabbit Run
 -----
 fc75402b-6e28-4789-a236-c10d97e7a1df
 -----
-
+onPlay:Pull1Card
 +++++
-
+GR0B0R0:Draw5Cards-toDiscard$$Retrieve1Card-fromDiscard-grabTao of the Jade Rabbit$$Put1Shootout:Run Rabbit Run-Targeted-atDude-targetMine-isParticipating
 .....
 Putting the Pieces Together
 -----
 8f678b9d-ce07-419e-9984-59feac52a075
 -----
-
+onPlay:BootMyself||whileInPlay:BootMyself-foreachCheatinRevealed-byMe
 +++++
 
 .....
@@ -4108,7 +4108,7 @@ Someone Else's Problem
 -----
 cfffa3bd-b54b-4ef7-b19a-2e49530f0be7
 -----
-
+onPlay:Put1Shootout:Someone Elses Problem-Targeted-atDude-targetOpponents
 +++++
 
 .....

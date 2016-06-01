@@ -1,6 +1,18 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.13.0.x
+
+**The Curtain Rises from OCTGN**. The new set is now available!
+* Trickier Scripts
+  * Caitlin McCue: Not scripted
+  * Bethany Shiile: Not scripted
+  * Tyxarglenak: Not scripted
+  * Emilia Vivirias: not scripted
+  * Lost to the Plague: not scripted (except attaching)
+* Joker's smile should now only trigger in lowball  
+
+
 ### 1.13.3.x
 
 * Added missing scripts for Sight Beyond Sight, Technological Exhibition and Turtle's Guard

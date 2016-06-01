@@ -158,7 +158,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
          <property name="Text" value="Controller Noon, Boot: Place 2 ghost rock (from the bank) onto this deed.&#xD;&#xA;Controller Noon, Boot: Move all ghost rock from this deed to your stash." />
-         <property name="Instructions" value="" />
+         <property name="Instructions" value="Put 2 Ghost Rock||Take all ghost rock on card to your stash." />
       </card>
   	  <card id="f12bcc27-884e-44e6-81cc-8a7748fb7d11" name="High Stakes Haven">
          <property name="Rank" value="K" />
@@ -226,7 +226,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Mystical" />
          <property name="Text" value="Noon: Ace this card to attach a Mystical goods to this dude (as shoppin'), reducing its cost by 4. The goods enter play booted.&#xD;&#xA;Noon/Shootout: Discard this card to unboot a dude with a Mystical goods at this location." />
-         <property name="Instructions" value="" />
+         <property name="Instructions" value="Noon: Ace this card to attach a Mystical goods to this dude (as shoppin'), reducing its cost by 4||Noon/Shootout: Discard this card to unboot a dude with a Mystical goods at this location." />
       </card>
   	  <card id="1a53f2b8-89fa-4681-8a90-ead0009762d8" name="Essence of Armitage">
          <property name="Rank" value="K" />
