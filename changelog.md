@@ -1,7 +1,7 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
-### 1.13.0.x
+### 1.14.0.x
 
 **The Curtain Rises from OCTGN**. The new set is now available!
 * Trickier Scripts
