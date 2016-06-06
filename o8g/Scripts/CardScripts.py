@@ -3954,7 +3954,7 @@ GR0B1R0:Draw2Cards
 .....
 Caitlin McCue
 -----
-32020b31-dc6d-443a-b76f-944b82ae8158
+fe0b667f-b384-465c-8e3e-97b9f122031c
 -----
 
 +++++
@@ -3962,7 +3962,7 @@ Caitlin McCue
 .....
 Bethany Shiile
 -----
-08260cae-a6bc-49bf-ac5f-694d29eb0f6e
+55f3b556-f7c1-4a0a-9f88-6f2a89635118
 -----
 
 +++++
@@ -3970,7 +3970,7 @@ Bethany Shiile
 .....
 Tyxarglenak
 -----
-b2ba1118-98be-4eed-bcce-c7946ed08b24
+0e414687-3d4e-413a-93d1-eb7ccaf7364e
 -----
 
 +++++
@@ -3978,7 +3978,7 @@ b2ba1118-98be-4eed-bcce-c7946ed08b24
 .....
 Dr. Dayl Burnett
 -----
-fa74d816-9331-4b83-abf9-7e1ae4c19ae3
+1f895c03-29d3-4c09-a884-2d24aea2c84e
 -----
 
 +++++
@@ -3986,7 +3986,7 @@ GR0B0R0:Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-
 .....
 Maggie Harris
 -----
-752aa5ff-20c2-418f-bcb7-69a833d013f6
+7e03d2ef-dde6-4219-afd4-608280aee7bb
 -----
 
 +++++
@@ -3994,7 +3994,7 @@ GR0B1R0:StartJob-AutoTargeted-atOutfit-targetMine-bootLeader-jobEffects<Retrieve
 .....
 Emilia Vivirias
 -----
-091152d4-8930-448b-a859-970194fc3d94
+22e58549-c649-457b-a3da-4507ecfc30ec
 -----
 
 +++++
@@ -4002,7 +4002,7 @@ Emilia Vivirias
 .....
 "Professor" Duncan
 -----
-9a6fdabd-be4b-4f03-9dab-36fd222091df
+14d66d53-e32a-4077-a843-ec3b02e4b628
 -----
 
 +++++
@@ -4010,7 +4010,7 @@ Emilia Vivirias
 .....
 The Highbinder Hotel
 -----
-5d13805f-d9e9-45aa-8d76-59dd1e3e715f
+2dd93d6f-a777-4592-a4b2-224bd81bc08a
 -----
 
 +++++
@@ -4018,7 +4018,7 @@ GR0B1R0:SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetMine-
 .....
 2nd Bank of Gomorra
 -----
-952ac3e4-6525-44ff-aea5-f0033e145f60
+1db846be-917b-46a0-980d-4f43d2b83d2a
 -----
 
 +++++
@@ -4026,7 +4026,7 @@ GR0B1R0:Put2Ghost Rock||GR0B1R0:Gain1Ghost Rock-perMarker{Ghost Rock}$$Remove999
 .....
 High Stakes Haven
 -----
-f12bcc27-884e-44e6-81cc-8a7748fb7d11
+47391e41-4a0f-443b-91dc-e3b0e298fbf4
 -----
 whileInPlay:Lose1Ghost Rock-foreachCheatinRevealed-byMe-ifPhaseGamblin
 +++++
@@ -4034,7 +4034,7 @@ whileInPlay:Lose1Ghost Rock-foreachCheatinRevealed-byMe-ifPhaseGamblin
 .....
 Culpability Scientizer
 -----
-760bdfc3-f7a9-4ddf-b246-c995d676d7a1
+e116ab3d-a5d5-46a3-860a-bc629bd0c63b
 -----
 onPlay:Put2Bounty-DemiAutoTargeted-atDude-choose1
 +++++
@@ -4042,7 +4042,7 @@ GR0B0R0:DiscardMyself$$CalloutTarget-Targeted-atDude-hasMarker{Bounty}
 .....
 Espuelas
 -----
-2add91b1-f7e1-4c52-9262-ef0177bc3957
+05fc82d0-06e4-422e-9cd7-18110a50a244
 -----
 
 +++++
@@ -4050,7 +4050,7 @@ GR0B1R0:MoveHost-moveToDeed_or_Town Square_or_Outfit
 .....
 Rites of the Smoking Mirror
 -----
-2e1a6b44-4436-4157-a26b-5b45f401b09e
+aa2d0ea9-5ede-4074-b0f7-2e78656f0e15
 -----
 
 +++++
@@ -4058,7 +4058,7 @@ GR0B0R0:PlayTarget-DemiAutoTargeted-fromHand-atGoods_and_Mystical-choose1-payCos
 .....
 Essence of Armitage
 -----
-1a53f2b8-89fa-4681-8a90-ead0009762d8
+fc2842bf-c9b0-4b79-875b-3e35d91a5af2
 -----
 
 +++++
@@ -4066,7 +4066,7 @@ Essence of Armitage
 .....
 Festering Grasp
 -----
-8de45e93-ead5-47b9-90a5-7b5c9376b300
+64605ce4-35a8-4167-8650-e9b99b0e0dd3
 -----
 
 +++++
@@ -4074,7 +4074,7 @@ GR0B1R0:Pull1Card-testHex13-spellEffects<Retrieve1Card-toTable-grabSidekick-from
 .....
 Silver Pheasant's Bounty
 -----
-99c47d1a-472b-4c71-9f17-ae53f4c04280
+560d147e-37d3-4f17-91a5-33fcbd23deef
 -----
 onPlay:Put1ProdPlus-AutoTargeted-atDeed-onHost
 +++++
@@ -4082,7 +4082,7 @@ GR0B1R0:Pull1Card-testSpirit6-spellEffects<BootHost-isCost++Gain2Ghost Rock,None
 .....
 Comin' Up Roses
 -----
-52a46c18-b415-4af1-aa86-16670d32d689
+2d97b6cb-9387-4081-8be5-85bb0bba0039
 -----
 
 +++++
@@ -4090,7 +4090,7 @@ Comin' Up Roses
 .....
 Run Rabbit Run
 -----
-fc75402b-6e28-4789-a236-c10d97e7a1df
+53df6af3-7b21-4594-926d-9e3ec7e30274
 -----
 onPlay:Pull1Card
 +++++
@@ -4098,7 +4098,7 @@ GR0B0R0:Draw5Cards-toDiscard$$Retrieve1Card-fromDiscard-grabTao of the Jade Rabb
 .....
 Putting the Pieces Together
 -----
-8f678b9d-ce07-419e-9984-59feac52a075
+e42451a8-c431-4b2b-a454-9b94c187dca6
 -----
 onPlay:BootMyself||whileInPlay:BootMyself-foreachCheatinRevealed-byMe
 +++++
@@ -4106,7 +4106,7 @@ onPlay:BootMyself||whileInPlay:BootMyself-foreachCheatinRevealed-byMe
 .....
 Someone Else's Problem
 -----
-cfffa3bd-b54b-4ef7-b19a-2e49530f0be7
+8ac302b6-711f-41dc-9f0d-4ec19f16f813
 -----
 onPlay:Put1Shootout:Someone Elses Problem-Targeted-atDude-targetOpponents
 +++++
@@ -4114,7 +4114,7 @@ onPlay:Put1Shootout:Someone Elses Problem-Targeted-atDude-targetOpponents
 .....
 Lost to the Plague
 -----
-a248365d-3277-43ae-8772-dbd930ad7d17
+c22ec64d-d7d6-4c06-b09d-4a827c0dbad3
 -----
 
 +++++
