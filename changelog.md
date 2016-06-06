@@ -3,6 +3,10 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 
 ### 1.14.0.x
 
+* Fixed decks from doomtowndb.com not loading when containing TCR cards.
+
+### 1.14.0.x
+
 **The Curtain Rises from OCTGN**. The new set is now available!
 * Trickier Scripts
   * Caitlin McCue: Not scripted
