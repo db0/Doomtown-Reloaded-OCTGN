@@ -4120,6 +4120,174 @@ c22ec64d-d7d6-4c06-b09d-4a827c0dbad3
 +++++
 
 .....
+El Armadillo de Hierro
+-----
+8c1e6faf-c90d-4167-9834-793ffcaa47f7
+-----
+
++++++
+
+.....
+Jim Hexter
+-----
+b1d4638a-0118-426f-a966-1a9c6ff0da5b
+-----
+
++++++
+
+.....
+Hupirika Sue
+-----
+d2e8e560-15ad-421d-931b-7bb9a8bc6b2c
+-----
+
++++++
+
+.....
+The Mixer
+-----
+0c1b3abb-69eb-4f9b-9dfc-69942c2442a6
+-----
+
++++++
+
+.....
+The Harvester
+-----
+51b3db35-9811-4adf-89f6-7dd48b031bba
+-----
+
++++++
+
+.....
+Lucy Clover
+-----
+7477d1e2-14c6-45e8-8acd-9619ec2fa578
+-----
+
++++++
+
+.....
+Buckin' Billy Ballard
+-----
+314f6ee6-e572-44a2-9412-78bd822be671
+-----
+
++++++
+
+.....
+Antoine Peterson
+-----
+1120919a-d4b6-4655-b369-4f732b016e14
+-----
+
++++++
+
+.....
+Denise Brancini
+-----
+be0ace53-d90a-4fff-a6a6-c5545667d83f
+-----
+
++++++
+
+.....
+"Open Wound"
+-----
+7cc6fca2-a48a-4386-ba79-2fd94534b6ec
+-----
+
++++++
+
+.....
+Long Strides Ranch
+-----
+fd144b71-3727-4333-be79-b57ab4fe3afc
+-----
+
++++++
+
+.....
+The Gomorra Gazette
+-----
+d03f58a7-ef6a-428e-a950-67e0b6245b66
+-----
+
++++++
+
+.....
+Bacillus Pasteuria
+-----
+2e323023-c293-41ce-a87c-12fddba592d5
+-----
+
++++++
+
+.....
+Doomsday Supply
+-----
+4461e319-d77d-4a76-ba9c-e401a4a99223
+-----
+
++++++
+
+.....
+The Blighted
+-----
+af22f9d8-738b-4e7f-a13a-599089e51507
+-----
+
++++++
+
+.....
+Sun-Touched Raven
+-----
+8b505b63-7954-42b6-b072-85b5b794c0fa
+-----
+
++++++
+
+.....
+Inner Struggle
+-----
+ba6d6429-9a34-4912-96c4-aee1649650f3
+-----
+
++++++
+
+.....
+Lighting the Fuse
+-----
+49496e5f-974e-43f1-a85f-d9bda3de8325
+-----
+
++++++
+
+.....
+One Fights As Many
+-----
+18f82dad-6f87-4a26-9dee-2859b4854b70
+-----
+
++++++
+
+.....
+Serendipitous Arrival
+-----
+f8fc9a76-cbd9-4ad5-b2c7-5cd40f150e79
+-----
+
++++++
+
+.....
+Siege of the Orphanage
+-----
+059481a6-d607-4896-8584-fb596c4647f7
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
