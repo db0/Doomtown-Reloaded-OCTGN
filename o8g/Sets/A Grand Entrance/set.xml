@@ -184,7 +184,7 @@
          <property name="Control" value="1" />
          <property name="Outfit" value="" />
          <property name="Keywords" value="Non-Unique-Public" />
-         <property name="Text" value="his deed is adjacent to all other Open Wounds.&#xD;&#xA;Repeat Controller Noon: Pay 1 ghost rock to move one of your dudes from this location to an adjacent location." />
+         <property name="Text" value="This deed is adjacent to all other Open Wounds.&#xD;&#xA;Repeat Controller Noon: Pay 1 ghost rock to move one of your dudes from this location to an adjacent location." />
          <property name="Instructions" value="" />
       </card>
 

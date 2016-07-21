@@ -227,6 +227,23 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          gadgetPull = pull(silent = True) # pull returns a tuple with the results of the pull
          notify("{} attempted to manufacture a {} and pulled a {} {}".format(card,gadget,fullrank(gadgetPull[0]), fullsuit(gadgetPull[1])))
          attachCard(gadget,card)
+   elif card.name == 'Sun-Touched Raven':
+      me.deck.setVisibility('me')
+      topCards = me.deck.top(5)
+      for iter in range(3):
+         notify(:> "{}'s {} is helping them choose a card to discard ({}/3)".format(me,card,iter))
+         choiceCard = askCard(topCards,"Double click on any card to discard it, or close this window to finish ({}/3)".format(iter))
+         if not choiceCard: break
+         else:
+            topCards.remove(choiceCard)
+            choiceCard.moveTo(me.piles['Discard Pile'])
+      shamanHost = fetchHost(card)
+      if shamanHost.orientation == Rot0 and confirm("Do you want to boot this shaman to draw a card?"):
+         shamanHost.orientation == Rot90
+         drawMany(count = 1, silent = True)
+         notify(":> {} booted {} to draw 1 card".format(me,shamanHost))
+   elif card.name == 'Inner Struggle':
+      remoteCall(card.controller,'randomDiscard',[card.controller.hand])
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
 
@@ -429,7 +446,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       else: choice = SingleChoice("Choose which player's hand to look at",[pl.name for pl in opponents])
       if choice == None: return
       remoteCall(opponents[choice],'TelepathyHelmet',[me,card]) 
-### F&F ###		 
+### F&F ###       
    elif card.name == "This'll Hurt in the Mornin" and action == 'PLAY':
       targetCards = findTarget('DemiAutoTargeted-isDrawHand-targetOpponents-choose2',card = card, choiceTitle = "Choose which of your opponent's cards to discard")
       if not len(targetCards): return 'ABORT'
@@ -817,9 +834,53 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
             revealHand(me.piles['Draw Hand'], type = 'shootout') # We move the cards back ot the draw hand and reveal again, letting the game announce the new rank.
       else:
          whisper(":::ERROR::: You can only use Theo's ability during lowball or shootouts")
+   elif card.name == "Antoine Peterson" and action == 'PLAY':
+      discardedJobs = [c for c in me.piles['Discard Pile'] if re.search(r'Noon Job',c.Text) and c.Type == 'Action']
+      choice = SingleChoice('Choose one of your jobs to take to your hand', makeChoiceListfromCardList(discardedJobs))
+      discardedJobs[choice].moveTo(me.hand)
+      handDiscard = None
+      while not handDiscard:
+         handDiscard = askCard([c for c in me.hand],"Choose which card to discard from your hand")
+      handDiscard.moveTo(me.piles['Discard Pile'])
+      notify("{} uses {} to take {} into their hand and discard {}".format(me,card,discardedJobs[choice],handDiscard))      
+      Sloanies = findTarget(Targeted-atDude_and_The Sloane Gang-targetMine-isBooted-noTargetingError)
+      if len(Sloanies):
+         boot(Sloanies[0], forced = 'unboot')
+         Sloanies[0].markers[mdict['Bounty']] += 2
+         notify("{} unboots {} and gives them 2 bounty".format(me,Sloanies[0]))
+   elif card.name == "Denise Brancini" and action == 'DISCARD':
+      if getGlobalVariable('Phase') == '2':
+         notify(":> {} couldn't pay the upkeep of {} and so all other players refill their aced jokers".format(me,card))
+         for player in getActivePlayers(): remoteCall(player,'DeniseBrancini',[card])
+   elif card.name == "Serendipitous Arrival" and action == 'PLAY':
+      handDudes = findTarget('DemiAutoTargeted-atDude-fromHand-choose1')
+      if not len(handDudes): return 'ABORT'
+      dude = handDudes[0]
+      cost = num(dude.Cost)
+      if cost - 5 > 0: cost -= 5
+      else: cost = 0
+      if payCost(cost) == 'ABORT' : return 'ABORT' 
+      placeCard(dude,'HireDude')
+      notify(":> {} has serendipitously arrived in battle!".format(dude))
+      participateDude(dude)
+      TokensX('Put1Serendipitous', '', dude)
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
+def fetchCustomUpkeep(card):
+   extraUpkeep = 0
+   if card.name == "Denise Brancini":
+      for player in getActivePlayers():
+         extraUpkeep += len([c for c in player.piles['Boot Hill'])
+   return extraUpkeep
+               
+
+def fetchCustomProduction(card):
+   extraProduction = 0
+   if card.name == "Long Strides Ranch":
+      if len([c for c in table if re.search(r'Horse',c.Keywords)) >= 2: extraProduction = 2
+   return extraProduction
+               
 
 def markerEffects(Time = 'Start'):
    debugNotify(">>> markerEffects() at time: {}".format(Time)) #Debug
@@ -855,6 +916,13 @@ def markerEffects(Time = 'Start'):
          if Time == 'High Noon' and re.search(r'UpkeepPrePaid',marker[0]) and card.controller == me: # Tax Office reduction effects removal
             modProd(card, -card.markers[marker], True)
             card.markers[marker] = 0
+         if (Time == 'ShootoutEnd' and re.search(r'Serendipitous',marker[0])):
+            if confirm("Do you want to pay 3 Ghost Rock to keep this dude in play?") and payCost(3) != 'ABORT':
+               TokensX('Remove999'+marker[0], marker[0] + ':', card)
+               notify("--> {} paid 3 ghost rock to retain {} in play.".format(me,card))
+            else:
+               discard(card,silent = True)
+               notify("--> {} wasn't paid properly so they left play.".format(card))
    
 #------------------------------------------------------------------------------
 # Remote Functions
@@ -1235,3 +1303,8 @@ def chkHenryMoran(type):
             revealHand(me.piles['Draw Hand'], 'lowball')
             return True
    return False   
+   
+def DeniseBrancini():
+   for c in me.piles['Boot Hill']:
+      if c.type == 'Joker': c.moveTo(me.Deck)
+   shuffle(me.Deck)

@@ -423,12 +423,12 @@ def upkeep(group = table, x = 0, y = 0): # Automatically receive production and 
                  and card.highlight != DrawHandColor) # And avoid counting lowball cards
    for card in cards: # For each card...
       TownHall = findMarker(card, 'Town Hall')
-      cardUpkeep = num(card.Upkeep)
+      cardUpkeep = num(card.Upkeep) + fetchCustomUpkeep(card)
       if TownHall: # If the card is affected by the town hall, then we want to reduce its upkeep by its influence
          cardUpkeep -= compileCardStat(card, stat = 'Influence')
          if cardUpkeep < 0: cardUpkeep = 0
          card.markers[TownHall] = 0
-      gr = num(card.Production) - cardUpkeep + card.markers[mdict['ProdPlus']] - card.markers[mdict['ProdMinus']]
+      gr = num(card.Production) + fetchCustomProduction(card) - cardUpkeep + card.markers[mdict['ProdPlus']] - card.markers[mdict['ProdMinus']]
       # Grab its production value (usually 0 for most non-deeds) then 
       # add the amount of any +production markers you have on the card and remove the amount of any -production markers you have on the card.
       if (card.Outfit != me.getGlobalVariable('playerOutfit') and # If a non-drifter dude is not from the player's outfit, 

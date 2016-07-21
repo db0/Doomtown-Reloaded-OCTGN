@@ -4126,7 +4126,7 @@ El Armadillo de Hierro
 -----
 
 +++++
-
+GR0B0R1:Put1BulletShootoutPlus
 .....
 Jim Hexter
 -----
@@ -4134,7 +4134,7 @@ b1d4638a-0118-426f-a966-1a9c6ff0da5b
 -----
 
 +++++
-
+GR0B0R1:Lose1Ghost Rock-isCost$$Gain1Ghost Rock-onOpponent$$Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
 .....
 Hupirika Sue
 -----
@@ -4142,7 +4142,7 @@ d2e8e560-15ad-421d-931b-7bb9a8bc6b2c
 -----
 
 +++++
-
+GR0B0R0:CalloutTarget-Targeted-atDude-targetOpponents
 .....
 The Mixer
 -----
@@ -4150,7 +4150,7 @@ The Mixer
 -----
 
 +++++
-
+GR0B0R1:Put1Shootout:Mixed Medicine-Targeted-atDude-isParticipating
 .....
 The Harvester
 -----
@@ -4166,7 +4166,7 @@ Lucy Clover
 -----
 
 +++++
-
+GR0B0R1:Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud
 .....
 Buckin' Billy Ballard
 -----
@@ -4174,13 +4174,13 @@ Buckin' Billy Ballard
 -----
 
 +++++
-
+GR0B0R0:BootTarget-AutoTargeted-atHorse-onAttachment-isCost$$Draw1Cards$$BootTarget-Targeted-atDude-noTargetingError
 .....
 Antoine Peterson
 -----
 1120919a-d4b6-4655-b369-4f732b016e14
 -----
-
+onPlay:CustomScript
 +++++
 
 .....
@@ -4188,7 +4188,7 @@ Denise Brancini
 -----
 be0ace53-d90a-4fff-a6a6-c5545667d83f
 -----
-
+onDiscard:CustomScript
 +++++
 
 .....
@@ -4198,7 +4198,7 @@ be0ace53-d90a-4fff-a6a6-c5545667d83f
 -----
 
 +++++
-
+GR1B0R1:MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToDeed_or_Town Square_or_Outfit
 .....
 Long Strides Ranch
 -----
@@ -4206,7 +4206,7 @@ fd144b71-3727-4333-be79-b57ab4fe3afc
 -----
 
 +++++
-
+GR0B1R0:PlayTarget-DemiAutoTargeted-fromHand-atHorse-choose1-payCost-reduc2
 .....
 The Gomorra Gazette
 -----
@@ -4214,7 +4214,7 @@ d03f58a7-ef6a-428e-a950-67e0b6245b66
 -----
 
 +++++
-
+GR0B1R0:Gain1Ghost Rock-perTargetProperty{Influence}-Targeted-atDude-targetOpponents
 .....
 Bacillus Pasteuria
 -----
@@ -4222,7 +4222,7 @@ Bacillus Pasteuria
 -----
 
 +++++
-
+GR0B0R0:UnbootTarget-Targeted-atDude
 .....
 Doomsday Supply
 -----
@@ -4230,7 +4230,7 @@ Doomsday Supply
 -----
 
 +++++
-
+GR0B1R0:Retrieve1Card-grabGoods-fromDiscard-toTable-payCost-reduc2
 .....
 The Blighted
 -----
@@ -4246,13 +4246,13 @@ Sun-Touched Raven
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testSpirit6-spellEffects<UseCustomAbility,None>
 .....
 Inner Struggle
 -----
 ba6d6429-9a34-4912-96c4-aee1649650f3
 -----
-
+onPlay:BootMyself$$UseCustomAbility||whileInPlay:BootMyself-foreachCheatinRevealed-byMe
 +++++
 
 .....
@@ -4268,7 +4268,7 @@ One Fights As Many
 -----
 18f82dad-6f87-4a26-9dee-2859b4854b70
 -----
-
+onPlay:StartJob-AutoTargeted-atTown Square
 +++++
 
 .....
@@ -4276,7 +4276,7 @@ Serendipitous Arrival
 -----
 f8fc9a76-cbd9-4ad5-b2c7-5cd40f150e79
 -----
-
+onPlay:CustomScript
 +++++
 
 .....
