@@ -1,7 +1,17 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
-### 1.14.0.x
+### 1.15.1.x
+
+**A Grand Entrance on OCTGN**. The new set is now available!
+* Trickier Scripts
+  * Hupirika Sue: Only adds bullets
+  * The Blighted: Not scripted
+  * Inner Struggle: Will Always boot on cheating, regardless of what the opponent has.
+  * Lighting the Fuse: Not scripted to avoid mistakes
+  * Siege of the Orphanage: Not scripted
+
+### 1.14.1.x
 
 * Fixed decks from doomtowndb.com not loading when containing TCR cards.
 

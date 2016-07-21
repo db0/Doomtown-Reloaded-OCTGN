@@ -229,18 +229,19 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          attachCard(gadget,card)
    elif card.name == 'Sun-Touched Raven':
       me.deck.setVisibility('me')
-      topCards = me.deck.top(5)
+      topCards = list(me.deck.top(5))
       for iter in range(3):
-         notify(:> "{}'s {} is helping them choose a card to discard ({}/3)".format(me,card,iter))
+         notify(":> {}'s {} is helping them choose a card to discard ({}/3)".format(me,card,iter))
          choiceCard = askCard(topCards,"Double click on any card to discard it, or close this window to finish ({}/3)".format(iter))
          if not choiceCard: break
          else:
             topCards.remove(choiceCard)
             choiceCard.moveTo(me.piles['Discard Pile'])
+      me.deck.setVisibility('None')
       shamanHost = fetchHost(card)
       if shamanHost.orientation == Rot0 and confirm("Do you want to boot this shaman to draw a card?"):
-         shamanHost.orientation == Rot90
-         drawMany(count = 1, silent = True)
+         shamanHost.orientation = Rot90
+         drawMany(me.deck,count = 1, silent = True)
          notify(":> {} booted {} to draw 1 card".format(me,shamanHost))
    elif card.name == 'Inner Struggle':
       remoteCall(card.controller,'randomDiscard',[card.controller.hand])
@@ -837,13 +838,14 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
    elif card.name == "Antoine Peterson" and action == 'PLAY':
       discardedJobs = [c for c in me.piles['Discard Pile'] if re.search(r'Noon Job',c.Text) and c.Type == 'Action']
       choice = SingleChoice('Choose one of your jobs to take to your hand', makeChoiceListfromCardList(discardedJobs))
+      if not choice: return
       discardedJobs[choice].moveTo(me.hand)
       handDiscard = None
       while not handDiscard:
          handDiscard = askCard([c for c in me.hand],"Choose which card to discard from your hand")
       handDiscard.moveTo(me.piles['Discard Pile'])
       notify("{} uses {} to take {} into their hand and discard {}".format(me,card,discardedJobs[choice],handDiscard))      
-      Sloanies = findTarget(Targeted-atDude_and_The Sloane Gang-targetMine-isBooted-noTargetingError)
+      Sloanies = findTarget("Targeted-atDude_and_The Sloane Gang-targetMine-isBooted-noTargetingError")
       if len(Sloanies):
          boot(Sloanies[0], forced = 'unboot')
          Sloanies[0].markers[mdict['Bounty']] += 2
@@ -857,11 +859,16 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       if not len(handDudes): return 'ABORT'
       dude = handDudes[0]
       cost = num(dude.Cost)
-      if cost - 5 > 0: cost -= 5
-      else: cost = 0
-      if payCost(cost) == 'ABORT' : return 'ABORT' 
+      if cost - 5 > 0: 
+         cost -= 5
+         extraTXT = " was paid {} ghost rock and".format(cost)
+      else: 
+         cost = 0
+         extraTXT = ''
+      if payCost(cost) == 'ABORT' : return 'ABORT'
+      
       placeCard(dude,'HireDude')
-      notify(":> {} has serendipitously arrived in battle!".format(dude))
+      notify(":> {}{} has serendipitously arrived in battle!".format(dude,extraTXT))
       participateDude(dude)
       TokensX('Put1Serendipitous', '', dude)
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
@@ -871,14 +878,14 @@ def fetchCustomUpkeep(card):
    extraUpkeep = 0
    if card.name == "Denise Brancini":
       for player in getActivePlayers():
-         extraUpkeep += len([c for c in player.piles['Boot Hill'])
+         extraUpkeep += len([c for c in player.piles['Boot Hill']])
    return extraUpkeep
                
 
 def fetchCustomProduction(card):
    extraProduction = 0
    if card.name == "Long Strides Ranch":
-      if len([c for c in table if re.search(r'Horse',c.Keywords)) >= 2: extraProduction = 2
+      if len([c for c in table if re.search(r'Horse',c.Keywords)]) >= 2: extraProduction = 2
    return extraProduction
                
 
