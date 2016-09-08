@@ -4310,7 +4310,7 @@ ea7a82ee-ad0d-4508-bbd7-a0a7b9fd610a
 -----
 
 +++++
-
+GR0B0R0:DiscardTarget-DemiAutoTargeted-atSpell-onAttachment-isCost-choose1$$Put2BulletShootoutPlus
 .....
 Speaks-with-Earth
 -----
@@ -4318,7 +4318,7 @@ Speaks-with-Earth
 -----
 
 +++++
-
+GR0B1R0:BootTarget-DemiAutoTargeted-atDude-targetOpponents$$UnbootTarget-DemiAutoTargeted-atTotem-noTargetingError
 .....
 The Grey Man
 -----
@@ -4326,7 +4326,7 @@ The Grey Man
 -----
 
 +++++
-
+GR0B0R0:BootTarget-DemiAutoTargeted-atDude
 .....
 Erin Knight
 -----
@@ -4350,7 +4350,7 @@ Quimby R. Tuttlemeir
 -----
 
 +++++
-
+GR0B0R0:AceTarget-DemiAutoTargeted-atDude_and_Abomination-targetMine$$Put1PermInfluencePlus
 .....
 Pancho Castillo
 -----
@@ -4366,7 +4366,7 @@ ef1b01c0-82e5-4243-8839-2136df14d4b1
 -----
 
 +++++
-
+GR0B1R0:CustomScript
 .....
 J.W. Byrne, P. I.
 -----
@@ -4374,7 +4374,7 @@ J.W. Byrne, P. I.
 -----
 
 +++++
-
+GR0B1R0:BootTarget-Targeted-atGrifter-targetMine
 .....
 Knight's Chasuble
 -----
@@ -4382,13 +4382,13 @@ Knight's Chasuble
 -----
 
 +++++
-
+GR0B1R0:UnbootHost
 .....
 Pedro
 -----
 66f1e08f-2b5a-4e3e-97d2-0289c6379700
 -----
-
+onPlay:Put3ValueNoonMinus
 +++++
 
 .....
@@ -4398,7 +4398,7 @@ b63cda5e-d4cb-436f-be79-79dc74124a57
 -----
 
 +++++
-
+GR0B0R1:Pull1Card
 .....
 The Gambler's Gun
 -----
@@ -4406,13 +4406,13 @@ fac96abf-efee-492f-ae9e-72a944e518a6
 -----
 
 +++++
-
+GR0B1R0:SimplyAnnounce{increase their hand rank by 2}
 .....
 Calling the Cavalry
 -----
 4bc332e3-b672-4445-90af-f4b7e4816fee
 -----
-
+onPlay:Remove999Shootout:Draw-isSilent-DemiAutoTargeted-atDude-targetMine-isParticipating$$Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-isParticipating
 +++++
 
 .....
@@ -4422,7 +4422,7 @@ f5359fcb-0095-4ef0-8264-e3eec905528d
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testMiracle5-spellEffects<SimplyAnnounce{reduce casualties by their blessed rating},None>
 .....
 Ghostly Communion
 -----
@@ -4430,7 +4430,7 @@ Ghostly Communion
 -----
 
 +++++
-
+GR0B1R0:Pull1Card-testSpirit7-spellEffects<MoveHost-moveToDude_or_Deed_or_Town Square_or_Outfit++ParticipateHost,None>-onlyInShootouts||GR0B1R0:Pull1Card-testSpirit5-spellEffects<MoveHost-moveToDeed_or_Town Square_or_Outfit,None>-onlyInNoon
 .....
 All or Nothing
 -----
@@ -4438,7 +4438,7 @@ All or Nothing
 -----
 
 +++++
-
+onPlay:StartJob-DemiAutoTargeted-atDeed_or_Town Square_or_Outfit-choose1-jobEffects<SendHomeBootedMulti-Targeted-atDude-targetOpponents,None>
 .....
 Rite of Profane Abstersion
 -----
@@ -4452,7 +4452,7 @@ Showboating
 -----
 d67fe646-d457-41bd-b8ce-ec8f836ca3a5
 -----
-
+onPlay:Put1PermControlPlus-Targeted-atDude-targetMine
 +++++
 
 .....

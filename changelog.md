@@ -1,7 +1,14 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
-### 1.15.1.x
+
+### 1.16.0.x
+
+**The Showstopper on OCTGN**. The new set is now available!
+A Bit untested so let me know if you find any bugs
+
+
+### 1.15.0.x
 
 **A Grand Entrance on OCTGN**. The new set is now available!
 * Trickier Scripts
