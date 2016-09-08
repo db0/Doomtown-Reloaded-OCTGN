@@ -4288,6 +4288,174 @@ Siege of the Orphanage
 +++++
 
 .....
+Seamus McCaffrey
+-----
+32e3dc80-38a5-41e5-a267-f5b0f3a55d22
+-----
+
++++++
+
+.....
+Shi Long Peng
+-----
+f23323c6-2381-4f8a-961c-606f84147c56
+-----
+
++++++
+
+.....
+Gene North Star
+-----
+ea7a82ee-ad0d-4508-bbd7-a0a7b9fd610a
+-----
+
++++++
+
+.....
+Speaks-with-Earth
+-----
+1bea3954-dab3-42ef-830d-4d03a779b7b6
+-----
+
++++++
+
+.....
+The Grey Man
+-----
+49e72f76-4b92-468d-90c9-325689b607b1
+-----
+
++++++
+
+.....
+Erin Knight
+-----
+b66bd108-b7f4-4eb4-8dab-bdcf67dab50c
+-----
+
++++++
+
+.....
+Nicholas Kramer
+-----
+96ac4bcb-e022-4dc3-b87f-a9a0ddc4c723
+-----
+
++++++
+
+.....
+Quimby R. Tuttlemeir
+-----
+5f270369-68b9-4ce9-9e67-1e74f313ea6f
+-----
+
++++++
+
+.....
+Pancho Castillo
+-----
+4e724dee-6a9f-42dc-92ee-00e0f55be29f
+-----
+
++++++
+
+.....
+Grimoires & More
+-----
+ef1b01c0-82e5-4243-8839-2136df14d4b1
+-----
+
++++++
+
+.....
+J.W. Byrne, P. I.
+-----
+576ef086-4950-47b3-8ab5-71f3fdbce794
+-----
+
++++++
+
+.....
+Knight's Chasuble
+-----
+92cf4c1a-cd1b-4377-a0dd-e06d52edbbff
+-----
+
++++++
+
+.....
+Pedro
+-----
+66f1e08f-2b5a-4e3e-97d2-0289c6379700
+-----
+
++++++
+
+.....
+Aetheric Shockwave Inducer
+-----
+b63cda5e-d4cb-436f-be79-79dc74124a57
+-----
+
++++++
+
+.....
+The Gambler's Gun
+-----
+fac96abf-efee-492f-ae9e-72a944e518a6
+-----
+
++++++
+
+.....
+Calling the Cavalry
+-----
+4bc332e3-b672-4445-90af-f4b7e4816fee
+-----
+
++++++
+
+.....
+Get Behind Me, Satan!
+-----
+f5359fcb-0095-4ef0-8264-e3eec905528d
+-----
+
++++++
+
+.....
+Ghostly Communion
+-----
+7469036b-d154-4cb5-9eff-7d77fbdbcdf0
+-----
+
++++++
+
+.....
+All or Nothing
+-----
+22e8401c-bf60-42e0-8119-36ce05c5d893
+-----
+
++++++
+
+.....
+Rite of Profane Abstersion
+-----
+722d4849-79a2-4bf3-b3d6-109de8762773
+-----
+
++++++
+
+.....
+Showboating
+-----
+d67fe646-d457-41bd-b8ce-ec8f836ca3a5
+-----
+
++++++
+
+.....
 ENDSCRIPTS
 =====
 '''
