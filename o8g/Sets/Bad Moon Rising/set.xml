@@ -26,6 +26,7 @@
          <property name="Instructions" value="" />
       </card>
 
+      <card id="407fccf5-1007-4be6-a1f5-8a06bc2c0674" name="Zui Waidan">
          <property name="Rank" value="A" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -147,6 +148,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Law Dogs" />
          <property name="Keywords" value="Deputy-Blessed 2" />
+         <property name="Text" value="Discard a card. Choose an opposing wanted&#xD;&#xA;dude at this or an adjacent location. Lower that dude's bounty by 1 to search&#xD;&#xA;your deck or discard pile for a non-Unique Miracle or non-Unique Mystical&#xD;&#xA;goods, reveal it, and add it to your hand.&#xD;&#xA;" />
          <property name="Instructions" value="" />
       </card>
 
@@ -312,6 +314,7 @@
          <property name="Instructions" value="" />
       </card>
 
+      <card id="76f4b9dd-7c1e-4ffd-a2ea-e7e2d0f253eb" name="Cliff's #4 Saloon">
          <property name="Rank" value="Q" />
          <property name="Suit" value="Diamonds" />
          <property name="Type" value="Deed" />
@@ -347,6 +350,7 @@
          <property name="Instructions" value="" />
       </card>
 
+      <card id="973b1148-56aa-421b-ba9a-5c6273710b6c" name="Burn 'Em Out">
          <property name="Rank" value="3" />
          <property name="Suit" value="Clubs" />
          <property name="Type" value="Action" />
@@ -472,6 +476,7 @@
          <property name="Instructions" value="" />
       </card>
 
+      <card id="08507600-22ab-4903-861e-1c3941a54e23" name="Rancher's Lariat">
          <property name="Rank" value="7" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Goods" />
@@ -561,6 +566,7 @@
          <property name="Instructions" value="" />
       </card>
 
+      <card id="540d789b-98d5-47ac-8778-7a834851b10b" name="Tse-Che-Nako's Weaving">
          <property name="Rank" value="6" />
          <property name="Suit" value="Hearts" />
          <property name="Type" value="Spell" />
@@ -700,6 +706,7 @@
          <property name="Control" value="" />
          <property name="Outfit" value="Morgan Cattle Co." />
          <property name="Keywords" value="" />
+         <property name="Text" value="When checking for victory, if there has not been a shootout this turn, each player's influence total at each location is limited to 5. &#xD;&#xA;Noon, Boot: Choose your dude. Move them to the town square. That dude becomes a stud. If they have a Horse, unboot them. &#xD;&#xA;" />
          <property name="Instructions" value="" />
       </card>
 
