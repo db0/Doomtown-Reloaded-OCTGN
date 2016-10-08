@@ -4456,6 +4456,326 @@ onPlay:Put1PermControlPlus-Targeted-atDude-targetMine
 +++++
 
 .....
+Mr. Outang
+-----
+ef12ef9a-b1c8-433f-a4ac-eac38f5ffaf1
+-----
+
++++++
+
+.....
+Zui Waidan
+-----
+407fccf5-1007-4be6-a1f5-8a06bc2c0674
+-----
+
++++++
+GR0B0R0:BootTarget-Targeted-atDeed-targetMine-isCost$$PutShootout:KungFu Bonus:2-DemiAutoTargeted-atDude-isParticipating-targetMine-choose1
+.....
+Stevie Lyndon
+-----
+52674538-37bf-4dc3-bba9-164f11abb7c4
+-----
+
++++++
+
+.....
+Eva Bright Eyes
+-----
+4e453b4b-da87-4042-8ebf-92ff9a25c25c
+-----
+
++++++
+GR0B0R0:BootTarget-AutoTargeted-atHorse-onAttachment-choose1-isCost$$SendHomeBootedMyself
+.....
+Wei Xu
+-----
+043e1e23-de64-403f-a5ae-6df84823538f
+-----
+
++++++
+
+.....
+Mick Aduladi
+-----
+1c769e8e-e7d5-49e5-94c7-7f83dc3b1cc7
+-----
+
++++++
+GR0B0R0:MoveMyself-moveToHoly Ground
+.....
+Hattie DeLorre
+-----
+77e140fc-3d2d-4715-bc47-af208e671b3e
+-----
+
++++++
+GR0B0R0:Put5BulletShootoutMinus-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents
+.....
+Father Tolarios
+-----
+c213a4b2-95ee-487c-b0a8-8cc09ac87a7d
+-----
+
++++++
+GR0B0R0:DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-isCost-choose1-choiceTitle{Choose from which dude to remove the Bounty}$$Retrieve1Card-grabMiracle_and_nonUnique_or_Mystical_and_nonUnique
+.....
+Jimmy &quot;The Saint&quot;
+-----
+163fc3b6-eea4-44ab-9edc-f03647046c3a
+-----
+
++++++
+GR0B0R0:Gain1Ghost Rock-perTargetProperty{Production}-Targeted-atDeed-targetMine
+.....
+Mario Crane
+-----
+2a6bafed-d2ea-4275-877a-f0f15aae4c85
+-----
+
++++++
+GR0B0R1:SimplyAnnounce{reduce their casualties by 2 this round}
+.....
+POST-A-TRON
+-----
+03c922cf-e0ef-4d47-bbb7-7c62428f90fb
+-----
+
++++++
+GR0B01R0:Gain3Ghost Rock
+.....
+Diego Linares
+-----
+82aaf3b6-9eb1-4fd2-9812-b6b727cf51b2
+-----
+
++++++
+
+.....
+Christine Perfect
+-----
+75969ce9-d9e6-4cc1-b4e5-5ff29c3e8d69
+-----
+
++++++
+GR0B0R0:MoveMyself-moveToDude$$Put5ValueNoonMinus-Targeted-atDude-targetOpponents
+.....
+Absalom Hotchkiss
+-----
+2431b33e-b34c-4b53-9915-fa18ca6777e7
+-----
+
++++++
+GR0B0R0:MoveTarget-Targeted-atDude-targetMine-moveToAbsalom Hotchkiss
+.....
+The Caretaker
+-----
+543b1dab-41f2-4d79-80f5-a00fa3a0b6e8
+-----
+atPhaseGamblin:Put4ValueNoonPlus$$Put4BulletNoonPlus$$Put1High Noon:Stud
++++++
+GR0B0R0:Remove4ValueNoonPlus$$Remove4BulletNoonPlus$$Remove1High Noon:Stud
+.....
+Gomorra Gaming Commission
+-----
+27194abd-3f50-4088-98f2-5dd70dfddd62
+-----
+
++++++
+GR0B1R0:Put1ProdPlus$$UseCustomAbility-isResolution
+.....
+Sherman Mortgage
+-----
+15b1a170-e713-40d5-ab39-6ed2f8cd97d6
+-----
+atPhaseShootoutStart:BootMyself
++++++
+
+.....
+Cliff's #4 Saloon
+-----
+76f4b9dd-7c1e-4ffd-a2ea-e7e2d0f253eb
+-----
+
++++++
+GR0B1R0:Remove999High Noon:Draw$$Put1High Noon:Stud
+.....
+Nickel Night Inn
+-----
+581c842b-d83b-4fcf-b525-7acad7f4a866
+-----
+
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atDude-targetOpponents-hasProperty{Value}le3-choose1
+.....
+Burn 'Em Out
+-----
+973b1148-56aa-421b-ba9a-5c6273710b6c
+-----
+OnPlay:StartJob-AutoTargeted-atOutfit-targetOpponents-bootLeader-bountyPosse-jobEffects<UseCustomAbility,None>
++++++
+
+.....
+The Law Goes Underground
+-----
+a149d4e1-b28c-4f5a-8202-9c12d7be2876
+-----
+onPlay:CustomScript
++++++
+
+.....
+Shiny Things
+-----
+3448fa9e-1adc-4094-80a9-7c2ed35db597
+-----
+onPlay:BootTarget-Targeted-atDude-targetOpponents$$Put2InfluencePlus-Targeted-atDude-targetOpponents$$Put7ValueNoonPlus-Targeted-atDude-targetOpponents$$Put1High Noon:Shiny Things-Targeted-atDude-targetOpponents
++++++
+
+.....
+Moving Forward
+-----
+eaf25cb8-16fb-4f52-ba4b-ce8a88295d2f
+-----
+onPlay:Retrieve1Card-fetchDeed-toTable-isResolution
++++++
+
+.....
+We Got a Beef!
+-----
+e4118ee1-a9eb-4738-a378-673ca6c918a7
+-----
+onPlay:CustomScript
++++++
+
+.....
+Baijiu Jar
+-----
+d88d3c39-4f35-40e9-b37b-046f6c9409de
+-----
+
++++++
+GR0B1R0:DiscardMulti-DemiAutoTargeted-fromHand-choose3-isCost$$Draw4Cards
+.....
+De Annulos Mysteriis
+-----
+765bff12-2d2b-44a0-a5ad-80920e291833
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+Rancher's Lariat
+-----
+08507600-22ab-4903-861e-1c3941a54e23
+-----
+
++++++
+GR0B1R0:BootTarget-Targeted-atWeapon-targetOpponents-noTargetingError$$Put1Shootout:Whipped-Targeted-atDude-isParticipating-targetOpponents
+.....
+Bowie Knife
+-----
+cb7e441a-1d78-4967-92ec-ab2d3a0f70fe
+-----
+
++++++
+
+.....
+Hydro-Puncher
+-----
+86f8e98c-66a6-4a54-b0c0-48e7428dc891
+-----
+
++++++
+GR0B1R0:BootTarget-Targeted-atGoods_or_Spell-targetOpponents-noTargetingError$$BootTarget-Targeted-atDude-isParticipating-targetOpponents
+.....
+Heartseeker
+-----
+a12b3e09-b8af-4620-8479-20b5065df197
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex5-spellEffects<SimplyAnnounce{mark the opposing shooter to be aced, and reduce the opponent's casualties by 3},None>-onlyInShootouts
+.....
+Amazing Grace
+-----
+1cd6c83a-2c5d-4f23-92d3-f9dd371413f0
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<Put1InfluencePlus++Put1High Noon:Amazing Grace,None>
+.....
+Tse-Che-Nako's Weaving
+-----
+540d789b-98d5-47ac-8778-7a834851b10b
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit6-spellEffects<MoveTarget-moveToDeed_or_Town Square_or_Outfit$$UseCustomAbility,None>
+.....
+Great Sage Matching Heaven
+-----
+39fa07ab-40d4-4ddd-b2a6-6c444a1f48cd
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:Put1InfluencePlus$$Put1Shootout:Harrowed
+.....
+Two Hundred Fifty Rounds
+-----
+ea3990fa-ae15-4314-b8f7-d4d8aaf11788
+-----
+onPlay:Pull1Card
++++++
+GR0B0R0:SimplyAnnounce{to reduce their casualties this round by 1}
+.....
+108 Drunken Masters
+-----
+72f2f4f7-2e0e-4994-aaa2-c6228fc3d8d9
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{reduce the pull by the amount of saloons they control}
+.....
+Gateway to Beyond
+-----
+fd347528-2ce1-4cc5-9efb-a1052ee8603b
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Justice in Exile
+-----
+e0943fa8-0024-451f-862f-644ee23011eb
+-----
+
++++++
+GR0B1R0:Gain2Ghost Rock
+.....
+Protection Racket
+-----
+e415100e-91bb-4d9e-87aa-ec2f23d63f84
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Morgan Regulators
+-----
+b94ed693-16ed-4c7c-84d8-375498922a74
+-----
+
++++++
+GR0B1R0:MoveDude-moveToTown Square$$Put1High Noon:Stud-Targeted-atDude-targetMine$$UseCustomAbility
+.....
+Full Moon Brotherhood
+-----
+a9ec06b7-2fe5-4334-82f1-43e460b07967
+-----
+
++++++
+GR0B1R0:Put1High Noon:Brotherhood Mark-DemiAutoTargeted-atDude-targetOpponents
+.....
 ENDSCRIPTS
 =====
 '''
