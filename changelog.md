@@ -23,6 +23,10 @@ Didn't have time to test the basic ones either, so lemme know any bugs
 A Bit untested so let me know if you find any bugs
 
 
+### 1.15.1.x
+
+* Added Dave Gorman and Thunber Boy Nabbe
+
 ### 1.15.0.x
 
 **A Grand Entrance on OCTGN**. The new set is now available!
