@@ -4776,6 +4776,22 @@ a9ec06b7-2fe5-4334-82f1-43e460b07967
 +++++
 GR0B1R0:Put1High Noon:Brotherhood Mark-DemiAutoTargeted-atDude-targetOpponents
 .....
+"Thunder Boy" Nabbe
+-----
+1c4fd81f-8b08-4e7f-9325-8c63104f2694
+-----
+
++++++
+GR0B0R1:Put1BulletShootoutPlus-perProperty{Influence}$$Remove999Shootout:Draw-isSilent$$Put1Shootout:Stud-isSilent
+.....
+Dave "Slim" Gorman
+-----
+698ae5b9-1b37-45be-bbd2-118c03d64a30
+-----
+
++++++
+GR0B0R0:Remove999Shootout:Stud-isSilent-AutoTargeted-atDude-isParticipating$$Put1Shootout:Draw-isSilent-AutoTargeted-atDude-isParticipating
+.....
 ENDSCRIPTS
 =====
 '''

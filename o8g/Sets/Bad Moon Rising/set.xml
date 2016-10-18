@@ -727,5 +727,41 @@
          <property name="Text" value="Noon, Boot: Choose an opposing non-token dude that is adjacent to one of your dudes. That dude loses all traits, cannot move via card effects, and cannot refuse callouts. If that dude leaves play, either draw two cards or gain 2 ghost rock." />
          <property name="Instructions" value="" />
       </card>
+      
+      <card id="1c4fd81f-8b08-4e7f-9325-8c63104f2694" name="[&amp;quot;Thunder Boy&amp;quot; Nabbe]">
+         <property name="Rank" value="6" />
+         <property name="Suit" value="Spades" />
+         <property name="Type" value="Dude" />
+         <property name="Cost" value="3" />
+         <property name="Upkeep" value="1" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="1" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="Draw" />
+         <property name="Influence" value="2" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="Law Dogs" />
+         <property name="Keywords" value="Deputy" />
+         <property name="Text" value="Repeat Shootout: If there is a wanted dude in the opposing posse, Nabbe gets a bullet bonus equal to his influence and becomes a stud. You can use this ability once per shootout." />
+         <property name="Instructions" value="" />
+      </card>
+
+      <card id="698ae5b9-1b37-45be-bbd2-118c03d64a30" name="[Dave &amp;quot;Slim&amp;quot; Gorman]">
+         <property name="Rank" value="7" />
+         <property name="Suit" value="Spades" />
+         <property name="Type" value="Dude" />
+         <property name="Cost" value="5" />
+         <property name="Upkeep" value="1" />
+         <property name="Production" value="" />
+         <property name="Bullets" value="1" />
+         <property name="Bullet Bonus" value="" />
+         <property name="Draw Type" value="Stud" />
+         <property name="Influence" value="2" />
+         <property name="Control" value="" />
+         <property name="Outfit" value="The Sloane Gang" />
+         <property name="Keywords" value="Huckster 1" />
+         <property name="Text" value="React: After Dave casts a shootout hex, you may discard the Hex to have all dudes in the shootout become draws for this round." />
+         <property name="Instructions" value="" />
+      </card>
   </cards>
 </set>
