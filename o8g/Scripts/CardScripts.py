@@ -157,7 +157,7 @@ Blood Curse
 -----
 
 +++++
-GR0B1R0:Pull1Card-testHex9-spellEffects<Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>-onlyInShootouts||GR0B1R0:Pull1Card-testHex9-spellEffects<Put1BulletNoonMinus-Targeted-atDude-targetOpponents++Put1InfluenceMinus-Targeted-atDude-targetOpponents,None>-onlyInNoon
+GR0B1R0:Pull1Card-testHex9-spellEffects<Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>-onlyInShootouts||GR0B1R0:Pull1Card-testHex9-spellEffects<Put1BulletNoonMinus-Targeted-atDude++Put1InfluenceMinus-Targeted-atDude,None>-onlyInNoon
 .....
 Bluetick
 -----
@@ -2229,7 +2229,7 @@ Consecration
 -----
 
 +++++
-GR0B0R0:Pull1Card-testMiracle7-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluenceMinus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
+GR0B0R0:Pull1Card-testMiracle7-spellEffects<Put2BulletNoonPlus-Targeted-atDude++Put2InfluencePlus-Targeted-atDude++Put1High Noon:Stud-Targeted-atDude,None>
 .....
 Mark of Pestilence
 -----
@@ -4510,7 +4510,7 @@ Hattie DeLorre
 -----
 
 +++++
-GR0B0R0:Put5BulletShootoutMinus-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents
+GR0B0R0:Put5BulletShootoutMinus-DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-choose1
 .....
 Father Tolarios
 -----
@@ -4702,7 +4702,7 @@ Amazing Grace
 -----
 
 +++++
-GR0B1R0:Pull1Card-testMiracle6-spellEffects<Put1InfluencePlus++Put1High Noon:Amazing Grace,None>
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<Put1InfluencePlus-AutoTargeted-atDude-onHost++Put1High Noon:Amazing Grace-AutoTargeted-atDude-onHost,None>
 .....
 Tse-Che-Nako's Weaving
 -----
@@ -4774,7 +4774,7 @@ a9ec06b7-2fe5-4334-82f1-43e460b07967
 -----
 
 +++++
-GR0B1R0:Put1High Noon:Brotherhood Mark-DemiAutoTargeted-atDude-targetOpponents
+GR0B1R0:Put1High Noon:Brotherhood Mark-DemiAutoTargeted-atDude-targetOpponents-choose1
 .....
 "Thunder Boy" Nabbe
 -----
