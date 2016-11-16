@@ -235,9 +235,9 @@ Cheatin' Varmint
 -----
 3029937b-17cc-4c87-a109-9888747f3134
 -----
-
+onPlay:CustomScript||onPlay:SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}
 +++++
-onPlay:Pay5Ghost Rock-isCost$$SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}||SimplyAnnounce{Reduce a player's draw rank by 2 hand ranks}
+
 .....
 Circle M Ranch
 -----
@@ -1805,7 +1805,7 @@ da32c302-02de-4a5b-89c4-8227dba9f3c7
 -----
 
 +++++
-GR0B1R0:Pull1Card-testMiracle9-spellEffects<UnbootHost++UnbootTarget-DemiAutoTargeted-atDude_and_Law Dogs-targetMine-isBooted-choose1,None>
+GR0B0R0:Pull1Card-testMiracle9-spellEffects<UnbootTarget-DemiAutoTargeted-atDude_and_Law Dogs-targetMine-isBooted-choose1++UnbootMyself,BootMyself>
 .....
 Zoe Halbrook
 -----
@@ -3676,9 +3676,9 @@ Silent Sigil
 -----
 3e3fff09-9401-46d2-ab8e-cfce77ddde58
 -----
-atPhaseTurnEnd:Draw1Cards
-+++++
 
++++++
+GR0B0R0:CustomScript
 .....
 Notary Public
 -----
@@ -4598,7 +4598,7 @@ Cliff's #4 Saloon
 -----
 
 +++++
-GR0B1R0:Remove999High Noon:Draw$$Put1High Noon:Stud
+GR0B1R0:Remove999High Noon:Draw-DemiAutoTargeted-atDude-targetMine-choose1$$Put1High Noon:Stud-DemiAutoTargeted-atDude-targetMine-choose1
 .....
 Nickel Night Inn
 -----
