@@ -33,7 +33,8 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       else: remoteCall(targetDeed[0].owner,'PlasmaDrill',[targetDeed[0]])      
    elif card.name == "Allie Hensman":    
       remoteCall(targetCards[0].controller,'AllieHensmanXP',[targetCards[0],card])
-   ### F&F ###      
+   ### F&F ###    
+   
    elif card.name == "Desolation Row":
       leader = targetCards[0]
       if leader.group == table and (leader.highlight == AttackColor or leader.highlight == InitiateColor):
@@ -398,8 +399,15 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          TokensX('Put1Unprepared', '', attachment)         
       targetDude[0].markers[mdict['BulletShootoutMinus']] += 1
       notify("{} has been caught with their pants down.".format(targetDude[0]))
+   elif card.name =="Cheatin' Varmint" and action == 'PLAY':
+      if me.GhostRock - 5 < 0:
+          if not confirm("You do not have enough Ghost Rock to use this ability. Proceed?"):
+              notify("{} didn't have enough Ghost Rock, {} Should return Cheatin' Varmint to their hand".format(me,me))
+              return 0
+      me.GhostRock -= 5
+      notify("{} pays 5 Ghost Rock to reduce a player's draw rank by 2 hand ranks".format(me))
 ### SB 1-3 ###
-   if card.name == "Make 'em Sweat" and action == 'PLAY':
+   if card.name == "Make 'em Sweat" and action == 'PLAY': 
       myDude = findTarget('DemiAutoTargeted-atDude-targetMine-isUnbooted-isParticipating-choose1', choiceTitle = "Choose which of your dudes to boot for {}".format(card.name))
       opDude = findTarget('DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1', choiceTitle = "Choose which dude to affect with {}".format(card.name))
       if len(myDude) == 0 or len(opDude) == 0: return 'ABORT'
@@ -659,6 +667,15 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       if not len(targetCards): return 'ABORT'
       else: remoteCall(targetCards[0].controller,'RickHenderson',[targetCards[0],card])
    ### Ghost Town ###
+   elif card.name == "Silent Sigil":
+       if confirm("{} ability can be used only during Sundown. Proceed?".format(card.name)):
+           drawMany(me.deck,count = 1, silent = True)
+           notify("{} used {} ability.".format(me, card.name))
+       else:
+           notify("{} is going to show more patience and wait for Sundown.".format(me)) 
+           return "ABORT"
+      
+       
    elif card.name == "Ol' Howard" and action == 'USE':
       retrieveTuple = RetrieveX('Retrieve1Card-grabDeed-toTable-payCost', '', card)
       if retrieveTuple == 'ABORT':return 'ABORT'
@@ -1315,3 +1332,4 @@ def DeniseBrancini():
    for c in me.piles['Boot Hill']:
       if c.type == 'Joker': c.moveTo(me.Deck)
    shuffle(me.Deck)
+
