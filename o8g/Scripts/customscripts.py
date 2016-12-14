@@ -75,6 +75,8 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       me.piles['Deck'].addViewer(me)
       whisper("The top card of your deck is {} ({} of {})".format(me.piles['Deck'].top(),fullrank(me.piles['Deck'].top().Rank),fullsuit(me.piles['Deck'].top().Suit)))
       me.piles['Deck'].removeViewer(me)
+  
+       
    ### IOUF ###
    elif card.name == 'Marcia Ridge':
       notify(":> {} use {}".format(announceText,targetCards[0]))
@@ -668,12 +670,12 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       else: remoteCall(targetCards[0].controller,'RickHenderson',[targetCards[0],card])
    ### Ghost Town ###
    elif card.name == "Silent Sigil":
-       if confirm("{} ability can be used only during Sundown. Proceed?".format(card.name)):
+       if getGlobalVariable('Phase') == '4':
            drawMany(me.deck,count = 1, silent = True)
            notify("{} used {} ability.".format(me, card.name))
        else:
-           notify("{} is going to show more patience and wait for Sundown.".format(me)) 
-           return "ABORT"
+           notify("{} can be used only during Sundown.".format(card.name)) 
+           
       
        
    elif card.name == "Ol' Howard" and action == 'USE':
@@ -1273,16 +1275,24 @@ def Framed(card,dude):
    
 def SightBeyondSightStart(card):
    mute()
-   if not len(me.hand): notify(":::INFO::: {}'s play hand is empty. Nathan has nothing to snipe".format(me))
+   if not len(me.hand): 
+      notify(":::INFO::: {}'s play hand is empty. Sight Beyond Sight has nothing to discard".format(me))
+      return 'ABORT'
    else:
       randomCards = []
-      for iter in range(2):
+      if len(me.hand) >= 2:
+         for iter in range(2):
+            randomC = me.hand.random()
+            randomCards.append(randomC)
+            randomC.moveTo(me.ScriptingPile)         
+         notify(":> {} Reveals 2 random cards to {}".format(me,card.controller))      
+         remoteCall(card.controller,'SightBeyondSightChoose',[card,[c for c in me.ScriptingPile]])
+      else:
          randomC = me.hand.random()
          randomCards.append(randomC)
          randomC.moveTo(me.ScriptingPile)         
-      notify(":> {} Reveals 2 random cards to {}".format(me,card.controller))      
-      remoteCall(card.controller,'SightBeyondSightChoose',[card,[c for c in me.ScriptingPile]])
-
+         notify(":> {} Reveals 1 random cards to {}".format(me,card.controller))      
+         remoteCall(card.controller,'SightBeyondSightChoose',[card,[c for c in me.ScriptingPile]])
 def SightBeyondSightChoose(card,handList):
    mute()
    update()

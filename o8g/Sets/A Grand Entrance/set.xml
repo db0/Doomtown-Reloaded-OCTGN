@@ -21,7 +21,7 @@
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="108 Righteous Bandits" />
-         <property name="Keywords" value="Kung-Fu 3" />
+         <property name="Keywords" value="Kung Fu 3" />
          <property name="Text" value="While in a shootout, El Armadillo has +1 bullets for each Technique successfully performed at his location during the shootout, or that moved him into a posse." />
          <property name="Instructions" value="" />
       </card>

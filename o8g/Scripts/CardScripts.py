@@ -3405,7 +3405,7 @@ Old Marge's Manor
 -----
 
 +++++
-GR0B1R0:Remove999Ghost Rock-Targeted-isCost$$Put1Ghost Rock-perX||GR0B1R0:Put1Ghost Rock||GR0B0R1:Remove1Ghost Rock-isCost$$Gain1Ghost Rock
+GR0B1R0:Remove999Ghost Rock-Targeted-isCost$$Put1Ghost Rock-perX||GR0B1R0:Put1Ghost Rock
 .....
 Owl's Insight
 -----
@@ -4518,7 +4518,7 @@ c213a4b2-95ee-487c-b0a8-8cc09ac87a7d
 -----
 
 +++++
-GR0B0R0:DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-isCost-choose1-choiceTitle{Choose from which dude to remove the Bounty}$$Retrieve1Card-grabMiracle_and_nonUnique_or_Mystical_and_nonUnique
+GR0B0R0:DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Remove1Bounty-DemiAutoTargeted-atDude-hasMarker{Bounty}-isCost-choose1-choiceTitle{Choose from which dude to remove the Bounty}$$Retrieve1Card-grabMiracle_and_nonUnique_or_Mystical_and_nonUnique    
 .....
 Jimmy &quot;The Saint&quot;
 -----
