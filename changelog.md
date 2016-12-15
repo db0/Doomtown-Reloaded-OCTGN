@@ -2,6 +2,9 @@ Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
 
+Merged some improvements from Swider.
+
+
 ### 1.17.0.x
 
 **Full Moon Brotherhood on OCTGN**. 
@@ -23,11 +26,11 @@ Didn't have time to test the basic ones either, so lemme know any bugs
 A Bit untested so let me know if you find any bugs
 
 
-### 1.15.1.x
+### 1.17.1.x
 
 * Added Dave Gorman and Thunber Boy Nabbe
 
-### 1.15.0.x
+### 1.17.0.x
 
 **A Grand Entrance on OCTGN**. The new set is now available!
 * Trickier Scripts
