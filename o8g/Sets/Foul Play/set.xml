@@ -221,7 +221,7 @@
          <property name="Outfit" value="" />
          <property name="Keywords" value="Private" />
          <property name="Text" value="The controller can use ghost rock on this deed to pay for action cards or gadget abilities during shootouts.&#xD;&#xA;&#xD;&#xA;React, Boot: Before making a play, move all ghost rock counters (not bounty) from a card you control to this deed.&#xD;&#xA;&#xD;&#xA;Noon, Boot: Place 1 ghost rock on this deed.&#xD;&#xA;" />
-         <property name="Instructions" value="" />
+         <property name="Instructions" value="React, Boot: Before making a play, move all ghost rock counters (not bounty) from a card you control to this deed.||Noon, Boot: Place 1 ghost rock on this deed." />
       </card>
 
       <card id="288545a8-9c7b-4e31-ad00-c97910b19b17" name="Xemo's Turban">
