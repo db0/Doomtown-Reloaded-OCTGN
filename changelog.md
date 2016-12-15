@@ -1,6 +1,7 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.17.[23].x 
 
 Merged some improvements from Swider.
 
