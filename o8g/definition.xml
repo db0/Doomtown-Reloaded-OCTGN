@@ -200,6 +200,7 @@
 	</player>
 	<deck>
 		<section name="Outfit" group="Play Hand" />
+        <section name="Legend" group="Play Hand" />
 		<section name="Starting Cards" group="Play Hand" />
 		<section name="Deck" group="Deck" />
 	</deck>

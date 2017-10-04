@@ -237,6 +237,10 @@ def setup(group,x=0,y=0):
          dudecount += 1 # This counter increments per dude, ad we use it to move each other dude further back.
          payCost(card.Cost) # Pay the cost of the dude
          concat_dudes += '{}. '.format(card) # And prepare a concatenated string with all the names.
+      elif card.Type == 'Legend':
+         hostCard = findHost(card)
+         attachCard(card, hostCard)
+         payCost(card.Cost)
       else: # If it's any other card...
          if card.Type == "Goods" or card.Type == "Spell" or (card.Type == "Action" and re.search(r'Condition',card.Keywords)): 
             hostCard = findHost(card)
@@ -382,13 +386,21 @@ def discard(card, x = 0, y = 0, silent = False): # Discard a card.
          else: notify("{} has cleared the resident effect of {}.".format(me, card))
    clearAttachLinks(card,'Discard')
    reCalculate(notification = 'silent')
-   if (card.highlight == EventColor and re.search('Ace this card', card.Text)) or (card.Type == 'Joker' and card.highlight == DrawHandColor and card.model != 'e2e638ff-27cb-4704-b324-bd318dc9170a'): # If the card being discarded was an event in a lowball hand or a joker in a draw hand
-                                                                                                        # And that card had instructions to be aced
-      card.moveTo(cardowner.piles['Boot Hill'])                                                         # Then assume player error and ace it now        
-      if card.Type == 'Joker' and card.model != 'e2e638ff-27cb-4704-b324-bd318dc9170a': 
-         notify("{} has been aced as per card instructions.".format(card)) # And inform the players.
-         autoscriptOtherPlayers('UsedJokerAced',card)
-      else: notify("{} was the active event and has been aced as per card instructions.".format(card)) 
+   if (card.highlight == EventColor and re.search('Ace this card', card.Text)) or (card.Type == 'Joker' and card.highlight == DrawHandColor and card.model != 'e2e638ff-27cb-4704-b324-bd318dc9170a' and card.model != '57039087-1868-4430-a94b-fb7eedeb04a5'): # If the card being discarded was an event in a lowball hand or a joker in a draw hand
+      if len(card.markers):
+          deckJoker = [item for item in card.markers]
+          if "DoNotAce" == (deckJoker[0][0]):
+               card.moveTo(card.owner.piles["Deck"])
+               card.owner.piles["Deck"].shuffle()
+               notify("{} was moved to {} deck and the deck was shuffled".format(card, me))
+          
+      else:
+         card.moveTo(cardowner.piles['Boot Hill'])                                                         # Then assume player error and ace it now        
+         if card.Type == 'Joker' and card.model != 'e2e638ff-27cb-4704-b324-bd318dc9170a' and card.model != '57039087-1868-4430-a94b-fb7eedeb04a5': 
+            notify("{} has been aced as per card instructions.".format(card)) # And inform the players.
+            autoscriptOtherPlayers('UsedJokerAced',card)
+         else: notify("{} was the active event and has been aced as per card instructions.".format(card))                                                                                                 # And that card had instructions to be aced
+
    else: card.moveTo(cardowner.piles['Discard Pile']) # Cards aced need to be sent to their owner's discard pile
    debugNotify("<<< discard()") #Debug
 
@@ -1225,6 +1237,15 @@ def playcard(card,retainPos = False,costReduction = 0, preHost = None, scripted 
          if retainPos: card.moveTo(me.hand)
          return
       else:
+         grimme = 0
+         for c in table:
+            if c.name == 'Ezekiah Grimme' and c.controller == me:
+                grimme = 1
+         if grimme:
+            for c in table:
+                if c.name == card.name:
+                    costReduction -= 1
+      
          if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
          if card.Type == "Goods" or card.Type == "Spell":
             if hostCard.orientation != Rot0 and hostCard.Type == 'Dude' and not preHost and not confirm("You can only attach goods to unbooted dudes. Bypass restriction?"): 

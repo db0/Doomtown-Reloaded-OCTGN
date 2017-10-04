@@ -41,7 +41,7 @@ def checkDeck(player,groups):
                if counts[card.Rank + card.Suit] > 4: 
                   ok = False
                   notify(":::ERROR::: More than 4 cards of the same suit and rank ({} of {}) found in {}'s deck!".format(card.Rank,card.Suit,player))
-            deckLen = len(group) + len([c for c in me.hand if c.Type != 'Outfit']) - counts['Jokers']
+            deckLen = len(group) + len([c for c in me.hand if (c.Type != 'Outfit' and c.Type != 'Legend')]) - counts['Jokers']
             if deckLen != 52:
                ok = False
                notify(":::ERROR::: {}'s deck is not exactly 52 play cards ({})!".format(player,deckLen))
@@ -102,7 +102,9 @@ def checkMovedCards(player,cards,fromGroups,toGroups,oldIndexs,indexs,oldXs,oldY
             card.moveTo(me.hand)
             update()
             setup(group = table)
+         
          else: playcard(card, retainPos = True)
+         
       elif fromGroup == me.Deck and toGroup == table and card.owner == me: # If the player moves a card into the table from their Deck we assume they are revealing it as a pull or draw hand replacement.
          card.highlight = DrawHandColor
          notify("{} reveals a {} of {}".format(me,fullrank(card.Rank), fullsuit(card.Suit)))

@@ -659,6 +659,7 @@ def findHost(card):
    if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('Targeted-atDeed-isUnbooted-targetMine') # First we try to do a limited search, in case they forgot too many cards targeted
    elif re.search(r'Totem',card.Keywords): potentialHosts = findTarget('Targeted-atDeed_or_Town Square_or_Outfit-targetMine') 
    elif re.search(r'Condition',card.Keywords): potentialHosts = findTarget('Targeted') 
+   elif re.search(r'Servitor',card.Keywords): potentialHosts = findTarget('AutoTargeted-atOutfit-targetMine') 
    elif card.type == 'Spell':
       if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Huckster-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
       elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Blessed-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to get this inspired with this Miracle") 
@@ -803,6 +804,21 @@ def reduceCost(card, action = 'PLAY', fullCost = 0, dryRun = False, reversePlaye
                count = len([c for c in table if re.search(r'Abomination',c.Keywords)])
                for pl in getActivePlayers(): count += len([c for c in pl.piles['Boot Hill'] if re.search(r'Abomination',c.Keywords)])
                multiplier = 1
+            elif card.model == '711deb54-4548-4206-81af-77d5dcc8793a': #Morgan Lash
+                wantedDudes = findTarget("AutoTargeted-atDude-hasMarker{Bounty}-targetMine")
+                print(len(wantedDudes))
+                maxBounty = 0
+                
+                for dude in wantedDudes:
+                    if dude.markers[mdict['Bounty']] > maxBounty:
+                        maxBounty = int(dude.markers[mdict['Bounty']])
+                print(maxBounty)
+                print(wantedDudes)
+                print(dude.markers[mdict['Bounty']])
+                count = maxBounty
+                multiplier = 1 
+                
+                        
          else:
             count = num(reductionSearch.group(1))
             targetCards = findTarget(autoS,card = card)
