@@ -1635,7 +1635,7 @@ This'll Hurt in the Mornin
 -----
 546a4107-75f3-49f6-84a1-4396ca3c61c1
 -----
-onPlay:CustomScript-isResolution
+onPlay:CustomScript
 +++++
 
 .....
@@ -4791,6 +4791,367 @@ Dave "Slim" Gorman
 
 +++++
 GR0B0R0:Remove999Shootout:Stud-isSilent-AutoTargeted-atDude-isParticipating$$Put1Shootout:Draw-isSilent-AutoTargeted-atDude-isParticipating
+.....
+Darius Hellstromme
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429ca2daf
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Ezekiah Grimme
+-----
+2733deda-5584-42e1-9dfd-d283ad68cf1f
+-----
+
++++++
+GR0B1R0:UseCustomAbility-isFirstCustom||GR0B1R0:UseCustomAbility-isSecondCustom
+.....
+Jasper Stone
+-----
+6bcacb58-f902-483e-8f25-6eef33e9dd18
+-----
+
++++++
+GR0B1R0:Put1Shootout:JasperCurse-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1||GR0B0R1:Put1PermBulletPlus-Targeted-atDude-isMine$$Put1PermControlPlus-Targeted-atDude-isMine
+.....
+Raven
+-----
+1d0ac7a8-da18-4a99-9467-02edf80e6258
+-----
+
++++++
+GR0B1R0:Put1Noon:RavensCurse-DemiAutoTargeted-atDeed-choose1||GR0B0R1:Put1PermBulletPlus-DemiAutoTargeted-atDude-targetMine-choose1
+.....
+Wang Men Wu
+-----
+b1d048cf-7e94-4129-b817-5e0980038796
+-----
+
++++++
+GR0B0R0:Spawn1Gunslinger-modAction:ParticipateMyself
+.....
+Charging Bear
+-----
+0dff63ec-8e97-488d-87c1-d2505b44acc0
+-----
+
++++++
+GR0B0R0:AceTarget-Targeted-atDude-targetMine-chose1$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$Put1Shootout:Stud
+.....
+Fears No Owls
+-----
+51fa6f06-ba8e-432d-aca5-639123f2b9b9
+-----
+
++++++
+GR0B0R0:MoveTarget-DemiAutoTargeted-atDude-targetMine-choose1-moveToDeed_or_Holy Groung
+.....
+Black Owl
+-----
+08137945-5919-4b1d-be80-6aff3f89118b
+-----
+
++++++
+GR0B1R0:Put5ValueShootoutMinus-Targeted-atDude-isParticipating$$Put1Shootout:FirstCasualty-Targeted-atDude-isParticipating
+.....
+Zeb Whateley-Dupont
+-----
+f8adf6a9-c944-4b37-98eb-c167c5bce2e7
+-----
+onPlay:CustomScript||atPhaseGamblin:CustomScript
++++++
+
+.....
+Rosenbaum's Golem
+-----
+dafad1b5-7067-4efa-b063-67a4c5c2b42a
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+Stewart Davidson
+-----
+720083f1-9fd9-4608-a112-9e0a28de43d2
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+Sheriff Eli Waters
+-----
+fb433634-025d-4333-aa2b-e8c9d230d020
+-----
+
++++++
+GR0B0R1:CustomScript||GR0B0R1:MoveMyself-moveToDude-hasMarker{Bounty}||GR0B0R1:MoveMyself-moveToDude-hasMarker{Bounty}$$ParticipateMyself
+.....
+Adrian Vallejo
+-----
+3d38ea0c-31d3-456e-a7cd-f7a66476395d
+-----
+
++++++
+GR0B0R0:ParticipateMyself
+.....
+Prof. Aloysius Roe
+-----
+ad68435b-5503-4af0-bd4e-7e5b15c04866
+-----
+
++++++
+GR0B0R0:SimplyAnnounce{The value of the pull is increased by Prof. Roe's MS rating}
+.....
+Rabid Rance Hitchcock
+-----
+9f3d837e-e317-403c-a72d-c9b8a48f5bcf
+-----
+
++++++
+GR0B0R1:Put1PermControlPlus-Targeted-atDeed-chose1||GR0B0R1:Put1PermControlMinus-Targeted-atDeed-chose1||GR0B0R1:MoveMyself-moveToDeed_and_Out of Town||GR0B0R1:CustomScript
+.....
+Morgan Lash
+-----
+711deb54-4548-4206-81af-77d5dcc8793a
+-----
+onPay:ReduceSCostPlay
++++++
+
+.....
+Johnny Brocklehurst
+-----
+5c6b6541-1253-4da2-a454-ce912ffcf474
+-----
+
++++++
+GR0B0R0:Put1InfluencePlus-Targeted-atDude||GR0B0R0:Remove1InfluencePlus-Targeted-atDude
+.....
+Agent Provocateur
+-----
+06d454b8-8713-4bba-b0d6-d9152d52423a
+-----
+
++++++
+GR0B0R0:CustomScript
+.....
+F1 Burch
+-----
+b7eae322-2208-4ef6-8ff2-d7af7ef5d2a1
+-----
+
++++++
+GR0B0R0:MoveMyself-moveToDude-chose1||GR0B0R0:MoveMyself-moveToDude-chose1$$Retrieve1Card-grabGoods_and_nonGadget_and_nonUnique-fromDiscard-toTable-payCost-reduc1||GR0B0R0:MoveMyself-moveToDude-chose1$$PlayTarget-DemiAutoTargeted-atGoods_and_nonGadget_and_nonUnique-fromHand-choose1-payCost-reduc1
+.....
+
+Taff's Distillery
+-----
+0d2710a6-4ed9-447c-9cfb-2536d2def29c
+-----
+
++++++
+GR0B1R0:Draw1Card
+.....
+Mausoleum
+-----
+e8906b23-85f3-44f0-89bb-d1cff708e8b3
+-----
+
++++++
+GR0B1R0:Put1PermControlPlus
+.....
+Epitaph Branch Office
+-----
+d95fe205-8bcb-4bc5-a895-501fe91a52f3
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Buffalo Emporium
+-----
+2ee14351-c57d-4944-850c-d58cb5c8c304
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Explorer's Lodge
+-----
+67c733e3-1842-44fe-9c40-33d1aad47b4a
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+The Oriental
+-----
+162aaf13-fe99-4bb6-8fbe-9587d71bd666
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Hellstromme Plant #9
+-----
+ed34d5f8-3376-4be1-9db7-64c50cdebab9
+-----
+
++++++
+GR1B1R0:UnbootTarget-Targeted-atHorse_or_Gadget-chose1
+.....
+Bilton Collection Agency
+-----
+381ea2d4-eb1c-46e0-8aad-a500c406709a
+-----
+
++++++
+GR0B1R0:Gain1Ghost Rock-perTargetProperty{Production}-DemiAutoTargeted-atDeed-targetMine
+.....
+Decimator Array
+-----
+e2fed23a-b50b-4632-858d-ffd622184e5c
+-----
+onPlay:CustomScript
++++++
+GR0B1R0:SimplyAnnounce{Changing suit or value of the card}||GR0B0R1:Put3ValuePermPlus-AutoTargeted-atDude-onHost$$Put1ProdPlus-AutoTargeted-atDude-onHost||GR0B0R1:Put3ValuePermMinus-AutoTargeted-atDude-onHost$$Put1ProdMinus-AutoTargeted-atDude-onHost
+.....
+Devil's Six Gun
+-----
+14eb0493-5ea9-4b44-b955-303fcea47e64
+-----
+
++++++
+GR0B1R0:CustomScript
+.....
+Forsaken Hound
+-----
+1ae574d7-9dd2-4999-a73f-90008198c1b9
+-----
+
++++++
+GR0B1R0:Put1Shootout:Cannot Run This Round-Targeted-atDude-targetOpponents_and_atDude-onHost
+.....
+The Bloody Star
+-----
+3572042d-4197-4753-830f-d138500aff64
+-----
+onPlay:Put2Bounty-AutoTargeted-atDude-onHost
++++++
+
+.....
+Cavalry Escort
+-----
+e527c15a-fce5-451a-b34d-51c9050d9cac
+-----
+
++++++
+GR0B1R0:GR0B1R0:BootHost$$ParticipateHost
+.....
+Nightmare Realm
+-----
+e3c6f0bb-a585-46b4-b530-bbe6f3347ae8
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex3-spellEffects<Put1Shootout:Nightmare-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1++Put1BulletShootoutPlus-AutoTargeted-atDude-onHost,None>||GR0B0R1:Put1BulletShootoutMinus-Targeted-atDude-hasMarker{Nightmare}-isParticipating-targetOpponenes$$Put1ValueShootoutMinus-Targeted-atDude-hasMarker{Nightmare}isParticipating-targetOpponents
+.....
+Sentinel
+-----
+be8dd9d7-31f8-4cf6-aa37-5a18067bb067
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle5-spellEffects<UseCustomAbility,None>
+.....
+Censure
+-----
+c13ad872-7c89-44fc-8572-2da526866207
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<UseCustomAbility,None>
+.....
+Raven's Ruin
+-----
+2e57f90e-6852-49a8-abdc-9d24be7018fe
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<UseCustomAbility,None>
+.....
+Remedy
+-----
+d9433ac9-20fb-4f2f-adb5-8b11ee9045ff
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit7-spellEffects<Put1Shootout:Remedy-DemiAutoTargeted-atDude-isParticipating-choose1,None>
+.....
+Intercession
+-----
+f638e171-5064-4c25-b1b7-7e5d762025b1
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle5-spellEffects<UseCustomAbility-isFirstCustom,None>||GR0B1R0:Pull1Card-testMiracle7-spellEffects<UseCustomAbility,None>
+.....
+Disarm
+-----
+6afef9d1-9502-437b-915f-6450a35b3f30
+-----
+onPlay:CustomScript
++++++
+
+.....
+Grim Servant O' Death
+-----
+71e424b2-d62f-43a4-95c8-4b6b77e0b83d
+-----
+onPlay:CustomScript
++++++
+
+.....
+Behold White Bull
+-----
+d759b266-2dbb-4ee8-8a8f-40e456cbd5ae
+-----
+
++++++
+GR0B0R0:BootTarget-Targeted-atDude-targetMine-chose1$$SimplyAnnounce{Increase the casualties of both posses this round by this dude's influence.Your opponent may send all dues in their posse home booted. BY PRESSING ESCAPE}||GR0B0R0:Put2PermControlPlus-DemiAtutoTargeted-atDude-targetMine-chose1$$UnbootTarget-DemiAtutoTargeted-atDude-targetMine-chose1
+.....
+You Had ONE Job!
+-----
+3560016d-7c5f-4ac3-beb8-c3360539bb11
+-----
+onPlay:CustomScript||onPlay:SimplyAnnounce{All players who revealed a legal hand may reduce their casualties by 2.}
++++++
+
+.....
+Friends in High Places
+-----
+2d759fe3-f3e0-46c2-82f1-1df7c5b32aac
+-----
+onPlay:CustomScript||onPlay:Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-isParticipating-chose1
++++++
+
+.....
+Shan Fan Showdown!
+-----
+e94de78b-0021-4167-9681-81b7cc5a9544
+-----
+onPlay:UnbootTarget-Targeted-atDude-targetMine-isParticipating-chose1 $$ Put1Shootout:Stud-Targeted-atDude-targetMine-isParticipating $$ SimplyAnnounce{For the remainder of the shootout non Cheatin Resolution abilities cannot increase or decrease hand ranks or increase or decrease casualties.}
++++++
+
+.....
+The Winning Agenda
+-----
+4c658294-3640-4362-9dde-719b4e348e21
+-----
+onPlay:CustomScript||onPlay:SimplyAnnounce{Increase your hand rank by targeted dude influence}
++++++
+
 .....
 ENDSCRIPTS
 =====

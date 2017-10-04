@@ -21,7 +21,7 @@
          <property name="Influence" value="0" />
          <property name="Control" value="" />
          <property name="Outfit" value="108 Righteous Bandits" />
-         <property name="Keywords" value="Kung-Fu 2" />
+         <property name="Keywords" value="Kung Fu 2" />
          <property name="Text" value="Each of your Kung Fu dudes at this location with a Whiskey Flask or Baijiu Jar attached has +1 Kung Fu and is a stud." />
          <property name="Instructions" value="" />
       </card>
@@ -93,7 +93,7 @@
          <property name="Influence" value="1" />
          <property name="Control" value="" />
          <property name="Outfit" value="Eagle Wardens" />
-         <property name="Keywords" value="Kung-Fu 1" />
+         <property name="Keywords" value="Kung Fu 1" />
          <property name="Text" value="While in a shootout, Wei Xu has +2 influence and +5 value." />
          <property name="Instructions" value="" />
       </card>
@@ -291,7 +291,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="0" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Private-Casino-Out Of Town" />
+         <property name="Keywords" value="Private-Casino-Out of Town" />
          <property name="Text" value="Cheatin' Resolution, Boot: This deed gains a permanent +1 production. Draw a card unless the cheatin' player pays you one ghost rock." />
          <property name="Instructions" value="" />
       </card>
@@ -525,7 +525,7 @@
          <property name="Influence" value="" />
          <property name="Control" value="" />
          <property name="Outfit" value="" />
-         <property name="Keywords" value="Melee-Weapon-Gadget Difficulty 5" />
+         <property name="Keywords" value="Melee-Weapon-Gadget-Difficulty 5" />
          <property name="Text" value="This dude can attach two Weapons. If this dude is not a Gadget, both Weapons must be Melee. While this dude has two Weapons attached, they are a stud. &#xD;&#xA;Shootout, Boot: Choose an opposing dude. Boot the dude and one of their attached cards.&#xD;&#xA;" />
          <property name="Instructions" value="" />
       </card>
@@ -728,7 +728,7 @@
          <property name="Instructions" value="" />
       </card>
       
-      <card id="1c4fd81f-8b08-4e7f-9325-8c63104f2694" name="[&amp;quot;Thunder Boy&amp;quot; Nabbe]">
+      <card id="1c4fd81f-8b08-4e7f-9325-8c63104f2694" name="[Thunder Boy Nabbe]">
          <property name="Rank" value="6" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />
@@ -746,7 +746,7 @@
          <property name="Instructions" value="" />
       </card>
 
-      <card id="698ae5b9-1b37-45be-bbd2-118c03d64a30" name="[Dave &amp;quot;Slim&amp;quot; Gorman]">
+      <card id="698ae5b9-1b37-45be-bbd2-118c03d64a30" name="[Dave Slim Gorman]">
          <property name="Rank" value="7" />
          <property name="Suit" value="Spades" />
          <property name="Type" value="Dude" />

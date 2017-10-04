@@ -162,6 +162,20 @@
            <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
            <wordwrap height="530" width="575" shrinktofit="True"/>
          </block>
+   <!-- Legend Blocks -->
+         <block type="overlay" id="legend" src="Proxy/Dudes/legend.jpg">         
+           <location x="0" y="0" />
+         </block>  
+         <block type="text" id="legend_name">
+           <location x="50" y="70" />
+           <text color="#000000" size="125" font="Fonts/playbill-doomtown.ttf" />
+           <wordwrap height="125" width="570" align="center" valign="center" shrinktofit="True"/>
+         </block>
+         <block type="text" id="legend_text">
+           <location x="55" y="560" />
+           <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
+           <wordwrap height="235" width="545" shrinktofit="True"/>
+         </block>   
    <!-- Icon Blocks -->
          <block type="overlay" id="icon_bullet_stud" src="Proxy/Icons/bullet_stud.png">         
            <location x="30" y="180" />
@@ -333,7 +347,9 @@
            <text color="#000000" size="31" font="Fonts/american-typewriter-medium-bt-2.ttf" />
            <wordwrap height="310" width="545" shrinktofit="True"/>
          </block>
+     
       </blocks>
+    
 <!-- TEMPLATES -->
       <template src="Proxy/Missing_Proxies_Template.png" default="True">
          <matches>
@@ -342,6 +358,23 @@
          <textblocks>
             <link block="default_name" separator=" ">
                <property name="Name"  />
+            </link>
+         </textblocks>
+      </template>
+   <!-- Legend Template -->
+      <template src="Proxy/Dudes/legend.jpg" default="True">
+         <matches>
+            <match name="Type" value="Legend" />
+         </matches>
+         <textblocks>
+            <link block="legend_name" separator=" ">
+               <property name="Name"  />
+            </link>
+            <link block="starting_rock" separator=" ">
+               <property name="Cost"  />
+            </link>
+            <link block="legend_text" separator=" ">
+               <property name="Text"  />
             </link>
          </textblocks>
       </template>
@@ -920,4 +953,5 @@
             </link>
          </textblocks>
       </template>
+    
    </templates>
