@@ -994,12 +994,14 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       dude.markers[mdict['Bounty']] += 1
    elif card.name == "The Winning Agenda":       
         dudes = findTarget('DemiAutoTargeted-atDude-targetMine-choose1')
-        toDiscard = compileCardStat(dudes[0],'Influence')
+        toDiscard = compileCardStat(dudes[0],'Influence')      
         if toDiscard > 3: toDiscard = 3
+        if toDiscard > len([c for c in me.hand]):
+            notify("You don't have enough cards in your hand to use this ability")
+            return
         disloop = toDiscard
         while disloop:
             chosenCard = askCard([c for c in me.hand],"Choose which card to discard from your hand")
-            if not chosenCard: continue
             chosenCard.moveTo(me.piles['Discard Pile'])
             disloop -= 1        
         drawMany(me.Deck, toDiscard, silent =True)
