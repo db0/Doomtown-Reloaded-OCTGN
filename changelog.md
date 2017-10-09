@@ -1,6 +1,10 @@
 Changelog - Doomtown:Reloaded OCTGN Game Definition
 ===============================================
 
+### 1.18.0.x 
+
+Added There Comes a Reckoning
+
 ### 1.17.[23].x 
 
 Merged some improvements from Swider.
