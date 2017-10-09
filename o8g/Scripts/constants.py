@@ -56,6 +56,8 @@ mdict = { # A dictionary which holds all the hard coded markers (in the markers 
     'VPMinus'              : ("-1 VP",                      "8660fdc1-f8a5-40b1-a570-12018d17d654"),
     'Winner'               : ("Winner",                     "eeb5f447-f9fc-46b4-846a-a9a40e575cbc"),
     'NoUnboot'             : ("Does not Unboot",            "d2fccdc3-e93a-4c66-8930-28081aebb23c"),
+    'Noon:ControlBullets'  : ("+1 Control Bullet",          "5f740820-4c72-4042-b6eb-dcedc77c82ed"),
+    'Shootout:BountyBullets'   : ("+1 Shootout BountyBullet",         "093166b4-fddb-4e67-b6e4-86277faedc91"),
     'Traded'               : ("Traded",                     "8ba2d501-e8b7-4df0-a168-be2d16b26daf")
 }
 

@@ -93,7 +93,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="0dff63ec-8e97-488d-87c1-d2505b44acc0" name="Charging Bear">
-		         <property name="Rank" value="11" />
+		         <property name="Rank" value="J" />
 		         <property name="Suit" value="Spades" />
 		         <property name="Type" value="Dude" />
 		         <property name="Cost" value="5" />
@@ -110,7 +110,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="51fa6f06-ba8e-432d-aca5-639123f2b9b9" name="Fears No Owls">
-		         <property name="Rank" value="12" />
+		         <property name="Rank" value="Q" />
 		         <property name="Suit" value="Spades" />
 		         <property name="Type" value="Dude" />
 		         <property name="Cost" value="2" />
@@ -178,7 +178,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="720083f1-9fd9-4608-a112-9e0a28de43d2" name="Stewart Davidson">
-		         <property name="Rank" value="1" />
+		         <property name="Rank" value="A" />
 		         <property name="Suit" value="Spades" />
 		         <property name="Type" value="Dude" />
 		         <property name="Cost" value="4" />
@@ -195,7 +195,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="fb433634-025d-4333-aa2b-e8c9d230d020" name="Sheriff Eli Waters">
-		         <property name="Rank" value="11" />
+		         <property name="Rank" value="J" />
 		         <property name="Suit" value="Spades" />
 		         <property name="Type" value="Dude" />
 		         <property name="Cost" value="4" />
@@ -263,7 +263,7 @@
 		         <property name="Instructions" value="Put1PermControlPlus-Targeted-atDeed.||Remove1PermControlPlus-Targeted-atDeed.||Move to out of town deed.||Set your bullets to controlled deed production (max3)" />
       </card>
 		<card id="711deb54-4548-4206-81af-77d5dcc8793a" name="Morgan Lash">
-		         <property name="Rank" value="12" />
+		         <property name="Rank" value="Q" />
 		         <property name="Suit" value="Spades" />
 		         <property name="Type" value="Dude" />
 		         <property name="Cost" value="11" />
@@ -314,7 +314,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="b7eae322-2208-4ef6-8ff2-d7af7ef5d2a1" name="F1 Burch">
-		         <property name="Rank" value="13" />
+		         <property name="Rank" value="K" />
 		         <property name="Suit" value="Spades" />
 		         <property name="Type" value="Dude" />
 		         <property name="Cost" value="3" />
@@ -433,7 +433,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="ed34d5f8-3376-4be1-9db7-64c50cdebab9" name="Hellstromme Plant #9">
-		         <property name="Rank" value="11" />
+		         <property name="Rank" value="J" />
 		         <property name="Suit" value="Diamonds" />
 		         <property name="Type" value="Deed" />
 		         <property name="Cost" value="3" />
@@ -450,7 +450,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="381ea2d4-eb1c-46e0-8aad-a500c406709a" name="Bilton Collection Agency">
-		         <property name="Rank" value="13" />
+		         <property name="Rank" value="K" />
 		         <property name="Suit" value="Diamonds" />
 		         <property name="Type" value="Deed" />
 		         <property name="Cost" value="2" />
@@ -501,7 +501,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="1ae574d7-9dd2-4999-a73f-90008198c1b9" name="Forsaken Hound">
-		         <property name="Rank" value="11" />
+		         <property name="Rank" value="J" />
 		         <property name="Suit" value="Hearts" />
 		         <property name="Type" value="Goods" />
 		         <property name="Cost" value="2" />
@@ -518,7 +518,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="3572042d-4197-4753-830f-d138500aff64" name="The Bloody Star">
-		         <property name="Rank" value="11" />
+		         <property name="Rank" value="J" />
 		         <property name="Suit" value="Hearts" />
 		         <property name="Type" value="Goods" />
 		         <property name="Cost" value="2" />
@@ -535,7 +535,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="e527c15a-fce5-451a-b34d-51c9050d9cac" name="Cavalry Escort">
-		         <property name="Rank" value="13" />
+		         <property name="Rank" value="K" />
 		         <property name="Suit" value="Hearts" />
 		         <property name="Type" value="Goods" />
 		         <property name="Cost" value="2" />
@@ -637,7 +637,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="f638e171-5064-4c25-b1b7-7e5d762025b1" name="Intercession">
-		         <property name="Rank" value="13" />
+		         <property name="Rank" value="K" />
 		         <property name="Suit" value="Hearts" />
 		         <property name="Type" value="Spell" />
 		         <property name="Cost" value="1" />
@@ -739,7 +739,7 @@
 		         <property name="Instructions" value="onPlay[React: After your unbooted dude is called out, if they have more influence than the leader, they can refuse the callout without moving home booted.|-|Shootout: If your posse has more influence than the opposing posse, make one of your dudes a stud.]" />
       </card>
 		<card id="e94de78b-0021-4167-9681-81b7cc5a9544" name="Shan Fan Showdown!">
-		         <property name="Rank" value="11" />
+		         <property name="Rank" value="J" />
 		         <property name="Suit" value="Clubs" />
 		         <property name="Type" value="Action" />
 		         <property name="Cost" value="0" />
@@ -756,7 +756,7 @@
 		         <property name="Instructions" value="" />
       </card>
 		<card id="4c658294-3640-4362-9dde-719b4e348e21" name="The Winning Agenda">
-		         <property name="Rank" value="13" />
+		         <property name="Rank" value="K" />
 		         <property name="Suit" value="Clubs" />
 		         <property name="Type" value="Action" />
 		         <property name="Cost" value="1" />
