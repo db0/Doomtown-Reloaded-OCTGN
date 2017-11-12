@@ -189,7 +189,7 @@
 		         <property name="Draw Type" value="Draw" />
 		         <property name="Influence" value="1" />
 		         <property name="Control" value="" />
-		         <property name="Outfit" value=" Law Dogs" />
+		         <property name="Outfit" value="Law Dogs" />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="Noon, Boot: Discard a card. Choose an opposing dude without a bounty and pay ghost rock equal to that dude's influence to give that dude 1 bounty." />
 		         <property name="Instructions" value="" />
@@ -206,7 +206,7 @@
 		         <property name="Draw Type" value="Stud" />
 		         <property name="Influence" value="1" />
 		         <property name="Control" value="" />
-		         <property name="Outfit" value=" Law Dogs" />
+		         <property name="Outfit" value="Law Dogs" />
 		         <property name="Keywords" value="Deputy" />
 		         <property name="Text" value="During Waters' shootout, he has a bullet bonus equal to the highest bounty among wanted dudes opposing him, to a maximum bonus of 4.&#xD;&#xD;After an opposing player reveals a cheatin' hand, you may move Waters to the location of a wanted dude. If he moves to the location of a shootout, he may join your posse." />
 		         <property name="Instructions" value="Shootout:Bullet bonus equal to oposing dude bounty(max4).||Move to location of a wanted dude.||Move to location of a wanted dude and join a posse. " />
