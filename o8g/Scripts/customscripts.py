@@ -1159,6 +1159,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
    elif card.name == "Decimator Array" and action == 'PLAY':
         if confirm("Do you want to unboot one of your mad scientists?"):
             dude = findTarget("DemiAutoTargeted-atMad Scientist-targetMine-isBooted-choose1")
+            update()
             boot(dude[0], forced = 'unboot')
    elif card.name == "Devil's Six Gun":        
         j1 = [j for j in me.piles['Boot Hill'] if j.type == 'Joker']
@@ -1207,6 +1208,29 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
         dude = fetchHost(weapon[0])
         boot(weapon[0], forced = 'boot')
         dude.markers[mdict['PermControlPlus']] += 1
+   elif card.name == "Father Tolarios":
+        if len(me.hand):
+            cardChoice = askCard([c for c in me.hand])
+        else:
+            notify("You need to discard a card to use this ability")
+            return
+        cardChoice.moveTo(me.piles['Discard Pile'])   
+        wanted = findTarget("DemiAutoTargeted-atDude-hasMarker{Bounty}-targetOpponents-choose1")
+        if not len(wanted):
+            notify("You need a wanted dude to fetch a card")
+            return
+        wanted[0].markers[mdict['Bounty']] -= 1
+        mirOrMysDiscard = [c for c in me.piles['Discard Pile'] if ("Miracle" in c.keywords and "Unique" not in c.keywords )] + [c for c in me.piles['Discard Pile'] if ("Mystic" in c.keywords and "Unique" not in c.keywords) ]
+        mirOrMysDeck = [c for c in me.piles['Deck'] if ("Miracle" in c.keywords and "Unique" not in c.keywords )] + [c for c in me.piles['Deck'] if ("Mystic" in c.keywords and "Unique" not in c.keywords) ]
+        string = len(mirOrMysDiscard)
+        cards = mirOrMysDiscard + mirOrMysDeck
+        if len(cards) == 0:
+            notify("You have no cards you can fetch with this ability")
+            return
+        card = askCard(cards, "Choose a card to fetch.First {} are in your discard".format(string))
+        card.moveTo(me.hand)
+        notify("{} fetched {} using Father Tolarios ability".format(me, card)) 
+        
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
