@@ -4,7 +4,7 @@
       name="Doomtown-Reloaded" 
       id="b440d120-025a-4fbe-9f8d-3873acacb37b" 
       octgnVersion="3.1.0.0"
-      version="1.18.0.2" 
+      version="1.18.0.3" 
       markersize="16"
       tags="western deadlands poker maneuvering multiplayer"
       description="Doomtown Rides again! The award winning game of poker gunfights and spatial maneuvering is back.
@@ -91,7 +91,7 @@
 			<groupaction menu="Jump to Upkeep Phase." default="False" shortcut="F2" execute="goToUpkeep" />
 			<groupaction menu="Jump to High Noon Phase." default="False" shortcut="F3" execute="goToHighNoon" />
 			<groupaction menu="Jump to Sundown Phase." default="False" shortcut="F4" execute="goToNightfall" />
-			<groupaction menu="Start/End a Shootout Phase." default="False" shortcut="F10" execute="goToShootout" />
+			<groupaction menu="Start/End a Shootout Phase." default="False" shortcut="Ctrl+J" execute="goToShootout" />
 		</groupactions>
 		<groupaction menu="Announce Pass." default="False" shortcut="Ctrl+Space" execute="Pass" />
 		<groupaction menu="Announce Ready." default="False" shortcut="Ctrl+R" execute="Ready" />

@@ -1026,11 +1026,15 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
            grit +=5
         if grit >= 11:
            dudes = findTarget("AutoTargeted-atDude-isParticipating-isBooted-targetMine")
-           notify(":> {} has to be unbooted to use his ability".format(dudes))
+           
+           
            dudes.remove(card)
            if not len(dudes): return
-           chosenCard = askCard(dudes,"Choose which dude to unboot")
-           boot(dudes[0], forced = 'unboot')
+           if len(dudes) == 1:
+                chosenCard = dudes[0]
+           else:
+                chosenCard = askCard(dudes,"Choose which dude to unboot")
+           boot(chosenCard, forced = 'unboot')
    elif card.name == 'Zeb Whateley-Dupont':
         if OutfitCard.Outfit == 'The Fourth Ring':
             TokensX('Put1High Noon:Stud', '', card)
@@ -1210,7 +1214,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
         dude.markers[mdict['PermControlPlus']] += 1
    elif card.name == "Father Tolarios":
         if len(me.hand):
-            cardChoice = askCard([c for c in me.hand])
+            cardChoice = askCard([c for c in me.hand], "Chose a card you want to discard")
         else:
             notify("You need to discard a card to use this ability")
             return
@@ -1501,6 +1505,8 @@ def CookinTroubleEnd(card,cardChoice):
 def NathanShaneStart(card):
    mute()
    bullets = compileCardStat(card, stat = 'Bullets')
+   if bullets > len(me.hand):
+        bullets = len(me.hand)
    if not len(me.hand): notify(":::INFO::: {}'s play hand is empty. Nathan has nothing to snipe".format(me))
    elif not bullets: notify(":::INFO::: {} has currently 0 bullets and no capacity to snipe anything".format(card))
    else:
