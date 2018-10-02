@@ -4,7 +4,7 @@
       name="Doomtown-Reloaded" 
       id="b440d120-025a-4fbe-9f8d-3873acacb37b" 
       octgnVersion="3.1.0.0"
-      version="1.18.0.3" 
+      version="1.18.0.4" 
       markersize="16"
       tags="western deadlands poker maneuvering multiplayer"
       description="Doomtown Rides again! The award winning game of poker gunfights and spatial maneuvering is back.
@@ -161,7 +161,7 @@
       <globalvariable name="playerOutfit" value="None" /> 
       <globalvariable name="UpkeepDone" value="False" /> 
       <globalvariable name="RevealReady" value="False" />      
-		<hand name="Play Hand" visibility="me" ordered="False" width="90" height="126" icon="Groups/playhand.png">
+		<hand name="Play Hand" visibility="me" ordered="False" icon="Groups/playhand.png">
 			<cardaction menu="Play" default="True" execute="playcard" />
 			<cardaction menu="Inspect Card" default="False" shortcut="Ctrl+I" execute="inspectCard" />
 			<cardaction menu="Discard card" default="False" shortcut="Del" execute="handDiscard" />
@@ -170,14 +170,14 @@
 			<groupaction menu="Random Discard" default="False" shortcut="Ctrl+Alt+D" execute="randomDiscard" />
 			<groupaction menu="Shuffle Hand into Deck" default="False" execute="handShuffle" />
 		</hand>
-		<group name="Draw Hand" visibility="me" ordered="False" width="90" height="126" icon="Groups/drawhand.png" collapsed="False">
+		<group name="Draw Hand" visibility="me" ordered="False" icon="Groups/drawhand.png" collapsed="False">
 			<cardaction menu="Discard card (target cards to refill)" default="True" shortcut="Del" execute="drawDiscard" />
 			<groupaction menu="Draw/Reveal Hand" default="True" shortcut="Ctrl+X"  execute="drawRevealHand" />
 			<groupaction menu="Force-Reveal Lowball Hand" default="False" execute="revealLowballHand" />
 			<groupaction menu="Force-Reveal Shootout Hand" default="False" execute="revealShootoutHand" />
 			<groupaction menu="Discard hand" default="False" execute="discardDrawHand" />
 		</group>
-		<group name="Deck" visibility="none" ordered="False" width="90" height="126" icon="Groups/deck.png" collapsed="False">
+		<group name="Deck" visibility="none" ordered="False" icon="Groups/deck.png" collapsed="False">
 			<groupaction menu="Draw" default="True" shortcut="Ctrl+D" execute="draw" />
 			<groupaction menu="Pull" default="False" shortcut="Ctrl+P" execute="pull" />
 			<groupaction menu="QuickPlay Lowball!" default="False" shortcut="Ctrl+Q"  execute="playLowball" />
@@ -185,15 +185,15 @@
 			<groupaction menu="Draw cards to Draw Hand" default="False" execute="drawhandMany" />
 			<groupaction menu="Shuffle" default="False" execute="shuffle" />
 		</group>
-		<group name="Discard Pile" visibility="all" ordered="False" width="90" height="126" icon="Groups/discard.png" collapsed="False">
+		<group name="Discard Pile" visibility="all" ordered="False" icon="Groups/discard.png" collapsed="False">
 			<groupaction menu="Reshuffle into deck" default="False" execute="reshuffle" />
 			<groupaction menu="Ace all Events" default="False" execute="aceevents" />
 		</group>
-		<group name="Boot Hill" visibility="all" ordered="False" width="90" height="126" icon="Groups/boothill.png" collapsed="False">
+		<group name="Boot Hill" visibility="all" ordered="False" icon="Groups/boothill.png" collapsed="False">
 			<cardaction menu="Harrow" default="False" execute="harrow" />
 			<cardaction menu="Remove from Play" default="False" execute="permRemove" />
 		</group>
-		<group name="ScriptingPile" visibility="all" ordered="False" width="90" height="126" icon="Groups/removed.png" collapsed="True" />
+		<group name="ScriptingPile" visibility="all" ordered="False" icon="Groups/removed.png" collapsed="True" />
 		<counter name="GhostRock" default="0" reset="False" icon="Counters/ghostrock.png" />
 		<counter name="Influence" default="0" reset="False" icon="Counters/influence.png" />
 		<counter name="Control" default="0" reset="False" icon="Counters/control.png" />
