@@ -857,7 +857,7 @@
 		         <property name="Text" value="Noon: Boot your stud at a deed you control but do not own. Boot that deed to gain ghost rock equal to your stud’s bullets, to a maximum of 3. You may ace this card to give that deed a permanent +1 control point and that dude a permanent +1 influence." />
 		         <property name="Instructions" value="" />
       </card>
-		<card id="ae22bba2-cf1e-4038-b7bb-1d3429c10053" name="Jade King Stance">
+		<card id="ae22bba2-cf1e-4038-b7bb-1d3429c10054" name="Jade King Stance">
 		         <property name="Rank" value="3" />
 		         <property name="Suit" value="Clubs" />
 		         <property name="Type" value="Action" />
