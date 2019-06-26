@@ -291,7 +291,7 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
    elif card.name == "Ezekiah Grimme":
         if re.search(r'-isFirstCustom',Autoscript):
             spell = me.piles['Discard Pile'].top()
-            if not re.search(r'Hex',spell.Keywords) or re.search(r'Miracle',spell.Keywords) or re.search(r'Spirit',spell.Keywords):
+            if not (re.search(r'Hex',spell.Keywords) or re.search(r'Miracle',spell.Keywords) or re.search(r'Spirit',spell.Keywords)):
                 notify(" You need a spell to use this ability")
                 return
             playcard(spell)
@@ -1233,7 +1233,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
             return
         card = askCard(cards, "Choose a card to fetch.First {} are in your discard".format(string))
         card.moveTo(me.hand)
-        notify("{} fetched {} using Father Tolarios ability".format(me, card)) 
+        notify("{} fetched {} using Father Tolarios ability".format(me, card.name)) 
         
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
@@ -1242,7 +1242,7 @@ def fetchCustomUpkeep(card):
    extraUpkeep = 0
    if card.name == "Denise Brancini":
       for player in getActivePlayers():
-         extraUpkeep += len([c for c in player.piles['Boot Hill']])
+         extraUpkeep += len([c for c in player.piles['Boot Hill'] if (c.type == 'Joker')])
    return extraUpkeep
                
 

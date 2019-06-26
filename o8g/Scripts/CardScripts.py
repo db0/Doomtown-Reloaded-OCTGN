@@ -3467,9 +3467,8 @@ Horace Manse
 -----
 5126c19e-76f4-4355-8dad-8023adab95e7
 -----
-onPlay:Retrieve1Card-grabAbomination$$DiscardTarget-DemiAutoTargeted-fromHand-choose1
 +++++
-
+GR0B0R0:Retrieve1Card-fromBootHill-grabAbomination$$DiscardTarget-DemiAutoTargeted-fromHand-choose1
 .....
 Jia Mein
 -----
