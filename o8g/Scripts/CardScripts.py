@@ -5046,7 +5046,7 @@ e527c15a-fce5-451a-b34d-51c9050d9cac
 -----
 
 +++++
-GR0B1R0:GR0B1R0:BootHost$$ParticipateHost
+GR0B1R0:BootHost$$ParticipateHost
 .....
 Nightmare Realm
 -----
@@ -5144,12 +5144,1100 @@ onPlay:UnbootTarget-Targeted-atDude-targetMine-isParticipating-chose1 $$ Put1Sho
 +++++
 
 .....
-The Winning Agenda
+108 Gracious Gifts
 -----
-4c658294-3640-4362-9dde-719b4e348e21
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
 -----
-onPlay:CustomScript||onPlay:SimplyAnnounce{Increase your hand rank by targeted dude influence}
+
 +++++
+GR2B1R0:UnbootTarget-DemiAutoTargeted-atDude-isBooted-targetMine-chose1
+
+
+.....
+Property Is Theft
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10053
+-----
+
++++++
+GR0B1R0:Draw1Card$$UseCustomAbility
+
+
+
+.....
+The Spiritual Society
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10056
+-----
+atPhaseSundown:CustomScript
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atDude-isUnbooted-targetMine-choose1-isCost$$BootTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
+
+
+
+.....
+Joe Vermilion
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10005
+-----
+onPlay:
++++++
+GR1B0R0:Gain1Ghost Rock-onOpponent-isCost$$Gain1Ghost Rock-perTargetProperty{Production}-DemiAutoTargeted-atDeed-targetOpponents-choose1
+
+
+.....
+Ying-Ssi Chieh T'ang
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10004
+-----
+onPlay:
++++++
+GR0B1R0:Gain1Ghost Rock-onOpponent-isCost-onlyInShootouts$$UseCustomAbility
+
+
+.....
+E Gui
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10003
+-----
+onPlay:
++++++
+GR0B0R0:Gain1Ghost Rock-perTargetProperty{Production}-DemiAutoTargeted-atDeed-targetOpponents-choose1
+
+
+.....
+Buskers
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10001
+-----
+onPlay:
++++++
+GR0B0R0:CustomScript
+
+
+.....
+Taiyari
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10002
+-----
+onPlay:
++++++
+GR0B1R0:CustomScript
+
+
+.....
+Matilda Loomis
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10006
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Alexander Sequoia
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10010
+-----
+onPlay:
++++++
+GR0B0R0:UnbootMyself
+
+
+.....
+Matthew Rising Sun
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10009
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Feichi Suitcase Lee
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10008
+-----
+onPlay:
++++++
+GR0B1R0:CustomScript
+
+
+.....
+Geronimo
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10007
+-----
+onPlay:
++++++
+GR0B0R0:DiscardTarget-DemiAutoTargeted-atGoods_or_Spell_or_Gadget-onAttachment-choose1-targetOpponents$$Gain1Ghost Rock
+
+
+.....
+Papa Marias
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10019
+-----
+onPlay:
++++++
+GR0B0R0:Pull1Card-testHex7-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetMine-isUnbooted-choose1-moveToHere,None>-onlyInNoon
+
+
+
+.....
+Skinwalker
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10022
+-----
+onPlay:
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-isParticipating-isMine-isCost-choose1$$Put2BulletShootoutPlus||GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-isParticipating-isMine-isCost-choose1$$BootTarget-DemiAutoTargeted-atGoods_or_Spell_or_Gadget-onAttachment-choose1-targetOpponents
+
+
+.....
+Tonton Macoute
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10021
+-----
+onPlay:
++++++
+GR0B0R0:Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1||GR0B0R0:BootTarget-DemiAutoTargeted--atWeapon-isCost-onlyInShootouts
+
+
+.....
+Kevin Wainwright (Exp.1)
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10020
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Padre Ernesto de Diaz
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10011
+-----
+onPlay:
++++++
+GR0B0R1:BootTarget-DemiAutoTargeted-atSpell-onAttachment-isUnbooted-choose1-isCost$$Draw1Card
+
+
+
+.....
+Dr. Erik Yaple
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10013
+-----
+onPlay:
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted--atGadget_and_Weapon-isCost-onlyInShootouts$$Put1Bounty-DemiAutoTargeted-atDude-hasntMarker{Bounty}-choose1-targetOpponents
+
+
+.....
+Quincy Washburne
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10012
+-----
+onPlay:
++++++
+GR0B0R0:UnbootMyself
+
+
+.....
+Xiong Wendy Cheng (Exp.1)
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10014
+-----
+onPlay:
++++++
+GR0B1R0::BootMyself-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$SimplyAnnounce{If that dudes bounty was higher than their grit, discard them}
+
+
+
+.....
+Takahashi Jinrai
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10017
+-----
+onPlay:
++++++
+GR0B1R0:StartJob-DemiAutoTargeted-atDeed-choose1-jobEffects<Put1ProductionPlus-DemiAutoTargeted-atDeed-choose1, None>
+.
+
+
+.....
+Handsome Dan Deeds
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10016
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Vida Azul
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10018
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Bartholomew P. Fountain
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10015
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Ike Clanton
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10024
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Frank Stillwell
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10023
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Silas Aims (Exp.1)
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10026
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Larry Sevens Swift
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10025
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Virginia Ann Earp
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10027
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Campbell &amp; Hatch Billiard Parlor
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10032
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Clanton Ranch
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10030
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Concordia Cemetery
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10029
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Ike's Place
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10033
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Five Aces Gambling Hall
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10028
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Old Washoe Club
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10031
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Quarter Horse
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10034
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Electrostatic Pump Gun
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10038
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Claws
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10036
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Analytical Cognisizer
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10039
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Ranger's Bible
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10035
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Stone's Colt Dragoons
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10037
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Bedazzle
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10041
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Exultant Translocation
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10045
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Retribution
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10044
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Gateway
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10040
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Guiding Wind
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10042
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Mischievous Coyote
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10043
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Murdered in Tombstone
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10051
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Hostile Takeover
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10050
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Jade King Stance
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10054
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Heist
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10048
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+I'm Your Huckleberry
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10047
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Monkey Goes to the Mountain
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10052
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Curse of Failure
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10046
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+Ricochet
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10049
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
+
+.....
+108 Gracious Gifts
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
+-----
+onPlay:
++++++
+GR0B1R0:
+
 
 .....
 ENDSCRIPTS

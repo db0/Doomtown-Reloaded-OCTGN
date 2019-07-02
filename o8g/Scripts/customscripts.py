@@ -324,8 +324,35 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       
             else:
                 notify(":> {} didn't discover any spells available to play.".format(card))
+   #2t2d
+   elif card.name == "Property Is Theft":
+      if getGlobalVariable('Shootout') == 'True':
+         drawMany(me.Deck, 1, silent =True)
+         if confirm("do you want to discard card(s)?"):
+            disloop = 2;
+            while disloop:
+               chosenCard = askCard([c for c in me.hand],"Choose which card to discard from your hand")
+               chosenCard.moveTo(me.piles['Discard Pile'])
+               disloop -= 1        
+      else:
+         if confirm("do you want to discard card(s)?"):
+               chosenCard = askCard([c for c in me.hand],"Choose which card to discard from your hand")
+               chosenCard.moveTo(me.piles['Discard Pile'])
+   elif card.model == "ae22bba2-cf1e-4038-b7bb-1d3429c10004": #Ying-Ssi Chieh T'ang
+      drawhandMany(me.Deck, 1, True)
+      discardCards = findTarget('DemiAutoTargeted-isDrawHand-targetMine-choose1', choiceTitle = "Choose a card to discard from your hand")
+      discardCards[0].moveTo(discardCards[0].owner.piles['Discard Pile'])
+      for c in table:
+         if c.highlight == DrawHandColor and c.controller == me: c.moveTo(me.piles['Draw Hand'])
+      revealHand(me.piles['Draw Hand'], type = 'shootout') # We move the cards back ot the draw hand and reveal again, letting the game announce the new rank.
+
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
+
+
+
+
+   
 def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly unique to specific cards, not worth making a whole generic function for them.
    debugNotify(">>> CustomScript() with action: {}".format(action)) #Debug
    mute()
@@ -1234,7 +1261,47 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
         card = askCard(cards, "Choose a card to fetch.First {} are in your discard".format(string))
         card.moveTo(me.hand)
         notify("{} fetched {} using Father Tolarios ability".format(me, card.name)) 
-        
+        #2t2d
+   elif card.name ==  "The Spiritualy Society":
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else: return
+      if me.Influence > player.Influence:
+         if confirm('Do you have more influence than {} in Town Square? '.format(player.Name)):
+            drawMany(me.deck, 1, silent = True) 
+      else: return
+      notify("{} drew one card because they control Town Square ".format(me)) 
+   elif card.name == "Buskers":
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      targetDude = findTarget("DemiAutoTargeted-atDude-targetOpponents-choose1")
+      if player.GhostRock >= 2: remoteCall(player,'Buskers',targetDude)
+      boot(targetDude[0], silent = True)
+      notify("{} booted {} using {} ability.".format(me, targetDude[0].name,card.name))
+   elif card.name == "Taiyari":
+      targetDude = findTarget('DemiAutoTargeted-atDude-targetMine-isParticipating-choose1')
+      bullets = compileCardStat(targetDude[0], stat = 'Bullets')
+      if bullets == 0: bullets = 1
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      me.GhostRock -= bullets
+      player.GhostRock += bullets
+      TokensX('Put1Shootout:Stud', '', targetDude[0])
+      notify("{} paid {} GR to make {} a stud, {} has maximum 4 bullets till teh end of the shootout".format(me,bullets,targetDude[0], targetDude[0]))
+   elif card.name == "Feichi Suitcase Lee":
+      targetDude = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-chose1')
+      boot(targetDude[0], silent = True)
+      dudeInfluence = compileCardStat(targetDude[0], stat = 'Influence')
+      sInfluence = compileCardStat(card, stat = 'Influence')
+      if dudeInfluence < sInfluence:
+         dude = findTarget('DemiAutoTargeted-atDude-isNotParticipating-isMine-chose1')
+         participateDude(dude[0])
+         notify("{} booted {} and brought {} into shootout".format(card.name, targetDude[0], dude[0]))
+         return
+      notify("{} booted {}".format(card.name, targetDude[0]))
+
+      
+
    else: notify("{} uses {}'s ability".format(me,card)) # Just a catch-all.
    return 'OK'
 
@@ -1327,6 +1394,7 @@ def UnionCasino(card,mainBet,targetDude, function = 'others bet'):
       betPlayers = 1
       for player in getActivePlayers():
          if player != me and findMarker(card, ':{}'.format(player.name)): betPlayers += 1
+
       if betPlayers == len(getActivePlayers()): # We compare to see if the controller won only after all players have finished betting.
          highBet = 0
          highBetter = None
@@ -1729,6 +1797,36 @@ def Censure(card,dudes):
     ModifyStatus('SendHomeBootedTarget-DemiAutoTargeted-atDude', '',card, dudes)
     
 def Intercession(oDude):
-     notify("JEstem to")
      TokensX('Put2BulletShootoutPlus', '', oDude)
      boot(oDude, forced = 'unboot')
+
+def chkPropertyIsTheft(type):
+   if type == 'shootout':
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+
+      for card in table:
+         if card.Name == 'Property Is Theft' and card.controller ==  player:
+            if me.GhostRock > 0:
+               payCost(1)
+            else: return
+            if not len([c for c in table if c.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1' and c.controller == player]):
+               player.GhostRock += 1
+               notify("{} got caught cheatin' during shootout and paid {} 1 Ghost Rock for it".format(me, player))
+            else: 
+               notify("{} got caught cheatin' during shootout and paid bank 1 Ghost Rock for it.".format(me))
+            return True
+   return False   
+def Buskers(targetDude):
+   
+   if confirm("Do you want pay {} 2GR to avoid booting {}?".format(opponent, targetDude[0])):
+      me.GhostRock -= 2
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      player.GhostRock +=2
+      notify("{} decided to pay 2 GR to avoid booting {}".format(me,targetDude[0]))
+      return
+
+   else:
+      boot(targetDude[0], silent = True)
+      return

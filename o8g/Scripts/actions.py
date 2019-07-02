@@ -1221,6 +1221,9 @@ def playcard(card,retainPos = False,costReduction = 0, preHost = None, scripted 
             if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'HireDude')
          notify("{} has hired {}.".format(me, card)) # Inform of the new hire      
+   elif card.Type == "Legend":
+      hostCard=findHost(card)
+      attachCard(card, hostCard)
    elif card.Type == "Deed" :
       if not scripted: chkHighNoon()
       if chkGadgetCraft(card):
@@ -1520,6 +1523,7 @@ def revealHand(group, type = 'lowball', event = None, silent = False):
    if len([c for c in drawHandCards if re.search(r"Heretic Joker",c.Name)]): cheatResult = "" # Checking for Devil's Jokers
    if cheatResult != '': 
       if chkHenryMoran(type): return
+      if chkPropertyIsTheft(type): return
       if type == 'shootout':
          if playeraxis == Xaxis:
             cheatinNotice = table.create("cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1",cxp, cyp - 30, 1, False)

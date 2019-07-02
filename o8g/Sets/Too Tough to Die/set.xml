@@ -260,7 +260,7 @@
 		         <property name="Outfit" value="The Fourth Ring" />
 		         <property name="Keywords" value="Abomination" />
 		         <property name="Text" value="Shootout: Boot your Abomination dude. Either boot an opposing attachment at this location or give Skinwalker +2 bullets." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Boot your abomination in the posse to gain 2 bullets||Boot your abomination in the posse to boot opponents goods or spell" />
       </card>
 		<card id="ae22bba2-cf1e-4038-b7bb-1d3429c10021" name="Tonton Macoute">
 		         <property name="Rank" value="J" />
@@ -277,7 +277,7 @@
 		         <property name="Outfit" value="The Fourth Ring" />
 		         <property name="Keywords" value="Abomination" />
 		         <property name="Text" value="Shootout: Choose an opposing dude. Give that dude -2 bullets or boot a Weapon on that dude." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Choose an opposing dude. Give that dude -2 bullets. ||  Boot a weapon on opponents dude."  />
       </card>
 		<card id="ae22bba2-cf1e-4038-b7bb-1d3429c10020" name="Kevin Wainwright (Exp.1)">
 		         <property name="Rank" value="Q" />
