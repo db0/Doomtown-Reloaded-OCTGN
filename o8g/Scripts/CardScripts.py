@@ -2709,7 +2709,7 @@ GR0B1R0:UseCustomAbility-DemiAutoTargeted-atDude-isUnbooted-targetMine-choose1
 -----
 
 +++++
-GR0B1R0:MoveTarget-Targeted-atDude-moveToDude
+GR0B1R0:MoveTarget-Targeted-atDude-moveToDeed_or_Town Square_or_Outfit
 .....
 Spirit Guidance
 -----
@@ -5354,7 +5354,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10014
 -----
 onPlay:
 +++++
-GR0B1R0::BootMyself-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$SimplyAnnounce{If that dudes bounty was higher than their grit, discard them}
+GR0B1R0:BootMyself-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$SimplyAnnounce{If that dudes bounty was higher than their grit, discard them}
 
 
 
@@ -5365,7 +5365,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10017
 -----
 onPlay:
 +++++
-GR0B1R0:StartJob-DemiAutoTargeted-atDeed-choose1-jobEffects<Put1ProductionPlus-DemiAutoTargeted-atDeed-choose1, None>
+GR0B1R0:StartJob-DemiAutoTargeted-atDeed-choose1-jobEffects<Put1ProdPlus-DemiAutoTargeted-atDeed-choose1, None>
 .
 
 
@@ -5376,7 +5376,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10016
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:BootMyself-isCost$$Put1ControlPlus$$Put1HandsomeCP-DemiAutotargeted-atDeed-choose1
 
 
 .....
@@ -5386,7 +5386,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10018
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B0R0:CustomScript
 
 
 .....
@@ -5396,7 +5396,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10015
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:BootTarget-DemiAutoTargeted-atRanch-targetMine-isCost$$MoveTarget-DemiAutoTargeted-atDude-choose1-moveToDeed_or_Town Square_or_Outfit
 
 
 .....
@@ -5406,7 +5406,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10024
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Put1Rowdy Ike
 
 
 .....
@@ -5416,7 +5416,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10023
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B0R0:UnparticipateMyself$$SendHomeBootedMyself
 
 
 .....
@@ -5426,7 +5426,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10026
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B0R0:CustomScript
 
 
 .....
@@ -5436,7 +5436,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10025
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B0R0:BootTarget-DemiAutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$Put1Bounty$$BootTarget-DemiAutoTargeted-atGoods-targetOpponents-choose1
 
 
 .....
@@ -5456,7 +5456,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10032
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:SimplyAnnounce{For the remainder of the shootout, hand ranks cannot be modified Shootout, React, or non-Cheatin' Resolution abilities. Dudes cannot be discarded or aced by Shootout or non-Cheatin' Resolution abilities during the first round.}
 
 
 .....
@@ -5466,7 +5466,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10030
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Gain1Ghost Rock
 
 
 .....
@@ -5476,7 +5476,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10029
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Put1ProdPlus||GR0B1R0:Put1ProdPlus$$Put1PermControlPlus
 
 
 .....
@@ -5486,7 +5486,8 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10033
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Put1ProdMinus-perTargetProperty{Production}-DemiAutoTargeted-atDeed$-choose1$$Put1Control Minus-perTargetProperty{Control}-DemiAutoTargeted-atDeed-choose1$$Put1Ike Place-DemiAutoTargeted-atDeed-choose1
+
 
 
 .....
@@ -5496,7 +5497,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10028
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:ParticipateTarget-DemiAutoTargeted-atDude-targetMine-hasMarker{Bounty}-choose1-isNotParticipating
 
 
 .....
@@ -5506,7 +5507,8 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10031
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-hasProperty{Bullets}le1-choose1||GR0B1R0:DiscardTarget-DemiAutoTargeted-atSidekick-choose1
+
 
 
 .....
@@ -5516,8 +5518,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10034
 -----
 onPlay:
 +++++
-GR0B1R0:
-
+GR0B1R0:UnparticipateHost
 
 .....
 Electrostatic Pump Gun
@@ -5526,7 +5527,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10038
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:CustomScript
 
 
 .....
@@ -5544,9 +5545,9 @@ Analytical Cognisizer
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10039
 -----
-onPlay:
+onPlay:CustomScript
 +++++
-GR0B1R0:
+GR0B1R0:DiscardTarget-DemiAutoTargeted-fromHand-atGoods-choose1-isCost$$SimplyAnnounce{The card was discarded to make pulled card's suit a heart}
 
 
 .....
@@ -5556,7 +5557,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10035
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:SimplyAnnounce{uses Ranger's Bible to lower players hand rank by dudes influence}
 
 
 .....
@@ -5566,7 +5567,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10037
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:BootTarget-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1$$Put1NoUnboot-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1
 
 
 .....
@@ -5576,7 +5577,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10041
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Put1BulletShootoutMinus-DemiAutoTargeted-atDude-perTargetProperty{Bullets}-isParticipating-choose1$$SimplyAnnounce{ lowers players hand rank by 2}
 
 
 .....
@@ -5586,7 +5587,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10045
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<BootHost++Put1NoUnboot-Targeted-atDude-targetMine++SendHomeBootedTarget-Targeted-atDude-targetMine,None>
 
 
 .....
@@ -5596,8 +5597,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10044
 -----
 onPlay:
 +++++
-GR0B1R0:
-
+GR0B1R0:Pull1Card-testMiracleX-difficultyValue-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1-spellEffects<Put1Shootout:Retribution-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>
 
 .....
 Gateway
@@ -5709,534 +5709,6 @@ onPlay:
 GR0B1R0:
 
 
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
-
-
-.....
-108 Gracious Gifts
------
-ae22bba2-cf1e-4038-b7bb-1d3429c10055
------
-onPlay:
-+++++
-GR0B1R0:
 
 
 .....

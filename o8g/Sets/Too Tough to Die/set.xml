@@ -566,7 +566,7 @@
 		         <property name="Outfit" value="" />
 		         <property name="Keywords" value="Private-Core" />
 		         <property name="Text" value="Controller React, Boot: Before a non-token dude opposing your dude is aced in a shootout, give this deed a permanent +1 production. If that dude had grit 11 or higher, give this deed a permanent control point." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Gain 1 production. || Gain 1 production and 1 control point." />
       </card>
 		<card id="ae22bba2-cf1e-4038-b7bb-1d3429c10033" name="Ike's Place">
 		         <property name="Rank" value="7" />
@@ -617,7 +617,7 @@
 		         <property name="Outfit" value="" />
 		         <property name="Keywords" value="Private-Casino" />
 		         <property name="Text" value="Controller Shootout, Boot: Send an opposing A-value dude home booted. &#xD;&#xD;Controller Shootout, Boot: Discard a Sidekick." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Send A-value dude home. || Discard a sidekick." />
       </card>
 		<card id="ae22bba2-cf1e-4038-b7bb-1d3429c10034" name="Quarter Horse">
 		         <property name="Rank" value="3" />
