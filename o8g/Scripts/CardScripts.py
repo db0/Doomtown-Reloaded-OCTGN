@@ -5606,7 +5606,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10040
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Pull1Card-testHex6-spellEffects<MoveTarget-Targeted-atDude-atAbomination-targetMine-moveToDeed_or_Town Square_or_Outfit,None>-onlyInNoon||GR0B1R0:Pull1Card-testHex6-spellEffects<ParticipateTarget-DemiAutoTargeted-atDude-atAbomination-isNotParticipating-targetMine-choose1,None>-onlyInShootouts
 
 
 .....
@@ -5616,7 +5616,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10042
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<CustomScript,None>
 
 
 .....
@@ -5626,7 +5626,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10043
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B1R0:Pull1Card-testSpirit9-spellEffects<SimplyAnnounce{ this round has draw and stud bonus switched.},None>
 
 
 .....
@@ -5636,7 +5636,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10051
 -----
 onPlay:
 +++++
-GR0B1R0:
+GR0B0R0:Remove999Shootout:Draw-DemiAutoTargeted-atDude-targetMine-chose1$$Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-chose1$$UseCustomAbility
 
 
 .....

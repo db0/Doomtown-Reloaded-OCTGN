@@ -787,7 +787,7 @@
 		         <property name="Outfit" value="" />
 		         <property name="Keywords" value="Hex" />
 		         <property name="Text" value="Noon Hex 6, Boot: Move your Abomination at this location to another location.&#xD;&#xD;Shootout Hex 6, Boot: Your Abomination joins your posse (moving if necessary)." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Move your Abomination at this location to another location. || Your Abomination joins your posse (moving if necessary)."/>
       </card>
 		<card id="ae22bba2-cf1e-4038-b7bb-1d3429c10042" name="Guiding Wind">
 		         <property name="Rank" value="10" />

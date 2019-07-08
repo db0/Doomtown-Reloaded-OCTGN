@@ -345,6 +345,26 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       for c in table:
          if c.highlight == DrawHandColor and c.controller == me: c.moveTo(me.piles['Draw Hand'])
       revealHand(me.piles['Draw Hand'], type = 'shootout') # We move the cards back ot the draw hand and reveal again, letting the game announce the new rank.
+   elif card.name == 'Murdered in Tombstone':
+      disCR = [c for c in me.piles['Discard Pile'] if ("Action" in c.Type and re.search(r'Cheatin',c.Text))]
+      deckCR = [c for c in me.piles['Deck'] if ("Action" in c.Type and re.search(r'Cheatin',c.Text))]
+      string = len(disCR)
+      cards = disCR + deckCR
+      if len(cards) == 0:
+         notify("You have no cards you can fetch with this ability")
+         return
+      card = askCard(cards, "Choose a card to fetch.First {} are in your discard".format(string))
+      card.moveTo(me.hand)
+      if card:
+         choicehand = askCard([c for c in me.hand],'Choose which card to discard from your hand',card.Name)
+         choicehand.moveTo(me.piles['Discard Pile'])
+
+      notify("{} fetched {} using Murdered in Tombstone ability and discarded".format(me, card.name, choicehand)) 
+      opponents = [pl for pl in getActivePlayers() if (pl != me or len(getActivePlayers()) == 1)]
+      for opponent in opponents:
+         remoteCall(opponent,'Murdered',card)
+      return
+
 
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
@@ -1363,6 +1383,24 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          notify("{} and {} swapped places thanks to {}.".format(dude, tmDude, card.name))
          notify("{} got unbooted as pull was successful by 6 or more.".format(aCard))
       notify("{} and {} swapped places thanks to {}.".format(dude, tmDude, card.name))
+   elif card.name == 'Guiding Wind':
+      dudes = findTarget('DemiAutoTargeted-atDude-isParticipating-choose1')
+      dude = dudes[0]
+      influence = compilecardstat(card, stat = 'Influence')
+      if influence > 3:
+         modifier = 3
+      else: modifier = influence
+      bullets = compilecardstat(card, stat = 'Bullets')
+      if bullets < modifier:
+         while bullets != modifier:
+            TokensX('Put1BulletShootoutPlus', '', dude)
+            bullets = compilecardstat(card, stat = 'Bullets')
+      else:
+         while bullets != modifier:
+            TokensX('Put1BulletShootoutMinus', '', dude)
+            bullets = compilecardstat(card, stat = 'Bullets')
+
+
 
 
 
@@ -1915,6 +1953,23 @@ def Buskers(targetDude):
    else:
       boot(targetDude[0], silent = True)
       return
+def Murdered(card):
+      disCR = [c for c in me.piles['Discard Pile'] if ("Action" in c.Type and re.search(r'Cheatin',c.Text))]
+      deckCR = [c for c in me.piles['Deck'] if ("Action" in c.Type and re.search(r'Cheatin',c.Text))]
+      string = len(disCR)
+      cards = disCR + deckCR
+      if len(cards) == 0:
+         notify("You have no cards you can fetch with this ability")
+         return
+      card = askCard(cards, "Choose a card to fetch.First {} are in your discard".format(string))
+      card.moveTo(me.hand)
+      if card:
+         choicehand = askCard([c for c in me.hand],'Choose which card to discard from your hand',card.Name)
+         choicehand.moveTo(me.piles['Discard Pile'])
+      else: return
+      notify("{} fetched {} using Murdered in Tombstone ability and discarded {}".format(me, card.name, choicehand)) 
+      return
+
       '''
 #target opponents participating dude
    topd = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1')
