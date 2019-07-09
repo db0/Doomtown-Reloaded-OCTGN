@@ -5180,7 +5180,7 @@ Joe Vermilion
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10005
 -----
-onPlay:
+
 +++++
 GR1B0R0:Gain1Ghost Rock-onOpponent-isCost$$Gain1Ghost Rock-perTargetProperty{Production}-DemiAutoTargeted-atDeed-targetOpponents-choose1
 
@@ -5190,7 +5190,7 @@ Ying-Ssi Chieh T'ang
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10004
 -----
-onPlay:
+
 +++++
 GR0B1R0:Gain1Ghost Rock-onOpponent-isCost-onlyInShootouts$$UseCustomAbility
 
@@ -5200,7 +5200,7 @@ E Gui
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10003
 -----
-onPlay:
+
 +++++
 GR0B0R0:Gain1Ghost Rock-perTargetProperty{Production}-DemiAutoTargeted-atDeed-targetOpponents-choose1
 
@@ -5210,7 +5210,7 @@ Buskers
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10001
 -----
-onPlay:
+
 +++++
 GR0B0R0:CustomScript
 
@@ -5220,7 +5220,7 @@ Taiyari
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10002
 -----
-onPlay:
+
 +++++
 GR0B1R0:CustomScript
 
@@ -5230,9 +5230,9 @@ Matilda Loomis
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10006
 -----
-onPlay:
+
 +++++
-GR0B1R0:
+
 
 
 .....
@@ -5240,7 +5240,7 @@ Alexander Sequoia
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10010
 -----
-onPlay:
+
 +++++
 GR0B0R0:UnbootMyself
 
@@ -5250,9 +5250,9 @@ Matthew Rising Sun
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10009
 -----
-onPlay:
+
 +++++
-GR0B1R0:
+
 
 
 .....
@@ -5260,7 +5260,7 @@ Feichi Suitcase Lee
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10008
 -----
-onPlay:
+
 +++++
 GR0B1R0:CustomScript
 
@@ -5270,7 +5270,7 @@ Geronimo
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10007
 -----
-onPlay:
+
 +++++
 GR0B0R0:DiscardTarget-DemiAutoTargeted-atGoods_or_Spell_or_Gadget-onAttachment-choose1-targetOpponents$$Gain1Ghost Rock
 
@@ -5280,7 +5280,7 @@ Papa Marias
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10019
 -----
-onPlay:
+
 +++++
 GR0B0R0:Pull1Card-testHex7-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetMine-isUnbooted-choose1-moveToHere,None>-onlyInNoon
 
@@ -5291,7 +5291,7 @@ Skinwalker
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10022
 -----
-onPlay:
+
 +++++
 GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-isParticipating-isMine-isCost-choose1$$Put2BulletShootoutPlus||GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-isParticipating-isMine-isCost-choose1$$BootTarget-DemiAutoTargeted-atGoods_or_Spell_or_Gadget-onAttachment-choose1-targetOpponents
 
@@ -5301,7 +5301,7 @@ Tonton Macoute
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10021
 -----
-onPlay:
+
 +++++
 GR0B0R0:Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1||GR0B0R0:BootTarget-DemiAutoTargeted--atWeapon-isCost-onlyInShootouts
 
@@ -5311,9 +5311,10 @@ Kevin Wainwright (Exp.1)
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10020
 -----
-onPlay:
+
 +++++
-GR0B1R0:
+GR0B0R0:MoveMyself--moveToDude_and_Huckster_or_Abomination-onlyInShootouts$$ParticipateMyself$$Put1Shootout:Stud$$UseCustomAbility||GR0B0R0:MoveMyself--moveToDude_and_Huckster_or_Abomination-onlyInNoon$$Put1High Noon:Stud$$UseCustomAbility
+
 
 
 .....
@@ -5321,7 +5322,7 @@ Padre Ernesto de Diaz
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10011
 -----
-onPlay:
+
 +++++
 GR0B0R1:BootTarget-DemiAutoTargeted-atSpell-onAttachment-isUnbooted-choose1-isCost$$Draw1Card
 
@@ -5332,7 +5333,7 @@ Dr. Erik Yaple
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10013
 -----
-onPlay:
+
 +++++
 GR0B0R0:BootTarget-DemiAutoTargeted--atGadget_and_Weapon-isCost-onlyInShootouts$$Put1Bounty-DemiAutoTargeted-atDude-hasntMarker{Bounty}-choose1-targetOpponents
 
@@ -5342,7 +5343,7 @@ Quincy Washburne
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10012
 -----
-onPlay:
+
 +++++
 GR0B0R0:UnbootMyself
 
@@ -5352,7 +5353,7 @@ Xiong Wendy Cheng (Exp.1)
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10014
 -----
-onPlay:
+
 +++++
 GR0B1R0:BootMyself-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$SimplyAnnounce{If that dudes bounty was higher than their grit, discard them}
 
@@ -5363,7 +5364,7 @@ Takahashi Jinrai
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10017
 -----
-onPlay:
+
 +++++
 GR0B1R0:StartJob-DemiAutoTargeted-atDeed-choose1-jobEffects<Put1ProdPlus-DemiAutoTargeted-atDeed-choose1, None>
 .
@@ -5374,7 +5375,7 @@ Handsome Dan Deeds
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10016
 -----
-onPlay:
+
 +++++
 GR0B1R0:BootMyself-isCost$$Put1ControlPlus$$Put1HandsomeCP-DemiAutotargeted-atDeed-choose1
 
@@ -5384,7 +5385,7 @@ Vida Azul
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10018
 -----
-onPlay:
+
 +++++
 GR0B0R0:CustomScript
 
@@ -5394,7 +5395,7 @@ Bartholomew P. Fountain
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10015
 -----
-onPlay:
+
 +++++
 GR0B1R0:BootTarget-DemiAutoTargeted-atRanch-targetMine-isCost$$MoveTarget-DemiAutoTargeted-atDude-choose1-moveToDeed_or_Town Square_or_Outfit
 
@@ -5404,7 +5405,7 @@ Ike Clanton
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10024
 -----
-onPlay:
+
 +++++
 GR0B1R0:Put1Rowdy Ike
 
@@ -5414,7 +5415,7 @@ Frank Stillwell
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10023
 -----
-onPlay:
+
 +++++
 GR0B0R0:UnparticipateMyself$$SendHomeBootedMyself
 
@@ -5424,7 +5425,7 @@ Silas Aims (Exp.1)
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10026
 -----
-onPlay:
+
 +++++
 GR0B0R0:CustomScript
 
@@ -5434,7 +5435,7 @@ Larry Sevens Swift
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10025
 -----
-onPlay:
+
 +++++
 GR0B0R0:BootTarget-DemiAutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$Put1Bounty$$BootTarget-DemiAutoTargeted-atGoods-targetOpponents-choose1
 
@@ -5444,9 +5445,9 @@ Virginia Ann Earp
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10027
 -----
-onPlay:
+
 +++++
-GR0B1R0:
+
 
 
 .....
@@ -5454,7 +5455,7 @@ Campbell &amp; Hatch Billiard Parlor
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10032
 -----
-onPlay:
+
 +++++
 GR0B1R0:SimplyAnnounce{For the remainder of the shootout, hand ranks cannot be modified Shootout, React, or non-Cheatin' Resolution abilities. Dudes cannot be discarded or aced by Shootout or non-Cheatin' Resolution abilities during the first round.}
 
@@ -5464,7 +5465,7 @@ Clanton Ranch
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10030
 -----
-onPlay:
+
 +++++
 GR0B1R0:Gain1Ghost Rock
 
@@ -5474,7 +5475,7 @@ Concordia Cemetery
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10029
 -----
-onPlay:
+
 +++++
 GR0B1R0:Put1ProdPlus||GR0B1R0:Put1ProdPlus$$Put1PermControlPlus
 
@@ -5484,7 +5485,7 @@ Ike's Place
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10033
 -----
-onPlay:
+
 +++++
 GR0B1R0:Put1ProdMinus-perTargetProperty{Production}-DemiAutoTargeted-atDeed$-choose1$$Put1Control Minus-perTargetProperty{Control}-DemiAutoTargeted-atDeed-choose1$$Put1Ike Place-DemiAutoTargeted-atDeed-choose1
 
@@ -5495,7 +5496,7 @@ Five Aces Gambling Hall
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10028
 -----
-onPlay:
+
 +++++
 GR0B1R0:ParticipateTarget-DemiAutoTargeted-atDude-targetMine-hasMarker{Bounty}-choose1-isNotParticipating
 
@@ -5505,7 +5506,7 @@ Old Washoe Club
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10031
 -----
-onPlay:
+
 +++++
 GR0B1R0:SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-hasProperty{Bullets}le1-choose1||GR0B1R0:DiscardTarget-DemiAutoTargeted-atSidekick-choose1
 
@@ -5516,7 +5517,7 @@ Quarter Horse
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10034
 -----
-onPlay:
+
 +++++
 GR0B1R0:UnparticipateHost
 
@@ -5525,7 +5526,7 @@ Electrostatic Pump Gun
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10038
 -----
-onPlay:
+
 +++++
 GR0B1R0:CustomScript
 
@@ -5535,9 +5536,9 @@ Claws
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10036
 -----
-onPlay:
+
 +++++
-GR0B1R0:
+
 
 
 .....
@@ -5555,7 +5556,7 @@ Ranger's Bible
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10035
 -----
-onPlay:
+
 +++++
 GR0B1R0:SimplyAnnounce{uses Ranger's Bible to lower players hand rank by dudes influence}
 
@@ -5565,7 +5566,7 @@ Stone's Colt Dragoons
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10037
 -----
-onPlay:
+
 +++++
 GR0B1R0:BootTarget-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1$$Put1NoUnboot-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1
 
@@ -5575,7 +5576,7 @@ Bedazzle
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10041
 -----
-onPlay:
+
 +++++
 GR0B1R0:Put1BulletShootoutMinus-DemiAutoTargeted-atDude-perTargetProperty{Bullets}-isParticipating-choose1$$SimplyAnnounce{ lowers players hand rank by 2}
 
@@ -5585,7 +5586,7 @@ Exultant Translocation
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10045
 -----
-onPlay:
+
 +++++
 GR0B1R0:Pull1Card-testMiracle6-spellEffects<BootHost++Put1NoUnboot-Targeted-atDude-targetMine++SendHomeBootedTarget-Targeted-atDude-targetMine,None>
 
@@ -5595,7 +5596,7 @@ Retribution
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10044
 -----
-onPlay:
+
 +++++
 GR0B1R0:Pull1Card-testMiracleX-difficultyValue-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1-spellEffects<Put1Shootout:Retribution-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>
 
@@ -5604,7 +5605,7 @@ Gateway
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10040
 -----
-onPlay:
+
 +++++
 GR0B1R0:Pull1Card-testHex6-spellEffects<MoveTarget-Targeted-atDude-atAbomination-targetMine-moveToDeed_or_Town Square_or_Outfit,None>-onlyInNoon||GR0B1R0:Pull1Card-testHex6-spellEffects<ParticipateTarget-DemiAutoTargeted-atDude-atAbomination-isNotParticipating-targetMine-choose1,None>-onlyInShootouts
 
@@ -5614,7 +5615,7 @@ Guiding Wind
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10042
 -----
-onPlay:
+
 +++++
 GR0B1R0:Pull1Card-testSpirit8-spellEffects<CustomScript,None>
 
@@ -5624,7 +5625,7 @@ Mischievous Coyote
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10043
 -----
-onPlay:
+
 +++++
 GR0B1R0:Pull1Card-testSpirit9-spellEffects<SimplyAnnounce{ this round has draw and stud bonus switched.},None>
 
@@ -5634,9 +5635,9 @@ Murdered in Tombstone
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10051
 -----
-onPlay:
+onPlay:Remove999Shootout:Draw-DemiAutoTargeted-atDude-targetMine-chose1$$Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-chose1$$UseCustomAbility
+
 +++++
-GR0B0R0:Remove999Shootout:Draw-DemiAutoTargeted-atDude-targetMine-chose1$$Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-chose1$$UseCustomAbility
 
 
 .....
@@ -5644,9 +5645,9 @@ Hostile Takeover
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10050
 -----
-onPlay:
+onPlay:CustomScript
 +++++
-GR0B1R0:
+
 
 
 .....
@@ -5654,9 +5655,9 @@ Jade King Stance
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10054
 -----
-onPlay:
+
 +++++
-GR0B1R0:
+GR0B0R0:UnbootTarget-DemiAutoTargeted-atDude-targetMine-choose1-isCost$$Put1 HighNoon:KungFu Bonus:2-DemiAutoTargeted-atDude-targetMine-choose1$$Put2BulletNoonPlus-DemiAutoTargeted-atDude-targetMine-chose1$$Put1High Noon:Canno Move-DemiAtutoTargeted-atDude-targetMine-choose1
 
 
 .....
@@ -5664,9 +5665,9 @@ Heist
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10048
 -----
-onPlay:
+onPlay:StartJob-DemiAutoTargeted-atDeed-choose1-isCost-jobEffects<UseCustomAbility,None>
 +++++
-GR0B1R0:
+
 
 
 .....
@@ -5674,9 +5675,9 @@ I'm Your Huckleberry
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10047
 -----
-onPlay:
+onPlay:CustomScript
 +++++
-GR0B1R0:
+
 
 
 .....
@@ -5684,9 +5685,9 @@ Monkey Goes to the Mountain
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10052
 -----
-onPlay:
+
 +++++
-GR0B1R0:
+GR0B0R0:UnparticipateMyself$$UnparticipateTarget-DemiAutoTargeted-atDude-targetOpponents-choose1$$MoveMyself-moveToDeed_or_Town Square$$MoveTarget-DemiAutoTargeted-atDude-targetOpponents-choose1-moveToDeed_or_TownSquare
 
 
 .....
@@ -5694,9 +5695,8 @@ Curse of Failure
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10046
 -----
-onPlay:
+onPlay:StartJob-Targeted-atDude-bootLeader-jobEffects<RehostMyself-AutoTargeted-atDude-isMark++SendHomeBootedTarget-AutoTargeted-atDude-isMark++Put1PermControlMinus-perTargetProperty{Control}-AutoTargeted-atDude-isMark++Put1PermInfluenceMinus-perTargetProperty{Influence}-AutoTargeted-atDude-isMark++Put1PermBulletsMinus-perTargetProperty{Bullets}-AutoTargeted-atDude-isMark++Put1ProdMinus,None>
 +++++
-GR0B1R0:
 
 
 .....
@@ -5704,9 +5704,9 @@ Ricochet
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10049
 -----
-onPlay:
+onPlay:SimplyAnnounce{Cheating player discards their shooter}$$UseCustomAbility
 +++++
-GR0B1R0:
+
 
 
 

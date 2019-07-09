@@ -353,7 +353,7 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       if len(cards) == 0:
          notify("You have no cards you can fetch with this ability")
          return
-      card = askCard(cards, "Choose a card to fetch.First {} are in your discard".format(string))
+      card = askCard(cards, "Choose a CR to fetch if you do you will have to discard a card from your hand.First {} are in your discard".format(string))
       card.moveTo(me.hand)
       if card:
          choicehand = askCard([c for c in me.hand],'Choose which card to discard from your hand',card.Name)
@@ -364,7 +364,41 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       for opponent in opponents:
          remoteCall(opponent,'Murdered',card)
       return
+   elif card.name == "Burn 'Em Out":
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      else:
+         choice = SingleChoice("Choose player ", [pl.name for pl in opponents])
+         if choice == None: return 'ABORT'
+         else: player = opponents[choice]         
+      remoteCall(player,'BurnOut',card)
+   elif card.name == 'Heist':
+      mark = Card(eval(getGlobalVariable('Mark')))
+      production = compileCardStat(mark, stat = 'Production')
+      me.GhostRock += production
+      if mark.controller != me:
+         jobResults = eval(getGlobalVariable('Job Active'))
+         leader = Card(num(jobResults[3]))
+         if leader:
+            dude.markers[mdict['Bounty']] += 1
+            boot(leader , forced = 'unboot')
+         notify("{} gained {} GR because of successful {}, {} unboots as heist happened at opponents location.".format(me, production, card.name, leader.name))
+      notify("{} gained {} GR because of successful {}.".format(me, production, card.name))
+   elif card.name == 'Ricochet':
+      for card in table:
+         if card.controller == me:
+            if card.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1': # The cheatin' icon
+               return
+      drawMany(me.deck, 1, silent = True)
+      notify('{} does not take damage this turn and drew a card.'.format(me))
+   elif card.name == 'Kevin Wainwright (Exp.1)':
+      if confirm('Is there opponents dude with grit 11 or higher at your location?'):
+         drawMany(me.deck, 2, silent = True)
+         notify('{} drew to card after {} moved to location with high grit dude.'.format(me, card.name))
 
+
+
+#ausc
 
    debugNotify("<<< UseCustomAbility() with announceString: {}".format(announceString)) #Debug
    return announceString
@@ -1399,6 +1433,44 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          while bullets != modifier:
             TokensX('Put1BulletShootoutMinus', '', dude)
             bullets = compilecardstat(card, stat = 'Bullets')
+   elif card.name =='Hostile Takeover':
+         tmd = findTarget('DemiAutoTargeted-atDude-targetMine-choose1')
+         tmDude = tmd[0]
+         if fetchDrawType(tmDude) == 'Draw':
+            notify("You need a stud to use this ability.")
+            return 'Abort'
+         tdeed = findTarget('DemiAutoTargeted-atDeed-targetOpponents-choose1')
+         deed = tdeed[0]
+         if tmDude.orientation != Rot90 and tdeed.orientation != Rot90:
+            boot(tmDude, forced = 'boot')
+            boot(deed, forced = 'boot')
+            production = compileCardStat(deed, stat = 'Production')
+            me.GhostRock += production
+            notify('{} gained {} Ghost Rock by plundering {}.'.format(me, production, deed.name ))
+            if confirm("Do you want to ace {} to give {} 1 control point and {} 1 influence?".format(card.name, deed.name, tmDude)):
+               ace(card)
+               deed.markers[mdict['PermControlPlus']] += 1
+               tmDude.markers[mdict['PermInfluencePlus']] += 1
+               notify('{} aced {} to give {} permanent influence point and {} permanent control point.'.format(me, card.name, tmDude.name, deed.name))
+
+         else: 
+            notify('You need to boot a dude and a deed to use this ability.')
+   elif card.name == "I'm Your Huckleberry":
+      opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
+      if len(opponents) == 1: player = opponents[0]
+      for card in table:
+         if card.controller == me:
+            if card.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1': # The cheatin' icon
+               remoteCall(player,'Huckleberry',card)
+            
+      targetDude= findTarget('DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1', choiceTitle = "Choose a dude that will be controlled by your opponent till the end of the shootout.")
+      if targetDude[0].highlight == AttackColor:
+         targetDude[0].highlight = DefendColor   
+      else: targetDude[0].highlight = AttackColor
+      TokensX('Put1Shootout:Huckleberry', '', targetDude[0])
+
+      notify('{} takes control over {} till the end of the shootout'.format(card.controller, targetDude[0].name))
+      return 
 
 
 
@@ -1480,6 +1552,11 @@ def markerEffects(Time = 'Start'):
                  or re.search(r'Shootout:',marker[0]))):
             TokensX('Remove999'+marker[0], marker[0] + ':', card)
             notify("--> {} removes the {} resident effect from {}".format(me,marker[0],card))
+         if (Time == 'ShootoutEnd'
+               and (re.search(r'Huckleberry',marker[0]))):
+                  TokensX('Remove999'+marker[0], marker[0] + ':', card)
+                  ModifyStatus('SendHomeBootedTarget-DemiAutoTargeted-atDude', '',card, card)
+
          if Time == 'High Noon' and re.search(r'UpkeepPrePaid',marker[0]) and card.controller == me: # Tax Office reduction effects removal
             modProd(card, -card.markers[marker], True)
             card.markers[marker] = 0
@@ -1876,6 +1953,23 @@ def SightBeyondSightEnd(card,cardChoice):
       notify("{}'s {} hexes {} out of {}'s play hand".format(card.controller,card,cardChoice,me))
    for c in me.ScriptingPile: c.moveTo(me.hand)
    
+def BurnOut(card):
+   mute()
+   if not len(me.hand): 
+      notify(":::INFO::: {}'s play hand is empty. There is no card to ace.".format(me))
+      return 'ABORT'
+   else:
+      cards = me.hand
+      remoteCall(card.controller,'BurnOutChoice',[card, cards])
+
+def BurnOutChoice(card, cards):
+   update()
+   cardChoice = askCard([c for c in cards],"Choose one card to ace")
+   remoteCall(cardChoice.controller, 'BurnOutEnd', cardChoice)
+def BurnOutChoice(cardChoice):
+      cardChoice.moveTo(me.piles['Boot Hill'])
+      notify("{}'s aces {} out of {}'s play hand".format(card.controller,cardChoice,me))
+
 def chkHenryMoran(type):
    if type == 'lowball':
       for card in table:
@@ -1961,7 +2055,7 @@ def Murdered(card):
       if len(cards) == 0:
          notify("You have no cards you can fetch with this ability")
          return
-      card = askCard(cards, "Choose a card to fetch.First {} are in your discard".format(string))
+      card = askCard(cards, "Choose a CR to fetch if you do you will have to discard a card from your hand.First {} are in your discard".format(string))
       card.moveTo(me.hand)
       if card:
          choicehand = askCard([c for c in me.hand],'Choose which card to discard from your hand',card.Name)
@@ -1969,8 +2063,17 @@ def Murdered(card):
       else: return
       notify("{} fetched {} using Murdered in Tombstone ability and discarded {}".format(me, card.name, choicehand)) 
       return
+def Huckleberry(card):
+   targetDude= findTarget('DemiAutoTargeted-atDude-targetMine-isParticipating-choose1', choiceTitle = "Choose a dude that will be controlled by your opponent till the end of the shootout.")
+   if targetDude[0].highlight == AttackColor:
+      targetDude[0].highlight = DefendColor   
+   else:
+      targetDude[0].highlight = AttackColor
+   TokensX('Put1Shootout:Huckleberry', '', targetDude[0])
 
-      '''
+   notify('{} takes control over {} till the end of the shootout'.format(card.controller, targetDude[0].name))
+   return 
+'''
 #target opponents participating dude
    topd = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1')
    topDude = topd[0]
