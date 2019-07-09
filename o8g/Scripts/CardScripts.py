@@ -5617,7 +5617,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10042
 -----
 
 +++++
-GR0B1R0:Pull1Card-testSpirit8-spellEffects<CustomScript,None>
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<useCustomAbility,None>
 
 
 .....

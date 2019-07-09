@@ -395,6 +395,23 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       if confirm('Is there opponents dude with grit 11 or higher at your location?'):
          drawMany(me.deck, 2, silent = True)
          notify('{} drew to card after {} moved to location with high grit dude.'.format(me, card.name))
+   elif card.name == 'Guiding Wind':
+      dudes = findTarget('DemiAutoTargeted-atDude-isParticipating-choose1')
+      dude = dudes[0]
+      influence = compilecardstat(card, stat = 'Influence')
+      if influence > 3:
+         modifier = 3
+      else: modifier = influence
+      bullets = compilecardstat(card, stat = 'Bullets')
+      if bullets < modifier:
+         while bullets != modifier:
+            TokensX('Put1BulletShootoutPlus', '', dude)
+            bullets = compilecardstat(card, stat = 'Bullets')
+      else:
+         while bullets != modifier:
+            TokensX('Put1BulletShootoutMinus', '', dude)
+            bullets = compilecardstat(card, stat = 'Bullets')
+
 
 
 
@@ -1417,22 +1434,6 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          notify("{} and {} swapped places thanks to {}.".format(dude, tmDude, card.name))
          notify("{} got unbooted as pull was successful by 6 or more.".format(aCard))
       notify("{} and {} swapped places thanks to {}.".format(dude, tmDude, card.name))
-   elif card.name == 'Guiding Wind':
-      dudes = findTarget('DemiAutoTargeted-atDude-isParticipating-choose1')
-      dude = dudes[0]
-      influence = compilecardstat(card, stat = 'Influence')
-      if influence > 3:
-         modifier = 3
-      else: modifier = influence
-      bullets = compilecardstat(card, stat = 'Bullets')
-      if bullets < modifier:
-         while bullets != modifier:
-            TokensX('Put1BulletShootoutPlus', '', dude)
-            bullets = compilecardstat(card, stat = 'Bullets')
-      else:
-         while bullets != modifier:
-            TokensX('Put1BulletShootoutMinus', '', dude)
-            bullets = compilecardstat(card, stat = 'Bullets')
    elif card.name =='Hostile Takeover':
          tmd = findTarget('DemiAutoTargeted-atDude-targetMine-choose1')
          tmDude = tmd[0]
@@ -1772,7 +1773,7 @@ def CookinTroubleEnd(card,cardChoice):
 
 def NathanShaneStart(card):
    mute()
-   bullets = compilecardstat(card, stat = 'Bullets')
+   bullets = compileCardStat(card, stat = 'Bullets')
    if bullets > len(me.hand):
         bullets = len(me.hand)
    if not len(me.hand): notify(":::INFO::: {}'s play hand is empty. Nathan has nothing to snipe".format(me))
