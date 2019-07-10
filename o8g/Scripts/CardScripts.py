@@ -4837,7 +4837,7 @@ Charging Bear
 -----
 
 +++++
-GR0B0R0:AceTarget-Targeted-atDude-targetMine-chose1$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$Put1Shootout:Stud
+GR0B0R0:AceTarget-Targeted-atDude-targetMine-choose1$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$Put1Shootout:Stud
 .....
 Fears No Owls
 -----
@@ -4909,7 +4909,7 @@ Rabid Rance Hitchcock
 -----
 
 +++++
-GR0B0R1:Put1PermControlPlus-Targeted-atDeed-chose1||GR0B0R1:Put1PermControlMinus-Targeted-atDeed-chose1||GR0B0R1:MoveMyself-moveToDeed_and_Out of Town||GR0B0R1:CustomScript
+GR0B0R1:Put1PermControlPlus-Targeted-atDeed-choose1||GR0B0R1:Put1PermControlMinus-Targeted-atDeed-choose1||GR0B0R1:MoveMyself-moveToDeed_and_Out of Town||GR0B0R1:CustomScript
 .....
 Morgan Lash
 -----
@@ -4941,7 +4941,7 @@ b7eae322-2208-4ef6-8ff2-d7af7ef5d2a1
 -----
 
 +++++
-GR0B0R0:MoveMyself-moveToDude-chose1||GR0B0R0:MoveMyself-moveToDude-chose1$$Retrieve1Card-grabGoods_and_nonGadget_and_nonUnique-fromDiscard-toTable-payCost-reduc1||GR0B0R0:MoveMyself-moveToDude-chose1$$PlayTarget-DemiAutoTargeted-atGoods_and_nonGadget_and_nonUnique-fromHand-choose1-payCost-reduc1
+GR0B0R0:MoveMyself-moveToDude-choose1||GR0B0R0:MoveMyself-moveToDude-choose1$$Retrieve1Card-grabGoods_and_nonGadget_and_nonUnique-fromDiscard-toTable-payCost-reduc1||GR0B0R0:MoveMyself-moveToDude-choose1$$PlayTarget-DemiAutoTargeted-atGoods_and_nonGadget_and_nonUnique-fromHand-choose1-payCost-reduc1
 .....
 
 Taff's Distillery
@@ -4998,7 +4998,7 @@ ed34d5f8-3376-4be1-9db7-64c50cdebab9
 -----
 
 +++++
-GR1B1R0:UnbootTarget-Targeted-atHorse_or_Gadget-chose1
+GR1B1R0:UnbootTarget-Targeted-atHorse_or_Gadget-choose1
 .....
 Bilton Collection Agency
 -----
@@ -5118,7 +5118,7 @@ d759b266-2dbb-4ee8-8a8f-40e456cbd5ae
 -----
 
 +++++
-GR0B0R0:BootTarget-Targeted-atDude-targetMine-chose1$$SimplyAnnounce{Increase the casualties of both posses this round by this dude's influence.Your opponent may send all dues in their posse home booted. BY PRESSING ESCAPE}||GR0B0R0:Put2PermControlPlus-DemiAtutoTargeted-atDude-targetMine-chose1$$UnbootTarget-DemiAtutoTargeted-atDude-targetMine-chose1
+GR0B0R0:BootTarget-Targeted-atDude-targetMine-choose1$$SimplyAnnounce{Increase the casualties of both posses this round by this dude's influence.Your opponent may send all dues in their posse home booted. BY PRESSING ESCAPE}||GR0B0R0:Put2PermControlPlus-DemiAtutoTargeted-atDude-targetMine-choose1$$UnbootTarget-DemiAtutoTargeted-atDude-targetMine-choose1
 .....
 You Had ONE Job!
 -----
@@ -5132,7 +5132,7 @@ Friends in High Places
 -----
 2d759fe3-f3e0-46c2-82f1-1df7c5b32aac
 -----
-onPlay:CustomScript||onPlay:Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-isParticipating-chose1
+onPlay:CustomScript||onPlay:Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-isParticipating-choose1
 +++++
 
 .....
@@ -5140,7 +5140,7 @@ Shan Fan Showdown!
 -----
 e94de78b-0021-4167-9681-81b7cc5a9544
 -----
-onPlay:UnbootTarget-Targeted-atDude-targetMine-isParticipating-chose1 $$ Put1Shootout:Stud-Targeted-atDude-targetMine-isParticipating $$ SimplyAnnounce{For the remainder of the shootout non Cheatin Resolution abilities cannot increase or decrease hand ranks or increase or decrease casualties.}
+onPlay:UnbootTarget-Targeted-atDude-targetMine-isParticipating-choose1 $$ Put1Shootout:Stud-Targeted-atDude-targetMine-isParticipating $$ SimplyAnnounce{For the remainder of the shootout non Cheatin Resolution abilities cannot increase or decrease hand ranks or increase or decrease casualties.}
 +++++
 
 .....
@@ -5150,7 +5150,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10055
 -----
 
 +++++
-GR2B1R0:UnbootTarget-DemiAutoTargeted-atDude-isBooted-targetMine-chose1
+GR2B1R0:UnbootTarget-DemiAutoTargeted-atDude-isBooted-targetMine-choose1
 
 
 .....
@@ -5635,7 +5635,9 @@ Murdered in Tombstone
 -----
 ae22bba2-cf1e-4038-b7bb-1d3429c10051
 -----
-onPlay:Remove999Shootout:Draw-DemiAutoTargeted-atDude-targetMine-chose1$$Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-chose1$$UseCustomAbility
+onPlay:Remove999Shootout:Draw-DemiAutoTargeted-atDude-targetMine-choose1$$Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-choose1$$UseCustomAbility
+
+
 
 +++++
 
@@ -5657,7 +5659,7 @@ ae22bba2-cf1e-4038-b7bb-1d3429c10054
 -----
 
 +++++
-GR0B0R0:UnbootTarget-DemiAutoTargeted-atDude-targetMine-choose1-isCost$$Put1 HighNoon:KungFu Bonus:2-DemiAutoTargeted-atDude-targetMine-choose1$$Put2BulletNoonPlus-DemiAutoTargeted-atDude-targetMine-chose1$$Put1High Noon:Canno Move-DemiAtutoTargeted-atDude-targetMine-choose1
+GR0B0R0:UnbootTarget-DemiAutoTargeted-atDude-targetMine-choose1-isCost$$Put1 HighNoon:KungFu Bonus:2-DemiAutoTargeted-atDude-targetMine-choose1$$Put2BulletNoonPlus-DemiAutoTargeted-atDude-targetMine-choose1$$Put1High Noon:Canno Move-DemiAtutoTargeted-atDude-targetMine-choose1
 
 
 .....
@@ -5732,7 +5734,7 @@ Bayou Vermilion Railroad
 -----
 85600051-92b4-a1e0-2e4d-65044d210164
 -----
-onPlay:
+
 +++++
 GR0B0R0:PlayTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical-fromHand-choose1-payCost-reduc1||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical$$Gain1Ghost Rock||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical$$Gain1Ghost Rock$$Put1PermControlMinus-perTargetProperty{Control}-DemiAutoTargeted-atDeed-choose1$$Put1ProdMinus-perTargetProperty{Production}-DemiAutoTargeted-atDeed-choose1
 
@@ -5742,7 +5744,7 @@ Fort 51
 -----
 0e0bdb93-c1fa-db9b-0fac-a19e2b3d622c
 -----
-onPlay:
+
 +++++
 GR0B0R0:Put1Bounty-DemiAutoTargeted-atDude-targetOpponents||GR0B1R0:BootTarget-DemiAutoTargeted-atGadget-onAttachment-isMine-choose1-isCost$$Remove1Bounty-DemiAutoTargeted-atDude-targetOpponents-choose1$$SimplyAnnounce{you might discard a card from your hand.}
 
@@ -5751,18 +5753,19 @@ Smith and Robards Trade Show
 -----
 afc89031-a660-00a4-8533-97d50ed8d4e2
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Gadget-choose1-isCost$$DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Draw1Card||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Gadget-choose1-isCost$$DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Draw1Card$$Put1ControlPlus-DemiAutoTargeted-atGoods_and_Gadget-choose1
+
 
 .....
 Jonah's Alliance
 -----
 91f9e67f-e18f-bb2d-05ae-a13f6ea11fb0
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:CustomScript
 
 .....
 Doc Holliday

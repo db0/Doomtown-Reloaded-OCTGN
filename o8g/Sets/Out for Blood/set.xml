@@ -90,7 +90,7 @@
 		         <property name="Outfit" value="Morgan Cattle Co." />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="Noon, Boot: Boot your Gadget goods to discard a card and then draw a card. If that Gadget is at a location you control but do not own, that Gadget gains a control point (until the end of the turn)." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Noon,Boot: Boot a gadget to draw a card and discard a card. || Noon,Boot: Boot a gadget to discard a card and draw a card. Put 1 CP on gadget if you are at location you control, but do not own." />
       </card>
 		<card id="91f9e67f-e18f-bb2d-05ae-a13f6ea11fb0" name="Jonah's Alliance">
 		         <property name="Rank" value="" />
