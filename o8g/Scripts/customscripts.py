@@ -1472,6 +1472,32 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
 
       notify('{} takes control over {} till the end of the shootout'.format(card.controller, targetDude[0].name))
       return 
+   elif card.name == 'House of Many Faiths':
+      tmd = findTarget('DemiAutoTargeted-atDude-targetMine-choose1')
+      tmDude = tmd[0]
+      hostCards = eval(getGlobalVariable('Host Cards'))
+      if not len([Card(att_id) for att_id in hostCards if hostCards[att_id] == tmDude._id and re.search(r'Miracle',Card(att_id).Keywords)]):
+         notify("You have to chose a dude with Miracle to use this ability")
+         return 'Abort'
+      if len(me.hand) and len(me.piles['Discard Pile']):
+         handDiscard = askCard([c for c in me.hand],"Choose which card to discard from your hand")
+         handDiscard.moveTo(me.piles['Deck'])
+         cardFromDiscard = askCard([ c for c in me.piles['Discard Pile']])
+         cardFromDiscard.moveTo(me.piles['Deck'])
+         me.Deck.shuffle()
+         notify('{} put {} and {} that was fetched from discard into their deck.'.format(me, handDiscard, cardFromDiscard))
+      else:
+         notify ("You have to have a cards in hand and in discard pile to use this ability!")
+         return 'Abort'
+      ModifyStatus('MoveTarget-moveToTown Square', '', card, tmDude)
+      boot(tmDude, forced = 'unboot')
+      tmDude.markers[mdict['PermInfluencePlus']] += 1
+      notify("{} moves {} to Town Squere unboots them and gives them noon influence.")
+
+
+
+
+
 
 
 

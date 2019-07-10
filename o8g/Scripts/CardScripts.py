@@ -5714,18 +5714,18 @@ House of Many Faiths
 -----
 f7c44d33-acb0-405b-b423-d7b9e6468b3a
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:CustomScript
 
 .....
 Office of Ancestral Affairs
 -----
 409d1eba-9f66-9e24-9967-edc1a96ec4e2
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:StartJob-DemiAutoTargeted-atDeed-hasProperty{Control}le2-choose1-jobEffects<Put1PermControlPlus-atDeed-isMark++Retrieve1Cards-fromDiscard-grabTotem-toTable-payCost, None>
 
 .....
 Bayou Vermilion Railroad
