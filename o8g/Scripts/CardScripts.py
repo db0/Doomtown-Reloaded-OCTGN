@@ -5772,18 +5772,18 @@ Doc Holliday
 -----
 8ac81a66-9e71-7413-af60-40b007b31c0e
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:CustomScript
 
 .....
 Ke Wang
 -----
 4ffa4a62-2427-270b-5e74-2eea7d929c58
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:CustomScript
 
 .....
 Baijiu Sue

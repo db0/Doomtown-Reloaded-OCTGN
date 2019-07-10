@@ -1312,7 +1312,7 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
         dude.markers[mdict['PermControlPlus']] += 1
    elif card.name == "Father Tolarios":
         if len(me.hand):
-            cardChoice = askCard([c for c in me.hand], "Chose a card you want to discard")
+            cardChoice = askCard([c for c in me.hand], "Choose a card you want to discard")
         else:
             notify("You need to discard a card to use this ability")
             return
@@ -1508,6 +1508,46 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
          boot(spell[0], forced = 'boot')
          target = findTarget('DemiAutoTargeted-atSpell_or_Goods-targetOpponents-choose1', choiceTitle='Choose opponents attachment to blank it till the end of a day.')
          TokensX('Put1High Noon:Blank', '',target[0])
+   elif card.name == 'Ke Wang':
+      topd = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1')
+      topDude = topd[0]
+      upkeep = compileCardStat(topDude, stat = 'Upkeep')
+      if me.GhostRock >= upkeep:
+         me.GhostRock -= upkeep
+         topDude.controller.GhostRock += upkeep
+         boot(topDude, forced = 'boot')
+         TokensX('Put1BulletShootoutMinus', '', topDude)
+         norify('{} booted {} and gave them -1 bullets using {} ability'.format(me, topDude.name, card.name))
+      else:
+         notify('You do not have enough ghost rock to use this ability.')
+         return
+   elif card.name =='Doc Holliday':
+      tpd = findTarget('DemiAutoTargeted-atDude-isParticipating-choose1', choiceTitle = 'Choose a skilled dude that ranking will be used for bullet bonus.')
+      tpDude = topd[0]
+      skillCheck = fetchSkills(tpDude)
+      tmpd = findTarget('DemiAutoTargeted-atDude-targetMine-isParticipating-choose1', choiceTitle = 'Choose a dude that receives a bonus')
+      tmpDude = tmpd[0]
+      bullets = compileCardStat(card, stat = 'Bullets')
+      if bullets < 0:
+         bullets = 0
+      if (bullets + skillCheck[0][1] <= 4):
+         for iter in range(skillCheck[0][1]):
+            TokensX('Put1BulletNoonPlus', '',tmpDude)
+            notify('{} increased {} bullets by {} skill rating'.format(me, tmpDude.name, tpDude))
+            return
+      else:
+         bRange = 4 - bullets
+         if bRange > 0:
+            for iter in range(bRange):
+               TokensX('Put1BulletNoonPlus', '',tmpDude)
+            notify('{} increased {} bullets by {} skill rating'.format(me, tmpDude.name, tpDude))
+            return
+
+
+
+
+
+
 
 
 
