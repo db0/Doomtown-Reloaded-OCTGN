@@ -5734,7 +5734,7 @@ Bayou Vermilion Railroad
 -----
 onPlay:
 +++++
-GR0B0R0:
+GR0B0R0:PlayTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical-fromHand-choose1-payCost-reduc1||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical$$Gain1Ghost Rock||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical$$Gain1Ghost Rock$$Put1PermControlMinus-perTargetProperty{Control}-DemiAutoTargeted-atDeed-choose1$$Put1ProdMinus-perTargetProperty{Production}-DemiAutoTargeted-atDeed-choose1
 
 
 .....
@@ -5744,7 +5744,7 @@ Fort 51
 -----
 onPlay:
 +++++
-GR0B0R0:
+GR0B0R0:Put1Bounty-DemiAutoTargeted-atDude-targetOpponents||GR0B1R0:BootTarget-DemiAutoTargeted-atGadget-onAttachment-isMine-choose1-isCost$$Remove1Bounty-DemiAutoTargeted-atDude-targetOpponents-choose1$$SimplyAnnounce{you might discard a card from your hand.}
 
 .....
 Smith and Robards Trade Show

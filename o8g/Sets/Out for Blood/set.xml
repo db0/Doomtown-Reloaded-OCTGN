@@ -56,7 +56,7 @@
 		         <property name="Outfit" value="The Fourth Ring" />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="Reduce the cost of the first Mystical card you play each turn by 1.&amp;#xD;&amp;#xD;Noon, Boot: Boot your Mystical card at a deed. Gain 1 ghost rock, and you may reduce the deed's control points and production to 0 until after the next Upkeep phase." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Play Mystical card at reduced price. || Boot Mystical card at a deed and gain 1 GR. || Boot Mystical card at a deed and gain 1 GR. Set CP and production of this deed to 0." />
       </card>
 		<card id="0e0bdb93-c1fa-db9b-0fac-a19e2b3d622c" name="Fort 51">
 		         <property name="Rank" value="" />
@@ -73,7 +73,7 @@
 		         <property name="Outfit" value="Law Dogs" />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="React: After you invent a Gadget Weapon or Gadget dude, give 1 bounty to an opposing dude with influence less than the Gadget's printed cost.&amp;#xD;&amp;#xD;Noon, Boot: Boot your Gadget that is not at your home and remove 1 bounty from an opposing dude. Gain 1 ghost rock and you may discard a card." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="React:Give a dude 1 bounty. || Noon,boot: Boot a gadget and remove 1 bounty from opponent's dude to gain 1 ghost rock." />
       </card>
 		<card id="afc89031-a660-00a4-8533-97d50ed8d4e2" name="Smith and Robards Trade Show">
 		         <property name="Rank" value="" />
