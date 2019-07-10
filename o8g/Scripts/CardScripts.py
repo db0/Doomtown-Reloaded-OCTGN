@@ -5709,7 +5709,510 @@ onPlay:SimplyAnnounce{Cheating player discards their shooter}$$UseCustomAbility
 
 
 
+.....
+House of Many Faiths
+-----
+f7c44d33-acb0-405b-b423-d7b9e6468b3a
+-----
+onPlay:
++++++
+GR0B0R0:
 
+.....
+Office of Ancestral Affairs
+-----
+409d1eba-9f66-9e24-9967-edc1a96ec4e2
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Bayou Vermilion Railroad
+-----
+85600051-92b4-a1e0-2e4d-65044d210164
+-----
+onPlay:
++++++
+GR0B0R0:
+
+
+.....
+Fort 51
+-----
+0e0bdb93-c1fa-db9b-0fac-a19e2b3d622c
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Smith and Robards Trade Show
+-----
+afc89031-a660-00a4-8533-97d50ed8d4e2
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Jonah's Alliance
+-----
+91f9e67f-e18f-bb2d-05ae-a13f6ea11fb0
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Doc Holliday
+-----
+8ac81a66-9e71-7413-af60-40b007b31c0e
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Ke Wang
+-----
+4ffa4a62-2427-270b-5e74-2eea7d929c58
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Baijiu Sue
+-----
+d6dcaddd-7bfa-1653-31fc-321222181729
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Reverend Bob Hungate
+-----
+6080e7a5-917f-ae00-0c7d-cf8971489d29
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Father Diamond
+-----
+9807eed4-2872-1ec7-5c15-d6bbc8b794d1
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Master Shou
+-----
+aaa35070-83aa-af52-b701-fcbba379c127
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Brother Petrovic
+-----
+6872cce2-e0b1-96db-572e-d537d2f846a8
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Leychaa'i Youngheart
+-----
+60b58038-1cbb-d970-c289-074b26700e76
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Monomi Miles
+-----
+b4fbeb36-b469-40a3-749b-0ce2b980a23f
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Klah
+-----
+41e73eee-c0fb-dcf1-0472-2109b298ed6c
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Black Elk (Exp.1)
+-----
+de59a222-8544-de7c-f897-4af058263772
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Nathaniel Tuwikaa
+-----
+b515134b-65d1-3c3b-d2f5-dfc74b3e9da8
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+The Faceless One
+-----
+666dab03-ed30-d7ed-51f8-2793d4183f45
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Lorena Corbett
+-----
+a900059b-bfb6-d6a2-e017-8d549774665a
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Auntie Sinister
+-----
+91ad1f4b-d6f1-13d0-ef3b-1b04a3da3e0e
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Mason Adler
+-----
+92762db4-a795-b339-750f-40d3825e1a39
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Enrique Dos Santos
+-----
+af6e568e-9008-0fa9-818c-ebc155a697e5
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Reverend Endicott
+-----
+537bca8b-1a35-c942-fe78-d44ae3c27527
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Sgt. Elijah Clay
+-----
+95288f06-e928-1467-80b5-3fba16475b57
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Wyatt Earp
+-----
+1f793cbc-37f2-4185-65ee-c29746d44d5f
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Eli Leatherwood
+-----
+b53b350e-2933-5856-d09a-2f809d4aa786
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Roberto Muratore
+-----
+9a364e65-b1f3-bc1b-f5ff-22af20d5f484
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Adelaide Rose
+-----
+761e1121-6b53-6f8f-7ae7-a21957d97b76
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Dr. Gregory Tremane
+-----
+8788feb4-409c-1048-afb6-f4d11453255c
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Big Nose Kate
+-----
+b29a0155-5019-a272-bb47-fd45b485b135
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Johnny Ringo
+-----
+b558faf1-8ed8-f8f5-c661-90019f0d6d61
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Violet Esperanza
+-----
+eabe0b00-67ec-7be0-a030-d6c35eb92a0d
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Curly Bill Brocius
+-----
+a582d4cc-805f-c49d-8115-f6a066e459d5
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Byron Decker
+-----
+8abb6faf-b1a3-df04-022f-b8532581ddd3
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Carter Richardson
+-----
+d84b903d-dd0f-8e80-c7fa-54e9f2fe2770
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Valeria Batten (Exp.1)
+-----
+3d5ee39c-5d5b-89b1-ed3e-9fe7d23c29f1
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Steph and Gertie's Tonsorium
+-----
+91a9982c-ca3a-1efd-1981-ba40a1f88a00
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Gateway Station
+-----
+db7edcd0-004b-d152-f3aa-3a983594db41
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Hart's Tea Shoppe
+-----
+7a660d76-48cb-3dc3-9325-54401b770469
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Bird Cage Theater
+-----
+b7b19a08-2bd0-cc0d-2262-e2cc0005a742
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Cochise County Courthouse
+-----
+3b0be104-7fc9-8db4-a5c3-7d189a73c6af
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Gage Export Co.
+-----
+e11656c2-ea70-799e-766a-b58a104585e7
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Magnum Opus Tenebri
+-----
+87ae9741-b861-72ae-523a-072b57085e39
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Scattergun
+-----
+8c115b49-44f4-0ec9-f08e-1e4ff6d3b30b
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Adler's Needle
+-----
+0c2524c4-0861-ecf7-6177-210a8321947c
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Wrathful Spider
+-----
+cda89314-ec5e-401d-3f5a-7e57e55aa80d
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Guiding Light
+-----
+e881abd7-b68d-bf1b-c811-ece3574735ad
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Champion
+-----
+13d69444-ddd2-c272-fd46-f4f4c0514ca4
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Malison
+-----
+75c8ef97-b3fd-c1b9-01fc-28602b53d51d
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Dancing Butterfly
+-----
+cc092027-6877-a850-8f93-be35911d2909
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Ten-Foot Punch
+-----
+1bb65618-90d9-0766-f606-3aede09da2b1
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Fleet-Footed
+-----
+702d4343-ba33-adca-78c5-01f532350721
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+You're A Daisy If You Do
+-----
+2d8b5584-d18d-f87b-b766-304b552eb130
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Twilight Is Upon Us
+-----
+be288ae2-728a-224d-c8dd-c24d9c795fb4
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Test of Wills
+-----
+6aca9b4b-439e-1aeb-ae2c-bc1fb9503605
+-----
+onPlay:
++++++
+GR0B0R0:
 
 .....
 ENDSCRIPTS

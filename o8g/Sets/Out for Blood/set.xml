@@ -75,7 +75,7 @@
 		         <property name="Text" value="React: After you invent a Gadget Weapon or Gadget dude, give 1 bounty to an opposing dude with influence less than the Gadget's printed cost.&amp;#xD;&amp;#xD;Noon, Boot: Boot your Gadget that is not at your home and remove 1 bounty from an opposing dude. Gain 1 ghost rock and you may discard a card." />
 		         <property name="Instructions" value="" />
       </card>
-		<card id="afc89031-a660-00a4-8533-97d50ed8d4e2" name="Smith &amp;amp; Robards Trade Show">
+		<card id="afc89031-a660-00a4-8533-97d50ed8d4e2" name="Smith and Robards Trade Show">
 		         <property name="Rank" value="" />
 		         <property name="Suit" value="" />
 		         <property name="Type" value="Outfit" />
@@ -636,7 +636,7 @@
 		         <property name="Text" value="Valeria can invent Mystical Gadgets using her Huckster skill.&amp;#xD;&amp;#xD;While Valeria is in a shootout, hand ranks cannot be modified by Shootout, React, or non-Cheatin' Resolution abilities.&amp;#xD;&amp;#xD;Noon: Boot your dude and give them +1 influence." />
 		         <property name="Instructions" value="" />
       </card>
-		<card id="91a9982c-ca3a-1efd-1981-ba40a1f88a00" name="Steph &amp;amp; Gertie's Tonsorium">
+		<card id="91a9982c-ca3a-1efd-1981-ba40a1f88a00" name="Steph and Gertie's Tonsorium">
 		         <property name="Rank" value="2" />
 		         <property name="Suit" value="Diamonds" />
 		         <property name="Type" value="Deed" />
