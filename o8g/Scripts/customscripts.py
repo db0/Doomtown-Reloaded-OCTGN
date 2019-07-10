@@ -1360,12 +1360,12 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       TokensX('Put1Shootout:Stud', '', targetDude[0])
       notify("{} paid {} GR to make {} a stud, {} has maximum 4 bullets till teh end of the shootout".format(me,bullets,targetDude[0], targetDude[0]))
    elif card.name == "Feichi Suitcase Lee":
-      targetDude = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-chose1')
+      targetDude = findTarget('DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1')
       boot(targetDude[0], silent = True)
       dudeInfluence = compileCardStat(targetDude[0], stat = 'Influence')
       sInfluence = compileCardStat(card, stat = 'Influence')
       if dudeInfluence < sInfluence:
-         dude = findTarget('DemiAutoTargeted-atDude-isNotParticipating-isMine-chose1')
+         dude = findTarget('DemiAutoTargeted-atDude-isNotParticipating-isMine-choose1')
          participateDude(dude[0])
          notify("{} booted {} and brought {} into shootout".format(card.name, targetDude[0], dude[0]))
          return
@@ -1493,10 +1493,21 @@ def CustomScript(card, action = 'PLAY'): # Scripts that are complex and fairly u
       boot(tmDude, forced = 'unboot')
       tmDude.markers[mdict['PermInfluencePlus']] += 1
       notify("{} moves {} to Town Squere unboots them and gives them noon influence.")
-
-
-
-
+   elif card.name == "Jonah's Alliance":
+      tmd = findTarget('DemiAutoTargeted-atDude-targetMine-choose1')
+      tmDude = tmd[0]
+      boot(tmDude, forced = 'boot')
+      TokensX('Remove1High Noon:Draw', '',tmDude)
+      TokensX('Put1High Noon:Stud', '',tmDude)
+      for iter in range(2):
+         if tmDude.markers[mdict['Bounty']] < 4:
+            tmDude.markers[mdict['Bounty']] += 1
+      TokensX('Jonah Control', '',tmDude)
+      if confirm('Do you want to boot a hex at a location to remove all traits, abilities and bonuses at that location?'):
+         spell = findTarget('DemiAutoTargeted-atSpell-isMine-isUnbooted-choose1',choiceTitle='Chose spell to boot')
+         boot(spell[0], forced = 'boot')
+         target = findTarget('DemiAutoTargeted-atSpell_or_Goods-targetOpponents-choose1', choiceTitle='Choose opponents attachment to blank it till the end of a day.')
+         TokensX('Put1High Noon:Blank', '',target[0])
 
 
 
@@ -1572,7 +1583,11 @@ def markerEffects(Time = 'Start'):
                TokensX("Remove1HandsomeCP",'', card)
                TokensX("Remove1ControlPlus",'', card)
                
+         if Time == 'Sundown' and re.search(r'Blank',marker[0]) and card.owner == me : 
+            TokensX("Remove1High Noon:Blank",'', card)
 
+         if Time == 'Sundown' and re.search(r'Jonah Control',marker[0]) and card.owner == me : 
+            TokensX("Remove1High Noon:Jonah Control",'', card)
          if (Time == 'ShootoutEnd'
                and (re.search(r'Sun In Yer Eyes',marker[0])
                  or re.search(r'Unprepared',marker[0])
