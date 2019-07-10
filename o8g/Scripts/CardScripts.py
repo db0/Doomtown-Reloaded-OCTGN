@@ -5790,81 +5790,81 @@ Baijiu Sue
 -----
 d6dcaddd-7bfa-1653-31fc-321222181729
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:Put1ControlPlus
 
 .....
 Reverend Bob Hungate
 -----
 6080e7a5-917f-ae00-0c7d-cf8971489d29
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:Lose1Ghost Rock-perTargetProperty{Influence}-DemiAutoTargeted-atDude-isMine-isParticipating-choose1-isCost$$Gain1Ghost Rock-onOpponent-perTargetProperty{Influence}-DemiAutoTargeted-atDude-isMine-isParticipating-choose1$$SimplyAnnounce{You and your opponent chose a dude that cannot be chosen as casualty in this round of shootout}
 
 .....
 Father Diamond
 -----
 9807eed4-2872-1ec7-5c15-d6bbc8b794d1
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:Lose1Ghost Rock-isCost$$Gain1Ghost-onOpponent$$MoveTarget-Targeted-atDude-isMine-moveToOutfit$$MoveMyself-moveToDeed_or_Town Square_or_Outfit
 
 .....
 Master Shou
 -----
 aaa35070-83aa-af52-b701-fcbba379c127
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-targetMine-isUnbooted-choose1-isCost$$Lose1Ghost Rock-onOpponent$$Gain1Ghost Rock
 
 .....
 Brother Petrovic
 -----
 6872cce2-e0b1-96db-572e-d537d2f846a8
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:Lose1Ghost Rock-perTargetProperty{Influence}-AutoTargeted-atMyself-onOpponent-isCost$$Gain1Ghost Rock-perTargetProperty{Influence}-AutoTargeted-atMyself
 
 .....
 Leychaa'i Youngheart
 -----
 60b58038-1cbb-d970-c289-074b26700e76
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:RehostTarget-DemiAutoTargeted-atSidekick_and_notSpirit-choose1
 
 .....
 Monomi Miles
 -----
 b4fbeb36-b469-40a3-749b-0ce2b980a23f
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:BootTarget-DemiAutoTargeted-atSidekick-onAttachment-choose1-isCost$$SimplyAnnounce{Both posses take extra this round equal to Monomi's KF rating!!!!}
 
 .....
 Klah
 -----
 41e73eee-c0fb-dcf1-0472-2109b298ed6c
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B1R0:BootTarget-DemiAutoTargeted-atSidekick-onAttachment-choose1-isCost$$Put1BulletShootoutPlus-DemiAutoTargeted-atDude-isMine-isParticipating
 
 .....
 Black Elk (Exp.1)
 -----
 de59a222-8544-de7c-f897-4af058263772
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+
 
 .....
 Nathaniel Tuwikaa
@@ -5873,7 +5873,7 @@ b515134b-65d1-3c3b-d2f5-dfc74b3e9da8
 -----
 onPlay:
 +++++
-GR0B0R0:
+GR0B0R0:CalloutTarget-DemiAutoTargeted-atDude-targetOpponents-choose1$$SimplyAnnounce{If the shootout is accepted use influence instead of bullets rating when forming hands.}
 
 .....
 The Faceless One
