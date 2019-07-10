@@ -379,7 +379,7 @@
 		         <property name="Outfit" value="The Fourth Ring" />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="Mason cannot have non-Melee Weapons attached.&amp;#xD;&amp;#xD;Noon Job, Boot: Mark the opposing dude with the highest grit of 11 or higher (you choose in case of a tie). No other dudes can join your posse. If successful, ace the mark.&amp;#xD;&amp;#xD;Repeat Shootout: If an opposing dude with the highest grit is in the opposing posse, Mason gains the Abomination keyword and becomes a stud. You can use this ability once per shootout." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value=""/>
       </card>
 		<card id="af6e568e-9008-0fa9-818c-ebc155a697e5" name="Enrique Dos Santos">
 		         <property name="Rank" value="2" />

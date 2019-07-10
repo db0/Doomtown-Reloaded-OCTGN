@@ -5880,27 +5880,28 @@ The Faceless One
 -----
 666dab03-ed30-d7ed-51f8-2793d4183f45
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:Put1BulletShootoutPlus-perTargetProperty{Bullets}-DemiAutoTargeted-atDude-targetOpponents-choose1
+
 
 .....
 Lorena Corbett
 -----
 a900059b-bfb6-d6a2-e017-8d549774665a
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:Put1Shootout:Minimum 11 Grit-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1-isCost$$BootTarget-Targeted-atGoods_and_Mystical$$BootTarget-Targeted-atDude-targetOpponents-isParticipating
 
 .....
 Auntie Sinister
 -----
 91ad1f4b-d6f1-13d0-ef3b-1b04a3da3e0e
 -----
-onPlay:
+
 +++++
-GR0B0R0:
+GR0B0R0:Put2BulletShootoutPlus
 
 .....
 Mason Adler
@@ -5909,7 +5910,7 @@ Mason Adler
 -----
 onPlay:
 +++++
-GR0B0R0:
+GR0B1R0:StartJob-DemiAutoTargeted-atDude-targetOpponents-choose1-jobEffects<AceTarget,None>-onlyInNoon||GR0B0R1:Put1Shootout:Stud$$Put1Shootout:Abomination-onlyInShootouts
 
 .....
 Enrique Dos Santos
