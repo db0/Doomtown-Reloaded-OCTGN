@@ -2709,7 +2709,7 @@ GR0B1R0:UseCustomAbility-DemiAutoTargeted-atDude-isUnbooted-targetMine-choose1
 -----
 
 +++++
-GR0B1R0:MoveTarget-Targeted-atDude-moveToDude
+GR0B1R0:MoveTarget-Targeted-atDude-moveToDeed_or_Town Square_or_Outfit
 .....
 Spirit Guidance
 -----
@@ -3467,9 +3467,8 @@ Horace Manse
 -----
 5126c19e-76f4-4355-8dad-8023adab95e7
 -----
-onPlay:Retrieve1Card-grabAbomination$$DiscardTarget-DemiAutoTargeted-fromHand-choose1
 +++++
-
+GR0B0R0:Retrieve1Card-fromBootHill-grabAbomination$$DiscardTarget-DemiAutoTargeted-fromHand-choose1
 .....
 Jia Mein
 -----
@@ -4838,7 +4837,7 @@ Charging Bear
 -----
 
 +++++
-GR0B0R0:AceTarget-Targeted-atDude-targetMine-chose1$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$Put1Shootout:Stud
+GR0B0R0:AceTarget-Targeted-atDude-targetMine-choose1$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$Put1Shootout:Stud
 .....
 Fears No Owls
 -----
@@ -4910,7 +4909,7 @@ Rabid Rance Hitchcock
 -----
 
 +++++
-GR0B0R1:Put1PermControlPlus-Targeted-atDeed-chose1||GR0B0R1:Put1PermControlMinus-Targeted-atDeed-chose1||GR0B0R1:MoveMyself-moveToDeed_and_Out of Town||GR0B0R1:CustomScript
+GR0B0R1:Put1PermControlPlus-Targeted-atDeed-choose1||GR0B0R1:Put1PermControlMinus-Targeted-atDeed-choose1||GR0B0R1:MoveMyself-moveToDeed_and_Out of Town||GR0B0R1:CustomScript
 .....
 Morgan Lash
 -----
@@ -4942,7 +4941,7 @@ b7eae322-2208-4ef6-8ff2-d7af7ef5d2a1
 -----
 
 +++++
-GR0B0R0:MoveMyself-moveToDude-chose1||GR0B0R0:MoveMyself-moveToDude-chose1$$Retrieve1Card-grabGoods_and_nonGadget_and_nonUnique-fromDiscard-toTable-payCost-reduc1||GR0B0R0:MoveMyself-moveToDude-chose1$$PlayTarget-DemiAutoTargeted-atGoods_and_nonGadget_and_nonUnique-fromHand-choose1-payCost-reduc1
+GR0B0R0:MoveMyself-moveToDude-choose1||GR0B0R0:MoveMyself-moveToDude-choose1$$Retrieve1Card-grabGoods_and_nonGadget_and_nonUnique-fromDiscard-toTable-payCost-reduc1||GR0B0R0:MoveMyself-moveToDude-choose1$$PlayTarget-DemiAutoTargeted-atGoods_and_nonGadget_and_nonUnique-fromHand-choose1-payCost-reduc1
 .....
 
 Taff's Distillery
@@ -4999,7 +4998,7 @@ ed34d5f8-3376-4be1-9db7-64c50cdebab9
 -----
 
 +++++
-GR1B1R0:UnbootTarget-Targeted-atHorse_or_Gadget-chose1
+GR1B1R0:UnbootTarget-Targeted-atHorse_or_Gadget-choose1
 .....
 Bilton Collection Agency
 -----
@@ -5047,7 +5046,7 @@ e527c15a-fce5-451a-b34d-51c9050d9cac
 -----
 
 +++++
-GR0B1R0:GR0B1R0:BootHost$$ParticipateHost
+GR0B1R0:BootHost$$ParticipateHost
 .....
 Nightmare Realm
 -----
@@ -5119,7 +5118,7 @@ d759b266-2dbb-4ee8-8a8f-40e456cbd5ae
 -----
 
 +++++
-GR0B0R0:BootTarget-Targeted-atDude-targetMine-chose1$$SimplyAnnounce{Increase the casualties of both posses this round by this dude's influence.Your opponent may send all dues in their posse home booted. BY PRESSING ESCAPE}||GR0B0R0:Put2PermControlPlus-DemiAtutoTargeted-atDude-targetMine-chose1$$UnbootTarget-DemiAtutoTargeted-atDude-targetMine-chose1
+GR0B0R0:BootTarget-Targeted-atDude-targetMine-choose1$$SimplyAnnounce{Increase the casualties of both posses this round by this dude's influence.Your opponent may send all dues in their posse home booted. BY PRESSING ESCAPE}||GR0B0R0:Put2PermControlPlus-DemiAtutoTargeted-atDude-targetMine-choose1$$UnbootTarget-DemiAtutoTargeted-atDude-targetMine-choose1
 .....
 You Had ONE Job!
 -----
@@ -5133,7 +5132,7 @@ Friends in High Places
 -----
 2d759fe3-f3e0-46c2-82f1-1df7c5b32aac
 -----
-onPlay:CustomScript||onPlay:Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-isParticipating-chose1
+onPlay:CustomScript||onPlay:Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-isParticipating-choose1
 +++++
 
 .....
@@ -5141,16 +5140,1083 @@ Shan Fan Showdown!
 -----
 e94de78b-0021-4167-9681-81b7cc5a9544
 -----
-onPlay:UnbootTarget-Targeted-atDude-targetMine-isParticipating-chose1 $$ Put1Shootout:Stud-Targeted-atDude-targetMine-isParticipating $$ SimplyAnnounce{For the remainder of the shootout non Cheatin Resolution abilities cannot increase or decrease hand ranks or increase or decrease casualties.}
+onPlay:UnbootTarget-Targeted-atDude-targetMine-isParticipating-choose1 $$ Put1Shootout:Stud-Targeted-atDude-targetMine-isParticipating $$ SimplyAnnounce{For the remainder of the shootout non Cheatin Resolution abilities cannot increase or decrease hand ranks or increase or decrease casualties.}
 +++++
 
 .....
-The Winning Agenda
+108 Gracious Gifts
 -----
-4c658294-3640-4362-9dde-719b4e348e21
+ae22bba2-cf1e-4038-b7bb-1d3429c10055
 -----
-onPlay:CustomScript||onPlay:SimplyAnnounce{Increase your hand rank by targeted dude influence}
+
 +++++
+GR2B1R0:UnbootTarget-DemiAutoTargeted-atDude-isBooted-targetMine-choose1
+
+
+.....
+Property Is Theft
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10053
+-----
+
++++++
+GR0B1R0:Draw1Card$$UseCustomAbility
+
+
+
+.....
+The Spiritual Society
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10056
+-----
+atPhaseSundown:CustomScript
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atDude-isUnbooted-targetMine-choose1-isCost$$BootTarget-DemiAutoTargeted-atDude-targetOpponents-choose1
+
+
+
+.....
+Joe Vermilion
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10005
+-----
+
++++++
+GR1B0R0:Gain1Ghost Rock-onOpponent-isCost$$Gain1Ghost Rock-perTargetProperty{Production}-DemiAutoTargeted-atDeed-targetOpponents-choose1
+
+
+.....
+Ying-Ssi Chieh T'ang
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10004
+-----
+
++++++
+GR0B1R0:Gain1Ghost Rock-onOpponent-isCost-onlyInShootouts$$UseCustomAbility
+
+
+.....
+E Gui
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10003
+-----
+
++++++
+GR0B0R0:Gain1Ghost Rock-perTargetProperty{Production}-DemiAutoTargeted-atDeed-targetOpponents-choose1
+
+
+.....
+Buskers
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10001
+-----
+
++++++
+GR0B0R0:CustomScript
+
+
+.....
+Taiyari
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10002
+-----
+
++++++
+GR0B1R0:CustomScript
+
+
+.....
+Matilda Loomis
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10006
+-----
+
++++++
+
+
+
+.....
+Alexander Sequoia
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10010
+-----
+
++++++
+GR0B0R0:UnbootMyself
+
+
+.....
+Matthew Rising Sun
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10009
+-----
+
++++++
+
+
+
+.....
+Feichi Suitcase Lee
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10008
+-----
+
++++++
+GR0B1R0:CustomScript
+
+
+.....
+Geronimo
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10007
+-----
+
++++++
+GR0B0R0:DiscardTarget-DemiAutoTargeted-atGoods_or_Spell_or_Gadget-onAttachment-choose1-targetOpponents$$Gain1Ghost Rock
+
+
+.....
+Papa Marias
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10019
+-----
+
++++++
+GR0B0R0:Pull1Card-testHex7-spellEffects<MoveTarget-DemiAutoTargeted-atDude-targetMine-isUnbooted-choose1-moveToHere,None>-onlyInNoon
+
+
+
+.....
+Skinwalker
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10022
+-----
+
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-isParticipating-isMine-isCost-choose1$$Put2BulletShootoutPlus||GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-isParticipating-isMine-isCost-choose1$$BootTarget-DemiAutoTargeted-atGoods_or_Spell_or_Gadget-onAttachment-choose1-targetOpponents
+
+
+.....
+Tonton Macoute
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10021
+-----
+
++++++
+GR0B0R0:Put2BulletShootoutMinus-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1||GR0B0R0:BootTarget-DemiAutoTargeted--atWeapon-isCost-onlyInShootouts
+
+
+.....
+Kevin Wainwright (Exp.1)
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10020
+-----
+
++++++
+GR0B0R0:MoveMyself--moveToDude_and_Huckster_or_Abomination-onlyInShootouts$$ParticipateMyself$$Put1Shootout:Stud$$UseCustomAbility||GR0B0R0:MoveMyself--moveToDude_and_Huckster_or_Abomination-onlyInNoon$$Put1High Noon:Stud$$UseCustomAbility
+
+
+
+.....
+Padre Ernesto de Diaz
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10011
+-----
+
++++++
+GR0B0R1:BootTarget-DemiAutoTargeted-atSpell-onAttachment-isUnbooted-choose1-isCost$$Draw1Card
+
+
+
+.....
+Dr. Erik Yaple
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10013
+-----
+
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted--atGadget_and_Weapon-isCost-onlyInShootouts$$Put1Bounty-DemiAutoTargeted-atDude-hasntMarker{Bounty}-choose1-targetOpponents
+
+
+.....
+Quincy Washburne
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10012
+-----
+
++++++
+GR0B0R0:UnbootMyself
+
+
+.....
+Xiong Wendy Cheng (Exp.1)
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10014
+-----
+
++++++
+GR0B1R0:BootMyself-isCost$$SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1$$SimplyAnnounce{If that dudes bounty was higher than their grit, discard them}
+
+
+
+.....
+Takahashi Jinrai
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10017
+-----
+
++++++
+GR0B1R0:StartJob-DemiAutoTargeted-atDeed-choose1-jobEffects<Put1ProdPlus-DemiAutoTargeted-atDeed-choose1, None>
+.
+
+
+.....
+Handsome Dan Deeds
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10016
+-----
+
++++++
+GR0B1R0:BootMyself-isCost$$Put1ControlPlus$$Put1HandsomeCP-DemiAutotargeted-atDeed-choose1
+
+
+.....
+Vida Azul
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10018
+-----
+
++++++
+GR0B0R0:CustomScript
+
+
+.....
+Bartholomew P. Fountain
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10015
+-----
+
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atRanch-targetMine-isCost$$MoveTarget-DemiAutoTargeted-atDude-choose1-moveToDeed_or_Town Square_or_Outfit
+
+
+.....
+Ike Clanton
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10024
+-----
+
++++++
+GR0B1R0:Put1Rowdy Ike
+
+
+.....
+Frank Stillwell
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10023
+-----
+
++++++
+GR0B0R0:UnparticipateMyself$$SendHomeBootedMyself
+
+
+.....
+Silas Aims (Exp.1)
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10026
+-----
+
++++++
+GR0B0R0:CustomScript
+
+
+.....
+Larry Sevens Swift
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10025
+-----
+
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted-atSpell-isUnbooted-onAttachment-choose1-isCost$$Put1Bounty$$BootTarget-DemiAutoTargeted-atGoods-targetOpponents-choose1
+
+
+.....
+Virginia Ann Earp
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10027
+-----
+
++++++
+
+
+
+.....
+Campbell &amp; Hatch Billiard Parlor
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10032
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{For the remainder of the shootout, hand ranks cannot be modified Shootout, React, or non-Cheatin' Resolution abilities. Dudes cannot be discarded or aced by Shootout or non-Cheatin' Resolution abilities during the first round.}
+
+
+.....
+Clanton Ranch
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10030
+-----
+
++++++
+GR0B1R0:Gain1Ghost Rock
+
+
+.....
+Concordia Cemetery
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10029
+-----
+
++++++
+GR0B1R0:Put1ProdPlus||GR0B1R0:Put1ProdPlus$$Put1PermControlPlus
+
+
+.....
+Ike's Place
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10033
+-----
+
++++++
+GR0B1R0:Put1ProdMinus-perTargetProperty{Production}-DemiAutoTargeted-atDeed$-choose1$$Put1Control Minus-perTargetProperty{Control}-DemiAutoTargeted-atDeed-choose1$$Put1Ike Place-DemiAutoTargeted-atDeed-choose1
+
+
+
+.....
+Five Aces Gambling Hall
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10028
+-----
+
++++++
+GR0B1R0:ParticipateTarget-DemiAutoTargeted-atDude-targetMine-hasMarker{Bounty}-choose1-isNotParticipating
+
+
+.....
+Old Washoe Club
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10031
+-----
+
++++++
+GR0B1R0:SendHomeBootedTarget-DemiAutoTargeted-atDude-isParticipating-targetOpponents-hasProperty{Bullets}le1-choose1||GR0B1R0:DiscardTarget-DemiAutoTargeted-atSidekick-choose1
+
+
+
+.....
+Quarter Horse
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10034
+-----
+
++++++
+GR0B1R0:UnparticipateHost
+
+.....
+Electrostatic Pump Gun
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10038
+-----
+
++++++
+GR0B1R0:CustomScript
+
+
+.....
+Claws
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10036
+-----
+
++++++
+
+
+
+.....
+Analytical Cognisizer
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10039
+-----
+onPlay:CustomScript
++++++
+GR0B1R0:DiscardTarget-DemiAutoTargeted-fromHand-atGoods-choose1-isCost$$SimplyAnnounce{The card was discarded to make pulled card's suit a heart}
+
+
+.....
+Ranger's Bible
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10035
+-----
+
++++++
+GR0B1R0:SimplyAnnounce{uses Ranger's Bible to lower players hand rank by dudes influence}
+
+
+.....
+Stone's Colt Dragoons
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10037
+-----
+
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1$$Put1NoUnboot-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1
+
+
+.....
+Bedazzle
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10041
+-----
+
++++++
+GR0B1R0:Put1BulletShootoutMinus-DemiAutoTargeted-atDude-perTargetProperty{Bullets}-isParticipating-choose1$$SimplyAnnounce{ lowers players hand rank by 2}
+
+
+.....
+Exultant Translocation
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10045
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<BootHost++Put1NoUnboot-Targeted-atDude-targetMine++SendHomeBootedTarget-Targeted-atDude-targetMine,None>
+
+
+.....
+Retribution
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10044
+-----
+
++++++
+GR0B1R0:Pull1Card-testMiracleX-difficultyValue-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1-spellEffects<Put1Shootout:Retribution-DemiAutoTargeted-atDude-isParticipating-targetOpponents-choose1,None>
+
+.....
+Gateway
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10040
+-----
+
++++++
+GR0B1R0:Pull1Card-testHex6-spellEffects<MoveTarget-Targeted-atDude-atAbomination-targetMine-moveToDeed_or_Town Square_or_Outfit,None>-onlyInNoon||GR0B1R0:Pull1Card-testHex6-spellEffects<ParticipateTarget-DemiAutoTargeted-atDude-atAbomination-isNotParticipating-targetMine-choose1,None>-onlyInShootouts
+
+
+.....
+Guiding Wind
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10042
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<useCustomAbility,None>
+
+
+.....
+Mischievous Coyote
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10043
+-----
+
++++++
+GR0B1R0:Pull1Card-testSpirit9-spellEffects<SimplyAnnounce{ this round has draw and stud bonus switched.},None>
+
+
+.....
+Murdered in Tombstone
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10051
+-----
+onPlay:Remove999Shootout:Draw-DemiAutoTargeted-atDude-targetMine-choose1$$Put1Shootout:Stud-DemiAutoTargeted-atDude-targetMine-choose1$$UseCustomAbility
+
+
+
++++++
+
+
+.....
+Hostile Takeover
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10050
+-----
+onPlay:CustomScript
++++++
+
+
+
+.....
+Jade King Stance
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10054
+-----
+
++++++
+GR0B0R0:UnbootTarget-DemiAutoTargeted-atDude-targetMine-choose1-isCost$$Put1 HighNoon:KungFu Bonus:2-DemiAutoTargeted-atDude-targetMine-choose1$$Put2BulletNoonPlus-DemiAutoTargeted-atDude-targetMine-choose1$$Put1High Noon:Canno Move-DemiAtutoTargeted-atDude-targetMine-choose1
+
+
+.....
+Heist
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10048
+-----
+onPlay:StartJob-DemiAutoTargeted-atDeed-choose1-isCost-jobEffects<UseCustomAbility,None>
++++++
+
+
+
+.....
+I'm Your Huckleberry
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10047
+-----
+onPlay:CustomScript
++++++
+
+
+
+.....
+Monkey Goes to the Mountain
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10052
+-----
+
++++++
+GR0B0R0:UnparticipateMyself$$UnparticipateTarget-DemiAutoTargeted-atDude-targetOpponents-choose1$$MoveMyself-moveToDeed_or_Town Square$$MoveTarget-DemiAutoTargeted-atDude-targetOpponents-choose1-moveToDeed_or_TownSquare
+
+
+.....
+Curse of Failure
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10046
+-----
+onPlay:StartJob-Targeted-atDude-bootLeader-jobEffects<RehostMyself-AutoTargeted-atDude-isMark++SendHomeBootedTarget-AutoTargeted-atDude-isMark++Put1PermControlMinus-perTargetProperty{Control}-AutoTargeted-atDude-isMark++Put1PermInfluenceMinus-perTargetProperty{Influence}-AutoTargeted-atDude-isMark++Put1PermBulletsMinus-perTargetProperty{Bullets}-AutoTargeted-atDude-isMark++Put1ProdMinus,None>
++++++
+
+
+.....
+Ricochet
+-----
+ae22bba2-cf1e-4038-b7bb-1d3429c10049
+-----
+onPlay:SimplyAnnounce{Cheating player discards their shooter}$$UseCustomAbility
++++++
+
+
+
+.....
+House of Many Faiths
+-----
+f7c44d33-acb0-405b-b423-d7b9e6468b3a
+-----
+
++++++
+GR0B1R0:CustomScript
+
+.....
+Office of Ancestral Affairs
+-----
+409d1eba-9f66-9e24-9967-edc1a96ec4e2
+-----
+
++++++
+GR0B1R0:StartJob-DemiAutoTargeted-atDeed-hasProperty{Control}le2-choose1-jobEffects<Put1PermControlPlus-atDeed-isMark++Retrieve1Cards-fromDiscard-grabTotem-toTable-payCost, None>
+
+.....
+Bayou Vermilion Railroad
+-----
+85600051-92b4-a1e0-2e4d-65044d210164
+-----
+
++++++
+GR0B0R0:PlayTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical-fromHand-choose1-payCost-reduc1||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical$$Gain1Ghost Rock||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Mystical_or_Spell_and_Mystical$$Gain1Ghost Rock$$Put1PermControlMinus-perTargetProperty{Control}-DemiAutoTargeted-atDeed-choose1$$Put1ProdMinus-perTargetProperty{Production}-DemiAutoTargeted-atDeed-choose1
+
+
+.....
+Fort 51
+-----
+0e0bdb93-c1fa-db9b-0fac-a19e2b3d622c
+-----
+
++++++
+GR0B0R0:Put1Bounty-DemiAutoTargeted-atDude-targetOpponents||GR0B1R0:BootTarget-DemiAutoTargeted-atGadget-onAttachment-isMine-choose1-isCost$$Remove1Bounty-DemiAutoTargeted-atDude-targetOpponents-choose1$$SimplyAnnounce{you might discard a card from your hand.}
+
+.....
+Smith and Robards Trade Show
+-----
+afc89031-a660-00a4-8533-97d50ed8d4e2
+-----
+
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Gadget-choose1-isCost$$DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Draw1Card||GR0B1R0:BootTarget-DemiAutoTargeted-atGoods_and_Gadget-choose1-isCost$$DiscardTarget-DemiAutoTargeted-fromHand-choose1-isCost$$Draw1Card$$Put1ControlPlus-DemiAutoTargeted-atGoods_and_Gadget-choose1
+
+
+.....
+Jonah's Alliance
+-----
+91f9e67f-e18f-bb2d-05ae-a13f6ea11fb0
+-----
+
++++++
+GR0B1R0:CustomScript
+
+.....
+Doc Holliday
+-----
+8ac81a66-9e71-7413-af60-40b007b31c0e
+-----
+
++++++
+GR0B1R0:CustomScript
+
+.....
+Ke Wang
+-----
+4ffa4a62-2427-270b-5e74-2eea7d929c58
+-----
+
++++++
+GR0B0R0:CustomScript
+
+.....
+Baijiu Sue
+-----
+d6dcaddd-7bfa-1653-31fc-321222181729
+-----
+
++++++
+GR0B0R0:Put1ControlPlus
+
+.....
+Reverend Bob Hungate
+-----
+6080e7a5-917f-ae00-0c7d-cf8971489d29
+-----
+
++++++
+GR0B1R0:Lose1Ghost Rock-perTargetProperty{Influence}-DemiAutoTargeted-atDude-isMine-isParticipating-choose1-isCost$$Gain1Ghost Rock-onOpponent-perTargetProperty{Influence}-DemiAutoTargeted-atDude-isMine-isParticipating-choose1$$SimplyAnnounce{You and your opponent chose a dude that cannot be chosen as casualty in this round of shootout}
+
+.....
+Father Diamond
+-----
+9807eed4-2872-1ec7-5c15-d6bbc8b794d1
+-----
+
++++++
+GR0B0R0:Lose1Ghost Rock-isCost$$Gain1Ghost-onOpponent$$MoveTarget-Targeted-atDude-isMine-moveToOutfit$$MoveMyself-moveToDeed_or_Town Square_or_Outfit
+
+.....
+Master Shou
+-----
+aaa35070-83aa-af52-b701-fcbba379c127
+-----
+
++++++
+GR0B0R0:BootTarget-DemiAutoTargeted-atAbomination-targetMine-isUnbooted-choose1-isCost$$Lose1Ghost Rock-onOpponent$$Gain1Ghost Rock
+
+.....
+Brother Petrovic
+-----
+6872cce2-e0b1-96db-572e-d537d2f846a8
+-----
+
++++++
+GR0B0R0:Lose1Ghost Rock-perTargetProperty{Influence}-AutoTargeted-atMyself-onOpponent-isCost$$Gain1Ghost Rock-perTargetProperty{Influence}-AutoTargeted-atMyself
+
+.....
+Leychaa'i Youngheart
+-----
+60b58038-1cbb-d970-c289-074b26700e76
+-----
+
++++++
+GR0B0R0:RehostTarget-DemiAutoTargeted-atSidekick_and_notSpirit-choose1
+
+.....
+Monomi Miles
+-----
+b4fbeb36-b469-40a3-749b-0ce2b980a23f
+-----
+
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atSidekick-onAttachment-choose1-isCost$$SimplyAnnounce{Both posses take extra this round equal to Monomi's KF rating!!!!}
+
+.....
+Klah
+-----
+41e73eee-c0fb-dcf1-0472-2109b298ed6c
+-----
+
++++++
+GR0B1R0:BootTarget-DemiAutoTargeted-atSidekick-onAttachment-choose1-isCost$$Put1BulletShootoutPlus-DemiAutoTargeted-atDude-isMine-isParticipating
+
+.....
+Black Elk (Exp.1)
+-----
+de59a222-8544-de7c-f897-4af058263772
+-----
+
++++++
+
+
+.....
+Nathaniel Tuwikaa
+-----
+b515134b-65d1-3c3b-d2f5-dfc74b3e9da8
+-----
+onPlay:
++++++
+GR0B0R0:CalloutTarget-DemiAutoTargeted-atDude-targetOpponents-choose1$$SimplyAnnounce{If the shootout is accepted use influence instead of bullets rating when forming hands.}
+
+.....
+The Faceless One
+-----
+666dab03-ed30-d7ed-51f8-2793d4183f45
+-----
+
++++++
+GR0B0R0:Put1BulletShootoutPlus-perTargetProperty{Bullets}-DemiAutoTargeted-atDude-targetOpponents-choose1
+
+
+.....
+Lorena Corbett
+-----
+a900059b-bfb6-d6a2-e017-8d549774665a
+-----
+
++++++
+GR0B0R0:Put1Shootout:Minimum 11 Grit-DemiAutoTargeted-atDude-targetOpponents-isParticipating-choose1-isCost$$BootTarget-Targeted-atGoods_and_Mystical$$BootTarget-Targeted-atDude-targetOpponents-isParticipating
+
+.....
+Auntie Sinister
+-----
+91ad1f4b-d6f1-13d0-ef3b-1b04a3da3e0e
+-----
+
++++++
+GR0B0R0:Put2BulletShootoutPlus
+
+.....
+Mason Adler
+-----
+92762db4-a795-b339-750f-40d3825e1a39
+-----
+onPlay:
++++++
+GR0B1R0:StartJob-DemiAutoTargeted-atDude-targetOpponents-choose1-jobEffects<AceTarget,None>-onlyInNoon||GR0B0R1:Put1Shootout:Stud$$Put1Shootout:Abomination-onlyInShootouts
+
+.....
+Enrique Dos Santos
+-----
+af6e568e-9008-0fa9-818c-ebc155a697e5
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Reverend Endicott
+-----
+537bca8b-1a35-c942-fe78-d44ae3c27527
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Sgt. Elijah Clay
+-----
+95288f06-e928-1467-80b5-3fba16475b57
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Wyatt Earp
+-----
+1f793cbc-37f2-4185-65ee-c29746d44d5f
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Eli Leatherwood
+-----
+b53b350e-2933-5856-d09a-2f809d4aa786
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Roberto Muratore
+-----
+9a364e65-b1f3-bc1b-f5ff-22af20d5f484
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Adelaide Rose
+-----
+761e1121-6b53-6f8f-7ae7-a21957d97b76
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Dr. Gregory Tremane
+-----
+8788feb4-409c-1048-afb6-f4d11453255c
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Big Nose Kate
+-----
+b29a0155-5019-a272-bb47-fd45b485b135
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Johnny Ringo
+-----
+b558faf1-8ed8-f8f5-c661-90019f0d6d61
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Violet Esperanza
+-----
+eabe0b00-67ec-7be0-a030-d6c35eb92a0d
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Curly Bill Brocius
+-----
+a582d4cc-805f-c49d-8115-f6a066e459d5
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Byron Decker
+-----
+8abb6faf-b1a3-df04-022f-b8532581ddd3
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Carter Richardson
+-----
+d84b903d-dd0f-8e80-c7fa-54e9f2fe2770
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Valeria Batten (Exp.1)
+-----
+3d5ee39c-5d5b-89b1-ed3e-9fe7d23c29f1
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Steph and Gertie's Tonsorium
+-----
+91a9982c-ca3a-1efd-1981-ba40a1f88a00
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Gateway Station
+-----
+db7edcd0-004b-d152-f3aa-3a983594db41
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Hart's Tea Shoppe
+-----
+7a660d76-48cb-3dc3-9325-54401b770469
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Bird Cage Theater
+-----
+b7b19a08-2bd0-cc0d-2262-e2cc0005a742
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Cochise County Courthouse
+-----
+3b0be104-7fc9-8db4-a5c3-7d189a73c6af
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Gage Export Co.
+-----
+e11656c2-ea70-799e-766a-b58a104585e7
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Magnum Opus Tenebri
+-----
+87ae9741-b861-72ae-523a-072b57085e39
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Scattergun
+-----
+8c115b49-44f4-0ec9-f08e-1e4ff6d3b30b
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Adler's Needle
+-----
+0c2524c4-0861-ecf7-6177-210a8321947c
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Wrathful Spider
+-----
+cda89314-ec5e-401d-3f5a-7e57e55aa80d
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Guiding Light
+-----
+e881abd7-b68d-bf1b-c811-ece3574735ad
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Champion
+-----
+13d69444-ddd2-c272-fd46-f4f4c0514ca4
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Malison
+-----
+75c8ef97-b3fd-c1b9-01fc-28602b53d51d
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Dancing Butterfly
+-----
+cc092027-6877-a850-8f93-be35911d2909
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Ten-Foot Punch
+-----
+1bb65618-90d9-0766-f606-3aede09da2b1
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Fleet-Footed
+-----
+702d4343-ba33-adca-78c5-01f532350721
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+You're A Daisy If You Do
+-----
+2d8b5584-d18d-f87b-b766-304b552eb130
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Twilight Is Upon Us
+-----
+be288ae2-728a-224d-c8dd-c24d9c795fb4
+-----
+onPlay:
++++++
+GR0B0R0:
+
+.....
+Test of Wills
+-----
+6aca9b4b-439e-1aeb-ae2c-bc1fb9503605
+-----
+onPlay:
++++++
+GR0B0R0:
 
 .....
 ENDSCRIPTS

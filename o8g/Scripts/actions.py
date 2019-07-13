@@ -1221,6 +1221,9 @@ def playcard(card,retainPos = False,costReduction = 0, preHost = None, scripted 
             if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'HireDude')
          notify("{} has hired {}.".format(me, card)) # Inform of the new hire      
+   elif card.Type == "Legend":
+      hostCard=findHost(card)
+      attachCard(card, hostCard)
    elif card.Type == "Deed" :
       if not scripted: chkHighNoon()
       if chkGadgetCraft(card):

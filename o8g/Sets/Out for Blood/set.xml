@@ -56,7 +56,7 @@
 		         <property name="Outfit" value="The Fourth Ring" />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="Reduce the cost of the first Mystical card you play each turn by 1.&amp;#xD;&amp;#xD;Noon, Boot: Boot your Mystical card at a deed. Gain 1 ghost rock, and you may reduce the deed's control points and production to 0 until after the next Upkeep phase." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Play Mystical card at reduced price. || Boot Mystical card at a deed and gain 1 GR. || Boot Mystical card at a deed and gain 1 GR. Set CP and production of this deed to 0." />
       </card>
 		<card id="0e0bdb93-c1fa-db9b-0fac-a19e2b3d622c" name="Fort 51">
 		         <property name="Rank" value="" />
@@ -73,9 +73,9 @@
 		         <property name="Outfit" value="Law Dogs" />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="React: After you invent a Gadget Weapon or Gadget dude, give 1 bounty to an opposing dude with influence less than the Gadget's printed cost.&amp;#xD;&amp;#xD;Noon, Boot: Boot your Gadget that is not at your home and remove 1 bounty from an opposing dude. Gain 1 ghost rock and you may discard a card." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="React:Give a dude 1 bounty. || Noon,boot: Boot a gadget and remove 1 bounty from opponent's dude to gain 1 ghost rock." />
       </card>
-		<card id="afc89031-a660-00a4-8533-97d50ed8d4e2" name="Smith &amp;amp; Robards Trade Show">
+		<card id="afc89031-a660-00a4-8533-97d50ed8d4e2" name="Smith and Robards Trade Show">
 		         <property name="Rank" value="" />
 		         <property name="Suit" value="" />
 		         <property name="Type" value="Outfit" />
@@ -90,7 +90,7 @@
 		         <property name="Outfit" value="Morgan Cattle Co." />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="Noon, Boot: Boot your Gadget goods to discard a card and then draw a card. If that Gadget is at a location you control but do not own, that Gadget gains a control point (until the end of the turn)." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value="Noon,Boot: Boot a gadget to draw a card and discard a card. || Noon,Boot: Boot a gadget to discard a card and draw a card. Put 1 CP on gadget if you are at location you control, but do not own." />
       </card>
 		<card id="91f9e67f-e18f-bb2d-05ae-a13f6ea11fb0" name="Jonah's Alliance">
 		         <property name="Rank" value="" />
@@ -379,7 +379,7 @@
 		         <property name="Outfit" value="The Fourth Ring" />
 		         <property name="Keywords" value="" />
 		         <property name="Text" value="Mason cannot have non-Melee Weapons attached.&amp;#xD;&amp;#xD;Noon Job, Boot: Mark the opposing dude with the highest grit of 11 or higher (you choose in case of a tie). No other dudes can join your posse. If successful, ace the mark.&amp;#xD;&amp;#xD;Repeat Shootout: If an opposing dude with the highest grit is in the opposing posse, Mason gains the Abomination keyword and becomes a stud. You can use this ability once per shootout." />
-		         <property name="Instructions" value="" />
+		         <property name="Instructions" value=""/>
       </card>
 		<card id="af6e568e-9008-0fa9-818c-ebc155a697e5" name="Enrique Dos Santos">
 		         <property name="Rank" value="2" />
@@ -636,7 +636,7 @@
 		         <property name="Text" value="Valeria can invent Mystical Gadgets using her Huckster skill.&amp;#xD;&amp;#xD;While Valeria is in a shootout, hand ranks cannot be modified by Shootout, React, or non-Cheatin' Resolution abilities.&amp;#xD;&amp;#xD;Noon: Boot your dude and give them +1 influence." />
 		         <property name="Instructions" value="" />
       </card>
-		<card id="91a9982c-ca3a-1efd-1981-ba40a1f88a00" name="Steph &amp;amp; Gertie's Tonsorium">
+		<card id="91a9982c-ca3a-1efd-1981-ba40a1f88a00" name="Steph and Gertie's Tonsorium">
 		         <property name="Rank" value="2" />
 		         <property name="Suit" value="Diamonds" />
 		         <property name="Type" value="Deed" />

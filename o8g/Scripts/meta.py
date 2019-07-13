@@ -659,7 +659,7 @@ def findHost(card):
    if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('Targeted-atDeed-isUnbooted-targetMine') # First we try to do a limited search, in case they forgot too many cards targeted
    elif re.search(r'Totem',card.Keywords): potentialHosts = findTarget('Targeted-atDeed_or_Town Square_or_Outfit-targetMine') 
    elif re.search(r'Condition',card.Keywords): potentialHosts = findTarget('Targeted') 
-   elif re.search(r'Servitor',card.Keywords): potentialHosts = findTarget('AutoTargeted-atOutfit-targetMine') 
+   elif card.Type == 'Legend': potentialHosts = findTarget('AutoTargeted-atOutfit-targetMine') 
    elif card.type == 'Spell':
       if re.search(r'Hex',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Huckster-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to learn this Hex") 
       elif re.search(r'Miracle',card.Keywords): potentialHosts = findTarget('Targeted-atDude_and_Blessed-isUnbooted-targetMine',choiceTitle = "Choose one of your dudes to get this inspired with this Miracle") 
