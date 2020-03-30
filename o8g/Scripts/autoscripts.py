@@ -1154,7 +1154,7 @@ def ModifyStatus(Autoscript, announceText, card, targetCards = None, notificatio
          elif action.group(1) == 'Ace' and targetCard.group.name != 'Discard Pile': aceTarget(targetCards = [targetCard], silent = True)
          elif action.group(1) == 'SendToDraw': sendToDrawHand(targetCard)
          elif action.group(1) == 'Rehost':
-            newHost = findHost(targetCard)
+            newHost = findHost(targetCard,Autoscript)
             if not newHost: 
                whisper("You need to target the card which is going to attach the card")
                return 'ABORT'
