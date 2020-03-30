@@ -75,8 +75,14 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
       me.piles['Deck'].addViewer(me)
       whisper("The top card of your deck is {} ({} of {})".format(me.piles['Deck'].top(),fullrank(me.piles['Deck'].top().Rank),fullsuit(me.piles['Deck'].top().Suit)))
       me.piles['Deck'].removeViewer(me)
-  
-       
+   ### Frontier Justice ###
+   elif card.name == "Confession":
+      if not len(targetCards): return 'ABORT' 
+      targetDude = targetCards[0]
+      dude = fetchHost(card)
+      skillCheck = fetchSkills(dude)
+      targetDude.markers[mdict['Bounty']] += skillCheck[0][1]
+      notify('{} increased {} bounty by {} Blessed skill rating'.format(card.name, targetDude, dude))
    ### IOUF ###
    elif card.name == 'Marcia Ridge':
       notify(":> {} use {}".format(announceText,targetCards[0]))

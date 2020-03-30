@@ -2061,7 +2061,7 @@ Confession
 -----
 
 +++++
-GR0B1R0:Pull1Card-testMiracle6-spellEffects<BootHost-isCost++Put1Bounty-Targeted-atDude,None>||GR0B1R0:Pull1Card-testMiracle7-spellEffects<Remove1Bounty-Targeted-atDude-isCost++Gain1Ghost Rock,None>
+GR0B1R0:Pull1Card-testMiracle6-spellEffects<BootHost-isCost++UseCustomAbility-Targeted-atDude,None>||GR0B1R0:Pull1Card-testMiracle7-spellEffects<Remove1Bounty-Targeted-atDude-isCost++Gain1Ghost Rock,None>
 .....
 Shield of Faith
 -----
