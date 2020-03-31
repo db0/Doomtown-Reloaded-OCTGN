@@ -417,7 +417,23 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          while bullets != modifier:
             TokensX('Put1BulletShootoutMinus', '', dude)
             bullets = compilecardstat(card, stat = 'Bullets')
-
+   elif card.name =='High Stakes Haven':
+      randomC = me.hand.random()
+      if me.GhostRock <= 0:
+         if randomC == None:
+            notify('{} is broke and without cards to pay for {}.'.format(me, card))
+         else: 
+            randomC.moveTo(me.piles['Discard Pile'])
+            notify('{} is broke, thus discarding random card for {}.'.format(me, card))
+      elif randomC == None:
+         me.GhostRock -= 1
+         notify('{} is without cards, thus paying 1 Ghost Rock for {}.'.format(me, card))
+      elif confirm('High Stakes Haven trait: Do you want to pay 1 Ghost Rock?\nIf No is selected, random card will be discarded instead.'):
+         me.GhostRock -= 1
+         notify('{} chose to pay 1 Ghost Rock for {}.'.format(me, card))
+      else: 
+         randomC.moveTo(me.piles['Discard Pile'])
+         notify('{} chose to discard random card for {}.'.format(me, card))
 
 
 
