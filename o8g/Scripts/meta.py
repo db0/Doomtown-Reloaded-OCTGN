@@ -652,11 +652,12 @@ def makeChoiceListfromCardList(cardList,includeText = False, includeGroup = Fals
 # Card Attachments scripts
 #------------------------------------------------------------------------------
 
-def findHost(card):
+def findHost(card, Autoscript = ''):
    debugNotify(">>> findHost() for {}".format(card)) #Debug
    # Tries to find a host to attach the gear
    hostCards = eval(getGlobalVariable('Host Cards'))
-   if re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('Targeted-atDeed-isUnbooted-targetMine') # First we try to do a limited search, in case they forgot too many cards targeted
+   if re.search(r'Targeted',Autoscript): potentialHosts = findTarget(Autoscript)
+   elif re.search(r'Improvement',card.Keywords): potentialHosts = findTarget('Targeted-atDeed-isUnbooted-targetMine') # First we try to do a limited search, in case they forgot too many cards targeted
    elif re.search(r'Totem',card.Keywords): potentialHosts = findTarget('Targeted-atDeed_or_Town Square_or_Outfit-targetMine') 
    elif re.search(r'Condition',card.Keywords): potentialHosts = findTarget('Targeted') 
    elif card.Type == 'Legend': potentialHosts = findTarget('AutoTargeted-atOutfit-targetMine') 
