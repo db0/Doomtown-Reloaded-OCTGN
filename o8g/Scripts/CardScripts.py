@@ -4027,7 +4027,7 @@ High Stakes Haven
 -----
 47391e41-4a0f-443b-91dc-e3b0e298fbf4
 -----
-whileInPlay:Lose1Ghost Rock-foreachCheatinRevealed-byMe-ifPhaseGamblin
+whileInPlay:UseCustomAbility-foreachCheatinRevealed-byMe
 +++++
 
 .....
