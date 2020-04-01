@@ -2725,7 +2725,7 @@ The Pack Awakens
 -----
 
 +++++
-GR0B1R0:Pull1Card-testSpirit8-spellEffects<Spawn1Nature Spirit-modAction:ParticipateMyself,None>
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<Spawn1Nature Spirit-modAction:ParticipateMyself-BootMyself,None>
 .....
 Spirit Trail
 -----

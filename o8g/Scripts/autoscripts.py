@@ -1041,8 +1041,9 @@ def SpawnX(Autoscript, announceText, card, targetCards = None, notification = No
    action = re.search(r'\bSpawn([1-9]+)([A-Za-z ]+)', Autoscript)
    debugNotify(str(action.groups()),4)
    markers = re.search(r'\bSpawn[A-Za-z0-9_ -]*(-with)([A-Za-z0-9_ -]*)', Autoscript)
-   modAction = re.search(r'-modAction:(.+)', Autoscript)
-   if modAction: debugNotify(str(modAction.groups()),4)
+   modActionAutoscript = re.search(r'-modAction:(.+)', Autoscript)
+   modActions = modActionAutoscript.group(1).split('-')
+   if modActionAutoscript: debugNotify(str(modActionAutoscript.groups()),4)
    if action.group(2) == 'Gunslinger': spawnModel = '94fe7823-077c-4abd-9278-6e64bda6dc64' # for now we only have the gunslinger token, but in the future we might get more of them.
    elif action.group(2) == 'Nature Spirit': spawnModel = 'c4689399-c350-46b3-a79a-f8c62d926cd5' 
    elif action.group(2) == 'Ancestor Spirit': spawnModel = '53a212a6-34a6-47b0-bb24-45f1888bebf6' 
@@ -1052,7 +1053,9 @@ def SpawnX(Autoscript, announceText, card, targetCards = None, notification = No
    for iter in range(num(action.group(1))):
       tokenCard = table.create(spawnModel, cardDistance() + (20 * playerside * iter), (40 * playerside * iter), 1)
       if markers: tokensTXT = TokensX('Put{}'.format(markers.group(2)), announceText,tokenCard) # If we have a -with in our autoscript, this is meant to put some tokens on the dummy card.
-      if modAction: ModifyStatus(modAction.group(1), announceText, tokenCard,targetCards,'Quick')
+      if modActionAutoscript: 
+         for modAction in modActions:
+           ModifyStatus(modAction, announceText, tokenCard, targetCards, 'Quick')
    if markers: ' and ' + tokensTXT
    else: extraTXT = ''
    announceString = announceText + 'spawn {} {} token{}.'.format(action.group(1),tokenCard,extraTXT)
