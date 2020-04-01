@@ -2725,7 +2725,7 @@ The Pack Awakens
 -----
 
 +++++
-GR0B1R0:Pull1Card-testSpirit8-spellEffects<Spawn1Nature Spirit-modAction:ParticipateMyself,None>
+GR0B1R0:Pull1Card-testSpirit8-spellEffects<Spawn1Nature Spirit-modAction:ParticipateMyself-BootMyself,None>
 .....
 Spirit Trail
 -----
@@ -3045,7 +3045,7 @@ Den of Thieves
 -----
 
 +++++
-GR0B1R0:Put1Bounty-DemiAutoTargeted-atDude_and_Grifter-targetMine-choose1$$Gain1Ghost Rock$$UseCustomAbility
+GR0B1R0:UseCustomAbility-DemiAutoTargeted-atDude_and_Grifter-targetMine-choose1$$Gain1Ghost Rock
 .....
 Dumbstruck
 -----

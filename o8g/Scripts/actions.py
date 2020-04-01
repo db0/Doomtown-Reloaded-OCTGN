@@ -1218,6 +1218,9 @@ def playcard(card,retainPos = False,costReduction = 0, preHost = None, scripted 
       if not scripted: chkHighNoon()
       if chkGadgetCraft(card):
          if not retainPos: 
+            if OutfitCard.Name == 'Den of Thieves' and re.search(r'Grifter', card.Keywords):
+               costReduction += 1
+               notify("{} reduces cost of {} by 1.".format(OutfitCard, card))
             if payCost(num(card.Cost) - costReduction - reduction, loud) == 'ABORT' : return # Check if the player can pay the cost. If not, abort.
             placeCard(card,'HireDude')
          notify("{} has hired {}.".format(me, card)) # Inform of the new hire      

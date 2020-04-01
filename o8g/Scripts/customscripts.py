@@ -108,11 +108,23 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
          verb = 'discard'
       notify("{} booted {} to draw {} cards and {} {} from their hand".format(me,bootingDude,cardDraw,verb,choicehand))
    elif card.name == 'Den of Thieves':
+      if not len(targetCards):
+         whisper(":::ERROR::: You did not select valid target to use the den of thieves ablility")
+         return 'ABORT'         
+      targetDude = targetCards[0]
       drawHandCards = [c for c in table if c.highlight == DrawHandColor and c.controller == me]
       if len(drawHandCards) != 5:
+         # we want to let user use this ability even though there is no draw hand on the table (outside lowball and shootouts),
+         # in case he fogot to do that or his opponent pressed ctrl+W too quickly
+         if confirm('There is no draw hand on the table.\nDo you want to use the ability anyway?'): 
+            targetDude.markers[mdict['Bounty']] += 1
+            notify('{} boots {} to place 1 bounty on {} even though he/she did not have a draw hand revealed on the table'.format(me, card, targetDude))
+            return
          whisper(":::ERROR::: You can only use the den of thieves if you have a draw hand revealed on the table")
          return 'ABORT'
-      else: cxp, cyp = drawHandCards[2].position
+      targetDude.markers[mdict['Bounty']] += 1
+      notify('{} boots {} to place 1 bounty on {}'.format(me, card, targetDude))
+      cxp, cyp = drawHandCards[2].position
       if not len([c for c in table if c.model == 'cd31eabe-e2d8-49f7-b4de-16ee4fedf3c1' and c.controller == me]):
          if type == 'shootout':
             if playeraxis == Xaxis:
