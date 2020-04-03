@@ -2056,10 +2056,13 @@ def SightBeyondSightChoose(card,handList):
                cardChoice = None
                break
             else:
-               cardChoice = askCard(cardList,"Choose non-unique card to discard.")
+               cardChoice = askCard(cardList,"Choose non-unique card to hex.")
                if cardChoice == None: 
                   notify("{} does not hex any card in {}'s hand".format(me,handList[0].controller))
                   break
+   if cardChoice:
+       card.moveTo(me.piles['Boot Hill'])
+       notify("{}'s {} hex was aced to use its ability.".format(me, card))
    remoteCall(handList[0].controller,'SightBeyondSightEnd',[card,cardChoice])
 
 def SightBeyondSightEnd(card,cardChoice):
