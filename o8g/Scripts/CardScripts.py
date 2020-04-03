@@ -837,7 +837,7 @@ cb15bd27-76a2-48db-b324-99589b14982b
 -----
 
 +++++
-GR0B0R0:RequestInt{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}$$Lose1Ghost Rock-isCost-perX$$Put1BulletShootoutPlus-perX
+GR0B0R0:RequestInt{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}-Min1-Max4$$Lose1Ghost Rock-isCost-perX$$Put1BulletShootoutPlus-perX
 .....
 Reserves
 -----
@@ -1334,6 +1334,14 @@ Leonardo "Leon" Cavallo
 
 +++++
 GR0B1R0:Pull1Card-testHexX-difficultyValue-Targeted-atDude-spellEffects<BootTarget-Targeted-atDude,None>
+.....
+Mortimer Parsons
+-----
+e0434a23-02b1-406b-a683-0b230b73111d
+-----
+whileInPlay:SendHomeBootedMyself-onlyInShootouts-isParticipating-foreachCheatinRevealed-byMe$$Put1InfluenceMinus-perProperty{Influence}
++++++
+
 .....
 Gang Yi
 -----
