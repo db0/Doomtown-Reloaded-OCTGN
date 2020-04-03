@@ -967,6 +967,7 @@ def RequestInt(Autoscript, announceText, card, targetCards = None, notification 
    debugNotify("Checking for Msg")
    if action.group(8): 
       message = action.group(8)
+      if minTXT != '': message += "\nRestrictions: {}".format(minTXT)
    else: message = "{}:\nThis effect requires that you provide an 'X'. What should that number be?{}".format(card.name,minTXT)
    number = min - 1
    debugNotify("About to ask")
@@ -1422,7 +1423,7 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
                if card.controller != me: # If we have provided the originator card to findTarget, and the card is not our, we assume that we need to treat the script as being run by our opponent
                   debugNotify("Reversing player check")
                   playerChk = card.controller
-            if not checkSpecialRestrictions(Autoscript,targetLookup,playerChk): continue
+            if not checkSpecialRestrictions(Autoscript,targetLookup,playerChk,originCard = card): continue
             hostCards = eval(getGlobalVariable('Host Cards'))
             parent = None
             if re.search(r'-onHost',Autoscript):   
@@ -1624,7 +1625,7 @@ def checkCardRestrictions(cardPropertyList, restrictionsList):
    debugNotify("<<< checkCardRestrictions() with return {}".format(validCard)) #Debug
    return validCard
 
-def checkSpecialRestrictions(Autoscript,card, playerChk = me):
+def checkSpecialRestrictions(Autoscript,card, playerChk = me, originCard = None):
 # Check the autoscript for special restrictions of a valid card
 # If the card does not validate all the restrictions included in the autoscript, we reject it
    debugNotify(">>> checkSpecialRestrictions() {}".format(extraASDebug(Autoscript))) #Debug
@@ -1666,6 +1667,9 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
          if (card.highlight == AttackColor or card.highlight == DefendColor or card.highlight == InitiateColor): 
             debugNotify("!!! Failing because dude is participating")
             validCard = False
+   if re.search(r'isNotMyself',Autoscript) and (originCard == None or card == originCard): 
+      debugNotify("!!! Failing because no origin card provided or origin card is the same as card")
+      validCard = False  
    if re.search(r'isDrawHand',Autoscript) and card.highlight != DrawHandColor: 
       debugNotify("!!! Failing because card is not in the draw hand")
       validCard = False
@@ -1895,9 +1899,6 @@ def per(Autoscript, card = None, count = 0, targetCards = None, notification = N
       else: #If we're not looking for a particular target, then we check for everything else.
          debugNotify("Doing no table lookup") # Debug.
          if per.group(3) == 'X': multiplier = count # Probably not needed and the next elif can handle alone anyway.
-         elif count: multiplier = num(count) * chkPlayer(Autoscript, card.controller, False) # All non-special-rules per<somcething> requests use this formula.
-                                                                                              # Usually there is a count sent to this function (eg, number of favour purchased) with which to multiply the end result with
-                                                                                              # and some cards may only work when a rival owns or does something.
          elif re.search(r'Marker',per.group(3)):
             markerName = re.search(r'Marker{([\w :]+)}',per.group(3)) # I don't understand why I had to make the curly brackets optional, but it seens atTurnStart/End completely eats them when it parses the CardsAS.get(card.model,'')
             marker = findMarker(card, markerName.group(1))

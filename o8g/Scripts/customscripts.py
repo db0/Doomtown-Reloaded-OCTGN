@@ -186,6 +186,14 @@ def UseCustomAbility(Autoscript, announceText, card, targetCards = None, notific
             potCard.markers[mdict['Ghost Rock']] -= 1
       else: me.GhostRock += 1 # If the potcard is not there for some reason (bug) we just give the player 1 GR 
       notify("{} take one Ghost Rock from the pot".format(announceText))
+   ### Foul Play ###
+   elif card.name == "Old Marge's Manor":  
+      if not len(targetCards): return 'ABORT' 
+      targetCard = targetCards[0]
+      count = targetCard.markers[mdict['Ghost Rock']]
+      card.markers[mdict['Ghost Rock']] += count
+      targetCard.markers[mdict['Ghost Rock']] = 0;
+      notify('{} moved {} Ghost Rock from {} to itself.'.format(card.name, count, targetCard)) 
    ### Ghost Town ###
    elif card.name == "Sight Beyond Sight":
       opponents = [player for player in getPlayers() if player != me or len(getPlayers()) == 1]
@@ -2056,10 +2064,13 @@ def SightBeyondSightChoose(card,handList):
                cardChoice = None
                break
             else:
-               cardChoice = askCard(cardList,"Choose non-unique card to discard.")
+               cardChoice = askCard(cardList,"Choose non-unique card to hex.")
                if cardChoice == None: 
                   notify("{} does not hex any card in {}'s hand".format(me,handList[0].controller))
                   break
+   if cardChoice:
+       card.moveTo(me.piles['Boot Hill'])
+       notify("{}'s {} hex was aced to use its ability.".format(me, card))
    remoteCall(handList[0].controller,'SightBeyondSightEnd',[card,cardChoice])
 
 def SightBeyondSightEnd(card,cardChoice):

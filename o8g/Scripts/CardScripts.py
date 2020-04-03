@@ -357,7 +357,7 @@ c20de5e3-daea-4dce-a8ce-eaa5349c8187
 -----
 
 +++++
-GR0B1R0:RequestInt{Boost your Flamethrower by how much?}-Min1-Max3$$Lose1Ghost Rock-perX-isCost$$Put1BulletShootoutPlus-perX
+GR0B1R0:RequestInt-Min1-Max3{Boost your Flamethrower by how much?}$$Lose1Ghost Rock-perX-isCost$$Put1BulletShootoutPlus-perX
 .....
 Force Field
 -----
@@ -837,7 +837,7 @@ cb15bd27-76a2-48db-b324-99589b14982b
 -----
 
 +++++
-GR0B0R0:RequestInt{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}$$Lose1Ghost Rock-isCost-perX$$Put1BulletShootoutPlus-perX
+GR0B0R0:RequestInt-Min1-Max4{Combien de ghost rock veux tu depenser pour augmenter ton niveau de bullet?}$$Lose1Ghost Rock-isCost-perX$$Put1BulletShootoutPlus-perX
 .....
 Reserves
 -----
@@ -1334,6 +1334,14 @@ Leonardo "Leon" Cavallo
 
 +++++
 GR0B1R0:Pull1Card-testHexX-difficultyValue-Targeted-atDude-spellEffects<BootTarget-Targeted-atDude,None>
+.....
+Mortimer Parsons
+-----
+e0434a23-02b1-406b-a683-0b230b73111d
+-----
+whileInPlay:SendHomeBootedMyself-onlyInShootouts-isParticipating-foreachCheatinRevealed-byMe$$Put1InfluenceMinus-perProperty{Influence}
++++++
+
 .....
 Gang Yi
 -----
@@ -2445,7 +2453,7 @@ Shifu Speaks
 -----
 onPlay:Pull1Card
 +++++
-GR0B0R0:Put1Influence-Targeted-atDude_and_Kung Fu-targetMine$$RequestInt{Discard how many cards?}-Min-Max5$$Draw1Card-toDiscard-perX
+GR0B0R0:Put1Influence-Targeted-atDude_and_Kung Fu-targetMine$$RequestInt-Max5{Discard how many cards?}$$Draw1Card-toDiscard-perX
 .....
 Rabbit's Lunar Leap
 -----
@@ -3405,7 +3413,7 @@ Old Marge's Manor
 -----
 
 +++++
-GR0B1R0:Remove999Ghost Rock-Targeted-isCost$$Put1Ghost Rock-perX||GR0B1R0:Put1Ghost Rock
+GR0B1R0:UseCustomAbility-AutoTargeted-hasMarker{Ghost Rock}-isMine-isCost-isNotMyself-choose1||GR0B1R0:Put1Ghost Rock
 .....
 Owl's Insight
 -----
@@ -3603,7 +3611,7 @@ Signing Over the Stores
 -----
 2d728020-2cf6-4908-8034-7325e9fcb394
 -----
-onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<RequestInt{Discard how many cards?}-Max5++Draw1Cards-perX-toDiscard++Retrieve3Cards-grabGoods-fromDiscard-toTable-payCost-reduc2,None>
+onPlay:StartJob-AutoTargeted-atTown Square-jobEffects<RequestInt-Max5{Discard how many cards?}++Draw1Cards-perX-toDiscard++Retrieve3Cards-grabGoods-fromDiscard-toTable-payCost-reduc2,None>
 +++++
 
 .....
