@@ -967,6 +967,7 @@ def RequestInt(Autoscript, announceText, card, targetCards = None, notification 
    debugNotify("Checking for Msg")
    if action.group(8): 
       message = action.group(8)
+      if minTXT != '': message += "\nRestrictions: {}".format(minTXT)
    else: message = "{}:\nThis effect requires that you provide an 'X'. What should that number be?{}".format(card.name,minTXT)
    number = min - 1
    debugNotify("About to ask")
