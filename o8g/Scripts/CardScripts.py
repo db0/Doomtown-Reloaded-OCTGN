@@ -3413,7 +3413,7 @@ Old Marge's Manor
 -----
 
 +++++
-GR0B1R0:Remove999Ghost Rock-Targeted-isCost$$Put1Ghost Rock-perX||GR0B1R0:Put1Ghost Rock
+GR0B1R0:UseCustomAbility-AutoTargeted-hasMarker{Ghost Rock}-isMine-isCost-isNotMyself-choose1||GR0B1R0:Put1Ghost Rock
 .....
 Owl's Insight
 -----

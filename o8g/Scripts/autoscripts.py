@@ -1422,7 +1422,7 @@ def findTarget(Autoscript, fromHand = False, card = None, choiceTitle = None, ig
                if card.controller != me: # If we have provided the originator card to findTarget, and the card is not our, we assume that we need to treat the script as being run by our opponent
                   debugNotify("Reversing player check")
                   playerChk = card.controller
-            if not checkSpecialRestrictions(Autoscript,targetLookup,playerChk): continue
+            if not checkSpecialRestrictions(Autoscript,targetLookup,playerChk,originCard = card): continue
             hostCards = eval(getGlobalVariable('Host Cards'))
             parent = None
             if re.search(r'-onHost',Autoscript):   
@@ -1624,7 +1624,7 @@ def checkCardRestrictions(cardPropertyList, restrictionsList):
    debugNotify("<<< checkCardRestrictions() with return {}".format(validCard)) #Debug
    return validCard
 
-def checkSpecialRestrictions(Autoscript,card, playerChk = me):
+def checkSpecialRestrictions(Autoscript,card, playerChk = me, originCard = None):
 # Check the autoscript for special restrictions of a valid card
 # If the card does not validate all the restrictions included in the autoscript, we reject it
    debugNotify(">>> checkSpecialRestrictions() {}".format(extraASDebug(Autoscript))) #Debug
@@ -1666,6 +1666,9 @@ def checkSpecialRestrictions(Autoscript,card, playerChk = me):
          if (card.highlight == AttackColor or card.highlight == DefendColor or card.highlight == InitiateColor): 
             debugNotify("!!! Failing because dude is participating")
             validCard = False
+   if re.search(r'isNotMyself',Autoscript) and (originCard == None or card == originCard): 
+      debugNotify("!!! Failing because no origin card provided or origin card is the same as card")
+      validCard = False  
    if re.search(r'isDrawHand',Autoscript) and card.highlight != DrawHandColor: 
       debugNotify("!!! Failing because card is not in the draw hand")
       validCard = False
