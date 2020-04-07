@@ -439,6 +439,15 @@ def multiChoice(title, options): # This displays a choice where the player can s
          for iter in range(len(choices)): choices[iter] = int(choices[iter]) # we convert our list of chars into a list of integers      
    debugNotify("<<< multiChoice() with list: {}".format(choices), 3)
    return choices # We finally return a list of integers to the previous function. Those will in turn be iterated one-by-one serially.
+
+def askCardsDlg(cards, text = None, title = None, min = 1, max = 1, bottomList = None, bottomLabel = None):
+    dialog = cardDlg(cards, bottomList)
+    dialog.min = min
+    dialog.max = max
+    if title: dialog.title = title
+    if text: dialog.text = text
+    if bottomLabel: dialog.text = text
+    return dialog.show()
       
 #---------------------------------------------------------------------------
 # General functions

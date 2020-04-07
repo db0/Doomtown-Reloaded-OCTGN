@@ -8,12 +8,13 @@ def chkTwoSided():
    if table.isTwoSided(): information(":::WARNING::: This game is NOT designed to be played on a two-sided table. Things will not look right!! Please start a new game and unckeck the appropriate button.")
    fetchCardScripts()
 
-def checkDeck(player,groups):
+def checkDeck(args):
    mute()
+   player = args.player
    foundOutfit = False
    if player == me:
       #confirm(str([group.name for group in groups]))
-      for group in groups:
+      for group in args.groups:
          if group == me.hand:
             for card in group:
                if card.Type == 'Outfit': 
@@ -21,7 +22,7 @@ def checkDeck(player,groups):
                   foundOutfit = True
             if not foundOutfit: information(":::ERROR::: No outfit card found! Please put an outfit card in your deck before you try to use it in a game!")
          else:
-            group.setVisibility('me')
+            group.visibility = 'me'
             counts = collections.defaultdict(int)
             ok = True
             for card in group:
@@ -45,7 +46,7 @@ def checkDeck(player,groups):
             if deckLen != 52:
                ok = False
                notify(":::ERROR::: {}'s deck is not exactly 52 play cards ({})!".format(player,deckLen))
-            group.setVisibility('None')
+            group.visibility = 'None'
             if ok: notify("-> Deck of {} is OK!".format(player))
             else: 
                notify("-> Deck of {} is _NOT_ OK!".format(player))
@@ -81,21 +82,12 @@ def chooseSide(silent = False): # Called from many functions to check if the pla
          playerside = 0
          if not silent: notify(":> {}' arrive late to the party.".format(me))
 
-def checkMovedCards(player,cards,fromGroups,toGroups,oldIndexs,indexs,oldXs,oldYs,xs,ys,faceups,highlights,markers):
-   mute()
-   for iter in range(len(cards)):
-      card = cards[iter]
-      fromGroup = fromGroups[iter]
-      toGroup = toGroups[iter]
-      oldIndex = oldIndexs[iter]
-      index = indexs[iter]
-      oldX = oldXs[iter]
-      oldY = oldYs[iter]
-      x = xs[iter]
-      y = ys[iter]
-      faceup = faceups[iter]
-      highlight = highlights[iter]
-      marker = markers[iter]
+def checkMovedCards(args):
+   for iter in range(len(args.cards)):
+      card = args.cards[iter]
+      fromGroup = args.fromGroups[iter]
+      toGroup = args.toGroups[iter]
+      highlight = args.highlights[iter]
       #if isScriptMove: return # If the card move happened via a script, then all automations should have happened already.
       if fromGroup == me.hand and toGroup == table: 
          if card.Type == 'Outfit': 
@@ -123,7 +115,7 @@ def checkMovedCards(player,cards,fromGroups,toGroups,oldIndexs,indexs,oldXs,oldY
             update()
             orgAttachments(card) 
 
-def chkMarkerChanges(card,markerName,oldValue,newValue,isScriptChange):
+def chkMarkerChanges(args):
    mute()
    #notify(markerName) #debug
    #return # Not in use yet
@@ -134,10 +126,10 @@ def chkMarkerChanges(card,markerName,oldValue,newValue,isScriptChange):
    #if markerName == "+1 Control": modControl(-1)
    #if markerName == "-1 Control" and num(card.Influence) > card.markers[mdict['ControlMinus']]: modControl()   
      
-def checkPlayerGlobalVars(player,name,oldValue,value):
+def checkPlayerGlobalVars(args):
    mute()
-   if name == 'RevealReady' and me._id == 1 and value != 'False': checkHandReveal(player) # Only the hosting player reveals hands
-   if name == 'Hand Rank' and me._id == 1 and value != 'N/A': compareHandRanks() # Only the hosting player reveals hands
+   if args.name == 'RevealReady' and me._id == 1 and args.value != 'False': checkHandReveal(args.player) # Only the hosting player reveals hands
+   if args.name == 'Hand Rank' and me._id == 1 and args.value != 'N/A': compareHandRanks() # Only the hosting player reveals hands
 
 def checkHandReveal(playerVar):           
    playersReady = []

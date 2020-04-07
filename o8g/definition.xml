@@ -16,7 +16,7 @@
       gameurl="http://octgn.gamersjudgement.com/wordpress/doomtown"
       authors="Db0"
       iconurl="https://raw.github.com/db0/Doomtown-Reloaded-OCTGN/master/DTR_logo.jpg"
-      scriptVersion="3.1.0.1"
+      scriptVersion="3.1.0.2"
       usetwosidedtable="False">
 	<scripts>
       <script src="Scripts/constants.py" />
@@ -30,11 +30,11 @@
       <script src="Scripts/CardScripts.py" />
 	</scripts> 
    <events>
-       <event name="OnTableLoad" action="chkTwoSided" />
-       <event name="OnLoadDeck" action="checkDeck" />
-       <event name="OnMoveCards" action="checkMovedCards" />
-       <event name="OnMarkerChanged" action="chkMarkerChanges" />
-       <event name="OnPlayerGlobalVariableChanged" action="checkPlayerGlobalVars" />
+	   <event name="OnTableLoaded" action="chkTwoSided" />
+	   <event name="OnDeckLoaded" action="checkDeck" />
+	   <event name="OnCardsMoved" action="checkMovedCards" />
+	   <event name="OnMarkerChanged" action="chkMarkerChanges" />
+	   <event name="OnPlayerGlobalVariableChanged" action="checkPlayerGlobalVars" />
    </events>
    <fonts>
        <font src="Fonts/american-typewriter-medium-bt-2.ttf" size="12" target="context"/>
