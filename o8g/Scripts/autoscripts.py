@@ -907,7 +907,7 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
       else: difficulty = num(spellDifficulty.group(2))  # If it's not a variable difficulty, then we just set the numeric value for it
       if card.Type == 'Dude': skilledDude = card # if the card calling the script is a dude, we assume the ability is coming from them.
       elif re.search(r'Totem',card.Keywords): 
-         skilledDude = askCardsDlg([c for c in table if c.controller == me and re.search(r'Shaman',c.Keywords)],"Which of your Shamans is using this Totem?",card.Name)
+         skilledDude = askCardFromList([c for c in table if c.controller == me and re.search(r'Shaman',c.Keywords)],"Which of your Shamans is using this Totem?",card.Name)
          if not skilledDude: return 'ABORT'
       else: skilledDude = fetchHost(card)
       skills = fetchSkills(skilledDude)

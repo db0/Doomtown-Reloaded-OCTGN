@@ -119,7 +119,7 @@ def chkMarkerChanges(args):
    mute()
    #notify(markerName) #debug
    #return # Not in use yet
-   if isScriptChange: return # If the marker change happened via a script, then all automations should have happened already.
+   if args.scripted: return # If the marker change happened via a script, then all automations should have happened already.
    reCalculate(notification = 'silent')
    #if markerName == "+1 Influence": modInfluence(-1)
    #if markerName == "-1 Influence" and num(card.Influence) > card.markers[mdict['InfluenceMinus']]: modInfluence()
