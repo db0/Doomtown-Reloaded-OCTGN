@@ -764,8 +764,8 @@ def orgAttachments(card,facing = 'Same'):
       if attachment.controller != me: remoteCall(attachment.controller,'giveCard',[attachment,me])
       attachment.moveToTable(x + (xAlg * attNR), y + (yAlg * attNR),FaceDown)
       if FaceDown: attachment.peek()
-      attachment.setIndex(len(cardAttachements) - attNR) # This whole thing has become unnecessary complicated because sendToBack() does not work reliably
-      debugNotify("{} index = {}".format(attachment,attachment.getIndex), 4) # Debug
+      attachment.index = len(cardAttachements) - attNR # This whole thing has become unnecessary complicated because sendToBack() does not work reliably
+      debugNotify("{} index = {}".format(attachment,attachment.index), 4) # Debug
       attNR += 1
       debugNotify("Moving {}, Iter = {}".format(attachment,attNR), 4)
    card.sendToFront() # Because things don't work as they should :(
@@ -774,7 +774,7 @@ def orgAttachments(card,facing = 'Same'):
          sendBack(c) # We always send the Town Square to the back so that it doesn't hide our attachments
          break
    if debugVerbosity >= 4: # Checking Final Indices
-      for attachment in cardAttachements: notify("{} index = {}".format(attachment,attachment.getIndex)) # Debug
+      for attachment in cardAttachements: notify("{} index = {}".format(attachment,attachment.index)) # Debug
    debugNotify("<<< orgAttachments()", 3) #Debug      
 
 def sendBack(card): # Function which asks the current card controller to send it to the background (to avoid OCTGN complaining)

@@ -907,7 +907,7 @@ def PullX(Autoscript, announceText, card, targetCards = None, notification = Non
       else: difficulty = num(spellDifficulty.group(2))  # If it's not a variable difficulty, then we just set the numeric value for it
       if card.Type == 'Dude': skilledDude = card # if the card calling the script is a dude, we assume the ability is coming from them.
       elif re.search(r'Totem',card.Keywords): 
-         skilledDude = askCard([c for c in table if c.controller == me and re.search(r'Shaman',c.Keywords)],"Which of your Shamans is using this Totem?",card.Name)
+         skilledDude = askCardFromList([c for c in table if c.controller == me and re.search(r'Shaman',c.Keywords)],"Which of your Shamans is using this Totem?",card.Name)
          if not skilledDude: return 'ABORT'
       else: skilledDude = fetchHost(card)
       skills = fetchSkills(skilledDude)
@@ -1314,7 +1314,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
       if count == 999: count = topCount # Retrieve999Cards means the script will retrieve all cards that match the requirements, regardless of how many there are. As such, a '-onTop#Cards' modulator should always be included.
       for c in source.top(topCount):
          debugNotify("Checking card: {}".format(c),4)
-         if re.search(r'-tellPlayer',Autoscript): delayed_whisper(":::INFO::: {} card is: {}".format(numOrder(c.getIndex),c)) # The -tellPlayer modulator, will tell the one retrieving what all cards were, even if they are not valid targets
+         if re.search(r'-tellPlayer',Autoscript): delayed_whisper(":::INFO::: {} card is: {}".format(numOrder(c.index),c)) # The -tellPlayer modulator, will tell the one retrieving what all cards were, even if they are not valid targets
          if checkCardRestrictions(gatherCardProperties(c), restrictions) and checkSpecialRestrictions(Autoscript,c):
             cardList.append(c)
             if re.search(r'-isTopmost', Autoscript) and len(cardList) == count: break # If we're selecting only the topmost cards, we select only the first matches we get. 
@@ -1323,7 +1323,7 @@ def RetrieveX(Autoscript, announceText, card, targetCards = None, notification =
          else: topCount = len(targetPL.piles['Discard Pile'])
          for c in targetPL.piles['Discard Pile'].top(topCount):
             debugNotify("Checking card: {}".format(c),4)
-            if re.search(r'-tellPlayer',Autoscript): delayed_whisper(":::INFO::: {} card is: {}".format(numOrder(c.getIndex),c)) # The -tellPlayer modulator, will tell the one retrieving what all cards were, even if they are not valid targets
+            if re.search(r'-tellPlayer',Autoscript): delayed_whisper(":::INFO::: {} card is: {}".format(numOrder(c.index),c)) # The -tellPlayer modulator, will tell the one retrieving what all cards were, even if they are not valid targets
             if checkCardRestrictions(gatherCardProperties(c), restrictions) and checkSpecialRestrictions(Autoscript,c):
                cardList.append(c)
       debugNotify("cardList: {}".format(cardList),3)
